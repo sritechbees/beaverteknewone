@@ -60,7 +60,7 @@ export default function Header() {
             </Link>
 
             <Link
-              href="/about"
+              href="/about_us/abouthero"
               className="text-white hover:text-[#6B91AD] transition"
             >
               About
