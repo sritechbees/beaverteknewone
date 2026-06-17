@@ -11,19 +11,19 @@ export default function Header() {
   const services = [
     {
       title: "Modernize",
-      href: "/services/modernize",
+      href: "/services/modernize/modernizehero",
     },
     {
       title: "See Your Data",
-      href: "/services/data-analytics",
+      href: "/services/seeyourdata/seeyourdatahero",
     },
     {
       title: "Build Software",
-      href: "/services/build-software",
+      href: "/services/buildsoftware/herosection",
     },
     {
       title: "Stay Secure",
-      href: "/services/stay-secure",
+      href: "/services/staysecure/staysecureherosection",
     },
   ];
 
@@ -68,37 +68,42 @@ export default function Header() {
 
             {/* Services Dropdown */}
             <div
-              className="relative group"
-              onMouseEnter={() => setServiceOpen(true)}
-              onMouseLeave={() => setServiceOpen(false)}
-            >
-              <button className="flex items-center gap-1 text-white hover:text-[#6B91AD] transition">
-                Services
-                <ChevronDown size={16} />
-              </button>
+  className="relative"
+  onMouseEnter={() => setServiceOpen(true)}
+  onMouseLeave={() => setServiceOpen(false)}
+>
+  {/* Services Link */}
+  <Link
+    href="/services/serviceshero"
+    className="flex items-center gap-1 text-white hover:text-[#6B91AD] transition"
+  >
+    Services
+    <ChevronDown size={16} />
+  </Link>
 
-              <div
-                className={`absolute top-full left-0 mt-3 w-72 rounded-2xl bg-white shadow-2xl border border-slate-100 transition-all duration-300 ${
-                  serviceOpen
-                    ? "opacity-100 visible translate-y-0"
-                    : "opacity-0 invisible translate-y-3"
-                }`}
-              >
-                <div className="p-3">
-                  {services.map((item) => (
-                    <Link
-                      key={item.title}
-                      href={item.href}
-                      className="block p-4 rounded-xl hover:bg-[#E8EFF4] transition"
-                    >
-                      <h4 className="font-semibold text-[#161E2F]">
-                        {item.title}
-                      </h4>
-                    </Link>
-                  ))}
-                </div>
-              </div>
-            </div>
+  {/* Dropdown */}
+  <div
+    className={`absolute left-0 top-full mt-3 w-72 rounded-2xl bg-white shadow-2xl border border-slate-100 transition-all duration-300 ${
+      serviceOpen
+        ? "opacity-100 visible translate-y-0"
+        : "opacity-0 invisible translate-y-3"
+    }`}
+  >
+    <div className="p-3">
+      {services.map((item) => (
+        <Link
+          key={item.title}
+          href={item.href}
+          className="block rounded-xl p-4 hover:bg-[#E8EFF4] transition"
+        >
+          <h4 className="font-semibold text-[#161E2F]">
+            {item.title}
+          </h4>
+        </Link>
+      ))}
+    </div>
+  </div>
+</div>
 
             <Link
               href="/customers"
@@ -106,7 +111,7 @@ export default function Header() {
             >
               Customers
             </Link>
-
+ 
             <Link
               href="/products"
               className="text-white hover:text-[#6B91AD] transition"
