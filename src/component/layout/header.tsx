@@ -106,7 +106,7 @@ export default function Header() {
 </div>
 
             <Link
-              href="/customers"
+              href="/customers/casestudyhero"
               className="text-white hover:text-[#6B91AD] transition"
             >
               Customers
