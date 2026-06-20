@@ -15,28 +15,28 @@ const services = [
     description:
       "Bring legacy systems, old infrastructure, and outdated workflows into the modern stack — without breaking what already works.",
     icon: Cpu,
-    href: "/services/modernize",
+    href: "/services/modernize/modernizehero",
   },
   {
     title: "See Your Data",
     description:
       "Turn the data your business already collects into dashboards, reports, and insights you can actually use to make decisions.",
     icon: TrendingUp,
-    href: "/services/data-analytics",
+    href: "/services/seeyourdata/seeyourdatahero",
   },
   {
     title: "Build Software",
     description:
       "Custom web and mobile applications, designed and engineered from concept to production by senior people.",
     icon: Code2,
-    href: "/services/software-development",
+    href: "/services/buildsoftware/herosection",
   },
   {
     title: "Stay Secure",
     description:
       "Keep your digital operations protected, monitored, and running — so a security event doesn't become a business event.",
     icon: ShieldCheck,
-    href: "/services/cybersecurity",
+    href: "/services/staysecure/staysecureherosection",
   },
 ];
 

@@ -73,31 +73,31 @@ export default function Footer() {
               </li>
 
               <li>
-                <Link href="/about" className="hover:text-[#6B91AD]">
+                <Link href="/about_us/abouthero" className="hover:text-[#6B91AD]">
                   About
                 </Link>
               </li>
 
               <li>
-                <Link href="/services" className="hover:text-[#6B91AD]">
+                <Link href="/services/serviceshero" className="hover:text-[#6B91AD]">
                   Services
                 </Link>
               </li>
 
               <li>
-                <Link href="/customers" className="hover:text-[#6B91AD]">
+                <Link href="/customers/casestudyhero" className="hover:text-[#6B91AD]">
                   Customers
                 </Link>
               </li>
 
               <li>
-                <Link href="/products" className="hover:text-[#6B91AD]">
+                <Link href="/products/producthero" className="hover:text-[#6B91AD]">
                   Products
                 </Link>
               </li>
 
               <li>
-                <Link href="/contact" className="hover:text-[#6B91AD]">
+                <Link href="/contact/contacthero" className="hover:text-[#6B91AD]">
                   Contact
                 </Link>
               </li>
@@ -114,7 +114,7 @@ export default function Footer() {
 
               <li>
                 <Link
-                  href="/services/modernize"
+                  href="/services/modernize/modernizehero"
                   className="hover:text-[#6B91AD]"
                 >
                   Modernize
@@ -123,7 +123,7 @@ export default function Footer() {
 
               <li>
                 <Link
-                  href="/services/data-analytics"
+                  href="/services/seeyourdata/seeyourdatahero"
                   className="hover:text-[#6B91AD]"
                 >
                   See Your Data
@@ -132,7 +132,7 @@ export default function Footer() {
 
               <li>
                 <Link
-                  href="/services/build-software"
+                  href="/services/buildsoftware/herosection"
                   className="hover:text-[#6B91AD]"
                 >
                   Build Software
@@ -141,7 +141,7 @@ export default function Footer() {
 
               <li>
                 <Link
-                  href="/services/stay-secure"
+                  href="/services/staysecure/staysecureherosection"
                   className="hover:text-[#6B91AD]"
                 >
                   Stay Secure
