@@ -6,7 +6,7 @@ import ModernizeContent from "./modernizecontent";
 export default function ModernizeHero() {
   return (
       <App_layout>
-    <section className="relative overflow-hidden bg-gradient-to-b from-[#E8EFF4] via-white to-white">
+    <section className="relative overflow-hidden bg-gray-300">
       {/* Background */}
       <div className="absolute inset-0 -z-10 overflow-hidden">
         <div className="absolute -left-40 top-20 h-96 w-96 rounded-full bg-[#6B91AD]/20 blur-3xl" />

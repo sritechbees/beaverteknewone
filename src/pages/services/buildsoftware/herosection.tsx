@@ -10,7 +10,7 @@ import WhoThisIsFor from "./whothisisfor";
 export default function HeroSection() {
   return (
     <App_layout>
-    <section className="relative overflow-hidden bg-white">
+    <section className="relative overflow-hidden bg-[#161E2F]">
       {/* Background */}
       <div className="absolute inset-0">
         <div className="absolute left-0 top-0 h-[450px] w-[450px] rounded-full bg-[#E8EFF4] blur-3xl opacity-70" />

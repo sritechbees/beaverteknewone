@@ -5,6 +5,7 @@ import Herosection from "@/component/home/herosection";
 import FourPillars from "@/component/home/fourpillars";
 import ProofSection from "@/component/home/proofsection";
 import TestimonialsSection from "@/component/home/testimonialsection";
+import FooterCTA from "@/component/home/footercta";
 
 
 

@@ -1,142 +1,129 @@
 "use client";
 
 import { useEffect } from "react";
+import Image from "next/image";
 import AOS from "aos";
 import "aos/dist/aos.css";
 
 export default function ProofSection() {
   useEffect(() => {
     AOS.init({
-      duration: 1200,
+      duration: 1000,
       once: true,
-      easing: "ease-out-cubic",
+      offset: 100,
     });
   }, []);
 
-  const studies = [
+  const caseStudies = [
     {
-      id: "01",
-      title: "Payment Platform That Scales",
-      tag: "FinTech",
+      number: "01",
+      title: "Payment platform that scales",
+      image: "/home/payment.jpg",
       description:
-        "Built and supported a payment gateway integration platform now serving 150 clients and processing over 4.5 million transactions every month.",
-      stat: "4.5M+",
-      label: "Transactions / Month",
+        "Built and supported a payment gateway integration platform now serving 150 clients and processing 4.5 million transactions per month.",
     },
     {
-      id: "02",
-      title: "AI In Healthcare",
-      tag: "Healthcare AI",
+      number: "02",
+      title: "AI in healthcare",
+      image: "/home/healthai.jpg",
       description:
-        "Designed and shipped an AI patient triaging platform, patient intake solutions, and preventive care applications that transformed manual healthcare workflows into intelligent digital experiences.",
-      stat: "150K+",
-      label: "Patient Records",
+        "Designed and shipped an AI patient triaging platform, plus patient intake and preventive care applications — moving healthcare teams from paper workflows to working software. This work became the foundation of BeaverHealthAI, our healthcare AI platform.",
     },
     {
-      id: "03",
-      title: "Mobile, End To End",
-      tag: "Mobile Engineering",
+      number: "03",
+      title: "Mobile, end to end",
+      image: "/home/mobile-app.jpg",
       description:
-        "Took a mobile advertising platform from concept to launch including architecture, product engineering, deployment, and long-term support.",
-      stat: "100%",
-      label: "Built By BeaverTek",
+        "Took a mobile advertising app from concept to production, including architecture, build, and launch.",
     },
   ];
 
   return (
-    <section className="relative bg-[#0F172A] py-24 overflow-hidden">
+    <section className="relative py-24 bg-[#161E2F] overflow-hidden">
+      {/* Background Effects */}
+      <div className="absolute top-0 left-0 w-[500px] h-[500px] bg-[#6B91AD]/10 blur-[180px] rounded-full" />
+      <div className="absolute bottom-0 right-0 w-[500px] h-[500px] bg-cyan-500/10 blur-[180px] rounded-full" />
 
-      {/* Glow Effects */}
-      <div className="absolute top-0 left-0 w-[500px] h-[500px] bg-[#6B91AD]/10 rounded-full blur-[120px]" />
-      <div className="absolute bottom-0 right-0 w-[500px] h-[500px] bg-cyan-500/10 rounded-full blur-[120px]" />
-
-      <div className="max-w-7xl mx-auto px-6 lg:px-8 relative z-10">
-
+      <div className="relative z-10 max-w-7xl mx-auto px-5 sm:px-6 lg:px-8">
         {/* Heading */}
         <div
           data-aos="fade-up"
-          className="max-w-3xl mx-auto text-center mb-20"
+          className="text-center max-w-4xl mx-auto mb-20"
         >
-          <span className="inline-flex items-center px-5 py-2 rounded-full bg-[#23314F] text-[#6B91AD] text-sm font-medium mb-6">
-            PROVEN RESULTS
+          <span className="inline-flex px-4 py-2 rounded-full bg-[#23314F] text-[#6B91AD] text-sm font-semibold tracking-wide">
+            PROOF
           </span>
 
-          <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white">
-            Real Projects.
-            <span className="text-[#6B91AD]">
-              {" "}Real Outcomes.
+          <h2 className="mt-6 text-4xl md:text-5xl lg:text-6xl font-bold text-white leading-tight">
+            Real systems.
+            <span className="block text-[#6B91AD]">
+              Real users.
             </span>
+            Real outcomes.
           </h2>
-
-          <p className="mt-6 text-lg text-slate-300 leading-relaxed">
-            Technology only matters when it delivers measurable results.
-            Here are three examples of how BeaverTek has helped clients
-            scale, modernize, and innovate.
-          </p>
         </div>
 
-        {/* Cards */}
+        {/* Case Studies */}
         <div className="space-y-10">
-
-          {studies.map((study, index) => (
+          {caseStudies.map((item, index) => (
             <div
-              key={study.id}
+              key={item.number}
               data-aos="fade-up"
               data-aos-delay={index * 150}
-              className="group relative overflow-hidden rounded-[32px] border border-white/10 bg-white/5 backdrop-blur-xl transition-all duration-500 hover:border-[#6B91AD]/40 hover:-translate-y-2"
+              className="group relative overflow-hidden rounded-[32px] border border-white/10 bg-white/5 backdrop-blur-xl"
             >
-
-              <div className="grid lg:grid-cols-12 gap-8 p-8 lg:p-12">
-
-                {/* Number */}
-                <div className="lg:col-span-2 flex items-center">
-                  <span className="text-[90px] md:text-[120px] font-black text-white/5 group-hover:text-[#6B91AD]/10 transition-all duration-500">
-                    {study.id}
-                  </span>
-                </div>
-
-                {/* Content */}
-                <div className="lg:col-span-7">
-
-                  <span className="inline-block px-4 py-2 rounded-full bg-[#23314F] text-[#6B91AD] text-sm mb-5">
-                    {study.tag}
-                  </span>
-
-                  <h3 className="text-3xl md:text-4xl font-bold text-white mb-5">
-                    {study.title}
-                  </h3>
-
-                  <p className="text-slate-300 text-lg leading-relaxed">
-                    {study.description}
-                  </p>
-                </div>
-
-                {/* Stats */}
-                <div className="lg:col-span-3">
-
-                  <div className="h-full rounded-3xl bg-gradient-to-br from-[#23314F] to-[#161E2F] border border-white/10 flex flex-col justify-center items-center p-8">
-
-                    <h4 className="text-5xl md:text-6xl font-black text-[#6B91AD]">
-                      {study.stat}
-                    </h4>
-
-                    <p className="mt-3 text-center text-slate-300">
-                      {study.label}
-                    </p>
-
-                  </div>
-
-                </div>
-
+              {/* Background Image */}
+              <div className="absolute inset-0">
+                <Image
+                  src={item.image}
+                  alt={item.title}
+                  fill
+                  className="object-cover transition-transform duration-1000 group-hover:scale-110"
+                />
               </div>
 
-              {/* Hover Line */}
-              <div className="absolute bottom-0 left-0 h-[3px] bg-gradient-to-r from-[#6B91AD] via-cyan-400 to-blue-500 w-0 group-hover:w-full transition-all duration-700" />
+              {/* Overlay */}
+              <div className="absolute inset-0 bg-gradient-to-r from-[#161E2F]/85 via-[#161E2F]/75 to-[#161E2F]/55" />
+
+              {/* Content */}
+              <div className="relative z-10 p-8 sm:p-10 md:p-14 lg:p-20 min-h-[350px] md:min-h-[450px] flex flex-col justify-center">
+
+                <div className="inline-flex items-center gap-4 mb-6">
+                  <div className="w-16 h-16 rounded-2xl bg-[#6B91AD]/90 backdrop-blur-xl flex items-center justify-center text-white text-xl font-bold shadow-xl">
+                    {item.number}
+                  </div>
+
+                  <div className="h-[2px] w-20 bg-[#6B91AD]" />
+                </div>
+
+                <h3 className="text-3xl md:text-5xl lg:text-6xl font-bold text-white leading-tight max-w-4xl">
+                  {item.title}
+                </h3>
+
+                <p className="mt-6 max-w-3xl text-slate-300 text-lg md:text-xl leading-relaxed">
+                  {item.description}
+                </p>
+
+                <div className="mt-8 flex flex-wrap gap-3">
+                  <span className="px-4 py-2 rounded-full bg-white/10 backdrop-blur-md border border-white/10 text-white text-sm">
+                    Enterprise Technology
+                  </span>
+
+                  <span className="px-4 py-2 rounded-full bg-white/10 backdrop-blur-md border border-white/10 text-white text-sm">
+                    Architecture
+                  </span>
+
+                  <span className="px-4 py-2 rounded-full bg-white/10 backdrop-blur-md border border-white/10 text-white text-sm">
+                    Delivery
+                  </span>
+                </div>
+              </div>
+
+              {/* Hover Glow */}
+              <div className="absolute -bottom-20 -right-20 w-60 h-60 bg-[#6B91AD]/20 blur-[100px] opacity-0 group-hover:opacity-100 transition-opacity duration-700" />
             </div>
           ))}
-
         </div>
-
       </div>
     </section>
   );

@@ -3,6 +3,7 @@
 import { useEffect } from "react";
 import AOS from "aos";
 import "aos/dist/aos.css";
+import Image from "next/image";
 
 export default function TestimonialsSection() {
   useEffect(() => {
@@ -13,29 +14,28 @@ export default function TestimonialsSection() {
   }, []);
 
   const testimonials = [
-    {
-      name: "Brent",
-      role: "Technology Executive",
-      initials: "BR",
-      quote:
-        "BeaverTek delivered a robust analytics platform with Tableau integration that transformed how our teams consume business data. The execution was exceptional.",
-    },
-    {
-      name: "Cooraez",
-      role: "Healthcare Innovation Partner",
-      initials: "CO",
-      quote:
-        "The AI healthcare platform exceeded expectations. From patient intake to intelligent triage workflows, the entire solution was delivered with remarkable precision.",
-    },
-    {
-      name: "Ravi Rajagopal",
-      role: "Product & Technology Leader",
-      initials: "RR",
-      quote:
-        "From concept to production, BeaverTek provided architecture, development, and strategic guidance that accelerated our launch timeline significantly.",
-    },
-  ];
-
+  {
+    name: "Brent",
+    image: "/home/one.jpeg",
+    bgImage: "/home/one.jpeg",
+    quote:
+      "BeaverTek built a powerful analytics platform with Tableau integration, transforming our business insights.",
+  },
+  {
+    name: "Cooraez",
+    image: "/home/one.jpeg",
+    bgImage: "/home/one.jpeg",
+    quote:
+      "An outstanding AI healthcare platform with seamless patient intake and smart triage workflows.",
+  },
+  {
+    name: "Ravi",
+    image: "/home/one.jpeg",
+    bgImage: "/home/one.jpeg",
+    quote:
+      "BeaverTek provided expert development and strategy, helping us launch faster and more efficiently.",
+  },
+];
   return (
     <section className="relative bg-[#161E2F] py-24 overflow-hidden">
 
@@ -64,123 +64,94 @@ export default function TestimonialsSection() {
             technical excellence, and trust.
           </p>
         </div>
+{/* Testimonial Cards */}
+<div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-8 justify-items-center">
 
-        {/* Cards */}
-        <div className="grid lg:grid-cols-3 gap-8">
+  {testimonials.map((item, index) => (
+    <div
+      key={item.name}
+      data-aos="fade-up"
+      data-aos-delay={index * 150}
+      className="relative w-full max-w-[320px] h-[430px] overflow-hidden rounded-[16px] group shadow-[0_20px_60px_rgba(0,0,0,0.35)]"
+    >
 
-          {testimonials.map((item, index) => (
-            <div
-              key={item.name}
-              data-aos="fade-up"
-              data-aos-delay={index * 150}
-              className={`group relative overflow-hidden rounded-[30px]
-                border border-white/10 bg-white/5 backdrop-blur-xl
-                p-8 transition-all duration-500 hover:-translate-y-3
-                hover:border-[#6B91AD]/40
-                ${
-                  index === 1
-                    ? "lg:scale-105 bg-gradient-to-b from-[#23314F]/40 to-white/5"
-                    : ""
-                }`}
-            >
-              {/* Quote */}
-              <div className="absolute top-4 right-6 text-[120px] font-black text-white/5 leading-none">
-                "
-              </div>
+      {/* Background Image */}
+      <div
+        className="absolute inset-0 bg-cover bg-center transition-transform duration-700 group-hover:scale-110"
+        style={{
+          backgroundImage: `url(${item.bgImage})`,
+        }}
+      />
 
-              {/* Avatar */}
-              <div className="flex items-center gap-4 mb-8">
-                <div
-                  className="w-16 h-16 rounded-2xl flex items-center
-                  justify-center bg-gradient-to-br
-                  from-[#6B91AD] to-[#23314F]
-                  text-white font-bold text-xl"
-                >
-                  {item.initials}
-                </div>
+      {/* Overlay */}
+      <div className="absolute inset-0 bg-black/35" />
 
-                <div>
-                  <h3 className="text-white font-bold text-lg">
-                    {item.name}
-                  </h3>
+      {/* Top Quote */}
+      <div className="absolute top-[55px] left-[60px] text-white text-[70px] leading-none font-bold z-30">
+        “
+      </div>
 
-                  <p className="text-slate-400 text-sm">
-                    {item.role}
-                  </p>
-                </div>
-              </div>
+      {/* Bottom Grey Bar */}
+      <div className="absolute bottom-[70px] left-4 right-4 h-[85px] bg-[#d9d9d9]/80 z-10" />
 
-              {/* Quote Text */}
-              <p className="text-slate-300 leading-relaxed text-lg">
-                {item.quote}
-              </p>
+      {/* Main Content */}
+      <div className="absolute inset-0 z-20 flex items-center justify-center">
 
-              {/* Rating */}
-              <div className="flex gap-1 mt-8">
-                {[...Array(5)].map((_, i) => (
-                  <span
-                    key={i}
-                    className="text-[#6B91AD] text-xl"
-                  >
-                    ★
-                  </span>
-                ))}
-              </div>
+        <div className="relative w-[280px] h-[220px]">
 
-              {/* Hover Border */}
-              <div
-                className="absolute bottom-0 left-0 h-[3px]
-                bg-gradient-to-r from-[#6B91AD]
-                via-cyan-400 to-blue-500
-                w-0 group-hover:w-full
-                transition-all duration-700"
-              />
+          {/* Profile Image */}
+          <div className="absolute left-0 top-0 w-[115px] h-[180px] border-[4px] border-white overflow-hidden shadow-2xl bg-white">
+
+            <Image
+              src={item.image}
+              alt={item.name}
+              fill
+              className="object-cover"
+            />
+
+          </div>
+
+          {/* White Content Card */}
+          <div className="absolute right-0 top-[5px] w-[190px] bg-white p-4 shadow-2xl">
+
+            <h3 className="text-[24px] italic font-light text-[#6B91AD] mb-2 leading-none">
+              {item.name}
+            </h3>
+
+            {/* Stars */}
+            <div className="flex gap-1 text-[#f5c03c] text-sm mb-3">
+              {[...Array(5)].map((_, i) => (
+                <span key={i}>★</span>
+              ))}
             </div>
-          ))}
+
+            {/* Testimonial */}
+            <p className="text-[12px] text-gray-800 leading-5 line-clamp-6">
+              {item.quote}
+            </p>
+
+            <div className="mt-3 border-t pt-2">
+              <p className="text-[11px] font-semibold text-[#161E2F]">
+                {item.name}
+              </p>
+            </div>
+
+          </div>
+
         </div>
 
-        {/* Bottom Trust Numbers */}
-        <div
-          data-aos="fade-up"
-          className="grid grid-cols-2 lg:grid-cols-4 gap-8 mt-20"
-        >
-          <div className="text-center">
-            <h3 className="text-4xl font-bold text-[#6B91AD]">
-              150+
-            </h3>
-            <p className="text-slate-400 mt-2">
-              Clients Served
-            </p>
-          </div>
+      </div>
 
-          <div className="text-center">
-            <h3 className="text-4xl font-bold text-[#6B91AD]">
-              4.5M+
-            </h3>
-            <p className="text-slate-400 mt-2">
-              Transactions / Month
-            </p>
-          </div>
+      {/* Bottom Quote */}
+      <div className="absolute bottom-[25px] left-1/2 -translate-x-1/2 text-white text-[70px] leading-none font-bold z-30">
+        ”
+      </div>
 
-          <div className="text-center">
-            <h3 className="text-4xl font-bold text-[#6B91AD]">
-              80+
-            </h3>
-            <p className="text-slate-400 mt-2">
-              Years Combined Experience
-            </p>
-          </div>
+    </div>
+  ))}
 
-          <div className="text-center">
-            <h3 className="text-4xl font-bold text-[#6B91AD]">
-              100%
-            </h3>
-            <p className="text-slate-400 mt-2">
-              Client Focused
-            </p>
-          </div>
-        </div>
-
+</div>
+        
       </div>
     </section>
   );

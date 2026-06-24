@@ -1,40 +1,14 @@
 "use client";
 
 import Link from "next/link";
+import FooterCTA from "../home/footercta";
 
 export default function Footer() {
   return (
     <footer className="bg-[#161E2F] text-white">
 
-      {/* CTA Section */}
-      <section className="border-b border-[#23314F]">
-        <div className="max-w-7xl mx-auto px-6 lg:px-8 py-16">
-
-          <div className="bg-gradient-to-r from-[#23314F] to-[#6B91AD] rounded-3xl p-8 md:p-12 text-center">
-
-            <p className="uppercase tracking-[3px] text-sm text-slate-200 mb-4">
-              Ready To Talk?
-            </p>
-
-            <h2 className="text-3xl md:text-5xl font-bold mb-4">
-              Need Senior Technology Help?
-            </h2>
-
-            <p className="text-lg text-slate-100 max-w-2xl mx-auto mb-8">
-              Let's start with a 30-minute conversation about your
-              business, technology challenges, and goals.
-            </p>
-
-            <Link
-              href="/inquiry"
-              className="inline-flex items-center justify-center bg-white text-[#161E2F] px-8 py-4 rounded-xl font-semibold hover:scale-105 transition"
-            >
-              Book a 30-Minute Call
-            </Link>
-          </div>
-        </div>
-      </section>
-
+     
+        <FooterCTA/>
       {/* Main Footer */}
       <div className="max-w-7xl mx-auto px-6 lg:px-8 py-16">
 
