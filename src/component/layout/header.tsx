@@ -243,7 +243,7 @@ export default function Header() {
         </div>
               {/* Mobile Drawer */}
       <div
-        className={`lg:hidden fixed top-0 right-0 h-screen w-[85%] max-w-sm
+        className={`lg:hidden fixed top-0 right-0 h-screen w-auto max-w-sm
         bg-[#161E2F]
         border-l border-[#23314F]
         shadow-2xl
