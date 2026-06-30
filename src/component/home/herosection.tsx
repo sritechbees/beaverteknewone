@@ -4,137 +4,154 @@ import { useEffect } from "react";
 import Link from "next/link";
 import AOS from "aos";
 import "aos/dist/aos.css";
+import { Play } from "lucide-react";
 
 export default function HeroSection() {
   useEffect(() => {
     AOS.init({
       duration: 1000,
       once: true,
-      offset: 100,
     });
   }, []);
 
   return (
-    <section className="relative overflow-hidden bg-[#161E2F] pt-32 pb-20">
-      {/* Background Glow */}
-      <div className="absolute top-0 left-0 w-full h-full overflow-hidden">
-        <div className="absolute -top-40 -left-40 w-96 h-96 bg-[#6B91AD]/20 blur-[120px]" />
-        <div className="absolute bottom-0 right-0 w-96 h-96 bg-[#23314F]/40 blur-[140px]" />
+    <section className="relative overflow-hidden bg-[#f7f9fc] pt-28 pb-20">
+
+      {/* 🌈 Background Glow */}
+      <div className="absolute inset-0">
+        <div className="absolute -top-32 -left-32 w-[500px] h-[500px] bg-blue-200/40 blur-[120px] rounded-full" />
+        <div className="absolute bottom-0 right-0 w-[500px] h-[500px] bg-green-200/30 blur-[140px] rounded-full" />
       </div>
 
-      <div className="relative z-10 max-w-7xl mx-auto px-5 sm:px-6 lg:px-8">
+      {/* dotted pattern */}
+      <div className="absolute inset-0 opacity-30 bg-[radial-gradient(#d0d7e2_1px,transparent_1px)] [background-size:20px_20px]" />
+
+      <div className="relative z-10 max-w-7xl mx-auto px-6 lg:px-8">
+
         <div className="grid lg:grid-cols-2 gap-14 items-center">
 
-          {/* LEFT CONTENT */}
+          {/* LEFT SIDE */}
           <div data-aos="fade-right">
 
-            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-[#23314F] border border-[#6B91AD]/30 mb-6">
-              <span className="w-2 h-2 rounded-full bg-[#6B91AD]" />
-              <span className="text-sm text-gray-300">
-                Trusted Technology Partner
+            {/* badge */}
+            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white shadow-sm border border-gray-200 mb-6">
+              <span className="w-2 h-2 rounded-full bg-green-500" />
+              <span className="text-sm text-gray-600 font-medium">
+                PRODUCTION SOFTWARE
               </span>
             </div>
 
-            <h1 className="text-4xl sm:text-5xl xl:text-6xl font-bold text-white leading-tight">
-              Senior technology,
-              <span className="block text-[#6B91AD]">
-                built for businesses
-              </span>
-              your size.
+            {/* title */}
+            <h1 className="text-4xl sm:text-5xl xl:text-6xl font-bold text-gray-900 leading-tight">
+              Building{" "}
+              <span className="text-blue-500">Future Ready</span>
+              <br />
+              <span className="text-green-500">Digital Products</span>
             </h1>
 
-            <p className="mt-6 text-lg text-gray-300 leading-relaxed max-w-xl">
-              BeaverTek helps small and mid-size companies modernize their
-              systems, make sense of their data, and build software that
-              actually works. Fortune 500 experience, applied to the work
-              in front of you.
+            {/* description */}
+            <p className="mt-6 text-gray-600 text-lg max-w-xl leading-relaxed">
+              We don’t just develop software—we engineer scalable,
+              enterprise-grade digital products that power healthcare, AI,
+              automation, analytics, and business transformation.
             </p>
 
+            {/* buttons */}
             <div className="flex flex-col sm:flex-row gap-4 mt-10">
 
               <Link
                 href="/inquiry"
-                className="px-8 py-4 rounded-2xl bg-[#6B91AD]
-                hover:bg-[#5A7C95]
-                text-white font-semibold text-center
-                transition-all duration-300"
+                className="px-8 py-4 rounded-2xl bg-gradient-to-r from-blue-500 to-green-500 text-white font-semibold text-center shadow-md hover:shadow-xl transition"
               >
-                Book a 30-Minute Call
+                Explore Products →
               </Link>
 
               <Link
                 href="/customers/casestudyhero"
-                className="px-8 py-4 rounded-2xl border border-[#6B91AD]
-                text-white hover:bg-[#23314F]
-                text-center transition-all duration-300"
+                className="px-8 py-4 rounded-2xl border border-gray-300 bg-white text-gray-700 font-semibold text-center hover:bg-gray-50 transition"
               >
-                See What We Have Built
+                Contact Sales →
               </Link>
+
+            </div>
+
+            {/* feature row */}
+            <div className="flex gap-6 mt-10 text-sm text-gray-600">
+
+              <div className="flex items-center gap-2">
+                <span className="w-2 h-2 bg-blue-500 rounded-full" />
+                Enterprise Security
+              </div>
+
+              <div className="flex items-center gap-2">
+                <span className="w-2 h-2 bg-green-500 rounded-full" />
+                Cloud Native
+              </div>
+
+              <div className="flex items-center gap-2">
+                <span className="w-2 h-2 bg-red-500 rounded-full" />
+                AI Powered
+              </div>
+
+              <div className="flex items-center gap-2">
+                <span className="w-2 h-2 bg-yellow-500 rounded-full" />
+                Scalable Solutions
+              </div>
 
             </div>
           </div>
 
-          {/* RIGHT VIDEO */}
-          <div
-            data-aos="fade-left"
-            className="relative"
-          >
-            <div className="relative rounded-3xl overflow-hidden border border-[#6B91AD]/20 bg-white/5 backdrop-blur-xl shadow-2xl">
+          {/* RIGHT SIDE */}
+          <div data-aos="fade-left" className="relative">
 
-              <video
-                autoPlay
-                muted
-                loop
-                playsInline
-                className="w-full h-[250px] sm:h-[350px] lg:h-[500px] object-cover"
-              >
-                <source
-                  src="/video/beavertek-hero.mp4"
-                  type="video/mp4"
-                />
-              </video>
+            {/* video/image card */}
+            <div className="relative rounded-3xl overflow-hidden shadow-2xl border border-white bg-white">
 
-              {/* Overlay */}
-              <div className="absolute inset-0 bg-gradient-to-t from-[#161E2F]/70 via-transparent to-transparent" />
+              <img
+  src="/product/producthero1.png"
+  alt="Hero Image"
+  className="w-full h-[300px] sm:h-[400px] lg:h-[520px] object-cover transition-transform duration-700 hover:scale-105"
+/>
+              {/* overlay gradient */}
+              <div className="absolute inset-0 bg-gradient-to-t from-black/30 via-transparent to-transparent" />
 
-              {/* Floating Stats */}
-              <div className="absolute bottom-5 left-5 right-5">
-                <div className="grid grid-cols-3 gap-3">
-
-                  <div className="bg-white/10 backdrop-blur-md rounded-xl p-3 text-center">
-                    <h3 className="text-white font-bold text-xl">
-                      150+
-                    </h3>
-                    <p className="text-gray-300 text-xs">
-                      Clients
-                    </p>
-                  </div>
-
-                  <div className="bg-white/10 backdrop-blur-md rounded-xl p-3 text-center">
-                    <h3 className="text-white font-bold text-xl">
-                      4.5M
-                    </h3>
-                    <p className="text-gray-300 text-xs">
-                      Transactions
-                    </p>
-                  </div>
-
-                  <div className="bg-white/10 backdrop-blur-md rounded-xl p-3 text-center">
-                    <h3 className="text-white font-bold text-xl">
-                      AI
-                    </h3>
-                    <p className="text-gray-300 text-xs">
-                      Healthcare
-                    </p>
-                  </div>
-
-                </div>
+              {/* play button */}
+              <div className="absolute inset-0 flex items-center justify-center">
+                {/* <button className="w-16 h-16 bg-white/90 rounded-full flex items-center justify-center shadow-lg hover:scale-110 transition">
+                  <Play className="text-blue-600" size={24} />
+                </button> */}
               </div>
 
             </div>
 
-            {/* Floating Decoration */}
-            <div className="absolute -z-10 -right-8 -top-8 w-40 h-40 bg-[#6B91AD]/20 rounded-full blur-3xl" />
+            {/* floating stats */}
+            <div className="absolute -bottom-10 left-0 right-0 px-4">
+
+              <div className="grid grid-cols-4 gap-3 bg-white shadow-xl rounded-2xl p-4">
+
+                <div className="text-center">
+                  <h3 className="font-bold text-lg text-gray-900">50+</h3>
+                  <p className="text-xs text-gray-500">Live Products</p>
+                </div>
+
+                <div className="text-center">
+                  <h3 className="font-bold text-lg text-gray-900">120+</h3>
+                  <p className="text-xs text-gray-500">Clients</p>
+                </div>
+
+                <div className="text-center">
+                  <h3 className="font-bold text-lg text-gray-900">99.9%</h3>
+                  <p className="text-xs text-gray-500">Uptime</p>
+                </div>
+
+                <div className="text-center">
+                  <h3 className="font-bold text-lg text-gray-900">24/7</h3>
+                  <p className="text-xs text-gray-500">Support</p>
+                </div>
+
+              </div>
+            </div>
+
           </div>
 
         </div>

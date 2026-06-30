@@ -51,10 +51,11 @@ export default function FourPillars() {
   ];
 
   return (
-    <section className="relative py-24 bg-[#161E2F] overflow-hidden">
-      {/* Background Glow */}
-      <div className="absolute top-0 left-0 w-96 h-96 bg-[#6B91AD]/10 blur-[140px] rounded-full" />
-      <div className="absolute bottom-0 right-0 w-96 h-96 bg-blue-500/10 blur-[140px] rounded-full" />
+    <section className="relative py-24 bg-[#0B0F14] overflow-hidden">
+
+      {/* Glow */}
+      <div className="absolute top-0 left-0 w-96 h-96 bg-[#45A6E5]/10 blur-[140px] rounded-full" />
+      <div className="absolute bottom-0 right-0 w-96 h-96 bg-[#8FD14F]/10 blur-[140px] rounded-full" />
 
       <div className="relative z-10 max-w-7xl mx-auto px-5 sm:px-6 lg:px-8">
 
@@ -63,16 +64,22 @@ export default function FourPillars() {
           data-aos="fade-up"
           className="max-w-4xl mx-auto text-center mb-16"
         >
-          <span className="inline-flex px-4 py-2 rounded-full bg-[#23314F] text-[#6B91AD] text-sm font-medium">
+          <span className="
+            inline-flex px-4 py-2 rounded-[999px]
+            bg-[#131A23] text-[#45A6E5]
+            text-sm font-medium border border-[#1C2530]
+          ">
             FOUR PILLARS
           </span>
 
-          <h2 className="mt-6 text-4xl md:text-5xl lg:text-6xl font-bold text-white leading-tight">
+          <h2 className="mt-6 text-4xl md:text-5xl lg:text-6xl font-bold leading-tight text-white">
             Four Things,
-            <span className="text-[#6B91AD]"> Done Well.</span>
+            <span className="bg-gradient-to-r from-[#45A6E5] to-[#8FD14F] text-transparent bg-clip-text">
+              {" "}Done Well.
+            </span>
           </h2>
 
-          <p className="mt-6 text-slate-300 text-lg leading-relaxed">
+          <p className="mt-6 text-[#5B6B7B] text-lg leading-relaxed">
             BeaverTek helps small and mid-size companies modernize their
             systems, make sense of their data, and build software that
             actually works.
@@ -90,20 +97,19 @@ export default function FourPillars() {
               data-aos-delay={index * 100}
               className="group"
             >
-              <div
-                className="
+              <div className="
                 h-full overflow-hidden
-                rounded-3xl
-                bg-white/5
-                backdrop-blur-xl
-                border border-white/10
+                rounded-[18px]
+                bg-[#131A23]
+                border border-[#1C2530]
                 transition-all duration-500
+
                 hover:-translate-y-3
-                hover:border-[#6B91AD]/50
-                hover:shadow-[0_20px_60px_rgba(107,145,173,0.25)]
-                "
-              >
-                {/* Image */}
+                hover:border-[#45A6E5]/60
+                hover:shadow-[0_20px_60px_rgba(69,166,229,0.25)]
+              ">
+
+                {/* IMAGE */}
                 <div className="relative h-56 overflow-hidden">
                   <Image
                     src={pillar.image}
@@ -112,30 +118,54 @@ export default function FourPillars() {
                     className="object-cover transition-transform duration-700 group-hover:scale-110"
                   />
 
-                  <div className="absolute inset-0 bg-gradient-to-t from-[#161E2F] via-transparent to-transparent" />
+                  <div className="absolute inset-0 bg-gradient-to-t from-[#0B0F14] via-transparent to-transparent" />
 
+                  {/* NUMBER BADGE */}
                   <div className="absolute top-4 left-4">
-                    <div className="bg-[#6B91AD] text-white px-3 py-1 rounded-full text-sm font-semibold">
+                    <div className="
+                      px-3 py-1 rounded-[999px]
+                      bg-gradient-to-r from-[#45A6E5] to-[#8FD14F]
+                      text-white text-sm font-semibold
+                      shadow-lg
+                    ">
                       {pillar.number}
                     </div>
                   </div>
                 </div>
 
-                {/* Content */}
+                {/* CONTENT */}
                 <div className="p-7 flex flex-col h-[260px]">
 
-                  <h3 className="text-2xl font-bold text-white mb-4 group-hover:text-[#6B91AD] transition">
-                    {pillar.title}
-                  </h3>
+                 
+                 {/* TITLE */}
+<h3 className="
+  text-2xl font-bold mb-4 text-white
+  transition-all duration-500
+  group-hover:text-transparent
+  group-hover:bg-gradient-to-r
+  group-hover:from-[#45A6E5]
+  group-hover:to-[#8FD14F]
+  group-hover:bg-clip-text
+">
+  {pillar.title}
+</h3>
 
-                  <p className="text-slate-300 leading-relaxed flex-grow">
+                  {/* DESCRIPTION */}
+                  <p className="text-[#5B6B7B] leading-relaxed flex-grow">
                     {pillar.description}
                   </p>
 
-                  <div className="mt-6 flex items-center gap-2 text-[#6B91AD] font-semibold">
+                  {/* CTA */}
+                  <div className="
+                    mt-6 flex items-center gap-2
+                    text-[#45A6E5] font-semibold hover:text-[#8FD14F]
+                  ">
                     Learn More
-
-                    <span className="transition-transform duration-300 group-hover:translate-x-2">
+                    <span className="
+                      text-[#8FD14F]
+                      transition-transform duration-300
+                      group-hover:translate-x-2
+                    ">
                       →
                     </span>
                   </div>

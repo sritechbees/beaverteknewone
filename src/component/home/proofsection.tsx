@@ -39,24 +39,35 @@ export default function ProofSection() {
   ];
 
   return (
-    <section className="relative py-24 bg-[#161E2F] overflow-hidden">
-      {/* Background Effects */}
-      <div className="absolute top-0 left-0 w-[500px] h-[500px] bg-[#6B91AD]/10 blur-[180px] rounded-full" />
-      <div className="absolute bottom-0 right-0 w-[500px] h-[500px] bg-cyan-500/10 blur-[180px] rounded-full" />
+    <section className="relative py-24 bg-[#0B0F14] overflow-hidden">
+
+      {/* Background Glow */}
+      <div className="absolute top-0 left-0 w-[500px] h-[500px] bg-[#45A6E5]/10 blur-[180px] rounded-full" />
+      <div className="absolute bottom-0 right-0 w-[500px] h-[500px] bg-[#8FD14F]/10 blur-[180px] rounded-full" />
 
       <div className="relative z-10 max-w-7xl mx-auto px-5 sm:px-6 lg:px-8">
+
         {/* Heading */}
         <div
           data-aos="fade-up"
           className="text-center max-w-4xl mx-auto mb-20"
         >
-          <span className="inline-flex px-4 py-2 rounded-full bg-[#23314F] text-[#6B91AD] text-sm font-semibold tracking-wide">
+          <span className="
+            inline-flex px-4 py-2 rounded-[999px]
+            bg-[#131A23]
+            text-[#45A6E5]
+            text-sm font-semibold
+            border border-[#1C2530]
+          ">
             PROOF
           </span>
 
-          <h2 className="mt-6 text-4xl md:text-5xl lg:text-6xl font-bold text-white leading-tight">
+          <h2 className="
+            mt-6 text-4xl md:text-5xl lg:text-6xl
+            font-bold leading-tight text-white
+          ">
             Real systems.
-            <span className="block text-[#6B91AD]">
+            <span className="block bg-gradient-to-r from-[#45A6E5] to-[#8FD14F] text-transparent bg-clip-text">
               Real users.
             </span>
             Real outcomes.
@@ -65,14 +76,25 @@ export default function ProofSection() {
 
         {/* Case Studies */}
         <div className="space-y-10">
+
           {caseStudies.map((item, index) => (
             <div
               key={item.number}
               data-aos="fade-up"
               data-aos-delay={index * 150}
-              className="group relative overflow-hidden rounded-[32px] border border-white/10 bg-white/5 backdrop-blur-xl"
+              className="
+                group relative overflow-hidden
+                rounded-[18px]
+                border border-[#1C2530]
+                bg-[#131A23]
+                transition-all duration-500
+
+                hover:border-[#45A6E5]/50
+                hover:shadow-[0_25px_70px_rgba(69,166,229,0.25)]
+              "
             >
-              {/* Background Image */}
+
+              {/* IMAGE */}
               <div className="absolute inset-0">
                 <Image
                   src={item.image}
@@ -82,47 +104,99 @@ export default function ProofSection() {
                 />
               </div>
 
-              {/* Overlay */}
-              <div className="absolute inset-0 bg-gradient-to-r from-[#161E2F]/85 via-[#161E2F]/75 to-[#161E2F]/55" />
+              {/* OVERLAY */}
+              <div className="
+                absolute inset-0
+                bg-gradient-to-r
+                from-[#0B0F14]/90
+                via-[#0B0F14]/75
+                to-[#0B0F14]/50
+              " />
 
-              {/* Content */}
-              <div className="relative z-10 p-8 sm:p-10 md:p-14 lg:p-20 min-h-[350px] md:min-h-[450px] flex flex-col justify-center">
+              {/* CONTENT */}
+              <div className="
+                relative z-10
+                p-8 sm:p-10 md:p-14 lg:p-20
+                min-h-[350px] md:min-h-[450px]
+                flex flex-col justify-center
+              ">
 
+                {/* NUMBER */}
                 <div className="inline-flex items-center gap-4 mb-6">
-                  <div className="w-16 h-16 rounded-2xl bg-[#6B91AD]/90 backdrop-blur-xl flex items-center justify-center text-white text-xl font-bold shadow-xl">
+                  <div className="
+                    w-14 h-14 md:w-16 md:h-16
+                    rounded-[18px]
+                    bg-gradient-to-r from-[#45A6E5] to-[#8FD14F]
+                    flex items-center justify-center
+                    text-white font-bold text-lg md:text-xl
+                    shadow-lg
+                  ">
                     {item.number}
                   </div>
 
-                  <div className="h-[2px] w-20 bg-[#6B91AD]" />
+                  <div className="h-[2px] w-16 md:w-20 bg-[#45A6E5]" />
                 </div>
 
-                <h3 className="text-3xl md:text-5xl lg:text-6xl font-bold text-white leading-tight max-w-4xl">
+                {/* TITLE */}
+                <h3 className="
+                  text-2xl md:text-4xl lg:text-6xl
+                  font-bold text-white leading-tight
+                  max-w-4xl
+                  group-hover:text-[#45A6E5]
+                  transition
+                ">
                   {item.title}
                 </h3>
 
-                <p className="mt-6 max-w-3xl text-slate-300 text-lg md:text-xl leading-relaxed">
+                {/* DESCRIPTION */}
+                <p className="
+                  mt-6 max-w-3xl
+                  text-[#5B6B7B]
+                  text-base md:text-lg lg:text-xl
+                  leading-relaxed
+                ">
                   {item.description}
                 </p>
 
+                {/* TAGS */}
                 <div className="mt-8 flex flex-wrap gap-3">
-                  <span className="px-4 py-2 rounded-full bg-white/10 backdrop-blur-md border border-white/10 text-white text-sm">
-                    Enterprise Technology
-                  </span>
 
-                  <span className="px-4 py-2 rounded-full bg-white/10 backdrop-blur-md border border-white/10 text-white text-sm">
-                    Architecture
-                  </span>
+                  {["Enterprise Technology", "Architecture", "Delivery"].map((tag) => (
+                    <span
+                      key={tag}
+                      className="
+                        px-4 py-2
+                        rounded-[999px]
+                        bg-[#1C2530]
+                        border border-[#1C2530]
+                        text-[#EAF1F7]
+                        text-sm
+                        hover:border-[#45A6E5]/40
+                        transition
+                      "
+                    >
+                      {tag}
+                    </span>
+                  ))}
 
-                  <span className="px-4 py-2 rounded-full bg-white/10 backdrop-blur-md border border-white/10 text-white text-sm">
-                    Delivery
-                  </span>
                 </div>
+
               </div>
 
-              {/* Hover Glow */}
-              <div className="absolute -bottom-20 -right-20 w-60 h-60 bg-[#6B91AD]/20 blur-[100px] opacity-0 group-hover:opacity-100 transition-opacity duration-700" />
+              {/* HOVER GLOW */}
+              <div className="
+                absolute -bottom-20 -right-20
+                w-60 h-60
+                bg-[#45A6E5]/20
+                blur-[100px]
+                opacity-0
+                group-hover:opacity-100
+                transition-opacity duration-700
+              " />
+
             </div>
           ))}
+
         </div>
       </div>
     </section>
