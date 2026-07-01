@@ -4,336 +4,543 @@ import { useEffect } from "react";
 import AOS from "aos";
 import "aos/dist/aos.css";
 import App_layout from "@/component/layout/app_layout";
+import Link from "next/link";
 
 export default function CaseStudyoverall() {
   useEffect(() => {
     AOS.init({
-      duration: 900,
+      duration: 1000,
       once: true,
       easing: "ease-in-out",
+      offset: 100,
     });
   }, []);
 
   return (
     <App_layout>
-    <section className="bg-white py-16 md:py-24 px-5 md:px-10 lg:px-16">
-      <div className="max-w-7xl mx-auto">
+<section className="relative overflow-hidden bg-gradient-to-br from-[#F8FCFF] via-[#EAF1F7] to-white py-24 lg:py-36">
 
-        {/* ================= HERO ================= */}
+  {/* Background Effects */}
 
-        <div
-          data-aos="fade-up"
-          className="bg-[#E8EFF4] rounded-[32px] overflow-hidden"
-        >
-          <div className="px-8 md:px-16 py-16">
+  <div className="absolute inset-0 overflow-hidden">
 
-            <p className="uppercase tracking-[0.25em] text-[#6B91AD] text-xs font-semibold mb-5">
-              Our Work
-            </p>
+    <div className="absolute -top-52 -left-52 h-[520px] w-[520px] rounded-full bg-[#45A6E5]/15 blur-[160px]" />
 
-            <h2 className="text-3xl md:text-5xl font-light text-[#161E2F] leading-tight max-w-3xl">
-              Real businesses.
-              <br />
-              Real software.
-              <br />
-              Running today.
-            </h2>
+    <div className="absolute bottom-[-180px] right-[-120px] h-[460px] w-[460px] rounded-full bg-[#8FD14F]/15 blur-[160px]" />
 
-            <p className="text-[#23314F] mt-8 text-base leading-8 max-w-2xl">
-              We work quietly. Most clients prefer not to be named publicly.
-              So instead of a logo wall, we let the work speak.
-            </p>
+    <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_right,rgba(69,166,229,.08),transparent_45%)]" />
 
-          </div>
-        </div>
+  </div>
 
-        {/* ================= CASE STUDY 01 ================= */}
+  <div className="relative z-10 max-w-5xl mx-auto px-6 text-center">
 
-        <div
-          data-aos="fade-up"
-          className="mt-14 bg-white border border-gray-200 rounded-3xl p-6 md:p-10 shadow-sm hover:shadow-lg transition duration-500"
-        >
+    {/* Badge */}
 
-          {/* Tags */}
+    <div
+      data-aos="fade-down"
+      className="inline-flex items-center rounded-full border border-[#45A6E5]/20 bg-white/80 px-6 py-3 text-xs font-semibold uppercase tracking-[0.35em] text-[#45A6E5] shadow-md backdrop-blur"
+    >
+      OUR WORK
+    </div>
 
-          <div className="flex flex-wrap gap-3">
+    {/* Heading */}
 
-            <span className="bg-[#E8EFF4] text-[#23314F] px-4 py-1 rounded-full text-xs font-medium">
-              FINANCIAL SERVICES
-            </span>
+    <h1
+      data-aos="fade-up"
+      data-aos-delay="100"
+      className="mt-10 text-5xl font-bold leading-[1.05] text-[#0B0F14] md:text-6xl lg:text-7xl"
+    >
+      Building
 
-            <span className="bg-[#E8EFF4] text-[#23314F] px-4 py-1 rounded-full text-xs font-medium">
-              BUILD SOFTWARE
-            </span>
+      <span className="block bg-gradient-to-r from-[#45A6E5] via-[#45A6E5] to-[#8FD14F] bg-clip-text text-transparent">
+        Intelligent Software
+      </span>
 
-          </div>
+      For Real Businesses
+    </h1>
 
-          {/* Title */}
+    {/* Divider */}
 
-          <h3 className="text-3xl font-light text-[#161E2F] mt-6">
-            Payment platform at scale
+    <div
+      data-aos="zoom-in"
+      data-aos-delay="200"
+      className="mx-auto mt-10 h-1 w-28 rounded-full bg-gradient-to-r from-[#45A6E5] to-[#8FD14F]"
+    />
+
+   
+
+    {/* Bottom Text */}
+
+    <p
+      data-aos="fade-up"
+      data-aos-delay="400"
+      className="mx-auto mt-8 max-w-2xl text-[20px] leading-8 text-[#7A8A99]"
+    >
+      We work quietly. Most of our clients prefer not to be named publicly, especially in regulated industries. So instead of a logo wall, we let the work speak. Below are three engagements that show what BeaverTek does at its best.
+    </p>
+
+  </div>
+
+</section>
+      {/* ================= CASE STUDIES START HERE ================= */}
+      {/* ================= PREMIUM CASE STUDY 01 ================= */}
+
+<div
+  data-aos="fade-up"
+  className="group mt-16 overflow-hidden rounded-[36px] border border-[#45A6E5]/10 bg-white shadow-[0_20px_60px_rgba(0,0,0,.06)] transition-all duration-500 hover:-translate-y-2 hover:shadow-[0_35px_80px_rgba(69,166,229,.18)]"
+>
+
+  {/* Top Gradient */}
+
+  <div className="h-2 w-full bg-gradient-to-r from-[#45A6E5] to-[#8FD14F]" />
+
+  <div className="p-8 lg:p-12">
+
+    {/* Tags */}
+
+    <div className="flex flex-wrap gap-3">
+
+      <span className="rounded-full bg-[#45A6E5]/10 px-4 py-2 text-xs font-semibold uppercase tracking-wider text-[#45A6E5]">
+        Financial Services
+      </span>
+
+      <span className="rounded-full bg-[#8FD14F]/10 px-4 py-2 text-xs font-semibold uppercase tracking-wider text-[#6A9C34]">
+        Build Software
+      </span>
+
+    </div>
+
+    {/* Heading */}
+
+    <h2 className="mt-7 text-3xl font-semibold text-[#0B0F14] lg:text-5xl">
+      Payment Platform at Scale
+    </h2>
+
+    <p className="mt-6 max-w-4xl text-lg leading-8 text-[#5B6B7B]">
+      We modernized a legacy payment workflow into a secure,
+      enterprise-grade transaction platform capable of processing
+      millions of payments with high availability, automation and
+      compliance.
+    </p>
+
+    {/* Three Columns */}
+
+    <div className="mt-12 grid gap-8 lg:grid-cols-3">
+
+      <div className="rounded-2xl bg-[#F8FBFE] p-6">
+
+        <p className="mb-3 text-xs font-bold uppercase tracking-[0.25em] text-[#45A6E5]">
+          Challenge
+        </p>
+
+        <p className="leading-7 text-[#5B6B7B]">
+          Existing payment operations depended on manual
+          processing, resulting in slow settlements,
+          operational risks and scaling limitations.
+        </p>
+
+      </div>
+
+      <div className="rounded-2xl bg-[#F8FBFE] p-6">
+
+        <p className="mb-3 text-xs font-bold uppercase tracking-[0.25em] text-[#45A6E5]">
+          Solution
+        </p>
+
+        <p className="leading-7 text-[#5B6B7B]">
+          Designed and developed an automated payment
+          gateway platform with secure APIs, monitoring,
+          reporting and enterprise integrations.
+        </p>
+
+      </div>
+
+      <div className="rounded-2xl bg-[#F8FBFE] p-6">
+
+        <p className="mb-3 text-xs font-bold uppercase tracking-[0.25em] text-[#45A6E5]">
+          Result
+        </p>
+
+        <p className="leading-7 text-[#5B6B7B]">
+          The platform now serves enterprise customers
+          with reliable high-volume transaction processing
+          and continuous operational support.
+        </p>
+
+      </div>
+
+    </div>
+
+    {/* Bottom Section */}
+
+    <div className="mt-12 flex flex-col gap-8 rounded-3xl bg-gradient-to-r from-[#45A6E5]/5 to-[#8FD14F]/5 p-8 lg:flex-row lg:items-center lg:justify-between">
+
+      {/* Statistics */}
+
+      <div className="grid grid-cols-3 gap-8">
+
+        <div>
+
+          <h3 className="text-4xl font-bold text-[#45A6E5]">
+            150+
           </h3>
 
-          {/* Three Columns */}
+          <p className="mt-2 text-sm text-[#5B6B7B]">
+            Clients
+          </p>
 
-          <div className="grid md:grid-cols-3 gap-10 mt-10">
+        </div>
 
-            {/* Challenge */}
+        <div>
 
-            <div>
+          <h3 className="text-4xl font-bold text-[#8FD14F]">
+            4.5M
+          </h3>
 
-              <p className="uppercase text-[#6B91AD] tracking-widest text-xs font-semibold mb-3">
-                Challenge
-              </p>
+          <p className="mt-2 text-sm text-[#5B6B7B]">
+            Transactions
+          </p>
 
-              <p className="text-[#1A1A1A] leading-7">
-                Manual, fragile process couldn't keep up with growth.
-              </p>
+        </div>
 
-            </div>
+        <div>
 
-            {/* Built */}
+          <h3 className="text-4xl font-bold text-[#45A6E5]">
+            99.99%
+          </h3>
 
-            <div>
-
-              <p className="uppercase text-[#6B91AD] tracking-widest text-xs font-semibold mb-3">
-                Built
-              </p>
-
-              <p className="text-[#1A1A1A] leading-7">
-                Purpose-built payment gateway integration platform,
-                end-to-end.
-              </p>
-
-            </div>
-
-            {/* Outcome */}
-
-            <div>
-
-              <p className="uppercase text-[#6B91AD] tracking-widest text-xs font-semibold mb-3">
-                Outcome
-              </p>
-
-              <p className="text-[#1A1A1A] leading-7">
-                Now supporting 150 clients in production.
-              </p>
-
-            </div>
-
-          </div>
-
-          {/* Bottom Stats */}
-
-          <div className="mt-12 rounded-2xl bg-[#F5F8FA]">
-
-            <div className="grid grid-cols-1 md:grid-cols-3">
-
-              <div className="py-8 text-center border-b md:border-b-0 md:border-r border-gray-200">
-
-                <h4 className="text-4xl font-light text-[#161E2F]">
-                  150
-                </h4>
-
-                <p className="text-sm text-gray-500 mt-2">
-                  Clients
-                </p>
-
-              </div>
-
-              <div className="py-8 text-center border-b md:border-b-0 md:border-r border-gray-200">
-
-                <h4 className="text-4xl font-light text-[#161E2F]">
-                  4.5M
-                </h4>
-
-                <p className="text-sm text-gray-500 mt-2">
-                  Transactions / month
-                </p>
-
-              </div>
-
-              <div className="py-8 text-center">
-
-                <h4 className="text-4xl font-light text-[#161E2F]">
-                  100%
-                </h4>
-
-                <p className="text-sm text-gray-500 mt-2">
-                  Still supported by us
-                </p>
-
-              </div>
-
-            </div>
-
-          </div>
+          <p className="mt-2 text-sm text-[#5B6B7B]">
+            Uptime
+          </p>
 
         </div>
 
       </div>
 
-      {/* ================= CASE STUDY 02 ================= */}
+      {/* View More Button */}
+<Link href="/customers/PaymentPlatformCaseStudy">
+      <button className="group rounded-full bg-gradient-to-r from-[#45A6E5] to-[#8FD14F] px-8 py-4 font-semibold text-white shadow-xl transition-all duration-300 hover:scale-105">
+
+        View More
+
+        <span className="ml-2 inline-block transition-transform duration-300 group-hover:translate-x-2">
+          →
+        </span>
+
+      </button>
+      </Link>
+
+    </div>
+
+  </div>
+
+</div>
+{/* ================= PREMIUM CASE STUDY 02 ================= */}
 
 <div
   data-aos="fade-up"
-  className="mt-10 bg-white border border-gray-200 rounded-3xl p-6 md:p-10 shadow-sm hover:shadow-lg transition-all duration-500"
+  data-aos-delay="150"
+  className="group mt-14 overflow-hidden rounded-[36px] border border-[#45A6E5]/10 bg-white shadow-[0_20px_60px_rgba(0,0,0,.06)] transition-all duration-500 hover:-translate-y-2 hover:shadow-[0_35px_80px_rgba(69,166,229,.18)]"
 >
-  {/* Tags */}
-  <div className="flex flex-wrap gap-3">
-    <span className="bg-[#E8EFF4] text-[#23314F] px-4 py-1 rounded-full text-xs font-medium">
-      HEALTHCARE
-    </span>
 
-    <span className="bg-[#E8EFF4] text-[#23314F] px-4 py-1 rounded-full text-xs font-medium">
-      AI SOLUTIONS
-    </span>
-  </div>
+  {/* Gradient Top Border */}
 
-  {/* Title */}
-  <h3 className="text-3xl font-light text-[#161E2F] mt-6">
-    AI in real hospitals
-  </h3>
+  <div className="h-2 w-full bg-gradient-to-r from-[#8FD14F] via-[#45A6E5] to-[#8FD14F]" />
 
-  {/* Content */}
-  <div className="grid md:grid-cols-3 gap-10 mt-10">
-    <div>
-      <p className="uppercase tracking-widest text-xs text-[#6B91AD] font-semibold mb-3">
-        Challenge
-      </p>
+  <div className="p-8 lg:p-12">
 
-      <p className="text-[#1A1A1A] leading-7">
-        Clinical teams needed AI that worked with existing systems instead
-        of replacing them.
-      </p>
+    {/* Tags */}
+
+    <div className="flex flex-wrap gap-3">
+
+      <span className="rounded-full bg-[#45A6E5]/10 px-4 py-2 text-xs font-semibold uppercase tracking-[0.25em] text-[#45A6E5]">
+        Healthcare
+      </span>
+
+      <span className="rounded-full bg-[#8FD14F]/10 px-4 py-2 text-xs font-semibold uppercase tracking-[0.25em] text-[#6EAE34]">
+        Artificial Intelligence
+      </span>
+
     </div>
 
-    <div>
-      <p className="uppercase tracking-widest text-xs text-[#6B91AD] font-semibold mb-3">
-        Built
-      </p>
+    {/* Title */}
 
-      <p className="text-[#1A1A1A] leading-7">
-        Secure AI assistants integrated with healthcare workflows and
-        enterprise infrastructure.
-      </p>
-    </div>
+    <h2 className="mt-7 text-3xl font-semibold text-[#0B0F14] lg:text-5xl">
+      AI in Real Hospitals
+    </h2>
 
-    <div>
-      <p className="uppercase tracking-widest text-xs text-[#6B91AD] font-semibold mb-3">
-        Outcome
-      </p>
+    {/* Description */}
 
-      <p className="text-[#1A1A1A] leading-7">
-        Faster clinical operations while maintaining compliance and data
-        security.
-      </p>
-    </div>
-  </div>
+    <p className="mt-6 max-w-4xl text-lg leading-8 text-[#5B6B7B]">
+      BeaverHealthAI developed secure AI assistants that integrate
+      directly into hospital operations, helping clinicians reduce
+      repetitive administrative work while maintaining security,
+      compliance and patient privacy.
+    </p>
 
-  {/* Stats */}
-  <div className="mt-12 rounded-2xl bg-[#F5F8FA]">
-    <div className="grid grid-cols-1 md:grid-cols-3">
+    {/* Feature Cards */}
 
-      <div className="py-8 text-center border-b md:border-b-0 md:border-r border-gray-200">
-        <h4 className="text-4xl font-light text-[#161E2F]">30+</h4>
-        <p className="text-gray-500 mt-2 text-sm">Hospitals</p>
+    <div className="mt-12 grid gap-8 lg:grid-cols-3">
+
+      <div className="rounded-2xl bg-[#F8FBFE] p-6 transition-all duration-300 group-hover:bg-[#45A6E5]/5">
+
+        <p className="mb-3 text-xs font-bold uppercase tracking-[0.3em] text-[#45A6E5]">
+          Challenge
+        </p>
+
+        <p className="leading-7 text-[#5B6B7B]">
+          Hospital teams spent significant time on repetitive
+          documentation and administrative workflows, reducing
+          clinical efficiency.
+        </p>
+
       </div>
 
-      <div className="py-8 text-center border-b md:border-b-0 md:border-r border-gray-200">
-        <h4 className="text-4xl font-light text-[#161E2F]">99.9%</h4>
-        <p className="text-gray-500 mt-2 text-sm">Availability</p>
+      <div className="rounded-2xl bg-[#F8FBFE] p-6 transition-all duration-300 group-hover:bg-[#45A6E5]/5">
+
+        <p className="mb-3 text-xs font-bold uppercase tracking-[0.3em] text-[#45A6E5]">
+          Solution
+        </p>
+
+        <p className="leading-7 text-[#5B6B7B]">
+          Built secure AI copilots connected with hospital
+          systems, electronic medical records and internal
+          healthcare workflows.
+        </p>
+
       </div>
 
-      <div className="py-8 text-center">
-        <h4 className="text-4xl font-light text-[#161E2F]">24/7</h4>
-        <p className="text-gray-500 mt-2 text-sm">Monitoring</p>
+      <div className="rounded-2xl bg-[#F8FBFE] p-6 transition-all duration-300 group-hover:bg-[#45A6E5]/5">
+
+        <p className="mb-3 text-xs font-bold uppercase tracking-[0.3em] text-[#45A6E5]">
+          Impact
+        </p>
+
+        <p className="leading-7 text-[#5B6B7B]">
+          Faster clinical operations, improved productivity,
+          enhanced patient experience and enterprise-grade
+          healthcare compliance.
+        </p>
+
       </div>
 
     </div>
+
+    {/* Bottom Area */}
+
+    <div className="mt-12 flex flex-col gap-8 rounded-3xl bg-gradient-to-r from-[#45A6E5]/5 to-[#8FD14F]/5 p-8 lg:flex-row lg:items-center lg:justify-between">
+
+      {/* Statistics */}
+
+      <div className="grid grid-cols-3 gap-8">
+
+        <div>
+
+          <h3 className="text-4xl font-bold text-[#45A6E5]">
+            30+
+          </h3>
+
+          <p className="mt-2 text-sm text-[#5B6B7B]">
+            Hospitals
+          </p>
+
+        </div>
+
+        <div>
+
+          <h3 className="text-4xl font-bold text-[#8FD14F]">
+            99.9%
+          </h3>
+
+          <p className="mt-2 text-sm text-[#5B6B7B]">
+            Availability
+          </p>
+
+        </div>
+
+        <div>
+
+          <h3 className="text-4xl font-bold text-[#45A6E5]">
+            24/7
+          </h3>
+
+          <p className="mt-2 text-sm text-[#5B6B7B]">
+            Monitoring
+          </p>
+
+        </div>
+
+      </div>
+
+      {/* View More Button */}
+<Link href="/customers/AIcasestudytwo">
+      <button className="group rounded-full bg-gradient-to-r from-[#45A6E5] to-[#8FD14F] px-8 py-4 font-semibold text-white shadow-[0_15px_40px_rgba(69,166,229,.35)] transition-all duration-300 hover:scale-105 hover:shadow-[0_25px_60px_rgba(69,166,229,.45)]">
+
+        View More
+
+        <span className="ml-2 inline-block transition-transform duration-300 group-hover:translate-x-2">
+          →
+        </span>
+
+      </button>
+</Link>
+    </div>
+
   </div>
+
 </div>
-
-{/* ================= CASE STUDY 03 ================= */}
+{/* ================= PREMIUM CASE STUDY 03 ================= */}
 
 <div
   data-aos="fade-up"
-  className="mt-10 bg-white border border-gray-200 rounded-3xl p-6 md:p-10 shadow-sm hover:shadow-lg transition-all duration-500"
+  data-aos-delay="200"
+  className="group mt-14 overflow-hidden rounded-[36px] border border-[#45A6E5]/10 bg-white shadow-[0_20px_60px_rgba(0,0,0,.06)] transition-all duration-500 hover:-translate-y-2 hover:shadow-[0_35px_80px_rgba(69,166,229,.18)]"
 >
-  {/* Tags */}
-  <div className="flex flex-wrap gap-3">
-    <span className="bg-[#E8EFF4] text-[#23314F] px-4 py-1 rounded-full text-xs font-medium">
-      BUSINESS INTELLIGENCE
-    </span>
 
-    <span className="bg-[#E8EFF4] text-[#23314F] px-4 py-1 rounded-full text-xs font-medium">
-      DATA PLATFORM
-    </span>
-  </div>
+  {/* Gradient Border */}
 
-  {/* Title */}
-  <h3 className="text-3xl font-light text-[#161E2F] mt-6">
-    Data that drives decisions
-  </h3>
+  <div className="h-2 w-full bg-gradient-to-r from-[#45A6E5] via-[#8FD14F] to-[#45A6E5]" />
 
-  {/* Content */}
-  <div className="grid md:grid-cols-3 gap-10 mt-10">
-    <div>
-      <p className="uppercase tracking-widest text-xs text-[#6B91AD] font-semibold mb-3">
-        Challenge
-      </p>
+  <div className="p-8 lg:p-12">
 
-      <p className="text-[#1A1A1A] leading-7">
-        Reporting lived across disconnected systems with inconsistent
-        numbers.
-      </p>
+    {/* Tags */}
+
+    <div className="flex flex-wrap gap-3">
+
+      <span className="rounded-full bg-[#45A6E5]/10 px-4 py-2 text-xs font-semibold uppercase tracking-[0.3em] text-[#45A6E5]">
+        Business Intelligence
+      </span>
+
+      <span className="rounded-full bg-[#8FD14F]/10 px-4 py-2 text-xs font-semibold uppercase tracking-[0.3em] text-[#6EAE34]">
+        Data Platform
+      </span>
+
     </div>
 
-    <div>
-      <p className="uppercase tracking-widest text-xs text-[#6B91AD] font-semibold mb-3">
-        Built
-      </p>
+    {/* Heading */}
 
-      <p className="text-[#1A1A1A] leading-7">
-        Unified dashboards with automated reporting and executive
-        analytics.
-      </p>
-    </div>
+    <h2 className="mt-7 text-3xl font-semibold text-[#0B0F14] lg:text-5xl">
+      Data that Drives Decisions
+    </h2>
 
-    <div>
-      <p className="uppercase tracking-widest text-xs text-[#6B91AD] font-semibold mb-3">
-        Outcome
-      </p>
+    <p className="mt-6 max-w-4xl text-lg leading-8 text-[#5B6B7B]">
+      Enterprise reporting systems were consolidated into one intelligent
+      analytics platform delivering trusted dashboards, automated reports
+      and executive insights in real time.
+    </p>
 
-      <p className="text-[#1A1A1A] leading-7">
-        Teams make faster decisions using trusted, real-time business data.
-      </p>
-    </div>
-  </div>
+    {/* Feature Cards */}
 
-  {/* Stats */}
-  <div className="mt-12 rounded-2xl bg-[#F5F8FA]">
-    <div className="grid grid-cols-1 md:grid-cols-3">
+    <div className="mt-12 grid gap-8 lg:grid-cols-3">
 
-      <div className="py-8 text-center border-b md:border-b-0 md:border-r border-gray-200">
-        <h4 className="text-4xl font-light text-[#161E2F]">40+</h4>
-        <p className="text-gray-500 mt-2 text-sm">Dashboards</p>
+      <div className="rounded-2xl bg-[#F8FBFE] p-6 transition hover:bg-[#45A6E5]/5">
+
+        <p className="mb-3 text-xs font-bold uppercase tracking-[0.3em] text-[#45A6E5]">
+          Challenge
+        </p>
+
+        <p className="leading-7 text-[#5B6B7B]">
+          Critical business reports existed across disconnected systems,
+          creating inconsistent data and delayed decisions.
+        </p>
+
       </div>
 
-      <div className="py-8 text-center border-b md:border-b-0 md:border-r border-gray-200">
-        <h4 className="text-4xl font-light text-[#161E2F]">10x</h4>
-        <p className="text-gray-500 mt-2 text-sm">Faster Reporting</p>
+      <div className="rounded-2xl bg-[#F8FBFE] p-6 transition hover:bg-[#45A6E5]/5">
+
+        <p className="mb-3 text-xs font-bold uppercase tracking-[0.3em] text-[#45A6E5]">
+          Solution
+        </p>
+
+        <p className="leading-7 text-[#5B6B7B]">
+          Built a centralized analytics platform with automated reporting,
+          live dashboards and executive KPI monitoring.
+        </p>
+
       </div>
 
-      <div className="py-8 text-center">
-        <h4 className="text-4xl font-light text-[#161E2F]">100%</h4>
-        <p className="text-gray-500 mt-2 text-sm">Automated</p>
+      <div className="rounded-2xl bg-[#F8FBFE] p-6 transition hover:bg-[#45A6E5]/5">
+
+        <p className="mb-3 text-xs font-bold uppercase tracking-[0.3em] text-[#45A6E5]">
+          Result
+        </p>
+
+        <p className="leading-7 text-[#5B6B7B]">
+          Decision makers gained instant visibility into performance with
+          trusted real-time business intelligence.
+        </p>
+
       </div>
 
     </div>
+
+    {/* Statistics */}
+
+    <div className="mt-12 flex flex-col gap-8 rounded-3xl bg-gradient-to-r from-[#45A6E5]/5 to-[#8FD14F]/5 p-8 lg:flex-row lg:items-center lg:justify-between">
+
+      <div className="grid grid-cols-3 gap-8">
+
+        <div>
+
+          <h3 className="text-4xl font-bold text-[#45A6E5]">
+            40+
+          </h3>
+
+          <p className="mt-2 text-sm text-[#5B6B7B]">
+            Dashboards
+          </p>
+
+        </div>
+
+        <div>
+
+          <h3 className="text-4xl font-bold text-[#8FD14F]">
+            10x
+          </h3>
+
+          <p className="mt-2 text-sm text-[#5B6B7B]">
+            Faster Reports
+          </p>
+
+        </div>
+
+        <div>
+
+          <h3 className="text-4xl font-bold text-[#45A6E5]">
+            100%
+          </h3>
+
+          <p className="mt-2 text-sm text-[#5B6B7B]">
+            Automated
+          </p>
+
+        </div>
+
+      </div>
+<Link href="/customers/Datathatdrivesdecisionscasestudy">
+      <button className="group rounded-full bg-gradient-to-r from-[#45A6E5] to-[#8FD14F] px-8 py-4 font-semibold text-white shadow-xl transition-all duration-300 hover:scale-105">
+
+        View More
+
+        <span className="ml-2 inline-block transition-transform duration-300 group-hover:translate-x-2">
+          →
+        </span>
+
+      </button>
+</Link>
+    </div>
+
   </div>
+
 </div>
-    </section>
-</App_layout>
+
+
+
+{/* Decorative Bottom Glow */}
+
+<div className="pointer-events-none absolute bottom-[-250px] left-1/2 h-[500px] w-[1000px] -translate-x-1/2 rounded-full bg-gradient-to-r from-[#45A6E5]/15 via-[#8FD14F]/15 to-[#45A6E5]/15 blur-[170px]" />
+
+     
+    </App_layout>
   );
 }
