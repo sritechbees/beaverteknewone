@@ -60,7 +60,7 @@ export default function ProductsHeroSection() {
           <div className="relative z-30 w-full lg:w-[48%]">
 
             {/* Badge */}
-
+            <Link href="/services/serviceshero">
             <div
               data-aos="fade-right"
               className="mb-5 inline-flex items-center rounded-full border border-[#45A6E5]/20 bg-white/90 px-4 py-1.5 shadow-lg backdrop-blur-xl"
@@ -69,6 +69,7 @@ export default function ProductsHeroSection() {
                 OUR PRODUCTS
               </span>
             </div>
+            </Link>
 
             {/* Heading */}
 
@@ -136,7 +137,7 @@ export default function ProductsHeroSection() {
               </Link>
 
               <Link
-                href="/contact"
+                href="/contact/contacthero"
                 className="group inline-flex items-center rounded-full border-2 border-[#45A6E5] bg-white px-6 py-3 text-sm font-semibold text-[#0B0F14] transition-all duration-500 hover:border-transparent hover:bg-gradient-to-r hover:from-[#45A6E5] hover:to-[#8FD14F] hover:text-white"
               >
                 Contact Us

@@ -132,7 +132,7 @@ export default function Productcontent() {
                 </Link>
 
                 <Link
-                  href="/contact"
+                  href="/customers/casestudyhero"
                   className="rounded-full border border-[#45A6E5] bg-white px-7 py-3 text-sm font-semibold text-[#0B0F14] transition hover:bg-[#45A6E5] hover:text-white"
                 >
                   Contact Sales

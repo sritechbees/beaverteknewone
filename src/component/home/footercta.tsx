@@ -1,3 +1,4 @@
+
 "use client";
 
 import { useEffect } from "react";
@@ -7,98 +8,82 @@ import "aos/dist/aos.css";
 
 export default function FooterCTA() {
   useEffect(() => {
-    AOS.init({
-      duration: 1000,
-      once: true,
-      offset: 80,
-    });
+    AOS.init({ duration: 900, once: true, offset: 80 });
   }, []);
 
+  const features = [
+    "Enterprise AI Solutions",
+    "Cloud & Data Platforms",
+    "Healthcare Technology",
+    "24/7 Expert Support",
+  ];
+
   return (
-    <section className="relative overflow-hidden py-24 bg-[#0B0F14]">
-
-      {/* Background Image */}
+    <section className="relative overflow-hidden">
       <div
-        className="absolute inset-0 bg-cover bg-center scale-105"
-        style={{
-          backgroundImage: "url('/home/ctaimage.jpg')",
-        }}
+        className="absolute inset-0 bg-cover bg-center scale-110"
+        style={{ backgroundImage: "url('/home/ctaimage.jpg')" }}
       />
+      <div className="absolute inset-0 bg-gradient-to-r from-[#07131E]/95 via-[#07131E]/80 to-[#07131E]/35" />
+      <div className="absolute -left-24 top-0 h-72 w-72 rounded-full bg-[#45A6E5]/20 blur-[120px]" />
+      <div className="absolute -right-24 bottom-0 h-80 w-80 rounded-full bg-[#8FD14F]/20 blur-[140px]" />
 
-      {/* Dark Overlay (Ink System) */}
-      <div className="absolute inset-0 bg-[#0B0F14]/80" />
+      <div className="relative z-10 mx-auto max-w-7xl px-6 py-20 sm:px-8 lg:px-10 lg:py-28">
+        <div className="grid items-center gap-12 lg:grid-cols-2">
+          <div data-aos="fade-right">
+            <span className="inline-flex rounded-full border border-[#45A6E5]/40 bg-[#45A6E5]/10 px-4 py-2 text-xs font-semibold uppercase tracking-[0.25em] text-[#45A6E5]">
+              Let's Build Together
+            </span>
 
-      {/* Glow Effects */}
-      <div className="absolute top-0 left-0 w-72 h-72 bg-[#45A6E5]/20 blur-[120px] rounded-full" />
-      <div className="absolute bottom-0 right-0 w-96 h-96 bg-[#8FD14F]/20 blur-[140px] rounded-full" />
+            <h2 className="mt-6 text-4xl font-black leading-tight text-white sm:text-5xl lg:text-6xl">
+              Need Senior
+              <br />
+              Technology Help?
+            </h2>
 
-      {/* Content */}
-      <div className="relative z-10 max-w-7xl mx-auto px-6 lg:px-8">
+            <p className="mt-6 max-w-xl text-base leading-8 text-slate-300 sm:text-lg">
+              Partner with experienced engineers to design, build and scale
+              secure AI-powered enterprise solutions tailored to your business.
+            </p>
 
-        <div
-          data-aos="zoom-in"
-          className="
-            max-w-4xl mx-auto text-center
-            bg-[#131A23]/60
-            backdrop-blur-2xl
-            border border-[#1C2530]
-            rounded-[18px]
-            p-10 md:p-14
-            shadow-[0_0_80px_rgba(69,166,229,0.15)]
-          "
-        >
+            <div className="mt-10 flex flex-col gap-4 sm:flex-row">
+              <Link href="/contact/contacthero" className="rounded-full bg-gradient-to-r from-[#45A6E5] to-[#8FD14F] px-8 py-4 text-center font-semibold text-white transition hover:scale-105">
+                Book a 30‑Minute Call →
+              </Link>
+              <Link href="/customers/casestudyoverall" className="rounded-full border border-white/20 bg-white/10 px-8 py-4 text-center font-semibold text-white backdrop-blur hover:bg-white/20">
+                View Case Studies
+              </Link>
+            </div>
 
-          {/* Small Label */}
-          <p className="
-            uppercase tracking-[4px]
-            text-sm font-semibold
-            text-[#45A6E5]
-            mb-4
-          ">
-            Ready to Talk?
-          </p>
+            <div className="mt-12 grid grid-cols-3 gap-6 text-center sm:text-left">
+              <div><div className="text-3xl font-bold text-white">500+</div><p className="text-sm text-slate-400">Projects</p></div>
+              <div><div className="text-3xl font-bold text-white">50+</div><p className="text-sm text-slate-400">Experts</p></div>
+              <div><div className="text-3xl font-bold text-white">24/7</div><p className="text-sm text-slate-400">Support</p></div>
+            </div>
+          </div>
 
-          {/* Heading */}
-          <h2 className="
-            text-4xl md:text-5xl lg:text-6xl
-            font-bold text-white leading-tight
-          ">
-            Need Senior Technology Help?
-          </h2>
+          <div data-aos="fade-left" className="mx-auto w-full max-w-md rounded-[32px] border border-white/10 bg-white/10 p-8 backdrop-blur-xl shadow-2xl">
+            <h3 className="text-2xl font-bold text-white">Trusted Technology Partner</h3>
+            <p className="mt-3 text-slate-300">
+              From strategy to deployment, we help organizations modernize with confidence.
+            </p>
 
-          {/* Description */}
-          <p className="
-            mt-6 text-[#5B6B7B]
-            text-lg md:text-xl
-            max-w-2xl mx-auto
-          ">
-            Let's start with a 30-minute conversation about your
-            business, technology challenges, and goals.
-          </p>
+            <div className="mt-8 space-y-4">
+              {features.map((item) => (
+                <div key={item} className="flex items-center gap-3 rounded-xl border border-white/10 bg-white/5 p-4">
+                  <div className="flex h-8 w-8 items-center justify-center rounded-full bg-gradient-to-r from-[#45A6E5] to-[#8FD14F] text-white">✓</div>
+                  <span className="font-medium text-white">{item}</span>
+                </div>
+              ))}
+            </div>
 
-          {/* CTA BUTTON */}
-          <Link
-            href="/inquiry"
-            className="
-              inline-flex items-center gap-3
-              mt-10 px-8 py-4
-              rounded-[999px]
-              font-semibold text-white
-              bg-gradient-to-r from-[#45A6E5] to-[#8FD14F]
-              shadow-lg
-              transition-all duration-300
-              hover:scale-105
-              hover:shadow-[0_0_40px_rgba(69,166,229,0.35)]
-            "
-          >
-            Book a 30-Minute Call
-            <span className="text-white">→</span>
-          </Link>
-
+            <div className="mt-8 rounded-2xl bg-gradient-to-r from-[#45A6E5]/20 to-[#8FD14F]/20 p-6">
+              <div className="text-4xl font-black text-white">98%</div>
+              <p className="mt-2 text-slate-300">Client satisfaction across enterprise engagements.</p>
+            </div>
+          </div>
         </div>
-
       </div>
-
     </section>
   );
 }

@@ -18,12 +18,12 @@ export default function Footer() {
 
   return (
     <footer className="relative bg-[#0B0F14] text-white overflow-hidden">
-
+ <FooterCTA/>
       {/* Glow Background */}
       <div className="absolute top-0 left-0 w-96 h-96 bg-[#45A6E5]/10 blur-[140px] rounded-full" />
       <div className="absolute bottom-0 right-0 w-96 h-96 bg-[#8FD14F]/10 blur-[140px] rounded-full" />
 
-      <FooterCTA />
+     
 
       {/* MAIN FOOTER */}
       <div className="max-w-7xl mx-auto px-6 lg:px-8 py-16 relative z-10">
