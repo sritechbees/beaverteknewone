@@ -1,74 +1,90 @@
 "use client";
 
-import { useEffect } from "react";
-import AOS from "aos";
-import "aos/dist/aos.css";
 import App_layout from "@/component/layout/app_layout";
+import Image from "next/image";
+import Link from "next/link";
 import AboutContent from "./aboutcontent";
 import WhatWeBelieve from "./whatwebelieve";
 import WhereWeAre from "./whereweare";
 
 export default function AboutHero() {
-  useEffect(() => {
-    AOS.init({
-      duration: 1000,
-      once: true,
-    });
-  }, []);
-
   return (
     <App_layout>
-    <section className="relative overflow-hidden bg-[#161E2F] py-24 lg:py-32">
-      
-      {/* Background Effects */}
-      <div className="absolute inset-0">
-        <div className="absolute top-20 left-10 h-72 w-72 rounded-full bg-[#6B91AD]/10 blur-[120px]" />
-        <div className="absolute bottom-0 right-0 h-96 w-96 rounded-full bg-[#23314F]/30 blur-[140px]" />
-      </div>
+ <section className="bg-white overflow-hidden py-10 lg:py-14">
+      <div className="max-w-7xl mx-auto px-6 lg:px-10">
 
-      <div className="relative z-10 mx-auto max-w-7xl px-6 lg:px-8">
+       <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-14 items-center min-h-[520px]">
 
-        <div className="max-w-4xl">
+          {/* Left Content */}
+          <div>
 
-          <div
-            data-aos="fade-up"
-            className="inline-flex items-center rounded-full border border-[#6B91AD]/20 bg-[#23314F]/60 px-5 py-2"
-          >
-            <span className="text-sm font-medium tracking-wide text-[#6B91AD]">
-              ABOUT BEAVERTEK
+            <span className="inline-block px-4 py-2 rounded-full bg-sky-100 text-sky-600 font-semibold">
+              About BeaverTek
             </span>
+
+            <h1 className="mt-5 text-4xl sm:text-5xl lg:text-6xl xl:text-7xl font-extrabold leading-[1.1]">
+              Building
+              <span className="block bg-gradient-to-r from-sky-500 to-green-500 bg-clip-text text-transparent">
+                Digital Future
+              </span>
+            </h1>
+
+            <p className="mt-5 text-base sm:text-lg text-gray-600 leading-7 max-w-lg">
+              We create innovative software solutions, AI applications,
+              cloud platforms and enterprise products that help
+              businesses grow with confidence.
+            </p>
+
+            <div className="mt-10 flex flex-wrap gap-4">
+
+              <Link
+  href="/services/serviceshero"
+  className="rounded-full bg-gradient-to-r from-[#38BDF8] via-[#0EA5E9] to-[#22C55E] px-7 py-3.5 font-semibold text-white shadow-xl transition-all duration-300 hover:scale-105 hover:shadow-2xl"
+>
+  Our Services
+</Link>
+
+              <Link
+  href="/contact/contacthero"
+  className="rounded-full border border-sky-500 bg-white px-7 py-3.5 font-semibold text-sky-600 transition-all duration-300 hover:bg-gradient-to-r hover:from-[#38BDF8] hover:to-[#22C55E] hover:text-white hover:border-transparent"
+>
+  Contact Us
+</Link>
+
+            </div>
+
           </div>
 
-          <h1
-            data-aos="fade-up"
-            data-aos-delay="100"
-            className="mt-8 text-4xl font-bold leading-tight text-white md:text-6xl lg:text-7xl"
-          >
-            Senior technology people.
-            <span className="block text-[#6B91AD]">
-              Built for businesses that don't have a CTO.
-            </span>
-          </h1>
+          {/* Right Image */}
+          <div className="relative flex justify-center">
 
-          <p
-            data-aos="fade-up"
-            data-aos-delay="200"
-            className="mt-8 max-w-3xl text-lg leading-relaxed text-slate-300 md:text-xl"
-          >
-            BeaverTek is a technology partner for small and mid-size companies.
-            We help businesses modernize their systems, make sense of their
-            data, build the software they need, and keep their digital
-            operations running securely. Based in Orange County, California,
-            with a strong engineering team in India, we bring decades of
-            Fortune 500 experience to the work in front of you — without the
-            Fortune 500 price tag.
-          </p>
+            {/* Background Blur */}
+            <div className="absolute w-80 h-80 bg-sky-200 rounded-full blur-3xl opacity-40"></div>
+
+            <div
+              className="relative w-full max-w-[520px] h-[340px] sm:h-[420px] lg:h-[520px] overflow-hidden shadow-2xl border-8 border-white"
+              style={{
+                borderRadius:
+                  " 20% 30% 20% 35% / 20% 30% 50% 65%",
+              }}
+            >
+              <Image
+                src="/home/studyhero.jpg"
+                alt="About"
+                fill
+                className="object-fill"
+                priority
+              />
+            </div>
+
+          </div>
 
         </div>
 
       </div>
     </section>
     <AboutContent/>
+    
     <WhatWeBelieve/>
     <WhereWeAre/>
     </App_layout>

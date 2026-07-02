@@ -60,7 +60,7 @@ export default function HeroSection() {
             <div className="flex flex-col sm:flex-row gap-4 mt-10">
 
               <Link
-                href="/inquiry"
+                href="/products/producthero"
                 className="px-8 py-4 rounded-2xl bg-gradient-to-r from-blue-500 to-green-500 text-white font-semibold text-center shadow-md hover:shadow-xl transition"
               >
                 Explore Products →
