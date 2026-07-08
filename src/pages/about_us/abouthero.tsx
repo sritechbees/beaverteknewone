@@ -7,6 +7,7 @@ import AboutContent from "./aboutcontent";
 import WhatWeBelieve from "./whatwebelieve";
 import WhereWeAre from "./whereweare";
 
+
 export default function AboutHero() {
   return (
     <App_layout>
@@ -83,8 +84,8 @@ export default function AboutHero() {
 
       </div>
     </section>
+   
     <AboutContent/>
-    
     <WhatWeBelieve/>
     <WhereWeAre/>
     </App_layout>

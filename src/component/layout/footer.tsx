@@ -17,12 +17,13 @@ export default function Footer() {
   }, []);
 
   return (
-    <footer className="relative bg-[#0B0F14] text-white overflow-hidden">
+   
+      <footer className="relative bg-[#000000] text-white overflow-hidden">
  <FooterCTA/>
+ 
       {/* Glow Background */}
-      <div className="absolute top-0 left-0 w-96 h-96 bg-[#45A6E5]/10 blur-[140px] rounded-full" />
-      <div className="absolute bottom-0 right-0 w-96 h-96 bg-[#8FD14F]/10 blur-[140px] rounded-full" />
-
+     <div className="absolute top-0 left-0 w-96 h-96 bg-[#29B6F0]/10 blur-[140px] rounded-full" />
+<div className="absolute bottom-0 right-0 w-96 h-96 bg-[#B93FC9]/10 blur-[140px] rounded-full" />
      
 
       {/* MAIN FOOTER */}
@@ -54,28 +55,28 @@ export default function Footer() {
 
 </div>
 
-            <p className="text-[#5B6B7B] leading-relaxed">
+            <p className="text-[#A0A0A8] leading-relaxed">
               A technology partner for small and mid-size businesses.
               We modernize systems, build software, unlock data insights,
               and keep digital operations secure.
             </p>
 
             {/* MINI INDICATORS */}
-            <div className="mt-6 flex gap-2">
-              <div className="h-2.5 w-2.5 rounded-full bg-[#45A6E5]" />
-              <div className="h-2.5 w-2.5 rounded-full bg-[#45A6E5]/70" />
-              <div className="h-2.5 w-2.5 rounded-full bg-[#8FD14F]/60" />
-            </div>
+           <div className="mt-6 flex gap-2">
+  <div className="h-2.5 w-2.5 rounded-full bg-[#29B6F0]" />
+  <div className="h-2.5 w-2.5 rounded-full bg-[#3E7BD6]" />
+  <div className="h-2.5 w-2.5 rounded-full bg-[#B93FC9]" />
+</div>
 
           </div>
 
           {/* QUICK LINKS */}
           <div data-aos="fade-up" data-aos-delay="100">
-            <h3 className="text-lg font-semibold mb-6 text-[#EAF1F7]">
+            <h3 className="text-lg font-semibold mb-6 text-white">
               Quick Links
             </h3>
 
-            <ul className="space-y-3 text-[#5B6B7B]">
+            <ul className="space-y-3 text-[#A0A0A8]">
               {[
                 ["Home", "/"],
                 ["About", "/about_us/abouthero"],
@@ -87,7 +88,7 @@ export default function Footer() {
                 <li key={name}>
                   <Link
                     href={href}
-                    className="hover:text-[#45A6E5] transition"
+                    className="hover:text-[#29B6F0] transition"
                   >
                     {name}
                   </Link>
@@ -102,7 +103,7 @@ export default function Footer() {
               Services
             </h3>
 
-            <ul className="space-y-3 text-[#5B6B7B]">
+           <ul className="space-y-3 text-[#A0A0A8]">
 
               {[
                 ["Modernize", "/services/modernize/modernizehero"],
@@ -113,7 +114,7 @@ export default function Footer() {
                 <li key={name}>
                   <Link
                     href={href}
-                    className="hover:text-[#8FD14F] transition"
+                    className="hover:text-[#7A4FD1] transition"
                   >
                     {name}
                   </Link>
@@ -130,7 +131,7 @@ export default function Footer() {
               Contact
             </h3>
 
-            <div className="space-y-4 text-[#5B6B7B]">
+            <div className="space-y-4 text-[#A0A0A8]">
 
               {[
                 ["Email", "info@beavertek.com"],
@@ -140,7 +141,7 @@ export default function Footer() {
                 ["Engineering Hub", "India"],
               ].map(([label, value]) => (
                 <div key={label}>
-                  <p className="text-[#45A6E5] font-medium text-sm">
+                  <p className="text-[#3E7BD6] font-medium text-sm">
                     {label}
                   </p>
                   <p>{value}</p>
@@ -158,8 +159,8 @@ export default function Footer() {
           className="
             mt-14
             rounded-[18px]
-            border border-[#1C2530]
-            bg-[#131A23]
+           border border-[#2A2A30]
+bg-[#121212]
             p-6
             flex flex-col md:flex-row
             justify-between items-center
@@ -167,23 +168,23 @@ export default function Footer() {
           "
         >
 
-          <p className="text-[#5B6B7B] text-center md:text-left">
+          <p className="text-[#A0A0A8] text-center md:text-left">
             Building scalable digital systems with modern engineering & AI-driven solutions.
           </p>
 
           <div className="
             flex gap-3 text-sm
-            text-[#EAF1F7]
+            text-white
           ">
-            <span className="px-4 py-2 rounded-[999px] bg-[#0B0F14] border border-[#1C2530]">
+            <span className="px-4 py-2 rounded-[999px] bg-[#000000] border border-[#2A2A30]">
               Scalable Systems
             </span>
 
-            <span className="px-4 py-2 rounded-[999px] bg-[#0B0F14] border border-[#1C2530]">
+            <span className="px-4 py-2 rounded-[999px] bg-[#000000] border border-[#2A2A30]">
               AI Solutions
             </span>
 
-            <span className="px-4 py-2 rounded-[999px] bg-[#0B0F14] border border-[#1C2530]">
+            <span className="px-4 py-2 rounded-[999px] bg-[#000000] border border-[#2A2A30]">
               Cloud Native
             </span>
           </div>
@@ -192,23 +193,23 @@ export default function Footer() {
 
         {/* BOTTOM BAR */}
         <div className="
-          border-t border-[#1C2530]
+         border-t border-[#2A2A30]
           mt-10 pt-8
           flex flex-col md:flex-row
           justify-between items-center
           gap-4
         ">
 
-          <p className="text-[#5B6B7B] text-center md:text-left">
+          <p className="text-[#7A7A7A] text-center md:text-left">
             © {new Date().getFullYear()} BeaverTek. All Rights Reserved.
           </p>
 
-          <div className="flex gap-6 text-[#5B6B7B]">
-            <Link href="#" className="hover:text-[#45A6E5]">
+          <div className="flex gap-6 text-[#A0A0A8]">
+            <Link href="#" className="hover:text-[#29B6F0]">
               Privacy Policy
             </Link>
 
-            <Link href="#" className="hover:text-[#8FD14F]">
+            <Link href="#" className="hover:text-[#7A4FD1]">
               Terms of Service
             </Link>
           </div>

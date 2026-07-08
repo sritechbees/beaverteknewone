@@ -5,7 +5,7 @@ import Herosection from "@/component/home/herosection";
 import FourPillars from "@/component/home/fourpillars";
 import ProofSection from "@/component/home/proofsection";
 import TestimonialsSection from "@/component/home/testimonialsection";
-import FooterCTA from "@/component/home/footercta";
+import CaseStudyHero from "@/component/common/CaseStudyHero";
 
 
 
@@ -14,10 +14,12 @@ export default function Home() {
     <div>
       
        <App_layout>
+       
           <Herosection/>
           <FourPillars/>
           <ProofSection/>
           <TestimonialsSection/>
+      <CaseStudyHero/>
        </App_layout>
       
         </div>

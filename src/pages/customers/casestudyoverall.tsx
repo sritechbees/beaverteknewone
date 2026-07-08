@@ -5,6 +5,7 @@ import AOS from "aos";
 import "aos/dist/aos.css";
 import App_layout from "@/component/layout/app_layout";
 import Link from "next/link";
+import Casestudyall from "./casestudyall";
 
 export default function CaseStudyoverall() {
   useEffect(() => {
@@ -18,72 +19,7 @@ export default function CaseStudyoverall() {
 
   return (
     <App_layout>
-     <section className="relative overflow-hidden bg-gradient-to-br from-[#F8FCFF] via-[#EAF1F7] to-white py-16 sm:py-20 md:py-24 lg:py-32 xl:py-36">
-  {/* Background Effects */}
-  <div className="absolute inset-0 overflow-hidden">
-    <div className="absolute -top-40 -left-40 h-[280px] w-[280px] sm:h-[360px] sm:w-[360px] lg:h-[520px] lg:w-[520px] rounded-full bg-[#45A6E5]/15 blur-[120px] lg:blur-[160px]" />
-
-    <div className="absolute -bottom-28 -right-20 h-[250px] w-[250px] sm:h-[340px] sm:w-[340px] lg:h-[460px] lg:w-[460px] rounded-full bg-[#8FD14F]/15 blur-[120px] lg:blur-[160px]" />
-
-    <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_right,rgba(69,166,229,.08),transparent_45%)]" />
-  </div>
-
-  <div className="relative z-10 mx-auto max-w-6xl px-5 sm:px-6 lg:px-8 text-center">
-    {/* Badge */}
-    <div
-      data-aos="fade-down"
-      className="inline-flex items-center rounded-full border border-[#45A6E5]/20 bg-white/80 px-4 py-2 sm:px-5 sm:py-2.5 lg:px-6 lg:py-3 text-[10px] sm:text-xs font-semibold uppercase tracking-[0.2em] sm:tracking-[0.35em] text-[#45A6E5] shadow-md backdrop-blur"
-    >
-      OUR WORK
-    </div>
-
-    {/* Heading */}
-    <h1
-      data-aos="fade-up"
-      data-aos-delay="100"
-      className="mt-8 sm:mt-10 font-bold leading-tight text-[#0B0F14]
-                 text-3xl
-                 sm:text-4xl
-                 md:text-5xl
-                 lg:text-6xl
-                 xl:text-7xl"
-    >
-      Building
-
-      <span className="block bg-gradient-to-r from-[#45A6E5] via-[#45A6E5] to-[#8FD14F] bg-clip-text text-transparent">
-        Intelligent Software
-      </span>
-
-      For Real Businesses
-    </h1>
-
-    {/* Divider */}
-    <div
-      data-aos="zoom-in"
-      data-aos-delay="200"
-      className="mx-auto mt-6 sm:mt-8 lg:mt-10 h-1 w-16 sm:w-20 md:w-24 lg:w-28 rounded-full bg-gradient-to-r from-[#45A6E5] to-[#8FD14F]"
-    />
-
-    {/* Description */}
-    <p
-      data-aos="fade-up"
-      data-aos-delay="400"
-      className="mx-auto mt-6 sm:mt-8 max-w-xs sm:max-w-xl md:max-w-2xl lg:max-w-3xl
-                 text-sm
-                 sm:text-base
-                 md:text-lg
-                 lg:text-xl
-                 leading-7
-                 md:leading-8
-                 text-[#7A8A99]"
-    >
-      We work quietly. Most of our clients prefer not to be named publicly,
-      especially in regulated industries. So instead of a logo wall, we let the
-      work speak. Below are three engagements that show what BeaverTek does at
-      its best.
-    </p>
-  </div>
-</section>
+    <Casestudyall/>
       {/* ================= CASE STUDIES START HERE ================= */}
       {/* ================= PREMIUM CASE STUDY 01 ================= */}
 
