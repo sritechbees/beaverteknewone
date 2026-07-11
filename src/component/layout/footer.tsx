@@ -72,9 +72,9 @@ export default function Footer() {
 
           {/* QUICK LINKS */}
           <div data-aos="fade-up" data-aos-delay="100">
-            <h3 className="text-lg font-semibold mb-6 text-white">
-              Quick Links
-            </h3>
+            <h3 className="mb-6 text-lg font-semibold bg-gradient-to-r from-[#29B6F0] via-[#3E7BD6] via-[#7A4FD1] to-[#B93FC9] bg-clip-text text-transparent">
+  Quick Links
+</h3>
 
             <ul className="space-y-3 text-[#A0A0A8]">
               {[
@@ -99,9 +99,9 @@ export default function Footer() {
 
           {/* SERVICES */}
           <div data-aos="fade-up" data-aos-delay="200">
-            <h3 className="text-lg font-semibold mb-6 text-[#EAF1F7]">
-              Services
-            </h3>
+            <h3 className="mb-6 text-lg font-semibold bg-gradient-to-r from-[#29B6F0] via-[#3E7BD6] via-[#7A4FD1] to-[#B93FC9] bg-clip-text text-transparent">
+  Services
+</h3>
 
            <ul className="space-y-3 text-[#A0A0A8]">
 
@@ -127,9 +127,9 @@ export default function Footer() {
           {/* CONTACT */}
           <div data-aos="fade-up" data-aos-delay="300">
 
-            <h3 className="text-lg font-semibold mb-6 text-[#EAF1F7]">
-              Contact
-            </h3>
+           <h3 className="mb-6 text-lg font-semibold bg-gradient-to-r from-[#29B6F0] via-[#3E7BD6] via-[#7A4FD1] to-[#B93FC9] bg-clip-text text-transparent">
+  Contact
+</h3>
 
             <div className="space-y-4 text-[#A0A0A8]">
 

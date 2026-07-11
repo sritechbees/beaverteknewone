@@ -11,80 +11,137 @@ import WhereWeAre from "./whereweare";
 export default function AboutHero() {
   return (
     <App_layout>
- <section className="bg-white overflow-hidden py-10 lg:py-14">
-      <div className="max-w-7xl mx-auto px-6 lg:px-10">
+<section className="bg-[#000000] overflow-hidden py-10 lg:py-14">
 
-       <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-14 items-center min-h-[520px]">
+  {/* Background Glow */}
+  <div className="absolute top-0 left-0 w-[450px] h-[450px] bg-[#29B6F0]/10 blur-[140px] rounded-full" />
+  <div className="absolute bottom-0 right-0 w-[450px] h-[450px] bg-[#B93FC9]/10 blur-[160px] rounded-full" />
 
-          {/* Left Content */}
-          <div>
+  <div className="relative max-w-7xl mx-auto px-6 lg:px-10">
 
-            <span className="inline-block px-4 py-2 rounded-full bg-sky-100 text-sky-600 font-semibold">
-              About BeaverTek
-            </span>
+    <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-14 items-center min-h-[520px]">
 
-            <h1 className="mt-5 text-4xl sm:text-5xl lg:text-6xl xl:text-7xl font-extrabold leading-[1.1]">
-              Building
-              <span className="block bg-gradient-to-r from-sky-500 to-green-500 bg-clip-text text-transparent">
-                Digital Future
-              </span>
-            </h1>
+      {/* Left Content */}
+      <div>
 
-            <p className="mt-5 text-base sm:text-lg text-gray-600 leading-7 max-w-lg">
-              We create innovative software solutions, AI applications,
-              cloud platforms and enterprise products that help
-              businesses grow with confidence.
-            </p>
+        <span
+          className="
+            inline-block
+            px-4 py-2
+            rounded-full
+            bg-[#121212]
+            border border-[#2A2A30]
+            text-[#29B6F0]
+            font-semibold
+          "
+        >
+          About BeaverTek
+        </span>
 
-            <div className="mt-10 flex flex-wrap gap-4">
+        <h1 className="mt-5 text-4xl sm:text-5xl lg:text-6xl xl:text-7xl font-extrabold leading-[1.1] text-[#FFFFFF]">
+          Building
 
-              <Link
-  href="/services/serviceshero"
-  className="rounded-full bg-gradient-to-r from-[#38BDF8] via-[#0EA5E9] to-[#22C55E] px-7 py-3.5 font-semibold text-white shadow-xl transition-all duration-300 hover:scale-105 hover:shadow-2xl"
->
-  Our Services
-</Link>
+          <span
+            className="
+              block
+              bg-[linear-gradient(135deg,#29B6F0_0%,#3E7BD6_35%,#7A4FD1_65%,#B93FC9_100%)]
+              bg-clip-text
+              text-transparent
+            "
+          >
+            Digital Future
+          </span>
+        </h1>
 
-              <Link
-  href="/contact/contacthero"
-  className="rounded-full border border-sky-500 bg-white px-7 py-3.5 font-semibold text-sky-600 transition-all duration-300 hover:bg-gradient-to-r hover:from-[#38BDF8] hover:to-[#22C55E] hover:text-white hover:border-transparent"
->
-  Contact Us
-</Link>
+        <p className="mt-5 text-base sm:text-lg text-[#D4D4D8] leading-7 max-w-lg">
+          We create innovative software solutions, AI applications,
+          cloud platforms and enterprise products that help
+          businesses grow with confidence.
+        </p>
 
-            </div>
+        <div className="mt-10 flex flex-wrap gap-4">
 
-          </div>
+          <Link
+            href="/services/serviceshero"
+            className="
+              rounded-full
+              bg-[linear-gradient(135deg,#29B6F0_0%,#3E7BD6_35%,#7A4FD1_65%,#B93FC9_100%)]
+              px-7
+              py-3.5
+              font-semibold
+              text-white
+              shadow-[0_0_40px_rgba(62,123,214,.35)]
+              transition-all
+              duration-300
+              hover:scale-105
+            "
+          >
+            Our Services
+          </Link>
 
-          {/* Right Image */}
-          <div className="relative flex justify-center">
-
-            {/* Background Blur */}
-            <div className="absolute w-80 h-80 bg-sky-200 rounded-full blur-3xl opacity-40"></div>
-
-            <div
-              className="relative w-full max-w-[520px] h-[340px] sm:h-[420px] lg:h-[520px] overflow-hidden shadow-2xl border-8 border-white"
-              style={{
-                borderRadius:
-                  " 20% 30% 20% 35% / 20% 30% 50% 65%",
-              }}
-            >
-              <Image
-                src="/home/studyhero.jpg"
-                alt="About"
-                fill
-                className="object-fill"
-                priority
-              />
-            </div>
-
-          </div>
+          <Link
+            href="/contact/contacthero"
+            className="
+              rounded-full
+              border
+              border-[#2A2A30]
+              bg-[#121212]
+              px-7
+              py-3.5
+              font-semibold
+              text-[#FFFFFF]
+              transition-all
+              duration-300
+              hover:border-[#3E7BD6]
+              hover:bg-[linear-gradient(135deg,#29B6F0_0%,#3E7BD6_35%,#7A4FD1_65%,#B93FC9_100%)]
+            "
+          >
+            Contact Us
+          </Link>
 
         </div>
 
       </div>
-    </section>
-   
+
+      {/* Right Image */}
+      <div className="relative flex justify-center">
+
+        {/* Background Blur */}
+        <div className="absolute w-80 h-80 bg-[#29B6F0]/20 rounded-full blur-3xl opacity-60" />
+
+        <div
+          className="
+            relative
+            w-full
+            max-w-[520px]
+            h-[340px]
+            sm:h-[420px]
+            lg:h-[520px]
+            overflow-hidden
+            shadow-[0_25px_60px_rgba(0,0,0,.45)]
+            border-8
+            border-[#121212]
+          "
+          style={{
+            borderRadius:
+              "20% 30% 20% 35% / 20% 30% 50% 65%",
+          }}
+        >
+          <Image
+            src="/home/abouthero.png"
+            alt="About"
+            fill
+            className="object-fill"
+            priority
+          />
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+</section>  
     <AboutContent/>
     <WhatWeBelieve/>
     <WhereWeAre/>

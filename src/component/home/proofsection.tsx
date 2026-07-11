@@ -39,44 +39,87 @@ export default function ProofSection() {
   ];
 
   return (
-    <section className="relative py-24 bg-[#0B0F14] overflow-hidden">
-
+    <section className="relative py-24 bg-[#000000] overflow-hidden">
       {/* Background Glow */}
-      <div className="absolute top-0 left-0 w-[500px] h-[500px] bg-[#45A6E5]/10 blur-[180px] rounded-full" />
-      <div className="absolute bottom-0 right-0 w-[500px] h-[500px] bg-[#8FD14F]/10 blur-[180px] rounded-full" />
+      <div className="absolute top-0 left-0 w-[500px] h-[500px] bg-[#29B6F0]/15 blur-[180px] rounded-full" />
 
+      <div className="absolute bottom-0 right-0 w-[500px] h-[500px] bg-[#B93FC9]/15 blur-[180px] rounded-full" />
       <div className="relative z-10 max-w-7xl mx-auto px-5 sm:px-6 lg:px-8">
-
         {/* Heading */}
         <div
-          data-aos="fade-up"
-          className="text-center max-w-4xl mx-auto mb-20"
-        >
-          <span className="
-            inline-flex px-4 py-2 rounded-[999px]
-            bg-[#131A23]
-            text-[#45A6E5]
-            text-sm font-semibold
-            border border-[#1C2530]
-          ">
-            PROOF
-          </span>
+  data-aos="fade-up"
+  className="text-center max-w-5xl mx-auto mb-20"
+>
+  {/* Premium Badge */}
+  <span
+    className="
+      inline-flex items-center
+      px-7 py-3
+      rounded-full
+      text-sm md:text-base
+      font-bold
+      tracking-[0.35em]
+      uppercase
+      text-[#29B6F0]
+      bg-[#121212]
+      border border-[#2A2A30]
+      shadow-[0_8px_30px_rgba(41,182,240,0.12)]
+    "
+  >
+    PROOF
+  </span>
 
-          <h2 className="
-            mt-6 text-4xl md:text-5xl lg:text-6xl
-            font-bold leading-tight text-white
-          ">
-            Real systems.
-            <span className="block bg-gradient-to-r from-[#45A6E5] to-[#8FD14F] text-transparent bg-clip-text">
-              Real users.
-            </span>
-            Real outcomes.
-          </h2>
-        </div>
+  {/* Premium Title */}
+  <h2
+    className="
+      mt-8
+      text-5xl
+      md:text-6xl
+      lg:text-7xl
+      font-extrabold
+      leading-[1.08]
+      tracking-tight
+      text-white
+    "
+  >
+    Real Systems.
+
+    <span
+      className="
+        block mt-2
+        bg-[linear-gradient(135deg,#29B6F0_0%,#3E7BD6_30%,#7A4FD1_65%,#B93FC9_100%)]
+        bg-clip-text
+        text-transparent
+      "
+    >
+      Real Users.
+    </span>
+
+    <span className="block mt-2 text-white">
+      Real Outcomes.
+    </span>
+  </h2>
+
+  {/* Subtitle */}
+  <p
+    className="
+      mt-8
+      max-w-3xl
+      mx-auto
+      text-lg
+      md:text-xl
+      leading-8
+      text-[#A0A0A8]
+    "
+  >
+    Discover how BeaverTek transforms businesses through modern engineering,
+    scalable platforms, and AI-powered digital solutions that deliver measurable
+    business outcomes.
+  </p>
+</div>
 
         {/* Case Studies */}
         <div className="space-y-10">
-
           {caseStudies.map((item, index) => (
             <div
               key={item.number}
@@ -85,15 +128,14 @@ export default function ProofSection() {
               className="
                 group relative overflow-hidden
                 rounded-[18px]
-                border border-[#1C2530]
-                bg-[#131A23]
+                bg-[#121212]
+border border-[#2A2A30]
                 transition-all duration-500
 
-                hover:border-[#45A6E5]/50
-                hover:shadow-[0_25px_70px_rgba(69,166,229,0.25)]
+               hover:border-[#29B6F0]/50
+hover:shadow-[0_25px_70px_rgba(41,182,240,0.25)]
               "
             >
-
               {/* IMAGE */}
               <div className="absolute inset-0">
                 <Image
@@ -105,98 +147,106 @@ export default function ProofSection() {
               </div>
 
               {/* OVERLAY */}
-              <div className="
+              <div
+                className="
                 absolute inset-0
                 bg-gradient-to-r
-                from-[#0B0F14]/90
-                via-[#0B0F14]/75
-                to-[#0B0F14]/50
-              " />
+from-[#000000]/90
+via-[#000000]/75
+to-[#000000]/50
+              "
+              />
 
               {/* CONTENT */}
-              <div className="
+              <div
+                className="
                 relative z-10
                 p-8 sm:p-10 md:p-14 lg:p-20
                 min-h-[350px] md:min-h-[450px]
                 flex flex-col justify-center
-              ">
-
+              "
+              >
                 {/* NUMBER */}
                 <div className="inline-flex items-center gap-4 mb-6">
-                  <div className="
+                  <div
+                    className="
                     w-14 h-14 md:w-16 md:h-16
                     rounded-[18px]
-                    bg-gradient-to-r from-[#45A6E5] to-[#8FD14F]
+                   bg-[linear-gradient(135deg,#29B6F0_0%,#3E7BD6_35%,#7A4FD1_65%,#B93FC9_100%)]
                     flex items-center justify-center
                     text-white font-bold text-lg md:text-xl
                     shadow-lg
-                  ">
+                  "
+                  >
                     {item.number}
                   </div>
 
-                  <div className="h-[2px] w-16 md:w-20 bg-[#45A6E5]" />
+                  <div className="h-[2px] w-16 md:w-20 bg-[#29B6F0]" />
                 </div>
 
                 {/* TITLE */}
-                <h3 className="
+                <h3
+                  className="
                   text-2xl md:text-4xl lg:text-6xl
                   font-bold text-white leading-tight
                   max-w-4xl
-                  group-hover:text-[#45A6E5]
+                  group-hover:text-[#29B6F0]
                   transition
-                ">
+                "
+                >
                   {item.title}
                 </h3>
 
                 {/* DESCRIPTION */}
-                <p className="
+                <p
+                  className="
                   mt-6 max-w-3xl
-                  text-[#5B6B7B]
+                  text-[#A0A0A8]
                   text-base md:text-lg lg:text-xl
                   leading-relaxed
-                ">
+                "
+                >
                   {item.description}
                 </p>
 
                 {/* TAGS */}
                 <div className="mt-8 flex flex-wrap gap-3">
-
-                  {["Enterprise Technology", "Architecture", "Delivery"].map((tag) => (
-                    <span
-                      key={tag}
-                      className="
+                  {["Enterprise Technology", "Architecture", "Delivery"].map(
+                    (tag) => (
+                      <span
+                        key={tag}
+                        className="
                         px-4 py-2
                         rounded-[999px]
-                        bg-[#1C2530]
-                        border border-[#1C2530]
-                        text-[#EAF1F7]
-                        text-sm
-                        hover:border-[#45A6E5]/40
+                       bg-[#1A1A1E]
+border border-[#2A2A30]
+text-white
+hover:border-[#29B6F0]/40
+                         text-sm
                         transition
                       "
-                    >
-                      {tag}
-                    </span>
-                  ))}
-
+                      >
+                        {tag}
+                      </span>
+                    ),
+                  )}
                 </div>
-
               </div>
 
               {/* HOVER GLOW */}
-              <div className="
+              <div
+                className="
                 absolute -bottom-20 -right-20
                 w-60 h-60
-                bg-[#45A6E5]/20
+                bg-[#29B6F0]/20
                 blur-[100px]
                 opacity-0
                 group-hover:opacity-100
                 transition-opacity duration-700
-              " />
-
+              "
+              />
             </div>
           ))}
-
         </div>
       </div>
     </section>
