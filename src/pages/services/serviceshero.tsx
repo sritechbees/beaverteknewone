@@ -62,76 +62,109 @@ export default function ServicesHero() {
           </div>
 
           {/* Right */}
-          <div className="relative">
-            <div className="rounded-3xl border border-white/10 bg-white/5 p-8 backdrop-blur-xl">
-              <div className="grid gap-5 sm:grid-cols-2">
-                <div className="rounded-2xl bg-[#1F2A40] p-6 transition hover:-translate-y-1 hover:bg-[#24314B]">
-                  <div className="mb-4 h-12 w-12 rounded-xl bg-[#6B91AD]/20 flex items-center justify-center text-xl">
-                    ⚙️
-                  </div>
+          {/* Right */}
+<div className="relative flex items-center justify-center">
 
-                  <h3 className="text-xl font-semibold text-white">
-                    Modernize
-                  </h3>
+  {/* Background Glow */}
+  <div className="absolute h-[520px] w-[520px] rounded-full bg-gradient-to-r from-[#29B6F0]/20 via-[#7A4FD1]/15 to-[#B93FC9]/20 blur-[130px]" />
 
-                  <p className="mt-3 text-sm leading-7 text-slate-400">
-                    Modern platforms, cloud transformation and digital
-                    modernization.
-                  </p>
-                </div>
+  <div className="relative grid grid-cols-2 gap-6">
 
-                <div className="rounded-2xl bg-[#1F2A40] p-6 transition hover:-translate-y-1 hover:bg-[#24314B]">
-                  <div className="mb-4 h-12 w-12 rounded-xl bg-[#6B91AD]/20 flex items-center justify-center text-xl">
-                    📊
-                  </div>
+    {/* Image 1 */}
+    <Link
+      href="/services/modernize/modernizehero"
+      className="group relative overflow-hidden shadow-2xl"
+      style={{
+        borderRadius: "60% 40% 50% 50% / 40% 60% 40% 60%",
+      }}
+    >
+      <img
+        src="/home/whyexist.jpg"
+        alt="Modernize"
+        className="h-[240px] w-[220px] object-cover transition duration-700 group-hover:scale-110"
+      />
 
-                  <h3 className="text-xl font-semibold text-white">
-                    See Your Data
-                  </h3>
+      <div className="absolute inset-0 bg-black/50 opacity-0 transition duration-500 group-hover:opacity-100" />
 
-                  <p className="mt-3 text-sm leading-7 text-slate-400">
-                    Analytics, reporting and business intelligence for
-                    confident decisions.
-                  </p>
-                </div>
+      <div className="absolute bottom-6 left-6 translate-y-6 opacity-0 transition duration-500 group-hover:translate-y-0 group-hover:opacity-100">
+        <h3 className="text-xl font-bold text-white">
+          Modernize
+        </h3>
+      </div>
+    </Link>
 
-                <div className="rounded-2xl bg-[#1F2A40] p-6 transition hover:-translate-y-1 hover:bg-[#24314B]">
-                  <div className="mb-4 h-12 w-12 rounded-xl bg-[#6B91AD]/20 flex items-center justify-center text-xl">
-                    💻
-                  </div>
+    {/* Image 2 */}
+    <Link
+      href="/services/seeyourdata/seeyourdatahero"
+      className="group relative mt-14 overflow-hidden shadow-2xl"
+      style={{
+        borderRadius: "38% 62% 42% 58% / 52% 40% 60% 48%",
+      }}
+    >
+      <img
+        src="/home/producthero.png"
+        alt="See Your Data"
+        className="h-[280px] w-[230px] object-cover transition duration-700 group-hover:scale-110"
+      />
 
-                  <h3 className="text-xl font-semibold text-white">
-                    Build Software
-                  </h3>
+      <div className="absolute inset-0 bg-black/50 opacity-0 transition duration-500 group-hover:opacity-100" />
 
-                  <p className="mt-3 text-sm leading-7 text-slate-400">
-                    Custom applications designed for performance and scale.
-                  </p>
-                </div>
+      <div className="absolute bottom-6 left-6 translate-y-6 opacity-0 transition duration-500 group-hover:translate-y-0 group-hover:opacity-100">
+        <h3 className="text-xl font-bold text-white">
+          See Your Data
+        </h3>
+      </div>
+    </Link>
 
-                <div className="rounded-2xl bg-[#1F2A40] p-6 transition hover:-translate-y-1 hover:bg-[#24314B]">
-                  <div className="mb-4 h-12 w-12 rounded-xl bg-[#6B91AD]/20 flex items-center justify-center text-xl">
-                    🔒
-                  </div>
+    {/* Image 3 */}
+    <Link
+      href="/services/buildsoftware/herosection"
+      className="group relative -mt-10 ml-10 overflow-hidden shadow-2xl"
+      style={{
+        borderRadius: "52% 48% 60% 40% / 40% 58% 42% 60%",
+      }}
+    >
+      <img
+        src="/home/theteam.jpg"
+        alt="Build Software"
+        className="h-[280px] w-[230px] object-cover transition duration-700 group-hover:scale-110"
+      />
 
-                  <h3 className="text-xl font-semibold text-white">
-                    Stay Secure
-                  </h3>
+      <div className="absolute inset-0 bg-black/50 opacity-0 transition duration-500 group-hover:opacity-100" />
 
-                  <p className="mt-3 text-sm leading-7 text-slate-400">
-                    Security assessments, compliance and continuous protection.
-                  </p>
-                </div>
-              </div>
-            </div>
+      <div className="absolute bottom-6 left-6 translate-y-6 opacity-0 transition duration-500 group-hover:translate-y-0 group-hover:opacity-100">
+        <h3 className="text-xl font-bold text-white">
+          Build Software
+        </h3>
+      </div>
+    </Link>
 
-            {/* Floating Badge */}
-            <div className="absolute -bottom-6 left-1/2 -translate-x-1/2 rounded-2xl border border-[#6B91AD]/20 bg-[#23314F] px-8 py-4 shadow-xl">
-              <p className="text-center text-sm font-medium tracking-wide text-[#9DB7CA]">
-                FOUR CORE PRACTICES • ONE TRUSTED PARTNER
-              </p>
-            </div>
-          </div>
+    {/* Image 4 */}
+    <Link
+      href="/services/staysecure/staysecureherosection"
+      className="group relative overflow-hidden shadow-2xl"
+      style={{
+        borderRadius: "42% 58% 40% 60% / 60% 38% 62% 40%",
+      }}
+    >
+      <img
+        src="/home/homehero.jpg"
+        alt="Stay Secure"
+        className="h-[240px] w-[220px] object-cover transition duration-700 group-hover:scale-110"
+      />
+
+      <div className="absolute inset-0 bg-black/50 opacity-0 transition duration-500 group-hover:opacity-100" />
+
+      <div className="absolute bottom-6 left-6 translate-y-6 opacity-0 transition duration-500 group-hover:translate-y-0 group-hover:opacity-100">
+        <h3 className="text-xl font-bold text-white">
+          Stay Secure
+        </h3>
+      </div>
+    </Link>
+
+  </div>
+
+</div>
         </div>
       </div>
     </section>
