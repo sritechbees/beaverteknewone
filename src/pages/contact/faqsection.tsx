@@ -42,12 +42,14 @@ export default function FAQSection() {
   }, []);
 
   return (
-    <section className="relative overflow-hidden bg-[#EAF1F7] py-24 px-5 md:px-10 lg:px-16">
+    <section className="relative overflow-hidden bg-[linear-gradient(135deg,#000000_0%,#0A0A0A_30%,#121212_70%,#1A1A1E_100%)] py-24 px-5 md:px-10 lg:px-16">
 
       {/* Background Blur */}
-      <div className="absolute -top-32 -left-32 w-[420px] h-[420px] rounded-full bg-[#45A6E5]/10 blur-[120px]" />
+      <div className="absolute -top-32 -left-32 w-[420px] h-[420px] rounded-full bg-[#29B6F0]/15 blur-[120px]" />
 
-      <div className="absolute -bottom-32 -right-32 w-[420px] h-[420px] rounded-full bg-[#8FD14F]/10 blur-[120px]" />
+      <div className="absolute -bottom-32 -right-32 w-[420px] h-[420px] rounded-full bg-[#B93FC9]/15 blur-[120px]" />
+
+      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[500px] rounded-full bg-[#7A4FD1]/10 blur-[180px]" />
 
       <div className="max-w-7xl mx-auto relative z-10">
 
@@ -56,7 +58,7 @@ export default function FAQSection() {
           className="text-center mb-20"
           data-aos="fade-up"
         >
-          <span className="inline-flex items-center rounded-full border border-[#45A6E5]/20 bg-white px-5 py-2 text-sm font-semibold text-[#45A6E5] shadow-md">
+          <span className="inline-flex items-center rounded-full border border-[#2A2A30] bg-[#121212] px-5 py-2 text-sm font-semibold text-[#29B6F0] shadow-[0_12px_30px_rgba(0,0,0,.35)]">
             Frequently Asked Questions
           </span>
 
@@ -64,13 +66,13 @@ export default function FAQSection() {
             className="mt-6 text-4xl md:text-5xl lg:text-6xl font-extrabold bg-clip-text text-transparent"
             style={{
               backgroundImage:
-                "linear-gradient(120deg,#45A6E5,#8FD14F)",
+                "linear-gradient(135deg,#29B6F0 0%,#3E7BD6 35%,#7A4FD1 65%,#B93FC9 100%)",
             }}
           >
             Have Questions?
           </h2>
 
-          <p className="mt-6 text-[#5B6B7B] text-lg leading-8 max-w-2xl mx-auto">
+          <p className="mt-6 text-[#A0A0A8] text-lg leading-8 max-w-2xl mx-auto">
             Everything you need to know before starting your project with
             BeaverTek.
           </p>
@@ -78,8 +80,7 @@ export default function FAQSection() {
 
         {/* Grid */}
         <div className="grid lg:grid-cols-2 gap-20 items-center">
-
-          {/* Left Side */}
+                    {/* Left Side */}
           <motion.div
             data-aos="fade-right"
             className="relative"
@@ -90,10 +91,10 @@ export default function FAQSection() {
           >
 
             {/* Glow */}
-            <div className="absolute inset-0 rounded-[18px] bg-gradient-to-br from-[#45A6E5]/20 to-[#8FD14F]/20 blur-2xl scale-105" />
+            <div className="absolute inset-0 rounded-[18px] bg-gradient-to-br from-[#29B6F0]/20 via-[#3E7BD6]/15 via-[#7A4FD1]/15 to-[#B93FC9]/20 blur-2xl scale-105" />
 
             {/* Image */}
-            <div className="relative overflow-hidden rounded-[18px] border-4 border-white shadow-2xl">
+            <div className="relative overflow-hidden rounded-[18px] border border-[#2A2A30] shadow-[0_25px_60px_rgba(0,0,0,.45)]">
 
               <Image
                 src="/home/faq.jpg"
@@ -117,17 +118,17 @@ export default function FAQSection() {
                 opacity: 1,
               }}
               transition={{
-                delay: .4,
-                duration: .6,
+                delay: 0.4,
+                duration: 0.6,
               }}
               viewport={{ once: true }}
               className="absolute -bottom-8 -right-8 hidden md:block"
             >
-              <div className="bg-white rounded-[18px] shadow-2xl p-6 max-w-xs border border-[#45A6E5]/10">
+              <div className="bg-[#121212] rounded-[18px] border border-[#2A2A30] shadow-[0_25px_60px_rgba(0,0,0,.45)] p-6 max-w-xs">
 
                 <div className="flex items-start gap-4">
 
-                  <div className="w-14 h-14 rounded-full bg-gradient-to-r from-[#45A6E5] to-[#8FD14F] flex items-center justify-center shadow-lg">
+                  <div className="w-14 h-14 rounded-full bg-gradient-to-r from-[#29B6F0] via-[#3E7BD6] via-[#7A4FD1] to-[#B93FC9] flex items-center justify-center shadow-[0_0_40px_rgba(62,123,214,.35)]">
 
                     <ShieldCheck
                       size={28}
@@ -138,11 +139,11 @@ export default function FAQSection() {
 
                   <div>
 
-                    <h4 className="text-lg font-bold text-[#0B0F14]">
+                    <h4 className="text-lg font-bold text-[#FFFFFF]">
                       24/7 Expert Support
                     </h4>
 
-                    <p className="mt-2 text-sm leading-6 text-[#5B6B7B]">
+                    <p className="mt-2 text-sm leading-6 text-[#A0A0A8]">
                       Get answers from our specialists anytime during your
                       project journey.
                     </p>
@@ -157,8 +158,10 @@ export default function FAQSection() {
           </motion.div>
 
           {/* Right Side FAQ */}
+                    {/* Right Side FAQ */}
           <div className="space-y-6">
-                        {faqs.map((faq, index) => (
+
+            {faqs.map((faq, index) => (
               <motion.div
                 key={index}
                 layout
@@ -167,7 +170,7 @@ export default function FAQSection() {
                 data-aos-duration="900"
                 whileHover={{ y: -4 }}
                 transition={{ duration: 0.3 }}
-                className="group overflow-hidden rounded-[18px] border border-[#45A6E5]/10 bg-white shadow-lg transition-all duration-500 hover:border-[#45A6E5] hover:shadow-2xl"
+                className="group overflow-hidden rounded-[18px] border border-[#2A2A30] bg-[#121212] shadow-[0_12px_30px_rgba(0,0,0,.35)] transition-all duration-500 hover:border-[#3E7BD6] hover:shadow-[0_0_40px_rgba(62,123,214,.35)]"
               >
                 <button
                   onClick={() =>
@@ -175,7 +178,7 @@ export default function FAQSection() {
                   }
                   className="flex w-full items-center justify-between px-7 py-6 text-left"
                 >
-                  <h3 className="pr-5 text-lg md:text-xl font-semibold text-[#0B0F14] transition-colors duration-300 group-hover:text-[#45A6E5]">
+                  <h3 className="pr-5 text-lg md:text-xl font-semibold text-[#FFFFFF] transition-colors duration-300 group-hover:text-[#29B6F0]">
                     {faq.question}
                   </h3>
 
@@ -184,7 +187,7 @@ export default function FAQSection() {
                       rotate: open === index ? 180 : 0,
                     }}
                     transition={{ duration: 0.3 }}
-                    className="flex h-11 w-11 items-center justify-center rounded-full bg-gradient-to-r from-[#45A6E5] to-[#8FD14F] shadow-lg"
+                    className="flex h-11 w-11 items-center justify-center rounded-full bg-gradient-to-r from-[#29B6F0] via-[#3E7BD6] via-[#7A4FD1] to-[#B93FC9] shadow-[0_0_40px_rgba(62,123,214,.35)]"
                   >
                     <ChevronDown
                       size={20}
@@ -213,8 +216,8 @@ export default function FAQSection() {
                       }}
                       className="overflow-hidden"
                     >
-                      <div className="border-t border-[#45A6E5]/10 bg-gradient-to-r from-[#45A6E5]/5 to-[#8FD14F]/5 px-7 pb-7 pt-5">
-                        <p className="leading-8 text-[#5B6B7B]">
+                      <div className="border-t border-[#2A2A30] bg-gradient-to-r from-[#29B6F0]/5 via-[#3E7BD6]/5 via-[#7A4FD1]/5 to-[#B93FC9]/5 px-7 pb-7 pt-5">
+                        <p className="leading-8 text-[#A0A0A8]">
                           {faq.answer}
                         </p>
                       </div>
@@ -241,7 +244,7 @@ export default function FAQSection() {
               transition={{
                 duration: 0.8,
               }}
-              className="mt-10 rounded-[18px] bg-gradient-to-r from-[#45A6E5] to-[#8FD14F] p-8 text-white shadow-2xl"
+              className="mt-10 rounded-[18px] bg-gradient-to-r from-[#29B6F0] via-[#3E7BD6] via-[#7A4FD1] to-[#B93FC9] p-8 text-white shadow-[0_25px_60px_rgba(0,0,0,.45)]"
             >
               <h3 className="text-2xl font-bold">
                 Still have questions?
@@ -252,12 +255,13 @@ export default function FAQSection() {
                 services, pricing, or project process.
               </p>
 
-              <button className="mt-6 rounded-full bg-white px-7 py-3 font-semibold text-[#0B0F14] shadow-lg transition-all duration-300 hover:scale-105 hover:shadow-xl">
+              <button className="mt-6 rounded-full bg-[#121212] border border-[#2A2A30] px-7 py-3 font-semibold text-white shadow-lg transition-all duration-300 hover:scale-105 hover:border-[#3E7BD6] hover:shadow-[0_0_40px_rgba(62,123,214,.35)]">
                 Contact Our Team
               </button>
             </motion.div>
 
           </div>
+
         </div>
       </div>
     </section>
