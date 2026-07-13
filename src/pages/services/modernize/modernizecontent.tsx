@@ -7,414 +7,203 @@ export default function ModernizeContent() {
   return (
     
  
-    <section className="relative overflow-hidden bg-gradient-to-b from-white via-[#F8FAFC] to-[#E8EFF4] py-24">
-  
-  
-  {/*part-1*/}
-      {/* Background Decorations */}
-      <div className="absolute inset-0 -z-10 overflow-hidden">
-
-        <div className="absolute -left-40 top-10 h-[28rem] w-[28rem] rounded-full bg-[#6B91AD]/10 blur-3xl animate-pulse" />
-
-        <div className="absolute right-0 top-40 h-[32rem] w-[32rem] rounded-full bg-[#161E2F]/5 blur-3xl" />
-
-        <div className="absolute left-1/2 bottom-0 h-80 w-80 -translate-x-1/2 rounded-full bg-[#23314F]/10 blur-3xl" />
-
-        <div className="absolute left-32 top-52 h-3 w-3 rounded-full bg-[#6B91AD]/40 animate-ping" />
-
-        <div className="absolute right-32 bottom-52 h-4 w-4 rounded-full bg-[#23314F]/30 animate-pulse" />
-
-      </div>
-
-      <div className="mx-auto max-w-7xl px-6 lg:px-8">
-
-        {/* Section Number */}
-        <div
-          className="absolute left-10 top-20 hidden select-none text-[10rem] font-black text-[#E8EFF4] lg:block"
-          data-aos="fade-right"
-        >
-          01
-        </div>
-
-        <div className="grid items-center gap-16 lg:grid-cols-2">
-
-          {/* Left */}
-          <div
-            data-aos="fade-right"
-            data-aos-duration="900"
-            className="relative z-10"
-          >
-
-            <span className="inline-flex items-center rounded-full bg-[#E8EFF4] px-5 py-2 text-sm font-semibold tracking-widest text-[#23314F]">
-              WHAT IT IS
-            </span>
-
-            <h2 className="mt-8 text-4xl font-black leading-tight text-[#161E2F] lg:text-5xl">
-              Modernization isn't
-              <br />
-              replacing everything.
-            </h2>
-
-            <div className="mt-6 h-1 w-24 rounded-full bg-gradient-to-r from-[#161E2F] to-[#6B91AD]" />
-
-            <p className="mt-10 text-lg leading-9 text-[#1A1A1A]/80">
-              Most small and mid-size businesses are running on a mix of old
-              and new — a 15-year-old ERP, a custom Access database from 2009,
-              spreadsheets running critical processes, a website that hasn't
-              been touched in years.
-            </p>
-
-            <p className="mt-8 text-lg leading-9 text-[#1A1A1A]/80">
-              Modernization is the work of pulling that landscape into a
-              coherent, current system that your team can actually use.
-            </p>
-
-          </div>
-
-          {/* Right Premium Card */}
-          <div
-            data-aos="fade-left"
-            data-aos-duration="900"
-            className="relative"
-          >
-
-            {/* Glow */}
-            <div className="absolute -inset-3 rounded-[2rem] bg-gradient-to-r from-[#161E2F]/10 via-[#6B91AD]/10 to-[#23314F]/10 blur-2xl" />
-
-            <div className="relative overflow-hidden rounded-[2rem] border border-white/70 bg-white/80 p-10 shadow-2xl backdrop-blur-xl">
-
-              {/* Icon */}
-              <div className="flex h-20 w-20 items-center justify-center rounded-3xl bg-gradient-to-br from-[#161E2F] to-[#6B91AD] shadow-xl">
-
-                <Cpu className="h-10 w-10 text-white" />
-
-              </div>
-
-              <h3 className="mt-10 text-3xl font-black text-[#161E2F]">
-                Legacy + Modern
-              </h3>
-
-              <div className="mt-5 h-1 w-20 rounded-full bg-gradient-to-r from-[#161E2F] to-[#6B91AD]" />
-
-              <p className="mt-8 text-lg leading-9 text-[#1A1A1A]/75">
-                Most organizations don't start from zero. Modernization means
-                improving what already exists while protecting the systems your
-                business depends on every day.
-              </p>
-
-              {/* Bottom Features */}
-
-              <div className="mt-12 space-y-5">
-
-                <div className="flex items-center gap-4 rounded-2xl bg-[#F8FAFC] p-5 transition hover:translate-x-2">
-
-                  <div className="h-3 w-3 rounded-full bg-[#6B91AD]" />
-
-                  <span className="font-medium text-[#23314F]">
-                    Existing systems remain operational
-                  </span>
-
-                </div>
-
-                <div className="flex items-center gap-4 rounded-2xl bg-[#F8FAFC] p-5 transition hover:translate-x-2">
-
-                  <div className="h-3 w-3 rounded-full bg-[#6B91AD]" />
-
-                  <span className="font-medium text-[#23314F]">
-                    Modern platforms improve productivity
-                  </span>
-
-                </div>
-
-                <div className="flex items-center gap-4 rounded-2xl bg-[#F8FAFC] p-5 transition hover:translate-x-2">
-
-                  <div className="h-3 w-3 rounded-full bg-[#6B91AD]" />
-
-                  <span className="font-medium text-[#23314F]">
-                    Planned migrations reduce business risk
-                  </span>
-
-                </div>
-
-              </div>
-
-            </div>
-
-          </div>
-
-        </div>
-
-      </div>
-               
-               
-                {/*part-2*/}
-              {/* ============================= */}
-        {/* What this looks like in practice */}
-        {/* ============================= */}
-
-        <div className="relative mt-32">
-
-          {/* Background Number */}
-          <div
-            className="absolute right-0 -top-16 hidden select-none text-[10rem] font-black text-[#E8EFF4] lg:block"
-            data-aos="fade-left"
-          >
-            02
-          </div>
-
-          <div
-            className="text-center"
-            data-aos="fade-up"
-            data-aos-duration="900"
-          >
-            <span className="inline-flex rounded-full bg-[#E8EFF4] px-5 py-2 text-sm font-semibold tracking-widest text-[#23314F]">
-              WHAT THIS LOOKS LIKE IN PRACTICE
-            </span>
-
-            <h2 className="mt-8 text-4xl font-black text-[#161E2F] lg:text-5xl">
-              Real modernization work
-            </h2>
-
-            <div className="mx-auto mt-6 h-1 w-24 rounded-full bg-gradient-to-r from-[#161E2F] to-[#6B91AD]" />
-          </div>
-
-          <div className="mt-20 grid gap-8 md:grid-cols-2 xl:grid-cols-3">
-
-            {[
-              "Migrating from on-premise servers to a modern cloud platform",
-
-              "Replacing fragile spreadsheets with a real application",
-
-              "Moving from a legacy ERP or CRM to a current platform",
-
-              "Rebuilding a website or internal tool that has outlived its usefulness",
-
-              "Connecting disconnected systems so they finally talk to each other",
-            ].map((item, index) => (
-
-              <div
-                key={item}
-                data-aos="zoom-in-up"
-                data-aos-delay={index * 100}
-                className={`group relative overflow-hidden rounded-[28px] border border-[#E8EFF4] bg-white p-8 shadow-lg transition-all duration-500 hover:-translate-y-3 hover:border-[#6B91AD]/40 hover:shadow-2xl ${
-                  index === 4 ? "md:col-span-2 xl:col-span-1" : ""
-                }`}
-              >
-
-                {/* Card Glow */}
-                <div className="absolute -right-20 -top-20 h-40 w-40 rounded-full bg-[#6B91AD]/10 blur-3xl opacity-0 transition duration-500 group-hover:opacity-100" />
-
-                {/* Number */}
-                <div className="absolute right-6 top-6 text-6xl font-black text-[#E8EFF4] transition group-hover:text-[#6B91AD]/20">
-                  0{index + 1}
-                </div>
-
-                {/* Accent Line */}
-                <div className="mb-8 h-1 w-14 rounded-full bg-gradient-to-r from-[#161E2F] to-[#6B91AD] transition-all duration-500 group-hover:w-28" />
-
-                <p className="relative z-10 text-lg leading-9 text-[#1A1A1A]/80">
-                  {item}
-                </p>
-
-                {/* Hover Bar */}
-                <div className="absolute bottom-0 left-0 h-1 w-0 bg-gradient-to-r from-[#161E2F] to-[#6B91AD] transition-all duration-500 group-hover:w-full" />
-
-              </div>
-
-            ))}
-
-          </div>
-
-        </div>
-        {/* ============================= */}
-        {/* Connecting Timeline */}
-        {/* ============================= */}
-
-        <div className="relative mt-36">
-
-          <div className="absolute left-1/2 top-0 hidden h-full w-px -translate-x-1/2 bg-gradient-to-b from-[#6B91AD]/40 via-[#23314F]/30 to-transparent lg:block" />
-
-          {[
-            {
-              title: "Assess",
-              desc: "Understand the current technology landscape.",
-            },
-            {
-              title: "Plan",
-              desc: "Create a practical modernization roadmap.",
-            },
-            {
-              title: "Execute",
-              desc: "Deliver improvements with minimal disruption.",
-            },
-            {
-              title: "Support",
-              desc: "Stay through transition until everything works.",
-            },
-          ].map((step, index) => (
-
-            <div
-              key={step.title}
-              data-aos={index % 2 === 0 ? "fade-right" : "fade-left"}
-              className={`relative mb-16 flex ${
-                index % 2 === 0
-                  ? "justify-start"
-                  : "justify-end"
-              }`}
-            >
-
-              <div className="w-full lg:w-[46%]">
-
-                <div className="rounded-[28px] border border-[#E8EFF4] bg-white p-8 shadow-lg transition duration-500 hover:-translate-y-2 hover:shadow-xl">
-
-                  <div className="mb-5 flex h-14 w-14 items-center justify-center rounded-2xl bg-gradient-to-br from-[#161E2F] to-[#6B91AD] text-xl font-bold text-white">
-                    {index + 1}
-                  </div>
-
-                  <h3 className="text-2xl font-black text-[#161E2F]">
-                    {step.title}
-                  </h3>
-
-                  <div className="mt-4 h-1 w-16 rounded-full bg-[#6B91AD]" />
-
-                  <p className="mt-6 text-lg leading-8 text-[#1A1A1A]/75">
-                    {step.desc}
-                  </p>
-
-                </div>
-
-              </div>
-
-            </div>
-
-          ))}
-
-        </div>
-
-        {/* ============================= */}
-{/* PART - 3 */}
-{/* Why Modernization Matters */}
-{/* ============================= */}
-
-<div className="relative mt-40">
+    <section className="relative overflow-hidden bg-[#000000] py-20 lg:py-28">
 
   {/* Background */}
-  <div className="absolute inset-0 -z-10 overflow-hidden">
+  <div className="absolute inset-0 overflow-hidden">
 
-    <div className="absolute left-0 top-0 h-96 w-96 rounded-full bg-[#6B91AD]/10 blur-[140px]" />
+    <div className="absolute -top-40 -left-40 h-[420px] w-[420px] rounded-full bg-[#29B6F0]/10 blur-[130px]" />
 
-    <div className="absolute right-0 bottom-0 h-[28rem] w-[28rem] rounded-full bg-[#161E2F]/10 blur-[160px]" />
+    <div className="absolute right-0 bottom-0 h-[420px] w-[420px] rounded-full bg-[#B93FC9]/10 blur-[140px]" />
+
+    <div className="absolute inset-0 bg-[linear-gradient(rgba(255,255,255,.03)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,.03)_1px,transparent_1px)] bg-[size:70px_70px]" />
 
   </div>
 
-  {/* Section Number */}
+  <div className="relative mx-auto max-w-7xl px-6 lg:px-8">
 
-  <div
-    className="absolute left-0 -top-16 hidden select-none text-[10rem] font-black text-[#E8EFF4] lg:block"
-    data-aos="fade-right"
-  >
-    03
+    <div className="grid items-center gap-14 lg:grid-cols-2">
+
+      {/* Left */}
+
+      <div
+        data-aos="fade-right"
+        data-aos-duration="1000"
+      >
+
+        <span className="inline-flex items-center rounded-full border border-[#3E7BD6]/40 bg-white/5 px-5 py-2 text-xs font-semibold tracking-[0.25em] text-[#29B6F0] backdrop-blur-md">
+          WHAT IT IS
+        </span>
+
+        <h2 className="mt-6 text-3xl font-black leading-tight text-white md:text-4xl xl:text-5xl">
+          Modernization
+          <br />
+
+          <span className="bg-gradient-to-r from-[#29B6F0] via-[#3E7BD6] via-[#7A4FD1] to-[#B93FC9] bg-clip-text text-transparent">
+            Made Practical
+          </span>
+
+        </h2>
+
+        <div className="mt-6 h-1 w-24 rounded-full bg-gradient-to-r from-[#29B6F0] via-[#3E7BD6] to-[#B93FC9]" />
+
+        <p className="mt-8 max-w-xl text-base leading-8 text-[#D4D4D8]">
+          Most businesses rely on a combination of legacy applications,
+          spreadsheets, and modern platforms. Modernization connects them
+          into a secure, scalable environment without disrupting daily work.
+        </p>
+
+        <p className="mt-6 max-w-xl text-base leading-8 text-[#A0A0A8]">
+          BeaverTek upgrades your technology step by step—protecting existing
+          investments while preparing your business for future growth.
+        </p>
+
+      </div>
+
+      {/* Right */}
+
+      <div
+        className="relative"
+        data-aos="fade-left"
+        data-aos-duration="1000"
+      >
+
+        <div className="rounded-3xl border border-[#2A2A30] bg-white/5 p-8 backdrop-blur-xl transition duration-500 hover:border-[#3E7BD6] hover:bg-white/10">
+
+          <div className="flex h-16 w-16 items-center justify-center rounded-2xl bg-gradient-to-br from-[#29B6F0] via-[#3E7BD6] to-[#7A4FD1]">
+
+            <Cpu className="h-8 w-8 text-white" />
+
+          </div>
+
+          <h3 className="mt-8 text-2xl font-bold text-white">
+            Legacy + Modern
+          </h3>
+
+          <p className="mt-5 leading-8 text-[#D4D4D8]">
+            We modernize your existing infrastructure instead of replacing
+            everything. This reduces cost, minimizes downtime, and improves
+            long-term scalability.
+          </p>
+
+          <div className="mt-8 space-y-4">
+
+            <div className="flex items-center gap-3 rounded-xl border border-[#2A2A30] bg-[#121212] p-4 transition hover:border-[#29B6F0]">
+
+              <div className="h-2.5 w-2.5 rounded-full bg-[#29B6F0]" />
+
+              <span className="text-sm text-[#D4D4D8]">
+                Existing systems stay operational
+              </span>
+
+            </div>
+
+            <div className="flex items-center gap-3 rounded-xl border border-[#2A2A30] bg-[#121212] p-4 transition hover:border-[#7A4FD1]">
+
+              <div className="h-2.5 w-2.5 rounded-full bg-[#7A4FD1]" />
+
+              <span className="text-sm text-[#D4D4D8]">
+                Secure cloud-ready architecture
+              </span>
+
+            </div>
+
+            <div className="flex items-center gap-3 rounded-xl border border-[#2A2A30] bg-[#121212] p-4 transition hover:border-[#B93FC9]">
+
+              <div className="h-2.5 w-2.5 rounded-full bg-[#B93FC9]" />
+
+              <span className="text-sm text-[#D4D4D8]">
+                Planned migration with minimal risk
+              </span>
+
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+
   </div>
+
+        
+               
+              {/* ============================= */}
+{/* What This Looks Like In Practice */}
+{/* ============================= */}
+
+<div className="relative mt-24 overflow-hidden">
+
+  {/* Background Glow */}
+  <div className="absolute -left-40 top-0 h-[350px] w-[350px] rounded-full bg-[#29B6F0]/10 blur-[120px]" />
+  <div className="absolute -right-32 bottom-0 h-[350px] w-[350px] rounded-full bg-[#B93FC9]/10 blur-[130px]" />
 
   {/* Heading */}
-
   <div
-    className="mx-auto max-w-3xl text-center"
+    className="relative text-center"
     data-aos="fade-up"
+    data-aos-duration="1000"
   >
 
-    <span className="inline-flex rounded-full bg-[#E8EFF4] px-5 py-2 text-sm font-semibold tracking-[0.25em] text-[#23314F]">
-      WHY IT MATTERS
+    <span className="inline-flex rounded-full border border-[#3E7BD6]/40 bg-white/5 px-5 py-2 text-xs font-semibold tracking-[0.25em] text-[#29B6F0] backdrop-blur-md">
+      WHAT THIS LOOKS LIKE IN PRACTICE
     </span>
 
-    <h2 className="mt-8 text-4xl font-black text-[#161E2F] lg:text-5xl">
-      Modern technology creates
-      <br />
-      better business outcomes
+    <h2 className="mt-6 text-3xl font-black text-white lg:text-5xl">
+      Real Modernization
     </h2>
 
-    <div className="mx-auto mt-6 h-1 w-24 rounded-full bg-gradient-to-r from-[#161E2F] to-[#6B91AD]" />
-
-    <p className="mt-8 text-lg leading-9 text-[#1A1A1A]/80">
-      Modernization isn't about technology alone.
-      It's about making your organization faster,
-      more reliable and ready for future growth.
-    </p>
+    <div className="mx-auto mt-5 h-1 w-24 rounded-full bg-gradient-to-r from-[#29B6F0] via-[#3E7BD6] to-[#B93FC9]" />
 
   </div>
 
   {/* Cards */}
 
-  <div className="mt-24 grid gap-8 lg:grid-cols-2">
+  <div className="relative mt-16 grid gap-6 md:grid-cols-2 xl:grid-cols-3">
 
     {[
-      {
-        title: "Increase Productivity",
-        desc:
-          "Automate repetitive work and give employees modern tools that reduce manual effort."
-      },
-      {
-        title: "Reduce Operational Risk",
-        desc:
-          "Replace unsupported legacy platforms before they become security or reliability problems."
-      },
-      {
-        title: "Improve Customer Experience",
-        desc:
-          "Deliver faster services, better digital experiences and smoother customer journeys."
-      },
-      {
-        title: "Scale With Confidence",
-        desc:
-          "Cloud-ready systems make it easier to grow without rebuilding everything later."
-      }
+      "Migrating from on-premise servers to a secure cloud platform.",
+
+      "Replacing spreadsheets with modern business applications.",
+
+      "Upgrading legacy ERP and CRM platforms.",
+
+      "Rebuilding outdated websites and internal tools.",
+
+      "Connecting disconnected systems with seamless integrations.",
     ].map((item, index) => (
 
       <div
-
-        key={item.title}
-
+        key={item}
         data-aos="fade-up"
-
-        data-aos-delay={index * 150}
-
-        className="group relative overflow-hidden rounded-[32px] border border-[#E8EFF4] bg-white p-10 shadow-xl transition-all duration-500 hover:-translate-y-4 hover:shadow-2xl"
-
+        data-aos-delay={index * 100}
+        data-aos-duration="900"
+        className={`group relative overflow-hidden rounded-3xl border border-[#2A2A30] bg-[#121212] p-8 transition-all duration-500 hover:-translate-y-2 hover:border-[#3E7BD6] hover:bg-[#171717] ${
+          index === 4 ? "md:col-span-2 xl:col-span-1" : ""
+        }`}
       >
 
-        {/* Glow */}
+        {/* Number */}
 
-        <div className="absolute -right-24 -top-24 h-52 w-52 rounded-full bg-[#6B91AD]/10 blur-3xl opacity-0 transition duration-500 group-hover:opacity-100" />
+        <span className="absolute right-6 top-5 text-5xl font-black text-white/5 transition group-hover:text-[#3E7BD6]/20">
+          0{index + 1}
+        </span>
 
-        {/* Top Icon */}
+        {/* Accent */}
 
-        <div className="flex h-20 w-20 items-center justify-center rounded-3xl bg-gradient-to-br from-[#161E2F] via-[#23314F] to-[#6B91AD] text-3xl font-black text-white shadow-xl transition duration-500 group-hover:rotate-6 group-hover:scale-110">
+        <div className="mb-6 h-1 w-14 rounded-full bg-gradient-to-r from-[#29B6F0] via-[#3E7BD6] to-[#B93FC9] transition-all duration-500 group-hover:w-24" />
 
-          {index + 1}
+        {/* Text */}
 
-        </div>
-
-        <h3 className="mt-8 text-3xl font-black text-[#161E2F]">
-          {item.title}
-        </h3>
-
-        <div className="mt-5 h-1 w-16 rounded-full bg-gradient-to-r from-[#161E2F] to-[#6B91AD] transition-all duration-500 group-hover:w-28" />
-
-        <p className="mt-8 text-lg leading-9 text-[#1A1A1A]/75">
-          {item.desc}
+        <p className="relative text-base leading-8 text-[#D4D4D8]">
+          {item}
         </p>
 
-        <div className="mt-10 flex items-center gap-3">
+        {/* Bottom Border */}
 
-          <div className="h-3 w-3 rounded-full bg-[#6B91AD]" />
-
-          <span className="text-sm font-semibold uppercase tracking-wider text-[#23314F]">
-            Business Value
-          </span>
-
-        </div>
-
-        <div className="absolute bottom-0 left-0 h-1 w-0 bg-gradient-to-r from-[#161E2F] to-[#6B91AD] transition-all duration-500 group-hover:w-full" />
+        <div className="absolute bottom-0 left-0 h-1 w-0 bg-gradient-to-r from-[#29B6F0] via-[#3E7BD6] to-[#B93FC9] transition-all duration-500 group-hover:w-full" />
 
       </div>
 
@@ -422,74 +211,263 @@ export default function ModernizeContent() {
 
   </div>
 
-  {/* Bottom Premium Banner */}
+  {/* ============================= */}
+  {/* Simple Process */}
+  {/* ============================= */}
 
-  <div
+  <div className="mt-24 grid gap-6 md:grid-cols-2 lg:grid-cols-4">
 
-    className="relative mt-28 overflow-hidden rounded-[36px] bg-gradient-to-r from-[#161E2F] via-[#23314F] to-[#161E2F] px-10 py-16 shadow-2xl"
+    {[
+      {
+        title: "Assess",
+        desc: "Review your current technology landscape.",
+      },
+      {
+        title: "Plan",
+        desc: "Build a practical modernization roadmap.",
+      },
+      {
+        title: "Execute",
+        desc: "Implement with minimal business disruption.",
+      },
+      {
+        title: "Support",
+        desc: "Continuous optimization and long-term guidance.",
+      },
+    ].map((step, index) => (
 
-    data-aos="zoom-in"
+      <div
+        key={step.title}
+        data-aos="zoom-in"
+        data-aos-delay={index * 120}
+        className="rounded-3xl border border-[#2A2A30] bg-[#121212] p-7 transition duration-500 hover:-translate-y-2 hover:border-[#7A4FD1]"
+      >
 
-  >
+        <div className="flex h-14 w-14 items-center justify-center rounded-2xl bg-gradient-to-br from-[#29B6F0] via-[#3E7BD6] to-[#7A4FD1] text-lg font-bold text-white">
+          {index + 1}
+        </div>
 
-    <div className="absolute -right-20 top-0 h-80 w-80 rounded-full bg-[#6B91AD]/20 blur-[120px]" />
-
-    <div className="absolute left-0 bottom-0 h-72 w-72 rounded-full bg-white/10 blur-[120px]" />
-
-    <div className="relative z-10 grid gap-12 lg:grid-cols-2 lg:items-center">
-
-      <div>
-
-        <span className="rounded-full bg-white/10 px-4 py-2 text-sm font-semibold uppercase tracking-[0.25em] text-[#E8EFF4]">
-          Future Ready
-        </span>
-
-        <h3 className="mt-8 text-4xl font-black leading-tight text-white">
-          Technology should
-          <br />
-          accelerate your business,
-          <br />
-          not slow it down.
+        <h3 className="mt-6 text-xl font-bold text-white">
+          {step.title}
         </h3>
 
+        <div className="mt-3 h-1 w-12 rounded-full bg-gradient-to-r from-[#29B6F0] to-[#B93FC9]" />
+
+        <p className="mt-5 text-sm leading-7 text-[#A0A0A8]">
+          {step.desc}
+        </p>
+
       </div>
 
-      <div className="space-y-6">
+    ))}
 
-        {[
-          "Modern cloud infrastructure",
+  </div>
 
-          "Better security & compliance",
+</div>
 
-          "Reliable integrations",
+        {/* ============================= */}
+{/* ============================= */}
+{/* PART - 3 | Why Modernization Matters */}
+{/* ============================= */}
 
-          "Lower maintenance costs"
+<div className="relative mt-24 overflow-hidden">
 
-        ].map((item) => (
+  {/* Background */}
+  <div className="absolute inset-0 -z-10 overflow-hidden">
 
-          <div
+    <div className="absolute -left-40 top-0 h-[380px] w-[380px] rounded-full bg-[#29B6F0]/10 blur-[120px]" />
 
-            key={item}
+    <div className="absolute right-0 bottom-0 h-[380px] w-[380px] rounded-full bg-[#B93FC9]/10 blur-[130px]" />
 
-            className="flex items-center gap-4 rounded-2xl bg-white/10 px-6 py-5 backdrop-blur-md transition hover:translate-x-3"
+  </div>
 
-          >
+  {/* Heading */}
 
-            <div className="h-4 w-4 rounded-full bg-[#6B91AD]" />
+  <div
+    className="mx-auto max-w-3xl text-center"
+    data-aos="fade-down"
+    data-aos-duration="1000"
+  >
 
-            <span className="text-lg text-white">
-              {item}
-            </span>
+    <span className="inline-flex rounded-full border border-[#3E7BD6]/40 bg-white/5 px-5 py-2 text-xs font-semibold tracking-[0.25em] text-[#29B6F0] backdrop-blur-md">
+      WHY MODERNIZATION MATTERS
+    </span>
 
+    <h2 className="mt-6 text-3xl font-black text-white sm:text-4xl lg:text-5xl">
+      Better Technology.
+      <br />
+      <span className="bg-gradient-to-r from-[#29B6F0] via-[#3E7BD6] to-[#B93FC9] bg-clip-text text-transparent">
+        Better Business.
+      </span>
+    </h2>
+
+    <div className="mx-auto mt-5 h-1 w-24 rounded-full bg-gradient-to-r from-[#29B6F0] via-[#3E7BD6] to-[#B93FC9]" />
+
+    <p className="mx-auto mt-6 max-w-2xl text-base leading-8 text-[#A0A0A8]">
+      Modernization helps organizations improve efficiency,
+      strengthen security, reduce costs, and create a solid
+      foundation for future growth.
+    </p>
+
+  </div>
+
+  {/* Cards */}
+
+  <div className="mt-16 grid gap-6 sm:grid-cols-2">
+
+    {[
+      {
+        title: "Increase Productivity",
+        desc: "Automate repetitive work and give employees modern tools that reduce manual effort.",
+      },
+      {
+        title: "Reduce Operational Risk",
+        desc: "Replace unsupported legacy platforms before they become security or reliability problems.",
+      },
+      {
+        title: "Improve Customer Experience",
+        desc: "Deliver faster services, better digital experiences and smoother customer journeys.",
+      },
+      {
+        title: "Scale With Confidence",
+        desc: "Cloud-ready systems make it easier to grow without rebuilding everything later.",
+      },
+    ].map((item, index) => (
+
+      <div
+        key={item.title}
+        data-aos={
+          index === 0
+            ? "fade-right"
+            : index === 1
+            ? "fade-left"
+            : index === 2
+            ? "fade-up"
+            : "zoom-in"
+        }
+        data-aos-delay={index * 120}
+        data-aos-duration="900"
+        className="group rounded-3xl border border-[#2A2A30] bg-[#121212] p-8 transition-all duration-500 hover:-translate-y-2 hover:border-[#3E7BD6] hover:bg-[#171717]"
+      >
+
+        {/* Number */}
+
+        <div className="flex h-14 w-14 items-center justify-center rounded-2xl bg-gradient-to-br from-[#29B6F0] via-[#3E7BD6] to-[#7A4FD1] text-lg font-bold text-white transition duration-500 group-hover:scale-110">
+          0{index + 1}
+        </div>
+
+        <h3 className="mt-6 text-2xl font-bold text-white">
+          {item.title}
+        </h3>
+
+        <div className="mt-4 h-1 w-14 rounded-full bg-gradient-to-r from-[#29B6F0] via-[#3E7BD6] to-[#B93FC9] transition-all duration-500 group-hover:w-24" />
+
+        <p className="mt-6 text-base leading-8 text-[#A0A0A8]">
+          {item.desc}
+        </p>
+
+        <div className="mt-8 flex items-center gap-3">
+
+          <span className="h-2.5 w-2.5 rounded-full bg-[#29B6F0]" />
+
+          <span className="text-xs font-semibold uppercase tracking-[0.2em] text-[#D4D4D8]">
+            Business Value
+          </span>
+
+        </div>
+
+        <div className="mt-6 h-[2px] w-0 bg-gradient-to-r from-[#29B6F0] via-[#3E7BD6] to-[#B93FC9] transition-all duration-500 group-hover:w-full" />
+
+      </div>
+
+    ))}
+
+  </div>
+
+
+  {/* ============================= */}
+{/* Premium Future Ready Banner */}
+{/* ============================= */}
+
+<div
+  className="relative mt-24 overflow-hidden rounded-[32px] border border-[#2A2A30] bg-[#0A0A0A] px-6 py-12 shadow-[0_25px_60px_rgba(0,0,0,.45)] sm:px-10 sm:py-16 lg:px-14"
+  data-aos="fade-up"
+  data-aos-duration="1000"
+>
+  {/* Background Effects */}
+  <div className="absolute inset-0 overflow-hidden">
+
+    <div className="absolute -left-24 top-0 h-80 w-80 rounded-full bg-[#29B6F0]/15 blur-[120px]" />
+
+    <div className="absolute -right-20 bottom-0 h-80 w-80 rounded-full bg-[#B93FC9]/15 blur-[130px]" />
+
+    <div className="absolute left-1/2 top-1/2 h-72 w-72 -translate-x-1/2 -translate-y-1/2 rounded-full bg-[#7A4FD1]/10 blur-[130px]" />
+
+    <div className="absolute inset-0 bg-[linear-gradient(rgba(255,255,255,.03)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,.03)_1px,transparent_1px)] bg-[size:55px_55px]" />
+
+  </div>
+
+  <div className="relative z-10 grid items-center gap-12 lg:grid-cols-[1.2fr_.8fr]">
+
+    {/* Left */}
+    <div
+      data-aos="fade-right"
+      data-aos-delay="100"
+    >
+      <span className="inline-flex items-center rounded-full border border-[#3E7BD6]/40 bg-white/5 px-5 py-2 text-xs font-semibold uppercase tracking-[0.3em] text-[#29B6F0] backdrop-blur-md">
+        Future Ready
+      </span>
+
+      <h3 className="mt-7 text-3xl font-black leading-tight text-white sm:text-4xl lg:text-5xl">
+        Technology that
+        <br />
+
+        <span className="bg-gradient-to-r from-[#29B6F0] via-[#3E7BD6] via-[#7A4FD1] to-[#B93FC9] bg-clip-text text-transparent">
+          accelerates
+        </span>
+
+        <br />
+
+        your business.
+      </h3>
+
+      <p className="mt-7 max-w-xl text-base leading-8 text-[#D4D4D8] sm:text-lg">
+        Modern infrastructure, secure platforms, and scalable solutions
+        designed to help your organization move faster with confidence.
+      </p>
+    </div>
+
+    {/* Right */}
+    <div
+      className="grid gap-4"
+      data-aos="fade-left"
+      data-aos-delay="250"
+    >
+      {[
+        "Modern Cloud Infrastructure",
+        "Better Security & Compliance",
+        "Reliable System Integrations",
+        "Lower Maintenance Costs",
+      ].map((item, index) => (
+        <div
+          key={item}
+          data-aos="zoom-in"
+          data-aos-delay={300 + index * 120}
+          className="group flex items-center gap-4 rounded-2xl border border-[#2A2A30] bg-white/5 px-5 py-4 backdrop-blur-md transition-all duration-500 hover:border-[#3E7BD6]/60 hover:bg-white/10 hover:translate-x-2"
+        >
+          <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-gradient-to-br from-[#29B6F0] via-[#3E7BD6] to-[#B93FC9] text-sm font-bold text-white shadow-[0_0_25px_rgba(62,123,214,.35)]">
+            0{index + 1}
           </div>
 
-        ))}
-
-      </div>
-
+          <span className="font-medium text-[#FFFFFF]">
+            {item}
+          </span>
+        </div>
+      ))}
     </div>
 
   </div>
+</div>
 
 </div>
 
