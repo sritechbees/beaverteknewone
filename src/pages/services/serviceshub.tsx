@@ -357,7 +357,7 @@ export default function ServicesHub() {
     <div className="mt-12 flex flex-col items-center justify-center gap-5 sm:flex-row">
 
       <Link
-        href="/contact"
+        href="/contact/contacthero"
         className="inline-flex items-center justify-center gap-2 rounded-full bg-gradient-to-r from-[#29B6F0] via-[#3E7BD6] via-[#7A4FD1] to-[#B93FC9] px-8 py-4 font-semibold text-white shadow-[0_0_40px_rgba(62,123,214,.35)] transition-all duration-300 hover:scale-105 hover:shadow-[0_0_60px_rgba(185,63,201,.40)]"
       >
         Start Your Project
@@ -365,7 +365,7 @@ export default function ServicesHub() {
       </Link>
 
       <Link
-        href="/services"
+        href="/services/serviceshero"
         className="inline-flex items-center justify-center rounded-full border border-[#3E7BD6]/40 bg-white/5 px-8 py-4 font-semibold text-white backdrop-blur-md transition-all duration-300 hover:border-[#B93FC9] hover:bg-white/10 hover:shadow-[0_0_30px_rgba(185,63,201,.25)]"
       >
         Explore Services
