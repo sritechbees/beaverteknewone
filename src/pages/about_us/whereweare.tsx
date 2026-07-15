@@ -67,13 +67,13 @@ export default function WhereWeAre() {
 
         Where We
 
-        <span className="block bg-gradient-to-r from-[#29B6F0] via-[#3E7BD6] via-[#7A4FD1] to-[#B93FC9] bg-clip-text text-transparent">
+        <span className="block bg-gradient-to-r from-[#29B6F0] via-[#3E7BD6] via-[#7A4FD1] to-[#c851d8] bg-clip-text text-transparent">
           Are
         </span>
 
       </h2>
 
-      <div className="mx-auto mt-6 h-1 w-24 rounded-full bg-gradient-to-r from-[#29B6F0] via-[#3E7BD6] via-[#7A4FD1] to-[#B93FC9]" />
+      <div className="mx-auto mt-6 h-1 w-24 rounded-full bg-gradient-to-r from-[#25b7f0] via-[#3E7BD6] via-[#7A4FD1] to-[#B93FC9]" />
 
       <p className="mx-auto mt-8 max-w-2xl text-lg leading-8 text-[#D4D4D8]">
         Strategically positioned to support businesses with experienced

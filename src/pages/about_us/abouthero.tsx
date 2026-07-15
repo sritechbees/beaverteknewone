@@ -103,7 +103,7 @@ export default function AboutHero() {
             text-white
             transition-all
             duration-300
-            hover:border-[#3E7BD6]"
+            hover:border-[#4084ea]"
           >
             Contact Us
           </Link>

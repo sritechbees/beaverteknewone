@@ -147,7 +147,7 @@ export default function WhatWeBelieve() {
 
                 {/* Bottom Accent */}
 
-                <div className="mt-6 h-1 w-0 rounded-full bg-gradient-to-r from-[#29B6F0] via-[#3E7BD6] via-[#7A4FD1] to-[#B93FC9] transition-all duration-500 group-hover:w-28" />
+                <div className="mt-6 h-1 w-0 rounded-full bg-gradient-to-r from-[#27bdf8] via-[#3E7BD6] via-[#7A4FD1] to-[#B93FC9] transition-all duration-500 group-hover:w-28" />
 
               </div>
 

@@ -20,13 +20,13 @@ export default function AboutContent() {
     },
     {
       title: "How We Work",
-      image: "/home/studyhero.jpg",
+      image: "/home/theteam.jpg",
       content:
         "We are not a body shop. Every engagement is led by senior people who have done the work before. We listen first, design carefully, and ship working software. We treat your data, your customers, and your operations with the same seriousness we would give a regulated enterprise because at the size you are operating, mistakes cost more, not less.",
     },
     {
       title: "The Team",
-      image: "/home/theteam.jpg",
+      image: "/home/studyhero.jpg",
       content:
         "Our leadership brings more than 80 years of combined experience working with Fortune 500 companies across financial services, healthcare, retail, and technology. We have built payment platforms processing millions of transactions a month, healthcare AI used in real hospitals, and mobile products taken from concept to launch. We are global by design. Our US team handles strategy, architecture, and client partnership. Our India team handles deep engineering execution. Together, we deliver faster and at a better cost than a single-location firm.",
     },
