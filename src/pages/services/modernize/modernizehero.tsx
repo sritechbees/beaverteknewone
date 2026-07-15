@@ -15,7 +15,7 @@ export default function ModernizeHero() {
   <div className="absolute inset-0">
 
     <img
-      src="/home/theteam.jpg"
+      src="/home/whyexist.jpg"
       alt="Modernize Hero"
       className="h-full w-full object-cover"
     />

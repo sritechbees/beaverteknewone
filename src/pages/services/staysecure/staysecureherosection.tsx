@@ -2,6 +2,7 @@
 
 import { useEffect } from "react";
 import AOS from "aos";
+import { motion } from "framer-motion";
 import "aos/dist/aos.css";
 import App_layout from "@/component/layout/app_layout";
 import StaySecureSection from "./staysecuresection";
@@ -17,102 +18,127 @@ export default function SecureHeroSection() {
 
   return (
     <App_layout>
-    <section className="relative bg-[#161E2F] text-white overflow-hidden">
+<section className="relative overflow-hidden bg-[#000000] py-24 lg:py-16">
 
-      {/* Background subtle layers */}
-      <div className="absolute inset-0">
-        <div className="absolute top-[-120px] left-[-120px] w-[300px] h-[300px] bg-[#23314F] rounded-full blur-3xl opacity-60"></div>
-        <div className="absolute bottom-[-120px] right-[-120px] w-[300px] h-[300px] bg-[#6B91AD] rounded-full blur-3xl opacity-20"></div>
+  {/* ================= Background ================= */}
+  <div className="absolute inset-0">
+
+    {/* Background Image */}
+    {/* Background Image */}
+<div
+  className="absolute inset-0 bg-cover bg-center bg-no-repeat opacity-60"
+  style={{
+    backgroundImage: "url('/home/homehero.jpg')",
+  }}
+/>
+
+{/* Dark Overlay */}
+<div className="absolute inset-0 bg-black/25" />
+
+{/* Cyan Glow */}
+<div className="absolute -top-40 -left-40 h-[32rem] w-[32rem] rounded-full bg-[#29B6F0]/10 blur-[140px]" />
+
+{/* Blue Glow */}
+<div className="absolute top-20 right-0 h-[28rem] w-[28rem] rounded-full bg-[#3E7BD6]/10 blur-[150px]" />
+
+{/* Magenta Glow */}
+<div className="absolute bottom-0 left-1/2 h-[22rem] w-[22rem] -translate-x-1/2 rounded-full bg-[#B93FC9]/8 blur-[140px]" />
+
+{/* Grid Pattern */}
+<div className="absolute inset-0 bg-[linear-gradient(rgba(41,182,240,.03)_1px,transparent_1px),linear-gradient(90deg,rgba(41,182,240,.03)_1px,transparent_1px)] bg-[size:60px_60px]" />
+
+</div>
+
+
+  <div className="relative mx-auto flex min-h-[70vh] max-w-7xl items-center px-6 lg:px-8">
+
+    <motion.div
+      initial={{ opacity: 0, y: 40 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true }}
+      transition={{ duration: 0.8 }}
+      data-aos="fade-up"
+      data-aos-duration="1000"
+      className="max-w-3xl"
+    >
+
+      {/* Badge */}
+      <span
+        data-aos="zoom-in"
+        data-aos-delay="150"
+        className="inline-flex items-center gap-3 rounded-full border border-[#3E7BD6]/30 bg-white/5 px-6 py-2 backdrop-blur-xl"
+      >
+        <span className="h-2 w-2 animate-pulse rounded-full bg-[#29B6F0]" />
+
+        <span className="text-xs font-semibold uppercase tracking-[0.28em] text-[#29B6F0]">
+          Secure Operations
+        </span>
+      </span>
+
+      {/* Heading */}
+      <h1
+        data-aos="fade-up"
+        data-aos-delay="250"
+        className="mt-8 text-5xl font-black leading-tight md:text-6xl lg:text-7xl"
+      >
+        <span className="text-white">
+          Services —
+        </span>
+
+        <br />
+
+        <span className="bg-[linear-gradient(135deg,#29B6F0_0%,#3E7BD6_35%,#7A4FD1_65%,#B93FC9_100%)] bg-clip-text text-transparent">
+          Stay Secure
+        </span>
+      </h1>
+
+      {/* Subtitle */}
+      <h2
+        data-aos="fade-up"
+        data-aos-delay="350"
+        className="mt-8 text-2xl font-semibold leading-relaxed text-white md:text-3xl"
+      >
+        Keep your business running.
+
+        <br />
+
+        <span className="bg-[linear-gradient(135deg,#29B6F0,#3E7BD6,#7A4FD1,#B93FC9)] bg-clip-text text-transparent">
+          Quietly. Securely.
+        </span>
+      </h2>
+
+      {/* Description */}
+      <p
+        data-aos="fade-up"
+        data-aos-delay="450"
+        className="mt-8 max-w-2xl text-lg leading-9 text-[#A0A0A8]"
+      >
+        We build secure, scalable, always-on systems that protect your data,
+        ensure uptime, and keep your operations invisible to disruption.
+      </p>
+
+      {/* Buttons */}
+      <div
+        data-aos="fade-up"
+        data-aos-delay="600"
+        className="mt-12 flex flex-wrap gap-5"
+      >
+
+        <button className="rounded-full bg-[linear-gradient(135deg,#29B6F0_0%,#3E7BD6_35%,#7A4FD1_65%,#B93FC9_100%)] px-8 py-4 font-semibold text-white shadow-[0_0_40px_rgba(62,123,214,.35)] transition-all duration-500 hover:scale-105 hover:shadow-[0_0_60px_rgba(185,63,201,.35)]">
+          Explore Services
+        </button>
+
+        <button className="rounded-full border border-[#3E7BD6]/40 bg-white/5 px-8 py-4 font-semibold text-white backdrop-blur-xl transition-all duration-500 hover:border-[#29B6F0] hover:bg-white/10">
+          Talk to Us
+        </button>
+
       </div>
 
-      <div className="relative max-w-6xl mx-auto px-6 md:px-16 py-28">
+    </motion.div>
 
-        <div className="grid md:grid-cols-2 gap-12 items-center">
+  </div>
 
-          {/* LEFT CONTENT */}
-          <div className="space-y-6" data-aos="fade-right">
-
-            {/* Badge */}
-            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-[#23314F] border border-[#6B91AD]/30">
-              <span className="w-2 h-2 bg-[#6B91AD] rounded-full animate-pulse"></span>
-              <span className="text-[#6B91AD] text-xs tracking-widest uppercase">
-                Secure Operations
-              </span>
-            </div>
-
-            {/* Title */}
-            <h1 className="text-4xl md:text-6xl font-semibold leading-tight">
-              Services — Stay Secure
-            </h1>
-
-            <h2 className="text-xl md:text-2xl text-[#E8EFF4] font-medium">
-              Keep your business running.
-              <span className="text-[#6B91AD]"> Quietly. Securely.</span>
-            </h2>
-
-            {/* Description */}
-            <p className="text-[#E8EFF4] text-sm md:text-base leading-relaxed max-w-xl">
-              We build secure, scalable, always-on systems that protect your data,
-              ensure uptime, and keep your operations invisible to disruption.
-            </p>
-
-            {/* CTA Buttons */}
-            <div className="flex flex-wrap gap-4 pt-4">
-              <button className="bg-[#6B91AD] hover:bg-[#5c85a3] transition px-6 py-3 rounded-full font-medium">
-                Explore Services
-              </button>
-
-              <button className="border border-[#6B91AD]/40 hover:border-[#6B91AD] transition px-6 py-3 rounded-full text-[#E8EFF4]">
-                Talk to us
-              </button>
-            </div>
-          </div>
-
-          {/* RIGHT VISUAL CARD */}
-          <div data-aos="fade-left" className="relative">
-
-            <div className="bg-[#23314F] border border-[#6B91AD]/20 rounded-2xl p-8 md:p-10 shadow-xl">
-
-              <p className="text-[#6B91AD] text-xs uppercase tracking-widest mb-4">
-                Security Layer Overview
-              </p>
-
-              <h3 className="text-2xl font-semibold mb-6">
-                Always protected architecture
-              </h3>
-
-              <div className="space-y-4 text-[#E8EFF4] text-sm">
-
-                {[
-                  "Encrypted data pipelines",
-                  "24/7 system monitoring",
-                  "Threat detection & response",
-                  "Zero-downtime deployment systems",
-                ].map((item, i) => (
-                  <div
-                    key={i}
-                    data-aos="fade-up"
-                    data-aos-delay={i * 100}
-                    className="flex items-center gap-3"
-                  >
-                    <span className="w-2 h-2 bg-[#6B91AD] rounded-full"></span>
-                    <span>{item}</span>
-                  </div>
-                ))}
-              </div>
-
-              {/* bottom mini stat */}
-              <div className="mt-8 pt-6 border-t border-[#6B91AD]/20 flex justify-between text-xs text-[#6B91AD]">
-                <span>Uptime: 99.99%</span>
-                <span>Threats Blocked: Real-time</span>
-              </div>
-            </div>
-
-          </div>
-
-        </div>
-      </div>
-    </section>
+</section>
     <StaySecureSection/>
     <SecurityWhoThisIsFor/>
     </App_layout>
