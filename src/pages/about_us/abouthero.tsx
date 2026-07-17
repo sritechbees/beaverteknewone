@@ -42,7 +42,7 @@ export default function AboutHero() {
           text-xs
           sm:text-sm
           font-semibold
-          text-[#29B6F0]"
+          text-[#29b6f0]"
         >
           About BeaverTek
         </span>

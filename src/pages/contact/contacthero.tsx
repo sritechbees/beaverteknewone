@@ -28,7 +28,7 @@ export default function ContactHero() {
   />
 
   {/* OVERLAY */}
-  <div className="absolute inset-0 bg-black/70" />
+  <div className="absolute inset-0 bg-black/40" />
 
   {/* GLOW EFFECTS */}
   <div className="absolute top-0 left-0 h-[500px] w-[500px] rounded-full bg-[#29B6F0]/15 blur-3xl" />

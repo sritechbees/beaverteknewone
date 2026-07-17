@@ -137,7 +137,7 @@ export default function Productcontent() {
             from-[#29B6F0]
             via-[#3E7BD6]
             via-[#7A4FD1]
-            to-[#B93FC9]
+            to-[#c343d4]
             bg-clip-text
             text-transparent
             "

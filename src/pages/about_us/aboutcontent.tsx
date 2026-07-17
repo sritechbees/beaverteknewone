@@ -168,7 +168,7 @@ export default function AboutContent() {
 
             {/* Divider */}
 
-            <div className="mt-8 h-1 w-28 rounded-full bg-gradient-to-r from-[#29B6F0] via-[#3E7BD6] via-[#7A4FD1] to-[#B93FC9]" />
+            <div className="mt-8 h-1 w-28 rounded-full bg-gradient-to-r from-[#2abffa] via-[#3E7BD6] via-[#7A4FD1] to-[#B93FC9]" />
 
           </div>
 

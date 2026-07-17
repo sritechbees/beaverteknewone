@@ -149,7 +149,7 @@ export default function SeeYourDataContent() {
       What This Looks Like
     </h3>
 
-    <p className="mx-auto mt-5 max-w-3xl text-[#A0A0A8]">
+    <p className="mx-auto mt-5 max-w-3xl text-[#96969e]">
       Everything is designed around helping you understand your business —
       not creating more reports.
     </p>
@@ -216,7 +216,7 @@ export default function SeeYourDataContent() {
                 ${
                   activeCard === index
                     ? "bg-[linear-gradient(135deg,#29B6F0_0%,#3E7BD6_35%,#7A4FD1_65%,#B93FC9_100%)] text-white"
-                    : "bg-white/5 text-[#29B6F0]"
+                    : "bg-white/5 text-[#24bbf7]"
                 }`}
               >
                 <Icon size={26} />

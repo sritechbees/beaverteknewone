@@ -244,7 +244,7 @@ export default function FAQSection() {
               transition={{
                 duration: 0.8,
               }}
-              className="mt-10 rounded-[18px] bg-gradient-to-r from-[#29B6F0] via-[#3E7BD6] via-[#7A4FD1] to-[#B93FC9] p-8 text-white shadow-[0_25px_60px_rgba(0,0,0,.45)]"
+              className="mt-10 rounded-[18px] bg-gradient-to-r from-[#27baf4] via-[#3E7BD6] via-[#7A4FD1] to-[#B93FC9] p-8 text-white shadow-[0_25px_60px_rgba(0,0,0,.45)]"
             >
               <h3 className="text-2xl font-bold">
                 Still have questions?

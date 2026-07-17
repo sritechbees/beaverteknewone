@@ -111,7 +111,7 @@ export default function Casestudyall() {
   className="mt-10 flex flex-col gap-4 sm:flex-row"
 >
   <Link
-    href="/contact"
+    href="/contact/contacthero"
     className="group inline-flex items-center justify-center rounded-full bg-gradient-to-r from-[#29B6F0] via-[#3E7BD6] via-[#7A4FD1] to-[#B93FC9] px-8 py-4 font-semibold text-[#FFFFFF] shadow-[0_0_40px_rgba(62,123,214,.35)] transition-all duration-500 hover:-translate-y-1 hover:shadow-[0_0_60px_rgba(185,63,201,.35)]"
   >
     Start Your Project
@@ -120,7 +120,7 @@ export default function Casestudyall() {
   </Link>
 
   <Link
-    href="/services"
+    href="/services/serviceshero"
     className="inline-flex items-center justify-center rounded-full border border-[#2A2A30] bg-[#121212] px-8 py-4 font-semibold text-[#FFFFFF] shadow-md transition-all duration-300 hover:border-[#3E7BD6] hover:bg-gradient-to-r hover:from-[#29B6F0] hover:via-[#3E7BD6] hover:via-[#7A4FD1] hover:to-[#B93FC9] hover:text-[#FFFFFF]"
   >
     Explore Services

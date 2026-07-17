@@ -137,7 +137,7 @@ export default function ProductsHeroSection() {
 
           <span className="h-[5px] w-20 rounded-full bg-gradient-to-r from-[#29B6F0] via-[#3E7BD6] to-[#7A4FD1]" />
 
-          <span className="h-[5px] w-10 rounded-full bg-gradient-to-r from-[#7A4FD1] to-[#B93FC9]" />
+          <span className="h-[5px] w-10 rounded-full bg-gradient-to-r from-[#7f52db] to-[#B93FC9]" />
 
         </div>
 
