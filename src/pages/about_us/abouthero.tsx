@@ -6,11 +6,13 @@ import Link from "next/link";
 import AboutContent from "./aboutcontent";
 import WhatWeBelieve from "./whatwebelieve";
 import WhereWeAre from "./whereweare";
+import HeroSection from "@/component/common/herosection";
 
 
 export default function AboutHero() {
   return (
     <App_layout>
+    
 <section className="relative overflow-hidden bg-[#000000] py-12 sm:py-16 lg:py-16">
 
   {/* Background Glow */}

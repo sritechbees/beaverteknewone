@@ -6,6 +6,7 @@ import Link from "next/link";
 import AOS from "aos";
 import "aos/dist/aos.css";
 import App_layout from "@/component/layout/app_layout";
+import CaseStudyHero from "@/component/common/herosection";
 
 const images = [
   "/home/studyhero.jpg",
@@ -33,6 +34,7 @@ export default function HeroSection() {
 
   return (
     <App_layout>
+      <CaseStudyHero/>
       <section className="relative overflow-hidden bg-gradient-to-br from-[#000000] via-[#0A0A0A] to-[#121212] py-16 lg:py-24">
 
   {/* Background Glow */}

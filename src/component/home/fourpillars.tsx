@@ -117,30 +117,38 @@ export default function FourPillars() {
           >
 
             {/* IMAGE */}
-            <div className="relative h-56 overflow-hidden">
-              <Image
-                src={pillar.image}
-                alt={pillar.title}
-                fill
-                className="object-cover transition-transform duration-700 group-hover:scale-110"
-              />
+           <div className="group relative h-56 overflow-hidden">
+  <Image
+    src={pillar.image}
+    alt={pillar.title}
+    fill
+    className="
+      object-cover
+      scale-100
+      transition-transform
+      duration-[2500ms]
+      ease-linear
+      will-change-transform
+      group-hover:scale-125
+    "
+  />
 
-              <div className="absolute inset-0 opacity-20 bg-[radial-gradient(#2A2A30_1px,transparent_1px)] [background-size:20px_20px]" />
+  <div className="absolute inset-0 opacity-20 bg-[radial-gradient(#2A2A30_1px,transparent_1px)] [background-size:20px_20px]" />
 
-              {/* NUMBER BADGE */}
-              <div className="absolute top-4 left-4">
-                <div
-                  className="
-                    px-3 py-1 rounded-[999px]
-                    bg-[linear-gradient(135deg,#29B6F0_0%,#3E7BD6_35%,#7A4FD1_65%,#B93FC9_100%)]
-                    text-white text-sm font-semibold
-                    shadow-lg
-                  "
-                >
-                  {pillar.number}
-                </div>
-              </div>
-            </div>
+  {/* NUMBER BADGE */}
+  <div className="absolute top-4 left-4">
+    <div
+      className="
+        px-3 py-1 rounded-full
+        bg-[linear-gradient(135deg,#29B6F0_0%,#3E7BD6_35%,#7A4FD1_65%,#B93FC9_100%)]
+        text-white text-sm font-semibold
+        shadow-lg
+      "
+    >
+      {pillar.number}
+    </div>
+  </div>
+</div>
 
             {/* CONTENT */}
             <div className="p-7 flex flex-col h-[260px]">
