@@ -21,27 +21,68 @@ export default function Header() {
   }, []);
 
   const services = [
+
+
+{
+    title: "End-to-End Digital Transformation",
+    href: "/services/digitaltransformation/herosection",
+    desc: "Transform business operations through digital innovation.",
+  },
+  {
+    title: "Cloud Cost Optimization (FinOps)",
+    href: "/services/finops/herosection",
+    desc: "Reduce cloud expenses while maximizing performance.",
+  },
+  {
+    title: "DevOps & DevSecOps",
+    href: "/services/devops/herosection",
+    desc: "Accelerate delivery with secure automated workflows.",
+  },
+  {
+    title: "Mobile App Development",
+    href: "/services/mobileappdevelopment/herosection",
+    desc: "Build scalable iOS and Android applications.",
+  },
+  {
+    title: "Custom Software Development & Maintenance",
+    href: "/services/customsoftware/herosection",
+    desc: "Develop and maintain software tailored to your business.",
+  },
+  {
+    title: "Data Analytics and Reporting",
+    href: "/services/dataanalytics/herosection",
+    desc: "Turn data into actionable business intelligence.",
+  },
+
+
+
     {
-      title: "Modernize",
+      title: "1.Modernize",
       href: "/services/modernize/modernizehero",
       desc: "Upgrade legacy systems with modern architecture.",
     },
     {
-      title: "See Your Data",
+      title: "2.See Your Data",
       href: "/services/seeyourdata/seeyourdatahero",
       desc: "Transform raw data into actionable insights.",
     },
     {
-      title: "Build Software",
+      title: "3.Build Software",
       href: "/services/buildsoftware/herosection",
       desc: "Custom software tailored for your business.",
     },
     {
-      title: "Stay Secure",
+      title: "4.Stay Secure",
       href: "/services/staysecure/staysecureherosection",
       desc: "Enterprise-grade security and compliance.",
     },
-  ];
+  
+
+
+
+  
+];
+  
 
   const closeAllMenus = () => {
     setMobileOpen(false);
@@ -165,20 +206,22 @@ export default function Header() {
                 </Link>
 
                 {/* DROPDOWN */}
-                <div
-                  className={`absolute top-full left-0 mt-5 w-[380px]
-                  bg-[#121212]
-                  rounded-[18px]
-                  border border-[#2A2A30]
-                  shadow-2xl
-                  overflow-hidden
-                  transition-all duration-300
-                  ${
-                    serviceOpen
-                      ? "opacity-100 visible translate-y-0"
-                      : "opacity-0 invisible translate-y-4"
-                  }`}
-                >
+               <div
+  className={`absolute top-full left-0 mt-5 w-[380px]
+  max-h-[520px]
+  overflow-y-auto
+  bg-[#121212]
+  rounded-[18px]
+  border border-[#2A2A30]
+  shadow-2xl
+  transition-all duration-300
+  scrollbar-thin scrollbar-thumb-[#3E7BD6] scrollbar-track-[#121212]
+  ${
+    serviceOpen
+      ? "opacity-100 visible translate-y-0"
+      : "opacity-0 invisible translate-y-4"
+  }`}
+>
                   <div className="p-4 border-b border-[#2A2A30]">
                     <h3 className="text-white font-bold">
                       Our Services
