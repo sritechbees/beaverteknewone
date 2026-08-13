@@ -36,7 +36,7 @@ const services: Service[] = [
     number: "05",
     title:
       "Preventive and corrective maintenance with near-zero downtime",
-    image: "/services/maintenance.jpg",
+    image: "/services/software maintance.png",
   },
   {
     number: "06",

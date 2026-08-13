@@ -35,9 +35,9 @@ export default function Footer() {
 
     {/* LOGO */}
     <Image
-      src="/home/logofooter.png"
+      src="/home/Logo option-2.png"
       alt="BeaverTek"
-      width={320}
+      width={210}
       height={110}
       priority
       className="transition-transform duration-500 group-hover:scale-105"

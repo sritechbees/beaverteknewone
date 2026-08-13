@@ -140,9 +140,9 @@ export default function Header() {
               className="group flex items-center gap-3"
             >
               <Image
-                src="/home/BeaverTek Logo v13.png"
+                src="/home/Logo option-2.png"
                 alt="BeaverTek"
-                width={110}
+                width={190}
                 height={110}
                 priority
                 className={`transition-all duration-500 ${
@@ -150,25 +150,7 @@ export default function Header() {
                 }`}
               />
 
-              <div className="hidden lg:block opacity-0 translate-x-[-10px] group-hover:opacity-100 group-hover:translate-x-0 transition-all duration-500">
-
-  <h3 className="text-xl font-bold leading-none">
-    <span className="text-white">
-      Beaver
-    </span>
-
-    <span className="bg-[linear-gradient(135deg,#29B6F0_0%,#3E7BD6_40%,#7A4FD1_75%,#B93FC9_100%)] bg-clip-text text-transparent">
-      Tek
-    </span>
-  </h3>
-
-  <p className="mt-1 text-[10px] tracking-[5px] uppercase font-medium
-    bg-[linear-gradient(135deg,#29B6F0_0%,#3E7BD6_40%,#7A4FD1_75%,#B93FC9_100%)]
-    bg-clip-text text-transparent">
-    Innovative Technologies
-  </p>
-
-</div>
+             
             </Link>
 
             {/* PART 1A ENDS HERE */}
