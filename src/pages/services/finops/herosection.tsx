@@ -57,7 +57,7 @@ function herosection() {
         <div className="absolute inset-0">
 
           <img
-            src="/services/Cloud Cost Optimization.jpg"
+            src="/services/cloud-cost-optimization2.jpg"
             alt="Cloud Cost Optimization"
             className="h-full w-full object-cover object-center"
           />

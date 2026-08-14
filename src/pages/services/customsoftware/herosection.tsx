@@ -27,7 +27,7 @@ function Herosection() {
 
       <div className="absolute inset-0">
         <img
-          src="https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=2200&q=85"
+          src="/services/Custom Software Development and Maintance.jpg"
           alt=""
           className="h-full w-full object-cover"
         />
@@ -36,7 +36,7 @@ function Herosection() {
         <div className="absolute inset-0 bg-black/10" />
 
         {/* Left-to-right gradient */}
-        <div className="absolute inset-0 bg-gradient-to-r from-black via-black/35 to-black/25" />
+        <div className="absolute inset-0 bg-gradient-to-r from-black via-black/40 to-black/70" />
 
         {/* Bottom fade */}
         <div className="absolute inset-x-0 bottom-0 h-48 bg-gradient-to-t from-black to-transparent" />

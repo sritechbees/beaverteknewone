@@ -71,7 +71,7 @@ function Herosection() {
         <div className="absolute inset-0">
 
           <img
-            src="/services/DevOps & DevSecOps.png"
+            src="/services/Devops.jpg"
             alt="DevOps & DevSecOps"
             className="h-full w-full object-cover object-center"
           />

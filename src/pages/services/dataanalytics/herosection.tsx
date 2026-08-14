@@ -25,7 +25,7 @@ function Herosection() {
         className="absolute inset-0 bg-cover bg-center bg-no-repeat"
         style={{
           backgroundImage:
-            "url('/services/Data Analytics and Reporting1.jpg')",
+            "url('/services/Data Analytics2.jpg')",
         }}
       />
 

@@ -148,12 +148,12 @@ export default function AboutHero() {
 
 >
   <Image
-    src="/home/abouthero.png"
+    src="/about/About.jpg"
     alt="About BeaverTek"
     width={540}
     height={620}
     priority
-    className="w-full h-auto object-fill transition duration-700 hover:scale-110"
+    className="w-full border border-2 h-auto object-fill transition duration-700 hover:scale-110"
   />
 </div>
 

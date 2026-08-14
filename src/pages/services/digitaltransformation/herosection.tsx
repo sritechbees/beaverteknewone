@@ -11,13 +11,13 @@ function Herosection() {
 
   {/* Background Image */}
   <img
-    src="/services/End-to-End Digital Transformation.jpg"
+    src="/services/End-to-end-digital-transformation.jpg"
     alt=""
     className="absolute inset-0 h-full w-full object-cover"
   />
 
   {/* Dark Overlay */}
-  <div className="absolute inset-0 bg-black/55" />
+  <div className="absolute inset-0 bg-black/45" />
 
   {/* Gradient Overlay */}
   <div className="absolute inset-0 bg-gradient-to-r from-black/80 via-black/40 to-transparent" />

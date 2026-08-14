@@ -112,7 +112,7 @@ export default function HeroSection() {
             {/* video/image card */}
             <div className="relative rounded-3xl overflow-hidden shadow-2xl border border-[#2A2A30] bg-[#121212]">
               <img
-  src="/home/homehero.jpg"
+  src="/home/Banner1.jpg"
   alt="Hero Image"
   className="w-full h-[300px] sm:h-[400px] lg:h-[520px] object-cover transition-transform duration-700 hover:scale-105"
 />

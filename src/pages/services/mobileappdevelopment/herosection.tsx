@@ -28,7 +28,7 @@ function Herosection() {
         <div className="absolute inset-0">
 
           <img
-            src="/services/Mobile App.png"
+            src="/services/Mobile App Development.jpg"
             alt="Mobile App Development"
             className="h-full w-full object-cover object-center"
           />
