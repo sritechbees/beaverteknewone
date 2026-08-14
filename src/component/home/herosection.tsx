@@ -107,56 +107,60 @@ export default function HeroSection() {
           </div>
 
           {/* RIGHT SIDE */}
-          <div data-aos="fade-left" className="relative">
+<div data-aos="fade-left" className="relative">
 
-            {/* video/image card */}
-            <div className="relative rounded-3xl overflow-hidden shadow-2xl border border-[#2A2A30] bg-[#121212]">
-              <img
-  src="/home/Banner1.jpg"
-  alt="Hero Image"
-  className="w-full h-[300px] sm:h-[400px] lg:h-[520px] object-cover transition-transform duration-700 hover:scale-105"
-/>
-              {/* overlay gradient */}
-              <div className="absolute inset-0 bg-gradient-to-t from-black/30 via-transparent to-transparent" />
+  {/* IMAGE GROUP */}
+  <div className="group relative overflow-hidden rounded-3xl border border-[#2A2A30] bg-[#121212] shadow-2xl">
 
-              {/* play button */}
-              <div className="absolute inset-0 flex items-center justify-center">
-                {/* <button className="w-16 h-16 bg-white/90 rounded-full flex items-center justify-center shadow-lg hover:scale-110 transition">
-                  <Play className="text-blue-600" size={24} />
-                </button> */}
-              </div>
+    <img
+      src="/home/Banner1.jpg"
+      alt="Hero Image"
+      className="
+        h-[450px]
+        w-full
+        object-cover
+        transition-transform
+        duration-[2500ms]
+        ease-in-out
+        group-hover:scale-110
+      "
+    />
 
-            </div>
+    {/* Overlay */}
+    <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-black/30 via-transparent to-transparent" />
 
-            {/* floating stats */}
-            <div className="absolute -bottom-10 left-0 right-0 px-4">
+  </div>
 
-              <div className="grid grid-cols-4 gap-3 bg-[#121212] shadow-xl rounded-2xl p-4 border border-[#2A2A30]">
+  {/* FLOATING STATS */}
+  <div className="absolute -bottom-10 left-0 right-0 px-4">
 
-                <div className="text-center">
-                <h3 className="font-bold text-lg text-white">50+</h3>
-                  <p className="text-xs text-[#A0A0A8]">Live Products</p>
-                </div>
+    <div className="grid grid-cols-4 gap-3 rounded-2xl border border-[#2A2A30] bg-[#121212] p-4 shadow-xl">
 
-                <div className="text-center">
-                 <h3 className="font-bold text-lg text-white">120+</h3>
-                  <p className="text-xs text-[#A0A0A8]">Clients</p>
-                </div>
+      <div className="text-center">
+        <h3 className="text-lg font-bold text-white">50+</h3>
+        <p className="text-xs text-[#A0A0A8]">Live Products</p>
+      </div>
 
-                <div className="text-center">
-                 <h3 className="font-bold text-lg text-white">99.9%</h3>
-                  <p className="text-xs text-[#A0A0A8]">Uptime</p>
-                </div>
+      <div className="text-center">
+        <h3 className="text-lg font-bold text-white">120+</h3>
+        <p className="text-xs text-[#A0A0A8]">Clients</p>
+      </div>
 
-                <div className="text-center">
-                 <h3 className="font-bold text-lg text-white">24/7</h3>
-                 <p className="text-xs text-[#A0A0A8]">Support</p>
-                </div>
+      <div className="text-center">
+        <h3 className="text-lg font-bold text-white">99.9%</h3>
+        <p className="text-xs text-[#A0A0A8]">Uptime</p>
+      </div>
 
-              </div>
-            </div>
+      <div className="text-center">
+        <h3 className="text-lg font-bold text-white">24/7</h3>
+        <p className="text-xs text-[#A0A0A8]">Support</p>
+      </div>
 
-          </div>
+    </div>
+
+  </div>
+
+</div>
 
         </div>
       </div>
