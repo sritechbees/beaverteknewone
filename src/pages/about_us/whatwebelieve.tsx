@@ -10,7 +10,7 @@ export default function WhatWeBelieve() {
     AOS.init({
       duration: 900,
       once: true,
-      easing: "ease-in-out",
+      easing: "ease-out-cubic",
       offset: 80,
     });
   }, []);
@@ -39,129 +39,368 @@ export default function WhatWeBelieve() {
   ];
 
   return (
-<section className="relative overflow-hidden bg-gradient-to-br from-[#000000] via-[#0A0A0A] to-[#121212] py-16 md:py-20 lg:py-24">
-
-  {/* Background Glow */}
-  <div className="absolute -top-20 -left-20 h-72 w-72 rounded-full bg-[#29B6F0]/20 blur-3xl" />
-  <div className="absolute bottom-0 right-0 h-96 w-96 rounded-full bg-[#B93FC9]/20 blur-3xl" />
-
-  {/* Grid Pattern */}
-  <div className="absolute inset-0 opacity-[0.04] bg-[linear-gradient(to_right,#2A2A30_1px,transparent_1px),linear-gradient(to_bottom,#2A2A30_1px,transparent_1px)] bg-[size:40px_40px]" />
-
-  <div className="relative max-w-7xl mx-auto px-6 lg:px-10">
-
-    <div className="grid grid-cols-1 lg:grid-cols-2 gap-14 lg:gap-20 items-center">
-
-      {/* ================= LEFT CONTENT ================= */}
+    <section
+      className="
+        relative
+        overflow-hidden
+        bg-[#000000]
+        py-16
+        sm:py-20
+        lg:py-24
+      "
+    >
+      {/* ================= GRID PATTERN ================= */}
 
       <div
-        data-aos="fade-right"
-        className="max-w-xl"
-      >
-        <span className="inline-flex items-center rounded-full border border-[#2A2A30] bg-[rgba(255,255,255,0.05)] px-5 py-2 text-sm font-semibold uppercase tracking-widest text-[#29B6F0]">
-          Our Philosophy
-        </span>
+        className="
+          pointer-events-none
+          absolute
+          inset-0
+          opacity-[0.025]
+          bg-[linear-gradient(to_right,#2A2A30_1px,transparent_1px),linear-gradient(to_bottom,#2A2A30_1px,transparent_1px)]
+          [background-size:40px_40px]
+        "
+      />
 
-        <h2 className="mt-6 text-4xl sm:text-5xl lg:text-6xl font-extrabold leading-tight tracking-tight text-white">
-          What We
-          <span className="block bg-gradient-to-r from-[#29B6F0] via-[#3E7BD6] via-[#7A4FD1] to-[#B93FC9] bg-clip-text text-transparent">
-            Believe
-          </span>
-        </h2>
+      <div className="relative mx-auto max-w-7xl px-5 sm:px-6 lg:px-8">
+        <div
+          className="
+            grid
+            grid-cols-1
+            items-center
+            gap-12
+            lg:grid-cols-2
+            lg:gap-16
+            xl:gap-20
+          "
+        >
 
-        <div className="mt-6 h-1 w-24 rounded-full bg-gradient-to-r from-[#29B6F0] via-[#3E7BD6] via-[#7A4FD1] to-[#B93FC9]" />
+          {/* ================= LEFT CONTENT ================= */}
 
-        <p className="mt-8 text-base md:text-lg leading-8 text-[#D4D4D8]">
-          We believe technology should be practical, measurable and
-          aligned with your business goals. Every solution we build
-          focuses on creating long-term value, improving efficiency,
-          and delivering real outcomes.
-        </p>
+          <div
+            data-aos="fade-right"
+            className="max-w-xl"
+          >
+            {/* Badge */}
 
-        <div className="mt-10 flex flex-wrap gap-4">
+            <span
+              className="
+                inline-flex
+                items-center
+                rounded-full
+                border
+                border-[#2A2A30]
+                bg-[#121212]
+                px-4
+                py-2
+                text-[11px]
+                font-semibold
+                uppercase
+                tracking-[0.22em]
+                text-[#29B6F0]
+                sm:px-5
+                sm:py-2.5
+                sm:text-xs
+              "
+            >
+              Our Philosophy
+            </span>
 
-          <div className="rounded-2xl bg-[#121212] shadow-[0_0_40px_rgba(62,123,214,.18)] border border-[#2A2A30] px-6 py-5">
-            <h4 className="text-3xl font-bold text-white">10+</h4>
-            <p className="mt-1 text-[#A0A0A8]">
-              Years Experience
+            {/* Heading */}
+
+           <h2
+  className="
+    mt-6
+    text-3xl
+    font-bold
+    leading-[1.08]
+    tracking-tight
+    text-white
+    sm:text-4xl
+    md:text-5xl
+    lg:text-5xl
+    whitespace-nowrap
+  "
+>
+  What We {" "}
+  <span
+    className="
+      bg-[linear-gradient(135deg,#29B6F0_0%,#3E7BD6_35%,#7A4FD1_65%,#B93FC9_100%)]
+      bg-clip-text
+      text-transparent
+    "
+  >
+    Believe
+  </span>
+</h2>
+
+{/* Divider */}
+
+<div
+  className="
+    mt-6
+    h-[3px]
+    w-16
+    rounded-full
+    bg-[linear-gradient(90deg,#29B6F0,#3E7BD6,#7A4FD1,#B93FC9)]
+    sm:mt-7
+    sm:w-24
+  "
+/>
+            {/* Description */}
+
+            <p
+              className="
+                mt-6
+                max-w-xl
+                text-sm
+                leading-7
+                text-[#A0A0A8]
+                sm:mt-7
+                sm:text-base
+                sm:leading-7
+                md:text-lg
+                md:leading-8
+              "
+            >
+              We believe technology should be practical, measurable and
+              aligned with your business goals. Every solution we build
+              focuses on creating long-term value, improving efficiency,
+              and delivering real outcomes.
             </p>
+
+            {/* ================= STATS ================= */}
+
+            <div
+              className="
+                mt-8
+                grid
+                grid-cols-2
+                gap-3
+                sm:mt-10
+                sm:gap-4
+              "
+            >
+              {/* Stat 1 */}
+
+              <div
+                className="
+                  rounded-2xl
+                  border
+                  border-[#2A2A30]
+                  bg-[#121212]
+                  px-4
+                  py-5
+                  sm:px-6
+                  sm:py-6
+                  transition-all
+                  duration-300
+                  hover:border-[#3E7BD6]/60
+                "
+              >
+                <h4
+                  className="
+                    text-2xl
+                    font-bold
+                    text-white
+                    sm:text-3xl
+                  "
+                >
+                  10+
+                </h4>
+
+                <p
+                  className="
+                    mt-1
+                    text-xs
+                    text-[#A0A0A8]
+                    sm:text-sm
+                  "
+                >
+                  Years Experience
+                </p>
+              </div>
+
+              {/* Stat 2 */}
+
+              <div
+                className="
+                  rounded-2xl
+                  border
+                  border-[#2A2A30]
+                  bg-[#121212]
+                  px-4
+                  py-5
+                  sm:px-6
+                  sm:py-6
+                  transition-all
+                  duration-300
+                  hover:border-[#B93FC9]/60
+                "
+              >
+                <h4
+                  className="
+                    text-2xl
+                    font-bold
+                    text-white
+                    sm:text-3xl
+                  "
+                >
+                  100%
+                </h4>
+
+                <p
+                  className="
+                    mt-1
+                    text-xs
+                    text-[#A0A0A8]
+                    sm:text-sm
+                  "
+                >
+                  Client Focus
+                </p>
+              </div>
+            </div>
           </div>
 
-          <div className="rounded-2xl bg-[#121212] shadow-[0_0_40px_rgba(185,63,201,.18)] border border-[#2A2A30] px-6 py-5">
-            <h4 className="text-3xl font-bold text-white">100%</h4>
-            <p className="mt-1 text-[#A0A0A8]">
-              Client Focus
-            </p>
+          {/* ================= RIGHT CONTENT ================= */}
+
+          <div className="space-y-4 sm:space-y-5">
+            {beliefs.map((item, index) => (
+              <div
+                key={index}
+                data-aos="fade-up"
+                data-aos-delay={index * 120}
+                className="
+                  group
+                  relative
+                  overflow-hidden
+                  rounded-2xl
+                  border
+                  border-[#2A2A30]
+                  bg-[#121212]
+                  p-5
+                  transition-all
+                  duration-400
+                  hover:-translate-y-1
+                  hover:border-[#3E7BD6]
+                  sm:p-6
+                  md:p-7
+                "
+              >
+                <div className="relative flex items-start gap-4 sm:gap-5">
+
+                  {/* Icon */}
+
+                  <div
+                    className="
+                      flex
+                      h-11
+                      w-11
+                      flex-shrink-0
+                      items-center
+                      justify-center
+                      rounded-xl
+                      bg-[linear-gradient(135deg,#29B6F0_0%,#3E7BD6_35%,#7A4FD1_65%,#B93FC9_100%)]
+                      transition-transform
+                      duration-300
+                      group-hover:scale-105
+                      sm:h-12
+                      sm:w-12
+                      md:h-14
+                      md:w-14
+                      md:rounded-2xl
+                    "
+                  >
+                    <CheckCircle2
+                      className="
+                        h-5
+                        w-5
+                        text-white
+                        sm:h-6
+                        sm:w-6
+                        md:h-7
+                        md:w-7
+                      "
+                    />
+                  </div>
+
+                  {/* Content */}
+
+                  <div className="min-w-0 flex-1">
+
+                    {/* Title + Number */}
+
+                    <div className="flex items-start justify-between gap-3">
+                      <h3
+                        className="
+                          text-base
+                          font-semibold
+                          leading-6
+                          text-white
+                          transition-colors
+                          duration-300
+                          group-hover:text-[#29B6F0]
+                          sm:text-lg
+                          md:text-xl
+                        "
+                      >
+                        {item.title}
+                      </h3>
+
+                      <span
+                        className="
+                          flex-shrink-0
+                          text-2xl
+                          font-bold
+                          leading-none
+                          text-white/[0.08]
+                          sm:text-3xl
+                          md:text-4xl
+                        "
+                      >
+                        0{index + 1}
+                      </span>
+                    </div>
+
+                    {/* Description */}
+
+                    <p
+                      className="
+                        mt-2
+                        text-sm
+                        leading-6
+                        text-[#A0A0A8]
+                        sm:mt-3
+                        sm:text-base
+                        sm:leading-7
+                      "
+                    >
+                      {item.description}
+                    </p>
+
+                    {/* Bottom Accent */}
+
+                    <div
+                      className="
+                        mt-5
+                        h-[2px]
+                        w-8
+                        rounded-full
+                        bg-[linear-gradient(90deg,#29B6F0,#3E7BD6,#7A4FD1,#B93FC9)]
+                        transition-all
+                        duration-500
+                        group-hover:w-20
+                      "
+                    />
+                  </div>
+                </div>
+              </div>
+            ))}
           </div>
 
         </div>
-
       </div>
-
-      {/* ================= RIGHT CONTENT ================= */}
-
-      <div className="space-y-6">
-
-        {beliefs.map((item, index) => (
-          <div
-            key={index}
-            data-aos="fade-up"
-            data-aos-delay={index * 120}
-            className="group relative overflow-hidden rounded-3xl border border-[#2A2A30] bg-[rgba(255,255,255,0.05)] p-6 md:p-7 backdrop-blur-xl shadow-[0_0_30px_rgba(0,0,0,.35)] transition-all duration-500 hover:-translate-y-2 hover:border-[#3E7BD6] hover:shadow-[0_0_60px_rgba(62,123,214,.30)]"
-          >
-
-            {/* Hover Glow */}
-
-            <div className="absolute inset-0 opacity-0 transition-opacity duration-500 group-hover:opacity-100">
-              <div className="absolute -right-10 -top-10 h-32 w-32 rounded-full bg-[#29B6F0]/25 blur-3xl" />
-              <div className="absolute -left-10 bottom-0 h-32 w-32 rounded-full bg-[#B93FC9]/20 blur-3xl" />
-            </div>
-
-            <div className="relative flex items-start gap-5">
-
-              {/* Icon */}
-
-              <div className="flex h-14 w-14 flex-shrink-0 items-center justify-center rounded-2xl bg-gradient-to-br from-[#29B6F0] via-[#3E7BD6] via-[#7A4FD1] to-[#B93FC9] shadow-[0_0_30px_rgba(62,123,214,.35)] transition-transform duration-500 group-hover:rotate-6 group-hover:scale-110">
-                <CheckCircle2 className="h-7 w-7 text-white" />
-              </div>
-
-              {/* Content */}
-
-              <div className="flex-1">
-
-                <div className="flex items-center justify-between">
-
-                  <h3 className="text-xl font-bold text-white transition-all duration-300 group-hover:bg-gradient-to-r group-hover:from-[#29B6F0] group-hover:via-[#3E7BD6] group-hover:to-[#B93FC9] group-hover:bg-clip-text group-hover:text-transparent">
-                    {item.title}
-                  </h3>
-
-                  <span className="text-4xl font-black text-white/10 transition-colors duration-300 group-hover:text-[#29B6F0]/20">
-                    0{index + 1}
-                  </span>
-
-                </div>
-
-                <p className="mt-3 text-base leading-8 text-[#A0A0A8]">
-                  {item.description}
-                </p>
-
-                {/* Bottom Accent */}
-
-                <div className="mt-6 h-1 w-0 rounded-full bg-gradient-to-r from-[#27bdf8] via-[#3E7BD6] via-[#7A4FD1] to-[#B93FC9] transition-all duration-500 group-hover:w-28" />
-
-              </div>
-
-            </div>
-
-          </div>
-        ))}
-
-      </div>
-
-    </div>
-
-  </div>
-
-</section>
+    </section>
   );
 }
