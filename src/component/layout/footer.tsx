@@ -6,6 +6,7 @@ import AOS from "aos";
 import "aos/dist/aos.css";
 import FooterCTA from "../home/footercta";
 import Image from "next/image";
+import Home from "@/pages";
 
 export default function Footer() {
   useEffect(() => {
@@ -250,5 +251,6 @@ bg-[#121212]
         </div>
       </div>
     </footer>
+    
   );
 }

@@ -6,6 +6,12 @@ import Image from "next/image";
 import AOS from "aos";
 import "aos/dist/aos.css";
 
+import { Swiper, SwiperSlide } from "swiper/react";
+import { Autoplay, Pagination } from "swiper/modules";
+
+import "swiper/css";
+import "swiper/css/pagination";
+
 export default function FourPillars() {
   useEffect(() => {
     AOS.init({
@@ -48,158 +54,307 @@ export default function FourPillars() {
       description:
         "Keep digital operations running, protected, and monitored.",
     },
+    {
+      number: "05",
+      title: "Stay Secure",
+      href: "/services/staysecure/staysecureherosection",
+      image: "/home/healthai.jpg",
+      description:
+        "Keep digital operations running, protected, and monitored.",
+    },
   ];
 
   return (
-    <section className="relative overflow-hidden bg-[#000000] pt-28 pb-20">
+    <section className="relative overflow-hidden bg-[#000000] pt-16 pb-8">
 
-  {/* Glow */}
-  <div className="absolute -top-32 -left-32 w-[500px] h-[500px] bg-[#29B6F0]/15 blur-[120px] rounded-full" />
+      {/* Background Glow */}
+      <div className="absolute bottom-0 right-0 w-[500px] h-[500px] bg-[#B93FC9]/15 blur-[140px] rounded-full" />
 
-  <div className="absolute bottom-0 right-0 w-[500px] h-[500px] bg-[#B93FC9]/15 blur-[140px] rounded-full" />
+      <div className="relative z-10 max-w-7xl mx-auto px-5 sm:px-6 lg:px-8">
 
-  <div className="relative z-10 max-w-7xl mx-auto px-5 sm:px-6 lg:px-8">
-
-    {/* Heading */}
-    <div
-      data-aos="fade-up"
-      className="max-w-4xl mx-auto text-center mb-16"
-    >
-      <span
-        className="
-          inline-flex px-4 py-2 rounded-[999px]
-          bg-[#121212]
-          text-[#29B6F0]
-          text-sm font-medium
-          border border-[#2A2A30]
-        "
-      >
-        FOUR PILLARS
-      </span>
-
-      <h2 className="mt-6 text-4xl md:text-5xl lg:text-6xl font-bold leading-tight text-white">
-        Four Things,
-        <span className="bg-[linear-gradient(135deg,#29B6F0_0%,#3E7BD6_35%,#7A4FD1_65%,#B93FC9_100%)] text-transparent bg-clip-text">
-          {" "}Done Well.
-        </span>
-      </h2>
-
-      <p className="mt-6 text-[#A0A0A8] text-lg leading-relaxed">
-        BeaverTek helps small and mid-size companies modernize their
-        systems, make sense of their data, and build software that
-        actually works.
-      </p>
-    </div>
-
-    {/* Cards */}
-    <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-8">
-
-      {pillars.map((pillar, index) => (
-        <Link
-          href={pillar.href}
-          key={pillar.title}
+        {/* ================= HEADING ================= */}
+        <div
           data-aos="fade-up"
-          data-aos-delay={index * 100}
-          className="group"
+          className="max-w-3xl mx-auto text-center mb-12 md:mb-14"
         >
-          <div
+
+          {/* Badge */}
+          <span
             className="
-              h-full overflow-hidden
-              rounded-[18px]
+              inline-flex items-center
+              px-4 py-2
+              rounded-full
               bg-[#121212]
               border border-[#2A2A30]
-              transition-all duration-500
-
-              hover:-translate-y-3
-              hover:border-[#29B6F0]/60
-              hover:shadow-[0_20px_60px_rgba(41,182,240,0.25)]
+              text-[#29B6F0]
+              text-xs sm:text-sm
+              font-semibold
+              tracking-[0.15em]
+              uppercase
+              animate-[fadeInUp_0.8s_ease-out]
             "
           >
+            FOUR PILLARS
+          </span>
 
-            {/* IMAGE */}
-           <div className="group relative h-56 overflow-hidden">
-  <Image
-    src={pillar.image}
-    alt={pillar.title}
-    fill
-    className="
-      object-cover
-      scale-100
-      transition-transform
-      duration-[2500ms]
-      ease-linear
-      will-change-transform
-      group-hover:scale-125
-    "
-  />
+          {/* Main Heading */}
+          <h2
+            data-aos="fade-up"
+            data-aos-delay="150"
+            className="
+              mt-5
+              text-3xl
+              sm:text-4xl
+              md:text-5xl
+              font-bold
+              leading-[1.15]
+              tracking-tight
+              text-white
+              animate-[fadeInUp_1s_ease-out]
+            "
+          >
+            Four Things,
+            <span
+              className="
+                ml-2
+                bg-[linear-gradient(135deg,#29B6F0_0%,#3E7BD6_35%,#7A4FD1_65%,#B93FC9_100%)]
+                text-transparent
+                bg-clip-text
+              "
+            >
+              Done Well.
+            </span>
+          </h2>
 
-  <div className="absolute inset-0 opacity-20 bg-[radial-gradient(#2A2A30_1px,transparent_1px)] [background-size:20px_20px]" />
+          {/* Description */}
+          <p
+            data-aos="fade-up"
+            data-aos-delay="300"
+            className="
+              mt-5
+              max-w-2xl
+              mx-auto
+              text-[#A0A0A8]
+              text-sm
+              sm:text-base
+              md:text-lg
+              leading-7
+              md:leading-8
+              font-normal
+              animate-[fadeInUp_1.2s_ease-out]
+            "
+          >
+            BeaverTek helps small and mid-size companies modernize their
+            systems, make sense of their data, and build software that
+            actually works.
+          </p>
+        </div>
 
-  {/* NUMBER BADGE */}
-  <div className="absolute top-4 left-4">
-    <div
-      className="
-        px-3 py-1 rounded-full
-        bg-[linear-gradient(135deg,#29B6F0_0%,#3E7BD6_35%,#7A4FD1_65%,#B93FC9_100%)]
-        text-white text-sm font-semibold
-        shadow-lg
-      "
-    >
-      {pillar.number}
-    </div>
-  </div>
-</div>
+        {/* ================= CAROUSEL ================= */}
+        <div
+          data-aos="fade-up"
+          data-aos-delay="400"
+        >
+          <Swiper
+            modules={[Autoplay, Pagination]}
+            spaceBetween={20}
+            slidesPerView={1}
+            loop={true}
+            speed={1000}
+            autoplay={{
+              delay: 3000,
+              disableOnInteraction: false,
+              pauseOnMouseEnter: true,
+            }}
+            pagination={{
+              clickable: true,
+            }}
+            breakpoints={{
+              640: {
+                slidesPerView: 1,
+                spaceBetween: 20,
+              },
+              768: {
+                slidesPerView: 2,
+                spaceBetween: 22,
+              },
+              1024: {
+                slidesPerView: 3,
+                spaceBetween: 24,
+              },
+              1280: {
+                slidesPerView: 4,
+                spaceBetween: 26,
+              },
+            }}
+            className="!pb-12"
+          >
 
-            {/* CONTENT */}
-            <div className="p-7 flex flex-col h-[260px]">
+            {pillars.map((pillar) => (
+              <SwiperSlide key={pillar.number}>
 
-              {/* TITLE */}
-              <h3
-                className="
-                  text-2xl font-bold mb-4 text-white
-                  transition-all duration-500
-                  group-hover:text-transparent
-                  group-hover:bg-[linear-gradient(135deg,#29B6F0_0%,#3E7BD6_35%,#7A4FD1_65%,#B93FC9_100%)]
-                  group-hover:bg-clip-text
-                "
-              >
-                {pillar.title}
-              </h3>
-
-              {/* DESCRIPTION */}
-              <p className="text-[#A0A0A8] leading-relaxed flex-grow">
-                {pillar.description}
-              </p>
-
-              {/* CTA */}
-              <div
-                className="
-                  mt-6 flex items-center gap-2
-                  text-[#29B6F0]
-                  font-semibold
-                  hover:text-[#7A4FD1]
-                "
-              >
-                Learn More
-
-                <span
-                  className="
-                    text-[#B93FC9]
-                    transition-transform duration-300
-                    group-hover:translate-x-2
-                  "
+                <Link
+                  href={pillar.href}
+                  className="group block h-full"
                 >
-                  →
-                </span>
-              </div>
 
-            </div>
-          </div>
-        </Link>
-      ))}
+                  <div
+                    className="
+                      h-full
+                      overflow-hidden
+                      rounded-[18px]
+                      bg-[#121212]
+                      border border-[#2A2A30]
+                      transition-all
+                      duration-500
 
-    </div>
-  </div>
-</section>
+                      hover:-translate-y-2
+                      hover:border-[#29B6F0]/60
+                      hover:shadow-[0_20px_60px_rgba(41,182,240,0.20)]
+                    "
+                  >
+
+                    {/* ================= IMAGE ================= */}
+                    <div className="group relative h-44 sm:h-48 overflow-hidden">
+
+                      <Image
+                        src={pillar.image}
+                        alt={pillar.title}
+                        fill
+                        className="
+                          object-cover
+                          scale-100
+                          transition-transform
+                          duration-[2500ms]
+                          ease-linear
+                          will-change-transform
+                          group-hover:scale-125
+                        "
+                      />
+
+                      {/* Grid Overlay */}
+                      <div
+                        className="
+                          absolute inset-0
+                          opacity-20
+                          bg-[radial-gradient(#2A2A30_1px,transparent_1px)]
+                          [background-size:20px_20px]
+                        "
+                      />
+
+                      {/* Number */}
+                      <div className="absolute top-4 left-4">
+
+                        <div
+                          className="
+                            min-w-[42px]
+                            h-8
+                            px-3
+                            flex
+                            items-center
+                            justify-center
+                            rounded-full
+                            bg-[linear-gradient(135deg,#29B6F0_0%,#3E7BD6_35%,#7A4FD1_65%,#B93FC9_100%)]
+                            text-white
+                            text-xs
+                            font-bold
+                            tracking-wide
+                            shadow-lg
+                          "
+                        >
+                          {pillar.number}
+                        </div>
+
+                      </div>
+                    </div>
+
+                    {/* ================= CONTENT ================= */}
+                    <div className="p-5 sm:p-6 flex flex-col min-h-[215px]">
+
+                      {/* Title */}
+                      <h3
+                        className="
+                          text-lg
+                          sm:text-xl
+                          font-semibold
+                          tracking-tight
+                          text-white
+                          mb-3
+
+                          transition-all
+                          duration-500
+
+                          group-hover:text-transparent
+                          group-hover:bg-[linear-gradient(135deg,#29B6F0_0%,#3E7BD6_35%,#7A4FD1_65%,#B93FC9_100%)]
+                          group-hover:bg-clip-text
+
+                          animate-[fadeInUp_0.8s_ease-out]
+                        "
+                      >
+                        {pillar.title}
+                      </h3>
+
+                      {/* Description */}
+                      <p
+                        className="
+                          text-[#A0A0A8]
+                          text-sm
+                          sm:text-[15px]
+                          leading-6
+                          font-normal
+                          flex-grow
+                          max-w-[95%]
+
+                          animate-[fadeInUp_1s_ease-out]
+                        "
+                      >
+                        {pillar.description}
+                      </p>
+
+                      {/* CTA */}
+                      <div
+                        className="
+                          mt-5
+                          flex
+                          items-center
+                          gap-2
+                          text-[#29B6F0]
+                          text-sm
+                          font-semibold
+                          tracking-wide
+                          transition-colors
+                          duration-300
+
+                          group-hover:text-[#7A4FD1]
+                        "
+                      >
+                        <span>Learn More</span>
+
+                        <span
+                          className="
+                            text-[#B93FC9]
+                            text-base
+                            transition-transform
+                            duration-300
+                            group-hover:translate-x-2
+                          "
+                        >
+                          →
+                        </span>
+                      </div>
+
+                    </div>
+                  </div>
+
+                </Link>
+
+              </SwiperSlide>
+            ))}
+
+          </Swiper>
+        </div>
+
+      </div>
+    </section>
   );
 }
