@@ -5,6 +5,7 @@ import { ArrowRight } from "lucide-react";
 import App_layout from "@/component/layout/app_layout";
 import ServicesHub from "./serviceshub";
 
+
 export default function ServicesHero() {
   const services = [
     {
@@ -349,11 +350,11 @@ export default function ServicesHero() {
 
             </div>
 
-          </div>
+</div>
         </div>
-      </section>
-
-      <ServicesHub />
+      </div>
+    </section>
+    <ServicesHub/>
     </App_layout>
   );
 }
