@@ -245,7 +245,7 @@ bg-[#121212]
             </Link>
 
             <Link href="#" className="hover:text-[#7A4FD1]">
-              Terms of Service
+              Terms of Service website
             </Link>
           </div>
         </div>
