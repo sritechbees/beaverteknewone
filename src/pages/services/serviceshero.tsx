@@ -5,7 +5,6 @@ import { ArrowRight } from "lucide-react";
 import App_layout from "@/component/layout/app_layout";
 import ServicesHub from "./serviceshub";
 
-
 export default function ServicesHero() {
   const services = [
     {
@@ -48,10 +47,9 @@ export default function ServicesHero() {
 
   return (
     <App_layout>
+      {/* ================= HERO SECTION ================= */}
       <section className="relative overflow-hidden bg-[#000000] pt-16 pb-20 lg:pb-28">
-
         <div className="relative mx-auto max-w-7xl px-5 sm:px-6 lg:px-8">
-
           <div className="grid items-center gap-14 lg:grid-cols-2 lg:gap-16">
 
             {/* ================= LEFT CONTENT ================= */}
@@ -112,12 +110,12 @@ export default function ServicesHero() {
               {/* Divider */}
               <div
                 className="
+                  mx-auto
                   mt-7
                   h-[3px]
                   w-20
                   rounded-full
                   bg-[linear-gradient(90deg,#29B6F0,#3E7BD6,#7A4FD1,#B93FC9)]
-                  mx-auto
                   lg:mx-0
                 "
               />
@@ -125,9 +123,9 @@ export default function ServicesHero() {
               {/* Description */}
               <p
                 className="
+                  mx-auto
                   mt-7
                   max-w-xl
-                  mx-auto
                   text-base
                   leading-7
                   text-[#D4D4D8]
@@ -143,9 +141,9 @@ export default function ServicesHero() {
 
               <p
                 className="
+                  mx-auto
                   mt-4
                   max-w-xl
-                  mx-auto
                   text-sm
                   leading-7
                   text-[#A0A0A8]
@@ -218,12 +216,10 @@ export default function ServicesHero() {
                   Explore Services
                 </Link>
               </div>
-
             </div>
 
             {/* ================= RIGHT SIDE - 6 CURVED IMAGES ================= */}
             <div className="relative mx-auto w-full max-w-[600px]">
-
               <div
                 className="
                   grid
@@ -233,7 +229,6 @@ export default function ServicesHero() {
                   md:gap-6
                 "
               >
-
                 {services.map((service, index) => (
                   <Link
                     key={service.title}
@@ -256,7 +251,6 @@ export default function ServicesHero() {
                       borderRadius: service.shape,
                     }}
                   >
-
                     {/* Image */}
                     <img
                       src={service.image}
@@ -330,11 +324,11 @@ export default function ServicesHero() {
 
                       <h3
                         className="
+                          text-center
                           text-sm
                           font-semibold
                           leading-5
                           text-white
-                          text-center
                           sm:text-base
                           sm:leading-6
                         "
@@ -342,19 +336,17 @@ export default function ServicesHero() {
                         {service.title}
                       </h3>
                     </div>
-
                   </Link>
                 ))}
-
               </div>
-
             </div>
 
-</div>
+          </div>
         </div>
-      </div>
-    </section>
-    <ServicesHub/>
+      </section>
+
+      {/* ================= SERVICES HUB ================= */}
+      <ServicesHub />
     </App_layout>
   );
 }
