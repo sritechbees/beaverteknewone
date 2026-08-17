@@ -204,15 +204,7 @@ export default function Header() {
       : "opacity-0 invisible translate-y-4"
   }`}
 >
-                  <div className="p-4 border-b border-[#2A2A30]">
-                    <h3 className="text-white font-bold">
-                      Our Services
-                    </h3>
-
-                    <p className="text-[#A0A0A8] text-sm mt-1">
-                      Digital transformation solutions
-                    </p>
-                  </div>
+                  
 
                   <div className="py-2">
                     {services.map((item) => (
