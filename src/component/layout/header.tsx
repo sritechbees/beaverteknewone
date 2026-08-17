@@ -174,7 +174,7 @@ export default function Header() {
                 onMouseLeave={() => setServiceOpen(false)}
               >
                 <Link
-                  href="/services/serviceshero"
+                  href="/services/servicesherosection"
                   className="flex items-center gap-2 text-white hover:text-[#29B6F0] transition"
                 >
                   Services
@@ -226,7 +226,7 @@ export default function Header() {
 
                   <div className="p-4 border-t border-[#2A2A30]">
                     <Link
-                      href="/services/serviceshero"
+                      href="/services/servicesherosection"
                       className="inline-flex items-center gap-2 text-[#29B6F0] font-semibold hover:gap-3 transition-all duration-300"
                     >
                       View All Services
