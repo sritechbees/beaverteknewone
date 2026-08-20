@@ -18,25 +18,20 @@ export default function ContactHero() {
 
   return (
     <App_layout>
-      <section className="relative min-h-screen overflow-hidden bg-black">
+      <section className="relative min-h-screen overflow-hidden bg-[#000000]">
 
         {/* =====================================================
-            FULL HERO BACKGROUND IMAGE
+            BACKGROUND
         ===================================================== */}
 
         <div className="absolute inset-0">
 
-          {/* Background Image */}
+          {/* Image */}
           <div
             className="
-              absolute
-              inset-0
-              bg-cover
-              bg-center
-              bg-no-repeat
+              absolute inset-0
               scale-105
-              transition-transform
-              duration-[2000ms]
+              bg-cover bg-center bg-no-repeat
             "
             style={{
               backgroundImage: "url('/contact/Contact.jpg')",
@@ -46,146 +41,62 @@ export default function ContactHero() {
           {/* Dark Overlay */}
           <div className="absolute inset-0 bg-black/10" />
 
-          {/* Left Dark Gradient - Text Readability */}
+          {/* Left Readability */}
           <div
             className="
-              absolute
-              inset-0
+              absolute inset-0
               bg-gradient-to-r
-              from-black/20
-              via-black/40
-              to-black/10
+              from-black/10
+              via-black/35
+              to-black/20
             "
           />
 
-          {/* Bottom Dark Gradient */}
+          {/* Bottom Fade */}
           <div
             className="
-              absolute
-              inset-x-0
-              bottom-0
+              absolute inset-x-0 bottom-0
               h-[45%]
               bg-gradient-to-t
               from-black
-              via-black/60
+              via-black/40
               to-transparent
             "
           />
 
-          {/* BeaverTek Gradient Overlay */}
+          {/* BeaverTek Gradient */}
           <div
             className="
-              absolute
-              inset-0
+              absolute inset-0
               bg-gradient-to-br
               from-[#29B6F0]/10
               via-transparent
               to-[#B93FC9]/15
             "
           />
-
         </div>
 
+        
         {/* =====================================================
-            BACKGROUND GLOW EFFECTS
-        ===================================================== */}
-
-        <div className="pointer-events-none absolute inset-0 overflow-hidden">
-
-          {/* Cyan Glow */}
-          <div
-            data-aos="zoom-in"
-            className="
-              absolute
-              -left-40
-              -top-40
-              h-[350px]
-              w-[350px]
-              rounded-full
-              bg-[#29B6F0]/15
-              blur-[140px]
-              sm:h-[450px]
-              sm:w-[450px]
-            "
-          />
-
-          {/* Magenta Glow */}
-          <div
-            data-aos="zoom-in"
-            data-aos-delay="200"
-            className="
-              absolute
-              -bottom-40
-              -right-40
-              h-[380px]
-              w-[380px]
-              rounded-full
-              bg-[#B93FC9]/15
-              blur-[150px]
-              sm:h-[450px]
-              sm:w-[450px]
-            "
-          />
-
-          {/* Center Violet Glow */}
-          <div
-            className="
-              absolute
-              left-1/2
-              top-1/2
-              h-[250px]
-              w-[250px]
-              -translate-x-1/2
-              -translate-y-1/2
-              rounded-full
-              bg-[#7A4FD1]/10
-              blur-[130px]
-              sm:h-[320px]
-              sm:w-[320px]
-            "
-          />
-
-          {/* Grid */}
-          <div
-            className="absolute inset-0 opacity-[0.025]"
-            style={{
-              backgroundImage:
-                "linear-gradient(rgba(255,255,255,0.5) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.5) 1px, transparent 1px)",
-              backgroundSize: "70px 70px",
-            }}
-          />
-
-        </div>
-
-        {/* =====================================================
-            MAIN HERO CONTENT
+            MAIN CONTENT
         ===================================================== */}
 
         <div
           className="
-            relative
-            z-10
-            mx-auto
-            flex
-            min-h-screen
-            max-w-7xl
+            relative z-10
+            mx-auto flex min-h-screen max-w-7xl
             items-center
-            px-5
-            py-20
-            sm:px-8
-            sm:py-24
+            px-5 py-24
+            sm:px-8 sm:py-28
             md:px-10
-            lg:px-12
-            lg:py-28
+            lg:px-12 lg:py-32
           "
         >
 
           <div
             className="
-              grid
-              w-full
-              items-center
-              gap-10
+              grid w-full items-center
+              gap-12
               lg:grid-cols-[0.95fr_1.05fr]
               lg:gap-16
               xl:gap-20
@@ -193,45 +104,38 @@ export default function ContactHero() {
           >
 
             {/* =================================================
-                LEFT SIDE
+                LEFT CONTENT
             ================================================= */}
 
             <div
               data-aos="fade-right"
-              className="
-                relative
-                z-20
-                w-full
-                max-w-2xl
-              "
+              data-aos-duration="1200"
+              data-aos-delay="100"
+              className="relative z-20 w-full max-w-2xl"
             >
 
-              {/* Top Label */}
-
+              {/* Label */}
               <div
-                data-aos="fade-up"
-                data-aos-delay="100"
+                data-aos="fade-right"
+                data-aos-duration="900"
+                data-aos-delay="200"
                 className="
-                  inline-flex
-                  items-center
+                  inline-flex items-center
                   rounded-full
-                  border
-                  border-white/10
-                  bg-black/40
-                  px-4
-                  py-2
+                  border border-[#2A2A30]
+                  bg-[#121212]/70
+                  px-4 py-2
                   backdrop-blur-xl
+                  shadow-[0_8px_30px_rgba(0,0,0,.25)]
                   sm:px-5
                 "
               >
                 <span
                   className="
-                    text-[10px]
-                    font-bold
-                    uppercase
+                    text-[10px] sm:text-xs
+                    font-bold uppercase
                     tracking-[0.3em]
                     text-[#29B6F0]
-                    sm:text-xs
                   "
                 >
                   Get in Touch
@@ -239,10 +143,10 @@ export default function ContactHero() {
               </div>
 
               {/* Heading */}
-
               <h1
-                data-aos="fade-up"
-                data-aos-delay="180"
+                data-aos="fade-right"
+                data-aos-duration="1100"
+                data-aos-delay="300"
                 className="
                   mt-6
                   max-w-2xl
@@ -261,8 +165,7 @@ export default function ContactHero() {
 
                 <span
                   className="
-                    mt-2
-                    block
+                    mt-2 block
                     bg-gradient-to-r
                     from-[#29B6F0]
                     via-[#3E7BD6]
@@ -276,17 +179,16 @@ export default function ContactHero() {
                 </span>
               </h1>
 
-              {/* Decorative Divider */}
-
+              {/* Divider */}
               <div
                 data-aos="fade-right"
-                data-aos-delay="300"
+                data-aos-duration="900"
+                data-aos-delay="450"
                 className="mt-7 flex items-center gap-2"
               >
                 <span
                   className="
-                    h-[4px]
-                    w-16
+                    h-[4px] w-16
                     rounded-full
                     bg-gradient-to-r
                     from-[#29B6F0]
@@ -297,8 +199,7 @@ export default function ContactHero() {
 
                 <span
                   className="
-                    h-[4px]
-                    w-8
+                    h-[4px] w-8
                     rounded-full
                     bg-gradient-to-r
                     from-[#7A4FD1]
@@ -309,13 +210,12 @@ export default function ContactHero() {
               </div>
 
               {/* Description */}
-
               <p
-                data-aos="fade-up"
-                data-aos-delay="400"
+                data-aos="fade-right"
+                data-aos-duration="1100"
+                data-aos-delay="550"
                 className="
-                  mt-7
-                  max-w-xl
+                  mt-7 max-w-xl
                   text-base
                   leading-8
                   text-[#D4D4D8]
@@ -335,32 +235,30 @@ export default function ContactHero() {
             </div>
 
             {/* =================================================
-                RIGHT SIDE
+                RIGHT GLASS CARD
             ================================================= */}
 
             <div
               data-aos="fade-left"
-              data-aos-delay="150"
-              className="
-                relative
-                z-20
-                w-full
-              "
+              data-aos-duration="1200"
+              data-aos-delay="250"
+              className="relative z-20 w-full"
             >
-
-              {/* Glass Container */}
 
               <div
                 className="
-                  relative
+                  group relative
                   overflow-hidden
                   rounded-[28px]
-                  border
-                  border-white/10
-                  bg-black/45
+                  border border-[#2A2A30]
+                  bg-[rgba(18,18,18,.72)]
                   p-5
-                  shadow-[0_25px_80px_rgba(0,0,0,0.55)]
+                  shadow-[0_25px_80px_rgba(0,0,0,.60)]
                   backdrop-blur-2xl
+                  transition-all duration-700
+                  hover:-translate-y-2
+                  hover:border-[#3E7BD6]
+                  hover:shadow-[0_30px_90px_rgba(41,182,240,.16)]
                   sm:rounded-[32px]
                   sm:p-7
                   md:p-8
@@ -369,67 +267,74 @@ export default function ContactHero() {
                 "
               >
 
-                {/* Card Glow */}
-
+                {/* Top Gradient Light */}
                 <div
                   className="
-                    pointer-events-none
-                    absolute
-                    -right-20
-                    -top-20
-                    h-48
-                    w-48
-                    rounded-full
-                    bg-[#29B6F0]/10
-                    blur-[90px]
+                    absolute left-[10%] right-[10%] top-0
+                    h-px
+                    bg-gradient-to-r
+                    from-transparent
+                    via-[#29B6F0]
+                    to-transparent
+                    opacity-80
+                    shadow-[0_0_18px_#29B6F0]
                   "
                 />
 
+                {/* Cyan Glow */}
                 <div
                   className="
                     pointer-events-none
-                    absolute
-                    -bottom-20
-                    -left-20
-                    h-48
-                    w-48
+                    absolute -right-20 -top-20
+                    h-52 w-52
+                    rounded-full
+                    bg-[#29B6F0]/10
+                    blur-[90px]
+                    transition-all duration-700
+                    group-hover:bg-[#29B6F0]/20
+                  "
+                />
+
+                {/* Magenta Glow */}
+                <div
+                  className="
+                    pointer-events-none
+                    absolute -bottom-20 -left-20
+                    h-52 w-52
                     rounded-full
                     bg-[#B93FC9]/10
                     blur-[90px]
+                    transition-all duration-700
+                    group-hover:bg-[#B93FC9]/20
                   "
                 />
 
                 <div className="relative space-y-6 sm:space-y-7 md:space-y-8">
 
-                  {/* =================================================
-                      ICON HEADER
-                  ================================================= */}
-
+                  {/* Header */}
                   <div
-                    data-aos="fade-up"
-                    data-aos-delay="300"
+                    data-aos="fade-left"
+                    data-aos-duration="900"
+                    data-aos-delay="500"
                     className="flex items-center gap-4"
                   >
 
                     <div
                       className="
-                        flex
-                        h-12
-                        w-12
-                        shrink-0
-                        items-center
-                        justify-center
+                        flex h-12 w-12 shrink-0
+                        items-center justify-center
                         rounded-2xl
                         bg-gradient-to-br
                         from-[#29B6F0]
                         via-[#3E7BD6]
                         via-[#7A4FD1]
                         to-[#B93FC9]
-                        text-lg
-                        text-white
+                        text-lg text-white
                         shadow-[0_0_30px_rgba(62,123,214,.30)]
-                        sm:h-14
-                        sm:w-14
+                        transition-transform duration-500
+                        group-hover:scale-110
+                        group-hover:rotate-3
+                        sm:h-14 sm:w-14
                         sm:text-xl
                       "
                     >
@@ -437,14 +342,12 @@ export default function ContactHero() {
                     </div>
 
                     <div>
-
                       <p
                         className="
-                          text-[10px]
+                          text-[10px] sm:text-xs
                           uppercase
                           tracking-[0.28em]
                           text-[#29B6F0]
-                          sm:text-xs
                         "
                       >
                         Conversation
@@ -461,126 +364,58 @@ export default function ContactHero() {
                       >
                         Personal Response
                       </h3>
-
                     </div>
 
                   </div>
 
-                  {/* =================================================
-                      INFO BOXES
-                  ================================================= */}
-
+                  {/* Info */}
                   <div className="space-y-4 sm:space-y-5">
 
-                    {/* Box 1 */}
-
                     <div
-                      data-aos="fade-up"
-                      data-aos-delay="400"
+                      data-aos="fade-left"
+                      data-aos-duration="900"
+                      data-aos-delay="650"
                       className="
                         rounded-2xl
-                        border
-                        border-white/10
+                        border border-[#2A2A30]
                         bg-[#121212]/80
                         p-4
                         text-sm
                         leading-7
                         text-[#D4D4D8]
-                        transition-all
-                        duration-300
+                        transition-all duration-500
                         hover:-translate-y-1
-                        hover:border-[#3E7BD6]/60
+                        hover:border-[#3E7BD6]
+                        hover:bg-[#1A1A1E]
                         hover:shadow-[0_0_30px_rgba(62,123,214,.15)]
                         sm:p-5
                         sm:text-base
                       "
                     >
                       Senior engineers handle every inquiry personally.
-                    </div>
-
-                    {/* Box 2 */}
-
-                    <div
-                      data-aos="fade-up"
-                      data-aos-delay="500"
-                      className="
-                        rounded-2xl
-                        border
-                        border-white/10
-                        bg-[#121212]/80
-                        p-4
-                        text-sm
-                        leading-7
-                        text-[#D4D4D8]
-                        transition-all
-                        duration-300
-                        hover:-translate-y-1
-                        hover:border-[#3E7BD6]/60
-                        hover:shadow-[0_0_30px_rgba(62,123,214,.15)]
-                        sm:p-5
-                        sm:text-base
-                      "
-                    >
                       Usually respond within 24 hours.
-                    </div>
-
-                    {/* Gradient Box */}
-
-                    <div
-                      data-aos="fade-up"
-                      data-aos-delay="600"
-                      className="
-                        rounded-2xl
-                        bg-gradient-to-br
-                        from-[#29B6F0]
-                        via-[#3E7BD6]
-                        via-[#7A4FD1]
-                        to-[#B93FC9]
-                        p-5
-                        text-sm
-                        font-semibold
-                        leading-7
-                        text-white
-                        shadow-[0_0_40px_rgba(62,123,214,.25)]
-                        sm:p-6
-                        sm:text-base
-                      "
-                    >
-                      No call center.
-                      <br />
-                      No sales pipeline.
-                      <br />
-                      Just engineering conversation.
                     </div>
 
                   </div>
 
                 </div>
-
               </div>
 
             </div>
-
           </div>
-
         </div>
 
         {/* =====================================================
-            DECORATIVE ELEMENTS
+            DECORATIVE CIRCLES
         ===================================================== */}
 
         <div
           className="
             pointer-events-none
-            absolute
-            left-5
-            top-24
-            hidden
-            h-20
-            w-20
+            absolute left-5 top-24
+            hidden h-20 w-20
             rounded-full
-            border
-            border-[#3E7BD6]/20
+            border border-[#3E7BD6]/20
             xl:block
           "
         />
@@ -588,45 +423,46 @@ export default function ContactHero() {
         <div
           className="
             pointer-events-none
-            absolute
-            bottom-20
-            right-8
-            hidden
-            h-24
-            w-24
+            absolute bottom-20 right-8
+            hidden h-24 w-24
             rounded-full
-            border
-            border-[#7A4FD1]/20
+            border border-[#7A4FD1]/20
             xl:block
           "
         />
 
-        {/* Bottom Gradient Line */}
-
+        {/* Bottom Line */}
         <div
           className="
-            absolute
-            bottom-0
-            left-0
-            right-0
+            absolute bottom-0 left-0 right-0
             h-px
             bg-gradient-to-r
             from-transparent
-            via-[#3E7BD6]/50
+            via-[#3E7BD6]/60
             to-transparent
           "
         />
 
       </section>
-     <div
-  data-aos="fade-up"
-  data-aos-delay="300"
-  data-aos-duration="1000"
-  data-aos-easing="ease-out-cubic"
-  className="relative z-10  transition-transform duration-700 hover:-translate-y-1"
->
-  <Contactform />
-</div>
+
+      {/* =====================================================
+          CONTACT FORM
+      ===================================================== */}
+
+      <div
+        data-aos="fade-up"
+        data-aos-duration="1100"
+        data-aos-delay="300"
+        data-aos-easing="ease-out-cubic"
+        className="
+          relative z-10
+          transition-transform duration-700
+          hover:-translate-y-1
+        "
+      >
+        <Contactform />
+      </div>
+
     </App_layout>
   );
 }

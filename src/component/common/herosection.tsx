@@ -1,6 +1,7 @@
 "use client";
 
 import Image from "next/image";
+import Link from "next/link";
 
 export default function CaseStudyHero() {
   return (
@@ -182,20 +183,18 @@ export default function CaseStudyHero() {
     <div className="relative">
 
       <h2 className="max-w-3xl bg-gradient-to-r from-[#29B6F0] via-[#3E7BD6] via-[#7A4FD1] to-[#B93FC9] bg-clip-text text-2xl font-bold leading-tight text-transparent sm:text-3xl lg:text-[42px]">
-        Brand Business Marketing
+      Transforming
+
         <br />
-        Performances Overview 2028
+        Business with AI
       </h2>
 
       <p className="mt-6 max-w-2xl text-base leading-8 text-[#D4D4D8]">
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-        Pellentesque habitant morbi tristique senectus et netus et malesuada
-        fames ac turpis egestas. Donec vitae sapien ut libero venenatis
-        faucibus.
+        We build secure AI solutions for healthcare, finance, enterprise reporting and digital transformation with scalable modern technology.
       </p>
 
       <div className="mt-10 flex flex-wrap gap-4">
-
+<Link href="/customers/casestudyoverall">
        <button className="group relative overflow-hidden rounded-xl border border-[#3E7BD6]/40 px-8 py-3 font-semibold text-white transition-all duration-300">
 
   {/* Background Animation */}
@@ -205,8 +204,9 @@ export default function CaseStudyHero() {
   <span className="absolute inset-0 -translate-x-[120%] bg-gradient-to-r from-transparent via-white/20 to-transparent transition-transform duration-700 group-hover:translate-x-[120%]"></span>
 
   {/* Text */}
+  
   <span className="relative z-10 flex items-center gap-2">
-    View Project
+    View Case Studies
 
     <svg
       className="h-4 w-4 transition-transform duration-300 group-hover:translate-x-1"
@@ -222,13 +222,16 @@ export default function CaseStudyHero() {
       />
     </svg>
   </span>
+ 
 
 </button>
+ </Link>
 
+ <Link href="/contact/contacthero">
         <button className="rounded-lg border border-[#3E7BD6]/40 bg-[#121212] px-8 py-3 font-semibold text-white transition duration-300 hover:border-[#29B6F0] hover:bg-[#1A1A1E]">
           Contact Us
         </button>
-
+</Link>
       </div>
 
     </div>

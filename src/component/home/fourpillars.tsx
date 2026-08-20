@@ -2,7 +2,7 @@
 
 import { useEffect } from "react";
 import Link from "next/link";
-import Image from "next/image";
+
 import AOS from "aos";
 import "aos/dist/aos.css";
 
@@ -12,7 +12,64 @@ import { Autoplay, Pagination } from "swiper/modules";
 import "swiper/css";
 import "swiper/css/pagination";
 
+/* =========================================================
+   GRADIENT
+========================================================= */
+
+const GRADIENT =
+  "linear-gradient(135deg,#29B6F0 0%,#3E7BD6 35%,#7A4FD1 65%,#B93FC9 100%)";
+
+/* =========================================================
+   PILLARS
+========================================================= */
+
+const pillars = [
+  {
+    number: "01",
+    title: "Modernize",
+    href: "/services/modernize/modernizehero",
+    description:
+      "Bring legacy systems and infrastructure into the modern stack.",
+    icon: "⚡",
+  },
+
+  {
+    number: "02",
+    title: "See Your Data",
+    href: "/services/seeyourdata/seeyourdatahero",
+    description:
+      "Analytics, dashboards, and reporting that drive better decisions.",
+    icon: "◈",
+  },
+
+  {
+    number: "03",
+    title: "Build Software",
+    href: "/services/buildsoftware/herosection",
+    description:
+      "Custom applications, web and mobile, from concept to launch.",
+    icon: "⌘",
+  },
+
+  {
+    number: "04",
+    title: "Stay Secure",
+    href: "/services/staysecure/staysecureherosection",
+    description:
+      "Keep digital operations running, protected, and monitored.",
+    icon: "◇",
+  },
+];
+
+/* =========================================================
+   COMPONENT
+========================================================= */
+
 export default function FourPillars() {
+  /* =======================================================
+     AOS
+  ======================================================= */
+
   useEffect(() => {
     AOS.init({
       duration: 1000,
@@ -21,174 +78,204 @@ export default function FourPillars() {
     });
   }, []);
 
-  const pillars = [
-    {
-      number: "01",
-      title: "Modernize",
-      href: "/services/modernize/modernizehero",
-      image: "/home/payment.jpg",
-      description:
-        "Bring legacy systems and infrastructure into the modern stack.",
-    },
-    {
-      number: "02",
-      title: "See Your Data",
-      href: "/services/seeyourdata/seeyourdatahero",
-      image: "/home/healthai.jpg",
-      description:
-        "Analytics, dashboards, and reporting that drive decisions.",
-    },
-    {
-      number: "03",
-      title: "Build Software",
-      href: "/services/buildsoftware/herosection",
-      image: "/home/mobile-app.jpg",
-      description:
-        "Custom applications, web and mobile, from concept to launch.",
-    },
-    {
-      number: "04",
-      title: "Stay Secure",
-      href: "/services/staysecure/staysecureherosection",
-      image: "/home/healthai.jpg",
-      description:
-        "Keep digital operations running, protected, and monitored.",
-    },
-    {
-      number: "05",
-      title: "Stay Secure",
-      href: "/services/staysecure/staysecureherosection",
-      image: "/home/healthai.jpg",
-      description:
-        "Keep digital operations running, protected, and monitored.",
-    },
-  ];
-
   return (
-    <section className="relative overflow-hidden bg-[#000000] pt-16 pb-8">
+    <section className="relative overflow-hidden bg-[#000000] py-16 sm:py-20">
 
-      {/* Background Glow */}
-      <div className="absolute bottom-0 right-0 w-[500px] h-[500px] bg-[#B93FC9]/15 blur-[140px] rounded-full" />
+      {/* ===================================================
+          BACKGROUND LIGHT
+      =================================================== */}
 
-      <div className="relative z-10 max-w-7xl mx-auto px-5 sm:px-6 lg:px-8">
+      <div
+        className="
+          pointer-events-none
+          absolute
+          -bottom-40
+          -right-40
+          h-[500px]
+          w-[500px]
+          rounded-full
+          bg-[#B93FC9]/15
+          blur-[140px]
+        "
+      />
 
-        {/* ================= HEADING ================= */}
+      <div
+        className="
+          pointer-events-none
+          absolute
+          -left-40
+          top-20
+          h-[400px]
+          w-[400px]
+          rounded-full
+          bg-[#29B6F0]/10
+          blur-[130px]
+        "
+      />
+
+      {/* ===================================================
+          CONTAINER
+      =================================================== */}
+
+      <div className="relative z-10 mx-auto max-w-7xl px-5 sm:px-6 lg:px-8">
+
+        {/* =================================================
+            HEADING
+        ================================================= */}
+
         <div
           data-aos="fade-up"
-          className="max-w-3xl mx-auto text-center mb-12 md:mb-14"
+          className="mx-auto mb-12 max-w-3xl text-center md:mb-14"
         >
 
-          {/* Badge */}
+          {/* BADGE */}
+
           <span
             className="
-              inline-flex items-center
-              px-4 py-2
+              inline-flex
+              items-center
               rounded-full
+              border
+              border-[#2A2A30]
               bg-[#121212]
-              border border-[#2A2A30]
-              text-[#29B6F0]
-              text-xs sm:text-sm
+              px-4
+              py-2
+              text-xs
               font-semibold
-              tracking-[0.15em]
               uppercase
-              animate-[fadeInUp_0.8s_ease-out]
+              tracking-[0.15em]
+              text-[#29B6F0]
+              sm:text-sm
             "
           >
             FOUR PILLARS
           </span>
 
-          {/* Main Heading */}
+          {/* HEADING */}
+
           <h2
             data-aos="fade-up"
             data-aos-delay="150"
             className="
               mt-5
               text-3xl
-              sm:text-4xl
-              md:text-5xl
               font-bold
               leading-[1.15]
               tracking-tight
               text-white
-              animate-[fadeInUp_1s_ease-out]
+              sm:text-4xl
+              md:text-5xl
             "
           >
             Four Things,
+
             <span
               className="
                 ml-2
                 bg-[linear-gradient(135deg,#29B6F0_0%,#3E7BD6_35%,#7A4FD1_65%,#B93FC9_100%)]
-                text-transparent
                 bg-clip-text
+                text-transparent
               "
             >
               Done Well.
             </span>
           </h2>
 
-          {/* Description */}
+          {/* DESCRIPTION */}
+
           <p
             data-aos="fade-up"
             data-aos-delay="300"
             className="
+              mx-auto
               mt-5
               max-w-2xl
-              mx-auto
-              text-[#A0A0A8]
               text-sm
+              font-normal
+              leading-7
+              text-[#A0A0A8]
               sm:text-base
               md:text-lg
-              leading-7
               md:leading-8
-              font-normal
-              animate-[fadeInUp_1.2s_ease-out]
             "
           >
             BeaverTek helps small and mid-size companies modernize their
             systems, make sense of their data, and build software that
             actually works.
           </p>
+
         </div>
 
-        {/* ================= CAROUSEL ================= */}
+        {/* =================================================
+            SWIPER
+        ================================================= */}
+
         <div
           data-aos="fade-up"
           data-aos-delay="400"
+          className="relative"
         >
+
           <Swiper
             modules={[Autoplay, Pagination]}
-            spaceBetween={20}
-            slidesPerView={1}
+
+            /* -----------------------------------------------
+               BASIC
+            ----------------------------------------------- */
+
             loop={true}
-            speed={1000}
+            centeredSlides={true}
+
+            slidesPerView={1}
+            spaceBetween={20}
+
+            speed={1100}
+
+            /* -----------------------------------------------
+               AUTO SLIDE
+            ----------------------------------------------- */
+
             autoplay={{
-              delay: 3000,
+              delay: 2600,
               disableOnInteraction: false,
-              pauseOnMouseEnter: true,
+              pauseOnMouseEnter: false,
             }}
+
+            /* -----------------------------------------------
+               PAGINATION
+            ----------------------------------------------- */
+
             pagination={{
               clickable: true,
             }}
+
+            /* -----------------------------------------------
+               RESPONSIVE
+            ----------------------------------------------- */
+
             breakpoints={{
               640: {
-                slidesPerView: 1,
+                slidesPerView: 1.5,
                 spaceBetween: 20,
               },
+
               768: {
                 slidesPerView: 2,
-                spaceBetween: 22,
-              },
-              1024: {
-                slidesPerView: 3,
                 spaceBetween: 24,
               },
-              1280: {
-                slidesPerView: 4,
-                spaceBetween: 26,
+
+              1024: {
+                slidesPerView: 3,
+                spaceBetween: 28,
               },
             }}
-            className="!pb-12"
+
+            className="!overflow-visible !pb-14"
           >
+
+            {/* =================================================
+                CARDS
+            ================================================= */}
 
             {pillars.map((pillar) => (
               <SwiperSlide key={pillar.number}>
@@ -198,152 +285,264 @@ export default function FourPillars() {
                   className="group block h-full"
                 >
 
+                  {/* =========================================
+                      CARD
+                  ========================================= */}
+
                   <div
                     className="
-                      h-full
+                      relative
+                      min-h-[390px]
                       overflow-hidden
-                      rounded-[18px]
+                      rounded-[24px]
+                      border
+                      border-[#2A2A30]
                       bg-[#121212]
-                      border border-[#2A2A30]
-                      transition-all
-                      duration-500
+                      p-6
+                      transform-gpu
 
-                      hover:-translate-y-2
-                      hover:border-[#29B6F0]/60
-                      hover:shadow-[0_20px_60px_rgba(41,182,240,0.20)]
+                      transition-all
+                      duration-[1000ms]
+                      ease-[cubic-bezier(.22,1,.36,1)]
+
+                      /* LEFT CARD */
+
+                      [.swiper-slide-prev_&]:scale-[0.94]
+                      [.swiper-slide-prev_&]:rotate-y-[10deg]
+                      [.swiper-slide-prev_&]:rotate-x-[2deg]
+                      [.swiper-slide-prev_&]:opacity-80
+                      [.swiper-slide-prev_&]:brightness-75
+
+                      [.swiper-slide-prev_&]:shadow-[-18px_25px_50px_rgba(0,0,0,.50)]
+
+                      /* RIGHT CARD */
+
+                      [.swiper-slide-next_&]:scale-[0.94]
+                      [.swiper-slide-next_&]:rotate-y-[-10deg]
+                      [.swiper-slide-next_&]:rotate-x-[2deg]
+                      [.swiper-slide-next_&]:opacity-80
+                      [.swiper-slide-next_&]:brightness-75
+
+                      [.swiper-slide-next_&]:shadow-[18px_25px_50px_rgba(0,0,0,.50)]
+
+                      /* CENTER CARD */
+
+                      [.swiper-slide-active_&]:z-20
+                      [.swiper-slide-active_&]:scale-[1.04]
+                      [.swiper-slide-active_&]:rotate-y-0
+                      [.swiper-slide-active_&]:rotate-x-0
+                      [.swiper-slide-active_&]:translate-z-[40px]
+                      [.swiper-slide-active_&]:border-[#3E7BD6]
+                      [.swiper-slide-active_&]:opacity-100
+                      [.swiper-slide-active_&]:brightness-110
+
+                      [.swiper-slide-active_&]:shadow-[0_0_0_1px_rgba(41,182,240,.15),0_25px_60px_rgba(41,182,240,.18),0_40px_90px_rgba(122,79,209,.18),0_0_100px_rgba(185,63,201,.08)]
+
+                      group-hover:border-[#3E7BD6]
                     "
                   >
 
-                    {/* ================= IMAGE ================= */}
-                    <div className="group relative h-44 sm:h-48 overflow-hidden">
+                    {/* =======================================
+                        TOP GRADIENT LIGHT
+                    ======================================= */}
 
-                      <Image
-                        src={pillar.image}
-                        alt={pillar.title}
-                        fill
+                    <div
+                      className="
+                        pointer-events-none
+                        absolute
+                        left-[10%]
+                        right-[10%]
+                        top-0
+                        h-[2px]
+                        rounded-full
+
+                        bg-[linear-gradient(90deg,transparent,#29B6F0,#7A4FD1,#B93FC9,transparent)]
+
+                        opacity-0
+                        shadow-[0_0_20px_rgba(41,182,240,.7),0_0_35px_rgba(185,63,201,.4)]
+
+                        transition-opacity
+                        duration-700
+
+                        [.swiper-slide-active_&]:opacity-100
+                      "
+                    />
+
+                    {/* =======================================
+                        CARD GLOW
+                    ======================================= */}
+
+                    <div
+                      className="
+                        pointer-events-none
+                        absolute
+                        -right-24
+                        -top-24
+                        h-60
+                        w-60
+                        rounded-full
+                        bg-[#29B6F9]/10
+                        blur-[80px]
+
+                        opacity-0
+                        transition-opacity
+                        duration-700
+
+                        [.swiper-slide-active_&]:opacity-100
+                      "
+                    />
+
+                    {/* =======================================
+                        ICON
+                    ======================================= */}
+
+                    <div
+                      className="
+                        relative
+                        z-10
+                        flex
+                        h-16
+                        w-16
+                        items-center
+                        justify-center
+                        rounded-2xl
+                        border
+                        border-[#2A2A30]
+                        bg-[#0A0A0A]
+
+                        transform-gpu
+
+                        transition-all
+                        duration-700
+
+                        [.swiper-slide-prev_&]:translate-z-[20px]
+
+                        [.swiper-slide-next_&]:translate-z-[20px]
+
+                        [.swiper-slide-active_&]:translate-z-[35px]
+                        [.swiper-slide-active_&]:scale-110
+                        [.swiper-slide-active_&]:border-[#3E7BD6]
+
+                        [.swiper-slide-active_&]:bg-[linear-gradient(145deg,rgba(41,182,240,.14),rgba(122,79,209,.10),rgba(185,63,201,.12))]
+
+                        [.swiper-slide-active_&]:shadow-[0_0_20px_rgba(41,182,240,.20),0_0_35px_rgba(185,63,201,.12)]
+                      "
+                    >
+
+                      <span
                         className="
-                          object-cover
-                          scale-100
-                          transition-transform
-                          duration-[2500ms]
-                          ease-linear
-                          will-change-transform
-                          group-hover:scale-125
+                          text-2xl
+                          font-bold
+                          bg-[linear-gradient(135deg,#29B6F0,#3E7BD6,#7A4FD1,#B93FC9)]
+                          bg-clip-text
+                          text-transparent
                         "
-                      />
+                      >
+                        {pillar.icon}
+                      </span>
 
-                      {/* Grid Overlay */}
-                      <div
-                        className="
-                          absolute inset-0
-                          opacity-20
-                          bg-[radial-gradient(#2A2A30_1px,transparent_1px)]
-                          [background-size:20px_20px]
-                        "
-                      />
-
-                      {/* Number */}
-                      <div className="absolute top-4 left-4">
-
-                        <div
-                          className="
-                            min-w-[42px]
-                            h-8
-                            px-3
-                            flex
-                            items-center
-                            justify-center
-                            rounded-full
-                            bg-[linear-gradient(135deg,#29B6F0_0%,#3E7BD6_35%,#7A4FD1_65%,#B93FC9_100%)]
-                            text-white
-                            text-xs
-                            font-bold
-                            tracking-wide
-                            shadow-lg
-                          "
-                        >
-                          {pillar.number}
-                        </div>
-
-                      </div>
                     </div>
 
-                    {/* ================= CONTENT ================= */}
-                    <div className="p-5 sm:p-6 flex flex-col min-h-[215px]">
+                    {/* =======================================
+                        NUMBER
+                    ======================================= */}
 
-                      {/* Title */}
-                      <h3
+                    <div className="relative z-10 mt-7">
+
+                      <span
                         className="
-                          text-lg
-                          sm:text-xl
-                          font-semibold
-                          tracking-tight
-                          text-white
-                          mb-3
-
-                          transition-all
-                          duration-500
-
-                          group-hover:text-transparent
-                          group-hover:bg-[linear-gradient(135deg,#29B6F0_0%,#3E7BD6_35%,#7A4FD1_65%,#B93FC9_100%)]
-                          group-hover:bg-clip-text
-
-                          animate-[fadeInUp_0.8s_ease-out]
-                        "
-                      >
-                        {pillar.title}
-                      </h3>
-
-                      {/* Description */}
-                      <p
-                        className="
-                          text-[#A0A0A8]
-                          text-sm
-                          sm:text-[15px]
-                          leading-6
-                          font-normal
-                          flex-grow
-                          max-w-[95%]
-
-                          animate-[fadeInUp_1s_ease-out]
-                        "
-                      >
-                        {pillar.description}
-                      </p>
-
-                      {/* CTA */}
-                      <div
-                        className="
-                          mt-5
-                          flex
-                          items-center
-                          gap-2
-                          text-[#29B6F0]
-                          text-sm
-                          font-semibold
+                          inline-flex
+                          rounded-full
+                          bg-[linear-gradient(135deg,#29B6F0,#3E7BD6,#7A4FD1,#B93FC9)]
+                          px-3
+                          py-1
+                          text-xs
+                          font-bold
                           tracking-wide
-                          transition-colors
-                          duration-300
-
-                          group-hover:text-[#7A4FD1]
+                          text-white
+                          shadow-[0_0_18px_rgba(41,182,240,.25)]
                         "
                       >
-                        <span>Learn More</span>
-
-                        <span
-                          className="
-                            text-[#B93FC9]
-                            text-base
-                            transition-transform
-                            duration-300
-                            group-hover:translate-x-2
-                          "
-                        >
-                          →
-                        </span>
-                      </div>
+                        {pillar.number}
+                      </span>
 
                     </div>
+
+                    {/* =======================================
+                        TITLE
+                    ======================================= */}
+
+                    <h3
+                      className="
+                        relative
+                        z-10
+                        mt-5
+                        text-xl
+                        font-semibold
+                        tracking-tight
+                        text-white
+
+                        transition-all
+                        duration-500
+
+                        [.swiper-slide-active_&]:bg-[linear-gradient(135deg,#29B6F0,#3E7BD6,#7A4FD1,#B93FC9)]
+                        [.swiper-slide-active_&]:bg-clip-text
+                        [.swiper-slide-active_&]:text-transparent
+                      "
+                    >
+                      {pillar.title}
+                    </h3>
+
+                    {/* =======================================
+                        DESCRIPTION
+                    ======================================= */}
+
+                    <p
+                      className="
+                        relative
+                        z-10
+                        mt-3
+                        flex-grow
+                        text-sm
+                        leading-6
+                        text-[#A0A0A8]
+                      "
+                    >
+                      {pillar.description}
+                    </p>
+
+                    {/* =======================================
+                        CTA
+                    ======================================= */}
+
+                    <div
+                      className="
+                        relative
+                        z-10
+                        mt-6
+                        flex
+                        items-center
+                        gap-2
+                        text-sm
+                        font-semibold
+                        text-[#29B6F0]
+                      "
+                    >
+                      <span>Learn More</span>
+
+                      <span
+                        className="
+                          text-base
+                          text-[#B93FC9]
+                          transition-transform
+                          duration-500
+                          group-hover:translate-x-2
+                        "
+                      >
+                        →
+                      </span>
+                    </div>
+
                   </div>
 
                 </Link>
@@ -352,6 +551,7 @@ export default function FourPillars() {
             ))}
 
           </Swiper>
+
         </div>
 
       </div>

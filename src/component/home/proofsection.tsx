@@ -10,7 +10,8 @@ export default function ProofSection() {
     AOS.init({
       duration: 1000,
       once: true,
-      offset: 100,
+      offset: 80,
+      easing: "ease-out-cubic",
     });
   }, []);
 
@@ -39,144 +40,160 @@ export default function ProofSection() {
   ];
 
   return (
-    <section className="relative py-16 md:py-16 bg-[#000000] overflow-hidden">
+    <section className="relative overflow-hidden bg-[#000000] py-16 md:py-16">
+      {/* =====================================================
+          BACKGROUND LIGHTING
+      ===================================================== */}
 
-      {/* Background Glow */}
-      <div className="absolute bottom-0 right-0 w-[500px] h-[500px] bg-[#B93FC9]/15 blur-[180px] rounded-full" />
+      <div
+        className="
+          pointer-events-none absolute
+          -right-40 bottom-0
+          h-[500px] w-[500px]
+          rounded-full
+          bg-[#B93FC9]/10
+          blur-[160px]
+        "
+      />
 
-      <div className="relative z-10 max-w-7xl mx-auto px-5 sm:px-6 lg:px-8">
+      <div
+        className="
+          pointer-events-none absolute
+          -left-40 top-20
+          h-[400px] w-[400px]
+          rounded-full
+          bg-[#29B6F0]/5
+          blur-[150px]
+        "
+      />
 
-       {/* ================= PREMIUM HEADING ================= */}
-<div
-  className="text-center max-w-4xl mx-auto mb-14 md:mb-16"
->
-  {/* Badge */}
-  <div
-    data-aos="zoom-in"
-    data-aos-duration="800"
-    data-aos-delay="100"
-    className="flex justify-center"
-  >
-    <span
-      className="
-        inline-flex items-center
-        px-5 py-2.5
-        rounded-full
-        text-xs sm:text-sm
-        font-semibold
-        tracking-[0.22em]
-        uppercase
-        text-[#29B6F0]
-        bg-[#121212]
-        border border-[#2A2A30]
-        shadow-[0_8px_30px_rgba(41,182,240,0.10)]
-        transition-all duration-300
-        hover:border-[#29B6F0]/50
-        hover:shadow-[0_8px_35px_rgba(41,182,240,0.20)]
-      "
-    >
-      PROOF
-    </span>
-  </div>
+      <div className="relative z-10 mx-auto max-w-7xl px-5 sm:px-6 lg:px-8">
+        {/* =====================================================
+            SIMPLE HEADING
+        ===================================================== */}
 
-  {/* ================= MAIN TITLE ================= */}
-  <h2
-  data-aos="fade-up"
-  data-aos-duration="1000"
-  data-aos-delay="250"
-  className="
-    mt-5
-    text-3xl
-    sm:text-4xl
-    md:text-5xl
-    lg:text-[60px]
-    font-bold
-    leading-[1.15]
-    tracking-tight
-    animate-[fadeInUp_1s_ease-out]
-  "
->
-   
-             
-             
-  <span
-    className="
-      bg-[linear-gradient(135deg,#29B6F0_0%,#3E7BD6_35%,#7A4FD1_65%,#B93FC9_100%)]
-      bg-clip-text
-      text-transparent
-    " 
-               
-  >
-    Proven Technology.
-  </span>
+        <div
+          data-aos="fade-up"
+          data-aos-duration="900"
+          className="mx-auto mb-12 max-w-3xl text-center md:mb-14"
+        >
+          {/* Small Label */}
 
-  <span className="text-white">
-    {" "}Measurable Impact.
-  </span>
-</h2>
-  {/* Subtitle — unchanged */}
-  <p
-    data-aos="fade-up"
-    data-aos-duration="1000"
-    data-aos-delay="700"
-    className="
-      mt-6
-      max-w-3xl
-      mx-auto
-      text-sm
-      sm:text-base
-      md:text-lg
-      leading-7
-      md:leading-8
-      text-[#A0A0A8]
-    "
-  >
-    Discover how BeaverTek transforms businesses through modern
-    engineering, scalable platforms, and AI-powered digital solutions
-    that deliver measurable business outcomes.
-  </p>
+          <span
+            data-aos="zoom-in"
+            data-aos-delay="100"
+            className="
+              inline-flex items-center
+              rounded-full
+              border border-[#2A2A30]
+              bg-[#121212]
+              px-4 py-2
+              text-xs font-semibold
+              uppercase
+              tracking-[0.18em]
+              text-[#29B6F0]
+              shadow-[0_8px_30px_rgba(41,182,240,0.08)]
+            "
+          >
+            Our Work
+          </span>
 
-  {/* Small Gradient Divider */}
-  <div
-    data-aos="zoom-in"
-    data-aos-duration="800"
-    data-aos-delay="850"
-    className="
-      mx-auto
-      mt-7
-      h-[2px]
-      w-20
-      rounded-full
-      bg-[linear-gradient(90deg,#29B6F0,#3E7BD6,#7A4FD1,#B93FC9)]
-    "
-  />
-</div>
-        {/* ================= CASE STUDIES ================= */}
-        <div className="space-y-7 md:space-y-8">
+          {/* Short Title */}
 
+          <h2
+            data-aos="fade-up"
+            data-aos-delay="200"
+            className="
+              mt-5
+              text-3xl
+              font-bold
+              leading-tight
+              tracking-tight
+              text-white
+              sm:text-4xl
+              md:text-5xl
+            "
+          >
+            Technology That{" "}
+            <span
+              className="
+                bg-[linear-gradient(135deg,#29B6F0_0%,#3E7BD6_35%,#7A4FD1_65%,#B93FC9_100%)]
+                bg-clip-text
+                text-transparent
+              "
+            >
+              Delivers
+            </span>
+          </h2>
+
+          {/* Short Description */}
+
+          <p
+            data-aos="fade-up"
+            data-aos-delay="350"
+            className="
+              mx-auto
+              mt-5
+              max-w-2xl
+              text-sm
+              leading-7
+              text-[#A0A0A8]
+              sm:text-base
+              md:text-lg
+            "
+          >
+            Real solutions, real results, and technology built to make a
+            measurable difference.
+          </p>
+
+          {/* Gradient Divider */}
+
+          <div
+            data-aos="zoom-in"
+            data-aos-delay="500"
+            className="
+              mx-auto
+              mt-6
+              h-[2px]
+              w-20
+              rounded-full
+              bg-[linear-gradient(90deg,#29B6F0,#3E7BD6,#7A4FD1,#B93FC9)]
+              shadow-[0_0_15px_rgba(41,182,240,0.35)]
+            "
+          />
+        </div>
+
+        {/* =====================================================
+            CASE STUDIES
+        ===================================================== */}
+
+        <div className="space-y-7 md:space-y-9">
           {caseStudies.map((item, index) => (
             <div
               key={item.number}
               data-aos="fade-up"
               data-aos-delay={index * 150}
+              data-aos-duration="1000"
               className="
                 group
                 relative
                 overflow-hidden
-                rounded-[18px]
-                bg-[#121212]
+                rounded-[20px]
                 border border-[#2A2A30]
+                bg-[#121212]
+                shadow-[0_15px_45px_rgba(0,0,0,0.35)]
                 transition-all
-                duration-500
-
-                hover:border-[#29B6F0]/50
-                hover:shadow-[0_25px_70px_rgba(41,182,240,0.22)]
+                duration-700
+                hover:-translate-y-2
+                hover:border-[#3E7BD6]
+                hover:shadow-[0_25px_70px_rgba(41,182,240,0.18)]
               "
             >
+              {/* =================================================
+                  IMAGE
+              ================================================= */}
 
-              {/* ================= IMAGE ================= */}
               <div className="absolute inset-0">
-
                 <Image
                   src={item.image}
                   alt={item.title}
@@ -184,107 +201,182 @@ export default function ProofSection() {
                   className="
                     object-cover
                     transition-transform
-                    duration-1000
+                    duration-[1500ms]
+                    ease-out
                     group-hover:scale-110
                   "
                 />
-
               </div>
 
-              {/* ================= OVERLAY ================= */}
+              {/* =================================================
+                  DARK OVERLAY
+              ================================================= */}
+
               <div
                 className="
                   absolute inset-0
                   bg-gradient-to-r
-                  from-[#000000]/95
-                  via-[#000000]/80
-                  to-[#000000]/50
+                  from-black/[0.96]
+                  via-black/[0.84]
+                  to-black/[0.50]
+                  transition-all
+                  duration-700
+                  group-hover:via-black/[0.78]
                 "
               />
 
-              {/* ================= CONTENT ================= */}
+              {/* =================================================
+                  GRADIENT LIGHT
+              ================================================= */}
+
+              <div
+                className="
+                  pointer-events-none
+                  absolute
+                  -right-24
+                  -top-24
+                  h-72
+                  w-72
+                  rounded-full
+                  bg-[#29B6F0]/10
+                  blur-[100px]
+                  opacity-0
+                  transition-opacity
+                  duration-700
+                  group-hover:opacity-100
+                "
+              />
+
+              <div
+                className="
+                  pointer-events-none
+                  absolute
+                  -bottom-24
+                  -right-20
+                  h-72
+                  w-72
+                  rounded-full
+                  bg-[#B93FC9]/15
+                  blur-[110px]
+                  opacity-0
+                  transition-opacity
+                  duration-700
+                  group-hover:opacity-100
+                "
+              />
+
+              {/* =================================================
+                  CONTENT
+              ================================================= */}
+
               <div
                 className="
                   relative z-10
-                  p-7
-                  sm:p-9
-                  md:p-12
-                  lg:p-14
-                  min-h-[330px]
-                  md:min-h-[400px]
                   flex
+                  min-h-[340px]
                   flex-col
                   justify-center
+                  p-7
+                  sm:p-9
+                  md:min-h-[390px]
+                  md:p-12
+                  lg:min-h-[410px]
+                  lg:p-14
                 "
               >
-
                 {/* NUMBER */}
-                <div className="flex items-center gap-3 mb-5">
 
+                <div
+                  data-aos="fade-right"
+                  data-aos-delay={index * 150 + 150}
+                  className="mb-5 flex items-center gap-3"
+                >
                   <div
                     className="
-                      w-11 h-11
-                      md:w-13 md:h-13
-                      rounded-[14px]
-                      bg-[linear-gradient(135deg,#29B6F0_0%,#3E7BD6_35%,#7A4FD1_65%,#B93FC9_100%)]
                       flex
+                      h-11
+                      w-11
                       items-center
                       justify-center
-                      text-white
-                      font-bold
+                      rounded-[14px]
+                      bg-[linear-gradient(135deg,#29B6F0_0%,#3E7BD6_35%,#7A4FD1_65%,#B93FC9_100%)]
                       text-sm
-                      md:text-base
-                      shadow-lg
+                      font-bold
+                      text-white
+                      shadow-[0_8px_25px_rgba(41,182,240,0.25)]
+                      transition-transform
+                      duration-500
+                      group-hover:scale-110
                     "
                   >
                     {item.number}
                   </div>
 
-                  <div className="h-px w-12 md:w-16 bg-[#29B6F0]" />
-
+                  <div
+                    className="
+                      h-px
+                      w-12
+                      bg-[linear-gradient(90deg,#29B6F0,#7A4FD1,#B93FC9)]
+                      transition-all
+                      duration-500
+                      group-hover:w-20
+                    "
+                  />
                 </div>
 
                 {/* TITLE */}
+
                 <h3
+                  data-aos="fade-up"
+                  data-aos-delay={index * 150 + 250}
                   className="
+                    max-w-4xl
                     text-2xl
+                    font-bold
+                    leading-tight
+                    tracking-tight
+                    text-white
+                    transition-all
+                    duration-500
                     sm:text-3xl
                     md:text-4xl
                     lg:text-[44px]
-                    font-bold
-                    text-white
-                    leading-[1.15]
-                    tracking-tight
-                    max-w-4xl
-
-                    group-hover:text-[#29B6F0]
-                    transition-colors
-                    duration-500
+                    group-hover:translate-x-1
                   "
                 >
                   {item.title}
                 </h3>
 
                 {/* DESCRIPTION */}
+
                 <p
+                  data-aos="fade-up"
+                  data-aos-delay={index * 150 + 350}
                   className="
                     mt-4
-                    md:mt-5
                     max-w-3xl
-                    text-[#A0A0A8]
                     text-sm
-                    sm:text-base
-                    md:text-lg
                     leading-6
+                    text-[#A0A0A8]
+                    transition-colors
+                    duration-500
+                    sm:text-base
+                    md:mt-5
+                    md:text-lg
                     md:leading-7
+                    group-hover:text-[#D4D4D8]
                   "
                 >
                   {item.description}
                 </p>
 
                 {/* TAGS */}
-                <div className="mt-6 flex flex-wrap gap-2.5">
 
+                <div
+                  data-aos="fade-up"
+                  data-aos-delay={index * 150 + 450}
+                  className="mt-6 flex flex-wrap gap-2.5"
+                >
                   {[
                     "Enterprise Technology",
                     "Architecture",
@@ -293,52 +385,72 @@ export default function ProofSection() {
                     <span
                       key={tag}
                       className="
+                        rounded-full
+                        border border-[#2A2A30]
+                        bg-[#1A1A1E]/90
                         px-3.5
                         py-1.5
-                        rounded-full
-                        bg-[#1A1A1E]
-                        border border-[#2A2A30]
-                        text-[#D4D4D8]
                         text-xs
-                        sm:text-sm
                         font-medium
+                        text-[#D4D4D8]
+                        backdrop-blur-sm
                         transition-all
                         duration-300
-
-                        hover:border-[#29B6F0]/40
+                        hover:border-[#3E7BD6]
+                        hover:bg-[#121212]
                         hover:text-white
                       "
                     >
                       {tag}
                     </span>
                   ))}
-
                 </div>
-
               </div>
 
-              {/* ================= HOVER GLOW ================= */}
+              {/* =================================================
+                  TOP GRADIENT LIGHT
+              ================================================= */}
+
               <div
                 className="
+                  pointer-events-none
                   absolute
-                  -bottom-20
-                  -right-20
-                  w-60
-                  h-60
-                  bg-[#29B6F0]/20
-                  blur-[100px]
+                  left-[8%]
+                  right-[8%]
+                  top-0
+                  h-[2px]
+                  rounded-full
+                  bg-[linear-gradient(90deg,transparent,#29B6F0,#7A4FD1,#B93FC9,transparent)]
                   opacity-0
-                  group-hover:opacity-100
+                  shadow-[0_0_20px_rgba(41,182,240,0.65)]
                   transition-opacity
                   duration-700
+                  group-hover:opacity-100
                 "
               />
 
+              {/* =================================================
+                  3D BORDER GLOW
+              ================================================= */}
+
+              <div
+                className="
+                  pointer-events-none
+                  absolute
+                  inset-0
+                  rounded-[20px]
+                  border
+                  border-transparent
+                  bg-[linear-gradient(135deg,rgba(41,182,240,0.08),transparent,rgba(185,63,201,0.10))]
+                  opacity-0
+                  transition-opacity
+                  duration-700
+                  group-hover:opacity-100
+                "
+              />
             </div>
           ))}
-
         </div>
-
       </div>
     </section>
   );
