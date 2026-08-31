@@ -1,456 +1,576 @@
 "use client";
 
 import { useEffect } from "react";
-import Image from "next/image";
 import AOS from "aos";
 import "aos/dist/aos.css";
+
+import {
+  CreditCard,
+  HeartPulse,
+  Smartphone,
+  ArrowUpRight,
+} from "lucide-react";
+
+/* =========================================================
+   CASE STUDIES
+========================================================= */
+
+const caseStudies = [
+  {
+    number: "01",
+    title: "Payment platform that scales",
+    description:
+      "Built and supported a payment gateway integration platform now serving 150 clients and processing 4.5 million transactions per month.",
+    icon: CreditCard,
+  },
+  {
+    number: "02",
+    title: "AI in healthcare",
+    description:
+      "Designed and shipped an AI patient triaging platform, plus patient intake and preventive care applications — moving healthcare teams from paper workflows to working software.",
+    icon: HeartPulse,
+  },
+  {
+    number: "03",
+    title: "Mobile, end to end",
+    description:
+      "Took a mobile advertising app from concept to production, including architecture, build, and launch.",
+    icon: Smartphone,
+  },
+];
+
+/* =========================================================
+   COMPONENT
+========================================================= */
 
 export default function ProofSection() {
   useEffect(() => {
     AOS.init({
-      duration: 1000,
+      duration: 900,
       once: true,
-      offset: 80,
+      offset: 70,
       easing: "ease-out-cubic",
     });
+
+    AOS.refresh();
+
+    return () => {
+      AOS.refreshHard();
+    };
   }, []);
 
-  const caseStudies = [
-    {
-      number: "01",
-      title: "Payment platform that scales",
-      image: "/home/payment.jpg",
-      description:
-        "Built and supported a payment gateway integration platform now serving 150 clients and processing 4.5 million transactions per month.",
-    },
-    {
-      number: "02",
-      title: "AI in healthcare",
-      image: "/home/healthai.jpg",
-      description:
-        "Designed and shipped an AI patient triaging platform, plus patient intake and preventive care applications — moving healthcare teams from paper workflows to working software. This work became the foundation of BeaverHealthAI, our healthcare AI platform.",
-    },
-    {
-      number: "03",
-      title: "Mobile, end to end",
-      image: "/home/mobile-app.jpg",
-      description:
-        "Took a mobile advertising app from concept to production, including architecture, build, and launch.",
-    },
-  ];
-
   return (
-    <section className="relative overflow-hidden bg-[#000000] py-16 md:py-16">
+    <section
+      className="
+        relative
+        overflow-hidden
+        bg-[#000000]
+        py-16
+        sm:py-20
+        lg:py-24
+      "
+    >
       {/* =====================================================
-          BACKGROUND LIGHTING
+          BACKGROUND GLOW
       ===================================================== */}
 
       <div
         className="
-          pointer-events-none absolute
-          -right-40 bottom-0
-          h-[500px] w-[500px]
-          rounded-full
-          bg-[#B93FC9]/10
-          blur-[160px]
-        "
-      />
-
-      <div
-        className="
-          pointer-events-none absolute
-          -left-40 top-20
-          h-[400px] w-[400px]
+          pointer-events-none
+          absolute
+          -left-40
+          top-20
+          h-[420px]
+          w-[420px]
           rounded-full
           bg-[#29B6F0]/5
           blur-[150px]
         "
       />
 
-      <div className="relative z-10 mx-auto max-w-7xl px-5 sm:px-6 lg:px-8">
+      <div
+        className="
+          pointer-events-none
+          absolute
+          -right-40
+          bottom-0
+          h-[500px]
+          w-[500px]
+          rounded-full
+          bg-[#B93FC9]/8
+          blur-[160px]
+        "
+      />
+
+      <div
+        className="
+          pointer-events-none
+          absolute
+          left-1/2
+          top-1/2
+          h-[300px]
+          w-[300px]
+          -translate-x-1/2
+          -translate-y-1/2
+          rounded-full
+          bg-[#7A4FD1]/5
+          blur-[130px]
+        "
+      />
+
+      {/* =====================================================
+          SUBTLE GRID
+      ===================================================== */}
+
+      <div
+        className="
+          pointer-events-none
+          absolute
+          inset-0
+          opacity-[0.018]
+
+          [background-image:linear-gradient(#ffffff_1px,transparent_1px),linear-gradient(90deg,#ffffff_1px,transparent_1px)]
+
+          [background-size:60px_60px]
+        "
+      />
+
+      {/* =====================================================
+          MAIN CONTAINER
+      ===================================================== */}
+
+      <div
+        className="
+          relative
+          z-10
+          mx-auto
+          max-w-7xl
+          px-5
+          sm:px-8
+          lg:px-10
+        "
+      >
+        <div
+          className="
+            grid
+            items-start
+            gap-12
+
+            lg:grid-cols-[0.8fr_1.2fr]
+
+            lg:gap-16
+            xl:gap-24
+          "
+        >
+          {/* =================================================
+              LEFT CONTENT
+          ================================================= */}
+
+          <div
+            data-aos="fade-right"
+            data-aos-duration="1000"
+            className="
+              max-w-md
+              lg:sticky
+              lg:top-24
+            "
+          >
+            {/* =================================================
+                BADGE
+            ================================================= */}
+
+            <span
+              data-aos="zoom-in"
+              data-aos-delay="100"
+              className="
+                inline-flex
+                items-center
+                rounded-full
+                border
+                border-[#2A2A30]
+                bg-[#0A0A0A]
+                px-4
+                py-2
+
+                text-[10px]
+                font-semibold
+                uppercase
+                tracking-[0.18em]
+
+                text-[#29B6F0]
+
+                shadow-[0_0_25px_rgba(41,182,240,.06)]
+              "
+            >
+              Our Work
+            </span>
+
+            {/* =================================================
+                HEADING
+            ================================================= */}
+
+            <h2
+              data-aos="fade-up"
+              data-aos-delay="150"
+              className="
+                mt-6
+                text-[42px]
+                font-light
+                leading-[0.98]
+                tracking-[-0.04em]
+                text-white
+
+                sm:text-5xl
+
+                lg:text-[52px]
+
+                xl:text-[60px]
+              "
+            >
+              Technology That
+              <br />
+
+              <span
+                className="
+                  font-bold
+                  bg-[linear-gradient(135deg,#29B6F0_0%,#3E7BD6_35%,#7A4FD1_65%,#B93FC9_100%)]
+                  bg-clip-text
+                  text-transparent
+                "
+              >
+                Delivers
+              </span>
+            </h2>
+
+            {/* =================================================
+                DESCRIPTION
+            ================================================= */}
+
+            <p
+              data-aos="fade-up"
+              data-aos-delay="250"
+              className="
+                mt-6
+                max-w-sm
+                text-sm
+                leading-7
+                text-[#A0A0A8]
+
+                sm:text-base
+              "
+            >
+              Real solutions, real results, and technology built to
+              make a measurable difference.
+            </p>
+
+            {/* =================================================
+                GRADIENT LINE
+            ================================================= */}
+
+            <div
+              data-aos="fade-up"
+              data-aos-delay="350"
+              className="
+                mt-7
+                h-[2px]
+                w-16
+                rounded-full
+                bg-[linear-gradient(90deg,#29B6F0,#3E7BD6,#7A4FD1,#B93FC9)]
+                shadow-[0_0_18px_rgba(41,182,240,.30)]
+              "
+            />
+
+            {/* =================================================
+                SMALL STATEMENT
+            ================================================= */}
+
+            <div
+              data-aos="fade-up"
+              data-aos-delay="450"
+              className="
+                mt-7
+                flex
+                items-center
+                gap-3
+              "
+            >
+              <div
+                className="
+                  h-2
+                  w-2
+                  rounded-full
+                  bg-[#29B6F0]
+                  shadow-[0_0_12px_#29B6F0]
+                "
+              />
+
+              <span
+                className="
+                  text-[10px]
+                  font-medium
+                  uppercase
+                  tracking-[0.16em]
+                  text-[#55555D]
+                "
+              >
+                Built for real-world impact
+              </span>
+            </div>
+          </div>
+
+          {/* =================================================
+              RIGHT SIDE
+          ================================================= */}
+
+          <div
+            className="
+              grid
+              grid-cols-1
+              gap-x-12
+              gap-y-10
+
+              sm:grid-cols-2
+
+              lg:pt-2
+            "
+          >
+            {caseStudies.map((item, index) => {
+              const Icon = item.icon;
+
+              return (
+                <div
+                  key={item.number}
+                  data-aos="fade-up"
+                  data-aos-delay={index * 150}
+                  data-aos-duration="900"
+                  className={`
+                    group
+                    relative
+
+                    ${
+                      index === 2
+                        ? "sm:col-span-2 sm:max-w-[48%]"
+                        : ""
+                    }
+                  `}
+                >
+                  {/* =================================================
+                      ICON
+                  ================================================= */}
+
+                  <div
+                    className="
+                      relative
+                      mb-5
+                      flex
+                      h-12
+                      w-12
+                      items-center
+                      justify-center
+                      rounded-full
+                      border
+                      border-[#2A2A30]
+                      bg-[#0A0A0A]
+
+                      transition-all
+                      duration-500
+
+                      group-hover:border-[#3E7BD6]
+                      group-hover:bg-[#121212]
+                      group-hover:shadow-[0_0_30px_rgba(41,182,240,.12)]
+                    "
+                  >
+                    <Icon
+                      className="
+                        h-5
+                        w-5
+                        text-[#29B6F0]
+
+                        transition-all
+                        duration-500
+
+                        group-hover:scale-110
+                        group-hover:text-[#7A4FD1]
+                      "
+                    />
+
+                    {/* Number */}
+
+                    <span
+                      className="
+                        absolute
+                        -right-1
+                        -top-1
+                        flex
+                        h-4
+                        min-w-4
+                        items-center
+                        justify-center
+                        rounded-full
+                        bg-[linear-gradient(135deg,#29B6F0,#7A4FD1,#B93FC9)]
+                        px-1
+                        text-[7px]
+                        font-bold
+                        text-white
+                      "
+                    >
+                      {item.number}
+                    </span>
+                  </div>
+
+                  {/* =================================================
+                      TITLE
+                  ================================================= */}
+
+                  <h3
+                    className="
+                      max-w-xs
+                      text-lg
+                      font-semibold
+                      leading-tight
+                      tracking-tight
+                      text-white
+
+                      transition-all
+                      duration-500
+
+                      sm:text-xl
+
+                      group-hover:translate-x-1
+
+                      group-hover:bg-[linear-gradient(135deg,#29B6F0,#3E7BD6,#7A4FD1,#B93FC9)]
+                      group-hover:bg-clip-text
+                      group-hover:text-transparent
+                    "
+                  >
+                    {item.title}
+                  </h3>
+
+                  {/* =================================================
+                      DESCRIPTION
+                  ================================================= */}
+
+                  <p
+                    className="
+                      mt-3
+                      max-w-md
+                      text-xs
+                      leading-6
+                      text-[#777780]
+
+                      sm:text-sm
+                      sm:leading-6
+
+                      transition-colors
+                      duration-500
+
+                      group-hover:text-[#A0A0A8]
+                    "
+                  >
+                    {item.description}
+                  </p>
+
+                  {/* =================================================
+                      LEARN MORE
+                  ================================================= */}
+
+                  <div
+                    className="
+                      mt-5
+                      flex
+                      items-center
+                      gap-3
+                    "
+                  >
+                    <span
+                      className="
+                        text-[9px]
+                        font-semibold
+                        uppercase
+                        tracking-[0.16em]
+                        text-[#29B6F0]
+
+                        sm:text-[10px]
+                      "
+                    >
+                      Case Study
+                    </span>
+
+                    <div
+                      className="
+                        h-px
+                        w-8
+                        bg-gradient-to-r
+                        from-[#29B6F0]/50
+                        to-transparent
+
+                        transition-all
+                        duration-500
+
+                        group-hover:w-14
+                      "
+                    />
+
+                    <ArrowUpRight
+                      className="
+                        h-3.5
+                        w-3.5
+                        text-[#55555D]
+
+                        transition-all
+                        duration-500
+
+                        group-hover:-translate-y-0.5
+                        group-hover:translate-x-0.5
+                        group-hover:text-[#29B6F0]
+                      "
+                    />
+                  </div>
+
+                  {/* =================================================
+                      BOTTOM GLOW LINE
+                  ================================================= */}
+
+                  <div
+                    className="
+                      mt-7
+                      h-px
+                      w-full
+                      max-w-[320px]
+                      bg-gradient-to-r
+                      from-[#2A2A30]
+                      to-transparent
+
+                      transition-all
+                      duration-500
+
+                      group-hover:from-[#29B6F0]/40
+                    "
+                  />
+                </div>
+              );
+            })}
+          </div>
+        </div>
+
         {/* =====================================================
-            SIMPLE HEADING
+            BOTTOM GRADIENT
         ===================================================== */}
 
         <div
           data-aos="fade-up"
-          data-aos-duration="900"
-          className="mx-auto mb-12 max-w-3xl text-center md:mb-14"
-        >
-          {/* Small Label */}
-
-          <span
-            data-aos="zoom-in"
-            data-aos-delay="100"
-            className="
-              inline-flex items-center
-              rounded-full
-              border border-[#2A2A30]
-              bg-[#121212]
-              px-4 py-2
-              text-xs font-semibold
-              uppercase
-              tracking-[0.18em]
-              text-[#29B6F0]
-              shadow-[0_8px_30px_rgba(41,182,240,0.08)]
-            "
-          >
-            Our Work
-          </span>
-
-          {/* Short Title */}
-
-          <h2
-            data-aos="fade-up"
-            data-aos-delay="200"
-            className="
-              mt-5
-              text-3xl
-              font-bold
-              leading-tight
-              tracking-tight
-              text-white
-              sm:text-4xl
-              md:text-5xl
-            "
-          >
-            Technology That{" "}
-            <span
-              className="
-                bg-[linear-gradient(135deg,#29B6F0_0%,#3E7BD6_35%,#7A4FD1_65%,#B93FC9_100%)]
-                bg-clip-text
-                text-transparent
-              "
-            >
-              Delivers
-            </span>
-          </h2>
-
-          {/* Short Description */}
-
-          <p
-            data-aos="fade-up"
-            data-aos-delay="350"
-            className="
-              mx-auto
-              mt-5
-              max-w-2xl
-              text-sm
-              leading-7
-              text-[#A0A0A8]
-              sm:text-base
-              md:text-lg
-            "
-          >
-            Real solutions, real results, and technology built to make a
-            measurable difference.
-          </p>
-
-          {/* Gradient Divider */}
-
-          <div
-            data-aos="zoom-in"
-            data-aos-delay="500"
-            className="
-              mx-auto
-              mt-6
-              h-[2px]
-              w-20
-              rounded-full
-              bg-[linear-gradient(90deg,#29B6F0,#3E7BD6,#7A4FD1,#B93FC9)]
-              shadow-[0_0_15px_rgba(41,182,240,0.35)]
-            "
-          />
-        </div>
-
-        {/* =====================================================
-            CASE STUDIES
-        ===================================================== */}
-
-        <div className="space-y-7 md:space-y-9">
-          {caseStudies.map((item, index) => (
-            <div
-              key={item.number}
-              data-aos="fade-up"
-              data-aos-delay={index * 150}
-              data-aos-duration="1000"
-              className="
-                group
-                relative
-                overflow-hidden
-                rounded-[20px]
-                border border-[#2A2A30]
-                bg-[#121212]
-                shadow-[0_15px_45px_rgba(0,0,0,0.35)]
-                transition-all
-                duration-700
-                hover:-translate-y-2
-                hover:border-[#3E7BD6]
-                hover:shadow-[0_25px_70px_rgba(41,182,240,0.18)]
-              "
-            >
-              {/* =================================================
-                  IMAGE
-              ================================================= */}
-
-              <div className="absolute inset-0">
-                <Image
-                  src={item.image}
-                  alt={item.title}
-                  fill
-                  className="
-                    object-cover
-                    transition-transform
-                    duration-[1500ms]
-                    ease-out
-                    group-hover:scale-110
-                  "
-                />
-              </div>
-
-              {/* =================================================
-                  DARK OVERLAY
-              ================================================= */}
-
-              <div
-                className="
-                  absolute inset-0
-                  bg-gradient-to-r
-                  from-black/[0.96]
-                  via-black/[0.84]
-                  to-black/[0.50]
-                  transition-all
-                  duration-700
-                  group-hover:via-black/[0.78]
-                "
-              />
-
-              {/* =================================================
-                  GRADIENT LIGHT
-              ================================================= */}
-
-              <div
-                className="
-                  pointer-events-none
-                  absolute
-                  -right-24
-                  -top-24
-                  h-72
-                  w-72
-                  rounded-full
-                  bg-[#29B6F0]/10
-                  blur-[100px]
-                  opacity-0
-                  transition-opacity
-                  duration-700
-                  group-hover:opacity-100
-                "
-              />
-
-              <div
-                className="
-                  pointer-events-none
-                  absolute
-                  -bottom-24
-                  -right-20
-                  h-72
-                  w-72
-                  rounded-full
-                  bg-[#B93FC9]/15
-                  blur-[110px]
-                  opacity-0
-                  transition-opacity
-                  duration-700
-                  group-hover:opacity-100
-                "
-              />
-
-              {/* =================================================
-                  CONTENT
-              ================================================= */}
-
-              <div
-                className="
-                  relative z-10
-                  flex
-                  min-h-[340px]
-                  flex-col
-                  justify-center
-                  p-7
-                  sm:p-9
-                  md:min-h-[390px]
-                  md:p-12
-                  lg:min-h-[410px]
-                  lg:p-14
-                "
-              >
-                {/* NUMBER */}
-
-                <div
-                  data-aos="fade-right"
-                  data-aos-delay={index * 150 + 150}
-                  className="mb-5 flex items-center gap-3"
-                >
-                  <div
-                    className="
-                      flex
-                      h-11
-                      w-11
-                      items-center
-                      justify-center
-                      rounded-[14px]
-                      bg-[linear-gradient(135deg,#29B6F0_0%,#3E7BD6_35%,#7A4FD1_65%,#B93FC9_100%)]
-                      text-sm
-                      font-bold
-                      text-white
-                      shadow-[0_8px_25px_rgba(41,182,240,0.25)]
-                      transition-transform
-                      duration-500
-                      group-hover:scale-110
-                    "
-                  >
-                    {item.number}
-                  </div>
-
-                  <div
-                    className="
-                      h-px
-                      w-12
-                      bg-[linear-gradient(90deg,#29B6F0,#7A4FD1,#B93FC9)]
-                      transition-all
-                      duration-500
-                      group-hover:w-20
-                    "
-                  />
-                </div>
-
-                {/* TITLE */}
-
-                <h3
-                  data-aos="fade-up"
-                  data-aos-delay={index * 150 + 250}
-                  className="
-                    max-w-4xl
-                    text-2xl
-                    font-bold
-                    leading-tight
-                    tracking-tight
-                    text-white
-                    transition-all
-                    duration-500
-                    sm:text-3xl
-                    md:text-4xl
-                    lg:text-[44px]
-                    group-hover:translate-x-1
-                  "
-                >
-                  {item.title}
-                </h3>
-
-                {/* DESCRIPTION */}
-
-                <p
-                  data-aos="fade-up"
-                  data-aos-delay={index * 150 + 350}
-                  className="
-                    mt-4
-                    max-w-3xl
-                    text-sm
-                    leading-6
-                    text-[#A0A0A8]
-                    transition-colors
-                    duration-500
-                    sm:text-base
-                    md:mt-5
-                    md:text-lg
-                    md:leading-7
-                    group-hover:text-[#D4D4D8]
-                  "
-                >
-                  {item.description}
-                </p>
-
-                {/* TAGS */}
-
-                <div
-                  data-aos="fade-up"
-                  data-aos-delay={index * 150 + 450}
-                  className="mt-6 flex flex-wrap gap-2.5"
-                >
-                  {[
-                    "Enterprise Technology",
-                    "Architecture",
-                    "Delivery",
-                  ].map((tag) => (
-                    <span
-                      key={tag}
-                      className="
-                        rounded-full
-                        border border-[#2A2A30]
-                        bg-[#1A1A1E]/90
-                        px-3.5
-                        py-1.5
-                        text-xs
-                        font-medium
-                        text-[#D4D4D8]
-                        backdrop-blur-sm
-                        transition-all
-                        duration-300
-                        hover:border-[#3E7BD6]
-                        hover:bg-[#121212]
-                        hover:text-white
-                      "
-                    >
-                      {tag}
-                    </span>
-                  ))}
-                </div>
-              </div>
-
-              {/* =================================================
-                  TOP GRADIENT LIGHT
-              ================================================= */}
-
-              <div
-                className="
-                  pointer-events-none
-                  absolute
-                  left-[8%]
-                  right-[8%]
-                  top-0
-                  h-[2px]
-                  rounded-full
-                  bg-[linear-gradient(90deg,transparent,#29B6F0,#7A4FD1,#B93FC9,transparent)]
-                  opacity-0
-                  shadow-[0_0_20px_rgba(41,182,240,0.65)]
-                  transition-opacity
-                  duration-700
-                  group-hover:opacity-100
-                "
-              />
-
-              {/* =================================================
-                  3D BORDER GLOW
-              ================================================= */}
-
-              <div
-                className="
-                  pointer-events-none
-                  absolute
-                  inset-0
-                  rounded-[20px]
-                  border
-                  border-transparent
-                  bg-[linear-gradient(135deg,rgba(41,182,240,0.08),transparent,rgba(185,63,201,0.10))]
-                  opacity-0
-                  transition-opacity
-                  duration-700
-                  group-hover:opacity-100
-                "
-              />
-            </div>
-          ))}
-        </div>
+          data-aos-delay="400"
+          className="
+            mx-auto
+            mt-16
+            h-px
+            max-w-5xl
+            bg-gradient-to-r
+            from-transparent
+            via-[#3E7BD6]/20
+            to-transparent
+          "
+        />
       </div>
     </section>
   );
