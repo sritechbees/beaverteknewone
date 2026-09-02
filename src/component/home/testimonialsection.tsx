@@ -13,9 +13,8 @@ import "swiper/css";
 import {
   ChevronLeft,
   ChevronRight,
-  Quote,
-  Star,
   BadgeCheck,
+  Star,
 } from "lucide-react";
 
 /* =========================================================
@@ -68,7 +67,18 @@ export default function TestimonialsSection() {
   }, []);
 
   return (
-    <section className="relative w-full overflow-hidden bg-[#000000] py-8 sm:py-10 md:py-8 lg:py-8">
+    <section
+      className="
+        relative
+        w-full
+        overflow-hidden
+        bg-[#000000]
+        py-8
+        sm:py-10
+        md:py-8
+        lg:py-8
+      "
+    >
       {/* =====================================================
           BACKGROUND GLOW
       ====================================================== */}
@@ -193,10 +203,6 @@ export default function TestimonialsSection() {
               bg-[#0A0A0A]
               px-2.5
               py-1.5
-              transition-all
-              duration-500
-              hover:-translate-y-1
-              hover:border-[#3E7BD6]/60
               sm:px-3
             "
           >
@@ -227,7 +233,7 @@ export default function TestimonialsSection() {
             </span>
           </div>
 
-          {/* Title */}
+          {/* Short Title */}
 
           <h2
             data-aos="fade-up"
@@ -242,11 +248,11 @@ export default function TestimonialsSection() {
               text-white
               sm:text-[29px]
               md:text-[36px]
-              lg:text-[44px]
-              xl:text-[46px]
+              lg:text-[40px]
+              xl:text-[42px]
             "
           >
-            Trusted By{" "}
+            Hear From{" "}
             <span
               className="
                 bg-[linear-gradient(135deg,#29B6F0_0%,#3E7BD6_35%,#7A4FD1_65%,#B93FC9_100%)]
@@ -254,7 +260,7 @@ export default function TestimonialsSection() {
                 text-transparent
               "
             >
-              Industry Leaders
+            Our Clients
             </span>
           </h2>
 
@@ -293,9 +299,6 @@ export default function TestimonialsSection() {
               w-10
               rounded-full
               bg-[linear-gradient(90deg,#29B6F0,#3E7BD6,#7A4FD1,#B93FC9)]
-              transition-all
-              duration-500
-              hover:w-16
             "
           />
         </div>
@@ -341,7 +344,6 @@ export default function TestimonialsSection() {
               data-aos-delay="250"
               data-aos-duration="700"
               className="
-                group
                 relative
                 z-20
                 flex
@@ -355,11 +357,9 @@ export default function TestimonialsSection() {
                 border-[#2A2A30]
                 bg-[#0A0A0A]
                 text-[#707078]
-                transition-all
-                duration-500
-                hover:-translate-x-1
+                transition-colors
+                duration-300
                 hover:border-[#3E7BD6]
-                hover:bg-[#121212]
                 hover:text-[#29B6F0]
                 sm:h-9
                 sm:w-9
@@ -371,9 +371,6 @@ export default function TestimonialsSection() {
                 className="
                   h-3.5
                   w-3.5
-                  transition-transform
-                  duration-500
-                  group-hover:-translate-x-0.5
                   sm:h-4
                   sm:w-4
                 "
@@ -408,18 +405,12 @@ export default function TestimonialsSection() {
                       data-aos-delay={index * 80}
                       data-aos-duration="800"
                       className="
-                        group
                         relative
                         w-full
                         overflow-hidden
-                        rounded-[16px]
-                        border
-                        border-[#24242A]
-                        bg-[#0D0D0F]
-                        transition-all
-                        duration-500
-                        hover:-translate-y-1
-                        hover:border-[#3E7BD6]
+                       
+                       
+                       
                         sm:rounded-[18px]
                       "
                     >
@@ -438,9 +429,6 @@ export default function TestimonialsSection() {
                           rounded-full
                           bg-[#29B6F0]/5
                           blur-[60px]
-                          transition-all
-                          duration-700
-                          group-hover:bg-[#29B6F0]/9
                           sm:h-40
                           sm:w-40
                         "
@@ -457,9 +445,6 @@ export default function TestimonialsSection() {
                           rounded-full
                           bg-[#B93FC9]/5
                           blur-[60px]
-                          transition-all
-                          duration-700
-                          group-hover:bg-[#B93FC9]/9
                           sm:h-40
                           sm:w-40
                         "
@@ -479,10 +464,6 @@ export default function TestimonialsSection() {
                           rounded-full
                           bg-[linear-gradient(90deg,transparent,#29B6F0,#7A4FD1,#B93FC9,transparent)]
                           opacity-70
-                          transition-all
-                          duration-700
-                          group-hover:left-[8%]
-                          group-hover:right-[8%]
                         "
                       />
 
@@ -495,62 +476,21 @@ export default function TestimonialsSection() {
                           relative
                           z-10
                           flex
-                          min-h-[225px]
+                          min-h-[205px]
                           items-center
                           px-3
                           py-5
-                          sm:min-h-[240px]
+                          sm:min-h-[220px]
                           sm:px-6
                           sm:py-6
-                          md:min-h-[250px]
+                          md:min-h-[230px]
                           md:px-8
-                          lg:min-h-[260px]
+                          lg:min-h-[240px]
                           lg:px-10
                           lg:py-7
                         "
                       >
                         <div className="mx-auto w-full max-w-[800px] text-center">
-
-                          {/* Quote Icon */}
-
-                          <div
-                            data-aos="fade-down"
-                            data-aos-delay="120"
-                            data-aos-duration="650"
-                            className="mb-2.5 flex justify-center sm:mb-3"
-                          >
-                            <div
-                              className="
-                                flex
-                                h-9
-                                w-9
-                                items-center
-                                justify-center
-                                rounded-lg
-                                border
-                                border-[#3E7BD6]/30
-                                bg-[#0A0A0A]
-                                transition-all
-                                duration-500
-                                group-hover:scale-105
-                                group-hover:border-[#29B6F0]/60
-                                sm:h-10
-                                sm:w-10
-                                sm:rounded-xl
-                              "
-                            >
-                              <Quote
-                                strokeWidth={3}
-                                className="
-                                  h-4
-                                  w-4
-                                  text-[#29B6F0]
-                                  sm:h-[18px]
-                                  sm:w-[18px]
-                                "
-                              />
-                            </div>
-                          </div>
 
                           {/* =================================================
                               QUOTE TEXT
@@ -558,7 +498,7 @@ export default function TestimonialsSection() {
 
                           <p
                             data-aos="fade-up"
-                            data-aos-delay="180"
+                            data-aos-delay="120"
                             data-aos-duration="750"
                             className="
                               mx-auto
@@ -569,9 +509,6 @@ export default function TestimonialsSection() {
                               font-medium
                               leading-[1.65]
                               text-[#D4D4D8]
-                              transition-colors
-                              duration-500
-                              group-hover:text-white
                               sm:text-[14px]
                               sm:leading-6
                               md:text-[15px]
@@ -582,11 +519,11 @@ export default function TestimonialsSection() {
                             <span
                               className="
                                 mr-1
-                                text-[24px]
+                                text-[22px]
                                 font-black
                                 leading-none
                                 text-[#29B6F0]
-                                sm:text-[30px]
+                                sm:text-[26px]
                               "
                             >
                               “
@@ -597,11 +534,11 @@ export default function TestimonialsSection() {
                             <span
                               className="
                                 ml-1
-                                text-[24px]
+                                text-[22px]
                                 font-black
                                 leading-none
                                 text-[#B93FC9]
-                                sm:text-[30px]
+                                sm:text-[26px]
                               "
                             >
                               ”
@@ -614,7 +551,7 @@ export default function TestimonialsSection() {
 
                           <div
                             data-aos="zoom-in"
-                            data-aos-delay="250"
+                            data-aos-delay="200"
                             data-aos-duration="650"
                             className="
                               mx-auto
@@ -636,7 +573,7 @@ export default function TestimonialsSection() {
 
                           <div
                             data-aos="fade-up"
-                            data-aos-delay="310"
+                            data-aos-delay="260"
                             data-aos-duration="650"
                             className="
                               flex
@@ -680,9 +617,6 @@ export default function TestimonialsSection() {
                                 h-3
                                 w-3
                                 text-[#29B6F0]
-                                transition-all
-                                duration-500
-                                group-hover:text-[#B93FC9]
                                 sm:h-3.5
                                 sm:w-3.5
                               "
@@ -695,9 +629,15 @@ export default function TestimonialsSection() {
 
                           <div
                             data-aos="fade-up"
-                            data-aos-delay="370"
+                            data-aos-delay="320"
                             data-aos-duration="650"
-                            className="mt-1.5 flex justify-center gap-0.5 sm:mt-2"
+                            className="
+                              mt-1.5
+                              flex
+                              justify-center
+                              gap-0.5
+                              sm:mt-2
+                            "
                           >
                             {[1, 2, 3, 4, 5].map((star) => (
                               <Star
@@ -707,9 +647,6 @@ export default function TestimonialsSection() {
                                   w-2.5
                                   fill-[#29B6F0]
                                   text-[#29B6F0]
-                                  transition-transform
-                                  duration-300
-                                  group-hover:scale-110
                                   sm:h-3
                                   sm:w-3
                                 "
@@ -734,11 +671,6 @@ export default function TestimonialsSection() {
                           from-transparent
                           via-[#3E7BD6]/30
                           to-transparent
-                          transition-all
-                          duration-700
-                          group-hover:left-[8%]
-                          group-hover:right-[8%]
-                          group-hover:via-[#29B6F0]/60
                         "
                       />
                     </div>
@@ -759,7 +691,6 @@ export default function TestimonialsSection() {
               data-aos-delay="250"
               data-aos-duration="700"
               className="
-                group
                 relative
                 z-20
                 flex
@@ -773,11 +704,9 @@ export default function TestimonialsSection() {
                 border-[#2A2A30]
                 bg-[#0A0A0A]
                 text-[#707078]
-                transition-all
-                duration-500
-                hover:translate-x-1
+                transition-colors
+                duration-300
                 hover:border-[#3E7BD6]
-                hover:bg-[#121212]
                 hover:text-[#B93FC9]
                 sm:h-9
                 sm:w-9
@@ -789,9 +718,6 @@ export default function TestimonialsSection() {
                 className="
                   h-3.5
                   w-3.5
-                  transition-transform
-                  duration-500
-                  group-hover:translate-x-0.5
                   sm:h-4
                   sm:w-4
                 "
@@ -805,7 +731,7 @@ export default function TestimonialsSection() {
 
           <div
             data-aos="fade-up"
-            data-aos-delay="420"
+            data-aos-delay="380"
             data-aos-duration="650"
             className="
               mt-3
@@ -829,12 +755,10 @@ export default function TestimonialsSection() {
                   w-3.5
                   rounded-full
                   bg-[#2A2A30]
-                  transition-all
-                  duration-500
-                  hover:w-6
+                  transition-colors
+                  duration-300
                   hover:bg-[#3E7BD6]
                   sm:w-4
-                  sm:hover:w-7
                 "
               />
             ))}
@@ -847,7 +771,7 @@ export default function TestimonialsSection() {
 
         <div
           data-aos="fade-up"
-          data-aos-delay="500"
+          data-aos-delay="450"
           data-aos-duration="700"
           className="
             mx-auto
