@@ -3,8 +3,12 @@
 import { useEffect, useRef } from "react";
 import AOS from "aos";
 import "aos/dist/aos.css";
-import { ArrowUpRight } from "lucide-react";
-import Link from "next/link";
+import { Box, ChevronRight } from "lucide-react";
+
+/* ================================================================
+   PROJECTS
+================================================================ */
+
 const projects = [
   {
     id: 1,
@@ -28,12 +32,50 @@ const projects = [
   },
 ];
 
+/* ================================================================
+   STATS
+================================================================ */
+
+const stats = [
+  {
+    number: "10+",
+    title: "WEBSITE",
+    subtitle: "DEMOS",
+    index: "01",
+    icon: "screen" as const,
+  },
+  {
+    number: "80+",
+    title: "TOTAL INNER",
+    subtitle: "PAGES",
+    index: "02",
+    icon: "file" as const,
+  },
+  {
+    number: "350+",
+    title: "TOTAL",
+    subtitle: "BLOCKS",
+    index: "03",
+    icon: "grid" as const,
+  },
+  {
+    number: "10+",
+    title: "MEGA MENU",
+    subtitle: "DESIGNS",
+    index: "04",
+    icon: "menu" as const,
+  },
+];
+
+/* ================================================================
+   HERO SECTION
+================================================================ */
+
 function Herosection() {
   const trackRef = useRef<HTMLDivElement>(null);
   const animationRef = useRef<number | null>(null);
   const positionRef = useRef(0);
-  const loopWidthRef = useRef(0);
-  const isPausedRef = useRef(false);
+  const pausedRef = useRef(false);
 
   /* ============================================================
      AOS
@@ -46,7 +88,6 @@ function Herosection() {
       offset: 60,
       easing: "ease-out-cubic",
       mirror: false,
-      anchorPlacement: "top-bottom",
     });
 
     AOS.refresh();
@@ -57,7 +98,7 @@ function Herosection() {
   }, []);
 
   /* ============================================================
-     SMOOTH INFINITE TRAIN
+     INFINITE SHOWCASE
   ============================================================ */
 
   useEffect(() => {
@@ -65,32 +106,22 @@ function Herosection() {
 
     if (!track) return;
 
-    const updateWidth = () => {
-      loopWidthRef.current = track.scrollWidth / 2;
-    };
-
-    updateWidth();
-
-    const resizeObserver = new ResizeObserver(() => {
-      updateWidth();
-    });
-
-    resizeObserver.observe(track);
-
-    const speed = 0.32;
+    const speed = 0.8;
 
     const animate = () => {
-      if (!isPausedRef.current) {
+      if (!pausedRef.current) {
         positionRef.current -= speed;
 
+        const loopWidth = track.scrollWidth / 2;
+
         if (
-          loopWidthRef.current > 0 &&
-          Math.abs(positionRef.current) >= loopWidthRef.current
+          loopWidth > 0 &&
+          Math.abs(positionRef.current) >= loopWidth
         ) {
-          positionRef.current += loopWidthRef.current;
+          positionRef.current += loopWidth;
         }
 
-        track.style.transform = `translate3d(${positionRef.current}px,0,0)`;
+        track.style.transform = `translate3d(${positionRef.current}px, 0, 0)`;
       }
 
       animationRef.current = requestAnimationFrame(animate);
@@ -99,25 +130,12 @@ function Herosection() {
     animationRef.current = requestAnimationFrame(animate);
 
     return () => {
-      resizeObserver.disconnect();
-
       if (animationRef.current !== null) {
         cancelAnimationFrame(animationRef.current);
+        animationRef.current = null;
       }
     };
   }, []);
-
-  /* ============================================================
-     PAUSE ON HOVER
-  ============================================================ */
-
-  const handleMouseEnter = () => {
-    isPausedRef.current = true;
-  };
-
-  const handleMouseLeave = () => {
-    isPausedRef.current = false;
-  };
 
   return (
     <section
@@ -125,115 +143,115 @@ function Herosection() {
         relative
         w-full
         overflow-hidden
-        bg-[#000000]
-
+        bg-cover
+        bg-center
+        bg-no-repeat
         px-4
-        pb-8
+        pb-10
         pt-7
-
         sm:px-6
-        sm:pb-10
-        sm:pt-8
-
-        md:pb-11
-        md:pt-9
-
+        sm:pb-12
+        sm:pt-9
         lg:px-10
-        lg:pb-12
+        lg:pb-14
         lg:pt-10
-
         xl:px-16
       "
+      style={{
+        backgroundImage: "url('/home/homebg.jpeg')",
+      }}
     >
-      {/* ==========================================================
-          BACKGROUND
-      =========================================================== */}
+      {/* ========================================================
+          BACKGROUND OVERLAY
+      ========================================================= */}
+
+      <div className="pointer-events-none absolute inset-0 bg-black/10" />
+
+      {/* ========================================================
+          BACKGROUND GRADIENT
+      ========================================================= */}
+
+      <div
+        className="
+          pointer-events-none
+          absolute
+          inset-0
+          bg-[linear-gradient(135deg,rgba(0,0,0,0.65),rgba(0,0,0,0.35),rgba(20,10,45,0.45))]
+        "
+      />
+
+      {/* ========================================================
+          BACKGROUND GLOW
+      ========================================================= */}
 
       <div className="pointer-events-none absolute inset-0 overflow-hidden">
-        {/* Cyan */}
+
+        {/* CYAN */}
 
         <div
           className="
             absolute
             -left-40
-            top-0
-
-            h-[260px]
-            w-[260px]
-
+            top-10
+            h-[320px]
+            w-[320px]
             rounded-full
-
-            bg-[#29B6F0]/8
-
-            blur-[110px]
-
-            sm:h-[320px]
-            sm:w-[320px]
+            bg-[#29B6F0]/15
+            blur-[120px]
+            sm:h-[420px]
+            sm:w-[420px]
           "
         />
 
-        {/* Violet */}
+        {/* VIOLET */}
 
         <div
           className="
             absolute
-            -right-36
+            -right-40
             top-0
-
-            h-[280px]
-            w-[280px]
-
+            h-[400px]
+            w-[400px]
             rounded-full
-
-            bg-[#7A4FD1]/8
-
-            blur-[115px]
-
-            sm:h-[340px]
-            sm:w-[340px]
+            bg-[#7A4FD1]/18
+            blur-[130px]
+            sm:h-[520px]
+            sm:w-[520px]
           "
         />
 
-        {/* Magenta */}
+        {/* MAGENTA */}
 
         <div
           className="
             absolute
-            bottom-0
+            bottom-[-180px]
             left-1/2
-
-            h-[250px]
-            w-[250px]
-
+            h-[400px]
+            w-[400px]
             -translate-x-1/2
-
             rounded-full
-
-            bg-[#B93FC9]/6
-
-            blur-[110px]
+            bg-[#B93FC9]/12
+            blur-[130px]
           "
         />
 
-        {/* Grid */}
+        {/* GRID */}
 
         <div
           className="
             absolute
             inset-0
-
-            opacity-[0.018]
-
+            opacity-[0.035]
             [background-image:linear-gradient(rgba(255,255,255,0.5)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.5)_1px,transparent_1px)]
-
-            [background-size:60px_60px]
+            [background-size:55px_55px]
           "
         />
       </div>
 
-      {/* ==========================================================
+      {/* ========================================================
           MAIN CONTAINER
-      =========================================================== */}
+      ========================================================= */}
 
       <div
         className="
@@ -241,41 +259,37 @@ function Herosection() {
           z-10
           mx-auto
           w-full
-          max-w-[1450px]
+          max-w-[1400px]
         "
       >
-        {/* ========================================================
-            HERO CONTENT
-        ========================================================= */}
+        {/* ======================================================
+            HERO
+        ======================================================= */}
 
         <div
           className="
             grid
             items-center
-
-            gap-7
-
-            lg:grid-cols-[0.92fr_1.08fr]
+            gap-8
+            lg:grid-cols-[.88fr_1.12fr]
             lg:gap-10
-
-            xl:grid-cols-[0.9fr_1.1fr]
-            xl:gap-14
+            xl:gap-12
           "
         >
-          {/* ======================================================
-              LEFT
-          ======================================================= */}
+          {/* ====================================================
+              LEFT CONTENT
+          ==================================================== */}
 
           <div
             data-aos="fade-right"
-            data-aos-duration="950"
+            data-aos-duration="1000"
             className="
+              relative
+              z-20
               mx-auto
               w-full
-              max-w-[620px]
-
+              max-w-[560px]
               text-center
-
               lg:mx-0
               lg:text-left
             "
@@ -285,30 +299,23 @@ function Herosection() {
             <div
               data-aos="zoom-in"
               data-aos-delay="100"
-              data-aos-duration="650"
               className="
-                mb-3
+                mb-4
                 inline-flex
                 items-center
                 gap-2
-
                 rounded-full
-
                 border
-                border-white/10
-
-                bg-white/[0.035]
-
-                px-3
+                border-white/15
+                bg-black/20
+                px-3.5
                 py-1.5
-
+                shadow-[0_0_25px_rgba(41,182,240,0.06)]
                 backdrop-blur-xl
-
                 transition-all
                 duration-500
-
-                hover:border-[#29B6F0]/40
-                hover:bg-white/[0.06]
+                hover:border-[#29B6F0]/50
+                hover:bg-white/[.06]
               "
             >
               <span
@@ -328,7 +335,7 @@ function Herosection() {
                     w-1.5
                     rounded-full
                     bg-[#29B6F0]
-                    shadow-[0_0_12px_rgba(41,182,240,.9)]
+                    shadow-[0_0_12px_rgba(41,182,240,0.95)]
                   "
                 />
 
@@ -349,9 +356,8 @@ function Herosection() {
                   text-[8px]
                   font-semibold
                   uppercase
-                  tracking-[0.18em]
-                  text-[#A0A0A8]
-
+                  tracking-[.18em]
+                  text-[#D4D4D8]
                   sm:text-[9px]
                 "
               >
@@ -359,32 +365,22 @@ function Herosection() {
               </span>
             </div>
 
-            {/* MAIN TITLE */}
+            {/* TITLE */}
 
             <h1
               data-aos="fade-up"
-              data-aos-delay="180"
-              data-aos-duration="900"
+              data-aos-delay="150"
               className="
-           font-extrabold
-                text-[40px]
-             
-                leading-[0.94]
-                tracking-[-0.055em]
+                text-[43px]
+                font-extrabold
+                leading-[.91]
+                tracking-[-.06em]
                 text-white
-
-                transition-transform
-                duration-500
-
-                hover:translate-x-0.5
-
-                sm:text-[50px]
-
-                md:text-[54px]
-
-                lg:text-[52px]
-
-                xl:text-[66px]
+                drop-shadow-[0_5px_25px_rgba(0,0,0,0.3)]
+                sm:text-[53px]
+                md:text-[60px]
+                lg:text-[55px]
+                xl:text-[70px]
               "
             >
               Build What&apos;s
@@ -392,9 +388,6 @@ function Herosection() {
 
               <span
                 className="
-                  relative
-                  inline-block
-
                   bg-[linear-gradient(135deg,#29B6F0_0%,#3E7BD6_35%,#7A4FD1_65%,#B93FC9_100%)]
                   bg-clip-text
                   text-transparent
@@ -404,60 +397,20 @@ function Herosection() {
               </span>
             </h1>
 
-            {/* SECOND TITLE */}
-
-            <h2
-              data-aos="fade-up"
-              data-aos-delay="260"
-              className="
-                mt-2
-
-                text-[25px]
-                font-semibold
-                leading-tight
-                tracking-[-0.035em]
-
-                text-white/95
-
-                transition-all
-                duration-500
-
-                hover:text-white
-
-                sm:text-[31px]
-                md:text-[33px]
-                lg:text-[34px]
-                xl:text-[39px]
-              "
-            >
-              Digital Products
-            </h2>
-
             {/* DESCRIPTION */}
 
             <p
               data-aos="fade-up"
-              data-aos-delay="340"
+              data-aos-delay="290"
               className="
                 mx-auto
-                mt-4
-
-                max-w-[510px]
-
-                text-[12px]
-                leading-[1.7]
-
-                text-[#A0A0A8]
-
-                transition-colors
-                duration-500
-
-                hover:text-[#D4D4D8]
-
-                sm:text-[13px]
-
-                md:text-[14px]
-
+                mt-3.5
+                max-w-[500px]
+                text-[11px]
+                leading-[1.75]
+                text-[#C4C4CA]
+                sm:text-[12px]
+                md:text-[13px]
                 lg:mx-0
               "
             >
@@ -465,446 +418,593 @@ function Herosection() {
               experiences, powerful technology, and scalable solutions for
               ambitious businesses.
             </p>
-
-            {/* ====================================================
-                BUTTONS
-            ===================================================== */}
-
-            <div
-              data-aos="fade-up"
-              data-aos-delay="430"
-              className="
-                mt-5
-
-                flex
-                flex-wrap
-                justify-center
-                gap-2.5
-
-                lg:justify-start
-              "
-            >
-              {/* PRIMARY */}
-<Link href="/products/producthero">
-              <button
-                type="button"
-                className="
-                  group
-                  relative
-                  overflow-hidden
-
-                  rounded-full
-
-                  bg-[linear-gradient(135deg,#29B6F0_0%,#3E7BD6_35%,#7A4FD1_65%,#B93FC9_100%)]
-
-                  px-5
-                  py-2.5
-
-                  text-[11px]
-                  font-semibold
-                  text-white
-
-                  transition-all
-                  duration-400
-
-                  hover:-translate-y-1
-
-                  hover:shadow-[0_10px_30px_rgba(62,123,214,.30)]
-
-                  active:translate-y-0
-
-                  sm:px-6
-                  sm:py-3
-                  sm:text-xs
-                "
-              >
-                <span className="relative z-10 flex items-center gap-2">
-                  Explore Products
-
-                  <ArrowUpRight
-                    className="
-                      h-3
-                      w-3
-
-                      transition-transform
-                      duration-300
-
-                      group-hover:-translate-y-0.5
-                      group-hover:translate-x-0.5
-                    "
-                  />
-                </span>
-
-                {/* Shine */}
-
-                <span
-                  className="
-                    absolute
-                    inset-y-0
-                    -left-[100%]
-                    w-[60%]
-
-                    skew-x-[-20deg]
-
-                    bg-white/20
-
-                    transition-all
-                    duration-700
-
-                    group-hover:left-[130%]
-                  "
-                />
-              </button></Link>
-
-              {/* SECONDARY */}
-<Link href="/customers/casestudyoverall">
-              <button
-                type="button"
-                className="
-                  group
-
-                  rounded-full
-
-                  border
-                  border-white/10
-
-                  bg-white/[0.025]
-
-                  px-5
-                  py-2.5
-
-                  text-[11px]
-                  font-semibold
-                  text-white
-
-                  backdrop-blur-xl
-
-                  transition-all
-                  duration-400
-
-                  hover:-translate-y-1
-                  hover:border-[#3E7BD6]/70
-                  hover:bg-[#3E7BD6]/10
-                  hover:text-[#29B6F0]
-
-                  sm:px-6
-                  sm:py-3
-                  sm:text-xs
-                "
-              >
-                <span className="flex items-center gap-2">
-                  View Showcase
-
-                  <ArrowUpRight
-                    className="
-                      h-3
-                      w-3
-
-                      transition-transform
-                      duration-300
-
-                      group-hover:-translate-y-0.5
-                      group-hover:translate-x-0.5
-                    "
-                  />
-                </span>
-              </button>
-              </Link>
-            </div>
           </div>
 
-          {/* ======================================================
-              RIGHT STATISTICS
-          ======================================================= */}
+          {/* ====================================================
+              RIGHT SIDE
+          ==================================================== */}
 
           <div
             data-aos="fade-left"
             data-aos-delay="150"
-            data-aos-duration="950"
+            data-aos-duration="1000"
             className="
               relative
               mx-auto
               w-full
-              max-w-[650px]
+              max-w-[700px]
+              lg:translate-x-2
+              xl:translate-x-4
             "
           >
-            {/* GLOW */}
+            {/* ==================================================
+                DIGITAL ORB
+            =================================================== */}
 
             <div
               className="
                 pointer-events-none
                 absolute
-                inset-[12%]
-
-                rounded-[30px]
-
-                bg-[linear-gradient(135deg,#29B6F0,#3E7BD6,#7A4FD1,#B93FC9)]
-
-                opacity-15
-
-                blur-[55px]
-              "
-            />
-
-            {/* FLOATING ORB */}
-
-            <div
-              className="
-                pointer-events-none
-                absolute
-                -right-2
-                -top-3
-                hidden
-
-                h-10
-                w-10
-
+                -right-[8%]
+                -top-[27%]
+                h-[320px]
+                w-[320px]
                 rounded-full
-
                 border
                 border-[#29B6F0]/25
-
-                bg-[#29B6F0]/5
-
-                backdrop-blur-xl
-
-                transition-all
-                duration-700
-
-                hover:scale-125
-
-                sm:block
+                bg-[radial-gradient(circle_at_30%_30%,rgba(41,182,240,0.3),rgba(62,123,214,0.12)_35%,rgba(122,79,209,0.08)_58%,transparent_72%)]
+                shadow-[0_0_100px_rgba(41,182,240,0.18)]
+                sm:h-[430px]
+                sm:w-[430px]
+                md:h-[520px]
+                md:w-[520px]
+                lg:h-[600px]
+                lg:w-[600px]
               "
             />
 
-            {/* PANEL */}
+            {/* ORBIT */}
+
+            <div
+              className="
+                pointer-events-none
+                absolute
+                right-[4%]
+                top-[7%]
+                h-[100px]
+                w-[350px]
+                rotate-[-18deg]
+                rounded-[50%]
+                border
+                border-[#7A4FD1]/35
+                shadow-[0_0_35px_rgba(122,79,209,0.15)]
+                sm:w-[440px]
+              "
+            />
+
+            {/* ORB LIGHT */}
+
+            <div
+              className="
+                pointer-events-none
+                absolute
+                right-[12%]
+                top-[18%]
+                h-2
+                w-2
+                animate-pulse
+                rounded-full
+                bg-[#29B6F0]
+                shadow-[0_0_25px_8px_rgba(41,182,240,0.35)]
+              "
+            />
+
+            {/* ==================================================
+                PANEL OUTER GLOW
+            =================================================== */}
+
+            <div
+              className="
+                pointer-events-none
+                absolute
+                inset-[5%]
+                rounded-[34px]
+                bg-[linear-gradient(135deg,#29B6F0_0%,#3E7BD6_35%,#7A4FD1_65%,#B93FC9_100%)]
+                opacity-20
+                blur-[45px]
+                transition-all
+                duration-700
+              "
+            />
+
+            {/* ==================================================
+                MAIN GRADIENT BORDER
+            =================================================== */}
 
             <div
               className="
                 group/panel
                 relative
-
-                rounded-[20px]
-
-                border
-                border-white/10
-
-                bg-[#0A0A0A]/90
-
-                p-1.5
-
-                backdrop-blur-2xl
-
+                z-10
+                overflow-hidden
+                rounded-[23px]
+                bg-[linear-gradient(135deg,#29B6F0_0%,#3E7BD6_35%,#7A4FD1_65%,#B93FC9_100%)]
+                p-[1px]
+                shadow-[0_25px_90px_rgba(0,0,0,0.55),0_0_40px_rgba(62,123,214,0.18)]
                 transition-all
-                duration-500
-
-                hover:border-[#3E7BD6]/35
-
-                sm:rounded-[23px]
-                sm:p-2
+                duration-700
+                hover:-translate-y-1
+                hover:shadow-[0_30px_100px_rgba(62,123,214,0.28),0_0_60px_rgba(185,63,201,0.22)]
+                sm:rounded-[27px]
               "
             >
-              {/* PANEL GRADIENT */}
+              {/* OUTER BLUR LIGHT */}
 
               <div
                 className="
                   pointer-events-none
                   absolute
-                  inset-0
-
-                  rounded-[20px]
-
-                  bg-[linear-gradient(135deg,rgba(41,182,240,.09),transparent_35%,transparent_65%,rgba(185,63,201,.10))]
-
-                  opacity-70
-
+                  -inset-[2px]
+                  rounded-[25px]
+                  bg-[linear-gradient(135deg,#29B6F0_0%,#3E7BD6_35%,#7A4FD1_65%,#B93FC9_100%)]
+                  opacity-30
+                  blur-[12px]
                   transition-opacity
-                  duration-500
-
-                  group-hover/panel:opacity-100
-
-                  sm:rounded-[23px]
+                  duration-700
+                  group-hover/panel:opacity-60
                 "
               />
 
-              {/* STAT GRID */}
+              {/* ==================================================
+                  INNER CARD
+              =================================================== */}
 
               <div
                 className="
+                  group/inner
                   relative
-
-                  grid
-                  grid-cols-2
-
-                  gap-1.5
-
-                  sm:grid-cols-4
-                  sm:gap-2
-                "
-              >
-                <StatCard
-                  number="10+"
-                  title="WEBSITE"
-                  subtitle="DEMOS"
-                  index="01"
-                  delay="250"
-                />
-
-                <StatCard
-                  number="80+"
-                  title="TOTAL INNER"
-                  subtitle="PAGE"
-                  index="02"
-                  delay="330"
-                />
-
-                <StatCard
-                  number="350+"
-                  title="TOTAL"
-                  subtitle="BLOCKS"
-                  index="03"
-                  delay="410"
-                />
-
-                <StatCard
-                  number="10+"
-                  title="MEGA MENU"
-                  subtitle="DESIGNS"
-                  index="04"
-                  delay="490"
-                />
-              </div>
-
-              {/* BOTTOM INFO */}
-
-              <div
-                data-aos="fade-up"
-                data-aos-delay="540"
-                className="
-                  relative
-
-                  mt-1.5
-
-                  flex
-                  items-center
-                  justify-between
-
-                  rounded-[12px]
-
+                  overflow-hidden
+                  rounded-[22px]
                   border
-                  border-white/[0.06]
-
-                  bg-white/[0.025]
-
-                  px-2.5
-                  py-2
-
-                  transition-all
-                  duration-500
-
-                  hover:border-[#3E7BD6]/20
-                  hover:bg-white/[0.04]
-
-                  sm:px-3.5
-                  sm:py-2.5
+                  border-white/[.08]
+                  bg-[#121212]
+                  p-2
+                  backdrop-blur-2xl
+                  sm:rounded-[26px]
+                  sm:p-2.5
                 "
               >
-                <div className="flex items-center gap-2">
+                {/* GRADIENT LIGHT WASH */}
+
+                <div
+                  className="
+                    pointer-events-none
+                    absolute
+                    inset-0
+                    bg-[linear-gradient(135deg,rgba(41,182,240,0.1)_0%,transparent_30%,transparent_52%,rgba(122,79,209,0.08)_72%,rgba(185,63,201,0.12)_100%)]
+                  "
+                />
+
+                {/* CYAN LIGHT */}
+
+                <div
+                  className="
+                    pointer-events-none
+                    absolute
+                    -left-20
+                    -top-20
+                    h-44
+                    w-44
+                    rounded-full
+                    bg-[#29B6F0]/15
+                    blur-[65px]
+                    transition-all
+                    duration-700
+                    group-hover/panel:bg-[#29B6F0]/25
+                  "
+                />
+
+                {/* VIOLET LIGHT */}
+
+                <div
+                  className="
+                    pointer-events-none
+                    absolute
+                    right-[-50px]
+                    top-[25%]
+                    h-48
+                    w-48
+                    rounded-full
+                    bg-[#7A4FD1]/12
+                    blur-[70px]
+                    transition-all
+                    duration-700
+                    group-hover/panel:bg-[#7A4FD1]/22
+                  "
+                />
+
+                {/* MAGENTA LIGHT */}
+
+                <div
+                  className="
+                    pointer-events-none
+                    absolute
+                    bottom-[-70px]
+                    right-[-30px]
+                    h-44
+                    w-44
+                    rounded-full
+                    bg-[#B93FC9]/12
+                    blur-[65px]
+                    transition-all
+                    duration-700
+                    group-hover/panel:bg-[#B93FC9]/22
+                  "
+                />
+
+                {/* ==================================================
+                    FLOATING PARTICLES
+                =================================================== */}
+
+                <div
+                  className="
+                    pointer-events-none
+                    absolute
+                    inset-0
+                    z-[2]
+                    overflow-hidden
+                    rounded-[inherit]
+                  "
+                >
                   <span
                     className="
-                      flex
-                      h-5
-                      w-5
-                      shrink-0
-                      items-center
-                      justify-center
-
+                      absolute
+                      left-[12%]
+                      top-[18%]
+                      h-1.5
+                      w-1.5
+                      animate-pulse
                       rounded-full
+                      bg-[#29B6F0]
+                      shadow-[0_0_18px_#29B6F0]
+                    "
+                  />
 
-                      bg-[#22C55E]/10
+                  <span
+                    className="
+                      absolute
+                      right-[18%]
+                      top-[25%]
+                      h-1
+                      w-1
+                      animate-pulse
+                      rounded-full
+                      bg-[#7A4FD1]
+                      shadow-[0_0_16px_#7A4FD1]
+                      [animation-delay:500ms]
+                    "
+                  />
+
+                  <span
+                    className="
+                      absolute
+                      bottom-[22%]
+                      left-[28%]
+                      h-1
+                      w-1
+                      animate-pulse
+                      rounded-full
+                      bg-[#B93FC9]
+                      shadow-[0_0_16px_#B93FC9]
+                      [animation-delay:1000ms]
+                    "
+                  />
+
+                  <span
+                    className="
+                      absolute
+                      bottom-[15%]
+                      right-[32%]
+                      h-1.5
+                      w-1.5
+                      animate-pulse
+                      rounded-full
+                      bg-[#3E7BD6]
+                      shadow-[0_0_18px_#3E7BD6]
+                      [animation-delay:700ms]
+                    "
+                  />
+
+                  <span
+                    className="
+                      absolute
+                      left-[55%]
+                      top-[12%]
+                      h-1
+                      w-1
+                      animate-pulse
+                      rounded-full
+                      bg-[#29B6F0]
+                      shadow-[0_0_14px_#29B6F0]
+                      [animation-delay:1500ms]
+                    "
+                  />
+                </div>
+
+                {/* TOP GRADIENT LIGHT */}
+
+                <div
+                  className="
+                    pointer-events-none
+                    absolute
+                    left-[7%]
+                    right-[7%]
+                    top-0
+                    h-[2px]
+                    rounded-full
+                    bg-[linear-gradient(90deg,#29B6F0_0%,#3E7BD6_35%,#7A4FD1_65%,#B93FC9_100%)]
+                    shadow-[0_0_15px_rgba(41,182,240,0.65),0_0_25px_rgba(185,63,201,0.25)]
+                  "
+                />
+
+                {/* INNER HIGHLIGHT */}
+
+                <div
+                  className="
+                    pointer-events-none
+                    absolute
+                    left-[15%]
+                    top-0
+                    h-[70px]
+                    w-[70%]
+                    rounded-full
+                    bg-[#29B6F0]/5
+                    blur-[35px]
+                  "
+                />
+
+                {/* ==================================================
+                    STATS GRID
+                =================================================== */}
+
+                <div
+                  className="
+                    relative
+                    z-10
+                    grid
+                    grid-cols-2
+                    gap-1.5
+                    sm:grid-cols-4
+                    sm:gap-2
+                  "
+                >
+                  {stats.map((stat, index) => (
+                    <StatCard
+                      key={stat.index}
+                      {...stat}
+                      delay={250 + index * 80}
+                    />
+                  ))}
+                </div>
+
+                {/* ==================================================
+                    INFO BAR
+                =================================================== */}
+
+                <div
+                  data-aos="fade-up"
+                  data-aos-delay="600"
+                  className="
+                    group/info
+                    relative
+                    z-10
+                    mt-2
+                    flex
+                    items-center
+                    justify-between
+                    gap-3
+                    overflow-hidden
+                    rounded-[13px]
+                    border
+                    border-[#2A2A30]
+                    bg-[#1A1A1E]/80
+                    px-3
+                    py-3
+                    backdrop-blur-xl
+                    transition-all
+                    duration-500
+                    hover:border-[#3E7BD6]/60
+                    hover:bg-[#1A1A1E]
+                    hover:shadow-[0_0_30px_rgba(62,123,214,0.12)]
+                    sm:px-4
+                  "
+                >
+                  {/* MOVING LIGHT */}
+
+                  <div
+                    className="
+                      pointer-events-none
+                      absolute
+                      -left-[30%]
+                      top-0
+                      h-full
+                      w-[30%]
+                      skew-x-[-20deg]
+                      bg-gradient-to-r
+                      from-transparent
+                      via-white/[.07]
+                      to-transparent
+                      transition-all
+                      duration-1000
+                      group-hover/info:left-[110%]
+                    "
+                  />
+
+                  {/* LEFT */}
+
+                  <div
+                    className="
+                      relative
+                      z-10
+                      flex
+                      min-w-0
+                      items-center
+                      gap-2.5
                     "
                   >
-                    <span
+                    <div
                       className="
-                        h-1.5
-                        w-1.5
-
-                        rounded-full
-
-                        bg-[#22C55E]
-
-                        shadow-[0_0_9px_rgba(34,197,94,.9)]
-                      "
-                    />
-                  </span>
-
-                  <div>
-                    <p
-                      className="
-                        text-[8px]
-                        font-semibold
-                        text-[#D4D4D8]
-
-                        sm:text-[9px]
+                        relative
+                        flex
+                        h-8
+                        w-8
+                        shrink-0
+                        items-center
+                        justify-center
+                        overflow-hidden
+                        rounded-[9px]
+                        border
+                        border-[#3E7BD6]/35
+                        bg-[linear-gradient(135deg,rgba(41,182,240,0.15),rgba(62,123,214,0.12),rgba(122,79,209,0.12),rgba(185,63,201,0.15))]
+                        transition-all
+                        duration-500
+                        group-hover/info:scale-110
+                        group-hover/info:border-[#29B6F0]/60
+                        group-hover/info:shadow-[0_0_25px_rgba(41,182,240,0.18)]
                       "
                     >
-                      DIGITAL SHOWCASE
+                      <Box className="h-4 w-4 text-[#D4D4D8]" />
+                    </div>
+
+                    <div className="min-w-0">
+                      <p
+                        className="
+                          truncate
+                          text-[8px]
+                          font-semibold
+                          tracking-[.05em]
+                          text-white
+                          sm:text-[9px]
+                        "
+                      >
+                        DIGITAL SHOWCASE
+                      </p>
+
+                      <p
+                        className="
+                          mt-0.5
+                          truncate
+                          text-[7px]
+                          text-[#7A7A7A]
+                          sm:text-[8px]
+                        "
+                      >
+                        Built for modern businesses
+                      </p>
+                    </div>
+                  </div>
+
+                  {/* RIGHT */}
+
+                  <div className="relative z-10 hidden text-right sm:block">
+                    <p
+                      className="
+                        bg-[linear-gradient(135deg,#29B6F0_0%,#3E7BD6_35%,#7A4FD1_65%,#B93FC9_100%)]
+                        bg-clip-text
+                        text-[8px]
+                        font-bold
+                        tracking-[.16em]
+                        text-transparent
+                      "
+                    >
+                      BEAVERTEK
                     </p>
 
-                    <p
-                      className="
-                        text-[7px]
-                        text-[#707078]
-
-                        sm:text-[8px]
-                      "
-                    >
-                      Built for modern businesses
+                    <p className="mt-0.5 text-[8px] text-[#7A7A7A]">
+                      Build. Scale. Transform.
                     </p>
                   </div>
                 </div>
 
-                <div className="hidden text-right sm:block">
-                  <p
-                    className="
-                      text-[7px]
-                      tracking-[0.16em]
-                      text-[#55555D]
-                    "
-                  >
-                    BEAVERTEK
-                  </p>
+                {/* INNER BORDER */}
 
-                  <p
-                    className="
-                      mt-0.5
-                      text-[9px]
-                      text-[#A0A0A8]
-                    "
-                  >
-                    Build. Scale. Transform.
-                  </p>
-                </div>
+                <div
+                  className="
+                    pointer-events-none
+                    absolute
+                    inset-0
+                    rounded-[22px]
+                    ring-1
+                    ring-inset
+                    ring-white/[.05]
+                    sm:rounded-[26px]
+                  "
+                />
               </div>
             </div>
+
+            {/* ==================================================
+                FLOATING DOTS
+            =================================================== */}
+
+            <span
+              className="
+                pointer-events-none
+                absolute
+                -right-1
+                top-[18%]
+                h-2
+                w-2
+                animate-pulse
+                rounded-full
+                bg-[#29B6F0]
+                shadow-[0_0_18px_#29B6F0]
+              "
+            />
+
+            <span
+              className="
+                pointer-events-none
+                absolute
+                bottom-[8%]
+                left-[4%]
+                h-1.5
+                w-1.5
+                animate-pulse
+                rounded-full
+                bg-[#B93FC9]
+                shadow-[0_0_16px_#B93FC9]
+              "
+            />
+
+            <span
+              className="
+                pointer-events-none
+                absolute
+                bottom-[3%]
+                right-[15%]
+                h-1
+                w-1
+                rounded-full
+                bg-[#7A4FD1]
+                shadow-[0_0_12px_#7A4FD1]
+              "
+            />
           </div>
         </div>
 
-        {/* ========================================================
-            SHOWCASE
-        ========================================================= */}
+        {/* ======================================================
+            SELECTED WORK
+        ======================================================= */}
 
         <div
           data-aos="fade-up"
           data-aos-delay="200"
-          data-aos-duration="900"
           className="
             relative
-            mt-8
-
-            sm:mt-10
-
-            lg:mt-11
+            mt-9
+            sm:mt-11
+            lg:mt-12
           "
         >
           {/* HEADER */}
@@ -912,13 +1012,10 @@ function Herosection() {
           <div
             className="
               mb-3.5
-
               flex
               items-end
               justify-between
               gap-4
-
-              sm:mb-4
             "
           >
             <div
@@ -930,9 +1027,8 @@ function Herosection() {
                   text-[8px]
                   font-semibold
                   uppercase
-                  tracking-[0.2em]
+                  tracking-[.2em]
                   text-[#29B6F0]
-
                   sm:text-[9px]
                 "
               >
@@ -942,17 +1038,10 @@ function Herosection() {
               <h3
                 className="
                   mt-0.5
-
                   text-lg
                   font-semibold
-                  tracking-[-0.03em]
+                  tracking-[-.035em]
                   text-white
-
-                  transition-colors
-                  duration-300
-
-                  hover:text-[#D4D4D8]
-
                   sm:text-xl
                   md:text-2xl
                 "
@@ -967,12 +1056,10 @@ function Herosection() {
               className="
                 hidden
                 max-w-[280px]
-
                 text-right
                 text-[9px]
                 leading-4
-                text-[#6F6F77]
-
+                text-[#8A8A92]
                 sm:block
               "
             >
@@ -980,26 +1067,25 @@ function Herosection() {
             </p>
           </div>
 
-          {/* ======================================================
-              VIEWPORT
-          ======================================================= */}
+          {/* ====================================================
+              SHOWCASE VIEWPORT
+          ==================================================== */}
 
           <div
             className="
               relative
-
               -mx-4
-
               overflow-hidden
-
               sm:-mx-6
-
               lg:-mx-10
-
               xl:-mx-16
             "
-            onMouseEnter={handleMouseEnter}
-            onMouseLeave={handleMouseLeave}
+            onMouseEnter={() => {
+              pausedRef.current = true;
+            }}
+            onMouseLeave={() => {
+              pausedRef.current = false;
+            }}
           >
             {/* LEFT FADE */}
 
@@ -1007,23 +1093,16 @@ function Herosection() {
               className="
                 pointer-events-none
                 absolute
+                inset-y-0
                 left-0
-                top-0
                 z-20
-                h-full
-
-                w-10
-
+                w-14
                 bg-gradient-to-r
-                from-[#000000]
-                via-[#000000]/80
+                from-black/75
                 to-transparent
-
-                sm:w-16
-
-                lg:w-28
-
-                xl:w-36
+                sm:w-20
+                lg:w-32
+                xl:w-40
               "
             />
 
@@ -1033,23 +1112,16 @@ function Herosection() {
               className="
                 pointer-events-none
                 absolute
+                inset-y-0
                 right-0
-                top-0
                 z-20
-                h-full
-
-                w-10
-
+                w-14
                 bg-gradient-to-l
-                from-[#000000]
-                via-[#000000]/80
+                from-black/75
                 to-transparent
-
-                sm:w-16
-
-                lg:w-28
-
-                xl:w-36
+                sm:w-20
+                lg:w-32
+                xl:w-40
               "
             />
 
@@ -1060,34 +1132,20 @@ function Herosection() {
               className="
                 flex
                 w-max
-
-                gap-2.5
-
-                py-1.5
+                gap-3
+                py-2
                 pl-4
-
                 will-change-transform
-
-                sm:gap-3.5
+                sm:gap-4
                 sm:pl-6
-
-                lg:gap-4
+                lg:gap-5
                 lg:pl-10
-
-                xl:gap-5
                 xl:pl-16
               "
             >
-              {projects.map((project) => (
+              {[...projects, ...projects].map((project, index) => (
                 <ProductCard
-                  key={`first-${project.id}`}
-                  image={project.image}
-                />
-              ))}
-
-              {projects.map((project) => (
-                <ProductCard
-                  key={`second-${project.id}`}
+                  key={`${project.id}-${index}`}
                   image={project.image}
                 />
               ))}
@@ -1101,7 +1159,6 @@ function Herosection() {
             data-aos-delay="400"
             className="
               mt-3
-
               flex
               items-center
               justify-center
@@ -1111,13 +1168,11 @@ function Herosection() {
             <span
               className="
                 h-px
-                w-6
-
+                w-7
                 bg-gradient-to-r
                 from-transparent
-                to-[#3E7BD6]
-
-                sm:w-8
+                to-[#29B6F0]
+                sm:w-9
               "
             />
 
@@ -1126,9 +1181,8 @@ function Herosection() {
                 text-[7px]
                 font-medium
                 uppercase
-                tracking-[0.2em]
-                text-[#55555D]
-
+                tracking-[.2em]
+                text-[#62626B]
                 sm:text-[8px]
               "
             >
@@ -1138,19 +1192,314 @@ function Herosection() {
             <span
               className="
                 h-px
-                w-6
-
+                w-7
                 bg-gradient-to-l
                 from-transparent
                 to-[#B93FC9]
-
-                sm:w-8
+                sm:w-9
               "
             />
           </div>
         </div>
       </div>
     </section>
+  );
+}
+
+/* ================================================================
+   STAT ICON
+================================================================ */
+
+function StatIcon({
+  type,
+}: {
+  type: "screen" | "file" | "grid" | "menu";
+}) {
+  const iconClass =
+    "relative z-10 h-4 w-4 text-[#D4D4D8] transition-all duration-500 group-hover/stat:text-white group-hover/stat:scale-110";
+
+  switch (type) {
+    case "screen":
+      return (
+        <svg
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          strokeWidth="1.7"
+          className={iconClass}
+        >
+          <rect
+            x="3"
+            y="4"
+            width="18"
+            height="13"
+            rx="2"
+          />
+          <path d="M8 21h8" />
+          <path d="M12 17v4" />
+        </svg>
+      );
+
+    case "file":
+      return (
+        <svg
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          strokeWidth="1.7"
+          className={iconClass}
+        >
+          <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z" />
+          <path d="M14 2v6h6" />
+          <path d="M8 13h8" />
+          <path d="M8 17h6" />
+        </svg>
+      );
+
+    case "grid":
+      return (
+        <svg
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          strokeWidth="1.7"
+          className={iconClass}
+        >
+          <rect
+            x="3"
+            y="3"
+            width="7"
+            height="7"
+            rx="1.5"
+          />
+          <rect
+            x="14"
+            y="3"
+            width="7"
+            height="7"
+            rx="1.5"
+          />
+          <rect
+            x="3"
+            y="14"
+            width="7"
+            height="7"
+            rx="1.5"
+          />
+          <rect
+            x="14"
+            y="14"
+            width="7"
+            height="7"
+            rx="1.5"
+          />
+        </svg>
+      );
+
+    case "menu":
+      return (
+        <svg
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          strokeWidth="1.7"
+          className={iconClass}
+        >
+          <path d="M4 6h16" />
+          <path d="M4 12h16" />
+          <path d="M4 18h10" />
+          <circle
+            cx="18"
+            cy="18"
+            r="2"
+          />
+        </svg>
+      );
+
+    default:
+      return null;
+  }
+}
+
+/* ================================================================
+   PRODUCT CARD
+================================================================ */
+
+function ProductCard({
+  image,
+}: {
+  image: string;
+}) {
+  return (
+    <div
+      className="
+        group/product
+        relative
+        h-[150px]
+        w-[245px]
+        shrink-0
+        overflow-hidden
+        rounded-[18px]
+        border
+        border-white/10
+        bg-[#121212]
+        shadow-[0_15px_45px_rgba(0,0,0,0.35)]
+        transition-all
+        duration-700
+        hover:-translate-y-2
+        hover:scale-[1.02]
+        hover:border-[#3E7BD6]/60
+        hover:shadow-[0_20px_55px_rgba(62,123,214,0.20),0_0_35px_rgba(185,63,201,0.12)]
+        sm:h-[175px]
+        sm:w-[290px]
+        lg:h-[195px]
+        lg:w-[330px]
+      "
+    >
+      {/* IMAGE */}
+
+      <img
+        src={image}
+        alt="Digital product showcase"
+        className="
+          h-full
+          w-full
+          object-cover
+          transition-all
+          duration-700
+          group-hover/product:scale-110
+        "
+      />
+
+      {/* DARK OVERLAY */}
+
+      <div
+        className="
+          pointer-events-none
+          absolute
+          inset-0
+          bg-gradient-to-t
+          from-black/80
+          via-black/20
+          to-transparent
+          transition-all
+          duration-500
+          group-hover/product:from-black/65
+        "
+      />
+
+      {/* GRADIENT BORDER */}
+
+      <div
+        className="
+          pointer-events-none
+          absolute
+          inset-0
+          rounded-[18px]
+          ring-1
+          ring-inset
+          ring-white/10
+          transition-all
+          duration-500
+          group-hover/product:ring-[#29B6F0]/40
+        "
+      />
+
+      {/* TOP GRADIENT LINE */}
+
+      <div
+        className="
+          absolute
+          left-0
+          top-0
+          h-[2px]
+          w-0
+          bg-[linear-gradient(90deg,#29B6F0,#3E7BD6,#7A4FD1,#B93FC9)]
+          shadow-[0_0_15px_rgba(41,182,240,0.8)]
+          transition-all
+          duration-700
+          group-hover/product:w-full
+        "
+      />
+
+      {/* CENTER PLAY */}
+
+      <div
+        className="
+          absolute
+          left-1/2
+          top-1/2
+          flex
+          h-10
+          w-10
+          -translate-x-1/2
+          -translate-y-1/2
+          scale-75
+          items-center
+          justify-center
+          rounded-full
+          border
+          border-white/20
+          bg-black/40
+          opacity-0
+          backdrop-blur-md
+          transition-all
+          duration-500
+          group-hover/product:scale-100
+          group-hover/product:opacity-100
+        "
+      >
+        <ChevronRight
+          className="
+            h-4
+            w-4
+            text-white
+            transition-transform
+            duration-300
+            group-hover/product:translate-x-0.5
+          "
+        />
+      </div>
+
+      {/* CORNER DOT */}
+
+      <span
+        className="
+          absolute
+          right-3
+          top-3
+          h-1.5
+          w-1.5
+          rounded-full
+          bg-[#29B6F0]
+          shadow-[0_0_12px_#29B6F0]
+          transition-all
+          duration-500
+          group-hover/product:scale-150
+        "
+      />
+
+      {/* BOTTOM GLOW */}
+
+      <div
+        className="
+          pointer-events-none
+          absolute
+          bottom-[-30px]
+          left-1/2
+          h-20
+          w-32
+          -translate-x-1/2
+          rounded-full
+          bg-[#7A4FD1]/20
+          blur-[30px]
+          opacity-0
+          transition-all
+          duration-700
+          group-hover/product:opacity-100
+        "
+      />
+    </div>
   );
 }
 
@@ -1163,72 +1512,108 @@ function StatCard({
   title,
   subtitle,
   index,
+  icon,
   delay,
 }: {
   number: string;
   title: string;
   subtitle: string;
   index: string;
-  delay: string;
+  icon: "screen" | "file" | "grid" | "menu";
+  delay: number;
 }) {
   return (
     <div
       data-aos="fade-up"
       data-aos-delay={delay}
-      data-aos-duration="700"
       className="
         group/stat
         relative
-
-        min-h-[96px]
-
+        min-h-[120px]
         overflow-hidden
-
-        rounded-[12px]
-
+        rounded-[14px]
         border
-        border-white/[0.08]
-
-        bg-white/[0.035]
-
+        border-[#2A2A30]
+        bg-[#121212]
         p-2.5
-
         backdrop-blur-xl
-
         transition-all
-        duration-500
+        duration-700
         ease-out
-
-        hover:-translate-y-1
-        hover:border-[#3E7BD6]/60
-        hover:bg-white/[0.065]
-
-        sm:min-h-[112px]
-        sm:rounded-[14px]
+        hover:-translate-y-2
+        hover:border-[#3E7BD6]/70
+        hover:bg-[#17171A]
+        hover:shadow-[0_18px_45px_rgba(62,123,214,0.20),0_0_45px_rgba(185,63,201,0.12)]
+        sm:min-h-[135px]
+        sm:rounded-[16px]
         sm:p-3
       "
     >
-      {/* TOP LINE */}
+      {/* =====================================================
+          PREMIUM MOVING SHINE
+      ===================================================== */}
+
+      <div
+        className="
+          pointer-events-none
+          absolute
+          -left-[80%]
+          top-0
+          h-full
+          w-[55%]
+          skew-x-[-20deg]
+          bg-gradient-to-r
+          from-transparent
+          via-white/[0.07]
+          to-transparent
+          opacity-0
+          transition-all
+          duration-[1200ms]
+          group-hover/stat:left-[120%]
+          group-hover/stat:opacity-100
+        "
+      />
+
+      {/* =====================================================
+          TOP GRADIENT LINE
+      ===================================================== */}
 
       <div
         className="
           absolute
           left-0
-          top-0
-
+          bottom-0
           h-[2px]
           w-0
-
-          bg-[linear-gradient(90deg,#29B6F0,#3E7BD6,#7A4FD1,#B93FC9)]
-
+          rounded-full
+          bg-[linear-gradient(90deg,#29B6F0_0%,#3E7BD6_35%,#7A4FD1_65%,#B93FC9_100%)]
+          shadow-[0_0_15px_rgba(41,182,240,0.65)]
           transition-all
-          duration-600
-
+          duration-700
           group-hover/stat:w-full
         "
       />
 
-      {/* GLOW */}
+      {/* =====================================================
+          CARD GRADIENT
+      ===================================================== */}
+
+      <div
+        className="
+          pointer-events-none
+          absolute
+          inset-0
+          bg-[linear-gradient(135deg,rgba(41,182,240,0.08),transparent_35%,transparent_58%,rgba(185,63,201,0.10))]
+          opacity-60
+          transition-all
+          duration-700
+          group-hover/stat:opacity-100
+        "
+      />
+
+      {/* =====================================================
+          TOP RIGHT GLOW
+      ===================================================== */}
 
       <div
         className="
@@ -1236,301 +1621,266 @@ function StatCard({
           absolute
           -right-10
           -top-10
-
-          h-20
-          w-20
-
+          h-24
+          w-24
           rounded-full
-
-          bg-[#29B6F0]/10
-
+          bg-[#29B6F0]/12
           blur-[30px]
-
-          opacity-0
-
-          transition-opacity
-          duration-500
-
+          opacity-50
+          transition-all
+          duration-700
+          group-hover/stat:scale-150
           group-hover/stat:opacity-100
         "
       />
 
-      {/* NUMBER */}
+      {/* =====================================================
+          BOTTOM MAGENTA GLOW
+      ===================================================== */}
 
-      <div className="relative z-10 flex items-start justify-between">
-        <span
-          className="
-            text-[23px]
-            font-bold
-            leading-none
-            tracking-[-0.05em]
-            text-white
+      <div
+        className="
+          pointer-events-none
+          absolute
+          -bottom-12
+          -left-8
+          h-24
+          w-24
+          rounded-full
+          bg-[#B93FC9]/10
+          blur-[30px]
+          opacity-30
+          transition-all
+          duration-700
+          group-hover/stat:scale-150
+          group-hover/stat:opacity-100
+        "
+      />
 
-            transition-all
-            duration-500
+      {/* =====================================================
+          CENTER CONTENT
+      ===================================================== */}
 
-            group-hover/stat:bg-[linear-gradient(135deg,#29B6F0,#7A4FD1,#B93FC9)]
-            group-hover/stat:bg-clip-text
-            group-hover/stat:text-transparent
+      <div
+        className="
+          relative
+          z-10
+          flex
+          h-full
+          min-h-[115px]
+          flex-col
+          items-center
+          justify-center
+          text-center
+          sm:min-h-[130px]
+        "
+      >
+        {/* ===================================================
+            ICON
+        =================================================== */}
 
-            sm:text-[28px]
-          "
-        >
-          {number}
-        </span>
+        <div className="relative flex items-center justify-center">
 
-        <span
-          className="
-            text-[6px]
-            font-medium
-            tracking-[0.1em]
-            text-[#55555D]
+          {/* OUTER GLOW */}
 
-            transition-colors
-            duration-300
+          <span
+            className="
+              pointer-events-none
+              absolute
+              h-10
+              w-10
+              rounded-full
+              bg-[#29B6F0]/10
+              blur-[12px]
+              opacity-70
+              animate-pulse
+              transition-all
+              duration-500
+              group-hover/stat:h-14
+              group-hover/stat:w-14
+              group-hover/stat:bg-[#29B6F0]/20
+            "
+          />
 
-            group-hover/stat:text-[#29B6F0]
-          "
-        >
-          {index}
-        </span>
+          {/* OUTER ROTATING RING */}
+
+          <span
+            className="
+              pointer-events-none
+              absolute
+              h-[46px]
+              w-[46px]
+              rounded-full
+              border
+              border-dashed
+              border-[#3E7BD6]/20
+              opacity-70
+              transition-all
+              duration-[1200ms]
+              group-hover/stat:rotate-180
+              group-hover/stat:border-[#29B6F0]/50
+            "
+          />
+
+          {/* ICON CONTAINER */}
+
+          <div
+            className="
+              relative
+              flex
+              h-9
+              w-9
+              items-center
+              justify-center
+              rounded-full
+              border
+              border-[#3E7BD6]/40
+              bg-[linear-gradient(135deg,rgba(41,182,240,0.15),rgba(62,123,214,0.12),rgba(122,79,209,0.14),rgba(185,63,201,0.16))]
+              shadow-[0_0_18px_rgba(41,182,240,0.08)]
+              transition-all
+              duration-700
+              ease-out
+              group-hover/stat:scale-110
+              group-hover/stat:rotate-6
+              group-hover/stat:border-[#29B6F0]/80
+              group-hover/stat:shadow-[0_0_30px_rgba(41,182,240,0.25),0_0_40px_rgba(185,63,201,0.12)]
+              sm:h-10
+              sm:w-10
+            "
+          >
+            {/* INNER RING */}
+
+            <span
+              className="
+                pointer-events-none
+                absolute
+                inset-[3px]
+                rounded-full
+                border
+                border-dashed
+                border-[#29B6F0]/20
+                transition-all
+                duration-700
+                group-hover/stat:rotate-180
+                group-hover/stat:border-[#29B6F0]/50
+              "
+            />
+
+            <StatIcon type={icon} />
+          </div>
+        </div>
+
+        {/* ===================================================
+            NUMBER
+        =================================================== */}
+
+        <div className="relative mt-2.5">
+          <span
+            className="
+              block
+              text-[25px]
+              font-bold
+              leading-none
+              tracking-[-.05em]
+              text-white
+              transition-all
+              duration-500
+              group-hover/stat:scale-110
+              group-hover/stat:bg-[linear-gradient(135deg,#29B6F0_0%,#3E7BD6_35%,#7A4FD1_65%,#B93FC9_100%)]
+              group-hover/stat:bg-clip-text
+              group-hover/stat:text-transparent
+              sm:text-[29px]
+            "
+          >
+            {number}
+          </span>
+        </div>
+
+        {/* ===================================================
+            TEXT
+        =================================================== */}
+
+        <div className="relative mt-2">
+          <p
+            className="
+              text-[7px]
+              font-semibold
+              leading-[1.35]
+              tracking-[.07em]
+              text-[#A0A0A8]
+              transition-colors
+              duration-500
+              group-hover/stat:text-[#D4D4D8]
+              sm:text-[8px]
+            "
+          >
+            {title}
+            <br />
+            {subtitle}
+          </p>
+        </div>
       </div>
 
-      {/* TEXT */}
+      {/* =====================================================
+          INDEX
+      ===================================================== */}
 
-      <div className="relative z-10 mt-4">
-        <p
-          className="
-            text-[7px]
-            font-semibold
-            leading-[1.45]
-            tracking-[0.06em]
-            text-[#A0A0A8]
+      <span
+        className="
+          absolute
+          right-2.5
+          top-2.5
+          text-[6px]
+          font-medium
+          tracking-[.1em]
+          text-[#5A5A5A]
+          transition-all
+          duration-500
+          group-hover/stat:translate-x-0.5
+          group-hover/stat:text-[#29B6F0]
+        "
+      >
+        {index}
+      </span>
 
-            transition-colors
-            duration-300
-
-            group-hover/stat:text-[#D4D4D8]
-
-            sm:text-[8px]
-          "
-        >
-          {title}
-          <br />
-          {subtitle}
-        </p>
-      </div>
-
-      {/* DOT */}
+      {/* =====================================================
+          BOTTOM STATUS DOT
+      ===================================================== */}
 
       <span
         className="
           absolute
           bottom-2.5
           right-2.5
-
           h-1
           w-1
-
           rounded-full
-
           bg-[#3E7BD6]
-
-          shadow-[0_0_8px_rgba(62,123,214,.8)]
-
+          shadow-[0_0_8px_#3E7BD6]
           transition-all
           duration-500
-
-          group-hover/stat:scale-150
+          group-hover/stat:scale-[2]
           group-hover/stat:bg-[#29B6F0]
-        "
-      />
-    </div>
-  );
-}
-
-/* ================================================================
-   PRODUCT CARD
-================================================================ */
-
-function ProductCard({ image }: { image: string }) {
-  return (
-    <div
-      className="
-        group/product
-
-        relative
-
-        h-[135px]
-        w-[215px]
-
-        shrink-0
-        overflow-hidden
-
-        rounded-[13px]
-
-        border
-        border-[#2A2A30]
-
-        bg-[#121212]
-
-        transition-all
-        duration-600
-        ease-out
-
-        hover:-translate-y-2
-        hover:scale-[1.015]
-        hover:border-[#3E7BD6]
-
-        sm:h-[165px]
-        sm:w-[260px]
-        sm:rounded-[15px]
-
-        md:h-[180px]
-        md:w-[295px]
-
-        lg:h-[195px]
-        lg:w-[325px]
-
-        xl:h-[205px]
-        xl:w-[350px]
-      "
-    >
-      {/* IMAGE */}
-
-      <img
-        src={image}
-        alt="BeaverTek digital product showcase"
-        draggable={false}
-        className="
-          h-full
-          w-full
-
-          select-none
-
-          object-cover
-          object-top
-
-          transition-transform
-          duration-1000
-          ease-out
-
-          group-hover/product:scale-[1.08]
+          group-hover/stat:shadow-[0_0_14px_#29B6F0]
         "
       />
 
-      {/* DARK BOTTOM */}
-
-      <div
-        className="
-          pointer-events-none
-          absolute
-          inset-x-0
-          bottom-0
-
-          h-[55%]
-
-          bg-gradient-to-t
-          from-black/55
-          via-black/15
-          to-transparent
-
-          opacity-70
-
-          transition-opacity
-          duration-500
-
-          group-hover/product:opacity-100
-        "
-      />
-
-      {/* GRADIENT OVERLAY */}
+      {/* =====================================================
+          INNER BORDER
+      ===================================================== */}
 
       <div
         className="
           pointer-events-none
           absolute
           inset-0
-
-          bg-[linear-gradient(135deg,rgba(41,182,240,.05),transparent_38%,rgba(122,79,209,.05),rgba(185,63,201,.12))]
-
-          opacity-0
-
-          transition-opacity
-          duration-600
-
-          group-hover/product:opacity-100
-        "
-      />
-
-      {/* SCAN LINE */}
-
-      <div
-        className="
-          pointer-events-none
-          absolute
-          left-0
-          top-0
-
-          h-[2px]
-          w-0
-
-          bg-[linear-gradient(90deg,#29B6F0,#3E7BD6,#7A4FD1,#B93FC9)]
-
-          transition-all
-          duration-700
-
-          group-hover/product:w-full
-        "
-      />
-
-      {/* HOVER BORDER */}
-
-      <div
-        className="
-          pointer-events-none
-          absolute
-          inset-0
-
-          rounded-[13px]
-
+          rounded-[14px]
           ring-1
           ring-inset
-          ring-transparent
-
+          ring-white/[0.04]
           transition-all
           duration-500
-
-          group-hover/product:ring-[#29B6F0]/35
-
-          sm:rounded-[15px]
-        "
-      />
-
-      {/* CORNER INDICATOR */}
-
-      <div
-        className="
-          pointer-events-none
-          absolute
-          bottom-2
-          right-2
-
-          h-1.5
-          w-1.5
-
-          rounded-full
-
-          bg-[#29B6F0]
-
-          opacity-0
-
-          shadow-[0_0_10px_rgba(41,182,240,.9)]
-
-          transition-all
-          duration-500
-
-          group-hover/product:opacity-100
+          group-hover/stat:ring-[#29B6F0]/15
         "
       />
     </div>

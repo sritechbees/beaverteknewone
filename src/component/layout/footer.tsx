@@ -422,24 +422,6 @@ export default function Footer() {
                       "
                     />
 
-                    {/* Service Number */}
-
-                    <span
-                      className="
-                        relative
-                        z-10
-                        min-w-[20px]
-                        text-[9px]
-                        font-semibold
-                        tracking-wider
-                        text-[#3E7BD6]
-                        transition-colors
-                        duration-300
-                        group-hover/service:text-[#29B6F0]
-                      "
-                    >
-                      {String(index + 1).padStart(2, "0")}
-                    </span>
 
                     {/* Service Name */}
 
