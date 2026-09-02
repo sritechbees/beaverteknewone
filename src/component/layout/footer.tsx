@@ -6,170 +6,502 @@ import AOS from "aos";
 import "aos/dist/aos.css";
 import FooterCTA from "../home/footercta";
 import Image from "next/image";
-import Home from "@/pages";
+
+const gradient =
+  "linear-gradient(135deg,#29B6F0_0%,#3E7BD6_40%,#7A4FD1_75%,#B93FC9_100%)";
 
 export default function Footer() {
   useEffect(() => {
     AOS.init({
       duration: 900,
       once: true,
-      offset: 80,
+      offset: 70,
+      easing: "ease-out-cubic",
     });
+
+    AOS.refresh();
   }, []);
 
+  const services = [
+    [
+      "End-to-End Digital Transformation",
+      "/services/digitaltransformation/herosection",
+    ],
+    ["Cloud Cost Optimization (FinOps)", "/services/finops/herosection"],
+    ["DevOps & DevSecOps", "/services/devops/herosection"],
+    [
+      "Mobile App Development",
+      "/services/mobileappdevelopment/herosection",
+    ],
+    [
+      "Custom Software Development & Maintenance",
+      "/services/customsoftware/herosection",
+    ],
+    [
+      "Data Analytics and Reporting",
+      "/services/dataanalytics/herosection",
+    ],
+  ];
+
+  const quickLinks = [
+    ["Home", "/"],
+    ["About", "/about_us/abouthero"],
+    ["Services", "/services/serviceshero"],
+    ["Customers", "/customers/casestudyhero"],
+    ["Products", "/products/producthero"],
+    ["Contact", "/contact/contacthero"],
+  ];
+
   return (
-    <footer className="relative bg-[#000000] text-white overflow-hidden">
+    <footer className="relative overflow-hidden bg-[#000000] text-white">
+      {/* =====================================================
+          FOOTER CTA
+      ====================================================== */}
       <FooterCTA />
 
-      {/* Glow Background */}
-      <div className="absolute top-0 left-0 w-96 h-96 bg-[#29B6F0]/10 blur-[140px] rounded-full" />
-      <div className="absolute bottom-0 right-0 w-96 h-96 bg-[#B93FC9]/10 blur-[140px] rounded-full" />
+      {/* =====================================================
+          BACKGROUND GLOWS
+      ====================================================== */}
 
-      {/* MAIN FOOTER */}
-      <div className="max-w-7xl mx-auto px-6 lg:px-8 py-16 relative z-10">
-        {/* GRID */}
-        <div className="grid lg:grid-cols-4 md:grid-cols-2 gap-12">
-          {/* COMPANY + LOGO BLOCK */}
-<div data-aos="fade-up">
+      <div
+        className="
+          pointer-events-none
+          absolute
+          -left-40
+          top-20
+          h-96
+          w-96
+          rounded-full
+          bg-[#29B6F0]/10
+          blur-[150px]
+        "
+      />
 
-  <div className="group flex items-center gap-4 mb-5">
+      <div
+        className="
+          pointer-events-none
+          absolute
+          -right-40
+          bottom-20
+          h-96
+          w-96
+          rounded-full
+          bg-[#B93FC9]/10
+          blur-[150px]
+        "
+      />
 
-    {/* LOGO */}
-    <Image
-      src="/home/Logo option-2.png"
-      alt="BeaverTek"
-      width={210}
-      height={110}
-      priority
-      className="transition-transform duration-500 group-hover:scale-105"
-    />
+      <div
+        className="
+          pointer-events-none
+          absolute
+          left-1/2
+          top-1/2
+          h-72
+          w-72
+          -translate-x-1/2
+          -translate-y-1/2
+          rounded-full
+          bg-[#7A4FD1]/5
+          blur-[140px]
+        "
+      />
 
-    {/* BRAND */}
-    {/* <div
-  className="
-    hidden
-    lg:flex
-    flex-col
-    overflow-hidden
-    opacity-0
-    -translate-x-4
-    transition-all
-    duration-500
-    ease-out
-    group-hover:opacity-100
-    group-hover:translate-x-0
-  "
->
-  <h3 className="text-xl font-bold leading-none">
-    <span className="text-white">Beaver</span>
-    <span className="bg-[linear-gradient(135deg,#29B6F0_0%,#3E7BD6_40%,#7A4FD1_75%,#B93FC9_100%)] bg-clip-text text-transparent">
-      Tek
-    </span>
-  </h3>
+      {/* =====================================================
+          MAIN FOOTER
+      ====================================================== */}
 
-  <p
-    className="
-      mt-2
-      text-[10px]
-      uppercase
-      tracking-[5px]
-      font-medium
-      whitespace-nowrap
-      bg-[linear-gradient(135deg,#29B6F0_0%,#3E7BD6_40%,#7A4FD1_75%,#B93FC9_100%)]
-      bg-clip-text
-      text-transparent
-    "
-  >
-    Innovative
-  </p>
+      <div
+        className="
+          relative
+          z-10
+          mx-auto
+          max-w-7xl
+          px-5
+          py-14
+          sm:px-6
+          lg:px-8
+          lg:py-16
+        "
+      >
+        {/* =====================================================
+            MAIN GRID
+        ====================================================== */}
 
-   <p
-    className="
-      mt-2
-      text-[10px]
-      uppercase
-      tracking-[5px]
-      font-medium
-      whitespace-nowrap
-      bg-[linear-gradient(135deg,#29B6F0_0%,#3E7BD6_40%,#7A4FD1_75%,#B93FC9_100%)]
-      bg-clip-text
-      text-transparent
-    "
-  >
-  Technologies
-  </p>
-</div> */}
+        <div className="grid gap-10 md:grid-cols-2 lg:grid-cols-4 lg:gap-10">
+          {/* =================================================
+              COMPANY
+          ================================================= */}
 
-  </div>
+          <div
+            data-aos="fade-up"
+            className="group"
+          >
+            {/* LOGO */}
 
-  <p className="leading-relaxed text-[#A0A0A8]">
-    A technology partner for small and mid-size businesses. We modernize
-    systems, build software, unlock data insights, and keep digital
-    operations secure.
-  </p>
+            <div className="mb-5 inline-flex">
+              <div
+                className="
+                  relative
+                  overflow-hidden
+                  rounded-2xl
+                  transition-all
+                  duration-500
+                  group-hover:scale-[1.03]
+                "
+              >
+                {/* Logo Glow */}
 
-  {/* MINI INDICATORS */}
-  <div className="mt-6 flex gap-2">
-    <div className="h-2.5 w-2.5 rounded-full bg-[#29B6F0]" />
-    <div className="h-2.5 w-2.5 rounded-full bg-[#3E7BD6]" />
-    <div className="h-2.5 w-2.5 rounded-full bg-[#B93FC9]" />
-  </div>
+                <div
+                  className="
+                    pointer-events-none
+                    absolute
+                    inset-0
+                    rounded-2xl
+                    opacity-0
+                    blur-xl
+                    transition-opacity
+                    duration-500
+                    group-hover:opacity-30
+                  "
+                  style={{
+                    background: gradient,
+                  }}
+                />
 
-</div>
+                <Image
+                  src="/home/Logo option-2.png"
+                  alt="BeaverTek"
+                  width={210}
+                  height={110}
+                  priority
+                  className="
+                    relative
+                    z-10
+                    h-auto
+                    w-[190px]
+                    object-contain
+                    transition-transform
+                    duration-700
+                    ease-out
+                    group-hover:scale-105
+                  "
+                />
+              </div>
+            </div>
 
-          {/* QUICK LINKS */}
-          <div data-aos="fade-up" data-aos-delay="100">
-            <h3 className="mb-6 text-lg font-semibold bg-gradient-to-r from-[#29B6F0] via-[#3E7BD6] via-[#7A4FD1] to-[#B93FC9] bg-clip-text text-transparent">
+            <p
+              className="
+                max-w-sm
+                text-sm
+                leading-7
+                text-[#A0A0A8]
+                transition-colors
+                duration-300
+                group-hover:text-[#C7C7CC]
+              "
+            >
+              A technology partner for small and mid-size businesses. We
+              modernize systems, build software, unlock data insights, and
+              keep digital operations secure.
+            </p>
+
+            {/* MINI INDICATORS */}
+
+            <div className="mt-6 flex items-center gap-2">
+              <span
+                className="
+                  h-2.5
+                  w-2.5
+                  rounded-full
+                  bg-[#29B6F0]
+                  transition-all
+                  duration-300
+                  group-hover:scale-125
+                  group-hover:shadow-[0_0_14px_#29B6F0]
+                "
+              />
+
+              <span
+                className="
+                  h-2.5
+                  w-2.5
+                  rounded-full
+                  bg-[#3E7BD6]
+                  transition-all
+                  delay-75
+                  duration-300
+                  group-hover:scale-125
+                  group-hover:shadow-[0_0_14px_#3E7BD6]
+                "
+              />
+
+              <span
+                className="
+                  h-2.5
+                  w-2.5
+                  rounded-full
+                  bg-[#B93FC9]
+                  transition-all
+                  delay-150
+                  duration-300
+                  group-hover:scale-125
+                  group-hover:shadow-[0_0_14px_#B93FC9]
+                "
+              />
+            </div>
+          </div>
+
+          {/* =================================================
+              QUICK LINKS
+          ================================================= */}
+
+          <div
+            data-aos="fade-up"
+            data-aos-delay="100"
+          >
+            <h3
+              className="
+                mb-6
+                text-lg
+                font-semibold
+                bg-gradient-to-r
+                from-[#29B6F0]
+                via-[#7A4FD1]
+                to-[#B93FC9]
+                bg-clip-text
+                text-transparent
+              "
+            >
               Quick Links
             </h3>
 
-            <ul className="space-y-3 text-[#A0A0A8]">
-              {[
-                ["Home", "/"],
-                ["About", "/about_us/abouthero"],
-                ["Services", "/services/serviceshero"],
-                ["Customers", "/customers/casestudyhero"],
-                ["Products", "/products/producthero"],
-                ["Contact", "/contact/contacthero"],
-              ].map(([name, href]) => (
+            <ul className="space-y-2">
+              {quickLinks.map(([name, href], index) => (
                 <li key={name}>
-                  <Link href={href} className="hover:text-[#29B6F0] transition">
-                    {name}
+                  <Link
+                    href={href}
+                    className="
+                      group/link
+                      relative
+                      flex
+                      w-fit
+                      items-center
+                      gap-2
+                      py-1.5
+                      text-sm
+                      text-[#A0A0A8]
+                      transition-all
+                      duration-300
+                      hover:translate-x-2
+                      hover:text-white
+                    "
+                  >
+                    {/* Animated Line */}
+
+                    <span
+                      className="
+                        absolute
+                        -left-3
+                        h-px
+                        w-0
+                        bg-gradient-to-r
+                        from-[#29B6F0]
+                        to-[#B93FC9]
+                        transition-all
+                        duration-300
+                        group-hover/link:w-2
+                      "
+                    />
+
+                    <span>{name}</span>
+
+                    {/* Arrow */}
+
+                    <span
+                      className="
+                        translate-x-[-4px]
+                        opacity-0
+                        transition-all
+                        duration-300
+                        group-hover/link:translate-x-0
+                        group-hover/link:opacity-100
+                      "
+                    >
+                      →
+                    </span>
                   </Link>
                 </li>
               ))}
             </ul>
           </div>
 
-          {/* SERVICES */}
-          <div data-aos="fade-up" data-aos-delay="200">
-            <h3 className="mb-6 text-lg font-semibold bg-gradient-to-r from-[#29B6F0] via-[#3E7BD6] via-[#7A4FD1] to-[#B93FC9] bg-clip-text text-transparent">
+          {/* =================================================
+              SERVICES - NEW 6 SERVICES
+          ================================================= */}
+
+          <div
+            data-aos="fade-up"
+            data-aos-delay="200"
+          >
+            <h3
+              className="
+                mb-6
+                text-lg
+                font-semibold
+                bg-gradient-to-r
+                from-[#29B6F0]
+                via-[#7A4FD1]
+                to-[#B93FC9]
+                bg-clip-text
+                text-transparent
+              "
+            >
               Services
             </h3>
 
-            <ul className="space-y-3 text-[#A0A0A8]">
-              {[
-                ["Modernize", "/services/modernize/modernizehero"],
-                ["See Your Data", "/services/seeyourdata/seeyourdatahero"],
-                ["Build Software", "/services/buildsoftware/herosection"],
-                ["Stay Secure", "/services/staysecure/staysecureherosection"],
-              ].map(([name, href]) => (
+            <ul className="space-y-1.5">
+              {services.map(([name, href], index) => (
                 <li key={name}>
-                  <Link href={href} className="hover:text-[#7A4FD1] transition">
-                    {name}
+                  <Link
+                    href={href}
+                    className="
+                      group/service
+                      relative
+                      flex
+                      items-center
+                      gap-2
+                      overflow-hidden
+                      rounded-lg
+                      px-3
+                      py-2
+                      text-sm
+                      text-[#A0A0A8]
+                      transition-all
+                      duration-300
+                      hover:translate-x-1
+                      hover:text-white
+                    "
+                  >
+                    {/* Sliding Gradient Background */}
+
+                    <span
+                      className="
+                        pointer-events-none
+                        absolute
+                        inset-0
+                        -translate-x-full
+                        bg-gradient-to-r
+                        from-[#29B6F0]/10
+                        via-[#7A4FD1]/10
+                        to-[#B93FC9]/10
+                        transition-transform
+                        duration-500
+                        group-hover/service:translate-x-0
+                      "
+                    />
+
+                    {/* Left Accent */}
+
+                    <span
+                      className="
+                        absolute
+                        left-0
+                        top-1/2
+                        h-0
+                        w-[2px]
+                        -translate-y-1/2
+                        rounded-full
+                        bg-gradient-to-b
+                        from-[#29B6F0]
+                        via-[#7A4FD1]
+                        to-[#B93FC9]
+                        transition-all
+                        duration-300
+                        group-hover/service:h-6
+                      "
+                    />
+
+                    {/* Service Number */}
+
+                    <span
+                      className="
+                        relative
+                        z-10
+                        min-w-[20px]
+                        text-[9px]
+                        font-semibold
+                        tracking-wider
+                        text-[#3E7BD6]
+                        transition-colors
+                        duration-300
+                        group-hover/service:text-[#29B6F0]
+                      "
+                    >
+                      {String(index + 1).padStart(2, "0")}
+                    </span>
+
+                    {/* Service Name */}
+
+                    <span
+                      className="
+                        relative
+                        z-10
+                        flex-1
+                        leading-5
+                      "
+                    >
+                      {name}
+                    </span>
+
+                    {/* Arrow */}
+
+                    <span
+                      className="
+                        relative
+                        z-10
+                        -translate-x-2
+                        text-[#29B6F0]
+                        opacity-0
+                        transition-all
+                        duration-300
+                        group-hover/service:translate-x-0
+                        group-hover/service:opacity-100
+                      "
+                    >
+                      →
+                    </span>
                   </Link>
                 </li>
               ))}
             </ul>
           </div>
 
-          {/* CONTACT */}
-          <div data-aos="fade-up" data-aos-delay="300">
-            <h3 className="mb-6 text-lg font-semibold bg-gradient-to-r from-[#29B6F0] via-[#3E7BD6] via-[#7A4FD1] to-[#B93FC9] bg-clip-text text-transparent">
+          {/* =================================================
+              CONTACT
+          ================================================= */}
+
+          <div
+            data-aos="fade-up"
+            data-aos-delay="300"
+          >
+            <h3
+              className="
+                mb-6
+                text-lg
+                font-semibold
+                bg-gradient-to-r
+                from-[#29B6F0]
+                via-[#7A4FD1]
+                to-[#B93FC9]
+                bg-clip-text
+                text-transparent
+              "
+            >
               Contact
             </h3>
 
-            <div className="space-y-4 text-[#A0A0A8]">
+            <div className="space-y-3">
               {[
                 ["Email", "info@beavertek.com"],
                 ["USA", "+1 (949) 885-6193"],
@@ -177,80 +509,235 @@ export default function Footer() {
                 ["Headquarters", "Irvine, California"],
                 ["Engineering Hub", "India"],
               ].map(([label, value]) => (
-                <div key={label}>
-                  <p className="text-[#3E7BD6] font-medium text-sm">{label}</p>
-                  <p>{value}</p>
+                <div
+                  key={label}
+                  className="
+                    group/contact
+                    rounded-lg
+                    border
+                    border-transparent
+                    px-3
+                    py-2
+                    transition-all
+                    duration-300
+                    hover:border-[#2A2A30]
+                    hover:bg-white/[0.025]
+                    hover:translate-x-1
+                  "
+                >
+                  <p
+                    className="
+                      text-xs
+                      font-medium
+                      text-[#3E7BD6]
+                      transition-colors
+                      duration-300
+                      group-hover/contact:text-[#29B6F0]
+                    "
+                  >
+                    {label}
+                  </p>
+
+                  <p
+                    className="
+                      mt-0.5
+                      text-sm
+                      text-[#A0A0A8]
+                      transition-colors
+                      duration-300
+                      group-hover/contact:text-white
+                    "
+                  >
+                    {value}
+                  </p>
                 </div>
               ))}
             </div>
           </div>
         </div>
 
-        {/* NEW PREMIUM STRIP (ONE MORE DESIGN YOU WANTED) */}
+        {/* =====================================================
+            PREMIUM STRIP
+        ====================================================== */}
+
         <div
           data-aos="fade-up"
+          data-aos-delay="150"
           className="
-            mt-14
+            group/strip
+            relative
+            mt-12
+            overflow-hidden
             rounded-[18px]
-           border border-[#2A2A30]
-bg-[#121212]
-            p-6
-            flex flex-col md:flex-row
-            justify-between items-center
-            gap-4
+            border
+            border-[#2A2A30]
+            bg-[#121212]
+            p-5
+            transition-all
+            duration-500
+            hover:border-[#3E7BD6]/50
+            hover:bg-[#151515]
           "
         >
-          <p className="text-[#A0A0A8] text-center md:text-left">
-            Building scalable digital systems with modern engineering &
-            AI-driven solutions.
-          </p>
+          {/* Gradient Sweep */}
 
           <div
             className="
-            flex gap-3 text-sm
-            text-white
-          "
+              pointer-events-none
+              absolute
+              inset-y-0
+              -left-[30%]
+              w-[40%]
+              skew-x-[-20deg]
+              bg-gradient-to-r
+              from-transparent
+              via-white/[0.04]
+              to-transparent
+              transition-all
+              duration-1000
+              group-hover/strip:left-[110%]
+            "
+          />
+
+          <div
+            className="
+              relative
+              z-10
+              flex
+              flex-col
+              items-center
+              justify-between
+              gap-4
+              md:flex-row
+            "
           >
-            <span className="px-4 py-2 rounded-[999px] bg-[#000000] border border-[#2A2A30]">
-              Scalable Systems
-            </span>
+            <p
+              className="
+                text-center
+                text-sm
+                leading-6
+                text-[#A0A0A8]
+                transition-colors
+                duration-300
+                group-hover/strip:text-[#D4D4D8]
+                md:text-left
+              "
+            >
+              Building scalable digital systems with modern engineering &
+              AI-driven solutions.
+            </p>
 
-            <span className="px-4 py-2 rounded-[999px] bg-[#000000] border border-[#2A2A30]">
-              AI Solutions
-            </span>
-
-            <span className="px-4 py-2 rounded-[999px] bg-[#000000] border border-[#2A2A30]">
-              Cloud Native
-            </span>
+            <div className="flex flex-wrap justify-center gap-2">
+              {[
+                "Scalable Systems",
+                "AI Solutions",
+                "Cloud Native",
+              ].map((item) => (
+                <span
+                  key={item}
+                  className="
+                    group/tag
+                    cursor-default
+                    rounded-full
+                    border
+                    border-[#2A2A30]
+                    bg-[#000000]
+                    px-3.5
+                    py-1.5
+                    text-xs
+                    text-[#D4D4D8]
+                    transition-all
+                    duration-300
+                    hover:-translate-y-1
+                    hover:border-[#3E7BD6]
+                    hover:text-white
+                    hover:shadow-[0_8px_25px_rgba(62,123,214,0.12)]
+                  "
+                >
+                  {item}
+                </span>
+              ))}
+            </div>
           </div>
         </div>
 
-        {/* BOTTOM BAR */}
+        {/* =====================================================
+            BOTTOM BAR
+        ====================================================== */}
+
         <div
           className="
-         border-t border-[#2A2A30]
-          mt-10 pt-8
-          flex flex-col md:flex-row
-          justify-between items-center
-          gap-4
-        "
+            mt-8
+            flex
+            flex-col
+            items-center
+            justify-between
+            gap-4
+            border-t
+            border-[#2A2A30]
+            pt-7
+            md:flex-row
+          "
         >
-          <p className="text-[#7A7A7A] text-center md:text-left">
+          <p
+            className="
+              text-center
+              text-xs
+              text-[#7A7A7A]
+              transition-colors
+              duration-300
+              hover:text-[#A0A0A8]
+              md:text-left
+            "
+          >
             © {new Date().getFullYear()} BeaverTek. All Rights Reserved.
           </p>
 
-          <div className="flex gap-6 text-[#A0A0A8]">
-            <Link href="#" className="hover:text-[#29B6F0]">
+          <div className="flex flex-wrap justify-center gap-5 text-xs text-[#A0A0A8]">
+            <Link
+              href="#"
+              className="
+                relative
+                transition-colors
+                duration-300
+                hover:text-[#29B6F0]
+                after:absolute
+                after:-bottom-1
+                after:left-0
+                after:h-px
+                after:w-0
+                after:bg-[#29B6F0]
+                after:transition-all
+                after:duration-300
+                hover:after:w-full
+              "
+            >
               Privacy Policy
             </Link>
 
-            <Link href="#" className="hover:text-[#7A4FD1]">
+            <Link
+              href="#"
+              className="
+                relative
+                transition-colors
+                duration-300
+                hover:text-[#B93FC9]
+                after:absolute
+                after:-bottom-1
+                after:left-0
+                after:h-px
+                after:w-0
+                after:bg-[#B93FC9]
+                after:transition-all
+                after:duration-300
+                hover:after:w-full
+              "
+            >
               Terms of Service
             </Link>
           </div>
         </div>
       </div>
     </footer>
-    
   );
 }

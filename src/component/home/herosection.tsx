@@ -1,7 +1,10 @@
 "use client";
 
 import { useEffect, useRef } from "react";
-
+import AOS from "aos";
+import "aos/dist/aos.css";
+import { ArrowUpRight } from "lucide-react";
+import Link from "next/link";
 const projects = [
   {
     id: 1,
@@ -33,7 +36,28 @@ function Herosection() {
   const isPausedRef = useRef(false);
 
   /* ============================================================
-     SMOOTH INFINITE TRAIN ANIMATION
+     AOS
+  ============================================================ */
+
+  useEffect(() => {
+    AOS.init({
+      duration: 850,
+      once: true,
+      offset: 60,
+      easing: "ease-out-cubic",
+      mirror: false,
+      anchorPlacement: "top-bottom",
+    });
+
+    AOS.refresh();
+
+    return () => {
+      AOS.refreshHard();
+    };
+  }, []);
+
+  /* ============================================================
+     SMOOTH INFINITE TRAIN
   ============================================================ */
 
   useEffect(() => {
@@ -42,12 +66,6 @@ function Herosection() {
     if (!track) return;
 
     const updateWidth = () => {
-      /*
-        Because the project list is duplicated,
-        half of the total width represents one
-        complete set of cards.
-      */
-
       loopWidthRef.current = track.scrollWidth / 2;
     };
 
@@ -58,15 +76,6 @@ function Herosection() {
     });
 
     resizeObserver.observe(track);
-
-    /*
-      Very smooth and slow movement.
-
-      0.25 = very slow
-      0.35 = recommended
-      0.50 = medium
-      0.70 = fast
-    */
 
     const speed = 0.32;
 
@@ -81,7 +90,7 @@ function Herosection() {
           positionRef.current += loopWidthRef.current;
         }
 
-        track.style.transform = `translate3d(${positionRef.current}px, 0, 0)`;
+        track.style.transform = `translate3d(${positionRef.current}px,0,0)`;
       }
 
       animationRef.current = requestAnimationFrame(animate);
@@ -99,7 +108,7 @@ function Herosection() {
   }, []);
 
   /* ============================================================
-     PAUSE TRAIN ON HOVER
+     PAUSE ON HOVER
   ============================================================ */
 
   const handleMouseEnter = () => {
@@ -114,19 +123,24 @@ function Herosection() {
     <section
       className="
         relative
+        w-full
         overflow-hidden
         bg-[#000000]
+
         px-4
-        pb-10
-        pt-8
+        pb-8
+        pt-7
 
         sm:px-6
-        sm:pb-12
-        sm:pt-10
+        sm:pb-10
+        sm:pt-8
+
+        md:pb-11
+        md:pt-9
 
         lg:px-10
-        lg:pb-14
-        lg:pt-12
+        lg:pb-12
+        lg:pt-10
 
         xl:px-16
       "
@@ -136,60 +150,82 @@ function Herosection() {
       =========================================================== */}
 
       <div className="pointer-events-none absolute inset-0 overflow-hidden">
-        {/* Cyan glow */}
+        {/* Cyan */}
 
         <div
           className="
             absolute
             -left-40
-            top-10
-            h-[280px]
-            w-[280px]
+            top-0
+
+            h-[260px]
+            w-[260px]
+
             rounded-full
-            bg-[#29B6F0]/10
+
+            bg-[#29B6F0]/8
+
             blur-[110px]
+
+            sm:h-[320px]
+            sm:w-[320px]
           "
         />
 
-        {/* Violet glow */}
+        {/* Violet */}
 
         <div
           className="
             absolute
-            -right-32
+            -right-36
             top-0
-            h-[320px]
-            w-[320px]
+
+            h-[280px]
+            w-[280px]
+
             rounded-full
-            bg-[#7A4FD1]/10
-            blur-[120px]
+
+            bg-[#7A4FD1]/8
+
+            blur-[115px]
+
+            sm:h-[340px]
+            sm:w-[340px]
           "
         />
 
-        {/* Magenta glow */}
+        {/* Magenta */}
 
         <div
           className="
             absolute
             bottom-0
             left-1/2
-            h-[280px]
-            w-[280px]
+
+            h-[250px]
+            w-[250px]
+
             -translate-x-1/2
+
             rounded-full
-            bg-[#B93FC9]/8
-            blur-[120px]
+
+            bg-[#B93FC9]/6
+
+            blur-[110px]
           "
         />
 
-        {/* Subtle grid */}
+        {/* Grid */}
 
         <div
           className="
             absolute
             inset-0
+
             opacity-[0.018]
+
             [background-image:linear-gradient(rgba(255,255,255,0.5)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.5)_1px,transparent_1px)]
+
             [background-size:60px_60px]
           "
         />
@@ -204,7 +240,8 @@ function Herosection() {
           relative
           z-10
           mx-auto
-          max-w-[1500px]
+          w-full
+          max-w-[1450px]
         "
       >
         {/* ========================================================
@@ -215,90 +252,139 @@ function Herosection() {
           className="
             grid
             items-center
-            gap-8
 
-            lg:grid-cols-[0.95fr_1.05fr]
+            gap-7
+
+            lg:grid-cols-[0.92fr_1.08fr]
             lg:gap-10
 
             xl:grid-cols-[0.9fr_1.1fr]
-            xl:gap-16
+            xl:gap-14
           "
         >
           {/* ======================================================
-              LEFT SIDE TEXT
+              LEFT
           ======================================================= */}
 
           <div
+            data-aos="fade-right"
+            data-aos-duration="950"
             className="
-              max-w-[650px]
+              mx-auto
+              w-full
+              max-w-[620px]
+
               text-center
 
+              lg:mx-0
               lg:text-left
             "
           >
-            {/* Small label */}
+            {/* LABEL */}
 
             <div
+              data-aos="zoom-in"
+              data-aos-delay="100"
+              data-aos-duration="650"
               className="
-                mb-4
+                mb-3
                 inline-flex
                 items-center
-                gap-2.5
+                gap-2
+
                 rounded-full
+
                 border
                 border-white/10
+
                 bg-white/[0.035]
-                px-3.5
+
+                px-3
                 py-1.5
+
                 backdrop-blur-xl
 
-                sm:mb-5
+                transition-all
+                duration-500
+
+                hover:border-[#29B6F0]/40
+                hover:bg-white/[0.06]
               "
             >
               <span
                 className="
+                  relative
+                  flex
                   h-1.5
                   w-1.5
-                  rounded-full
-                  bg-[#29B6F0]
-                  shadow-[0_0_12px_rgba(41,182,240,0.9)]
+                  items-center
+                  justify-center
                 "
-              />
+              >
+                <span
+                  className="
+                    absolute
+                    h-1.5
+                    w-1.5
+                    rounded-full
+                    bg-[#29B6F0]
+                    shadow-[0_0_12px_rgba(41,182,240,.9)]
+                  "
+                />
+
+                <span
+                  className="
+                    absolute
+                    h-3
+                    w-3
+                    animate-ping
+                    rounded-full
+                    bg-[#29B6F0]/20
+                  "
+                />
+              </span>
 
               <span
                 className="
-                  text-[9px]
+                  text-[8px]
                   font-semibold
-                  tracking-[0.2em]
-                  text-[#A0A0A8]
                   uppercase
+                  tracking-[0.18em]
+                  text-[#A0A0A8]
 
-                  sm:text-[10px]
+                  sm:text-[9px]
                 "
               >
                 BeaverTek Digital Products
               </span>
             </div>
 
-            {/* ====================================================
-                MAIN HEADING
-            ===================================================== */}
+            {/* MAIN TITLE */}
 
             <h1
+              data-aos="fade-up"
+              data-aos-delay="180"
+              data-aos-duration="900"
               className="
-                text-[42px]
-                font-bold
-                leading-[0.95]
+           font-extrabold
+                text-[40px]
+             
+                leading-[0.94]
                 tracking-[-0.055em]
                 text-white
 
-                sm:text-[52px]
+                transition-transform
+                duration-500
 
-                md:text-[52px]
+                hover:translate-x-0.5
 
-                lg:text-[50px]
+                sm:text-[50px]
 
-                xl:text-[68px]
+                md:text-[54px]
+
+                lg:text-[52px]
+
+                xl:text-[66px]
               "
             >
               Build What&apos;s
@@ -306,6 +392,9 @@ function Herosection() {
 
               <span
                 className="
+                  relative
+                  inline-block
+
                   bg-[linear-gradient(135deg,#29B6F0_0%,#3E7BD6_35%,#7A4FD1_65%,#B93FC9_100%)]
                   bg-clip-text
                   text-transparent
@@ -315,44 +404,59 @@ function Herosection() {
               </span>
             </h1>
 
-            {/* Secondary title */}
+            {/* SECOND TITLE */}
 
             <h2
+              data-aos="fade-up"
+              data-aos-delay="260"
               className="
-                mt-3
-                text-[27px]
-                font-medium
+                mt-2
+
+                text-[25px]
+                font-semibold
                 leading-tight
                 tracking-[-0.035em]
+
                 text-white/95
 
-                sm:text-[34px]
+                transition-all
+                duration-500
 
-                md:text-[30px]
+                hover:text-white
 
-                lg:text-[32px]
-
-                xl:text-[40px]
+                sm:text-[31px]
+                md:text-[33px]
+                lg:text-[34px]
+                xl:text-[39px]
               "
             >
               Digital Products
             </h2>
 
-            {/* Description */}
+            {/* DESCRIPTION */}
 
             <p
+              data-aos="fade-up"
+              data-aos-delay="340"
               className="
                 mx-auto
-                mt-5
-                max-w-[530px]
-                text-[13px]
-                leading-6
+                mt-4
+
+                max-w-[510px]
+
+                text-[12px]
+                leading-[1.7]
+
                 text-[#A0A0A8]
 
-                sm:text-[14px]
-                sm:leading-6
+                transition-colors
+                duration-500
 
-                md:text-[15px]
+                hover:text-[#D4D4D8]
+
+                sm:text-[13px]
+
+                md:text-[14px]
 
                 lg:mx-0
               "
@@ -367,181 +471,275 @@ function Herosection() {
             ===================================================== */}
 
             <div
+              data-aos="fade-up"
+              data-aos-delay="430"
               className="
-                mt-6
+                mt-5
+
                 flex
                 flex-wrap
                 justify-center
-                gap-3
+                gap-2.5
 
                 lg:justify-start
               "
             >
-              {/* Primary */}
-
+              {/* PRIMARY */}
+<Link href="/products/producthero">
               <button
                 type="button"
                 className="
                   group
                   relative
                   overflow-hidden
+
                   rounded-full
+
                   bg-[linear-gradient(135deg,#29B6F0_0%,#3E7BD6_35%,#7A4FD1_65%,#B93FC9_100%)]
+
                   px-5
                   py-2.5
-                  text-xs
+
+                  text-[11px]
                   font-semibold
                   text-white
-                  shadow-[0_0_30px_rgba(62,123,214,0.25)]
+
                   transition-all
-                  duration-300
-                  hover:-translate-y-0.5
-                  hover:shadow-[0_0_40px_rgba(185,63,201,0.35)]
+                  duration-400
+
+                  hover:-translate-y-1
+
+                  hover:shadow-[0_10px_30px_rgba(62,123,214,.30)]
+
+                  active:translate-y-0
 
                   sm:px-6
                   sm:py-3
-                  sm:text-sm
+                  sm:text-xs
                 "
               >
-                <span className="relative z-10">
+                <span className="relative z-10 flex items-center gap-2">
                   Explore Products
+
+                  <ArrowUpRight
+                    className="
+                      h-3
+                      w-3
+
+                      transition-transform
+                      duration-300
+
+                      group-hover:-translate-y-0.5
+                      group-hover:translate-x-0.5
+                    "
+                  />
                 </span>
+
+                {/* Shine */}
 
                 <span
                   className="
                     absolute
-                    inset-0
-                    -translate-x-full
+                    inset-y-0
+                    -left-[100%]
+                    w-[60%]
+
+                    skew-x-[-20deg]
+
                     bg-white/20
-                    transition-transform
-                    duration-500
-                    group-hover:translate-x-full
+
+                    transition-all
+                    duration-700
+
+                    group-hover:left-[130%]
                   "
                 />
-              </button>
+              </button></Link>
 
-              {/* Secondary */}
-
+              {/* SECONDARY */}
+<Link href="/customers/casestudyoverall">
               <button
                 type="button"
                 className="
+                  group
+
                   rounded-full
+
                   border
-                  border-[#2A2A30]
+                  border-white/10
+
                   bg-white/[0.025]
+
                   px-5
                   py-2.5
-                  text-xs
+
+                  text-[11px]
                   font-semibold
                   text-white
+
                   backdrop-blur-xl
+
                   transition-all
-                  duration-300
-                  hover:-translate-y-0.5
-                  hover:border-[#3E7BD6]
-                  hover:bg-white/[0.05]
-                  hover:shadow-[0_0_30px_rgba(62,123,214,0.15)]
+                  duration-400
+
+                  hover:-translate-y-1
+                  hover:border-[#3E7BD6]/70
+                  hover:bg-[#3E7BD6]/10
+                  hover:text-[#29B6F0]
 
                   sm:px-6
                   sm:py-3
-                  sm:text-sm
+                  sm:text-xs
                 "
               >
-                View Showcase
+                <span className="flex items-center gap-2">
+                  View Showcase
+
+                  <ArrowUpRight
+                    className="
+                      h-3
+                      w-3
+
+                      transition-transform
+                      duration-300
+
+                      group-hover:-translate-y-0.5
+                      group-hover:translate-x-0.5
+                    "
+                  />
+                </span>
               </button>
+              </Link>
             </div>
           </div>
 
           {/* ======================================================
-              RIGHT STATISTICS CARD
+              RIGHT STATISTICS
           ======================================================= */}
 
           <div
+            data-aos="fade-left"
+            data-aos-delay="150"
+            data-aos-duration="950"
             className="
               relative
               mx-auto
               w-full
-              max-w-[680px]
+              max-w-[650px]
             "
           >
-            {/* Gradient glow */}
+            {/* GLOW */}
 
             <div
               className="
                 pointer-events-none
                 absolute
-                inset-[10%]
+                inset-[12%]
+
                 rounded-[30px]
+
                 bg-[linear-gradient(135deg,#29B6F0,#3E7BD6,#7A4FD1,#B93FC9)]
-                opacity-20
-                blur-[60px]
+
+                opacity-15
+
+                blur-[55px]
               "
             />
 
-            {/* Floating circle */}
+            {/* FLOATING ORB */}
 
             <div
               className="
+                pointer-events-none
                 absolute
-                -right-3
+                -right-2
                 -top-3
                 hidden
-                h-12
-                w-12
+
+                h-10
+                w-10
+
                 rounded-full
+
                 border
-                border-[#29B6F0]/20
+                border-[#29B6F0]/25
+
                 bg-[#29B6F0]/5
+
                 backdrop-blur-xl
+
+                transition-all
+                duration-700
+
+                hover:scale-125
 
                 sm:block
               "
             />
 
-            {/* Main statistics panel */}
+            {/* PANEL */}
 
             <div
               className="
+                group/panel
                 relative
-                rounded-[22px]
+
+                rounded-[20px]
+
                 border
                 border-white/10
+
                 bg-[#0A0A0A]/90
-                p-2
-                shadow-[0_20px_45px_rgba(0,0,0,0.4)]
+
+                p-1.5
+
                 backdrop-blur-2xl
 
-                sm:rounded-[24px]
-                sm:p-2.5
+                transition-all
+                duration-500
+
+                hover:border-[#3E7BD6]/35
+
+                sm:rounded-[23px]
+                sm:p-2
               "
             >
-              {/* Gradient overlay */}
+              {/* PANEL GRADIENT */}
 
               <div
                 className="
                   pointer-events-none
                   absolute
                   inset-0
-                  rounded-[22px]
-                  bg-[linear-gradient(135deg,rgba(41,182,240,0.10),transparent_35%,transparent_65%,rgba(185,63,201,0.12))]
 
-                  sm:rounded-[24px]
+                  rounded-[20px]
+
+                  bg-[linear-gradient(135deg,rgba(41,182,240,.09),transparent_35%,transparent_65%,rgba(185,63,201,.10))]
+
+                  opacity-70
+
+                  transition-opacity
+                  duration-500
+
+                  group-hover/panel:opacity-100
+
+                  sm:rounded-[23px]
                 "
               />
 
-              {/* ==================================================
-                  STAT GRID
-              =================================================== */}
+              {/* STAT GRID */}
 
               <div
                 className="
                   relative
+
                   grid
                   grid-cols-2
-                  gap-2
+
+                  gap-1.5
 
                   sm:grid-cols-4
-                  sm:gap-2.5
+                  sm:gap-2
                 "
               >
                 <StatCard
@@ -549,6 +747,7 @@ function Herosection() {
                   title="WEBSITE"
                   subtitle="DEMOS"
                   index="01"
+                  delay="250"
                 />
 
                 <StatCard
@@ -556,6 +755,7 @@ function Herosection() {
                   title="TOTAL INNER"
                   subtitle="PAGE"
                   index="02"
+                  delay="330"
                 />
 
                 <StatCard
@@ -563,6 +763,7 @@ function Herosection() {
                   title="TOTAL"
                   subtitle="BLOCKS"
                   index="03"
+                  delay="410"
                 />
 
                 <StatCard
@@ -570,39 +771,56 @@ function Herosection() {
                   title="MEGA MENU"
                   subtitle="DESIGNS"
                   index="04"
+                  delay="490"
                 />
               </div>
 
-              {/* ==================================================
-                  BOTTOM INFO
-              =================================================== */}
+              {/* BOTTOM INFO */}
 
               <div
+                data-aos="fade-up"
+                data-aos-delay="540"
                 className="
                   relative
-                  mt-2
+
+                  mt-1.5
+
                   flex
                   items-center
                   justify-between
-                  rounded-[14px]
+
+                  rounded-[12px]
+
                   border
                   border-white/[0.06]
-                  bg-white/[0.025]
-                  px-3
-                  py-2.5
 
-                  sm:px-4
+                  bg-white/[0.025]
+
+                  px-2.5
+                  py-2
+
+                  transition-all
+                  duration-500
+
+                  hover:border-[#3E7BD6]/20
+                  hover:bg-white/[0.04]
+
+                  sm:px-3.5
+                  sm:py-2.5
                 "
               >
-                <div className="flex items-center gap-2.5">
+                <div className="flex items-center gap-2">
                   <span
                     className="
                       flex
-                      h-6
-                      w-6
+                      h-5
+                      w-5
+                      shrink-0
                       items-center
                       justify-center
+
                       rounded-full
+
                       bg-[#22C55E]/10
                     "
                   >
@@ -610,30 +828,60 @@ function Herosection() {
                       className="
                         h-1.5
                         w-1.5
+
                         rounded-full
+
                         bg-[#22C55E]
-                        shadow-[0_0_10px_rgba(34,197,94,0.9)]
+
+                        shadow-[0_0_9px_rgba(34,197,94,.9)]
                       "
                     />
                   </span>
 
                   <div>
-                    <p className="text-[9px] font-semibold text-[#D4D4D8] sm:text-[10px]">
+                    <p
+                      className="
+                        text-[8px]
+                        font-semibold
+                        text-[#D4D4D8]
+
+                        sm:text-[9px]
+                      "
+                    >
                       DIGITAL SHOWCASE
                     </p>
 
-                    <p className="text-[8px] text-[#7A7A7A] sm:text-[9px]">
+                    <p
+                      className="
+                        text-[7px]
+                        text-[#707078]
+
+                        sm:text-[8px]
+                      "
+                    >
                       Built for modern businesses
                     </p>
                   </div>
                 </div>
 
                 <div className="hidden text-right sm:block">
-                  <p className="text-[8px] tracking-[0.15em] text-[#5A5A5A]">
+                  <p
+                    className="
+                      text-[7px]
+                      tracking-[0.16em]
+                      text-[#55555D]
+                    "
+                  >
                     BEAVERTEK
                   </p>
 
-                  <p className="mt-0.5 text-[10px] text-[#A0A0A8]">
+                  <p
+                    className="
+                      mt-0.5
+                      text-[9px]
+                      text-[#A0A0A8]
+                    "
+                  >
                     Build. Scale. Transform.
                   </p>
                 </div>
@@ -643,42 +891,49 @@ function Herosection() {
         </div>
 
         {/* ========================================================
-            MOVING SHOWCASE
+            SHOWCASE
         ========================================================= */}
 
         <div
+          data-aos="fade-up"
+          data-aos-delay="200"
+          data-aos-duration="900"
           className="
             relative
-            mt-9
+            mt-8
 
-            sm:mt-11
+            sm:mt-10
 
-            lg:mt-12
+            lg:mt-11
           "
         >
-          {/* ======================================================
-              SHOWCASE HEADER
-          ======================================================= */}
+          {/* HEADER */}
 
           <div
             className="
-              mb-4
+              mb-3.5
+
               flex
               items-end
               justify-between
               gap-4
+
+              sm:mb-4
             "
           >
-            <div>
+            <div
+              data-aos="fade-right"
+              data-aos-delay="250"
+            >
               <p
                 className="
-                  text-[9px]
+                  text-[8px]
                   font-semibold
+                  uppercase
                   tracking-[0.2em]
                   text-[#29B6F0]
-                  uppercase
 
-                  sm:text-[10px]
+                  sm:text-[9px]
                 "
               >
                 Selected Work
@@ -686,13 +941,20 @@ function Herosection() {
 
               <h3
                 className="
-                  mt-1
-                  text-xl
+                  mt-0.5
+
+                  text-lg
                   font-semibold
                   tracking-[-0.03em]
                   text-white
 
-                  sm:text-2xl
+                  transition-colors
+                  duration-300
+
+                  hover:text-[#D4D4D8]
+
+                  sm:text-xl
+                  md:text-2xl
                 "
               >
                 Digital products in motion.
@@ -700,13 +962,16 @@ function Herosection() {
             </div>
 
             <p
+              data-aos="fade-left"
+              data-aos-delay="300"
               className="
                 hidden
-                max-w-[260px]
+                max-w-[280px]
+
                 text-right
-                text-[10px]
+                text-[9px]
                 leading-4
-                text-[#7A7A7A]
+                text-[#6F6F77]
 
                 sm:block
               "
@@ -716,13 +981,15 @@ function Herosection() {
           </div>
 
           {/* ======================================================
-              MOVING CARD VIEWPORT
+              VIEWPORT
           ======================================================= */}
 
           <div
             className="
               relative
+
               -mx-4
+
               overflow-hidden
 
               sm:-mx-6
@@ -744,15 +1011,19 @@ function Herosection() {
                 top-0
                 z-20
                 h-full
-                w-12
+
+                w-10
+
                 bg-gradient-to-r
                 from-[#000000]
                 via-[#000000]/80
                 to-transparent
 
-                sm:w-20
+                sm:w-16
 
-                lg:w-32
+                lg:w-28
+
+                xl:w-36
               "
             />
 
@@ -766,51 +1037,53 @@ function Herosection() {
                 top-0
                 z-20
                 h-full
-                w-12
+
+                w-10
+
                 bg-gradient-to-l
                 from-[#000000]
                 via-[#000000]/80
                 to-transparent
 
-                sm:w-20
+                sm:w-16
 
-                lg:w-32
+                lg:w-28
+
+                xl:w-36
               "
             />
 
-            {/* ====================================================
-                TRAIN TRACK
-            ===================================================== */}
+            {/* TRACK */}
 
             <div
               ref={trackRef}
               className="
                 flex
                 w-max
-                gap-3
-                py-2
+
+                gap-2.5
+
+                py-1.5
                 pl-4
+
                 will-change-transform
 
-                sm:gap-4
+                sm:gap-3.5
                 sm:pl-6
 
-                lg:gap-5
+                lg:gap-4
                 lg:pl-10
 
+                xl:gap-5
                 xl:pl-16
               "
             >
-              {/* FIRST 5 CARDS */}
-
               {projects.map((project) => (
                 <ProductCard
                   key={`first-${project.id}`}
                   image={project.image}
                 />
               ))}
-
-              {/* DUPLICATE 5 CARDS */}
 
               {projects.map((project) => (
                 <ProductCard
@@ -821,28 +1094,42 @@ function Herosection() {
             </div>
           </div>
 
-          {/* ======================================================
-              BOTTOM LINE
-          ======================================================= */}
+          {/* BOTTOM LABEL */}
 
-          <div className="mt-4 flex items-center justify-center gap-2">
+          <div
+            data-aos="zoom-in"
+            data-aos-delay="400"
+            className="
+              mt-3
+
+              flex
+              items-center
+              justify-center
+              gap-2
+            "
+          >
             <span
               className="
                 h-px
-                w-8
+                w-6
+
                 bg-gradient-to-r
                 from-transparent
                 to-[#3E7BD6]
+
+                sm:w-8
               "
             />
 
             <span
               className="
-                text-[8px]
+                text-[7px]
                 font-medium
-                tracking-[0.22em]
-                text-[#5A5A5A]
                 uppercase
+                tracking-[0.2em]
+                text-[#55555D]
+
+                sm:text-[8px]
               "
             >
               Continuous Showcase
@@ -851,10 +1138,13 @@ function Herosection() {
             <span
               className="
                 h-px
-                w-8
+                w-6
+
                 bg-gradient-to-l
                 from-transparent
                 to-[#B93FC9]
+
+                sm:w-8
               "
             />
           </div>
@@ -873,65 +1163,117 @@ function StatCard({
   title,
   subtitle,
   index,
+  delay,
 }: {
   number: string;
   title: string;
   subtitle: string;
   index: string;
+  delay: string;
 }) {
   return (
     <div
+      data-aos="fade-up"
+      data-aos-delay={delay}
+      data-aos-duration="700"
       className="
-        group
+        group/stat
         relative
-        min-h-[108px]
+
+        min-h-[96px]
+
         overflow-hidden
-        rounded-[14px]
+
+        rounded-[12px]
+
         border
         border-white/[0.08]
-        bg-white/[0.04]
-        p-3
+
+        bg-white/[0.035]
+
+        p-2.5
+
         backdrop-blur-xl
+
         transition-all
-        duration-300
+        duration-500
+        ease-out
+
         hover:-translate-y-1
         hover:border-[#3E7BD6]/60
         hover:bg-white/[0.065]
-        hover:shadow-[0_0_25px_rgba(62,123,214,0.12)]
 
-        sm:min-h-[125px]
-        sm:rounded-[16px]
-        sm:p-3.5
+        sm:min-h-[112px]
+        sm:rounded-[14px]
+        sm:p-3
       "
     >
-      {/* Gradient top border */}
+      {/* TOP LINE */}
 
       <div
         className="
           absolute
           left-0
           top-0
+
           h-[2px]
           w-0
+
           bg-[linear-gradient(90deg,#29B6F0,#3E7BD6,#7A4FD1,#B93FC9)]
+
           transition-all
-          duration-500
-          group-hover:w-full
+          duration-600
+
+          group-hover/stat:w-full
         "
       />
 
-      {/* Number */}
+      {/* GLOW */}
 
-      <div className="flex items-start justify-between">
+      <div
+        className="
+          pointer-events-none
+          absolute
+          -right-10
+          -top-10
+
+          h-20
+          w-20
+
+          rounded-full
+
+          bg-[#29B6F0]/10
+
+          blur-[30px]
+
+          opacity-0
+
+          transition-opacity
+          duration-500
+
+          group-hover/stat:opacity-100
+        "
+      />
+
+      {/* NUMBER */}
+
+      <div className="relative z-10 flex items-start justify-between">
         <span
           className="
-            text-[25px]
+            text-[23px]
             font-bold
             leading-none
             tracking-[-0.05em]
             text-white
 
-            sm:text-[31px]
+            transition-all
+            duration-500
+
+            group-hover/stat:bg-[linear-gradient(135deg,#29B6F0,#7A4FD1,#B93FC9)]
+            group-hover/stat:bg-clip-text
+            group-hover/stat:text-transparent
+
+            sm:text-[28px]
           "
         >
           {number}
@@ -939,28 +1281,38 @@ function StatCard({
 
         <span
           className="
-            text-[7px]
+            text-[6px]
             font-medium
             tracking-[0.1em]
-            text-[#5A5A5A]
+            text-[#55555D]
+
+            transition-colors
+            duration-300
+
+            group-hover/stat:text-[#29B6F0]
           "
         >
           {index}
         </span>
       </div>
 
-      {/* Text */}
+      {/* TEXT */}
 
-      <div className="mt-5">
+      <div className="relative z-10 mt-4">
         <p
           className="
-            text-[8px]
+            text-[7px]
             font-semibold
-            leading-3.5
-            tracking-[0.07em]
+            leading-[1.45]
+            tracking-[0.06em]
             text-[#A0A0A8]
 
-            sm:text-[9px]
+            transition-colors
+            duration-300
+
+            group-hover/stat:text-[#D4D4D8]
+
+            sm:text-[8px]
           "
         >
           {title}
@@ -969,22 +1321,28 @@ function StatCard({
         </p>
       </div>
 
-      {/* Small glowing dot */}
+      {/* DOT */}
 
       <span
         className="
           absolute
-          bottom-3
-          right-3
+          bottom-2.5
+          right-2.5
+
           h-1
           w-1
+
           rounded-full
+
           bg-[#3E7BD6]
-          shadow-[0_0_8px_rgba(62,123,214,0.8)]
+
+          shadow-[0_0_8px_rgba(62,123,214,.8)]
+
           transition-all
-          duration-300
-          group-hover:scale-150
-          group-hover:bg-[#29B6F0]
+          duration-500
+
+          group-hover/stat:scale-150
+          group-hover/stat:bg-[#29B6F0]
         "
       />
     </div>
@@ -992,42 +1350,50 @@ function StatCard({
 }
 
 /* ================================================================
-   MOVING PRODUCT CARD
+   PRODUCT CARD
 ================================================================ */
 
 function ProductCard({ image }: { image: string }) {
   return (
     <div
       className="
-        group
+        group/product
+
         relative
-        h-[150px]
-        w-[235px]
+
+        h-[135px]
+        w-[215px]
+
         shrink-0
         overflow-hidden
-        rounded-[14px]
+
+        rounded-[13px]
+
         border
         border-[#2A2A30]
+
         bg-[#121212]
-        shadow-[0_10px_25px_rgba(0,0,0,0.35)]
+
         transition-all
-        duration-500
-        hover:-translate-y-1.5
+        duration-600
+        ease-out
+
+        hover:-translate-y-2
+        hover:scale-[1.015]
         hover:border-[#3E7BD6]
-        hover:shadow-[0_15px_35px_rgba(62,123,214,0.18)]
 
-        sm:h-[180px]
-        sm:w-[285px]
-        sm:rounded-[16px]
+        sm:h-[165px]
+        sm:w-[260px]
+        sm:rounded-[15px]
 
-        md:h-[195px]
-        md:w-[320px]
+        md:h-[180px]
+        md:w-[295px]
 
-        lg:h-[215px]
-        lg:w-[355px]
+        lg:h-[195px]
+        lg:w-[325px]
 
-        xl:h-[225px]
-        xl:w-[375px]
+        xl:h-[205px]
+        xl:w-[350px]
       "
     >
       {/* IMAGE */}
@@ -1039,16 +1405,21 @@ function ProductCard({ image }: { image: string }) {
         className="
           h-full
           w-full
+
           select-none
+
           object-cover
           object-top
+
           transition-transform
-          duration-700
-          group-hover:scale-[1.035]
+          duration-1000
+          ease-out
+
+          group-hover/product:scale-[1.08]
         "
       />
 
-      {/* Bottom overlay */}
+      {/* DARK BOTTOM */}
 
       <div
         className="
@@ -1056,44 +1427,110 @@ function ProductCard({ image }: { image: string }) {
           absolute
           inset-x-0
           bottom-0
-          h-1/2
+
+          h-[55%]
+
           bg-gradient-to-t
-          from-black/45
+          from-black/55
+          via-black/15
           to-transparent
-        "
-      />
 
-      {/* Brand gradient overlay */}
+          opacity-70
 
-      <div
-        className="
-          pointer-events-none
-          absolute
-          inset-0
-          bg-[linear-gradient(135deg,rgba(41,182,240,0.06),transparent_40%,rgba(185,63,201,0.08))]
-          opacity-0
           transition-opacity
           duration-500
-          group-hover:opacity-100
+
+          group-hover/product:opacity-100
         "
       />
 
-      {/* Hover border */}
+      {/* GRADIENT OVERLAY */}
 
       <div
         className="
           pointer-events-none
           absolute
           inset-0
-          rounded-[14px]
+
+          bg-[linear-gradient(135deg,rgba(41,182,240,.05),transparent_38%,rgba(122,79,209,.05),rgba(185,63,201,.12))]
+
+          opacity-0
+
+          transition-opacity
+          duration-600
+
+          group-hover/product:opacity-100
+        "
+      />
+
+      {/* SCAN LINE */}
+
+      <div
+        className="
+          pointer-events-none
+          absolute
+          left-0
+          top-0
+
+          h-[2px]
+          w-0
+
+          bg-[linear-gradient(90deg,#29B6F0,#3E7BD6,#7A4FD1,#B93FC9)]
+
+          transition-all
+          duration-700
+
+          group-hover/product:w-full
+        "
+      />
+
+      {/* HOVER BORDER */}
+
+      <div
+        className="
+          pointer-events-none
+          absolute
+          inset-0
+
+          rounded-[13px]
+
           ring-1
           ring-inset
           ring-transparent
+
           transition-all
           duration-500
-          group-hover:ring-[#3E7BD6]/50
 
-          sm:rounded-[16px]
+          group-hover/product:ring-[#29B6F0]/35
+
+          sm:rounded-[15px]
+        "
+      />
+
+      {/* CORNER INDICATOR */}
+
+      <div
+        className="
+          pointer-events-none
+          absolute
+          bottom-2
+          right-2
+
+          h-1.5
+          w-1.5
+
+          rounded-full
+
+          bg-[#29B6F0]
+
+          opacity-0
+
+          shadow-[0_0_10px_rgba(41,182,240,.9)]
+
+          transition-all
+          duration-500
+
+          group-hover/product:opacity-100
         "
       />
     </div>

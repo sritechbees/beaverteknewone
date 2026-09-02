@@ -1,7 +1,6 @@
 "use client";
 
 import { useEffect, useRef } from "react";
-import Image from "next/image";
 import AOS from "aos";
 import "aos/dist/aos.css";
 
@@ -27,24 +26,18 @@ const testimonials = [
   {
     name: "Brent",
     role: "Business Partner",
-    image: "/home/one.jpeg",
-    bgImage: "/home/one.jpeg",
     quote:
       "BeaverTek built a powerful analytics platform with Tableau integration, transforming our business insights.",
   },
   {
     name: "Cooraez",
     role: "Healthcare Partner",
-    image: "/home/one.jpeg",
-    bgImage: "/home/one.jpeg",
     quote:
       "An outstanding AI healthcare platform with seamless patient intake and smart triage workflows.",
   },
   {
     name: "Ravi",
     role: "Technology Partner",
-    image: "/home/one.jpeg",
-    bgImage: "/home/one.jpeg",
     quote:
       "BeaverTek provided expert development and strategy, helping us launch faster and more efficiently.",
   },
@@ -59,10 +52,12 @@ export default function TestimonialsSection() {
 
   useEffect(() => {
     AOS.init({
-      duration: 900,
+      duration: 800,
       once: true,
-      offset: 70,
+      offset: 50,
       easing: "ease-out-cubic",
+      mirror: false,
+      anchorPlacement: "top-bottom",
     });
 
     AOS.refresh();
@@ -73,31 +68,27 @@ export default function TestimonialsSection() {
   }, []);
 
   return (
-    <section
-      className="
-        relative
-        overflow-hidden
-        bg-[#000000]
-        py-16
-        sm:py-20
-        lg:py-24
-      "
-    >
+    <section className="relative w-full overflow-hidden bg-[#000000] py-8 sm:py-10 md:py-8 lg:py-8">
       {/* =====================================================
           BACKGROUND GLOW
-      ===================================================== */}
+      ====================================================== */}
 
       <div
         className="
           pointer-events-none
           absolute
-          -left-40
-          top-20
-          h-[400px]
-          w-[400px]
+          -left-28
+          top-0
+          h-52
+          w-52
           rounded-full
-          bg-[#29B6F0]/7
-          blur-[140px]
+          bg-[#29B6F0]/5
+          blur-[90px]
+          sm:-left-32
+          sm:h-60
+          sm:w-60
+          lg:h-64
+          lg:w-64
         "
       />
 
@@ -105,13 +96,18 @@ export default function TestimonialsSection() {
         className="
           pointer-events-none
           absolute
-          -right-40
+          -right-28
           bottom-0
-          h-[450px]
-          w-[450px]
+          h-52
+          w-52
           rounded-full
-          bg-[#B93FC9]/8
-          blur-[150px]
+          bg-[#B93FC9]/6
+          blur-[100px]
+          sm:-right-32
+          sm:h-60
+          sm:w-60
+          lg:h-64
+          lg:w-64
         "
       />
 
@@ -121,46 +117,49 @@ export default function TestimonialsSection() {
           absolute
           left-1/2
           top-1/2
-          h-[280px]
-          w-[280px]
+          h-48
+          w-48
           -translate-x-1/2
           -translate-y-1/2
           rounded-full
-          bg-[#7A4FD1]/5
-          blur-[120px]
+          bg-[#7A4FD1]/4
+          blur-[90px]
+          sm:h-56
+          sm:w-56
         "
       />
 
       {/* =====================================================
           SUBTLE GRID
-      ===================================================== */}
+      ====================================================== */}
 
       <div
         className="
           pointer-events-none
           absolute
           inset-0
-          opacity-[0.018]
-
+          opacity-[0.015]
           [background-image:linear-gradient(#ffffff_1px,transparent_1px),linear-gradient(90deg,#ffffff_1px,transparent_1px)]
-
-          [background-size:60px_60px]
+          [background-size:55px_55px]
         "
       />
 
       {/* =====================================================
           CONTAINER
-      ===================================================== */}
+      ====================================================== */}
 
       <div
         className="
           relative
           z-10
           mx-auto
-          max-w-7xl
-          px-5
-          sm:px-8
-          lg:px-10
+          w-full
+          max-w-[1250px]
+          px-3
+          sm:px-5
+          md:px-6
+          lg:px-8
+          xl:px-10
         "
       >
         {/* ===================================================
@@ -169,61 +168,82 @@ export default function TestimonialsSection() {
 
         <div
           data-aos="fade-up"
-          data-aos-duration="900"
+          data-aos-duration="800"
           className="
             mx-auto
-            mb-12
+            w-full
             max-w-3xl
             text-center
-
-            sm:mb-14
-            lg:mb-16
           "
         >
           {/* Badge */}
 
-          <span
+          <div
             data-aos="zoom-in"
-            data-aos-delay="100"
+            data-aos-delay="80"
+            data-aos-duration="700"
             className="
               inline-flex
+              max-w-full
               items-center
+              gap-1.5
               rounded-full
               border
               border-[#2A2A30]
               bg-[#0A0A0A]
-              px-4
-              py-2
-
-              text-[10px]
-              font-semibold
-              uppercase
-              tracking-[0.20em]
-
-              text-[#29B6F0]
-
-              shadow-[0_0_25px_rgba(41,182,240,.08)]
+              px-2.5
+              py-1.5
+              transition-all
+              duration-500
+              hover:-translate-y-1
+              hover:border-[#3E7BD6]/60
+              sm:px-3
             "
           >
-            Client Testimonials
-          </span>
+            <span
+              className="
+                h-1.5
+                w-1.5
+                shrink-0
+                rounded-full
+                bg-[linear-gradient(135deg,#29B6F0,#3E7BD6,#7A4FD1,#B93FC9)]
+              "
+            />
+
+            <span
+              className="
+                whitespace-nowrap
+                text-[7px]
+                font-bold
+                uppercase
+                tracking-[0.16em]
+                text-[#A0A0A8]
+                sm:text-[8px]
+                sm:tracking-[0.18em]
+                md:text-[9px]
+              "
+            >
+              Client Testimonials
+            </span>
+          </div>
 
           {/* Title */}
 
           <h2
             data-aos="fade-up"
-            data-aos-delay="180"
+            data-aos-delay="140"
+            data-aos-duration="800"
             className="
-              mt-5
-              text-3xl
-              font-bold
-              leading-tight
-              tracking-tight
+              mt-3
+              text-[24px]
+              font-extrabold
+              leading-[1.1]
+              tracking-[-0.04em]
               text-white
-
-              sm:text-4xl
-              md:text-5xl
-              lg:text-6xl
+              sm:text-[29px]
+              md:text-[36px]
+              lg:text-[44px]
+              xl:text-[46px]
             "
           >
             Trusted By{" "}
@@ -242,81 +262,91 @@ export default function TestimonialsSection() {
 
           <p
             data-aos="fade-up"
-            data-aos-delay="280"
+            data-aos-delay="200"
+            data-aos-duration="800"
             className="
               mx-auto
-              mt-4
-              max-w-2xl
-              text-sm
-              leading-7
+              mt-2
+              max-w-[520px]
+              px-2
+              text-[10px]
+              leading-5
               text-[#A0A0A8]
-
-              sm:text-base
+              sm:text-xs
+              md:text-[13px]
             "
           >
             Long-term partnerships built on measurable outcomes,
             technical excellence, and trust.
           </p>
 
-          {/* Divider */}
+          {/* Gradient Line */}
 
           <div
             data-aos="zoom-in"
-            data-aos-delay="380"
+            data-aos-delay="280"
+            data-aos-duration="700"
             className="
               mx-auto
-              mt-6
+              mt-3
               h-[2px]
-              w-16
+              w-10
               rounded-full
               bg-[linear-gradient(90deg,#29B6F0,#3E7BD6,#7A4FD1,#B93FC9)]
-              shadow-[0_0_18px_rgba(41,182,240,.30)]
+              transition-all
+              duration-500
+              hover:w-16
             "
           />
         </div>
 
         {/* ===================================================
-            TESTIMONIAL SLIDER
+            SWIPER
         =================================================== */}
 
         <div
           data-aos="fade-up"
-          data-aos-delay="250"
+          data-aos-delay="180"
+          data-aos-duration="900"
           className="
             relative
             mx-auto
-            max-w-6xl
+            mt-6
+            w-full
+            max-w-[1050px]
+            sm:mt-7
+            md:mt-8
           "
         >
-          {/* =================================================
-              MAIN SLIDER AREA
-          ================================================= */}
-
           <div
             className="
-              relative
               flex
+              w-full
               items-center
-              gap-4
-
-              lg:gap-7
+              gap-1.5
+              sm:gap-2
+              md:gap-3
+              lg:gap-4
             "
           >
             {/* =================================================
                 LEFT ARROW
-            ================================================= */}
+            ================================================== */}
 
             <button
               type="button"
               aria-label="Previous testimonial"
               onClick={() => swiperRef.current?.slidePrev()}
+              data-aos="fade-right"
+              data-aos-delay="250"
+              data-aos-duration="700"
               className="
                 group
                 relative
-                z-30
+                z-20
                 flex
-                h-11
-                w-11
+                h-8
+                w-8
                 shrink-0
                 items-center
                 justify-center
@@ -324,70 +354,43 @@ export default function TestimonialsSection() {
                 border
                 border-[#2A2A30]
                 bg-[#0A0A0A]
-
-                text-[#55555D]
-
+                text-[#707078]
                 transition-all
                 duration-500
-
+                hover:-translate-x-1
                 hover:border-[#3E7BD6]
                 hover:bg-[#121212]
                 hover:text-[#29B6F0]
-
-                hover:shadow-[0_0_25px_rgba(41,182,240,.15)]
-
-                sm:h-12
-                sm:w-12
-
-                lg:h-14
-                lg:w-14
+                sm:h-9
+                sm:w-9
+                md:h-10
+                md:w-10
               "
             >
               <ChevronLeft
                 className="
-                  h-5
-                  w-5
-
+                  h-3.5
+                  w-3.5
                   transition-transform
                   duration-500
-
-                  group-hover:-translate-x-1
-
-                  sm:h-6
-                  sm:w-6
-                "
-              />
-
-              {/* Glow */}
-
-              <span
-                className="
-                  pointer-events-none
-                  absolute
-                  inset-0
-                  rounded-full
-                  bg-[#29B6F0]/5
-                  opacity-0
-                  blur-xl
-                  transition-opacity
-                  duration-500
-
-                  group-hover:opacity-100
+                  group-hover:-translate-x-0.5
+                  sm:h-4
+                  sm:w-4
                 "
               />
             </button>
 
             {/* =================================================
-                SWIPER
-            ================================================= */}
+                SWIPER AREA
+            ================================================== */}
 
-            <div className="min-w-0 flex-1">
+            <div className="min-w-0 flex-1 overflow-hidden">
               <Swiper
                 modules={[Autoplay]}
                 loop={true}
-                speed={800}
+                speed={750}
                 slidesPerView={1}
-                spaceBetween={20}
+                spaceBetween={12}
                 autoplay={{
                   delay: 4500,
                   disableOnInteraction: false,
@@ -396,397 +399,346 @@ export default function TestimonialsSection() {
                 onSwiper={(swiper) => {
                   swiperRef.current = swiper;
                 }}
-                className="!overflow-hidden"
+                className="w-full !overflow-hidden"
               >
                 {testimonials.map((item, index) => (
                   <SwiperSlide key={item.name}>
                     <div
+                      data-aos="zoom-in-up"
+                      data-aos-delay={index * 80}
+                      data-aos-duration="800"
                       className="
                         group
                         relative
+                        w-full
                         overflow-hidden
-                        rounded-[24px]
+                        rounded-[16px]
                         border
                         border-[#24242A]
                         bg-[#0D0D0F]
-
-                        shadow-[0_25px_80px_rgba(0,0,0,.45)]
-
                         transition-all
-                        duration-700
-
+                        duration-500
+                        hover:-translate-y-1
                         hover:border-[#3E7BD6]
+                        sm:rounded-[18px]
                       "
                     >
                       {/* =================================================
-                          BACKGROUND IMAGE
-                      ================================================= */}
-
-                      <div className="absolute inset-0">
-                        <Image
-                          src={item.bgImage}
-                          alt=""
-                          fill
-                          priority={index === 0}
-                          className="
-                            object-cover
-                            opacity-[0.055]
-                            grayscale
-
-                            transition-transform
-                            duration-[1400ms]
-
-                            group-hover:scale-105
-                          "
-                        />
-                      </div>
-
-                      {/* =================================================
-                          DARK OVERLAY
-                      ================================================= */}
+                          BACKGROUND GLOWS
+                      ================================================== */}
 
                       <div
                         className="
+                          pointer-events-none
                           absolute
-                          inset-0
-                          bg-[linear-gradient(90deg,#080808_0%,#0D0D0F_50%,#080808_100%)]
+                          -right-16
+                          -top-16
+                          h-32
+                          w-32
+                          rounded-full
+                          bg-[#29B6F0]/5
+                          blur-[60px]
+                          transition-all
+                          duration-700
+                          group-hover:bg-[#29B6F0]/9
+                          sm:h-40
+                          sm:w-40
+                        "
+                      />
+
+                      <div
+                        className="
+                          pointer-events-none
+                          absolute
+                          -bottom-16
+                          -left-16
+                          h-32
+                          w-32
+                          rounded-full
+                          bg-[#B93FC9]/5
+                          blur-[60px]
+                          transition-all
+                          duration-700
+                          group-hover:bg-[#B93FC9]/9
+                          sm:h-40
+                          sm:w-40
                         "
                       />
 
                       {/* =================================================
                           TOP GRADIENT
-                      ================================================= */}
+                      ================================================== */}
 
                       <div
                         className="
                           absolute
-                          left-[12%]
-                          right-[12%]
+                          left-[18%]
+                          right-[18%]
                           top-0
                           h-[2px]
                           rounded-full
                           bg-[linear-gradient(90deg,transparent,#29B6F0,#7A4FD1,#B93FC9,transparent)]
                           opacity-70
-                          shadow-[0_0_20px_rgba(41,182,240,.45)]
+                          transition-all
+                          duration-700
+                          group-hover:left-[8%]
+                          group-hover:right-[8%]
                         "
                       />
 
                       {/* =================================================
                           CONTENT
-                      ================================================= */}
+                      ================================================== */}
 
                       <div
                         className="
                           relative
                           z-10
                           flex
-                          min-h-[300px]
+                          min-h-[225px]
                           items-center
-                          px-6
-                          py-8
-
-                          sm:min-h-[320px]
-                          sm:px-10
-
-                          md:min-h-[340px]
-                          md:px-14
-
-                          lg:min-h-[360px]
-                          lg:px-16
+                          px-3
+                          py-5
+                          sm:min-h-[240px]
+                          sm:px-6
+                          sm:py-6
+                          md:min-h-[250px]
+                          md:px-8
+                          lg:min-h-[260px]
+                          lg:px-10
+                          lg:py-7
                         "
                       >
-                        <div
-                          className="
-                            mx-auto
-                            grid
-                            w-full
-                            max-w-4xl
-                            items-center
-                            gap-8
+                        <div className="mx-auto w-full max-w-[800px] text-center">
 
-                            md:grid-cols-[150px_1fr]
-                            md:gap-10
-
-                            lg:grid-cols-[170px_1fr]
-                            lg:gap-12
-                          "
-                        >
-                          {/* =================================================
-                              PROFILE IMAGE
-                          ================================================= */}
+                          {/* Quote Icon */}
 
                           <div
-                            data-aos="zoom-in"
-                            data-aos-delay="150"
-                            className="
-                              mx-auto
-                              md:mx-0
-                            "
+                            data-aos="fade-down"
+                            data-aos-delay="120"
+                            data-aos-duration="650"
+                            className="mb-2.5 flex justify-center sm:mb-3"
                           >
-                            <div
-                              className="
-                                relative
-                                h-[130px]
-                                w-[110px]
-
-                                sm:h-[145px]
-                                sm:w-[120px]
-
-                                md:h-[155px]
-                                md:w-[125px]
-
-                                lg:h-[170px]
-                                lg:w-[135px]
-                              "
-                            >
-                              {/* Gradient Border */}
-
-                              <div
-                                className="
-                                  absolute
-                                  -inset-[2px]
-                                  rounded-[16px]
-                                  bg-[linear-gradient(135deg,#29B6F0,#3E7BD6,#7A4FD1,#B93FC9)]
-                                  opacity-80
-                                "
-                              />
-
-                              {/* Image */}
-
-                              <div
-                                className="
-                                  relative
-                                  h-full
-                                  w-full
-                                  overflow-hidden
-                                  rounded-[15px]
-                                  border
-                                  border-[#0A0A0A]
-                                  bg-[#121212]
-                                "
-                              >
-                                <Image
-                                  src={item.image}
-                                  alt={item.name}
-                                  fill
-                                  className="
-                                    object-cover
-
-                                    transition-transform
-                                    duration-700
-
-                                    group-hover:scale-105
-                                  "
-                                />
-
-                                <div
-                                  className="
-                                    absolute
-                                    inset-0
-                                    bg-gradient-to-t
-                                    from-black/30
-                                    via-transparent
-                                    to-transparent
-                                  "
-                                />
-                              </div>
-
-                              {/* Quote Icon */}
-
-                              <div
-                                className="
-                                  absolute
-                                  -right-3
-                                  -top-3
-                                  flex
-                                  h-9
-                                  w-9
-                                  items-center
-                                  justify-center
-                                  rounded-full
-                                  border
-                                  border-[#3E7BD6]/40
-                                  bg-[#0A0A0A]
-                                  shadow-[0_0_20px_rgba(41,182,240,.12)]
-                                "
-                              >
-                                <Quote
-                                  className="
-                                    h-4
-                                    w-4
-                                    text-[#29B6F0]
-                                  "
-                                />
-                              </div>
-                            </div>
-                          </div>
-
-                          {/* =================================================
-                              TESTIMONIAL CONTENT
-                          ================================================= */}
-
-                          <div
-                            data-aos="fade-left"
-                            data-aos-delay="250"
-                            className="
-                              text-center
-                              md:text-left
-                            "
-                          >
-                            {/* Quote */}
-
-                            <p
-                              className="
-                                relative
-                                max-w-3xl
-                                text-base
-                                font-light
-                                leading-7
-                                text-[#D4D4D8]
-
-                                sm:text-lg
-                                sm:leading-8
-
-                                md:text-xl
-                                md:leading-9
-
-                                lg:text-[21px]
-                              "
-                            >
-                              <span
-                                className="
-                                  mr-1
-                                  text-2xl
-                                  font-bold
-                                  text-[#29B6F0]
-                                "
-                              >
-                                “
-                              </span>
-
-                              {item.quote}
-
-                              <span
-                                className="
-                                  ml-1
-                                  text-2xl
-                                  font-bold
-                                  text-[#B93FC9]
-                                "
-                              >
-                                ”
-                              </span>
-                            </p>
-
-                            {/* Divider */}
-
-                            <div
-                              className="
-                                my-5
-                                h-px
-                                w-full
-                                max-w-[420px]
-                                bg-gradient-to-r
-                                from-[#29B6F0]/40
-                                via-[#7A4FD1]/20
-                                to-transparent
-
-                                mx-auto
-                                md:mx-0
-                              "
-                            />
-
-                            {/* Name + Role */}
-
                             <div
                               className="
                                 flex
+                                h-9
+                                w-9
                                 items-center
                                 justify-center
-                                gap-3
-
-                                md:justify-start
+                                rounded-lg
+                                border
+                                border-[#3E7BD6]/30
+                                bg-[#0A0A0A]
+                                transition-all
+                                duration-500
+                                group-hover:scale-105
+                                group-hover:border-[#29B6F0]/60
+                                sm:h-10
+                                sm:w-10
+                                sm:rounded-xl
                               "
                             >
-                              <div>
-                                <h3
-                                  className="
-                                    text-base
-                                    font-semibold
-                                    text-white
-                                  "
-                                >
-                                  {item.name}
-                                </h3>
-
-                                <p
-                                  className="
-                                    mt-0.5
-                                    text-[10px]
-                                    font-medium
-                                    uppercase
-                                    tracking-[0.14em]
-                                    text-[#777780]
-                                  "
-                                >
-                                  {item.role}
-                                </p>
-                              </div>
-
-                              {/* Verified */}
-
-                              <BadgeCheck
+                              <Quote
+                                strokeWidth={3}
                                 className="
                                   h-4
                                   w-4
                                   text-[#29B6F0]
+                                  sm:h-[18px]
+                                  sm:w-[18px]
                                 "
                               />
                             </div>
+                          </div>
 
-                            {/* Stars */}
+                          {/* =================================================
+                              QUOTE TEXT
+                          ================================================== */}
 
-                            <div
+                          <p
+                            data-aos="fade-up"
+                            data-aos-delay="180"
+                            data-aos-duration="750"
+                            className="
+                              mx-auto
+                              w-full
+                              max-w-[720px]
+                              px-1
+                              text-[12px]
+                              font-medium
+                              leading-[1.65]
+                              text-[#D4D4D8]
+                              transition-colors
+                              duration-500
+                              group-hover:text-white
+                              sm:text-[14px]
+                              sm:leading-6
+                              md:text-[15px]
+                              md:leading-7
+                              lg:text-[17px]
+                            "
+                          >
+                            <span
                               className="
-                                mt-4
-                                flex
-                                justify-center
-                                gap-1
-
-                                md:justify-start
+                                mr-1
+                                text-[24px]
+                                font-black
+                                leading-none
+                                text-[#29B6F0]
+                                sm:text-[30px]
                               "
                             >
-                              {[1, 2, 3, 4, 5].map((star) => (
-                                <Star
-                                  key={star}
-                                  className="
-                                    h-3.5
-                                    w-3.5
-                                    fill-[#29B6F0]
-                                    text-[#29B6F0]
-                                  "
-                                />
-                              ))}
+                              “
+                            </span>
+
+                            {item.quote}
+
+                            <span
+                              className="
+                                ml-1
+                                text-[24px]
+                                font-black
+                                leading-none
+                                text-[#B93FC9]
+                                sm:text-[30px]
+                              "
+                            >
+                              ”
+                            </span>
+                          </p>
+
+                          {/* =================================================
+                              DIVIDER
+                          ================================================== */}
+
+                          <div
+                            data-aos="zoom-in"
+                            data-aos-delay="250"
+                            data-aos-duration="650"
+                            className="
+                              mx-auto
+                              my-2.5
+                              h-px
+                              w-[70%]
+                              max-w-[300px]
+                              bg-gradient-to-r
+                              from-transparent
+                              via-[#3E7BD6]/35
+                              to-transparent
+                              sm:my-3
+                            "
+                          />
+
+                          {/* =================================================
+                              AUTHOR
+                          ================================================== */}
+
+                          <div
+                            data-aos="fade-up"
+                            data-aos-delay="310"
+                            data-aos-duration="650"
+                            className="
+                              flex
+                              items-center
+                              justify-center
+                              gap-1.5
+                              sm:gap-2
+                            "
+                          >
+                            <div>
+                              <h3
+                                className="
+                                  text-[11px]
+                                  font-semibold
+                                  text-white
+                                  sm:text-[12px]
+                                  md:text-[13px]
+                                "
+                              >
+                                {item.name}
+                              </h3>
+
+                              <p
+                                className="
+                                  mt-0.5
+                                  text-[7px]
+                                  font-medium
+                                  uppercase
+                                  tracking-[0.12em]
+                                  text-[#777780]
+                                  sm:text-[8px]
+                                  md:text-[9px]
+                                "
+                              >
+                                {item.role}
+                              </p>
                             </div>
+
+                            <BadgeCheck
+                              className="
+                                h-3
+                                w-3
+                                text-[#29B6F0]
+                                transition-all
+                                duration-500
+                                group-hover:text-[#B93FC9]
+                                sm:h-3.5
+                                sm:w-3.5
+                              "
+                            />
+                          </div>
+
+                          {/* =================================================
+                              STARS
+                          ================================================== */}
+
+                          <div
+                            data-aos="fade-up"
+                            data-aos-delay="370"
+                            data-aos-duration="650"
+                            className="mt-1.5 flex justify-center gap-0.5 sm:mt-2"
+                          >
+                            {[1, 2, 3, 4, 5].map((star) => (
+                              <Star
+                                key={star}
+                                className="
+                                  h-2.5
+                                  w-2.5
+                                  fill-[#29B6F0]
+                                  text-[#29B6F0]
+                                  transition-transform
+                                  duration-300
+                                  group-hover:scale-110
+                                  sm:h-3
+                                  sm:w-3
+                                "
+                              />
+                            ))}
                           </div>
                         </div>
                       </div>
 
                       {/* =================================================
                           BOTTOM GRADIENT
-                      ================================================= */}
+                      ================================================== */}
 
                       <div
                         className="
                           absolute
                           bottom-0
-                          left-[15%]
-                          right-[15%]
+                          left-[20%]
+                          right-[20%]
                           h-px
                           bg-gradient-to-r
                           from-transparent
                           via-[#3E7BD6]/30
                           to-transparent
+                          transition-all
+                          duration-700
+                          group-hover:left-[8%]
+                          group-hover:right-[8%]
+                          group-hover:via-[#29B6F0]/60
                         "
                       />
                     </div>
@@ -797,19 +749,22 @@ export default function TestimonialsSection() {
 
             {/* =================================================
                 RIGHT ARROW
-            ================================================= */}
+            ================================================== */}
 
             <button
               type="button"
               aria-label="Next testimonial"
               onClick={() => swiperRef.current?.slideNext()}
+              data-aos="fade-left"
+              data-aos-delay="250"
+              data-aos-duration="700"
               className="
                 group
                 relative
-                z-30
+                z-20
                 flex
-                h-11
-                w-11
+                h-8
+                w-8
                 shrink-0
                 items-center
                 justify-center
@@ -817,71 +772,48 @@ export default function TestimonialsSection() {
                 border
                 border-[#2A2A30]
                 bg-[#0A0A0A]
-
-                text-[#55555D]
-
+                text-[#707078]
                 transition-all
                 duration-500
-
+                hover:translate-x-1
                 hover:border-[#3E7BD6]
                 hover:bg-[#121212]
-                hover:text-[#29B6F9]
-
-                hover:shadow-[0_0_25px_rgba(185,63,201,.15)]
-
-                sm:h-12
-                sm:w-12
-
-                lg:h-14
-                lg:w-14
+                hover:text-[#B93FC9]
+                sm:h-9
+                sm:w-9
+                md:h-10
+                md:w-10
               "
             >
               <ChevronRight
                 className="
-                  h-5
-                  w-5
-
+                  h-3.5
+                  w-3.5
                   transition-transform
                   duration-500
-
-                  group-hover:translate-x-1
-
-                  sm:h-6
-                  sm:w-6
-                "
-              />
-
-              <span
-                className="
-                  pointer-events-none
-                  absolute
-                  inset-0
-                  rounded-full
-                  bg-[#B93FC9]/5
-                  opacity-0
-                  blur-xl
-                  transition-opacity
-                  duration-500
-
-                  group-hover:opacity-100
+                  group-hover:translate-x-0.5
+                  sm:h-4
+                  sm:w-4
                 "
               />
             </button>
           </div>
 
           {/* =================================================
-              SLIDE INDICATOR
-          ================================================= */}
+              SLIDE INDICATORS
+          ================================================== */}
 
           <div
             data-aos="fade-up"
-            data-aos-delay="450"
+            data-aos-delay="420"
+            data-aos-duration="650"
             className="
-              mt-7
+              mt-3
               flex
               items-center
               justify-center
-              gap-2
+              gap-1.5
+              sm:mt-4
             "
           >
             {testimonials.map((item, index) => (
@@ -889,18 +821,20 @@ export default function TestimonialsSection() {
                 key={item.name}
                 type="button"
                 aria-label={`Go to testimonial ${index + 1}`}
-                onClick={() => swiperRef.current?.slideToLoop(index)}
+                onClick={() =>
+                  swiperRef.current?.slideToLoop(index)
+                }
                 className="
                   h-1
-                  w-5
+                  w-3.5
                   rounded-full
                   bg-[#2A2A30]
-
                   transition-all
                   duration-500
-
-                  hover:w-8
+                  hover:w-6
                   hover:bg-[#3E7BD6]
+                  sm:w-4
+                  sm:hover:w-7
                 "
               />
             ))}
@@ -909,20 +843,23 @@ export default function TestimonialsSection() {
 
         {/* =====================================================
             BOTTOM LINE
-        ===================================================== */}
+        ====================================================== */}
 
         <div
           data-aos="fade-up"
           data-aos-delay="500"
+          data-aos-duration="700"
           className="
             mx-auto
-            mt-12
+            mt-6
             h-px
+            w-[70%]
             max-w-4xl
             bg-gradient-to-r
             from-transparent
             via-[#3E7BD6]/20
             to-transparent
+            sm:mt-7
           "
         />
       </div>
