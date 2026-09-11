@@ -1,3 +1,4 @@
+
 "use client";
 
 import { useEffect } from "react";
@@ -50,11 +51,12 @@ const caseStudies = [
 export default function ProofSection() {
   useEffect(() => {
     AOS.init({
-      duration: 800,
+      duration: 850,
       once: true,
       offset: 60,
       easing: "ease-out-cubic",
       mirror: false,
+      anchorPlacement: "top-bottom",
     });
 
     AOS.refresh();
@@ -71,10 +73,10 @@ export default function ProofSection() {
         w-full
         overflow-hidden
         bg-[#000000]
-        py-9
-        sm:py-11
-        md:py-12
-        lg:py-14
+        py-7
+        sm:py-9
+        md:py-10
+        lg:py-8
       "
     >
       {/* =====================================================
@@ -86,14 +88,14 @@ export default function ProofSection() {
           pointer-events-none
           absolute
           -left-32
-          top-10
-          h-[300px]
-          w-[300px]
+          top-0
+          h-[280px]
+          w-[280px]
           rounded-full
           bg-[#29B6F0]/5
-          blur-[120px]
-          sm:h-[380px]
-          sm:w-[380px]
+          blur-[110px]
+          sm:h-[340px]
+          sm:w-[340px]
         "
       />
 
@@ -103,13 +105,13 @@ export default function ProofSection() {
           absolute
           -right-32
           bottom-0
-          h-[340px]
-          w-[340px]
+          h-[320px]
+          w-[320px]
           rounded-full
-          bg-[#B93FC9]/7
-          blur-[130px]
-          sm:h-[420px]
-          sm:w-[420px]
+          bg-[#B93FC9]/6
+          blur-[120px]
+          sm:h-[400px]
+          sm:w-[400px]
         "
       />
 
@@ -124,8 +126,8 @@ export default function ProofSection() {
           -translate-x-1/2
           -translate-y-1/2
           rounded-full
-          bg-[#7A4FD1]/5
-          blur-[110px]
+          bg-[#7A4FD1]/4
+          blur-[100px]
         "
       />
 
@@ -156,19 +158,21 @@ export default function ProofSection() {
           w-full
           max-w-7xl
           px-4
-          sm:px-6
-          md:px-8
-          lg:px-10
+          sm:px-5
+          md:px-6
+          lg:px-8
         "
       >
         <div
           className="
             grid
             items-center
-            gap-8
-            lg:grid-cols-[0.85fr_1.15fr]
-            lg:gap-10
-            xl:gap-14
+            gap-5
+            sm:gap-6
+            md:gap-7
+            lg:grid-cols-[0.82fr_1.18fr]
+            lg:gap-8
+            xl:gap-10
           "
         >
           {/* =================================================
@@ -195,7 +199,8 @@ export default function ProofSection() {
 
             <span
               data-aos="zoom-in"
-              data-aos-delay="100"
+              data-aos-delay="80"
+              data-aos-duration="700"
               className="
                 inline-flex
                 items-center
@@ -214,9 +219,10 @@ export default function ProofSection() {
                 duration-500
                 hover:border-[#3E7BD6]
                 hover:bg-[#101014]
-                sm:px-4
-                sm:py-2
+                sm:px-3.5
+                sm:py-1.5
                 sm:text-[10px]
+                md:text-[11px]
               "
             >
               Our Work
@@ -226,22 +232,24 @@ export default function ProofSection() {
 
             <h2
               data-aos="fade-up"
-              data-aos-delay="150"
+              data-aos-delay="140"
+              data-aos-duration="850"
               className="
-                mt-4
+                mt-3.5
                 font-extrabold
-                text-[34px]
-                leading-[1]
-                tracking-[-0.045em]
+                text-[1.9rem]
+                leading-[1.06]
+                tracking-[-0.035em]
                 text-white
                 transition-all
                 duration-500
                 hover:translate-x-1
-                sm:mt-5
-                sm:text-[42px]
-                md:text-[46px]
-                lg:text-[48px]
-                xl:text-[52px]
+                sm:mt-4
+                sm:text-[2.25rem]
+                md:text-[2.6rem]
+                lg:mt-4
+                lg:text-[3rem]
+                xl:text-[3.25rem]
               "
             >
               Technology That{" "}
@@ -261,20 +269,21 @@ export default function ProofSection() {
 
             <p
               data-aos="fade-up"
-              data-aos-delay="250"
+              data-aos-delay="220"
+              data-aos-duration="850"
               className="
-                mt-4
+                mt-3.5
                 max-w-[390px]
-                text-[12px]
+                text-[13px]
                 leading-6
                 text-[#A0A0A8]
                 transition-colors
                 duration-500
                 hover:text-[#D4D4D8]
-                sm:mt-5
-                sm:text-[13px]
-                sm:leading-6
-                md:text-sm
+                sm:mt-4
+                sm:text-sm
+                md:text-[15px]
+                lg:text-base
               "
             >
               Real solutions, real results, and technology built to make a
@@ -285,17 +294,18 @@ export default function ProofSection() {
 
             <div
               data-aos="fade-up"
-              data-aos-delay="350"
+              data-aos-delay="300"
+              data-aos-duration="750"
               className="
-                mt-5
+                mt-4
                 h-[2px]
-                w-14
+                w-12
                 rounded-full
                 bg-[linear-gradient(90deg,#29B6F0,#3E7BD6,#7A4FD1,#B93FC9)]
                 transition-all
                 duration-500
-                hover:w-24
-                sm:mt-6
+                hover:w-20
+                sm:mt-5
               "
             />
 
@@ -303,13 +313,14 @@ export default function ProofSection() {
 
             <div
               data-aos="fade-up"
-              data-aos-delay="450"
+              data-aos-delay="380"
+              data-aos-duration="750"
               className="
-                mt-5
+                mt-4
                 flex
                 items-center
                 justify-center
-                gap-2.5
+                gap-2
                 transition-all
                 duration-500
                 hover:translate-x-1
@@ -329,12 +340,12 @@ export default function ProofSection() {
 
               <span
                 className="
-                  text-[8px]
+                  text-[9px]
                   font-medium
                   uppercase
                   tracking-[0.14em]
                   text-[#55555D]
-                  sm:text-[9px]
+                  sm:text-[10px]
                 "
               >
                 Built for real-world impact
@@ -344,13 +355,14 @@ export default function ProofSection() {
 
           {/* =================================================
               RIGHT SIDE
-              01 TOP CENTER
+              01 TOP
               02 + 03 BOTTOM
           ================================================= */}
 
           <div
             data-aos="fade-left"
             data-aos-duration="900"
+            data-aos-delay="100"
             className="
               flex
               w-full
@@ -358,6 +370,7 @@ export default function ProofSection() {
               items-center
               gap-4
               sm:gap-5
+              lg:gap-5
             "
           >
             {/* =================================================
@@ -367,7 +380,7 @@ export default function ProofSection() {
             <CaseStudyCard
               item={caseStudies[0]}
               top
-              aosDelay={100}
+              aosDelay={150}
             />
 
             {/* =================================================
@@ -389,7 +402,7 @@ export default function ProofSection() {
                 <CaseStudyCard
                   key={item.number}
                   item={item}
-                  aosDelay={250 + index * 120}
+                  aosDelay={280 + index * 120}
                 />
               ))}
             </div>
@@ -403,9 +416,10 @@ export default function ProofSection() {
         <div
           data-aos="fade-up"
           data-aos-delay="500"
+          data-aos-duration="700"
           className="
             mx-auto
-            mt-9
+            mt-7
             h-px
             w-full
             max-w-5xl
@@ -413,7 +427,7 @@ export default function ProofSection() {
             from-transparent
             via-[#3E7BD6]/20
             to-transparent
-            sm:mt-11
+            sm:mt-8
           "
         />
       </div>
@@ -441,12 +455,13 @@ function CaseStudyCard({
       data-aos={top ? "fade-down" : "fade-up"}
       data-aos-delay={aosDelay}
       data-aos-duration="800"
+      data-aos-easing="ease-out-cubic"
       className={`
         group
         relative
         w-full
         overflow-hidden
-        rounded-[20px]
+        rounded-[18px]
         border
         border-[#2A2A30]
         bg-[#0A0A0A]
@@ -454,15 +469,13 @@ function CaseStudyCard({
         transition-all
         duration-500
         ease-out
-        hover:-translate-y-1.5
+        hover:-translate-y-1
         hover:border-[#3E7BD6]
         hover:bg-[#101014]
+        sm:rounded-[20px]
         sm:p-5
-        ${
-          top
-            ? "max-w-[390px]"
-            : "min-w-0"
-        }
+        md:p-5
+        ${top ? "max-w-[390px]" : "min-w-0"}
       `}
     >
       {/* =====================================================
@@ -522,12 +535,12 @@ function CaseStudyCard({
           className="
             relative
             flex
-            h-9
-            w-9
+            h-8
+            w-8
             shrink-0
             items-center
             justify-center
-            rounded-[10px]
+            rounded-[9px]
             border
             border-[#2A2A30]
             bg-[#121212]
@@ -535,17 +548,21 @@ function CaseStudyCard({
             duration-500
             group-hover:rotate-3
             group-hover:border-[#3E7BD6]
+            sm:h-9
+            sm:w-9
           "
         >
           <Icon
             className="
-              h-4
-              w-4
+              h-3.5
+              w-3.5
               text-[#29B6F0]
               transition-all
               duration-500
               group-hover:scale-110
               group-hover:text-[#7A4FD1]
+              sm:h-4
+              sm:w-4
             "
           />
 
@@ -562,7 +579,7 @@ function CaseStudyCard({
               rounded-full
               bg-[linear-gradient(135deg,#29B6F0,#3E7BD6,#7A4FD1,#B93FC9)]
               px-1
-              text-[6px]
+              text-[7px]
               font-bold
               text-white
             "
@@ -573,15 +590,16 @@ function CaseStudyCard({
 
         <span
           className="
-            text-[7px]
+            text-[9px]
             font-semibold
             uppercase
-            tracking-[0.16em]
-            text-[#55555D]
+            tracking-[0.15em]
+            text-[#74747f]
             transition-colors
             duration-500
             group-hover:text-[#29B6F0]
-            sm:text-[8px]
+            sm:text-[10px]
+            md:text-[11px]
           "
         >
           Case Study
@@ -592,13 +610,20 @@ function CaseStudyCard({
           CONTENT
       ===================================================== */}
 
-      <div className="relative z-10 mt-4">
+      <div
+        className="
+          relative
+          z-10
+          mt-3.5
+          sm:mt-4
+        "
+      >
         <h3
           className="
-            text-[15px]
+            text-sm
             font-semibold
-            leading-tight
-            tracking-tight
+            leading-[1.25]
+            tracking-[-0.015em]
             text-white
             transition-all
             duration-500
@@ -606,7 +631,8 @@ function CaseStudyCard({
             group-hover:bg-[linear-gradient(135deg,#29B6F0,#3E7BD6,#7A4FD1,#B93FC9)]
             group-hover:bg-clip-text
             group-hover:text-transparent
-            sm:text-base
+            sm:text-[15px]
+            md:text-base
           "
         >
           {item.title}
@@ -615,14 +641,15 @@ function CaseStudyCard({
         <p
           className="
             mt-2
-            text-[10px]
-            leading-[1.65]
-            text-[#777780]
+            text-[11px]
+            leading-[1.6]
+             text-[#A0A0A8]
             transition-colors
             duration-500
-            group-hover:text-[#A0A0A8]
-            sm:text-[11px]
-            sm:leading-[1.7]
+            group-hover:text-[#D4D4D8]
+            sm:text-xs
+            sm:leading-6
+            md:text-[13px]
           "
         >
           {item.description}
@@ -630,7 +657,7 @@ function CaseStudyCard({
       </div>
 
       {/* =====================================================
-          ACTION — INDIVIDUAL CASE STUDY LINK
+          ACTION
       ===================================================== */}
 
       <Link
@@ -638,10 +665,11 @@ function CaseStudyCard({
         className="
           relative
           z-10
-          mt-4
+          mt-3.5
           block
           w-full
           cursor-pointer
+          sm:mt-4
         "
       >
         <div
@@ -651,15 +679,16 @@ function CaseStudyCard({
             justify-between
             border-t
             border-[#2A2A30]
-            pt-3
+            pt-2.5
             transition-colors
             duration-500
             group-hover:border-[#3E7BD6]/30
+            sm:pt-3
           "
         >
           <span
             className="
-              text-[7px]
+              text-[8px]
               font-semibold
               uppercase
               tracking-[0.15em]
@@ -667,7 +696,8 @@ function CaseStudyCard({
               transition-all
               duration-300
               group-hover:tracking-[0.2em]
-              sm:text-[8px]
+              sm:text-[9px]
+              md:text-[10px]
             "
           >
             Explore Case
@@ -731,3 +761,4 @@ function CaseStudyCard({
     </div>
   );
 }
+

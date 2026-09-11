@@ -1,3 +1,4 @@
+
 "use client";
 
 import { useEffect, useRef } from "react";
@@ -99,6 +100,7 @@ function Herosection() {
 
   /* ============================================================
      INFINITE SHOWCASE
+     Slightly faster movement
   ============================================================ */
 
   useEffect(() => {
@@ -106,7 +108,7 @@ function Herosection() {
 
     if (!track) return;
 
-    const speed = 0.8;
+    const speed = 1.5;
 
     const animate = () => {
       if (!pausedRef.current) {
@@ -353,6 +355,9 @@ function Herosection() {
 
               <span
                 className="
+
+
+                
                   text-[8px]
                   font-semibold
                   uppercase
@@ -371,16 +376,18 @@ function Herosection() {
               data-aos="fade-up"
               data-aos-delay="150"
               className="
-                text-[43px]
-                font-extrabold
-                leading-[.91]
-                tracking-[-.06em]
-                text-white
-                drop-shadow-[0_5px_25px_rgba(0,0,0,0.3)]
-                sm:text-[53px]
-                md:text-[60px]
-                lg:text-[55px]
-                xl:text-[70px]
+                  text-[32px]
+                  font-extrabold
+                  leading-[1.04]
+                  tracking-[-0.045em]
+                  text-white
+                  drop-shadow-[0_6px_25px_rgba(0,0,0,0.35)]
+                  sm:text-[38px]
+                  sm:leading-[1.05]
+                  md:text-[45px]
+                  lg:text-[47px]
+                  xl:text-[55px]
+                  2xl:text-[60px]
               "
             >
               Build What&apos;s
@@ -403,15 +410,21 @@ function Herosection() {
               data-aos="fade-up"
               data-aos-delay="290"
               className="
-                mx-auto
-                mt-3.5
-                max-w-[500px]
-                text-[11px]
-                leading-[1.75]
-                text-[#C4C4CA]
-                sm:text-[12px]
-                md:text-[13px]
-                lg:mx-0
+                  mx-auto
+                  mt-4
+                  max-w-lg
+                  text-[12px]
+                  leading-5.5
+                  text-[#D4D4D8]
+                  sm:mt-5
+                  sm:text-[13px]
+                  sm:leading-6
+                  md:text-sm
+                  md:leading-7
+                  lg:mx-0
+                  lg:text-[15px]
+                  lg:leading-7
+                  xl:text-base
               "
             >
               We create modern digital products that combine exceptional
@@ -1043,7 +1056,7 @@ function Herosection() {
                   tracking-[-.035em]
                   text-white
                   sm:text-xl
-                  md:text-2xl
+                  md:text-xl
                 "
               >
                 Digital products in motion.
@@ -1888,3 +1901,5 @@ function StatCard({
 }
 
 export default Herosection;
+
+

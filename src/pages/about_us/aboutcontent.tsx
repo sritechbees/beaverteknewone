@@ -1,3 +1,4 @@
+
 "use client";
 
 import { useEffect, useRef, useState } from "react";
@@ -34,10 +35,12 @@ export default function AboutContent() {
 
   useEffect(() => {
     AOS.init({
-      duration: 900,
+      duration: 850,
       once: true,
       easing: "ease-out-cubic",
-      offset: 100,
+      offset: 60,
+      mirror: false,
+      anchorPlacement: "top-bottom",
     });
 
     const handleScroll = () => {
@@ -59,49 +62,87 @@ export default function AboutContent() {
 
     handleScroll();
 
-    window.addEventListener("scroll", handleScroll);
+    window.addEventListener("scroll", handleScroll, {
+      passive: true,
+    });
+
+    AOS.refresh();
 
     return () => {
       window.removeEventListener("scroll", handleScroll);
+      AOS.refreshHard();
     };
   }, []);
 
   return (
     <section
       ref={containerRef}
-      className="relative overflow-hidden bg-[#000000] py-16 sm:py-20 lg:py-24"
+      className="
+        relative
+        w-full
+        overflow-hidden
+        bg-[#000000]
+        py-9
+        sm:py-10
+        md:py-12
+        lg:py-14
+      "
     >
-
       {/* ================= MAIN CONTAINER ================= */}
 
-      <div className="relative z-10 mx-auto max-w-7xl px-5 sm:px-6 lg:px-8">
-
-        <div className="space-y-12 sm:space-y-16 lg:space-y-20">
-
+      <div
+        className="
+          relative
+          z-10
+          mx-auto
+          w-full
+          max-w-7xl
+          px-3
+          sm:px-4
+          md:px-5
+          lg:px-6
+          xl:px-8
+        "
+      >
+        <div
+          className="
+            space-y-10
+            sm:space-y-12
+            md:space-y-14
+            lg:space-y-16
+          "
+        >
           {sections.map((section, index) => (
             <div
               key={section.title}
               ref={(el) => {
                 sectionRefs.current[index] = el;
               }}
-              className={`
+              className="
                 relative
                 grid
                 items-center
-                gap-8
-                sm:gap-10
+                gap-6
+                sm:gap-7
+                md:gap-8
                 lg:grid-cols-2
-                lg:gap-14
-              `}
+                lg:gap-10
+                xl:gap-12
+              "
             >
-
               {/* ================= LEFT CONTENT ================= */}
 
               <div
                 data-aos={index % 2 === 0 ? "fade-right" : "fade-left"}
-                data-aos-delay="100"
+                data-aos-delay="80"
+                data-aos-duration="800"
+                data-aos-offset="60"
+                data-aos-easing="ease-out-cubic"
                 className={`
-                  relative flex flex-col justify-center
+                  relative
+                  flex
+                  flex-col
+                  justify-center
                   ${
                     index % 2 === 1
                       ? "lg:order-2"
@@ -109,23 +150,27 @@ export default function AboutContent() {
                   }
                 `}
               >
-
                 {/* Number */}
 
                 <span
+                  data-aos="fade-up"
+                  data-aos-delay="120"
+                  data-aos-duration="750"
                   className="
                     pointer-events-none
                     absolute
-                    -top-6
+                    -top-4
                     left-0
                     select-none
-                    text-[72px]
+                    text-[56px]
                     font-black
                     leading-none
-                    text-white/[0.045]
-                    sm:-top-8
-                    sm:text-[100px]
-                    md:text-[120px]
+                    text-white/[0.04]
+                    sm:-top-5
+                    sm:text-[72px]
+                    md:text-[88px]
+                    lg:-top-6
+                    lg:text-[100px]
                   "
                 >
                   0{index + 1}
@@ -133,40 +178,63 @@ export default function AboutContent() {
 
                 {/* Label */}
 
-                <div className="relative mb-4 flex items-center gap-3 sm:mb-5">
-
-                  <span className="h-[2px] w-8 bg-[#29B6F0] sm:w-10" />
+                <div
+                  data-aos="fade-up"
+                  data-aos-delay="140"
+                  data-aos-duration="750"
+                  className="
+                    relative
+                    mb-3
+                    flex
+                    items-center
+                    gap-2.5
+                    sm:mb-3.5
+                    sm:gap-3
+                  "
+                >
+                  <span
+                    className="
+                      h-[2px]
+                      w-7
+                      bg-[#29B6F0]
+                      sm:w-8
+                    "
+                  />
 
                   <p
                     className="
-                      text-[10px]
+                      text-[8px]
                       font-semibold
                       uppercase
-                      tracking-[0.28em]
+                      tracking-[0.24em]
                       text-[#29B6F0]
-                      sm:text-xs
-                      sm:tracking-[0.35em]
+                      sm:text-[9px]
+                      sm:tracking-[0.28em]
+                      md:text-[10px]
                     "
                   >
                     About BeaverTek
                   </p>
-
                 </div>
 
                 {/* Heading */}
 
                 <h2
+                  data-aos="fade-up"
+                  data-aos-delay="200"
+                  data-aos-duration="800"
                   className="
                     relative
                     max-w-xl
-                    text-3xl
-                    font-bold
-                    leading-[1.12]
-                    tracking-tight
+                    text-[25px]
+                    font-extrabold
+                    leading-[1.1]
+                    tracking-[-0.025em]
                     text-white
-                    sm:text-3xl
-                    md:text-4xl
-                    lg:text-5xl
+                    sm:text-[28px]
+                    md:text-[32px]
+                    lg:text-[36px]
+                    xl:text-[38px]
                   "
                 >
                   {section.title}
@@ -175,43 +243,52 @@ export default function AboutContent() {
                 {/* Gradient Divider */}
 
                 <div
+                  data-aos="zoom-in"
+                  data-aos-delay="260"
+                  data-aos-duration="700"
                   className="
-                    mt-5
-                    h-[3px]
-                    w-16
+                    mt-3
+                    h-[2px]
+                    w-12
                     rounded-full
                     bg-[linear-gradient(90deg,#29B6F0,#3E7BD6,#7A4FD1,#B93FC9)]
-                    sm:mt-7
-                    sm:w-24
+                    sm:mt-4
+                    sm:w-16
                   "
                 />
 
                 {/* Supporting Text */}
 
                 <p
+                  data-aos="fade-up"
+                  data-aos-delay="320"
+                  data-aos-duration="800"
                   className="
-                    mt-5
+                    mt-3.5
                     max-w-xl
-                    text-sm
-                    leading-7
+                    text-[11px]
+                    leading-5
                     text-[#A0A0A8]
-                    sm:mt-6
-                    sm:text-base
-                    sm:leading-7
+                    sm:mt-4
+                    sm:text-xs
+                    sm:leading-5
+                    md:text-[13px]
+                    md:leading-6
                   "
                 >
                   Senior expertise, thoughtful engineering, and practical
                   technology solutions built around real business needs.
                 </p>
-
               </div>
-
 
               {/* ================= RIGHT IMAGE + CONTENT ================= */}
 
               <div
                 data-aos={index % 2 === 0 ? "fade-left" : "fade-right"}
-                data-aos-delay="200"
+                data-aos-delay="180"
+                data-aos-duration="850"
+                data-aos-offset="60"
+                data-aos-easing="ease-out-cubic"
                 className={`
                   relative
                   ${
@@ -221,39 +298,41 @@ export default function AboutContent() {
                   }
                 `}
               >
-
                 {/* ================= IMAGE CARD ================= */}
 
                 <div
+                  data-aos="zoom-in-up"
+                  data-aos-delay="220"
+                  data-aos-duration="850"
                   className="
                     group
                     relative
                     overflow-hidden
-                    rounded-[24px]
+                    rounded-[18px]
                     border
                     border-[#2A2A30]
                     bg-[#121212]
-                    shadow-[0_20px_60px_rgba(0,0,0,0.45)]
+                    shadow-[0_16px_45px_rgba(0,0,0,0.42)]
                     transition-all
                     duration-500
                     hover:border-[#3E7BD6]
+                    sm:rounded-[20px]
+                    lg:rounded-[22px]
                   "
                 >
-
                   {/* Image */}
 
                   <div
                     className="
                       relative
-                      h-[230px]
+                      h-[185px]
                       overflow-hidden
-                      sm:h-[280px]
-                      md:h-[320px]
-                      lg:h-[300px]
-                      xl:h-[340px]
+                      sm:h-[215px]
+                      md:h-[245px]
+                      lg:h-[260px]
+                      xl:h-[285px]
                     "
                   >
-
                     <Image
                       src={section.image}
                       alt={section.title}
@@ -261,7 +340,7 @@ export default function AboutContent() {
                       priority={index === 0}
                       sizes="
                         (max-width: 640px) 100vw,
-                        (max-width: 1024px) 80vw,
+                        (max-width: 1024px) 90vw,
                         50vw
                       "
                       className="
@@ -289,23 +368,32 @@ export default function AboutContent() {
                     {/* Number */}
 
                     <div
+                      data-aos="zoom-in"
+                      data-aos-delay="300"
+                      data-aos-duration="650"
                       className="
                         absolute
-                        left-5
-                        top-5
+                        left-4
+                        top-4
                         flex
-                        h-10
-                        w-10
+                        h-8
+                        w-8
                         items-center
                         justify-center
-                        rounded-xl
+                        rounded-lg
                         bg-[linear-gradient(135deg,#29B6F0,#3E7BD6,#7A4FD1,#B93FC9)]
-                        text-sm
+                        text-[11px]
                         font-bold
                         text-white
                         shadow-lg
-                        sm:left-6
-                        sm:top-6
+                        transition-transform
+                        duration-500
+                        group-hover:scale-105
+                        sm:left-5
+                        sm:top-5
+                        sm:h-9
+                        sm:w-9
+                        sm:text-xs
                       "
                     >
                       0{index + 1}
@@ -314,49 +402,56 @@ export default function AboutContent() {
                     {/* Active Indicator */}
 
                     <div
+                      data-aos="fade-right"
+                      data-aos-delay="350"
+                      data-aos-duration="700"
                       className={`
                         absolute
-                        bottom-5
-                        left-5
+                        bottom-4
+                        left-4
                         h-1
                         rounded-full
                         bg-[#29B6F0]
                         transition-all
                         duration-500
-                        sm:left-6
+                        sm:bottom-5
+                        sm:left-5
                         ${
                           activeSection === index
-                            ? "w-16"
-                            : "w-8"
+                            ? "w-12 sm:w-14"
+                            : "w-6 sm:w-7"
                         }
                       `}
                     />
-
                   </div>
-
 
                   {/* ================= INNER TEXT CARD ================= */}
 
                   <div
+                    data-aos="fade-up"
+                    data-aos-delay="300"
+                    data-aos-duration="800"
                     className="
                       border-t
                       border-[#2A2A30]
                       bg-[#121212]
-                      p-5
-                      sm:p-6
-                      md:p-7
+                      p-4
+                      sm:p-5
+                      md:p-6
                     "
                   >
-
                     <p
                       className="
-                        text-sm
-                        leading-7
+                        text-[11px]
+                        leading-5
                         text-[#D4D4D8]
-                        sm:text-base
-                        sm:leading-7
-                        md:text-[17px]
-                        md:leading-8
+                        sm:text-xs
+                        sm:leading-5
+                        md:text-[13px]
+                        md:leading-6
+                        lg:text-[13px]
+                        xl:text-sm
+                        xl:leading-6
                       "
                     >
                       {section.content}
@@ -364,46 +459,51 @@ export default function AboutContent() {
 
                     {/* Bottom Accent */}
 
-                    <div className="mt-5 flex items-center gap-2">
-
-                      <span className="h-1 w-8 rounded-full bg-[#29B6F0]" />
-
-                      <span className="h-1 w-5 rounded-full bg-[#3E7BD6]" />
-
-                      <span className="h-1 w-3 rounded-full bg-[#B93FC9]" />
-
+                    <div
+                      data-aos="fade-right"
+                      data-aos-delay="380"
+                      data-aos-duration="650"
+                      className="
+                        mt-3.5
+                        flex
+                        items-center
+                        gap-1.5
+                        sm:mt-4
+                        sm:gap-2
+                      "
+                    >
+                      <span className="h-1 w-6 rounded-full bg-[#29B6F0] sm:w-7" />
+                      <span className="h-1 w-4 rounded-full bg-[#3E7BD6] sm:w-5" />
+                      <span className="h-1 w-2.5 rounded-full bg-[#B93FC9] sm:w-3" />
                     </div>
-
                   </div>
-
                 </div>
-
               </div>
-
             </div>
           ))}
-
         </div>
-
       </div>
-
 
       {/* ================= BOTTOM FADE ================= */}
 
       <div
+        data-aos="fade-up"
+        data-aos-duration="1000"
         className="
           pointer-events-none
           absolute
           bottom-0
           left-0
-          h-32
+          h-24
           w-full
           bg-gradient-to-t
           from-[#000000]
           to-transparent
+          sm:h-28
+          md:h-32
         "
       />
-
     </section>
   );
 }
+

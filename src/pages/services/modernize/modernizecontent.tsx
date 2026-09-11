@@ -2,6 +2,20 @@
 
 import App_layout from "@/component/layout/app_layout";
 import { Cpu } from "lucide-react";
+import {
+  Cloud,
+  FileSpreadsheet,
+  RefreshCw,
+  Monitor,
+  Link2,
+  Search,
+  Map,
+  Rocket,
+  Headphones,
+  ArrowUpRight,
+  Sparkles,
+} from "lucide-react";
+
 
 export default function ModernizeContent() {
   return (
@@ -134,134 +148,676 @@ export default function ModernizeContent() {
 {/* What This Looks Like In Practice */}
 {/* ============================= */}
 
+
+
 <div className="relative mt-24 overflow-hidden">
 
-  {/* Background Glow */}
-  <div className="absolute -left-40 top-0 h-[350px] w-[350px] rounded-full bg-[#29B6F0]/10 blur-[120px]" />
-  <div className="absolute -right-32 bottom-0 h-[350px] w-[350px] rounded-full bg-[#B93FC9]/10 blur-[130px]" />
+  {/* =========================================================
+      BACKGROUND
+  ========================================================== */}
 
-  {/* Heading */}
+  <div className="pointer-events-none absolute -left-40 top-10 h-[400px] w-[400px] rounded-full bg-[#29B6F0]/10 blur-[140px]" />
+
+  <div className="pointer-events-none absolute -right-40 bottom-10 h-[420px] w-[420px] rounded-full bg-[#B93FC9]/10 blur-[150px]" />
+
+  <div className="pointer-events-none absolute left-1/2 top-1/2 h-[300px] w-[300px] -translate-x-1/2 -translate-y-1/2 rounded-full bg-[#7A4FD1]/5 blur-[130px]" />
+
+  {/* =========================================================
+      HEADING
+  ========================================================== */}
+
   <div
-    className="relative text-center"
+    className="relative z-10 text-center"
     data-aos="fade-up"
     data-aos-duration="1000"
   >
 
-    <span className="inline-flex rounded-full border border-[#3E7BD6]/40 bg-white/5 px-5 py-2 text-xs font-semibold tracking-[0.25em] text-[#29B6F0] backdrop-blur-md">
+    <span
+      className="
+        inline-flex
+        items-center
+        gap-2
+        rounded-full
+        border
+        border-[#3E7BD6]/40
+        bg-white/[0.04]
+        px-5
+        py-2
+        text-[10px]
+        font-bold
+        tracking-[0.25em]
+        text-[#29B6F0]
+        backdrop-blur-xl
+        transition-all
+        duration-500
+        hover:border-[#29B6F0]
+        hover:bg-[#29B6F0]/10
+        hover:shadow-[0_0_30px_rgba(41,182,240,0.15)]
+        sm:text-xs
+      "
+    >
+      <Sparkles className="h-3 w-3" />
       WHAT THIS LOOKS LIKE IN PRACTICE
     </span>
 
-    <h2 className="mt-6 text-3xl font-black text-white lg:text-5xl">
-      Real Modernization
+    <h2
+      className="
+        mt-6
+        text-3xl
+        font-black
+        tracking-[-0.05em]
+        text-white
+        sm:text-4xl
+        lg:text-5xl
+      "
+    >
+      Real{" "}
+      <span
+        className="
+          bg-gradient-to-r
+          from-[#29B6F0]
+          via-[#7A4FD1]
+          to-[#B93FC9]
+          bg-clip-text
+          text-transparent
+        "
+      >
+        Modernization
+      </span>
     </h2>
 
-    <div className="mx-auto mt-5 h-1 w-24 rounded-full bg-gradient-to-r from-[#29B6F0] via-[#3E7BD6] to-[#B93FC9]" />
+    <div
+      className="
+        mx-auto
+        mt-5
+        h-[3px]
+        w-20
+        rounded-full
+        bg-gradient-to-r
+        from-[#29B6F0]
+        via-[#3E7BD6]
+        to-[#B93FC9]
+        transition-all
+        duration-500
+        hover:w-32
+      "
+    />
 
   </div>
 
-  {/* Cards */}
 
-  <div className="relative mt-16 grid gap-6 md:grid-cols-2 xl:grid-cols-3">
+  {/* =========================================================
+      MODERNIZATION — ICON LIST
+  ========================================================== */}
 
-    {[
-      "Migrating from on-premise servers to a secure cloud platform.",
-
-      "Replacing spreadsheets with modern business applications.",
-
-      "Upgrading legacy ERP and CRM platforms.",
-
-      "Rebuilding outdated websites and internal tools.",
-
-      "Connecting disconnected systems with seamless integrations.",
-    ].map((item, index) => (
-
-      <div
-        key={item}
-        data-aos="fade-up"
-        data-aos-delay={index * 100}
-        data-aos-duration="900"
-        className={`group relative overflow-hidden rounded-3xl border border-[#2A2A30] bg-[#121212] p-8 transition-all duration-500 hover:-translate-y-2 hover:border-[#3E7BD6] hover:bg-[#171717] ${
-          index === 4 ? "md:col-span-2 xl:col-span-1" : ""
-        }`}
-      >
-
-        {/* Number */}
-
-        <span className="absolute right-6 top-5 text-5xl font-black text-white/5 transition group-hover:text-[#3E7BD6]/20">
-          0{index + 1}
-        </span>
-
-        {/* Accent */}
-
-        <div className="mb-6 h-1 w-14 rounded-full bg-gradient-to-r from-[#29B6F0] via-[#3E7BD6] to-[#B93FC9] transition-all duration-500 group-hover:w-24" />
-
-        {/* Text */}
-
-        <p className="relative text-base leading-8 text-[#D4D4D8]">
-          {item}
-        </p>
-
-        {/* Bottom Border */}
-
-        <div className="absolute bottom-0 left-0 h-1 w-0 bg-gradient-to-r from-[#29B6F0] via-[#3E7BD6] to-[#B93FC9] transition-all duration-500 group-hover:w-full" />
-
-      </div>
-
-    ))}
-
-  </div>
-
-  {/* ============================= */}
-  {/* Simple Process */}
-  {/* ============================= */}
-
-  <div className="mt-24 grid gap-6 md:grid-cols-2 lg:grid-cols-4">
+  <div className="relative z-10 mx-auto mt-16 max-w-5xl">
 
     {[
       {
-        title: "Assess",
-        desc: "Review your current technology landscape.",
+        icon: Cloud,
+        text: "Migrating from on-premise servers to a secure cloud platform.",
       },
       {
-        title: "Plan",
-        desc: "Build a practical modernization roadmap.",
+        icon: FileSpreadsheet,
+        text: "Replacing spreadsheets with modern business applications.",
       },
       {
-        title: "Execute",
-        desc: "Implement with minimal business disruption.",
+        icon: RefreshCw,
+        text: "Upgrading legacy ERP and CRM platforms.",
       },
       {
-        title: "Support",
-        desc: "Continuous optimization and long-term guidance.",
+        icon: Monitor,
+        text: "Rebuilding outdated websites and internal tools.",
       },
-    ].map((step, index) => (
+      {
+        icon: Link2,
+        text: "Connecting disconnected systems with seamless integrations.",
+      },
+    ].map((item, index) => {
 
-      <div
-        key={step.title}
-        data-aos="zoom-in"
-        data-aos-delay={index * 120}
-        className="rounded-3xl border border-[#2A2A30] bg-[#121212] p-7 transition duration-500 hover:-translate-y-2 hover:border-[#7A4FD1]"
-      >
+      const Icon = item.icon;
 
-        <div className="flex h-14 w-14 items-center justify-center rounded-2xl bg-gradient-to-br from-[#29B6F0] via-[#3E7BD6] to-[#7A4FD1] text-lg font-bold text-white">
-          {index + 1}
+      return (
+        <div
+          key={item.text}
+          data-aos={index % 2 === 0 ? "fade-right" : "fade-left"}
+          data-aos-delay={index * 120}
+          data-aos-duration="900"
+          className="
+            group
+            relative
+            flex
+            items-center
+            gap-5
+            border-b
+            border-white/[0.08]
+            py-7
+            transition-all
+            duration-500
+            sm:gap-8
+            sm:py-9
+          "
+        >
+
+          {/* =================================================
+              NUMBER
+          ================================================== */}
+
+          <span
+            className="
+              absolute
+              left-0
+              top-3
+              text-[70px]
+              font-black
+              leading-none
+              text-white/[0.025]
+              transition-all
+              duration-700
+              group-hover:text-[#29B6F0]/[0.08]
+              sm:text-[90px]
+            "
+          >
+            0{index + 1}
+          </span>
+
+
+          {/* =================================================
+              ICON
+          ================================================== */}
+
+          <div
+            className="
+              relative
+              z-10
+              flex
+              h-14
+              w-14
+              shrink-0
+              items-center
+              justify-center
+              rounded-2xl
+              border
+              border-white/[0.08]
+              bg-[#0A0A0A]
+              transition-all
+              duration-500
+              group-hover:rotate-3
+              group-hover:scale-110
+              group-hover:border-[#29B6F0]/60
+              group-hover:bg-[#29B6F0]/10
+              group-hover:shadow-[0_0_35px_rgba(41,182,240,0.18)]
+              sm:h-16
+              sm:w-16
+            "
+          >
+
+            {/* Icon Glow */}
+
+            <div
+              className="
+                pointer-events-none
+                absolute
+                inset-0
+                rounded-2xl
+                bg-gradient-to-br
+                from-[#29B6F0]/0
+                via-[#7A4FD1]/0
+                to-[#B93FC9]/0
+                transition-all
+                duration-500
+                group-hover:from-[#29B6F0]/10
+                group-hover:via-[#7A4FD1]/10
+                group-hover:to-[#B93FC9]/20
+              "
+            />
+
+            <Icon
+              className="
+                relative
+                z-10
+                h-6
+                w-6
+                text-[#29B6F0]
+                transition-all
+                duration-500
+                group-hover:scale-125
+                group-hover:text-[#B93FC9]
+              "
+            />
+
+            {/* Small Dot */}
+
+            <span
+              className="
+                absolute
+                -right-1
+                -top-1
+                h-2.5
+                w-2.5
+                rounded-full
+                bg-[#29B6F0]
+                shadow-[0_0_12px_#29B6F0]
+                transition-all
+                duration-500
+                group-hover:scale-150
+                group-hover:bg-[#B93FC9]
+                group-hover:shadow-[0_0_15px_#B93FC9]
+              "
+            />
+
+          </div>
+
+
+          {/* =================================================
+              TEXT
+          ================================================== */}
+
+          <div className="relative z-10 flex-1">
+
+            <span
+              className="
+                mb-2
+                block
+                text-[8px]
+                font-bold
+                tracking-[0.25em]
+                text-[#55555D]
+                transition-colors
+                duration-500
+                group-hover:text-[#29B6F0]
+                sm:text-[9px]
+              "
+            >
+              MODERNIZATION 0{index + 1}
+            </span>
+
+            <p
+              className="
+                max-w-3xl
+                text-[14px]
+                font-medium
+                leading-7
+                text-[#A0A0A8]
+                transition-all
+                duration-500
+                group-hover:translate-x-1
+                group-hover:text-white
+                sm:text-lg
+                sm:leading-8
+              "
+            >
+              {item.text}
+            </p>
+
+            {/* Hover Line */}
+
+            <div
+              className="
+                mt-4
+                h-[2px]
+                w-0
+                rounded-full
+                bg-gradient-to-r
+                from-[#29B6F0]
+                via-[#7A4FD1]
+                to-[#B93FC9]
+                transition-all
+                duration-700
+                group-hover:w-24
+              "
+            />
+
+          </div>
+
+
+          {/* =================================================
+              ARROW
+          ================================================== */}
+
+          <div
+            className="
+              hidden
+              h-10
+              w-10
+              shrink-0
+              items-center
+              justify-center
+              rounded-full
+              border
+              border-white/[0.08]
+              transition-all
+              duration-500
+              group-hover:-rotate-45
+              group-hover:border-[#3E7BD6]
+              group-hover:bg-[#3E7BD6]/10
+              group-hover:shadow-[0_0_20px_rgba(62,123,214,0.15)]
+              sm:flex
+            "
+          >
+            <ArrowUpRight
+              className="
+                h-4
+                w-4
+                text-[#55555D]
+                transition-all
+                duration-500
+                group-hover:text-[#29B6F0]
+              "
+            />
+          </div>
+
         </div>
+      );
+    })}
 
-        <h3 className="mt-6 text-xl font-bold text-white">
-          {step.title}
-        </h3>
+  </div>
 
-        <div className="mt-3 h-1 w-12 rounded-full bg-gradient-to-r from-[#29B6F0] to-[#B93FC9]" />
 
-        <p className="mt-5 text-sm leading-7 text-[#A0A0A8]">
-          {step.desc}
-        </p>
+  {/* =========================================================
+      PROCESS
+  ========================================================== */}
+
+  <div className="relative z-10 mt-28">
+
+    {/* Process Heading */}
+
+    <div
+      data-aos="fade-up"
+      data-aos-duration="900"
+      className="text-center"
+    >
+
+      <span
+        className="
+          text-[10px]
+          font-bold
+          uppercase
+          tracking-[0.3em]
+          text-[#7A4FD1]
+        "
+      >
+        SIMPLE PROCESS
+      </span>
+
+      <div
+        className="
+          mx-auto
+          mt-4
+          h-[2px]
+          w-12
+          rounded-full
+          bg-gradient-to-r
+          from-[#29B6F0]
+          to-[#B93FC9]
+        "
+      />
+
+    </div>
+
+
+    {/* =======================================================
+        PROCESS
+    ======================================================== */}
+
+    <div className="relative mx-auto mt-16 max-w-6xl">
+
+      {/* Connecting Line */}
+
+      <div
+        className="
+          pointer-events-none
+          absolute
+          left-[8%]
+          right-[8%]
+          top-8
+          hidden
+          h-px
+          bg-gradient-to-r
+          from-[#29B6F0]/20
+          via-[#7A4FD1]/50
+          to-[#B93FC9]/20
+          lg:block
+        "
+      />
+
+      <div
+        className="
+          grid
+          gap-12
+          md:grid-cols-2
+          lg:grid-cols-4
+          lg:gap-8
+        "
+      >
+
+        {[
+          {
+            title: "Assess",
+            desc: "Review your current technology landscape.",
+            icon: Search,
+          },
+          {
+            title: "Plan",
+            desc: "Build a practical modernization roadmap.",
+            icon: Map,
+          },
+          {
+            title: "Execute",
+            desc: "Implement with minimal business disruption.",
+            icon: Rocket,
+          },
+          {
+            title: "Support",
+            desc: "Continuous optimization and long-term guidance.",
+            icon: Headphones,
+          },
+        ].map((step, index) => {
+
+          const Icon = step.icon;
+
+          return (
+            <div
+              key={step.title}
+              data-aos="fade-up"
+              data-aos-delay={index * 150}
+              data-aos-duration="900"
+              className="group relative text-center"
+            >
+
+              {/* =================================================
+                  ICON NODE
+              ================================================== */}
+
+              <div
+                className="
+                  relative
+                  z-10
+                  mx-auto
+                  flex
+                  h-16
+                  w-16
+                  items-center
+                  justify-center
+                  rounded-full
+                  border
+                  border-white/[0.08]
+                  bg-[#000000]
+                  transition-all
+                  duration-500
+                  group-hover:scale-110
+                  group-hover:border-[#29B6F0]
+                  group-hover:bg-[#29B6F0]/10
+                  group-hover:shadow-[0_0_40px_rgba(41,182,240,0.2)]
+                "
+              >
+
+                <div
+                  className="
+                    absolute
+                    inset-1.5
+                    rounded-full
+                    border
+                    border-[#3E7BD6]/20
+                    transition-all
+                    duration-700
+                    group-hover:rotate-180
+                    group-hover:border-[#B93FC9]/50
+                  "
+                />
+
+                <Icon
+                  className="
+                    relative
+                    z-10
+                    h-6
+                    w-6
+                    text-[#29B6F0]
+                    transition-all
+                    duration-500
+                    group-hover:scale-125
+                    group-hover:text-[#B93FC9]
+                  "
+                />
+
+              </div>
+
+
+              {/* =================================================
+                  STEP NUMBER
+              ================================================== */}
+
+              <span
+                className="
+                  mt-6
+                  block
+                  text-[9px]
+                  font-bold
+                  tracking-[0.25em]
+                  text-[#55555D]
+                  transition-colors
+                  duration-500
+                  group-hover:text-[#29B6F0]
+                "
+              >
+                STEP 0{index + 1}
+              </span>
+
+
+              {/* =================================================
+                  TITLE
+              ================================================== */}
+
+              <h3
+                className="
+                  mt-3
+                  text-xl
+                  font-bold
+                  tracking-tight
+                  text-white
+                  transition-all
+                  duration-500
+                  group-hover:-translate-y-1
+                  group-hover:bg-gradient-to-r
+                  group-hover:from-[#29B6F0]
+                  group-hover:to-[#B93FC9]
+                  group-hover:bg-clip-text
+                  group-hover:text-transparent
+                "
+              >
+                {step.title}
+              </h3>
+
+
+              {/* Accent */}
+
+              <div
+                className="
+                  mx-auto
+                  mt-4
+                  h-[2px]
+                  w-8
+                  rounded-full
+                  bg-gradient-to-r
+                  from-[#29B6F0]
+                  to-[#B93FC9]
+                  transition-all
+                  duration-500
+                  group-hover:w-16
+                "
+              />
+
+
+              {/* Description */}
+
+              <p
+                className="
+                  mx-auto
+                  mt-5
+                  max-w-[230px]
+                  text-sm
+                  leading-7
+                  text-[#777780]
+                  transition-all
+                  duration-500
+                  group-hover:translate-y-[-2px]
+                  group-hover:text-[#A0A0A8]
+                "
+              >
+                {step.desc}
+              </p>
+
+
+              {/* Bottom Dot */}
+
+              <div
+                className="
+                  mx-auto
+                  mt-6
+                  h-1
+                  w-1
+                  rounded-full
+                  bg-[#29B6F0]
+                  opacity-50
+                  transition-all
+                  duration-500
+                  group-hover:w-8
+                  group-hover:bg-[#B93FC9]
+                  group-hover:opacity-100
+                  group-hover:shadow-[0_0_15px_#B93FC9]
+                "
+              />
+
+            </div>
+          );
+        })}
 
       </div>
 
-    ))}
+    </div>
 
   </div>
+
+
+  {/* =========================================================
+      BOTTOM LINE
+  ========================================================== */}
+
+  <div
+    data-aos="fade-up"
+    data-aos-delay="500"
+    className="
+      mx-auto
+      mt-24
+      h-px
+      w-full
+      max-w-5xl
+      bg-gradient-to-r
+      from-transparent
+      via-[#3E7BD6]/30
+      to-transparent
+    "
+  />
 
 </div>
 

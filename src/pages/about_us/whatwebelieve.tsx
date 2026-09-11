@@ -1,3 +1,4 @@
+
 "use client";
 
 import { useEffect } from "react";
@@ -8,11 +9,19 @@ import "aos/dist/aos.css";
 export default function WhatWeBelieve() {
   useEffect(() => {
     AOS.init({
-      duration: 900,
+      duration: 750,
       once: true,
       easing: "ease-out-cubic",
-      offset: 80,
+      offset: 60,
+      mirror: false,
+      anchorPlacement: "top-bottom",
     });
+
+    AOS.refresh();
+
+    return () => {
+      AOS.refreshHard();
+    };
   }, []);
 
   const beliefs = [
@@ -44,9 +53,10 @@ export default function WhatWeBelieve() {
         relative
         overflow-hidden
         bg-[#000000]
-        py-16
-        sm:py-20
-        lg:py-24
+        py-10
+        sm:py-11
+        md:py-12
+        lg:py-14
       "
     >
       {/* ================= GRID PATTERN ================= */}
@@ -62,28 +72,44 @@ export default function WhatWeBelieve() {
         "
       />
 
-      <div className="relative mx-auto max-w-7xl px-5 sm:px-6 lg:px-8">
+      <div
+        className="
+          relative
+          mx-auto
+          max-w-7xl
+          px-3
+          sm:px-4
+          md:px-5
+          lg:px-6
+          xl:px-8
+        "
+      >
         <div
           className="
             grid
             grid-cols-1
             items-center
-            gap-12
+            gap-8
+            sm:gap-9
+            md:gap-10
             lg:grid-cols-2
-            lg:gap-16
-            xl:gap-20
+            lg:gap-11
+            xl:gap-14
           "
         >
-
           {/* ================= LEFT CONTENT ================= */}
 
           <div
             data-aos="fade-right"
+            data-aos-duration="800"
+            data-aos-delay="50"
             className="max-w-xl"
           >
             {/* Badge */}
 
             <span
+              data-aos="fade-up"
+              data-aos-delay="100"
               className="
                 inline-flex
                 items-center
@@ -91,16 +117,17 @@ export default function WhatWeBelieve() {
                 border
                 border-[#2A2A30]
                 bg-[#121212]
-                px-4
-                py-2
-                text-[11px]
+                px-3
+                py-1.5
+                text-[9px]
                 font-semibold
                 uppercase
-                tracking-[0.22em]
+                tracking-[0.2em]
                 text-[#29B6F0]
-                sm:px-5
-                sm:py-2.5
-                sm:text-xs
+                sm:px-4
+                sm:py-2
+                sm:text-[10px]
+                md:text-[11px]
               "
             >
               Our Philosophy
@@ -108,59 +135,69 @@ export default function WhatWeBelieve() {
 
             {/* Heading */}
 
-           <h2
-  className="
-    mt-6
-    text-3xl
-    font-bold
-    leading-[1.08]
-    tracking-tight
-    text-white
-    sm:text-4xl
-    md:text-5xl
-    lg:text-5xl
-    whitespace-nowrap
-  "
->
-  What We {" "}
-  <span
-    className="
-      bg-[linear-gradient(135deg,#29B6F0_0%,#3E7BD6_35%,#7A4FD1_65%,#B93FC9_100%)]
-      bg-clip-text
-      text-transparent
-    "
-  >
-    Believe
-  </span>
-</h2>
+            <h2
+              data-aos="fade-up"
+              data-aos-delay="150"
+              className="
+                mt-4
+                whitespace-nowrap
+                text-[25px]
+                font-extrabold
+                leading-[1.08]
+                tracking-tight
+                text-white
+                sm:mt-5
+                sm:text-[28px]
+                md:text-[32px]
+                lg:text-[34px]
+                xl:text-[36px]
+              "
+            >
+              What We{" "}
+              <span
+                className="
+                  bg-[linear-gradient(135deg,#29B6F0_0%,#3E7BD6_35%,#7A4FD1_65%,#B93FC9_100%)]
+                  bg-clip-text
+                  text-transparent
+                "
+              >
+                Believe
+              </span>
+            </h2>
 
-{/* Divider */}
+            {/* Divider */}
 
-<div
-  className="
-    mt-6
-    h-[3px]
-    w-16
-    rounded-full
-    bg-[linear-gradient(90deg,#29B6F0,#3E7BD6,#7A4FD1,#B93FC9)]
-    sm:mt-7
-    sm:w-24
-  "
-/>
+            <div
+              data-aos="zoom-in"
+              data-aos-delay="220"
+              className="
+                mt-4
+                h-[2px]
+                w-12
+                rounded-full
+                bg-[linear-gradient(90deg,#29B6F0,#3E7BD6,#7A4FD1,#B93FC9)]
+                sm:mt-5
+                sm:w-16
+                md:w-20
+              "
+            />
+
             {/* Description */}
 
             <p
+              data-aos="fade-up"
+              data-aos-delay="280"
               className="
-                mt-6
+                mt-4
                 max-w-xl
-                text-sm
-                leading-7
+                text-[11px]
+                leading-6
                 text-[#A0A0A8]
-                sm:mt-7
-                sm:text-base
-                sm:leading-7
-                md:text-lg
-                md:leading-8
+                sm:mt-5
+                sm:text-xs
+                sm:leading-6
+                md:text-[13px]
+                md:leading-6
               "
             >
               We believe technology should be practical, measurable and
@@ -172,38 +209,46 @@ export default function WhatWeBelieve() {
             {/* ================= STATS ================= */}
 
             <div
+              data-aos="fade-up"
+              data-aos-delay="350"
               className="
-                mt-8
+                mt-6
                 grid
                 grid-cols-2
-                gap-3
-                sm:mt-10
-                sm:gap-4
+                gap-2.5
+                sm:mt-7
+                sm:gap-3
+                md:gap-3.5
               "
             >
               {/* Stat 1 */}
 
               <div
                 className="
-                  rounded-2xl
+                  rounded-xl
                   border
                   border-[#2A2A30]
                   bg-[#121212]
-                  px-4
-                  py-5
-                  sm:px-6
-                  sm:py-6
+                  px-3
+                  py-3.5
                   transition-all
                   duration-300
                   hover:border-[#3E7BD6]/60
+                  sm:rounded-2xl
+                  sm:px-4
+                  sm:py-4
+                  md:px-5
+                  md:py-5
                 "
               >
                 <h4
                   className="
-                    text-2xl
+                    text-xl
                     font-bold
+                    leading-none
                     text-white
-                    sm:text-3xl
+                    sm:text-2xl
+                    md:text-[26px]
                   "
                 >
                   10+
@@ -212,9 +257,11 @@ export default function WhatWeBelieve() {
                 <p
                   className="
                     mt-1
-                    text-xs
+                    text-[10px]
+                    leading-5
                     text-[#A0A0A8]
-                    sm:text-sm
+                    sm:text-xs
+                    md:text-[13px]
                   "
                 >
                   Years Experience
@@ -225,25 +272,30 @@ export default function WhatWeBelieve() {
 
               <div
                 className="
-                  rounded-2xl
+                  rounded-xl
                   border
                   border-[#2A2A30]
                   bg-[#121212]
-                  px-4
-                  py-5
-                  sm:px-6
-                  sm:py-6
+                  px-3
+                  py-3.5
                   transition-all
                   duration-300
                   hover:border-[#B93FC9]/60
+                  sm:rounded-2xl
+                  sm:px-4
+                  sm:py-4
+                  md:px-5
+                  md:py-5
                 "
               >
                 <h4
                   className="
-                    text-2xl
+                    text-xl
                     font-bold
+                    leading-none
                     text-white
-                    sm:text-3xl
+                    sm:text-2xl
+                    md:text-[26px]
                   "
                 >
                   100%
@@ -252,9 +304,11 @@ export default function WhatWeBelieve() {
                 <p
                   className="
                     mt-1
-                    text-xs
+                    text-[10px]
+                    leading-5
                     text-[#A0A0A8]
-                    sm:text-sm
+                    sm:text-xs
+                    md:text-[13px]
                   "
                 >
                   Client Focus
@@ -265,62 +319,65 @@ export default function WhatWeBelieve() {
 
           {/* ================= RIGHT CONTENT ================= */}
 
-          <div className="space-y-4 sm:space-y-5">
+          <div className="space-y-3 sm:space-y-3.5 md:space-y-4">
             {beliefs.map((item, index) => (
               <div
                 key={index}
                 data-aos="fade-up"
-                data-aos-delay={index * 120}
+                data-aos-delay={180 + index * 100}
+                data-aos-duration="700"
                 className="
                   group
                   relative
                   overflow-hidden
-                  rounded-2xl
+                  rounded-xl
                   border
                   border-[#2A2A30]
                   bg-[#121212]
-                  p-5
+                  p-4
                   transition-all
-                  duration-400
+                  duration-300
                   hover:-translate-y-1
                   hover:border-[#3E7BD6]
-                  sm:p-6
-                  md:p-7
+                  sm:rounded-2xl
+                  sm:p-4.5
+                  md:p-5
                 "
               >
-                <div className="relative flex items-start gap-4 sm:gap-5">
-
+                <div className="relative flex items-start gap-3 sm:gap-4">
                   {/* Icon */}
 
                   <div
+                    data-aos="zoom-in"
+                    data-aos-delay={250 + index * 100}
                     className="
                       flex
-                      h-11
-                      w-11
+                      h-9
+                      w-9
                       flex-shrink-0
                       items-center
                       justify-center
-                      rounded-xl
+                      rounded-lg
                       bg-[linear-gradient(135deg,#29B6F0_0%,#3E7BD6_35%,#7A4FD1_65%,#B93FC9_100%)]
                       transition-transform
                       duration-300
                       group-hover:scale-105
-                      sm:h-12
-                      sm:w-12
-                      md:h-14
-                      md:w-14
-                      md:rounded-2xl
+                      sm:h-10
+                      sm:w-10
+                      sm:rounded-xl
+                      md:h-11
+                      md:w-11
                     "
                   >
                     <CheckCircle2
                       className="
-                        h-5
-                        w-5
+                        h-4
+                        w-4
                         text-white
-                        sm:h-6
-                        sm:w-6
-                        md:h-7
-                        md:w-7
+                        sm:h-5
+                        sm:w-5
+                        md:h-[21px]
+                        md:w-[21px]
                       "
                     />
                   </div>
@@ -328,21 +385,23 @@ export default function WhatWeBelieve() {
                   {/* Content */}
 
                   <div className="min-w-0 flex-1">
-
                     {/* Title + Number */}
 
-                    <div className="flex items-start justify-between gap-3">
+                    <div className="flex items-start justify-between gap-2">
                       <h3
+                        data-aos="fade-up"
+                        data-aos-delay={300 + index * 100}
                         className="
-                          text-base
+                          text-[13px]
                           font-semibold
-                          leading-6
+                          leading-5
                           text-white
                           transition-colors
                           duration-300
                           group-hover:text-[#29B6F0]
-                          sm:text-lg
-                          md:text-xl
+                          sm:text-sm
+                          sm:leading-6
+                          md:text-[15px]
                         "
                       >
                         {item.title}
@@ -351,12 +410,12 @@ export default function WhatWeBelieve() {
                       <span
                         className="
                           flex-shrink-0
-                          text-2xl
+                          text-xl
                           font-bold
                           leading-none
                           text-white/[0.08]
-                          sm:text-3xl
-                          md:text-4xl
+                          sm:text-2xl
+                          md:text-3xl
                         "
                       >
                         0{index + 1}
@@ -366,14 +425,18 @@ export default function WhatWeBelieve() {
                     {/* Description */}
 
                     <p
+                      data-aos="fade-up"
+                      data-aos-delay={350 + index * 100}
                       className="
-                        mt-2
-                        text-sm
-                        leading-6
+                        mt-1.5
+                        text-[11px]
+                        leading-5
                         text-[#A0A0A8]
-                        sm:mt-3
-                        sm:text-base
-                        sm:leading-7
+                        sm:mt-2
+                        sm:text-xs
+                        sm:leading-5
+                        md:text-[13px]
+                        md:leading-6
                       "
                     >
                       {item.description}
@@ -382,15 +445,17 @@ export default function WhatWeBelieve() {
                     {/* Bottom Accent */}
 
                     <div
+                      data-aos="fade-right"
+                      data-aos-delay={400 + index * 100}
                       className="
-                        mt-5
+                        mt-3
                         h-[2px]
-                        w-8
+                        w-7
                         rounded-full
                         bg-[linear-gradient(90deg,#29B6F0,#3E7BD6,#7A4FD1,#B93FC9)]
                         transition-all
                         duration-500
-                        group-hover:w-20
+                        group-hover:w-16
                       "
                     />
                   </div>
@@ -398,7 +463,6 @@ export default function WhatWeBelieve() {
               </div>
             ))}
           </div>
-
         </div>
       </div>
     </section>
