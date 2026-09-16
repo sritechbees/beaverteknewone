@@ -1,5 +1,6 @@
 "use client";
 
+import { useEffect } from "react";
 import Link from "next/link";
 import {
   ArrowRight,
@@ -8,6 +9,8 @@ import {
   ShieldCheck,
   TrendingUp,
 } from "lucide-react";
+import AOS from "aos";
+import "aos/dist/aos.css";
 
 const services = [
   {
@@ -41,398 +44,443 @@ const services = [
 ];
 
 const gradient =
-  "bg-gradient-to-r from-[#29B6F0] via-[#3E7BD6] via-[#7A4FD1] to-[#B93FC9]";
+  "bg-[linear-gradient(135deg,#29B6F0_0%,#3E7BD6_35%,#7A4FD1_65%,#B93FC9_100%)]";
+
+const gradientText =
+  "bg-[linear-gradient(135deg,#29B6F0_0%,#3E7BD6_35%,#7A4FD1_65%,#B93FC9_100%)] bg-clip-text text-transparent";
 
 export default function ServicesHub() {
+  useEffect(() => {
+    AOS.init({
+      duration: 800,
+      once: true,
+      offset: 60,
+      easing: "ease-out-cubic",
+      mirror: false,
+    });
+
+    const refreshTimer = setTimeout(() => {
+      AOS.refresh();
+    }, 300);
+
+    return () => clearTimeout(refreshTimer);
+  }, []);
+
   return (
-    <section className="relative overflow-hidden bg-[#0A0A0A] text-white">
-
-      <div className="mx-auto max-w-7xl px-5 py-16 sm:px-6 sm:py-20 lg:px-8 lg:py-24">
-
-        {/* =====================================================
-            PART 2 — SERVICES
-        ====================================================== */}
+    <section
+      className="relative overflow-hidden bg-[#0A0A0A] text-white"
+      data-aos="fade-in"
+      data-aos-duration="700"
+    >
+      {/* =====================================================
+          BACKGROUND GLOW
+      ====================================================== */}
+      <div className="pointer-events-none absolute inset-0 overflow-hidden">
+        <div
+          data-aos="fade-right"
+          data-aos-duration="1200"
+          className="absolute -left-24 top-20 h-72 w-72 rounded-full bg-[#29B6F0]/5 blur-[110px]"
+        />
 
         <div
-          className="mb-14 text-center sm:mb-16"
+          data-aos="fade-left"
+          data-aos-duration="1200"
+          className="absolute -right-24 bottom-10 h-72 w-72 rounded-full bg-[#B93FC9]/5 blur-[110px]"
+        />
+      </div>
+
+      {/* =====================================================
+          MAIN CONTAINER
+      ====================================================== */}
+      <div className="relative mx-auto max-w-7xl px-4 py-10 sm:px-5 sm:py-12 lg:px-6 lg:py-14 xl:px-8">
+        {/* =====================================================
+            HEADER
+        ====================================================== */}
+        <div
+          className="mx-auto mb-9 max-w-3xl text-center sm:mb-11"
           data-aos="fade-up"
           data-aos-duration="800"
         >
-          <span className="inline-flex rounded-full border border-[#3E7BD6]/40 bg-white/[0.03] px-4 py-1.5 text-xs font-semibold tracking-[0.16em] text-[#29B6F0] sm:text-sm">
+          {/* Badge */}
+          <span
+            data-aos="zoom-in"
+            data-aos-delay="100"
+            data-aos-duration="700"
+            className="
+              inline-flex rounded-full
+              border border-[#3E7BD6]/40
+              bg-white/[0.03]
+              px-3 py-1
+              text-[10px] font-semibold
+              tracking-[0.15em]
+              text-[#29B6F0]
+              sm:px-3.5 sm:py-1.5 sm:text-xs
+            "
+          >
             OUR SERVICES
           </span>
 
+          {/* Heading */}
           <h2
-            className={`mx-auto mt-5 max-w-3xl ${gradient} bg-clip-text text-3xl font-black leading-tight text-transparent sm:mt-6 sm:text-4xl lg:text-5xl`}
+            data-aos="fade-up"
+            data-aos-delay="180"
+            data-aos-duration="800"
+            className="
+              mx-auto mt-3
+              text-3xl font-black
+              leading-[1.08]
+              sm:mt-4 sm:text-4xl
+              lg:text-5xl
+            "
           >
-            Four things, done well.
+            <span className="text-white">Four things, </span>
+            <span className={gradientText}>done well.</span>
           </h2>
 
+          {/* Gradient Divider */}
           <div
-            className={`mx-auto mt-5 h-1 w-16 rounded-full ${gradient} sm:mt-6 sm:w-20`}
+            data-aos="zoom-in"
+            data-aos-delay="280"
+            data-aos-duration="700"
+            className={`
+              mx-auto mt-4
+              h-[3px] w-12
+              rounded-full
+              ${gradient}
+              sm:mt-5 sm:w-16
+            `}
           />
 
-          <p className="mx-auto mt-5 max-w-2xl text-sm leading-7 text-[#A0A0A8] sm:mt-6 sm:text-base sm:leading-7">
+          {/* Description */}
+          <p
+            data-aos="fade-up"
+            data-aos-delay="350"
+            data-aos-duration="800"
+            className="
+              mx-auto mt-4 max-w-2xl
+              text-[13px] leading-6
+              text-[#A0A0A8]
+              sm:mt-5 sm:text-sm
+            "
+          >
             BeaverTek is built around four core practices. Every engagement
             starts in one of these — and most clients eventually use more than
             one.
           </p>
         </div>
 
-        {/* Services Cards */}
-
-        <div className="grid grid-cols-1 gap-5 sm:grid-cols-2 lg:gap-6 xl:grid-cols-4">
-
+        {/* =====================================================
+            SERVICE CARDS
+        ====================================================== */}
+        <div
+          className="
+            grid grid-cols-1
+            gap-4
+            sm:grid-cols-2 sm:gap-5
+            lg:grid-cols-4 lg:gap-4
+            xl:gap-5
+          "
+          data-aos="fade-up"
+          data-aos-delay="400"
+          data-aos-duration="800"
+        >
           {services.map((service, index) => {
             const Icon = service.icon;
+
+            const titleParts = service.title.split(" ");
+            const firstPart = titleParts[0];
+            const remainingPart = titleParts.slice(1).join(" ");
 
             return (
               <div
                 key={service.title}
-                data-aos="fade-up"
-                data-aos-delay={index * 100}
-                data-aos-duration="800"
                 className="group h-full"
+                data-aos="fade-up"
+                data-aos-delay={500 + index * 120}
+                data-aos-duration="850"
+                data-aos-easing="ease-out-cubic"
               >
+                {/* =================================================
+                    GRADIENT BORDER
+                ================================================== */}
                 <div
                   className="
-                    relative flex h-full min-h-[310px] flex-col
-                    overflow-hidden rounded-2xl
-                    border border-[#2A2A30]
-                    bg-[#121212]
-                    p-6
-                    transition-all duration-300
-                    hover:-translate-y-1
-                    hover:border-[#3E7BD6]/70
-                    hover:bg-[#151515]
-                    sm:p-7
+                    relative h-full
+                    rounded-2xl
+                    p-[1px]
+                    bg-[#2A2A30]
+                    transition-all duration-500
+                    group-hover:bg-[linear-gradient(135deg,#29B6F0,#3E7BD6,#7A4FD1,#B93FC9)]
+                    group-hover:shadow-[0_20px_55px_rgba(62,123,214,0.14)]
                   "
                 >
-
-                  {/* Number */}
-
-                  <span className="absolute right-5 top-4 text-4xl font-black text-[#1E1E22] transition-colors duration-300 group-hover:text-[#25252B]">
-                    0{index + 1}
-                  </span>
-
-                  {/* Icon */}
-
+                  {/* =================================================
+                      CARD
+                  ================================================== */}
                   <div
-                    className={`relative z-10 mb-6 flex h-12 w-12 shrink-0 items-center justify-center rounded-xl ${gradient} text-white transition-transform duration-300 group-hover:scale-105`}
+                    className="
+                      relative flex h-full
+                      min-h-[280px]
+                      flex-col
+                      overflow-hidden
+                      rounded-[15px]
+                      bg-[#121212]
+                      p-5
+                      transition-all duration-500
+                      group-hover:bg-[#151515]
+                      sm:min-h-[290px]
+                      lg:min-h-[300px]
+                    "
                   >
-                    <Icon className="h-6 w-6" />
+                    {/* =================================================
+                        CARD GLOW — TOP RIGHT
+                    ================================================== */}
+                    <div
+                      className="
+                        pointer-events-none
+                        absolute -right-20 -top-20
+                        h-40 w-40
+                        rounded-full
+                        bg-[#29B6F0]/0
+                        blur-[70px]
+                        transition-all duration-700
+                        group-hover:bg-[#29B6F0]/15
+                      "
+                    />
+
+                    {/* =================================================
+                        CARD GLOW — BOTTOM LEFT
+                    ================================================== */}
+                    <div
+                      className="
+                        pointer-events-none
+                        absolute -bottom-20 -left-20
+                        h-40 w-40
+                        rounded-full
+                        bg-[#B93FC9]/0
+                        blur-[70px]
+                        transition-all duration-700
+                        group-hover:bg-[#B93FC9]/15
+                      "
+                    />
+
+                    {/* =================================================
+                        TOP GRADIENT LINE
+                    ================================================== */}
+                    <div
+                      className={`
+                        absolute left-5 right-5 top-0
+                        h-[2px]
+                        origin-left
+                        scale-x-0
+                        rounded-full
+                        ${gradient}
+                        transition-transform duration-500
+                        group-hover:scale-x-100
+                      `}
+                    />
+
+                    {/* =================================================
+                        ICON
+                    ================================================== */}
+                    <div
+                      data-aos="zoom-in"
+                      data-aos-delay={580 + index * 120}
+                      data-aos-duration="650"
+                      className="
+                        relative z-10
+                        mb-5
+                        flex h-11 w-11
+                        shrink-0
+                        items-center justify-center
+                        overflow-hidden
+                        rounded-xl
+                        border border-[#2A2A30]
+                        bg-[#1A1A1E]
+                        text-[#29B6F0]
+                        transition-all duration-500
+                        group-hover:border-transparent
+                        group-hover:text-white
+                        group-hover:shadow-[0_8px_25px_rgba(41,182,240,0.18)]
+                      "
+                    >
+                      {/* Icon Gradient */}
+                      <div
+                        className={`
+                          absolute inset-0
+                          opacity-0
+                          ${gradient}
+                          transition-opacity duration-500
+                          group-hover:opacity-100
+                        `}
+                      />
+
+                      <Icon
+                        className="
+                          relative z-10
+                          h-5 w-5
+                          transition-transform duration-500
+                          group-hover:scale-110
+                          group-hover:rotate-3
+                        "
+                      />
+                    </div>
+
+                    {/* =================================================
+                        TITLE
+                    ================================================== */}
+                    <h3
+                      data-aos="fade-up"
+                      data-aos-delay={640 + index * 120}
+                      data-aos-duration="700"
+                      className="
+                        relative z-10
+                        text-lg font-bold
+                        tracking-tight
+                        sm:text-xl
+                      "
+                    >
+                      <span className="text-white">{firstPart}</span>
+
+                      {remainingPart && (
+                        <>
+                          {" "}
+                          <span className={gradientText}>
+                            {remainingPart}
+                          </span>
+                        </>
+                      )}
+                    </h3>
+
+                    {/* =================================================
+                        DIVIDER
+                    ================================================== */}
+                    <div
+                      data-aos="fade-right"
+                      data-aos-delay={700 + index * 120}
+                      data-aos-duration="600"
+                      className="relative z-10 mt-2.5"
+                    >
+                      <div
+                        className={`
+                          h-[2px] w-8
+                          rounded-full
+                          ${gradient}
+                          transition-all duration-500
+                          group-hover:w-16
+                        `}
+                      />
+                    </div>
+
+                    {/* =================================================
+                        DESCRIPTION
+                    ================================================== */}
+                    <p
+                      data-aos="fade-up"
+                      data-aos-delay={740 + index * 120}
+                      data-aos-duration="750"
+                      className="
+                        relative z-10
+                        mt-4
+                        flex-1
+                        text-[13px]
+                        leading-6
+                        text-[#A0A0A8]
+                        transition-colors duration-300
+                        group-hover:text-[#D4D4D8]
+                        sm:text-sm
+                      "
+                    >
+                      {service.description}
+                    </p>
+
+                    {/* =================================================
+                        CTA
+                    ================================================== */}
+                    <Link
+                      href={service.href}
+                      data-aos="fade-up"
+                      data-aos-delay={800 + index * 120}
+                      data-aos-duration="700"
+                      className="
+                        relative z-10
+                        mt-5
+                        inline-flex w-fit
+                        items-center
+                        gap-1.5
+                        text-xs
+                        font-semibold
+                        text-[#29B6F0]
+                        transition-all duration-300
+                        group-hover:gap-3
+                        group-hover:text-white
+                        sm:text-sm
+                      "
+                    >
+                      <span>Learn More</span>
+
+                      {/* Gradient Arrow Background */}
+                      <span
+                        className={`
+                          flex h-6 w-6
+                          items-center justify-center
+                          rounded-full
+                          ${gradient}
+                          text-white
+                          shadow-[0_4px_14px_rgba(62,123,214,0.18)]
+                          transition-all duration-300
+                          group-hover:scale-110
+                          group-hover:shadow-[0_5px_18px_rgba(185,63,201,0.3)]
+                        `}
+                      >
+                        <ArrowRight
+                          className="
+                            h-3.5 w-3.5
+                            transition-transform duration-300
+                            group-hover:translate-x-0.5
+                          "
+                        />
+                      </span>
+                    </Link>
+
+                    {/* =================================================
+                        BOTTOM GRADIENT LINE
+                    ================================================== */}
+                    <div className="absolute bottom-0 left-0 right-0 h-[2px] overflow-hidden">
+                      <div
+                        className={`
+                          h-full
+                          w-0
+                          ${gradient}
+                          transition-all duration-700
+                          group-hover:w-full
+                        `}
+                      />
+                    </div>
+
+                    {/* =================================================
+                        CORNER GLOW
+                    ================================================== */}
+                    <div
+                      className="
+                        pointer-events-none
+                        absolute bottom-0 right-0
+                        h-20 w-20
+                        translate-x-8
+                        translate-y-8
+                        rounded-full
+                        bg-[#7A4FD1]/0
+                        blur-2xl
+                        transition-all duration-700
+                        group-hover:bg-[#7A4FD1]/20
+                      "
+                    />
                   </div>
-
-                  {/* Title */}
-
-                  <h3 className="relative z-10 text-xl font-bold tracking-tight text-white sm:text-[22px]">
-                    {service.title}
-                  </h3>
-
-                  {/* Divider */}
-
-                  <div
-                    className={`mt-3 h-[3px] w-10 rounded-full ${gradient} transition-all duration-300 group-hover:w-16`}
-                  />
-
-                  {/* Description */}
-
-                  <p className="mt-5 flex-1 text-sm leading-6 text-[#A0A0A8] sm:text-[15px] sm:leading-7">
-                    {service.description}
-                  </p>
-
-                  {/* CTA */}
-
-                  <Link
-                    href={service.href}
-                    className="mt-6 inline-flex w-fit items-center gap-2 text-sm font-semibold text-[#29B6F0] transition-all duration-300 group-hover:gap-3 group-hover:text-[#B93FC9]"
-                  >
-                    Learn More
-                    <ArrowRight className="h-4 w-4 transition-transform duration-300 group-hover:translate-x-1" />
-                  </Link>
-
-                  {/* Bottom Line */}
-
-                  <div
-                    className={`absolute bottom-0 left-0 h-[2px] w-0 ${gradient} transition-all duration-500 group-hover:w-full`}
-                  />
                 </div>
               </div>
             );
           })}
-
         </div>
-
-        {/* =====================================================
-            PART 3 — HOW WE WORK
-        ====================================================== */}
-
-        <div
-          className="mt-20 sm:mt-24 lg:mt-28"
-          data-aos="fade-up"
-          data-aos-duration="900"
-        >
-          <div className="overflow-hidden rounded-3xl border border-[#2A2A30] bg-[#121212]">
-
-            <div className="grid lg:grid-cols-2">
-
-              {/* LEFT */}
-
-              <div className="p-6 sm:p-8 md:p-10 lg:p-12">
-
-                <span
-                  data-aos="fade-right"
-                  data-aos-delay="100"
-                  className="inline-flex rounded-full border border-[#3E7BD6]/40 bg-white/[0.03] px-4 py-1.5 text-xs font-semibold tracking-[0.15em] text-[#29B6F0] sm:text-sm"
-                >
-                  HOW WE WORK
-                </span>
-
-                <h2
-                  data-aos="fade-right"
-                  data-aos-delay="150"
-                  className={`mt-5 ${gradient} bg-clip-text text-3xl font-black leading-tight text-transparent sm:text-4xl lg:text-[42px]`}
-                >
-                  Senior people.
-                  <br />
-                  Practical delivery.
-                </h2>
-
-                <div
-                  data-aos="fade-right"
-                  data-aos-delay="200"
-                  className={`mt-5 h-[3px] w-16 rounded-full ${gradient}`}
-                />
-
-                <p
-                  data-aos="fade-up"
-                  data-aos-delay="250"
-                  className="mt-6 text-sm leading-7 text-[#D4D4D8] sm:text-base sm:leading-7"
-                >
-                  Technology projects succeed when experienced people stay
-                  involved from planning through delivery. That's why every
-                  BeaverTek engagement is led by senior consultants who focus
-                  on outcomes—not unnecessary complexity.
-                </p>
-
-                <p
-                  data-aos="fade-up"
-                  data-aos-delay="300"
-                  className="mt-5 text-sm leading-7 text-[#A0A0A8] sm:text-base sm:leading-7"
-                >
-                  Whether we're modernizing infrastructure, building software,
-                  improving data visibility, or strengthening cybersecurity,
-                  our process stays collaborative, transparent, and measurable.
-                </p>
-
-                {/* Process Cards */}
-
-                <div className="mt-8 grid grid-cols-1 gap-3 sm:grid-cols-2 sm:gap-4">
-
-                  {[
-                    {
-                      title: "Discover",
-                      text: "Understand your business, systems, goals, and challenges before recommending technology.",
-                    },
-                    {
-                      title: "Design",
-                      text: "Create scalable architectures and implementation plans tailored to your organization.",
-                    },
-                    {
-                      title: "Deliver",
-                      text: "Build, deploy, migrate, and integrate with minimal disruption to business operations.",
-                    },
-                    {
-                      title: "Improve",
-                      text: "Monitor, optimize, and continuously improve performance, security, and reliability.",
-                    },
-                  ].map((item, index) => (
-                    <div
-                      key={item.title}
-                      data-aos="fade-up"
-                      data-aos-delay={350 + index * 80}
-                      className="rounded-xl border border-[#2A2A30] bg-[#1A1A1E] p-4 transition-all duration-300 hover:border-[#3E7BD6]/70 hover:bg-[#151515] sm:p-5"
-                    >
-                      <h4 className="text-sm font-bold text-white sm:text-base">
-                        {item.title}
-                      </h4>
-
-                      <p className="mt-2 text-xs leading-6 text-[#A0A0A8] sm:text-sm">
-                        {item.text}
-                      </p>
-                    </div>
-                  ))}
-
-                </div>
-              </div>
-
-              {/* RIGHT */}
-
-              <div className="relative overflow-hidden bg-gradient-to-br from-[#101014] via-[#171727] to-[#3E7BD6] p-6 sm:p-8 md:p-10 lg:p-12">
-
-                {/* Subtle Decorative Shapes */}
-
-                <div className="pointer-events-none absolute -right-24 -top-24 h-64 w-64 rounded-full border border-white/[0.05]" />
-                <div className="pointer-events-none absolute -bottom-32 -left-20 h-72 w-72 rounded-full border border-white/[0.05]" />
-
-                <div className="relative z-10">
-
-                  <h3
-                    data-aos="fade-left"
-                    className={`${gradient} bg-clip-text text-2xl font-black text-transparent sm:text-3xl`}
-                  >
-                    Why clients choose BeaverTek
-                  </h3>
-
-                  <div className="mt-8 space-y-6">
-
-                    {/* 01 */}
-
-                    <div
-                      data-aos="fade-left"
-                      data-aos-delay="100"
-                      className="flex gap-4"
-                    >
-                      <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-lg border border-[#3E7BD6]/50 bg-black/20 text-sm font-bold text-[#29B6F0]">
-                        01
-                      </div>
-
-                      <div>
-                        <h4 className="text-sm font-semibold text-white sm:text-base">
-                          Senior expertise
-                        </h4>
-
-                        <p className="mt-1.5 text-xs leading-6 text-[#D4D4D8] sm:text-sm">
-                          Experienced consultants stay engaged throughout the
-                          project—not just during sales.
-                        </p>
-                      </div>
-                    </div>
-
-                    {/* 02 */}
-
-                    <div
-                      data-aos="fade-left"
-                      data-aos-delay="200"
-                      className="flex gap-4"
-                    >
-                      <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-lg border border-[#7A4FD1]/50 bg-black/20 text-sm font-bold text-[#7A4FD1]">
-                        02
-                      </div>
-
-                      <div>
-                        <h4 className="text-sm font-semibold text-white sm:text-base">
-                          Business-first thinking
-                        </h4>
-
-                        <p className="mt-1.5 text-xs leading-6 text-[#D4D4D8] sm:text-sm">
-                          Every recommendation is aligned with measurable
-                          business outcomes.
-                        </p>
-                      </div>
-                    </div>
-
-                    {/* 03 */}
-
-                    <div
-                      data-aos="fade-left"
-                      data-aos-delay="300"
-                      className="flex gap-4"
-                    >
-                      <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-lg border border-[#B93FC9]/50 bg-black/20 text-sm font-bold text-[#B93FC9]">
-                        03
-                      </div>
-
-                      <div>
-                        <h4 className="text-sm font-semibold text-white sm:text-base">
-                          Long-term partnership
-                        </h4>
-
-                        <p className="mt-1.5 text-xs leading-6 text-[#D4D4D8] sm:text-sm">
-                          We continue supporting clients long after projects
-                          launch through optimization and ongoing guidance.
-                        </p>
-                      </div>
-                    </div>
-
-                  </div>
-                </div>
-              </div>
-
-            </div>
-          </div>
-        </div>
-
-        {/* =====================================================
-            PREMIUM CTA
-        ====================================================== */}
-
-        <div
-          data-aos="zoom-in"
-          data-aos-duration="900"
-          className="relative mt-20 overflow-hidden rounded-3xl border border-[#2A2A30] bg-gradient-to-br from-[#101014] via-[#181827] to-[#3E7BD6] px-6 py-14 text-center sm:mt-24 sm:px-10 sm:py-16 lg:mt-28 lg:px-16 lg:py-20"
-        >
-
-          <div className="pointer-events-none absolute inset-0 opacity-30">
-            <div className="absolute left-1/2 top-0 h-px w-2/3 -translate-x-1/2 bg-gradient-to-r from-transparent via-[#29B6F0] to-transparent" />
-            <div className="absolute bottom-0 left-1/2 h-px w-2/3 -translate-x-1/2 bg-gradient-to-r from-transparent via-[#B93FC9] to-transparent" />
-          </div>
-
-          <div className="relative z-10 mx-auto max-w-3xl">
-
-            <span
-              data-aos="fade-up"
-              className="inline-flex rounded-full border border-[#3E7BD6]/40 bg-white/[0.05] px-4 py-1.5 text-xs font-semibold tracking-[0.16em] text-[#29B6F0] sm:text-sm"
-            >
-              LET'S BUILD TOGETHER
-            </span>
-
-            <h2
-              data-aos="fade-up"
-              data-aos-delay="100"
-              className={`mt-5 ${gradient} bg-clip-text text-3xl font-black leading-tight text-transparent sm:text-4xl lg:text-5xl`}
-            >
-              Technology that works.
-              <br />
-              Partners you can trust.
-            </h2>
-
-            <p
-              data-aos="fade-up"
-              data-aos-delay="200"
-              className="mx-auto mt-5 max-w-2xl text-sm leading-7 text-[#D4D4D8] sm:text-base sm:leading-7"
-            >
-              Whether you're modernizing legacy systems, building custom
-              software, unlocking insights from your data, or improving
-              cybersecurity, BeaverTek helps you move forward with confidence.
-            </p>
-
-            <div
-              data-aos="fade-up"
-              data-aos-delay="300"
-              className="mt-8 flex flex-col items-center justify-center gap-3 sm:flex-row"
-            >
-
-              <Link
-                href="/contact/contacthero"
-                className={`inline-flex w-full items-center justify-center gap-2 rounded-full ${gradient} px-7 py-3.5 text-sm font-semibold text-white transition-all duration-300 hover:scale-[1.02] sm:w-auto`}
-              >
-                Start Your Project
-                <ArrowRight className="h-4 w-4" />
-              </Link>
-
-              <Link
-                href="/services/serviceshero"
-                className="inline-flex w-full items-center justify-center rounded-full border border-white/15 bg-white/[0.04] px-7 py-3.5 text-sm font-semibold text-white transition-all duration-300 hover:border-[#3E7BD6] hover:bg-white/[0.08] sm:w-auto"
-              >
-                Explore Services
-              </Link>
-
-            </div>
-
-          </div>
-        </div>
-
       </div>
     </section>
   );

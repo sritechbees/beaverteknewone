@@ -3,6 +3,8 @@
 import Link from "next/link";
 import { ArrowRight } from "lucide-react";
 import App_layout from "@/component/layout/app_layout";
+
+import Servicescard from "./servicescard";
 import ServicesHub from "./serviceshub";
 
 export default function ServicesHero() {
@@ -346,7 +348,8 @@ export default function ServicesHero() {
       </section>
 
       {/* ================= SERVICES HUB ================= */}
-      <ServicesHub />
+ <ServicesHub/>
+      <Servicescard/>
     </App_layout>
   );
 }
