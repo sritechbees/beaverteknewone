@@ -1,3 +1,4 @@
+
 "use client";
 
 import App_layout from "@/component/layout/app_layout";
@@ -18,8 +19,11 @@ function herosection() {
     AOS.init({
       duration: 900,
       once: true,
+      offset: 60,
       easing: "ease-out-cubic",
     });
+
+    AOS.refresh();
   }, []);
 
   useEffect(() => {
@@ -48,14 +52,29 @@ function herosection() {
 
   return (
     <App_layout>
-      <section className="relative min-h-[560px] overflow-hidden bg-[#000000] sm:min-h-[620px] lg:min-h-[680px]">
-
+      {/* =====================================================
+          HERO
+      ====================================================== */}
+      <section
+        className="
+          relative
+          h-[56vh]
+          min-h-[480px]
+          overflow-hidden
+          bg-[#000000]
+          sm:h-[58vh]
+          sm:min-h-[500px]
+          md:h-[60vh]
+          md:min-h-[520px]
+          lg:h-[62vh]
+          lg:min-h-[540px]
+        "
+      >
         {/* =====================================================
             FULL BACKGROUND IMAGE
         ====================================================== */}
 
         <div className="absolute inset-0">
-
           <img
             src="/services/cloud-cost-optimization2.jpg"
             alt="Cloud Cost Optimization"
@@ -68,25 +87,71 @@ function herosection() {
           {/* Main Gradient */}
           <div className="absolute inset-0 bg-gradient-to-r from-black/90 via-black/60 to-black/20" />
 
-          {/* Bottom Gradient */}
-          <div className="absolute inset-x-0 bottom-0 h-48 bg-gradient-to-t from-black via-black/50 to-transparent" />
+          {/* Center Overlay for Readability */}
+          <div className="absolute inset-0 bg-black/15" />
 
+          {/* Bottom Gradient */}
+          <div className="absolute inset-x-0 bottom-0 h-32 bg-gradient-to-t from-black via-black/50 to-transparent sm:h-40" />
         </div>
 
         {/* =====================================================
             GRADIENT GLOW
         ====================================================== */}
 
-        <div className="absolute -left-40 top-10 h-[300px] w-[300px] rounded-full bg-[#29B6F0]/10 blur-[140px] sm:h-[380px] sm:w-[380px]" />
+        <div
+          className="
+            absolute
+            -left-32
+            top-0
+            h-64
+            w-64
+            rounded-full
+            bg-[#29B6F0]/10
+            blur-[120px]
+            sm:h-72
+            sm:w-72
+          "
+        />
 
-        <div className="absolute -right-40 bottom-0 h-[320px] w-[320px] rounded-full bg-[#B93FC9]/10 blur-[140px] sm:h-[400px] sm:w-[400px]" />
+        <div
+          className="
+            absolute
+            -right-32
+            bottom-0
+            h-72
+            w-72
+            rounded-full
+            bg-[#B93FC9]/10
+            blur-[130px]
+            sm:h-80
+            sm:w-80
+          "
+        />
+
+        {/* Center Ambient Light */}
+        <div
+          className="
+            absolute
+            left-1/2
+            top-1/2
+            h-72
+            w-72
+            -translate-x-1/2
+            -translate-y-1/2
+            rounded-full
+            bg-[#3E7BD6]/5
+            blur-[140px]
+            sm:h-80
+            sm:w-80
+          "
+        />
 
         {/* =====================================================
             GRID
         ====================================================== */}
 
         <div
-          className="absolute inset-0 opacity-[0.05]"
+          className="absolute inset-0 opacity-[0.04]"
           style={{
             backgroundImage: `
               linear-gradient(rgba(255,255,255,.15) 1px, transparent 1px),
@@ -100,36 +165,60 @@ function herosection() {
             HERO CONTENT
         ====================================================== */}
 
-        <div className="relative z-10 mx-auto flex min-h-[560px] max-w-7xl items-center px-6 py-20 sm:min-h-[620px] sm:px-8 sm:py-24 lg:min-h-[680px] lg:px-8 lg:py-28">
-
-          <div
-            className="w-full max-w-3xl"
-            data-aos="fade-up"
-            data-aos-duration="1000"
-          >
-
+        <div
+          className="
+            relative
+            z-10
+            mx-auto
+            flex
+            h-full
+            max-w-7xl
+            items-center
+            justify-center
+            px-4
+            py-10
+            text-center
+            sm:px-5
+            sm:py-12
+            md:px-6
+            md:py-14
+            lg:px-7
+            lg:py-16
+          "
+        >
+          <div className="flex w-full max-w-4xl flex-col items-center">
             {/* =================================================
                 BREADCRUMB
             ================================================== */}
 
             <div
-              className="mb-5 inline-flex items-center rounded-full border border-white/15 bg-white/10 px-4 py-2 backdrop-blur-xl sm:mb-7 sm:px-5"
+              className="
+                mb-4
+                inline-flex
+                items-center
+                rounded-full
+                border
+                border-white/15
+                bg-white/10
+                px-3.5
+                py-1.5
+                backdrop-blur-xl
+                sm:mb-5
+                sm:px-4
+                sm:py-2
+              "
               data-aos="fade-down"
-              data-aos-delay="150"
+              data-aos-delay="100"
             >
-
-              <span className="text-xs font-medium text-[#D4D4D8] sm:text-sm">
+              <span className="text-[11px] font-medium text-[#D4D4D8] sm:text-xs">
                 Services
               </span>
 
-              <span className="mx-2 text-[#7A7A7A]">
-                /
-              </span>
+              <span className="mx-2 text-[#7A7A7A]">/</span>
 
-              <span className="text-xs font-medium text-[#29B6F0] sm:text-sm">
+              <span className="text-[11px] font-medium text-[#29B6F0] sm:text-xs">
                 Cloud Cost Optimization
               </span>
-
             </div>
 
             {/* =================================================
@@ -137,24 +226,52 @@ function herosection() {
             ================================================== */}
 
             <h1
-              className="max-w-4xl text-4xl font-bold leading-[1.08] tracking-tight text-white sm:text-5xl md:text-6xl lg:text-7xl xl:text-[76px]"
+              className="
+                max-w-4xl
+                text-[30px]
+                font-bold
+                leading-[1.08]
+                tracking-tight
+                text-white
+                sm:text-[38px]
+                md:text-5xl
+                lg:text-6xl
+                xl:text-[64px]
+              "
               data-aos="fade-up"
-              data-aos-delay="300"
+              data-aos-delay="200"
             >
-
               Cloud Cost
 
-              <span className="mt-2 block">
-
-                <span className="bg-gradient-to-r from-[#29B6F0] via-[#3E7BD6] via-[#7A4FD1] to-[#B93FC9] bg-clip-text text-transparent">
+              <span className="mt-1.5 block sm:mt-2">
+                <span
+                  className="
+                    bg-gradient-to-r
+                    from-[#29B6F0]
+                    via-[#3E7BD6]
+                    via-[#7A4FD1]
+                    to-[#B93FC9]
+                    bg-clip-text
+                    text-transparent
+                  "
+                >
                   {text}
                 </span>
 
                 {/* Typing Cursor */}
-                <span className="ml-1 inline-block h-[0.8em] w-[2px] translate-y-[3px] animate-pulse bg-[#29B6F0] sm:w-[3px]" />
-
+                <span
+                  className="
+                    ml-1
+                    inline-block
+                    h-[0.8em]
+                    w-[2px]
+                    translate-y-[3px]
+                    animate-pulse
+                    bg-[#29B6F0]
+                    sm:w-[3px]
+                  "
+                />
               </span>
-
             </h1>
 
             {/* =================================================
@@ -162,46 +279,59 @@ function herosection() {
             ================================================== */}
 
             <div
-              className="mt-6 flex items-center gap-3 sm:mt-8"
-              data-aos="fade-right"
-              data-aos-delay="500"
+              className="
+                mt-4
+                flex
+                items-center
+                justify-center
+                gap-2.5
+                sm:mt-5
+                sm:gap-3
+              "
+              data-aos="fade-up"
+              data-aos-delay="350"
             >
+              <div
+                className="
+                  h-[2px]
+                  w-10
+                  rounded-full
+                  bg-gradient-to-r
+                  from-[#29B6F0]
+                  to-[#7A4FD1]
+                  sm:w-16
+                "
+              />
 
-              <div className="h-[2px] w-12 bg-gradient-to-r from-[#29B6F0] to-[#7A4FD1] sm:w-20" />
+              <div
+                className="
+                  h-1.5
+                  w-1.5
+                  rounded-full
+                  bg-[#29B6F0]
+                  shadow-[0_0_15px_rgba(41,182,240,.8)]
+                "
+              />
 
-              <div className="h-1.5 w-1.5 rounded-full bg-[#29B6F0] shadow-[0_0_15px_rgba(41,182,240,.8)]" />
-
+              <div
+                className="
+                  h-[2px]
+                  w-10
+                  rounded-full
+                  bg-gradient-to-r
+                  from-[#7A4FD1]
+                  to-[#B93FC9]
+                  sm:w-16
+                "
+              />
             </div>
-
           </div>
-
-        </div>
-
-        {/* =====================================================
-            BOTTOM GLASS ELEMENT
-        ====================================================== */}
-
-        <div
-          className="absolute bottom-5 right-5 hidden rounded-xl border border-white/10 bg-white/5 px-4 py-3 backdrop-blur-xl lg:block"
-          data-aos="fade-left"
-          data-aos-delay="600"
-        >
-
-          <div className="flex items-center gap-2.5">
-
-            <div className="h-2 w-2 rounded-full bg-[#29B6F0] shadow-[0_0_12px_rgba(41,182,240,.8)]" />
-
-            <span className="text-xs text-[#D4D4D8]">
-              Cloud Cost Optimization
-            </span>
-
-          </div>
-
         </div>
 
       </section>
-<Overviewsection/>
-<Whatwedeliver/>
+
+      <Overviewsection />
+      <Whatwedeliver />
     </App_layout>
   );
 }
