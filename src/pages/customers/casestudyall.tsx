@@ -5,374 +5,458 @@ import Image from "next/image";
 import Link from "next/link";
 import AOS from "aos";
 import "aos/dist/aos.css";
-import {
-  ArrowRight,
-  Sparkles,
-} from "lucide-react";
+import { ArrowRight } from "lucide-react";
 
 export default function Casestudyall() {
   useEffect(() => {
     AOS.init({
       duration: 900,
       once: true,
-      offset: 70,
+      offset: 50,
       easing: "ease-out-cubic",
     });
+
+    AOS.refresh();
   }, []);
 
+  // =====================================================
+  // SMOOTH SCROLL TO CASE STUDY CONTENT
+  // =====================================================
+ const scrollToCaseStudy = () => {
+  const section = document.getElementById("casestudyoverall");
+
+  if (section) {
+    const offset = 80; // extra space from top
+    const sectionTop =
+      section.getBoundingClientRect().top + window.scrollY - offset;
+
+    window.scrollTo({
+      top: sectionTop,
+      behavior: "smooth",
+    });
+  }
+};
+
+
+  
+
   return (
-    <section className="relative min-h-screen overflow-hidden bg-black">
+    <section
+      className="
+        relative
+        flex
+        items-center
+        justify-center
+        overflow-hidden
+        bg-black
+
+        h-[56vh]
+        min-h-[480px]
+
+        sm:h-[58vh]
+        sm:min-h-[500px]
+
+        md:h-[60vh]
+        md:min-h-[520px]
+
+        lg:h-[62vh]
+        lg:min-h-[540px]
+      "
+    >
+      {/* =====================================================
+          FULL BACKGROUND IMAGE
+      ===================================================== */}
+
+      <div className="absolute inset-0">
+        <Image
+          src="/home/case study.jpg"
+          alt="Enterprise Software Development"
+          fill
+          priority
+          sizes="100vw"
+          className="object-cover object-center"
+        />
+
+        {/* Main Dark Overlay */}
+        <div className="absolute inset-0 bg-black/20" />
+
+        {/* Center Readability */}
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(0,0,0,0.12),rgba(0,0,0,0.72)_78%)]" />
+
+        {/* BeaverTek Gradient */}
+        <div className="absolute inset-0 bg-gradient-to-br from-[#29B6F0]/10 via-transparent to-[#B93FC9]/15" />
+
+        {/* Bottom Fade */}
+        <div className="absolute inset-x-0 bottom-0 h-36 bg-gradient-to-t from-black via-black/40 to-transparent sm:h-44" />
+
+        {/* Top Fade */}
+        <div className="absolute inset-x-0 top-0 h-28 bg-gradient-to-b from-black/65 to-transparent sm:h-36" />
+      </div>
 
       {/* =====================================================
-          BACKGROUND
+          BACKGROUND GRID
       ===================================================== */}
 
       <div className="pointer-events-none absolute inset-0">
-
-        {/* Grid */}
-
         <div
-          className="absolute inset-0 opacity-[0.025]"
+          className="absolute inset-0 opacity-[0.03]"
           style={{
             backgroundImage:
               "linear-gradient(rgba(255,255,255,0.5) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.5) 1px, transparent 1px)",
             backgroundSize: "70px 70px",
           }}
         />
-
-        {/* Cyan Glow */}
-
-        <div className="absolute -left-40 top-10 h-[450px] w-[450px] rounded-full bg-[#29B6F0]/10 blur-[170px]" />
-
-        {/* Violet Glow */}
-
-        <div className="absolute -right-40 bottom-0 h-[500px] w-[500px] rounded-full bg-[#B93FC9]/10 blur-[180px]" />
-
-        {/* Center Glow */}
-
-        <div className="absolute left-1/2 top-1/2 h-[350px] w-[350px] -translate-x-1/2 -translate-y-1/2 rounded-full bg-[#3E7BD6]/5 blur-[160px]" />
-
-        {/* Top Right Radial */}
-
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_85%_15%,rgba(41,182,240,0.08),transparent_30%)]" />
-
       </div>
 
       {/* =====================================================
-          MAIN HERO
+          COLOR GLOWS
       ===================================================== */}
 
-      <div className="relative z-10 mx-auto min-h-screen max-w-[1500px]">
+      <div
+        className="
+          pointer-events-none
+          absolute
+          -left-44
+          top-1/4
+          h-[350px]
+          w-[350px]
+          rounded-full
+          bg-[#29B6F0]/8
+          blur-[150px]
+          sm:h-[400px]
+          sm:w-[400px]
+        "
+      />
 
-        <div className="grid min-h-screen items-center lg:grid-cols-[0.95fr_1.05fr]">
+      <div
+        className="
+          pointer-events-none
+          absolute
+          -right-44
+          bottom-1/4
+          h-[380px]
+          w-[380px]
+          rounded-full
+          bg-[#B93FC9]/8
+          blur-[160px]
+          sm:h-[420px]
+          sm:w-[420px]
+        "
+      />
 
+      {/* =====================================================
+          MAIN CONTENT
+      ===================================================== */}
+
+      <div
+        className="
+          relative
+          z-10
+          flex
+          w-full
+          items-center
+          justify-center
+          px-5
+          py-20
+          sm:px-8
+          sm:py-24
+          md:px-10
+          md:py-28
+          lg:px-12
+          lg:py-24
+        "
+      >
+        <div
+          className="
+            mx-auto
+            flex
+            w-full
+            max-w-[950px]
+            flex-col
+            items-center
+            justify-center
+            text-center
+          "
+        >
           {/* =================================================
-              LEFT CONTENT
+              MAIN HEADING
           ================================================= */}
 
-          <div className="relative z-20 px-6 py-20 sm:px-10 md:px-14 lg:px-12 xl:px-16">
+          <h1
+            data-aos="fade-up"
+            data-aos-duration="900"
+            className="
+              max-w-[900px]
+              text-[34px]
+              font-extrabold
+              leading-[1.07]
+              tracking-[-0.035em]
+              sm:text-[42px]
+              md:text-[50px]
+              lg:text-[58px]
+              xl:text-[66px]
+            "
+          >
+            <span className="bg-gradient-to-r from-[#29B6F0] via-[#3E7BD6] to-[#B93FC9] bg-clip-text text-transparent">
+              Building
+            </span>
 
-            {/* Small Decorative Line */}
+            <span className="mt-1 block bg-gradient-to-r from-[#29B6F0] via-[#3E7BD6] to-[#B93FC9] bg-clip-text text-transparent">
+              Intelligent Software
+            </span>
 
-            <div
-              data-aos="fade-right"
-              className="mb-7 flex items-center gap-3"
-            >
-              <span className="h-[2px] w-12 bg-gradient-to-r from-[#29B6F0] to-[#7A4FD1]" />
+            <span className="mt-1 block text-white">
+              For Real Businesses
+            </span>
+          </h1>
 
-              <span className="text-[11px] font-bold uppercase tracking-[0.35em] text-[#29B6F0]">
-                CASE STUDIES
-              </span>
-            </div>
+          {/* =================================================
+              DIVIDER
+          ================================================= */}
 
-            {/* Badge */}
+          <div
+            data-aos="fade-up"
+            data-aos-delay="180"
+            className="
+              mt-5
+              flex
+              items-center
+              justify-center
+              gap-2
+              sm:mt-6
+              md:mt-7
+            "
+          >
+            <span className="h-[3px] w-10 rounded-full bg-gradient-to-r from-[#29B6F0] to-[#3E7BD6] sm:w-16" />
 
-            <div
-              data-aos="fade-up"
-              data-aos-delay="100"
-              className="mb-7 inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/[0.04] px-4 py-2 backdrop-blur-xl"
-            >
-              <Sparkles className="h-4 w-4 text-[#29B6F0]" />
+            <span className="h-[3px] w-6 rounded-full bg-gradient-to-r from-[#7A4FD1] to-[#B93FC9] sm:w-9" />
 
-              <span className="text-[10px] font-semibold uppercase tracking-[0.28em] text-[#D4D4D8] sm:text-xs">
-                CASE STUDIES
-              </span>
-            </div>
-
-            {/* Small Title */}
-
-            <p
-              data-aos="fade-up"
-              data-aos-delay="150"
-              className="mb-4 bg-gradient-to-r from-[#29B6F0] via-[#3E7BD6] to-[#7A4FD1] bg-clip-text text-base font-bold text-transparent sm:text-lg"
-            >
-              Enterprise Software Development
-            </p>
-
-            {/* Main Heading */}
-
-            <h1
-              data-aos="fade-up"
-              data-aos-delay="250"
-              className="max-w-[700px] text-4xl font-extrabold leading-[1.08] tracking-[-0.03em] sm:text-5xl md:text-6xl xl:text-[68px]"
-            >
-
-              <span className="bg-gradient-to-r from-[#29B6F0] via-[#3E7BD6] to-[#B93FC9] bg-clip-text text-transparent">
-                Building
-              </span>
-
-              <span className="mt-1 block bg-gradient-to-r from-[#29B6F0] via-[#3E7BD6] to-[#B93FC9] bg-clip-text text-transparent">
-                Intelligent Software
-              </span>
-
-              <span className="mt-1 block text-white">
-                For Real Businesses
-              </span>
-
-            </h1>
-
-            {/* Divider */}
-
-            <div
-              data-aos="fade-right"
-              data-aos-delay="350"
-              className="mt-7 flex items-center gap-2"
-            >
-              <span className="h-[4px] w-16 rounded-full bg-gradient-to-r from-[#29B6F0] to-[#3E7BD6] sm:w-20" />
-
-              <span className="h-[4px] w-8 rounded-full bg-gradient-to-r from-[#7A4FD1] to-[#B93FC9] sm:w-10" />
-
-              <span className="h-[4px] w-2 rounded-full bg-[#B93FC9]" />
-            </div>
-
-            {/* CTA Buttons */}
-
-            <div
-              data-aos="fade-up"
-              data-aos-delay="450"
-              className="mt-9 flex flex-col gap-3 sm:flex-row sm:items-center"
-            >
-
-              {/* Primary Button */}
-
-              <Link
-                href="/contact/contacthero"
-                className="group inline-flex w-full items-center justify-center rounded-full bg-gradient-to-r from-[#29B6F0] via-[#3E7BD6] to-[#B93FC9] px-6 py-3.5 text-sm font-semibold text-white shadow-[0_0_35px_rgba(62,123,214,0.25)] transition-all duration-500 hover:-translate-y-1 hover:shadow-[0_0_50px_rgba(185,63,201,0.35)] sm:w-auto sm:px-7"
-              >
-                Start Your Project
-
-                <ArrowRight className="ml-2.5 h-4.5 w-4.5 transition-transform duration-300 group-hover:translate-x-1" />
-              </Link>
-
-              {/* Secondary Button */}
-
-              <Link
-                href="/services/serviceshero"
-                className="group inline-flex w-full items-center justify-center rounded-full border border-white/10 bg-white/[0.035] px-6 py-3.5 text-sm font-semibold text-white backdrop-blur-xl transition-all duration-500 hover:-translate-y-1 hover:border-[#3E7BD6]/60 hover:bg-white/[0.07] sm:w-auto sm:px-7"
-              >
-                Explore Services
-
-                <ArrowRight className="ml-2.5 h-4 w-4 opacity-0 transition-all duration-300 group-hover:translate-x-1 group-hover:opacity-100" />
-              </Link>
-
-            </div>
-
-            {/* Bottom Accent */}
-
-            <div
-              data-aos="fade-up"
-              data-aos-delay="550"
-              className="mt-10 flex items-center gap-4"
-            >
-
-              <div className="h-px w-16 bg-gradient-to-r from-[#29B6F0] to-transparent" />
-
-              <span className="text-[10px] font-medium uppercase tracking-[0.3em] text-[#66666F]">
-                Enterprise Software Development
-              </span>
-
-            </div>
-
+            <span className="h-[3px] w-2 rounded-full bg-[#B93FC9]" />
           </div>
 
           {/* =================================================
-              RIGHT IMAGE
+              CTA BUTTONS
           ================================================= */}
 
-          <div className="relative h-[430px] w-full px-5 pb-10 sm:h-[520px] sm:px-8 md:h-[580px] lg:h-screen lg:px-0 lg:py-10">
-
-            {/* Image Glow */}
-
-            <div
-              data-aos="zoom-in"
-              data-aos-duration="1300"
-              className="absolute inset-5 rounded-[70px] bg-gradient-to-br from-[#29B6F0]/20 via-[#3E7BD6]/5 to-[#B93FC9]/20 blur-3xl lg:inset-8"
-            />
-
-            {/* Main Image Shape */}
-
-            <div
-              data-aos="fade-left"
-              data-aos-duration="1200"
-              className="
-                group
-                relative
-                h-full
-                w-full
-                overflow-hidden
-                rounded-[45px]
-                rounded-tl-[130px]
-                rounded-br-[130px]
-                border
-                border-white/10
-                bg-[#0A0A0A]
-                shadow-[0_30px_100px_rgba(0,0,0,0.55)]
-                lg:rounded-[55px]
-                lg:rounded-tl-[180px]
-                lg:rounded-br-[180px]
-              "
-            >
-
-              <Image
-                src="/home/case study.jpg"
-                alt="Enterprise Software Development"
-                fill
-                priority
-                className="object-cover object-center transition-transform duration-[1800ms] group-hover:scale-105"
-              />
-
-              {/* Dark Overlay */}
-
-              <div className="absolute inset-0 bg-gradient-to-l from-black/5 via-black/10 to-black/70" />
-
-              {/* BeaverTek Gradient */}
-
-              <div className="absolute inset-0 bg-gradient-to-tr from-[#29B6F0]/15 via-transparent to-[#B93FC9]/20" />
-
-              {/* Bottom Dark Gradient */}
-
-              <div className="absolute inset-x-0 bottom-0 h-1/3 bg-gradient-to-t from-black/70 to-transparent" />
-
-              {/* Image Badge */}
-
-              <div
-                data-aos="fade-down"
-                data-aos-delay="500"
-                className="absolute right-5 top-5 rounded-full border border-white/10 bg-black/50 px-4 py-2 backdrop-blur-xl sm:right-8 sm:top-8 sm:px-5"
-              >
-
-                <span className="bg-gradient-to-r from-[#29B6F0] via-[#3E7BD6] to-[#B93FC9] bg-clip-text text-[10px] font-bold uppercase tracking-[0.25em] text-transparent sm:text-xs">
-                  Enterprise Solutions
-                </span>
-
-              </div>
-
-              {/* Bottom Image Content */}
-
-              <div
-                data-aos="fade-up"
-                data-aos-delay="600"
-                className="absolute bottom-6 left-6 right-6 sm:bottom-8 sm:left-8 sm:right-8"
-              >
-
-                <div className="mb-3 flex items-center gap-2">
-
-                  <span className="h-2 w-2 rounded-full bg-[#29B6F0] shadow-[0_0_15px_#29B6F0]" />
-
-                  <span className="h-px w-12 bg-gradient-to-r from-[#29B6F0] to-[#B93FC9]" />
-
-                </div>
-
-                <p className="max-w-xs text-sm font-medium leading-6 text-white/80 sm:text-base">
-                  Enterprise Software Development
-                </p>
-
-              </div>
-
-            </div>
-
+          <div
+            data-aos="fade-up"
+            data-aos-delay="300"
+            className="
+              mt-6
+              flex
+              w-full
+              flex-col
+              items-center
+              justify-center
+              gap-3
+              sm:mt-7
+              sm:w-auto
+              sm:flex-row
+              md:mt-8
+            "
+          >
             {/* =================================================
-                DECORATIVE GRADIENT CURVE
+                PRIMARY - SMOOTH SCROLL
             ================================================= */}
 
-            <div className="pointer-events-none absolute -left-4 top-[18%] hidden h-[65%] w-16 lg:block">
+           <button
+  type="button"
+  onClick={scrollToCaseStudy}
+  className="
+    group
+    inline-flex
+    w-full
+    items-center
+    justify-center
+    rounded-full
+    bg-gradient-to-r
+    from-[#29B6F0]
+    via-[#3E7BD6]
+    to-[#B93FC9]
+    px-6
+    py-3
+    text-sm
+    font-semibold
+    text-white
+    shadow-[0_0_30px_rgba(62,123,214,0.25)]
+    transition-all
+    duration-500
+    hover:-translate-y-1
+    hover:shadow-[0_0_45px_rgba(185,63,201,0.35)]
+    sm:w-auto
+    sm:px-7
+    sm:py-3.5
+  "
+>
+  Start Your Project
 
-              <svg
-                className="h-full w-full"
-                viewBox="0 0 80 500"
-                fill="none"
-                preserveAspectRatio="none"
-              >
+  <ArrowRight
+    className="
+      ml-2.5
+      h-4
+      w-4
+      transition-transform
+      duration-300
+      group-hover:translate-x-1
+    "
+  />
+</button>
 
-                <defs>
+            {/* =================================================
+                SECONDARY
+            ================================================= */}
 
-                  <linearGradient
-                    id="caseStudyCurve"
-                    x1="0"
-                    y1="0"
-                    x2="1"
-                    y2="1"
-                  >
+            <Link
+              href="/services/serviceshero"
+              className="
+                group
+                inline-flex
+                w-full
+                items-center
+                justify-center
+                rounded-full
+                border
+                border-white/20
+                bg-black/30
+                px-6
+                py-3
+                text-sm
+                font-semibold
+                text-white
+                shadow-[0_8px_25px_rgba(0,0,0,0.18)]
+                backdrop-blur-xl
+                transition-all
+                duration-500
+                hover:-translate-y-1
+                hover:border-[#29B6F0]/60
+                hover:bg-black/45
+                sm:w-auto
+                sm:px-7
+                sm:py-3.5
+              "
+            >
+              Explore Services
 
-                    <stop offset="0%" stopColor="#29B6F0" />
-                    <stop offset="35%" stopColor="#3E7BD6" />
-                    <stop offset="70%" stopColor="#7A4FD1" />
-                    <stop offset="100%" stopColor="#B93FC9" />
-
-                  </linearGradient>
-
-                </defs>
-
-                <path
-                  d="M78 0 C10 100 10 170 48 250 C78 320 68 410 5 500"
-                  stroke="url(#caseStudyCurve)"
-                  strokeWidth="3"
-                  strokeLinecap="round"
-                />
-
-              </svg>
-
-            </div>
-
+              <ArrowRight
+                className="
+                  ml-2.5
+                  h-4
+                  w-4
+                  opacity-0
+                  transition-all
+                  duration-300
+                  group-hover:translate-x-1
+                  group-hover:opacity-100
+                "
+              />
+            </Link>
           </div>
 
-        </div>
+          {/* =================================================
+              BOTTOM ACCENT
+          ================================================= */}
 
+          <div
+            data-aos="fade-up"
+            data-aos-delay="420"
+            className="
+              mt-7
+              flex
+              items-center
+              justify-center
+              gap-3
+              sm:mt-8
+              sm:gap-4
+            "
+          >
+            <div className="h-px w-8 bg-gradient-to-r from-transparent to-[#29B6F0] sm:w-14" />
+
+            <span
+              className="
+                text-[8px]
+                font-medium
+                uppercase
+                tracking-[0.2em]
+                text-white/45
+                sm:text-[9px]
+                sm:tracking-[0.28em]
+                md:text-[10px]
+              "
+            >
+              Enterprise Software Development
+            </span>
+
+            <div className="h-px w-8 bg-gradient-to-l from-transparent to-[#B93FC9] sm:w-14" />
+          </div>
+        </div>
       </div>
 
       {/* =====================================================
-          DECORATIVE ELEMENTS
+          DECORATIVE CORNER ELEMENTS
       ===================================================== */}
+
+      <div
+        data-aos="zoom-in"
+        data-aos-delay="600"
+        className="
+          pointer-events-none
+          absolute
+          left-5
+          top-20
+          hidden
+          h-16
+          w-16
+          rounded-full
+          border
+          border-[#3E7BD6]/20
+          lg:block
+          xl:left-8
+          xl:top-24
+          xl:h-20
+          xl:w-20
+        "
+      />
 
       <div
         data-aos="zoom-in"
         data-aos-delay="700"
-        className="pointer-events-none absolute left-6 top-24 hidden h-20 w-20 rounded-full border border-[#3E7BD6]/20 xl:block"
+        className="
+          pointer-events-none
+          absolute
+          bottom-10
+          right-6
+          hidden
+          h-20
+          w-20
+          rounded-full
+          border
+          border-[#7A4FD1]/20
+          lg:block
+          xl:bottom-14
+          xl:right-10
+          xl:h-24
+          xl:w-24
+        "
       />
 
-      <div
-        data-aos="zoom-in"
-        data-aos-delay="800"
-        className="pointer-events-none absolute bottom-16 right-10 hidden h-24 w-24 rounded-full border border-[#7A4FD1]/20 xl:block"
-      />
+      {/* =====================================================
+          TOP RIGHT DOTS
+      ===================================================== */}
 
-      {/* Small Dots */}
-
-      <div className="pointer-events-none absolute right-[8%] top-12 hidden grid-cols-4 gap-3 opacity-30 lg:grid">
-
+      <div className="pointer-events-none absolute right-[7%] top-10 hidden grid-cols-4 gap-2.5 opacity-25 lg:grid">
         {Array.from({ length: 16 }).map((_, index) => (
           <span
             key={index}
             className="h-1 w-1 rounded-full bg-[#29B6F0]"
           />
         ))}
-
       </div>
 
-      {/* Bottom Border */}
+      {/* =====================================================
+          BOTTOM GRADIENT BORDER
+      ===================================================== */}
 
-      <div className="absolute bottom-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-[#3E7BD6]/40 to-transparent" />
-
+      <div className="absolute bottom-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-[#3E7BD6]/50 to-transparent" />
     </section>
   );
 }
