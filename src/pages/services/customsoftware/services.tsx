@@ -1,47 +1,70 @@
+
 "use client";
 
 import React, { useEffect, useState } from "react";
 import AOS from "aos";
 import "aos/dist/aos.css";
-import { ArrowUpRight, ArrowDownLeft } from "lucide-react";
+import {
+  ArrowUpRight,
+  ArrowDownLeft,
+  Code2,
+  RefreshCw,
+  CloudCog,
+  Sparkles,
+  Wrench,
+  Activity,
+} from "lucide-react";
 
 type Service = {
-  number: string;
   title: string;
   image: string;
+  description: string;
+  icon: React.ElementType;
 };
 
 const services: Service[] = [
   {
-    number: "01",
     title: "Custom enterprise application development",
     image: "/services/software maintance.png",
+    description:
+      "Build secure, scalable enterprise applications tailored to your business requirements and operational goals.",
+    icon: Code2,
   },
   {
-    number: "02",
     title: "Legacy modernization",
     image: "/services/End-to-End Digital Transformation.jpg",
+    description:
+      "Modernize legacy applications and technologies to improve performance, scalability, security, and long-term value.",
+    icon: RefreshCw,
   },
   {
-    number: "03",
     title: "Cloud-native application development",
     image: "/services/Cloud Cost Analysis.jpg",
+    description:
+      "Develop cloud-native applications designed for flexibility, scalability, reliability, and modern digital operations.",
+    icon: CloudCog,
   },
   {
-    number: "04",
     title: "Feature enhancements & upgrades",
     image: "/services/End-to-End Digital Transformation.jpg",
+    description:
+      "Enhance existing applications with new features, upgrades, and improvements that support evolving business needs.",
+    icon: Sparkles,
   },
   {
-    number: "05",
     title:
       "Preventive and corrective maintenance with near-zero downtime",
     image: "/services/software maintance.png",
+    description:
+      "Keep critical applications reliable with proactive maintenance, issue resolution, and continuous operational support.",
+    icon: Wrench,
   },
   {
-    number: "06",
     title: "Performance monitoring & technical support",
     image: "/services/Cloud Cost Analysis.jpg",
+    description:
+      "Monitor application performance and provide technical support to maintain reliable, efficient, and responsive systems.",
+    icon: Activity,
   },
 ];
 
@@ -59,7 +82,10 @@ function Services() {
       duration: 900,
       once: true,
       offset: 70,
+      easing: "ease-out-cubic",
     });
+
+    AOS.refresh();
   }, []);
 
   /* =====================================================
@@ -126,14 +152,12 @@ function Services() {
   };
 
   return (
-    <section className="relative overflow-hidden bg-black py-16 sm:py-20 md:py-24 lg:py-28">
-
+    <section className="relative overflow-hidden bg-black py-16 sm:py-20 md:py-24 lg:py-13">
       {/* =====================================================
           BACKGROUND
       ===================================================== */}
 
       <div className="pointer-events-none absolute inset-0">
-
         {/* Subtle Grid */}
         <div
           className="absolute inset-0 opacity-[0.025]"
@@ -159,21 +183,23 @@ function Services() {
       ===================================================== */}
 
       <div className="relative mx-auto max-w-[1350px] px-5 sm:px-6 lg:px-8">
-
         {/* =====================================================
             HEADER
         ===================================================== */}
 
-       <div
+        <div
   data-aos="fade-up"
   className="mb-10 text-center sm:mb-12 md:mb-14"
 >
-  <span className="text-sm font-bold uppercase tracking-[0.35em] text-[#29B6F0]">
+  <span className="text-xs font-bold uppercase tracking-[0.3em] text-[#29B6F0] sm:text-sm sm:tracking-[0.35em]">
     Services
   </span>
 
-  <h2 className="mt-3 text-3xl font-extrabold leading-tight text-white sm:text-4xl md:text-5xl lg:text-6xl">
-    Our Services
+  <h2 className="mt-3 text-3xl font-extrabold leading-tight sm:text-4xl md:text-5xl lg:text-6xl">
+    <span className="text-white">Our </span>
+    <span className="bg-gradient-to-r from-[#29B6F0] via-[#3E7BD6] to-[#B93FC9] bg-clip-text text-transparent">
+      Services
+    </span>
   </h2>
 
   <div className="mx-auto mt-5 h-[3px] w-20 rounded-full bg-gradient-to-r from-[#29B6F0] via-[#3E7BD6] to-[#7A4FD1]" />
@@ -189,18 +215,15 @@ function Services() {
           onMouseEnter={() => setIsPaused(true)}
           onMouseLeave={() => setIsPaused(false)}
         >
-
           {/* Left Fade */}
-
           <div className="pointer-events-none absolute left-0 top-0 z-30 h-full w-20 bg-gradient-to-r from-black to-transparent lg:w-32" />
 
           {/* Right Fade */}
-
           <div className="pointer-events-none absolute right-0 top-0 z-30 h-full w-20 bg-gradient-to-l from-black to-transparent lg:w-32" />
 
-          {/* =====================================================
+          {/* =================================================
               CARDS
-          ===================================================== */}
+          ================================================= */}
 
           {services.map((service, index) => {
             const position = getPosition(index);
@@ -209,10 +232,11 @@ function Services() {
 
             const isActive = position === 0;
             const isImageOpen = openImage === index;
+            const Icon = service.icon;
 
             return (
               <div
-                key={service.number}
+                key={service.title}
                 onClick={() => handleCardClick(index)}
                 className="absolute left-1/2 top-1/2 cursor-pointer"
                 style={{
@@ -248,7 +272,6 @@ function Services() {
                     "transform 750ms cubic-bezier(0.22,1,0.36,1), height 600ms ease, opacity 500ms ease",
                 }}
               >
-
                 {/* =================================================
                     CARD
                 ================================================= */}
@@ -257,7 +280,6 @@ function Services() {
                   className={`
                     group relative h-full overflow-hidden
                     border transition-all duration-700
-
                     rounded-[30px]
                     rounded-tr-[65px]
                     rounded-bl-[45px]
@@ -269,7 +291,6 @@ function Services() {
                     }
                   `}
                 >
-
                   {/* =================================================
                       GRADIENT BACKGROUND
                   ================================================= */}
@@ -286,6 +307,7 @@ function Services() {
                     className={`
                       absolute left-4 right-4 top-4 overflow-hidden
                       rounded-[22px] transition-all duration-700
+
                       ${
                         isImageOpen
                           ? "h-[165px] opacity-100"
@@ -299,81 +321,32 @@ function Services() {
                       className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-105"
                     />
 
-                    {/* Image Overlay */}
-
                     <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent" />
-
-                    {/* Gradient border */}
 
                     <div className="absolute inset-0 rounded-[22px] border border-white/10" />
                   </div>
 
                   {/* =================================================
-                      TOP
-                  ================================================= */}
-
-                  <div
-                    className={`
-                      absolute left-7 right-7 z-10 flex items-center
-                      justify-between transition-all duration-700
-                      ${
-                        isImageOpen
-                          ? "top-[190px]"
-                          : "top-7"
-                      }
-                    `}
-                  >
-
-                    {/* Number */}
-
-                    <span
-                      className={`
-                        text-xs font-bold tracking-[0.3em]
-                        ${
-                          isActive
-                            ? "bg-gradient-to-r from-[#29B6F0] to-[#7A4FD1] bg-clip-text text-transparent"
-                            : "text-[#555]"
-                        }
-                      `}
-                    >
-                      {service.number}
-                    </span>
-
-                    {/* Status Dot */}
-
-                    <span
-                      className={`
-                        h-2.5 w-2.5 rounded-full transition-all duration-500
-                        ${
-                          isActive
-                            ? "bg-[#29B6F0] shadow-[0_0_16px_#29B6F0]"
-                            : "bg-[#333]"
-                        }
-                      `}
-                    />
-
-                  </div>
-
-                  {/* =================================================
-                      CENTER ICON
+                      RELATED ICON
                   ================================================= */}
 
                   <div
                     className={`
                       absolute left-1/2 z-10 flex -translate-x-1/2
                       items-center justify-center transition-all duration-700
+
                       ${
                         isImageOpen
-                          ? "top-[245px]"
+                          ? "top-[205px]"
                           : "top-[95px]"
                       }
                     `}
                   >
-
                     <div
                       className={`
                         flex h-[68px] w-[68px] items-center justify-center
                         rounded-full border transition-all duration-700
+
                         ${
                           isActive
                             ? "border-[#29B6F0]/30 bg-[#29B6F0]/10"
@@ -381,19 +354,15 @@ function Services() {
                         }
                       `}
                     >
-
-                      <div
-                        className={`
-                          h-7 w-7 rotate-45 rounded-lg
-                          transition-all duration-700
-                          ${
-                            isActive
-                              ? "bg-gradient-to-br from-[#29B6F0] via-[#3E7BD6] to-[#7A4FD1] shadow-[0_0_22px_rgba(41,182,240,0.3)]"
-                              : "bg-white/10"
-                          }
-                        `}
+                      <Icon
+                        size={30}
+                        strokeWidth={1.7}
+                        className={
+                          isActive
+                            ? "text-[#29B6F0]"
+                            : "text-white/30"
+                        }
                       />
-
                     </div>
                   </div>
 
@@ -404,29 +373,64 @@ function Services() {
                   <div
                     className={`
                       absolute left-7 right-7 z-10 transition-all duration-700
+
                       ${
                         isImageOpen
-                          ? "bottom-[78px]"
+                          ? "bottom-[82px]"
                           : "bottom-[78px]"
                       }
                     `}
                   >
+                   <h3
+  className={`
+    text-[17px] font-bold leading-[1.25]
+    transition-all duration-500
+    sm:text-[19px] md:text-[20px]
+    ${isActive ? "text-white" : "text-[#777]"}
+  `}
+>
+  {(() => {
+    const words = service.title.split(" ");
+    const middle = Math.ceil(words.length / 2);
 
-                    <h3
+    return (
+      <>
+        <span>
+          {words.slice(0, middle).join(" ")}{" "}
+        </span>
+
+        <span
+          className="
+            bg-gradient-to-r
+            from-[#29B6F0]
+            via-[#3E7BD6]
+            to-[#B93FC9]
+            bg-clip-text
+            text-transparent
+          "
+        >
+          {words.slice(middle).join(" ")}
+        </span>
+      </>
+    );
+  })()}
+</h3>
+
+                    {/* Description - Only When Open */}
+                    <div
                       className={`
-                        text-xl font-bold leading-[1.2]
-                        transition-all duration-500
-                        sm:text-[22px]
+                        overflow-hidden transition-all duration-700
                         ${
-                          isActive
-                            ? "text-white"
-                            : "text-[#777]"
+                          isImageOpen
+                            ? "mt-3 max-h-24 opacity-100"
+                            : "mt-0 max-h-0 opacity-0"
                         }
                       `}
                     >
-                      {service.title}
-                    </h3>
-
+                      <p className="text-[12px] leading-5 text-[#A0A0A8] sm:text-[13px]">
+                        {service.description}
+                      </p>
+                    </div>
                   </div>
 
                   {/* =================================================
@@ -435,12 +439,18 @@ function Services() {
 
                   <button
                     type="button"
+                    aria-label={
+                      isImageOpen
+                        ? `Close ${service.title}`
+                        : `View ${service.title}`
+                    }
                     onClick={(e) => toggleImage(e, index)}
                     className={`
                       absolute bottom-5 left-6 right-6 z-20
                       flex h-12 items-center
                       rounded-full border
                       transition-all duration-500
+
                       ${
                         isActive
                           ? "border-white/15 bg-white/[0.04]"
@@ -448,14 +458,13 @@ function Services() {
                       }
                     `}
                   >
-
                     {/* Arrow Circle */}
-
                     <span
                       className={`
                         ml-1 flex h-10 w-10 shrink-0
                         items-center justify-center
                         rounded-full transition-all duration-500
+
                         ${
                           isActive
                             ? "bg-gradient-to-r from-[#29B6F0] to-[#7A4FD1] text-white"
@@ -471,10 +480,10 @@ function Services() {
                     </span>
 
                     {/* Line */}
-
                     <span
                       className={`
                         mx-3 h-px flex-1
+
                         ${
                           isActive
                             ? "bg-gradient-to-r from-[#29B6F0]/50 to-[#7A4FD1]/20"
@@ -482,7 +491,6 @@ function Services() {
                         }
                       `}
                     />
-
                   </button>
 
                   {/* =================================================
@@ -494,6 +502,7 @@ function Services() {
                       absolute bottom-0 left-0 right-0 h-[3px]
                       bg-gradient-to-r from-[#29B6F0] via-[#3E7BD6] to-[#B93FC9]
                       transition-opacity duration-500
+
                       ${
                         isActive
                           ? "opacity-100"
@@ -501,7 +510,6 @@ function Services() {
                       }
                     `}
                   />
-
                 </div>
               </div>
             );
@@ -516,17 +524,18 @@ function Services() {
           data-aos="fade-up"
           className="mt-6 hidden items-center justify-center gap-2 md:flex"
         >
-
           {services.map((service, index) => (
             <button
-              key={service.number}
+              key={service.title}
               type="button"
+              aria-label={`Go to service ${index + 1}`}
               onClick={() => {
                 setActive(index);
                 setOpenImage(null);
               }}
               className={`
                 h-1.5 rounded-full transition-all duration-500
+
                 ${
                   active === index
                     ? "w-9 bg-gradient-to-r from-[#29B6F0] to-[#7A4FD1]"
@@ -535,7 +544,6 @@ function Services() {
               `}
             />
           ))}
-
         </div>
 
         {/* =====================================================
@@ -548,25 +556,22 @@ function Services() {
           onTouchStart={() => setIsPaused(true)}
           onTouchEnd={() => setIsPaused(false)}
         >
-
           <div className="overflow-hidden">
-
             <div
               className="flex transition-transform duration-700 ease-[cubic-bezier(0.22,1,0.36,1)]"
               style={{
                 transform: `translateX(-${active * 100}%)`,
               }}
             >
-
               {services.map((service, index) => {
                 const isImageOpen = openImage === index;
+                const Icon = service.icon;
 
                 return (
                   <div
-                    key={service.number}
+                    key={service.title}
                     className="w-full shrink-0 px-1"
                   >
-
                     <div
                       className={`
                         relative overflow-hidden
@@ -585,14 +590,16 @@ function Services() {
                         }
                       `}
                     >
-
-                      {/* Image */}
+                      {/* =================================================
+                          IMAGE
+                      ================================================= */}
 
                       <div
                         className={`
                           absolute left-4 right-4 top-4
                           overflow-hidden rounded-[20px]
                           transition-all duration-700
+
                           ${
                             isImageOpen
                               ? "h-[160px] opacity-100"
@@ -600,7 +607,6 @@ function Services() {
                           }
                         `}
                       >
-
                         <img
                           src={service.image}
                           alt={service.title}
@@ -608,60 +614,45 @@ function Services() {
                         />
 
                         <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent" />
+
+                        <div className="absolute inset-0 rounded-[20px] border border-white/10" />
                       </div>
 
-                      {/* Number */}
-
-                      <div
-                        className={`
-                          absolute left-6 right-6 flex justify-between
-                          transition-all duration-700
-                          ${
-                            isImageOpen
-                              ? "top-[180px]"
-                              : "top-6"
-                          }
-                        `}
-                      >
-
-                        <span className="text-xs font-bold tracking-[0.3em] text-[#29B6F0]">
-                          {service.number}
-                        </span>
-
-                        <span className="h-2 w-2 rounded-full bg-[#29B6F0] shadow-[0_0_15px_#29B6F0]" />
-
-                      </div>
-
-                      {/* Icon */}
+                      {/* =================================================
+                          RELATED ICON
+                      ================================================= */}
 
                       <div
                         className={`
                           absolute left-1/2 flex -translate-x-1/2
                           items-center justify-center
                           transition-all duration-700
+
                           ${
                             isImageOpen
-                              ? "top-[225px]"
+                              ? "top-[205px]"
                               : "top-[90px]"
                           }
                         `}
                       >
-
                         <div className="flex h-20 w-20 items-center justify-center rounded-full border border-[#29B6F0]/20 bg-[#29B6F0]/10">
-
-                          <div className="h-8 w-8 rotate-45 rounded-lg bg-gradient-to-br from-[#29B6F0] via-[#3E7BD6] to-[#7A4FD1]" />
-
+                          <Icon
+                            size={34}
+                            strokeWidth={1.7}
+                            className="text-[#29B6F0]"
+                          />
                         </div>
-
                       </div>
 
-                      {/* Title */}
+                      {/* =================================================
+                          TITLE + DESCRIPTION
+                      ================================================= */}
 
-                      <h3
+                      <div
                         className={`
                           absolute left-6 right-6
-                          text-2xl font-bold leading-tight text-white
                           transition-all duration-700
+
                           ${
                             isImageOpen
                               ? "bottom-[78px]"
@@ -669,17 +660,49 @@ function Services() {
                           }
                         `}
                       >
-                        {service.title}
-                      </h3>
+                        <h3
+                          className={`
+                            text-[18px] font-bold leading-[1.25]
+                            text-white
+                            transition-all duration-700
+                            sm:text-[20px]
+                          `}
+                        >
+                          {service.title}
+                        </h3>
 
-                      {/* Arrow */}
+                        {/* Description - Only When Open */}
+                        <div
+                          className={`
+                            overflow-hidden transition-all duration-700
+
+                            ${
+                              isImageOpen
+                                ? "mt-3 max-h-24 opacity-100"
+                                : "mt-0 max-h-0 opacity-0"
+                            }
+                          `}
+                        >
+                          <p className="text-[12px] leading-5 text-[#A0A0A8] sm:text-[13px]">
+                            {service.description}
+                          </p>
+                        </div>
+                      </div>
+
+                      {/* =================================================
+                          ARROW
+                      ================================================= */}
 
                       <button
                         type="button"
+                        aria-label={
+                          isImageOpen
+                            ? `Close ${service.title}`
+                            : `View ${service.title}`
+                        }
                         onClick={(e) => toggleImage(e, index)}
                         className="absolute bottom-5 left-5 right-5 flex h-12 items-center rounded-full border border-white/15 bg-white/[0.04]"
                       >
-
                         <span className="ml-1 flex h-10 w-10 items-center justify-center rounded-full bg-gradient-to-r from-[#29B6F0] to-[#7A4FD1] text-white">
                           {isImageOpen ? (
                             <ArrowDownLeft size={18} />
@@ -689,35 +712,31 @@ function Services() {
                         </span>
 
                         <span className="mx-3 h-px flex-1 bg-gradient-to-r from-[#29B6F0]/50 to-transparent" />
-
                       </button>
 
                       {/* Bottom Line */}
-
                       <div className="absolute bottom-0 left-0 right-0 h-[3px] bg-gradient-to-r from-[#29B6F0] via-[#3E7BD6] to-[#B93FC9]" />
-
                     </div>
                   </div>
                 );
               })}
-
             </div>
           </div>
 
           {/* Mobile Indicators */}
-
           <div className="mt-6 flex justify-center gap-2">
-
             {services.map((service, index) => (
               <button
-                key={service.number}
+                key={service.title}
                 type="button"
+                aria-label={`Go to service ${index + 1}`}
                 onClick={() => {
                   setActive(index);
                   setOpenImage(null);
                 }}
                 className={`
                   h-1.5 rounded-full transition-all duration-500
+
                   ${
                     active === index
                       ? "w-8 bg-gradient-to-r from-[#29B6F0] to-[#7A4FD1]"
@@ -726,16 +745,15 @@ function Services() {
                 `}
               />
             ))}
-
           </div>
         </div>
       </div>
 
       {/* Bottom Border */}
-
       <div className="absolute bottom-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-[#3E7BD6]/40 to-transparent" />
     </section>
   );
 }
 
 export default Services;
+

@@ -65,7 +65,7 @@ function Overviewdataanalytics() {
 
          <h2 className="text-3xl font-extrabold leading-tight text-white sm:text-4xl md:text-5xl lg:text-6xl">
   <span className="bg-gradient-to-r from-[#29B6F0] via-[#3E7BD6] to-[#B93FC9] bg-clip-text text-transparent">
-    Our Services
+    Data Intelligence
   </span>
 </h2>
  </div>
@@ -202,7 +202,7 @@ function Overviewdataanalytics() {
               <span className="h-[2px] w-10 bg-gradient-to-r from-[#29B6F0] to-[#7A4FD1]" />
 
               <span className="text-xs font-bold uppercase tracking-[0.3em] text-[#29B6F0]">
-                Our Service
+               Data Intelligence
               </span>
             </div>
 
