@@ -25,7 +25,7 @@ export default function CaseStudyoverall() {
 
       <section
         id="casestudyoverall"
-        className="relative bg-black"
+        className="relative bg-black py-4"
       >
         <div className="mx-auto w-full max-w-7xl px-4 sm:px-6 lg:px-8">
 

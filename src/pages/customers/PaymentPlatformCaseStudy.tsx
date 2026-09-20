@@ -1,248 +1,222 @@
 "use client";
 
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import AOS from "aos";
 import "aos/dist/aos.css";
+
 import App_layout from "@/component/layout/app_layout";
 import Link from "next/link";
-import { motion } from "framer-motion";
+
 import PaymentPlatformhero from "./PaymentPlatformhero";
 
 export default function PaymentPlatformCaseStudy() {
+  const [hoveredCard, setHoveredCard] = useState<number | null>(null);
+
   useEffect(() => {
     AOS.init({
       duration: 900,
       once: true,
-      offset: 80,
+      offset: 70,
+      easing: "ease-out-cubic",
     });
+
+    AOS.refresh();
   }, []);
 
   return (
     <App_layout>
       <PaymentPlatformhero />
-      <section className="bg-[#000000] py-16 md:py-24 overflow-hidden">
-        <div className="max-w-7xl mx-auto px-6">
-          {/* Overview Card */}
-          <section className="relative overflow-hidden bg-[#000000] py-20 lg:py-28">
-            {/* Background */}
-            <div className="absolute inset-0 overflow-hidden">
-              <div className="absolute -top-40 -left-32 h-[28rem] w-[28rem] rounded-full bg-[#29B6F0]/15 blur-[150px]" />
 
-              <div className="absolute top-0 right-0 h-[30rem] w-[30rem] rounded-full bg-[#3E7BD6]/15 blur-[170px]" />
+      {/* =========================================================
+          CASE STUDY CONTENT
+      ========================================================= */}
+      <section
+        id="PaymentPlatformCaseStudy"
+        className="scroll-mt-24 overflow-hidden bg-[#000000] py-10 sm:py-12 lg:py-16"
+      >
+        {/* =========================================================
+            OVERVIEW
+        ========================================================= */}
+        <section className="relative overflow-hidden py-6 sm:py-8 lg:py-10">
+          <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+            <div
+              data-aos="fade-up"
+              data-aos-duration="900"
+              className="overflow-hidden rounded-2xl border border-white/[0.08] bg-white/[0.025] backdrop-blur-[2px]"
+            >
+              {/* Gradient Line */}
+              <div className="h-[2px] bg-gradient-to-r from-[#29B6F0] via-[#7A4FD1] to-[#B93FC9]" />
 
-              <div className="absolute bottom-0 left-1/2 h-[22rem] w-[22rem] -translate-x-1/2 rounded-full bg-[#B93FC9]/10 blur-[150px]" />
+              <div className="grid lg:grid-cols-3">
+                {/* Industry */}
+                <div
+                  data-aos="fade-right"
+                  data-aos-delay="100"
+                  className="group border-b border-white/[0.07] p-5 transition-colors duration-300 hover:bg-white/[0.025] sm:p-6 lg:border-b-0 lg:border-r"
+                >
+                  <div className="mb-4 flex h-10 w-10 items-center justify-center rounded-xl bg-gradient-to-br from-[#29B6F0] to-[#3E7BD6] sm:h-11 sm:w-11">
+                    <svg
+                      className="h-5 w-5 text-white"
+                      fill="none"
+                      stroke="currentColor"
+                      strokeWidth="2"
+                      viewBox="0 0 24 24"
+                    >
+                      <path
+                        d="M3 21h18M5 21V7l7-4 7 4v14"
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                      />
+                    </svg>
+                  </div>
 
-              <div className="absolute inset-0 bg-[linear-gradient(rgba(41,182,240,.05)_1px,transparent_1px),linear-gradient(90deg,rgba(41,182,240,.05)_1px,transparent_1px)] bg-[size:48px_48px]" />
-            </div>
+                  <p className="text-[10px] font-semibold uppercase tracking-[0.22em] text-[#29B6F0] sm:text-[11px]">
+                    Industry
+                  </p>
 
-            <div className="relative mx-auto max-w-7xl px-6">
-              {/* Overview Card */}
+                  <h3 className="mt-2 text-lg font-bold text-white transition duration-300 group-hover:bg-gradient-to-r group-hover:from-[#29B6F0] group-hover:to-[#7A4FD1] group-hover:bg-clip-text group-hover:text-transparent sm:text-xl">
+                    Financial services
+                  </h3>
+                </div>
 
-              <div
-                data-aos="fade-up"
-                data-aos-duration="1000"
-                className="relative overflow-hidden rounded-[36px] border border-[#2A2A30] bg-white/5 shadow-[0_20px_60px_rgba(0,0,0,.45)] backdrop-blur-2xl"
-              >
-                {/* Gradient Border */}
+                {/* Service */}
+                <div
+                  data-aos="zoom-in"
+                  data-aos-delay="180"
+                  className="group border-b border-white/[0.07] p-5 transition-colors duration-300 hover:bg-white/[0.025] sm:p-6 lg:border-b-0 lg:border-r"
+                >
+                  <div className="mb-4 flex h-10 w-10 items-center justify-center rounded-xl bg-gradient-to-br from-[#3E7BD6] to-[#7A4FD1] sm:h-11 sm:w-11">
+                    <svg
+                      className="h-5 w-5 text-white"
+                      fill="none"
+                      stroke="currentColor"
+                      strokeWidth="2"
+                      viewBox="0 0 24 24"
+                    >
+                      <path
+                        d="M8 6h13M8 12h13M8 18h13M3 6h.01M3 12h.01M3 18h.01"
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                      />
+                    </svg>
+                  </div>
 
-                <div className="absolute inset-x-0 top-0 h-[3px] bg-[linear-gradient(135deg,#29B6F0,#3E7BD6,#7A4FD1,#B93FC9)]" />
+                  <p className="text-[10px] font-semibold uppercase tracking-[0.22em] text-[#29B6F0] sm:text-[11px]">
+                    Service
+                  </p>
 
-                <div className="grid lg:grid-cols-3">
-                  {/* ================= Industry ================= */}
+                  <h3 className="mt-2 text-lg font-bold leading-snug text-white transition duration-300 group-hover:bg-gradient-to-r group-hover:from-[#29B6F0] group-hover:via-[#3E7BD6] group-hover:to-[#B93FC9] group-hover:bg-clip-text group-hover:text-transparent sm:text-xl">
+                    Build software,
+                    <br />
+                    modernize
+                  </h3>
+                </div>
 
-                  <div
-                    data-aos="fade-right"
-                    data-aos-delay="100"
-                    className="group relative border-b border-[#2A2A30] p-8 transition-all duration-500 hover:bg-white/[0.03] lg:border-b-0 lg:border-r"
-                  >
-                    <div className="mb-8 flex h-14 w-14 items-center justify-center rounded-2xl bg-[linear-gradient(135deg,#29B6F0,#3E7BD6)] shadow-[0_0_25px_rgba(41,182,240,.35)]">
+                {/* Status */}
+                <div
+                  data-aos="fade-left"
+                  data-aos-delay="260"
+                  className="relative bg-white/[0.02] p-5 sm:p-6"
+                >
+                  <div className="relative z-10">
+                    <div className="mb-4 flex h-10 w-10 items-center justify-center rounded-xl bg-gradient-to-br from-[#7A4FD1] to-[#B93FC9] sm:h-11 sm:w-11">
                       <svg
-                        className="h-7 w-7 text-white"
+                        className="h-5 w-5 text-white"
                         fill="none"
                         stroke="currentColor"
                         strokeWidth="2"
                         viewBox="0 0 24 24"
                       >
                         <path
-                          d="M3 21h18M5 21V7l7-4 7 4v14"
+                          d="M5 13l4 4L19 7"
                           strokeLinecap="round"
                           strokeLinejoin="round"
                         />
                       </svg>
                     </div>
 
-                    <p className="text-xs font-semibold uppercase tracking-[0.28em] text-[#29B6F0]">
-                      Industry
+                    <p className="text-[10px] font-semibold uppercase tracking-[0.22em] text-[#29B6F0] sm:text-[11px]">
+                      Status
                     </p>
 
-                    <h3 className="mt-5 text-3xl font-bold text-white transition duration-500 group-hover:bg-[linear-gradient(135deg,#29B6F0,#3E7BD6,#7A4FD1)] group-hover:bg-clip-text group-hover:text-transparent">
-                      Financial services
+                    <h3 className="mt-2 text-lg font-bold leading-snug bg-gradient-to-r from-[#29B6F0] via-[#3E7BD6] to-[#B93FC9] bg-clip-text text-transparent sm:text-xl">
+                      Running in production
                     </h3>
-                  </div>
 
-                  {/* ================= Service ================= */}
-
-                  <div
-                    data-aos="zoom-in"
-                    data-aos-delay="250"
-                    className="group relative border-b border-[#2A2A30] p-8 transition-all duration-500 hover:bg-white/[0.03] lg:border-b-0 lg:border-r"
-                  >
-                    <div className="mb-8 flex h-14 w-14 items-center justify-center rounded-2xl bg-[linear-gradient(135deg,#3E7BD6,#7A4FD1)] shadow-[0_0_25px_rgba(62,123,214,.35)]">
-                      <svg
-                        className="h-7 w-7 text-white"
-                        fill="none"
-                        stroke="currentColor"
-                        strokeWidth="2"
-                        viewBox="0 0 24 24"
-                      >
-                        <path
-                          d="M8 6h13M8 12h13M8 18h13M3 6h.01M3 12h.01M3 18h.01"
-                          strokeLinecap="round"
-                          strokeLinejoin="round"
-                        />
-                      </svg>
-                    </div>
-
-                    <p className="text-xs font-semibold uppercase tracking-[0.28em] text-[#29B6F0]">
-                      Service
+                    <p className="mt-3 text-sm leading-6 text-[#D4D4D8] sm:text-[15px] sm:leading-7">
+                      Designed, engineered, maintained and continuously
+                      supported by BeaverTek.
                     </p>
-
-                    <h3 className="mt-5 text-3xl font-bold leading-snug text-white transition duration-500 group-hover:bg-[linear-gradient(135deg,#29B6F0,#3E7BD6,#7A4FD1,#B93FC9)] group-hover:bg-clip-text group-hover:text-transparent">
-                      Build software,
-                      <br />
-                      modernize
-                    </h3>
-                  </div>
-
-                  {/* ================= Status ================= */}
-
-                  <div
-                    data-aos="fade-left"
-                    data-aos-delay="400"
-                    className="relative overflow-hidden bg-[linear-gradient(135deg,#121212,#18181B)] p-8"
-                  >
-                    <div className="absolute right-0 top-0 h-40 w-40 rounded-full bg-[#29B6F0]/10 blur-[90px]" />
-
-                    <div className="absolute bottom-0 left-0 h-40 w-40 rounded-full bg-[#B93FC9]/10 blur-[90px]" />
-
-                    <div className="relative z-10">
-                      <div className="mb-8 flex h-14 w-14 items-center justify-center rounded-2xl bg-[linear-gradient(135deg,#7A4FD1,#B93FC9)] shadow-[0_0_25px_rgba(185,63,201,.35)]">
-                        <svg
-                          className="h-7 w-7 text-white"
-                          fill="none"
-                          stroke="currentColor"
-                          strokeWidth="2"
-                          viewBox="0 0 24 24"
-                        >
-                          <path
-                            d="M5 13l4 4L19 7"
-                            strokeLinecap="round"
-                            strokeLinejoin="round"
-                          />
-                        </svg>
-                      </div>
-
-                      <p className="text-xs font-semibold uppercase tracking-[0.28em] text-[#29B6F0]">
-                        Status
-                      </p>
-
-                      <h3 className="mt-5 bg-[linear-gradient(135deg,#29B6F0,#3E7BD6,#7A4FD1,#B93FC9)] bg-clip-text text-3xl font-bold text-transparent">
-                        Running in production
-                      </h3>
-
-                      <p className="mt-6 leading-8 text-[#D4D4D8]">
-                        Designed, engineered, maintained and continuously
-                        supported by BeaverTek.
-                      </p>
-                    </div>
                   </div>
                 </div>
               </div>
             </div>
-          </section>
-          {/* ========================================================= */}
-          {/* <section> Challenge Section */}
-          {/* ========================================================= */}
+          </div>
+        </section>
 
-          <section className="relative mt-24 overflow-hidden">
-            {/* Background Glow */}
-            <div className="absolute inset-0 overflow-hidden">
-              <div className="absolute -left-20 top-10 h-72 w-72 rounded-full bg-[#29B6F0]/10 blur-[120px]" />
-
-              <div className="absolute right-0 bottom-0 h-80 w-80 rounded-full bg-[#B93FC9]/10 blur-[140px]" />
-            </div>
-
-            <div className="relative grid gap-14 lg:grid-cols-12">
-              {/* ========================================================= */}
-              {/* Left Content */}
-              {/* ========================================================= */}
-
+        {/* =========================================================
+            THE CHALLENGE
+        ========================================================= */}
+        <section className="relative mt-8 overflow-hidden sm:mt-10 lg:mt-12">
+          <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+            <div className="grid items-start gap-8 lg:grid-cols-12 lg:gap-12">
+              {/* LEFT */}
               <div
-                className="lg:col-span-4"
                 data-aos="fade-right"
                 data-aos-duration="900"
+                className="lg:col-span-4"
               >
-                <div className="sticky top-28">
-                  {/* Step */}
+                <div className="lg:sticky lg:top-28">
+                  <div
+                    data-aos="zoom-in"
+                    data-aos-delay="100"
+                    className="mb-5 h-1 w-14 rounded-full bg-gradient-to-r from-[#29B6F0] via-[#7A4FD1] to-[#B93FC9]"
+                  />
 
-                  <div className="flex items-center gap-5">
-                    <div className="flex h-16 w-16 items-center justify-center rounded-2xl bg-[linear-gradient(135deg,#29B6F0,#3E7BD6,#7A4FD1,#B93FC9)] text-xl font-bold text-white shadow-[0_0_35px_rgba(62,123,214,.35)]">
-                      01
-                    </div>
-
-                    <div className="h-[2px] w-20 rounded-full bg-[linear-gradient(90deg,#29B6F0,#3E7BD6,#7A4FD1,#B93FC9)]" />
-                  </div>
-
-                  {/* Badge */}
-
-                  <span className="mt-10 inline-flex rounded-full border border-[#3E7BD6]/30 bg-[#121212]/80 px-5 py-2 text-xs font-semibold uppercase tracking-[0.25em] text-[#29B6F0] backdrop-blur-xl">
+                  <span
+                    data-aos="fade-down"
+                    data-aos-delay="150"
+                    className="inline-flex rounded-full border border-[#3E7BD6]/25 bg-white/[0.025] px-3.5 py-1.5 text-[10px] font-semibold uppercase tracking-[0.2em] text-[#29B6F0] backdrop-blur-sm sm:text-[11px]"
+                  >
                     Case Study
                   </span>
 
-                  {/* Heading */}
-
-                  <h2 className="mt-8 text-4xl font-black leading-tight md:text-5xl">
-                    <span className="bg-[linear-gradient(135deg,#29B6F0,#3E7BD6,#7A4FD1,#B93FC9)] bg-clip-text text-transparent">
+                  <h2
+                    data-aos="fade-up"
+                    data-aos-delay="200"
+                    className="mt-4 text-3xl font-black leading-tight sm:text-4xl lg:text-[42px]"
+                  >
+                    <span className="bg-gradient-to-r from-[#29B6F0] via-[#3E7BD6] to-[#B93FC9] bg-clip-text text-transparent">
                       The Challenge
                     </span>
                   </h2>
 
-                  <p className="mt-6 max-w-sm leading-8 text-[#A0A0A8]">
+                  <p
+                    data-aos="fade-up"
+                    data-aos-delay="300"
+                    className="mt-3 max-w-sm text-sm leading-6 text-[#A0A0A8] sm:text-[15px] sm:leading-7"
+                  >
                     Understanding the business problem before designing the
                     right technology solution.
                   </p>
                 </div>
               </div>
 
-              {/* ========================================================= */}
-              {/* Right Card */}
-              {/* ========================================================= */}
-
+              {/* RIGHT */}
               <div
-                className="lg:col-span-8"
                 data-aos="fade-left"
                 data-aos-duration="1000"
+                className="lg:col-span-8 lg:translate-x-[8%]"
               >
-                <div className="group relative overflow-hidden rounded-[32px] border border-[#2A2A30] bg-[#121212]/95 p-8 shadow-[0_20px_60px_rgba(0,0,0,.45)] backdrop-blur-xl transition-all duration-500 hover:border-[#3E7BD6] hover:shadow-[0_0_45px_rgba(62,123,214,.30)] md:p-12">
-                  {/* Top Gradient */}
-
-                  <div className="absolute left-0 top-0 h-[4px] w-full bg-[linear-gradient(135deg,#29B6F0,#3E7BD6,#7A4FD1,#B93FC9)]" />
-
-                  {/* Glow */}
-
-                  <div className="absolute -right-24 -top-24 h-60 w-60 rounded-full bg-[#29B6F0]/10 blur-[120px] opacity-0 transition duration-500 group-hover:opacity-100" />
-
-                  <div className="absolute -left-20 bottom-0 h-60 w-60 rounded-full bg-[#B93FC9]/10 blur-[120px] opacity-0 transition duration-500 group-hover:opacity-100" />
-
+                <div className="relative">
                   {/* Quote Icon */}
-
                   <div
                     data-aos="zoom-in"
-                    data-aos-delay="200"
-                    className="mb-8 flex h-16 w-16 items-center justify-center rounded-2xl bg-[linear-gradient(135deg,#29B6F0,#3E7BD6,#7A4FD1,#B93FC9)] shadow-[0_0_30px_rgba(62,123,214,.35)]"
+                    data-aos-delay="150"
+                    className="mb-5 flex h-11 w-11 items-center justify-center rounded-xl bg-gradient-to-br from-[#29B6F0] via-[#3E7BD6] to-[#7A4FD1] sm:h-12 sm:w-12"
                   >
                     <svg
-                      className="h-8 w-8 text-white"
+                      className="h-6 w-6 text-white"
                       fill="currentColor"
                       viewBox="0 0 24 24"
                     >
@@ -250,150 +224,52 @@ export default function PaymentPlatformCaseStudy() {
                     </svg>
                   </div>
 
-                  {/* Paragraph 1 */}
-
                   <p
                     data-aos="fade-up"
-                    data-aos-delay="250"
-                    className="text-lg leading-9 text-[#D4D4D8]"
+                    data-aos-delay="220"
+                    className="max-w-2xl text-base leading-7 text-[#D4D4D8] sm:text-lg sm:leading-8 lg:text-[19px] lg:leading-9"
                   >
-                    A growing financial services client needed a payment gateway
-                    integration platform that could serve multiple downstream
-                    merchants reliably and at scale.
-                  </p>
-
-                  {/* Divider */}
-
-                  <div className="my-10 h-px bg-gradient-to-r from-transparent via-[#3E7BD6]/60 to-transparent" />
-
-                  {/* Paragraph 2 */}
-
-                  <p
-                    data-aos="fade-up"
-                    data-aos-delay="400"
-                    className="text-lg leading-9 text-[#D4D4D8]"
-                  >
-                    The existing process was manual, fragile, and could not keep
-                    up with growth.
+                    A growing financial services client needed a payment
+                    gateway integration platform that could serve multiple
+                    downstream merchants reliably and at scale.The existing
+                    process was manual, fragile, and could not keep up with
+                    growth.
                   </p>
                 </div>
               </div>
             </div>
-          </section>
+          </div>
+        </section>
 
-          {/* ========================================================= */}
-          {/* </section> Challenge Section End */}
-          {/* ========================================================= */}
-
-          {/* =========================================================
-    SECTION — WHAT WE BUILT
-========================================================= */}
-
-          <section className="relative overflow-hidden py-24 lg:py-32">
-            {/* Background Effects */}
-            <div className="absolute inset-0 -z-10 overflow-hidden">
-              <div className="absolute -top-40 left-0 h-[28rem] w-[28rem] rounded-full bg-[#29B6F0]/10 blur-[140px]" />
-
-              <div className="absolute bottom-0 right-0 h-[30rem] w-[30rem] rounded-full bg-[#7A4FD1]/10 blur-[160px]" />
-
-              <div className="absolute left-1/2 top-1/2 h-80 w-80 -translate-x-1/2 -translate-y-1/2 rounded-full bg-[#B93FC9]/5 blur-[150px]" />
-
-              <div className="absolute inset-0 bg-[linear-gradient(rgba(41,182,240,.04)_1px,transparent_1px),linear-gradient(90deg,rgba(41,182,240,.04)_1px,transparent_1px)] bg-[size:48px_48px]" />
-            </div>
-
-            <div className="grid gap-16 lg:grid-cols-12">
-              {/* ================= LEFT ================= */}
-
-              <motion.div
-                initial={{ opacity: 0, x: -60 }}
-                whileInView={{ opacity: 1, x: 0 }}
-                transition={{ duration: 0.8 }}
-                viewport={{ once: true }}
+        {/* =========================================================
+            WHAT WE BUILT
+        ========================================================= */}
+        <section className="relative mt-10 overflow-hidden sm:mt-12 lg:mt-16">
+          <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+            <div className="grid items-start gap-8 lg:grid-cols-12 lg:gap-12">
+              {/* LEFT CONTENT */}
+              <div
                 data-aos="fade-right"
                 data-aos-duration="900"
-                className="lg:col-span-4"
+                className="lg:col-span-7"
               >
-                <div className="sticky top-28">
-                  {/* Number */}
-
-                  <div className="relative inline-flex">
-                    <div className="absolute inset-0 rounded-full bg-[linear-gradient(135deg,#29B6F0,#3E7BD6,#7A4FD1,#B93FC9)] blur-xl opacity-50" />
-
-                    <div className="relative flex h-16 w-16 items-center justify-center rounded-full bg-[linear-gradient(135deg,#29B6F0,#3E7BD6,#7A4FD1,#B93FC9)] text-xl font-black text-white shadow-[0_0_35px_rgba(62,123,214,.45)]">
-                      02
-                    </div>
-                  </div>
-
-                  {/* Badge */}
-
-                  <div
-                    data-aos="fade-up"
-                    data-aos-delay="100"
-                    className="mt-8 inline-flex items-center rounded-full border border-[#3E7BD6]/30 bg-[#121212]/80 px-5 py-2 text-xs font-bold uppercase tracking-[0.28em] text-[#29B6F0] backdrop-blur-xl"
-                  >
-                    Solution
-                  </div>
-
-                  {/* Heading */}
-
-                  <h2
-                    data-aos="fade-up"
-                    data-aos-delay="200"
-                    className="mt-6 text-4xl font-black leading-tight lg:text-5xl"
-                  >
-                    <span className="bg-[linear-gradient(135deg,#29B6F0_0%,#3E7BD6_35%,#7A4FD1_70%,#B93FC9_100%)] bg-clip-text text-transparent">
-                      What We Built
-                    </span>
-                  </h2>
-
-                  {/* Gradient Line */}
-
-                  <div
-                    data-aos="zoom-in"
-                    data-aos-delay="300"
-                    className="mt-8 h-[4px] w-28 rounded-full bg-[linear-gradient(135deg,#29B6F0,#3E7BD6,#7A4FD1,#B93FC9)] shadow-[0_0_25px_rgba(62,123,214,.4)]"
-                  />
-                </div>
-              </motion.div>
-
-              {/* ================= RIGHT ================= */}
-
-              <motion.div
-                initial={{ opacity: 0, x: 60 }}
-                whileInView={{ opacity: 1, x: 0 }}
-                transition={{ duration: 0.8 }}
-                viewport={{ once: true }}
-                data-aos="fade-left"
-                data-aos-duration="1000"
-                className="lg:col-span-8"
-              >
-                <div className="group relative overflow-hidden rounded-[34px] border border-[#2A2A30] bg-[#121212] p-10 shadow-[0_20px_60px_rgba(0,0,0,.45)] transition-all duration-700 hover:border-[#3E7BD6] hover:shadow-[0_0_60px_rgba(62,123,214,.30)] lg:p-14">
-                  {/* Hover Glow */}
-
-                  <div className="absolute -right-20 -top-20 h-64 w-64 rounded-full bg-[#29B6F0]/10 blur-[120px] opacity-0 transition duration-700 group-hover:opacity-100" />
-
-                  <div className="absolute -left-20 bottom-0 h-64 w-64 rounded-full bg-[#B93FC9]/10 blur-[130px] opacity-0 transition duration-700 group-hover:opacity-100" />
-
-                  {/* Top Label */}
-
+                <div className="relative">
                   <div
                     data-aos="fade-down"
                     data-aos-delay="100"
-                    className="relative z-10 flex items-center gap-3"
+                    className="flex items-center gap-3"
                   >
-                    <div className="h-3 w-3 rounded-full bg-[#29B6F0] shadow-[0_0_18px_#29B6F0]" />
+                    <div className="h-2 w-2 shrink-0 rounded-full bg-[#29B6F0]" />
 
-                    <span className="text-xs font-bold uppercase tracking-[0.3em] text-[#29B6F0]">
+                    <span className="text-[11px] font-bold uppercase tracking-[0.22em] text-[#29B6F0] sm:text-xs">
                       BeaverTek Solution
                     </span>
                   </div>
 
-                  {/* Content */}
-
                   <p
                     data-aos="fade-up"
-                    data-aos-delay="250"
-                    className="relative z-10 mt-8 text-xl leading-10 text-[#D4D4D8] lg:text-2xl"
+                    data-aos-delay="180"
+                    className="mt-5 max-w-2xl text-base leading-7 text-[#D4D4D8] sm:text-lg sm:leading-8 lg:text-xl lg:leading-9"
                   >
                     A purpose-built payment gateway integration platform —
                     designed, engineered, and now supported by
@@ -404,403 +280,361 @@ export default function PaymentPlatformCaseStudy() {
                     end-to-end.
                   </p>
 
-                  {/* Bottom Accent */}
-
                   <div
                     data-aos="fade-up"
-                    data-aos-delay="400"
-                    className="relative z-10 mt-10 flex items-center gap-4"
+                    data-aos-delay="280"
+                    className="mt-6 flex max-w-2xl items-center gap-3 sm:mt-7"
                   >
-                    <div className="h-[3px] flex-1 rounded-full bg-[linear-gradient(135deg,#29B6F0,#3E7BD6,#7A4FD1,#B93FC9)]" />
+                    <div className="h-[2px] flex-1 rounded-full bg-[linear-gradient(135deg,#29B6F0,#3E7BD6,#7A4FD1,#B93FC9)]" />
 
-                    <span className="text-sm font-semibold uppercase tracking-[0.22em] text-[#29B6F0]">
+                    <span className="shrink-0 text-[10px] font-semibold uppercase tracking-[0.16em] text-[#29B6F0] sm:text-[11px]">
                       Production Ready
                     </span>
                   </div>
                 </div>
-              </motion.div>
-            </div>
-          </section>
-
-          {/* =========================================================
-    SECTION — RESULTS
-========================================================= */}
-
-          <section className="relative py-24 overflow-hidden">
-            {/* Background Effects */}
-            <div className="absolute inset-0 -z-10 overflow-hidden">
-              <div className="absolute -top-40 -left-20 h-[28rem] w-[28rem] rounded-full bg-[#29B6F0]/10 blur-[140px]" />
-
-              <div className="absolute bottom-0 right-0 h-[30rem] w-[30rem] rounded-full bg-[#7A4FD1]/10 blur-[150px]" />
-
-              <div className="absolute left-1/2 top-1/2 h-80 w-80 -translate-x-1/2 -translate-y-1/2 rounded-full bg-[#B93FC9]/5 blur-[140px]" />
-
-              <div className="absolute inset-0 bg-[linear-gradient(rgba(41,182,240,.04)_1px,transparent_1px),linear-gradient(90deg,rgba(41,182,240,.04)_1px,transparent_1px)] bg-[size:48px_48px]" />
-            </div>
-
-            <motion.div
-              initial={{ opacity: 0, y: 50 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8 }}
-              viewport={{ once: true }}
-              data-aos="fade-up"
-              data-aos-duration="1000"
-              className="relative overflow-hidden rounded-[36px] border border-[#2A2A30] bg-[#121212] shadow-[0_25px_70px_rgba(0,0,0,.45)]"
-            >
-              {/* Hover Glow */}
-              <div className="absolute -left-24 -top-24 h-72 w-72 rounded-full bg-[#29B6F0]/10 blur-[120px]" />
-
-              <div className="absolute -bottom-24 right-0 h-72 w-72 rounded-full bg-[#B93FC9]/10 blur-[140px]" />
-
-              {/* ================= Header ================= */}
-
-              <div className="relative border-b border-[#2A2A30] p-8 md:p-12">
-                <span
-                  data-aos="fade-right"
-                  data-aos-delay="100"
-                  className="inline-flex items-center rounded-full border border-[#3E7BD6]/30 bg-[#0F172A]/70 px-5 py-2 text-xs font-bold uppercase tracking-[0.28em] text-[#29B6F0] backdrop-blur-xl"
-                >
-                  Where It Stands Today
-                </span>
-
-                <h2
-                  data-aos="fade-up"
-                  data-aos-delay="200"
-                  className="mt-8 text-4xl font-black leading-tight md:text-5xl"
-                >
-                  <span className="bg-[linear-gradient(135deg,#29B6F0_0%,#3E7BD6_35%,#7A4FD1_70%,#B93FC9_100%)] bg-clip-text text-transparent">
-                    Built to Scale.
-                    <br />
-                    Running Every Day.
-                  </span>
-                </h2>
-
-                <div
-                  data-aos="zoom-in"
-                  data-aos-delay="300"
-                  className="mt-8 h-1 w-28 rounded-full bg-[linear-gradient(135deg,#29B6F0,#3E7BD6,#7A4FD1,#B93FC9)] shadow-[0_0_30px_rgba(62,123,214,.35)]"
-                />
               </div>
 
-              {/* ================= Stats ================= */}
-
-              <div className="grid md:grid-cols-3">
-                {/* Card 1 */}
-
-                <div
-                  data-aos="fade-up"
-                  data-aos-delay="100"
-                  className="group relative overflow-hidden border-b border-[#2A2A30] p-10 text-center transition-all duration-500 md:border-b-0 md:border-r hover:bg-[#161616]"
-                >
-                  <div className="absolute inset-x-0 top-0 h-[3px] bg-[linear-gradient(135deg,#29B6F0,#3E7BD6)] scale-x-0 transition duration-500 group-hover:scale-x-100" />
-
-                  <h3 className="text-6xl font-black bg-[linear-gradient(135deg,#29B6F0,#3E7BD6)] bg-clip-text text-transparent">
-                    150
-                  </h3>
-
-                  <p className="mt-4 text-sm font-semibold uppercase tracking-[0.22em] text-[#A0A0A8]">
-                    Clients on the Platform
-                  </p>
-                </div>
-
-                {/* Card 2 */}
-
-                <div
-                  data-aos="zoom-in-up"
-                  data-aos-delay="250"
-                  className="group relative overflow-hidden border-b border-[#2A2A30] p-10 text-center transition-all duration-500 md:border-b-0 md:border-r hover:bg-[#161616]"
-                >
-                  <div className="absolute inset-x-0 top-0 h-[3px] bg-[linear-gradient(135deg,#3E7BD6,#7A4FD1)] scale-x-0 transition duration-500 group-hover:scale-x-100" />
-
-                  <h3 className="text-6xl font-black bg-[linear-gradient(135deg,#3E7BD6,#7A4FD1)] bg-clip-text text-transparent">
-                    4.5M
-                  </h3>
-
-                  <p className="mt-4 text-sm font-semibold uppercase tracking-[0.22em] text-[#A0A0A8]">
-                    Transactions Every Month
-                  </p>
-                </div>
-
-                {/* Card 3 */}
-
-                <div
-                  data-aos="fade-left"
-                  data-aos-delay="400"
-                  className="group relative overflow-hidden p-10 text-center transition-all duration-500 hover:bg-[#161616]"
-                >
-                  <div className="absolute inset-x-0 top-0 h-[3px] bg-[linear-gradient(135deg,#7A4FD1,#B93FC9)] scale-x-0 transition duration-500 group-hover:scale-x-100" />
-
-                  <h3 className="text-5xl font-black bg-[linear-gradient(135deg,#7A4FD1,#B93FC9)] bg-clip-text text-transparent">
-                    Ongoing
-                  </h3>
-
-                  <p className="mt-4 text-sm font-semibold uppercase tracking-[0.22em] text-[#A0A0A8]">
-                    Support & Maintenance
-                  </p>
-                </div>
-              </div>
-            </motion.div>
-          </section>
-          {/* =========================================================
-    SECTION — WHY IT MATTERS
-========================================================= */}
-
-          <section className="relative mt-24 overflow-hidden rounded-[40px] border border-[#2A2A30] bg-[#121212] shadow-[0_30px_80px_rgba(0,0,0,.45)]">
-            {/* ================= Background ================= */}
-
-            <div className="absolute inset-0 overflow-hidden">
-              {/* Gradient Glow */}
-              <div className="absolute -top-40 -left-32 h-[28rem] w-[28rem] rounded-full bg-[#29B6F0]/12 blur-[150px]" />
-
-              <div className="absolute top-0 right-0 h-[30rem] w-[30rem] rounded-full bg-[#7A4FD1]/12 blur-[170px]" />
-
-              <div className="absolute bottom-0 left-1/2 h-72 w-72 -translate-x-1/2 rounded-full bg-[#B93FC9]/10 blur-[140px]" />
-
-              {/* AI Grid */}
-              <div className="absolute inset-0 bg-[linear-gradient(rgba(41,182,240,.04)_1px,transparent_1px),linear-gradient(90deg,rgba(41,182,240,.04)_1px,transparent_1px)] bg-[size:48px_48px]" />
-
-              {/* Gradient Overlay */}
-              <div className="absolute inset-0 bg-[linear-gradient(135deg,rgba(18,18,18,.92),rgba(10,10,10,.88))]" />
-            </div>
-
-            {/* ================= Content ================= */}
-
-            <div className="relative z-10 p-8 md:p-14 lg:p-16">
-              {/* Badge */}
-
+              {/* RIGHT HEADING */}
               <div
-                data-aos="zoom-in"
-                data-aos-duration="800"
-                className="inline-flex items-center rounded-full border border-[#3E7BD6]/30 bg-[#0F172A]/70 px-6 py-2 backdrop-blur-xl"
+                data-aos="fade-left"
+                data-aos-duration="900"
+                className="lg:col-span-5"
               >
-                <span className="mr-2 h-2 w-2 rounded-full bg-[#29B6F0] shadow-[0_0_12px_#29B6F0]" />
+                <div className="lg:pt-1">
+                  <div
+                    data-aos="fade-up"
+                    data-aos-delay="100"
+                    className="inline-flex items-center rounded-full border border-[#3E7BD6]/25 bg-white/[0.025] px-3.5 py-1.5 text-[10px] font-bold uppercase tracking-[0.2em] text-[#29B6F0] backdrop-blur-sm sm:px-4 sm:text-[11px]"
+                  >
+                    Solution
+                  </div>
 
-                <span className="text-xs font-bold uppercase tracking-[0.30em] text-[#29B6F0]">
-                  WHY IT MATTERS
-                </span>
+                  <h2
+                    data-aos="fade-up"
+                    data-aos-delay="180"
+                    className="mt-4 text-3xl font-black leading-tight sm:text-4xl lg:text-[44px]"
+                  >
+                    <span className="bg-[linear-gradient(135deg,#29B6F0_0%,#3E7BD6_35%,#7A4FD1_70%,#B93FC9_100%)] bg-clip-text text-transparent">
+                      What We Built
+                    </span>
+                  </h2>
+
+                  <div
+                    data-aos="zoom-in"
+                    data-aos-delay="280"
+                    className="mt-5 h-[3px] w-16 rounded-full bg-[linear-gradient(135deg,#29B6F0,#3E7BD6,#7A4FD1,#B93FC9)] sm:w-20"
+                  />
+                </div>
               </div>
+            </div>
+          </div>
+        </section>
 
-              {/* Heading */}
+        {/* =========================================================
+            RESULTS
+        ========================================================= */}
+        <section className="relative overflow-hidden py-10 sm:py-12 lg:py-14">
+          <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+            {/* Header */}
+            <div className="border-b border-white/[0.08] pb-6 sm:pb-7 lg:pb-8">
+              <span
+                data-aos="fade-right"
+                data-aos-delay="100"
+                className="inline-flex items-center rounded-full border border-[#3E7BD6]/25 bg-white/[0.025] px-3 py-1.5 text-[10px] font-bold uppercase tracking-[0.18em] text-[#29B6F0] backdrop-blur-sm sm:px-3.5 sm:text-[11px]"
+              >
+                Where It Stands Today
+              </span>
 
               <h2
                 data-aos="fade-up"
-                data-aos-delay="150"
-                data-aos-duration="900"
-                className="mt-8 max-w-5xl text-4xl font-black leading-tight md:text-5xl lg:text-6xl"
+                data-aos-delay="180"
+                className="mt-4 max-w-xl text-2xl font-black leading-[1.12] sm:text-3xl lg:text-[38px]"
               >
                 <span className="bg-[linear-gradient(135deg,#29B6F0_0%,#3E7BD6_35%,#7A4FD1_70%,#B93FC9_100%)] bg-clip-text text-transparent">
-                  When the platform you build
+                  Built to Scale.
                   <br />
-                  handles money,
+                  Running Every Day.
                 </span>
-
-                <br />
-
-                <span className="text-white">"mostly working"</span>
-
-                <span className="text-[#29B6F0]"> is not a real option.</span>
               </h2>
-
-              {/* Divider */}
 
               <div
                 data-aos="zoom-in"
-                data-aos-delay="250"
-                className="mt-8 h-1 w-28 rounded-full bg-[linear-gradient(135deg,#29B6F0,#3E7BD6,#7A4FD1,#B93FC9)] shadow-[0_0_35px_rgba(62,123,214,.45)]"
+                data-aos-delay="260"
+                className="mt-4 h-[3px] w-14 rounded-full bg-[linear-gradient(135deg,#29B6F0,#3E7BD6,#7A4FD1,#B93FC9)] sm:w-16"
               />
+            </div>
 
-              {/* Description */}
-
-              <p
-                data-aos="fade-up"
-                data-aos-delay="350"
-                className="mt-10 max-w-4xl text-lg leading-9 text-[#D4D4D8]"
-              >
-                This client trusted us with the system their business runs on -
-                and we have not let them down.
-              </p>
-
-              {/* Bottom Highlight */}
-
+            {/* Stats */}
+            <div className="grid md:grid-cols-3">
+              {/* Stat 1 */}
               <div
                 data-aos="fade-up"
-                data-aos-delay="500"
-                className="mt-12 inline-flex items-center rounded-2xl border border-[#2A2A30] bg-[#161616]/80 px-6 py-5 backdrop-blur-xl shadow-[0_0_30px_rgba(41,182,240,.08)]"
+                data-aos-delay="100"
+                className="border-b border-white/[0.08] py-5 md:border-b-0 md:border-r md:pr-7 lg:py-6"
               >
-                <div className="mr-4 flex h-12 w-12 items-center justify-center rounded-xl bg-[linear-gradient(135deg,#29B6F0,#3E7BD6,#7A4FD1,#B93FC9)] shadow-[0_0_20px_rgba(62,123,214,.35)]">
-                  <svg
-                    className="h-6 w-6 text-white"
-                    fill="none"
-                    stroke="currentColor"
-                    strokeWidth={2.5}
-                    viewBox="0 0 24 24"
-                  >
-                    <path
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      d="M5 13l4 4L19 7"
-                    />
-                  </svg>
+                <h3 className="text-4xl font-black tracking-tight bg-[linear-gradient(135deg,#29B6F0,#3E7BD6)] bg-clip-text text-transparent sm:text-[44px]">
+                  150
+                </h3>
+
+                <p className="mt-1.5 max-w-xs text-[10px] font-semibold uppercase leading-5 tracking-[0.14em] text-[#A0A0A8] sm:text-[11px]">
+                  Clients on the Platform
+                </p>
+              </div>
+
+              {/* Stat 2 */}
+              <div
+                data-aos="fade-up"
+                data-aos-delay="180"
+                className="border-b border-white/[0.08] py-5 md:border-b-0 md:border-r md:px-7 lg:py-6"
+              >
+                <h3 className="text-4xl font-black tracking-tight bg-[linear-gradient(135deg,#3E7BD6,#7A4FD1)] bg-clip-text text-transparent sm:text-[44px]">
+                  4.5M
+                </h3>
+
+                <p className="mt-1.5 max-w-xs text-[10px] font-semibold uppercase leading-5 tracking-[0.14em] text-[#A0A0A8] sm:text-[11px]">
+                  Transactions Every Month
+                </p>
+              </div>
+
+              {/* Stat 3 */}
+              <div
+                data-aos="fade-up"
+                data-aos-delay="260"
+                className="py-5 md:pl-7 lg:py-6"
+              >
+                <h3 className="text-3xl font-black tracking-tight bg-[linear-gradient(135deg,#7A4FD1,#B93FC9)] bg-clip-text text-transparent sm:text-4xl">
+                  Ongoing
+                </h3>
+
+                <p className="mt-1.5 max-w-xs text-[10px] font-semibold uppercase leading-5 tracking-[0.14em] text-[#A0A0A8] sm:text-[11px]">
+                  Support & Maintenance
+                </p>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* =========================================================
+            WHY IT MATTERS
+        ========================================================= */}
+        <section className="relative overflow-hidden py-10 sm:py-12 lg:py-16">
+          <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+            <div className="grid items-center gap-7 lg:grid-cols-12 lg:gap-10">
+              {/* LEFT */}
+              <div
+                data-aos="fade-right"
+                data-aos-duration="900"
+                className="lg:col-span-7"
+              >
+                <div
+                  data-aos="fade-up"
+                  data-aos-delay="80"
+                  className="mb-4 flex items-center gap-3"
+                >
+                  <span className="text-[10px] font-bold uppercase tracking-[0.22em] text-[#29B6F0] sm:text-[11px]">
+                    WHY IT MATTERS
+                  </span>
+
+                  <span className="h-px w-9 bg-[#29B6F0] sm:w-12" />
                 </div>
 
-                <div>
-                  <p className="text-sm uppercase tracking-[0.24em] text-[#29B6F0]">
-                    Production Ready
-                  </p>
+                <h2
+                  data-aos="fade-up"
+                  data-aos-delay="160"
+                  className="max-w-4xl text-3xl font-black leading-[1.08] tracking-tight sm:text-4xl md:text-[44px] lg:text-[50px]"
+                >
+                  <span className="bg-[linear-gradient(135deg,#29B6F0_0%,#3E7BD6_35%,#7A4FD1_70%,#B93FC9_100%)] bg-clip-text text-transparent">
+                    When the platform you build
+                    <br />
+                    handles money,
+                  </span>
 
-                  <p className="mt-1 text-white font-semibold">
-                    Trusted for mission-critical business operations.
-                  </p>
+                  <br />
+
+                  <span className="text-white">"mostly working"</span>
+
+                  <span className="text-[#29B6F0]">
+                    {" "}
+                    is not a real option.
+                  </span>
+                </h2>
+              </div>
+
+              {/* DIVIDER */}
+              <div
+                data-aos="fade"
+                data-aos-delay="200"
+                className="hidden h-28 w-px bg-gradient-to-b from-transparent via-[#3E7BD6]/60 to-transparent lg:col-span-1 lg:block"
+              />
+
+              {/* RIGHT */}
+              <div
+                data-aos="fade-left"
+                data-aos-duration="900"
+                className="lg:col-span-4"
+              >
+                <p
+                  data-aos="fade-up"
+                  data-aos-delay="220"
+                  className="max-w-lg text-base leading-7 text-[#D4D4D8] sm:text-lg sm:leading-8"
+                >
+                  This client trusted us with the system their business runs
+                  on - and we have not let them down.
+                </p>
+
+                <div
+                  data-aos="fade-up"
+                  data-aos-delay="320"
+                  className="mt-6 border-t border-white/[0.08] pt-5"
+                >
+                  <div className="flex items-start gap-3">
+                    <div className="mt-0.5 flex h-8 w-8 shrink-0 items-center justify-center rounded-lg bg-gradient-to-br from-[#29B6F0] via-[#3E7BD6] to-[#B93FC9]">
+                      <svg
+                        className="h-4 w-4 text-white"
+                        fill="none"
+                        stroke="currentColor"
+                        strokeWidth={2.5}
+                        viewBox="0 0 24 24"
+                      >
+                        <path
+                          strokeLinecap="round"
+                          strokeLinejoin="round"
+                          d="M5 13l4 4L19 7"
+                        />
+                      </svg>
+                    </div>
+
+                    <div>
+                      <p className="text-[10px] font-bold uppercase tracking-[0.18em] text-[#29B6F0] sm:text-[11px]">
+                        Production Ready
+                      </p>
+
+                      <p className="mt-1 text-xs font-semibold leading-5 text-white sm:text-sm">
+                        Trusted for mission-critical business operations.
+                      </p>
+                    </div>
+                  </div>
                 </div>
               </div>
             </div>
-          </section>
+          </div>
+        </section>
 
-          {/* =========================================================
-    SECTION — CASE STUDY NAVIGATION
-========================================================= */}
-
-        {/* ========================================================= */}
-{/* CASE STUDY NAVIGATION */}
-{/* ========================================================= */}
-
-<section className="relative mt-28 overflow-hidden py-10">
-
-  {/* Background */}
-
-  <div className="absolute inset-0 overflow-hidden">
-
-    <div className="absolute -top-40 left-0 h-[28rem] w-[28rem] rounded-full bg-[#29B6F0]/10 blur-[170px]" />
-
-    <div className="absolute bottom-0 right-0 h-[26rem] w-[26rem] rounded-full bg-[#7A4FD1]/10 blur-[170px]" />
-
-    <div className="absolute inset-0 bg-[linear-gradient(rgba(255,255,255,.03)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,.03)_1px,transparent_1px)] bg-[size:54px_54px]" />
-
-  </div>
-
-  <div className="relative mx-auto max-w-7xl">
-
-    <div className="grid items-center gap-8 lg:grid-cols-[1fr_auto_1fr]">
-
-      {/* ================================================= */}
-      {/* Previous */}
-      {/* ================================================= */}
-
-      <Link
-        href="/customers/casestudyhero"
-        data-aos="fade-right"
-        data-aos-duration="900"
-        className="group"
-      >
-
-        <div className="relative overflow-hidden rounded-[34px] border border-[#2A2A30] bg-[#111111]/90 p-8 backdrop-blur-xl transition-all duration-500 hover:-translate-y-2 hover:border-[#29B6F0] hover:shadow-[0_25px_60px_rgba(41,182,240,.20)]">
-
-          <div className="absolute -left-20 -top-20 h-56 w-56 rounded-full bg-[#29B6F0]/10 blur-[120px] opacity-0 transition duration-500 group-hover:opacity-100" />
-
-          <span className="text-xs font-semibold uppercase tracking-[0.32em] text-[#29B6F0]">
-            Previous
-          </span>
-
-          <h3 className="mt-5 text-3xl font-black leading-tight">
-
-  <span className="bg-[linear-gradient(135deg,#29B6F0_0%,#3E7BD6_30%,#7A4FD1_70%,#B93FC9_100%)] bg-clip-text text-transparent">
-
-    All Case
-    <br />
-    Studies
-
-  </span>
-
-</h3>
-
-          <p className="mt-5 text-[#A0A0A8] leading-8">
-            Browse every BeaverTek customer success story and product
-            transformation.
-          </p>
-
-          <div className="mt-8 flex items-center gap-3 text-[#29B6F0] font-semibold transition group-hover:-translate-x-2">
-
-            <span className="text-2xl">←</span>
-
-            Back to Library
-
+        {/* =========================================================
+            CASE STUDY NAVIGATION
+        ========================================================= */}
+        <section className="relative mt-10 overflow-hidden py-8 sm:mt-12 sm:py-10 lg:mt-1 lg:py-12">
+          {/* Mild Background Gradient */}
+          <div className="pointer-events-none absolute inset-0">
+            <div className="absolute inset-0 bg-gradient-to-l from-[#7A4FD1]/[0.035] via-transparent to-[#29B6F0]/[0.03]" />
           </div>
 
-        </div>
+          <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+            <div className="grid items-stretch gap-5 lg:grid-cols-[1fr_auto_1fr] lg:gap-7">
+              {/* Previous */}
+              <Link
+                href="/customers/casestudyhero"
+                data-aos="fade-right"
+                data-aos-duration="900"
+                className="group"
+                onMouseEnter={() => setHoveredCard(0)}
+                onMouseLeave={() => setHoveredCard(null)}
+              >
+                <div className="relative h-full overflow-hidden rounded-2xl border border-white/[0.08] bg-white/[0.025] p-5 backdrop-blur-[2px] transition-all duration-500 hover:border-[#29B6F0]/50 hover:bg-white/[0.04] sm:p-6">
+                  {/* BeaverTek Gradient Overlay */}
+                  <div
+                    className={`pointer-events-none absolute inset-0 origin-left transform transition-transform duration-500 ${
+                      hoveredCard === 0
+                        ? "scale-x-100 bg-[linear-gradient(135deg,rgba(41,182,240,0.08)_0%,rgba(62,123,214,0.08)_35%,rgba(122,79,209,0.08)_70%,rgba(185,63,201,0.08)_100%)]"
+                        : "scale-x-0"
+                    }`}
+                  />
 
-      </Link>
+                  <div className="relative z-10">
+                    <span className="text-[10px] font-semibold uppercase tracking-[0.22em] text-[#29B6F0] sm:text-[11px]">
+                      Previous
+                    </span>
 
-      {/* Center */}
+                    <h3 className="mt-3 text-2xl font-black leading-tight sm:text-[28px]">
+                      <span className="bg-[linear-gradient(135deg,#29B6F0_0%,#3E7BD6_30%,#7A4FD1_70%,#B93FC9_100%)] bg-clip-text text-transparent">
+                        All Case
+                        <br />
+                        Studies
+                      </span>
+                    </h3>
 
-      <div
-        data-aos="zoom-in"
-        data-aos-delay="150"
-        className="hidden lg:flex h-20 w-20 items-center justify-center rounded-full border border-[#2A2A30] bg-[#121212] shadow-[0_0_35px_rgba(62,123,214,.15)]"
-      >
+                    <p className="mt-3 max-w-md text-sm leading-6 text-[#A0A0A8] sm:text-[15px] sm:leading-7">
+                      Browse every BeaverTek customer success story and product
+                      transformation.
+                    </p>
 
-        <div className="flex h-12 w-12 items-center justify-center rounded-full bg-[linear-gradient(135deg,#29B6F0,#3E7BD6,#7A4FD1,#B93FC9)] text-white">
+                    <div className="mt-5 flex items-center gap-3 text-sm font-semibold text-[#29B6F0] transition-transform duration-300 group-hover:-translate-x-1">
+                      <span className="text-xl">←</span>
+                      Back to Library
+                    </div>
+                  </div>
+                </div>
+              </Link>
 
-          →
+              {/* Center */}
+              <div
+                data-aos="zoom-in"
+                data-aos-delay="150"
+                className="hidden items-center justify-center lg:flex"
+              >
+                <div className="flex h-13 w-13 items-center justify-center rounded-full border border-white/[0.08] bg-white/[0.025] backdrop-blur-sm">
+                  <div className="flex h-9 w-9 items-center justify-center rounded-full bg-[linear-gradient(135deg,#29B6F0,#3E7BD6,#7A4FD1,#B93FC9)] text-sm font-semibold text-white">
+                    →
+                  </div>
+                </div>
+              </div>
 
-        </div>
+              {/* Next */}
+              <Link
+                href="/customers/AIcasestudytwo"
+                data-aos="fade-left"
+                data-aos-delay="200"
+                data-aos-duration="900"
+                className="group"
+                onMouseEnter={() => setHoveredCard(1)}
+                onMouseLeave={() => setHoveredCard(null)}
+              >
+                <div className="relative h-full overflow-hidden rounded-2xl border border-white/[0.08] bg-gradient-to-l from-[#171329]/80 via-[#101218]/90 to-[#0D0D0D]/90 p-5 backdrop-blur-[2px] transition-all duration-500 hover:border-[#B93FC9]/50 sm:p-6">
+                  {/* BeaverTek Gradient Overlay */}
+                  <div
+                    className={`pointer-events-none absolute inset-0 origin-left transform transition-transform duration-500 ${
+                      hoveredCard === 1
+                        ? "scale-x-100 bg-[linear-gradient(135deg,rgba(41,182,240,0.08)_0%,rgba(62,123,214,0.08)_35%,rgba(122,79,209,0.08)_70%,rgba(185,63,201,0.08)_100%)]"
+                        : "scale-x-0"
+                    }`}
+                  />
 
-      </div>
+                  <div className="relative z-10">
+                    <span className="text-[10px] font-semibold uppercase tracking-[0.22em] text-[#29B6F0] sm:text-[11px]">
+                      Next Case Study
+                    </span>
 
-      {/* ================================================= */}
-      {/* Next */}
-      {/* ================================================= */}
+                    <h3 className="mt-3 text-2xl font-black leading-tight text-white sm:text-[28px]">
+                      AI In
+                      <br />
+                      Real Hospitals
+                    </h3>
 
-      <Link
-        href="/customers/AIcasestudytwo"
-        data-aos="fade-left"
-        data-aos-delay="200"
-        data-aos-duration="900"
-        className="group"
-      >
+                    <p className="mt-3 max-w-md text-sm leading-6 text-[#D4D4D8] sm:text-[15px] sm:leading-7">
+                      Discover how BeaverTek built an AI healthcare platform
+                      used in modern hospitals.
+                    </p>
 
-        <div className="relative overflow-hidden rounded-[34px] border border-[#2A2A30] bg-[linear-gradient(135deg,#0D1117,#141822,#1B1630)] p-8 transition-all duration-500 hover:-translate-y-2 hover:border-[#B93FC9] hover:shadow-[0_30px_70px_rgba(122,79,209,.25)]">
-
-          <div className="absolute inset-0 bg-[linear-gradient(135deg,#29B6F0,#3E7BD6,#7A4FD1,#B93FC9)] opacity-[0.06]" />
-
-          <div className="absolute -right-20 -bottom-20 h-56 w-56 rounded-full bg-[#B93FC9]/10 blur-[120px] opacity-0 transition duration-500 group-hover:opacity-100" />
-
-          <div className="relative">
-
-            <span className="text-xs font-semibold uppercase tracking-[0.32em] text-[#29B6F0]">
-              Next Case Study
-            </span>
-
-            <h3 className="mt-5 text-3xl font-black text-white">
-              AI In
-              <br />
-              Real Hospitals
-            </h3>
-
-            <p className="mt-5 text-[#D4D4D8] leading-8">
-              Discover how BeaverTek built an AI healthcare platform used
-              in modern hospitals.
-            </p>
-
-            <div className="mt-8 flex items-center gap-3 text-[#29B6F0] font-semibold transition group-hover:translate-x-2">
-
-              Continue
-
-              <span className="text-2xl">→</span>
-
+                    <div className="mt-5 flex items-center gap-3 text-sm font-semibold text-[#29B6F0] transition-transform duration-300 group-hover:translate-x-1">
+                      Continue
+                      <span className="text-xl">→</span>
+                    </div>
+                  </div>
+                </div>
+              </Link>
             </div>
-
           </div>
-
-        </div>
-
-      </Link>
-
-    </div>
-
-  </div>
-
-</section>          
-        </div>
+        </section>
       </section>
     </App_layout>
   );

@@ -14,201 +14,182 @@ export default function PaymentHeroSection() {
       duration: 900,
       once: true,
       easing: "ease-out-cubic",
+      offset: 70,
     });
+
+    AOS.refresh();
   }, []);
 
+  /* =========================================================
+     SCROLL TO PAYMENT CASE STUDY
+  ========================================================= */
+  const scrollToProject = () => {
+    const section = document.getElementById("PaymentPlatformCaseStudy");
+
+    if (!section) {
+      console.warn(
+        'PaymentPlatformCaseStudy section with id="PaymentPlatformCaseStudy" was not found.',
+      );
+      return;
+    }
+
+    const headerOffset = 40;
+
+    const sectionPosition =
+      section.getBoundingClientRect().top + window.scrollY;
+
+    window.scrollTo({
+      top: Math.max(sectionPosition - headerOffset, 0),
+      behavior: "smooth",
+    });
+  };
+
   return (
-    <section className="relative overflow-hidden bg-[#05070D] py-20 lg:py-16">
+    <section className="relative overflow-hidden bg-black py-14 sm:py-16 lg:py-20">
+      {/* =====================================================
+          VERY SUBTLE BACKGROUND ACCENTS
+      ===================================================== */}
 
-      {/* ================= Background ================= */}
+      <div className="pointer-events-none absolute inset-0">
+        {/* Very subtle top cyan glow */}
+        <div className="absolute -left-40 -top-40 h-[26rem] w-[26rem] rounded-full bg-[#29B6F0]/[0.035] blur-[140px]" />
 
-      <div className="absolute inset-0 overflow-hidden">
+        {/* Very subtle right violet glow */}
+        <div className="absolute -right-40 top-1/3 h-[28rem] w-[28rem] rounded-full bg-[#7A4FD1]/[0.035] blur-[150px]" />
 
-        {/* Background Image */}
-
-        <div
-          className="absolute inset-0 bg-center bg-cover opacity-[0.08]"
-          style={{
-            backgroundImage: "url('/customers/grid-bg.webp')",
-          }}
-        />
-
-        {/* Dark Overlay */}
-
-        <div className="absolute inset-0 bg-black/60" />
-
-        {/* Left Glow */}
-
-        <div className="absolute -left-44 top-0 h-[34rem] w-[34rem] rounded-full bg-[#29B6F0]/15 blur-[170px]" />
-
-        {/* Right Glow */}
-
-        <div className="absolute right-0 top-20 h-[32rem] w-[32rem] rounded-full bg-[#7A4FD1]/15 blur-[180px]" />
-
-        {/* Bottom Glow */}
-
-        <div className="absolute bottom-0 left-1/2 h-[28rem] w-[28rem] -translate-x-1/2 rounded-full bg-[#B93FC9]/10 blur-[180px]" />
-
-        {/* Grid */}
-
-        <div className="absolute inset-0 bg-[linear-gradient(rgba(255,255,255,.035)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,.035)_1px,transparent_1px)] bg-[size:60px_60px]" />
-
+        {/* Bottom subtle magenta glow */}
+        <div className="absolute bottom-[-12rem] left-1/2 h-[24rem] w-[24rem] -translate-x-1/2 rounded-full bg-[#B93FC9]/[0.025] blur-[140px]" />
       </div>
 
-      {/* ================= Container ================= */}
+      {/* =====================================================
+          CONTAINER
+      ===================================================== */}
 
-      <div className="relative mx-auto max-w-7xl px-6 lg:px-8">
-
-        <div className="grid items-center gap-16 lg:grid-cols-2">
-
-          {/* ================================================= */}
-          {/* LEFT CONTENT */}
-          {/* ================================================= */}
+      <div className="relative mx-auto max-w-7xl px-5 sm:px-6 lg:px-8">
+        <div className="grid items-center gap-12 md:gap-14 lg:grid-cols-2 lg:gap-16">
+          {/* =================================================
+              LEFT CONTENT
+          ================================================= */}
 
           <motion.div
-            initial={{ opacity: 0, x: -40 }}
+            initial={{ opacity: 0, x: -35 }}
             whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: .8 }}
+            viewport={{ once: true, amount: 0.25 }}
+            transition={{ duration: 0.8, ease: "easeOut" }}
             data-aos="fade-right"
+            data-aos-duration="900"
           >
-
             {/* Badge */}
-
-            <span className="inline-flex items-center rounded-full border border-[#3E7BD6]/30 bg-[#121212]/90 px-5 py-2 text-xs font-semibold uppercase tracking-[0.28em] text-[#29B6F0] backdrop-blur-xl">
-
+            <span
+              data-aos="fade-down"
+              data-aos-delay="100"
+              className="inline-flex items-center rounded-full border border-[#3E7BD6]/25 bg-[#0A0A0A] px-4 py-2 text-[10px] font-semibold uppercase tracking-[0.24em] text-[#29B6F0] sm:px-5 sm:text-xs"
+            >
               Case Study
-
             </span>
 
             {/* Heading */}
-
-            <h1 className="mt-8 text-4xl font-black leading-tight text-white md:text-5xl xl:text-6xl">
-
+            <h1
+              data-aos="fade-up"
+              data-aos-delay="150"
+              className="mt-6 max-w-2xl text-3xl font-black leading-[1.08] text-white sm:mt-7 sm:text-4xl md:text-[44px] lg:text-[48px] xl:text-[52px]"
+            >
               Payment Platform
-
               <br />
-
               <span className="bg-[linear-gradient(135deg,#29B6F0_0%,#3E7BD6_35%,#7A4FD1_70%,#B93FC9_100%)] bg-clip-text text-transparent">
-
                 Built for Scale
-
               </span>
-
             </h1>
 
             {/* Divider */}
-
-            <div className="mt-8 h-1 w-28 rounded-full bg-[linear-gradient(135deg,#29B6F0,#3E7BD6,#7A4FD1,#B93FC9)]" />
+            <div
+              data-aos="fade-right"
+              data-aos-delay="250"
+              className="mt-6 h-1 w-20 rounded-full bg-[linear-gradient(135deg,#29B6F0,#3E7BD6,#7A4FD1,#B93FC9)] sm:mt-7 sm:w-24"
+            />
 
             {/* Description */}
-
-            <p className="mt-10 max-w-2xl text-lg leading-9 text-[#D4D4D8]">
-
+            <p
+              data-aos="fade-up"
+              data-aos-delay="300"
+              className="mt-7 max-w-2xl text-[15px] leading-7 text-[#D4D4D8] sm:mt-8 sm:text-base sm:leading-7 lg:text-[17px] lg:leading-8"
+            >
               BeaverTek engineered a secure enterprise-grade payment
-              integration platform capable of handling millions of
-              monthly transactions while delivering high availability,
-              performance, and continuous scalability for financial
-              service providers.
-
+              integration platform capable of handling millions of monthly
+              transactions while delivering high availability, performance,
+              and continuous scalability for financial service providers.
             </p>
 
-            {/* Buttons */}
+            {/* =================================================
+                BUTTONS
+            ================================================= */}
 
             <div
-              className="mt-12 flex flex-wrap gap-5"
+              className="mt-8 flex flex-col gap-3 sm:mt-10 sm:flex-row sm:flex-wrap sm:gap-4"
               data-aos="fade-up"
-              data-aos-delay="250"
+              data-aos-delay="400"
             >
-
-              <Link
-                href="/contact/contacthero"
-                className="group inline-flex items-center rounded-full bg-[linear-gradient(135deg,#29B6F0,#3E7BD6,#7A4FD1,#B93FC9)] px-8 py-4 text-sm font-semibold text-white shadow-[0_15px_40px_rgba(62,123,214,.35)] transition duration-300 hover:scale-105"
+              {/* Discuss Your Project */}
+              <button
+                type="button"
+                onClick={scrollToProject}
+                className="group inline-flex w-full items-center justify-center rounded-full bg-[linear-gradient(135deg,#29B6F0,#3E7BD6,#7A4FD1,#B93FC9)] px-7 py-3.5 text-sm font-semibold text-white shadow-[0_12px_35px_rgba(62,123,214,.22)] transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_16px_40px_rgba(185,63,201,.22)] sm:w-auto sm:px-8 sm:py-4"
               >
-
                 Discuss Your Project
 
-                <ArrowRight className="ml-3 h-5 w-5 transition group-hover:translate-x-1" />
+                <ArrowRight className="ml-3 h-5 w-5 transition-transform duration-300 group-hover:translate-x-1" />
+              </button>
 
-              </Link>
-
+              {/* View All Case Studies */}
               <Link
                 href="/customers/casestudyoverall"
-                className="inline-flex items-center rounded-full border border-[#2A2A30] bg-[#121212]/80 px-8 py-4 text-sm font-semibold text-white transition duration-300 hover:border-[#3E7BD6] hover:bg-[#181818]"
+                className="inline-flex w-full items-center justify-center rounded-full border border-[#2A2A30] bg-[#0A0A0A] px-7 py-3.5 text-sm font-semibold text-white transition-all duration-300 hover:-translate-y-1 hover:border-[#3E7BD6] hover:bg-[#111111] sm:w-auto sm:px-8 sm:py-4"
               >
-
                 View All Case Studies
-
               </Link>
-
             </div>
-
           </motion.div>
 
-          {/* ================================================= */}
-          {/* RIGHT IMAGE STARTS IN PART 2 */}
-          {/* ================================================= */}
-
-                    {/* ================================================= */}
-          {/* RIGHT IMAGE */}
-          {/* ================================================= */}
+          {/* =================================================
+              RIGHT IMAGE
+          ================================================= */}
 
           <motion.div
-            initial={{ opacity: 0, x: 50 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.8 }}
+            initial={{ opacity: 0, x: 40, scale: 0.96 }}
+            whileInView={{ opacity: 1, x: 0, scale: 1 }}
+            viewport={{ once: true, amount: 0.2 }}
+            transition={{ duration: 0.9, ease: "easeOut" }}
             data-aos="fade-left"
-            className="relative"
+            data-aos-duration="1000"
+            className="relative mx-auto w-full max-w-[620px] lg:ml-auto"
           >
+            {/* Very subtle image glow */}
+            <div className="pointer-events-none absolute -inset-8 rounded-full bg-[radial-gradient(circle,rgba(41,182,240,.08),rgba(122,79,209,.045),transparent_68%)] blur-3xl" />
 
-            {/* Image Border Glow */}
-
-            <div className="absolute -inset-1 rounded-[32px] bg-[linear-gradient(135deg,#29B6F0,#3E7BD6,#7A4FD1,#B93FC9)] opacity-40 blur-xl" />
-
-            {/* Main Image */}
-
-            <div className="relative overflow-hidden rounded-[32px] border border-[#2A2A30] bg-[#121212] shadow-[0_30px_80px_rgba(0,0,0,.45)]">
-
+            {/* Image */}
+            <div className="relative overflow-hidden rounded-[24px] sm:rounded-[30px]">
               <Image
                 src="/home/dataanalytics.jpg"
                 alt="Payment Platform at Scale"
                 width={900}
                 height={700}
                 priority
-                className="h-full w-full object-cover transition duration-700 hover:scale-105"
+                className="h-[300px] w-full object-cover transition-transform duration-700 hover:scale-[1.03] sm:h-[360px] md:h-[420px] lg:h-[500px]"
               />
 
-              {/* Bottom Gradient */}
-
-              <div className="absolute inset-x-0 bottom-0 h-40 bg-gradient-to-t from-black/80 via-black/20 to-transparent" />
-
-              {/* Label */}
-
-              <div className="absolute bottom-8 left-8">
-
-                <span className="inline-flex rounded-full border border-white/10 bg-black/40 px-4 py-2 text-xs font-semibold uppercase tracking-[0.25em] text-[#29B6F0] backdrop-blur-xl">
-
-                  Financial Services
-
-                </span>
-
-                <h3 className="mt-4 text-2xl font-bold text-white">
-
-                  Enterprise Payment Platform
-
-                </h3>
-
-              </div>
-
+              {/* Very subtle image color treatment */}
+              <div className="pointer-events-none absolute inset-0 bg-gradient-to-br from-[#29B6F0]/[0.04] via-transparent to-[#B93FC9]/[0.08]" />
             </div>
 
+            {/* Floating Gradient Line */}
+            <div
+              data-aos="fade-left"
+              data-aos-delay="350"
+              className="absolute -bottom-2 left-[15%] h-[3px] w-[70%] rounded-full bg-gradient-to-r from-[#29B6F0] via-[#7A4FD1] to-[#B93FC9] opacity-70 sm:-bottom-3"
+            />
           </motion.div>
-
         </div>
-
       </div>
-
     </section>
   );
 }

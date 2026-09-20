@@ -26,7 +26,7 @@ export default function Casestudyall() {
   const section = document.getElementById("casestudyoverall");
 
   if (section) {
-    const offset = 80; // extra space from top
+    const offset = 50; // extra space from top
     const sectionTop =
       section.getBoundingClientRect().top + window.scrollY - offset;
 
@@ -452,11 +452,6 @@ export default function Casestudyall() {
         ))}
       </div>
 
-      {/* =====================================================
-          BOTTOM GRADIENT BORDER
-      ===================================================== */}
-
-      <div className="absolute bottom-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-[#3E7BD6]/50 to-transparent" />
-    </section>
+     </section>
   );
 }
