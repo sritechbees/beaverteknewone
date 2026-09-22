@@ -28,7 +28,6 @@ const gradient =
 
 const pillars = [
   {
-    number: "01",
     title: "Modernize",
     href: "/services/modernize/modernizehero",
     description:
@@ -36,7 +35,6 @@ const pillars = [
     icon: Zap,
   },
   {
-    number: "02",
     title: "See Your Data",
     href: "/services/seeyourdata/seeyourdatahero",
     description:
@@ -44,7 +42,6 @@ const pillars = [
     icon: BarChart3,
   },
   {
-    number: "03",
     title: "Build Software",
     href: "/services/buildsoftware/herosection",
     description:
@@ -52,7 +49,6 @@ const pillars = [
     icon: Code2,
   },
   {
-    number: "04",
     title: "Stay Secure",
     href: "/services/staysecure/staysecureherosection",
     description:
@@ -78,8 +74,8 @@ function PillarItem({
     <div
       data-aos={index % 2 === 0 ? "fade-left" : "fade-right"}
       data-aos-delay={index * 120}
-      data-aos-duration="850"
-      data-aos-offset="50"
+      data-aos-duration="900"
+      data-aos-offset="60"
       data-aos-easing="ease-out-cubic"
       className="w-full"
     >
@@ -87,263 +83,295 @@ function PillarItem({
         <article
           className="
             relative
-            min-h-[165px]
+            min-h-[185px]
             w-full
             overflow-hidden
-            border-b
-            border-[#E1E5EB]
-            px-1
-            py-4
+            rounded-2xl
+            border
+            border-[#E5E7EB]
+            bg-white
+            px-5
+            py-5
             transition-all
             duration-500
+            ease-out
 
-            sm:min-h-[175px]
-            sm:px-2
-            sm:py-5
+            hover:-translate-y-1.5
+            hover:border-transparent
+            hover:shadow-[0_18px_45px_rgba(62,123,214,0.12)]
 
-            md:min-h-[180px]
+            sm:min-h-[195px]
+            sm:px-6
+            sm:py-6
 
-            lg:min-h-[185px]
-            lg:py-5
+            md:min-h-[205px]
+
+            lg:min-h-[210px]
+            lg:px-6
+            lg:py-6
+
+            xl:min-h-[215px]
+            xl:px-7
           "
         >
           {/* =================================================
-              HOVER GLOW
+              PREMIUM GRADIENT BORDER
           ================================================= */}
 
           <div
             className="
               pointer-events-none
               absolute
-              -right-16
-              -top-16
-              h-32
-              w-32
-              rounded-full
-              bg-[#29B6F0]/12
-              blur-[55px]
+              inset-0
+              rounded-2xl
+              p-[1px]
               opacity-0
-              transition-all
-              duration-700
-              group-hover:scale-[1.7]
+              transition-opacity
+              duration-500
               group-hover:opacity-100
             "
-          />
-
-          <div
-            className="
-              pointer-events-none
-              absolute
-              -bottom-16
-              -left-12
-              h-28
-              w-28
-              rounded-full
-              bg-[#B93FC9]/10
-              blur-[50px]
-              opacity-0
-              transition-all
-              duration-700
-              group-hover:scale-[1.6]
-              group-hover:opacity-100
-            "
-          />
-
-          {/* =================================================
-              TOP GRADIENT LINE
-          ================================================= */}
-
-          <div
-            className="
-              pointer-events-none
-              absolute
-              left-0
-              top-0
-              h-[2px]
-              w-10
-              rounded-full
-              bg-[linear-gradient(90deg,#29B6F0,#3E7BD6,#7A4FD1,#B93FC9)]
-              opacity-45
-              transition-all
-              duration-700
-              group-hover:w-24
-              group-hover:opacity-100
-            "
-          />
-
-          {/* =================================================
-              NUMBER + ARROW
-          ================================================= */}
-
-          <div
-            className="
-              relative
-              z-10
-              flex
-              items-center
-              justify-between
-            "
+            style={{
+              backgroundImage: gradient,
+            }}
           >
-            <span
-              className="
-                text-[9px]
-                font-bold
-                tracking-[0.18em]
-                text-[#A1A1AA]
-                transition-all
-                duration-500
-
-                group-hover:bg-[linear-gradient(135deg,#29B6F0,#3E7BD6,#7A4FD1,#B93FC9)]
-                group-hover:bg-clip-text
-                group-hover:text-transparent
-                group-hover:tracking-[0.25em]
-
-                sm:text-[10px]
-                md:text-[11px]
-              "
-            >
-              {pillar.number}
-            </span>
-
-            <div
-              className="
-                flex
-                h-6
-                w-6
-                items-center
-                justify-center
-                rounded-full
-                bg-[#F6F8FB]
-                transition-all
-                duration-500
-
-                group-hover:-translate-y-0.5
-                group-hover:translate-x-0.5
-                group-hover:bg-[#EEF7FF]
-                group-hover:shadow-[0_7px_20px_rgba(41,182,240,0.20)]
-
-                sm:h-7
-                sm:w-7
-              "
-            >
-              <ArrowUpRight
-                className="
-                  h-3
-                  w-3
-                  text-[#A1A1AA]
-                  transition-all
-                  duration-500
-
-                  group-hover:scale-125
-                  group-hover:text-[#29B6F0]
-
-                  sm:h-3.5
-                  sm:w-3.5
-                "
-              />
-            </div>
+            <div className="h-full w-full rounded-2xl bg-white" />
           </div>
 
           {/* =================================================
-              ICON + TITLE
+              TOP RIGHT GLOW
           ================================================= */}
 
           <div
             className="
-              relative
-              z-10
-              mt-3.5
-              flex
-              items-center
-              gap-2.5
-
-              sm:mt-4
-              sm:gap-3
+              pointer-events-none
+              absolute
+              -right-20
+              -top-20
+              h-44
+              w-44
+              rounded-full
+              bg-[#29B6F0]/10
+              blur-[65px]
+              opacity-0
+              transition-all
+              duration-700
+              group-hover:scale-125
+              group-hover:opacity-100
             "
-          >
+          />
+
+          {/* =================================================
+              BOTTOM LEFT GLOW
+          ================================================= */}
+
+          <div
+            className="
+              pointer-events-none
+              absolute
+              -bottom-20
+              -left-20
+              h-44
+              w-44
+              rounded-full
+              bg-[#B93FC9]/10
+              blur-[65px]
+              opacity-0
+              transition-all
+              duration-700
+              group-hover:scale-125
+              group-hover:opacity-100
+            "
+          />
+
+          {/* =================================================
+              TOP ACCENT
+          ================================================= */}
+
+          <div
+            className="
+              pointer-events-none
+              absolute
+              left-5
+              right-5
+              top-0
+              h-[2px]
+              origin-left
+              scale-x-0
+              rounded-full
+              transition-transform
+              duration-700
+              ease-out
+              group-hover:scale-x-100
+
+              sm:left-6
+              sm:right-6
+
+              xl:left-7
+              xl:right-7
+            "
+            style={{
+              backgroundImage: gradient,
+            }}
+          />
+
+          {/* =================================================
+              ICON + ARROW
+          ================================================= */}
+
+          <div className="relative z-10 flex items-center justify-between">
             {/* ICON */}
 
             <div
               className="
                 relative
                 flex
-                h-9
-                w-9
+                h-11
+                w-11
                 shrink-0
                 items-center
                 justify-center
-                rounded-[10px]
-                bg-[#F6F8FB]
+                overflow-hidden
+                rounded-xl
+                border
+                border-[#E5E7EB]
+                bg-[#F8FAFC]
                 transition-all
                 duration-500
+                ease-out
 
-                group-hover:-rotate-6
                 group-hover:scale-110
-                group-hover:bg-[#EEF7FF]
-                group-hover:shadow-[0_8px_24px_rgba(41,182,240,0.18)]
+                group-hover:border-transparent
+                group-hover:shadow-[0_10px_28px_rgba(41,182,240,0.16)]
 
-                sm:h-10
-                sm:w-10
+                sm:h-12
+                sm:w-12
               "
             >
+              {/* Icon gradient background */}
+
               <span
                 className="
                   pointer-events-none
                   absolute
                   inset-0
-                  rounded-[10px]
-                  bg-[linear-gradient(135deg,rgba(41,182,240,.16),rgba(122,79,209,.10),rgba(185,63,201,.16))]
                   opacity-0
                   transition-opacity
                   duration-500
                   group-hover:opacity-100
                 "
+                style={{
+                  backgroundImage:
+                    "linear-gradient(135deg,rgba(41,182,240,.14),rgba(62,123,214,.10),rgba(122,79,209,.10),rgba(185,63,201,.14))",
+                }}
               />
 
               <Icon
                 className="
                   relative
                   z-10
-                  h-4
-                  w-4
+                  h-[19px]
+                  w-[19px]
                   text-[#3E7BD6]
                   transition-all
                   duration-500
 
-                  group-hover:scale-125
+                  group-hover:scale-110
                   group-hover:text-[#29B6F0]
 
-                  sm:h-[18px]
-                  sm:w-[18px]
+                  sm:h-5
+                  sm:w-5
                 "
               />
             </div>
 
-            {/* TITLE */}
+            {/* ARROW */}
 
-            <h3
+            <div
               className="
-                text-sm
-                font-bold
-                leading-[1.2]
-                tracking-[-0.015em]
-                text-[#17171A]
+                flex
+                h-9
+                w-9
+                items-center
+                justify-center
+                rounded-full
+                border
+                border-[#E5E7EB]
+                bg-white
+                text-[#71717A]
                 transition-all
                 duration-500
 
                 group-hover:translate-x-1
+                group-hover:-translate-y-1
+                group-hover:border-[#C7DDF5]
+                group-hover:bg-[#F4FAFF]
+                group-hover:text-[#29B6F0]
+                group-hover:shadow-[0_8px_24px_rgba(41,182,240,0.14)]
 
-                group-hover:bg-[linear-gradient(135deg,#29B6F0,#3E7BD6,#7A4FD1,#B93FC9)]
-                group-hover:bg-clip-text
-                group-hover:text-transparent
+                sm:h-10
+                sm:w-10
+              "
+            >
+              <ArrowUpRight
+                className="
+                  h-4
+                  w-4
+                  transition-transform
+                  duration-500
 
-                sm:text-[15px]
-                md:text-base
+                  group-hover:scale-110
+                "
+              />
+            </div>
+          </div>
+
+          {/* =================================================
+              TITLE
+          ================================================= */}
+
+          <h3
+            className="
+              relative
+              z-10
+              mt-5
+              text-lg
+              font-bold
+              leading-tight
+              tracking-[-0.02em]
+              text-[#17171A]
+              transition-all
+              duration-500
+
+              group-hover:translate-x-1
+
+              sm:mt-5
+              sm:text-xl
+
+              md:text-[21px]
+
+              lg:text-[22px]
+
+              xl:text-[23px]
+            "
+          >
+            <span
+              className="
+                bg-[linear-gradient(135deg,#29B6F0,#3E7BD6,#7A4FD1,#B93FC9)]
+                bg-clip-text
+                text-transparent
+                opacity-0
+                transition-opacity
+                duration-500
+                group-hover:opacity-100
               "
             >
               {pillar.title}
-            </h3>
-          </div>
+            </span>
+
+            <span className="absolute left-0 opacity-100 transition-opacity duration-500 group-hover:opacity-0">
+              {pillar.title}
+            </span>
+          </h3>
 
           {/* =================================================
               DESCRIPTION
@@ -353,24 +381,26 @@ function PillarItem({
             className="
               relative
               z-10
-              mt-2.5
-              max-w-[370px]
-              text-[11px]
-              leading-5
-              text-[#71717A]
+              mt-3
+              max-w-[430px]
+              text-[13px]
+              leading-6
+              text-[#666B73]
               transition-all
               duration-500
 
               group-hover:translate-x-1
-              group-hover:text-[#52525B]
+              group-hover:text-[#4B5058]
 
-              sm:mt-3
-              sm:text-xs
+              sm:mt-3.5
+              sm:text-sm
               sm:leading-6
 
-              md:text-[13px]
+              md:text-[15px]
+              md:leading-6.5
 
-              lg:text-[13px]
+              lg:text-[15px]
+              lg:leading-7
             "
           >
             {pillar.description}
@@ -384,30 +414,30 @@ function PillarItem({
             className="
               relative
               z-10
-              mt-3
+              mt-4
               flex
               items-center
-              gap-1.5
+              gap-2
+              transition-all
+              duration-500
 
-              sm:mt-3.5
-              sm:gap-2
+              group-hover:translate-x-1
             "
           >
             <span
               className="
-                text-[8px]
+                text-[10px]
                 font-bold
                 uppercase
-                tracking-[0.18em]
+                tracking-[0.2em]
                 text-[#3E7BD6]
                 transition-all
                 duration-500
 
+                group-hover:tracking-[0.25em]
                 group-hover:text-[#7A4FD1]
-                group-hover:tracking-[0.23em]
 
-                sm:text-[9px]
-                md:text-[10px]
+                sm:text-[11px]
               "
             >
               Explore
@@ -416,14 +446,14 @@ function PillarItem({
             <span
               className="
                 h-px
-                w-6
+                w-7
                 bg-gradient-to-r
-                from-[#3E7BD6]/30
+                from-[#3E7BD6]/40
                 to-transparent
                 transition-all
                 duration-700
 
-                group-hover:w-12
+                group-hover:w-14
                 group-hover:from-[#29B6F0]
                 group-hover:via-[#7A4FD1]
                 group-hover:to-[#B93FC9]
@@ -432,15 +462,13 @@ function PillarItem({
 
             <span
               className="
-                text-[9px]
+                text-[11px]
                 text-[#B93FC9]
                 transition-all
                 duration-500
 
-                group-hover:translate-x-1.5
+                group-hover:translate-x-1
                 group-hover:text-[#29B6F0]
-
-                sm:text-[10px]
               "
             >
               →
@@ -448,27 +476,32 @@ function PillarItem({
           </div>
 
           {/* =================================================
-              SIDE ACCENT
+              LEFT GRADIENT ACCENT
           ================================================= */}
 
           <div
             className="
               pointer-events-none
               absolute
-              bottom-0
+              bottom-5
               left-0
               h-0
               w-[2px]
               rounded-full
-              bg-[linear-gradient(180deg,#29B6F0,#3E7BD6,#7A4FD1,#B93FC9)]
               transition-all
               duration-500
-              group-hover:h-[72%]
+              group-hover:h-[55%]
+
+              sm:bottom-6
             "
+            style={{
+              backgroundImage:
+                "linear-gradient(180deg,#29B6F0,#3E7BD6,#7A4FD1,#B93FC9)",
+            }}
           />
 
           {/* =================================================
-              BOTTOM GRADIENT
+              BOTTOM GRADIENT ACCENT
           ================================================= */}
 
           <div
@@ -479,11 +512,14 @@ function PillarItem({
               left-0
               h-[2px]
               w-0
-              bg-[linear-gradient(90deg,#29B6F0,#3E7BD6,#7A4FD1,#B93FC9)]
+              rounded-full
               transition-all
               duration-700
               group-hover:w-full
             "
+            style={{
+              backgroundImage: gradient,
+            }}
           />
         </article>
       </Link>
@@ -498,9 +534,9 @@ function PillarItem({
 export default function FourPillars() {
   useEffect(() => {
     AOS.init({
-      duration: 850,
+      duration: 900,
       once: true,
-      offset: 50,
+      offset: 60,
       easing: "ease-out-cubic",
       mirror: false,
       anchorPlacement: "top-bottom",
@@ -520,14 +556,14 @@ export default function FourPillars() {
         w-full
         overflow-hidden
         bg-white
-        py-7
-        sm:py-9
-        md:py-10
-        lg:py-8
+        py-10
+        sm:py-12
+        md:py-14
+        lg:py-16
       "
     >
       {/* =====================================================
-          MAIN CONTAINER — FULL WIDTH MAX 7XL
+          MAIN CONTAINER
       ===================================================== */}
 
       <div
@@ -538,9 +574,10 @@ export default function FourPillars() {
           w-full
           max-w-7xl
           px-4
-          sm:px-5
-          md:px-6
-          lg:px-8
+          sm:px-6
+          md:px-8
+          lg:px-10
+          xl:px-8
         "
       >
         <div
@@ -548,17 +585,17 @@ export default function FourPillars() {
             grid
             grid-cols-1
             items-start
-            gap-6
+            gap-8
 
-            sm:gap-7
+            sm:gap-10
 
-            md:gap-8
+            md:gap-12
 
             lg:grid-cols-[0.9fr_1.1fr]
-            lg:gap-8
+            lg:gap-10
 
             xl:grid-cols-[0.88fr_1.12fr]
-            xl:gap-10
+            xl:gap-14
           "
         >
           {/* =================================================
@@ -567,7 +604,7 @@ export default function FourPillars() {
 
           <div
             data-aos="fade-right"
-            data-aos-duration="900"
+            data-aos-duration="950"
             data-aos-delay="80"
             className="
               flex
@@ -599,9 +636,9 @@ export default function FourPillars() {
                 border
                 border-[#DDE2E9]
                 bg-[#F6F8FB]
-                px-3
+                px-3.5
                 py-1.5
-                text-[9px]
+                text-[10px]
                 font-semibold
                 uppercase
                 tracking-[0.18em]
@@ -613,11 +650,11 @@ export default function FourPillars() {
                 hover:border-[#3E7BD6]
                 hover:shadow-[0_6px_20px_rgba(62,123,214,.12)]
 
-                sm:px-3.5
-                sm:py-1.5
-                sm:text-[10px]
+                sm:px-4
+                sm:py-2
+                sm:text-[11px]
 
-                md:text-[11px]
+                md:text-xs
               "
             >
               FOUR PILLARS
@@ -630,27 +667,27 @@ export default function FourPillars() {
               data-aos-duration="850"
               data-aos-delay="180"
               className="
-                mt-3.5
-                max-w-[520px]
-                text-[1.9rem]
+                mt-4
+                max-w-[560px]
+                text-[2.15rem]
                 font-black
-                leading-[1.06]
-                tracking-[-0.035em]
+                leading-[1.05]
+                tracking-[-0.04em]
                 text-[#15181D]
                 transition-transform
                 duration-500
 
                 hover:translate-x-1
 
-                sm:mt-4
-                sm:text-[2.25rem]
+                sm:mt-5
+                sm:text-[2.55rem]
 
-                md:text-[2.6rem]
+                md:text-[2.9rem]
 
-                lg:mt-4
-                lg:text-[3rem]
+                lg:mt-5
+                lg:text-[3.25rem]
 
-                xl:text-[3.25rem]
+                xl:text-[3.5rem]
               "
             >
               Four Things,{" "}
@@ -671,22 +708,25 @@ export default function FourPillars() {
               data-aos-duration="850"
               data-aos-delay="260"
               className="
-                mt-3.5
+                mt-4
                 max-w-xl
-                text-[13px]
-                leading-6
+                text-sm
+                leading-6.5
                 text-[#5F6670]
                 transition-colors
                 duration-500
 
                 hover:text-[#414750]
 
-                sm:mt-4
-                sm:text-sm
+                sm:mt-5
+                sm:text-[15px]
+                sm:leading-7
 
-                md:text-[15px]
+                md:text-base
+                md:leading-7
 
-                lg:text-base
+                lg:text-[17px]
+                lg:leading-7.5
               "
             >
               BeaverTek helps small and mid-size companies modernize their
@@ -701,18 +741,18 @@ export default function FourPillars() {
               data-aos-duration="700"
               data-aos-delay="340"
               className="
-                mt-4
+                mt-5
                 h-[2px]
-                w-12
+                w-14
                 rounded-full
                 bg-[linear-gradient(90deg,#29B6F0,#3E7BD6,#7A4FD1,#B93FC9)]
                 transition-all
                 duration-500
 
-                hover:w-20
+                hover:w-24
 
-                sm:mt-5
-                sm:w-14
+                sm:mt-6
+                sm:w-16
               "
             />
 
@@ -723,7 +763,7 @@ export default function FourPillars() {
               data-aos-duration="750"
               data-aos-delay="420"
               className="
-                mt-5
+                mt-6
                 hidden
                 items-center
                 gap-3
@@ -743,12 +783,13 @@ export default function FourPillars() {
 
               <span
                 className="
-                  text-[8px]
+                  text-[9px]
                   font-medium
                   uppercase
                   tracking-[0.16em]
                   text-[#A1A1AA]
 
+                  xl:text-[10px]
                   xl:tracking-[0.18em]
                 "
               >
@@ -759,50 +800,49 @@ export default function FourPillars() {
 
           {/* =================================================
               RIGHT — PILLARS
-              01 TOP LEFT
-              04 TOP RIGHT
-              02 BOTTOM LEFT
-              03 BOTTOM RIGHT
           ================================================= */}
 
           <div
             data-aos="fade-left"
-            data-aos-duration="900"
+            data-aos-duration="950"
             data-aos-delay="120"
             className="
               grid
               grid-cols-1
-              gap-x-6
+              gap-4
+
+              sm:gap-5
 
               md:grid-cols-2
+              md:gap-5
 
-              lg:gap-x-8
+              lg:gap-6
 
-              xl:gap-x-10
+              xl:gap-7
             "
           >
-            {/* 01 */}
+            {/* 01 — MODERNIZE */}
 
             <PillarItem
               pillar={pillars[0]}
               index={0}
             />
 
-            {/* 04 */}
+            {/* 04 — STAY SECURE */}
 
             <PillarItem
               pillar={pillars[3]}
               index={3}
             />
 
-            {/* 02 */}
+            {/* 02 — SEE YOUR DATA */}
 
             <PillarItem
               pillar={pillars[1]}
               index={1}
             />
 
-            {/* 03 */}
+            {/* 03 — BUILD SOFTWARE */}
 
             <PillarItem
               pillar={pillars[2]}
@@ -814,4 +854,3 @@ export default function FourPillars() {
     </section>
   );
 }
-
