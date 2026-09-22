@@ -411,7 +411,7 @@ export default function CaseStudyoverall() {
                   </div>
 
                   <Link
-                    href="/customers/Datathatdrivesdecisionscasestudy"
+                    href="/customers/datathatdecisionchallenge"
                     className="w-full lg:w-auto"
                   >
                     <button
