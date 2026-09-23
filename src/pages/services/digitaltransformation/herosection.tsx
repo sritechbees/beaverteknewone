@@ -1,4 +1,3 @@
-
 "use client";
 
 import App_layout from "@/component/layout/app_layout";
@@ -22,80 +21,139 @@ function Herosection() {
   return (
     <div>
       <App_layout>
+        {/* =========================================================
+            HERO SECTION
+        ========================================================= */}
+
         <section
           className="
             relative
-            h-[56vh]
-            min-h-[480px]
+            h-[380px]
+            min-h-[380px]
             overflow-hidden
-            sm:h-[58vh]
-            sm:min-h-[500px]
-            md:h-[60vh]
-            md:min-h-[520px]
-            lg:h-[62vh]
-            lg:min-h-[540px]
+            bg-[#02030D]
+
+            sm:h-[395px]
+            sm:min-h-[395px]
+
+            md:h-[410px]
+            md:min-h-[410px]
+
+            lg:h-[440px]
+            lg:min-h-[440px]
+
+            xl:h-[455px]
+            xl:min-h-[455px]
           "
         >
-          {/* Background Image */}
-          <img
-            src="/services/End-to-end-digital-transformation.jpg"
-            alt=""
-            className="absolute inset-0 h-full w-full object-cover"
-          />
+          {/* =======================================================
+              RIGHT SIDE IMAGE
+          ======================================================= */}
 
-          {/* Dark Overlay */}
-          <div className="absolute inset-0 bg-black/45" />
-
-          {/* Gradient Overlay */}
-          <div className="absolute inset-0 bg-gradient-to-r from-black/80 via-black/40 to-transparent" />
-
-          {/* Center Dark Overlay */}
-          <div className="absolute inset-0 bg-black/10" />
-
-          {/* Top Glow */}
           <div
             className="
               absolute
-              left-1/2
-              top-0
-              h-64
-              w-64
-              -translate-x-1/2
-              rounded-full
-              bg-cyan-500/20
-              blur-[120px]
-              sm:h-72
-              sm:w-72
-              sm:blur-[130px]
+              inset-y-0
+              right-0
+              w-full
+
+              md:w-[58%]
+
+              lg:w-[56%]
+
+              xl:w-[55%]
+            "
+          >
+            <img
+              src="/services/End-to-end-digital-transformation.jpg"
+              alt="Digital Transformation"
+              className="
+                absolute
+                inset-0
+                h-full
+                w-full
+                object-cover
+                object-right
+              "
+            />
+
+            {/* Soft edge transition only */}
+            <div
+              className="
+                absolute
+                inset-y-0
+                left-0
+                w-[35%]
+                bg-gradient-to-r
+                from-[#02030D]
+                to-transparent
+              "
+            />
+          </div>
+
+          {/* =======================================================
+              LEFT SIDE DARK BACKGROUND
+          ======================================================= */}
+
+          <div
+            className="
+              absolute
+              inset-y-0
+              left-0
+              z-[1]
+              w-full
+
+              md:w-[62%]
+
+              lg:w-[60%]
+
+              xl:w-[58%]
+
+              bg-gradient-to-r
+              from-[#02030D]
+              via-[#02030D]
+              to-transparent
             "
           />
 
-          {/* Content */}
+          {/* =======================================================
+              CONTENT
+          ======================================================= */}
+
           <div
             className="
               relative
+              z-10
               mx-auto
               flex
               h-full
               max-w-7xl
               items-center
-              justify-center
-              px-4
-              sm:px-5
-              md:px-6
-              lg:px-8
+              px-5
+
+              sm:px-6
+
+              md:px-8
+
+              lg:px-10
+
+              xl:px-12
             "
           >
             <div
               className="
-                flex
-                max-w-4xl
-                flex-col
-                items-center
-                text-center
+                w-full
+                max-w-2xl
+
+                md:max-w-[600px]
+
+                lg:max-w-[640px]
               "
             >
-              {/* Breadcrumb */}
+              {/* ===================================================
+                  BREADCRUMB
+              =================================================== */}
+
               <span
                 data-aos="fade-down"
                 className="
@@ -103,45 +161,58 @@ function Herosection() {
                   rounded-full
                   border
                   border-cyan-400/20
-                  bg-white/10
-                  px-3.5
+                  bg-white/[0.06]
+                  px-3
                   py-1.5
-                  text-[11px]
+                  text-[10px]
+                  font-medium
                   text-cyan-300
-                  backdrop-blur-xl
-                  sm:px-4
-                  sm:text-xs
-                  md:px-5
-                  md:py-2
-                  md:text-sm
+                  backdrop-blur-md
+
+                  sm:px-3.5
+                  sm:text-[11px]
+
+                  md:px-4
+                  md:py-1.5
+                  md:text-xs
                 "
               >
                 Services / Digital Transformation
               </span>
 
-              {/* Heading */}
+              {/* ===================================================
+                  HEADING
+              =================================================== */}
+
               <h1
                 data-aos="fade-up"
                 data-aos-delay="150"
                 className="
                   mt-4
-                  text-[28px]
+                  max-w-[620px]
+                  text-[31px]
                   font-extrabold
-                  leading-[1.1]
+                  leading-[1.08]
+                  tracking-[-0.02em]
                   text-white
-                  sm:mt-5
+
+                  sm:mt-4
                   sm:text-[36px]
-                  md:text-5xl
-                  lg:mt-6
-                  lg:text-6xl
-                  xl:text-[64px]
+
+                  md:mt-5
+                  md:text-[44px]
+
+                  lg:mt-5
+                  lg:text-[50px]
+
+                  xl:text-[55px]
                 "
               >
                 End-to-End
 
                 <span
                   className="
-                    mt-1.5
+                    mt-1
                     block
                     bg-gradient-to-r
                     from-[#29B6F0]
@@ -150,7 +221,8 @@ function Herosection() {
                     to-[#B93FC9]
                     bg-clip-text
                     text-transparent
-                    sm:mt-2
+
+                    sm:mt-1.5
                   "
                 >
                   Digital Transformation
@@ -160,7 +232,15 @@ function Herosection() {
           </div>
         </section>
 
+        {/* =========================================================
+            OVERVIEW
+        ========================================================= */}
+
         <Overviewsection />
+
+        {/* =========================================================
+            BEAVERTEK DELIVER
+        ========================================================= */}
 
         <Beavertekdeliver />
       </App_layout>
@@ -169,4 +249,3 @@ function Herosection() {
 }
 
 export default Herosection;
-

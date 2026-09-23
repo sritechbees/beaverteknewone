@@ -74,140 +74,296 @@ function Herosection() {
           HERO SECTION
       ====================================================== */}
 
-      <section className="relative min-h-[390px] overflow-hidden bg-black sm:min-h-[440px] md:min-h-[480px] lg:min-h-[540px]">
+      <section className="relative overflow-hidden bg-black">
         {/* =====================================================
-            BACKGROUND IMAGE
-        ====================================================== */}
-
-        <div className="absolute inset-0">
-          <img
-            src="/services/Devops.jpg"
-            alt="DevOps & DevSecOps"
-            className="h-full w-full object-cover object-center"
-          />
-
-          {/* Base Overlay */}
-          <div className="absolute inset-0 bg-black/30" />
-
-          {/* Center Dark Overlay */}
-          <div className="absolute inset-0 bg-black/25" />
-
-          {/* Left / Center Gradient */}
-          <div className="absolute inset-0 bg-gradient-to-r from-black/75 via-black/45 to-black/30" />
-
-          {/* Bottom Gradient */}
-          <div className="absolute inset-x-0 bottom-0 h-28 bg-gradient-to-t from-black via-black/40 to-transparent sm:h-32 md:h-36" />
-
-          {/* Top Gradient */}
-          <div className="absolute inset-x-0 top-0 h-16 bg-gradient-to-b from-black/50 to-transparent sm:h-20" />
-        </div>
-
-        {/* =====================================================
-            BEAVERTEK COLOR GLOW
-        ====================================================== */}
-
-        <div className="absolute left-1/2 top-1/2 h-[180px] w-[180px] -translate-x-1/2 -translate-y-1/2 rounded-full bg-[#29B6F0]/10 blur-[90px] sm:h-[240px] sm:w-[240px] sm:blur-[110px] md:h-[280px] md:w-[280px]" />
-
-        <div className="absolute -left-24 top-8 h-[170px] w-[170px] rounded-full bg-[#29B6F0]/10 blur-[90px] sm:-left-28 sm:h-[220px] sm:w-[220px] sm:blur-[110px]" />
-
-        <div className="absolute -right-24 bottom-0 h-[180px] w-[180px] rounded-full bg-[#B93FC9]/10 blur-[95px] sm:-right-28 sm:h-[240px] sm:w-[240px] sm:blur-[115px]" />
-
-        {/* =====================================================
-            BACKGROUND GRID
+            HERO CONTENT
         ====================================================== */}
 
         <div
-          className="absolute inset-0 opacity-[0.035]"
-          style={{
-            backgroundImage: `
-              linear-gradient(rgba(255,255,255,.2) 1px, transparent 1px),
-              linear-gradient(90deg, rgba(255,255,255,.2) 1px, transparent 1px)
-            `,
-            backgroundSize: "55px 55px",
-          }}
-        />
+          className="
+            mx-auto
+            max-w-7xl
+            px-4
+            py-10
 
-        {/* =====================================================
-            HERO CONTENT - CENTER
-        ====================================================== */}
+            sm:px-5
+            sm:py-12
 
-        <div className="relative z-10 mx-auto flex min-h-[390px] max-w-7xl items-center justify-center px-4 py-10 text-center sm:min-h-[440px] sm:px-5 sm:py-12 md:min-h-[480px] md:px-6 md:py-14 lg:min-h-[540px] lg:px-8 lg:py-16">
+            md:px-6
+            md:py-14
+
+            lg:px-8
+            lg:py-8
+
+            xl:py-8
+          "
+        >
           <div
-            className="flex w-full max-w-4xl flex-col items-center"
-            data-aos="fade-up"
-            data-aos-duration="850"
-            data-aos-offset="40"
+            className="
+              grid
+              min-h-[380px]
+              w-full
+              grid-cols-1
+              items-center
+              gap-8
+
+              sm:min-h-[400px]
+
+              md:grid-cols-[0.9fr_1.1fr]
+              md:gap-10
+
+              lg:min-h-[420px]
+              lg:grid-cols-[0.9fr_1.1fr]
+              lg:gap-12
+
+              xl:min-h-[430px]
+            "
           >
             {/* =================================================
-                BREADCRUMB
+                LEFT CONTENT
+                45% DESKTOP
             ================================================== */}
 
             <div
-              className="mb-3 inline-flex items-center rounded-full border border-white/15 bg-white/[0.07] px-3 py-1 backdrop-blur-xl transition-all duration-300 hover:border-[#3E7BD6]/50 hover:bg-white/[0.1] sm:mb-4 sm:px-3.5 sm:py-1.5 md:mb-5"
-              data-aos="fade-down"
-              data-aos-delay="80"
-              data-aos-duration="750"
+              className="
+                relative
+                z-10
+                flex
+                w-full
+                max-w-[520px]
+                flex-col
+                justify-center
+              "
+              data-aos="fade-right"
+              data-aos-duration="850"
+              data-aos-offset="40"
             >
-              {/* BeaverTek Gradient Dot */}
-              <span className="h-1.5 w-1.5 rounded-full bg-[#29B6F0] shadow-[0_0_10px_rgba(41,182,240,.8)]" />
+              {/* =================================================
+                  BREADCRUMB
+              ================================================== */}
 
-              <span className="ml-2 text-[10px] font-medium text-[#D4D4D8] sm:text-[11px]">
-                Services
-              </span>
+              <div
+                className="
+                  mb-4
+                  inline-flex
+                  w-fit
+                  items-center
+                  rounded-full
+                  border
+                  border-white/15
+                  bg-white/[0.06]
+                  px-3
+                  py-1
+                  backdrop-blur-md
 
-              <span className="mx-1.5 text-[#7A7A7A] sm:mx-2">/</span>
+                  sm:mb-5
+                  sm:px-3.5
+                  sm:py-1.5
+                "
+                data-aos="fade-down"
+                data-aos-delay="80"
+                data-aos-duration="750"
+              >
+                <span className="h-1.5 w-1.5 rounded-full bg-[#29B6F0]" />
 
-              <span className="text-[10px] font-medium text-[#29B6F0] sm:text-[11px]">
-                DevOps & DevSecOps
-              </span>
+                <span className="ml-2 text-[10px] font-medium text-[#D4D4D8] sm:text-[11px]">
+                  Services
+                </span>
+
+                <span className="mx-1.5 text-[#7A7A7A] sm:mx-2">
+                  /
+                </span>
+
+                <span className="text-[10px] font-medium text-[#29B6F0] sm:text-[11px]">
+                  DevOps & DevSecOps
+                </span>
+              </div>
+
+              {/* =================================================
+                  TITLE
+              ================================================== */}
+
+              <h1
+                className="
+                  max-w-[500px]
+                  text-[32px]
+                  font-extrabold
+                  leading-[1.08]
+                  tracking-tight
+                  text-white
+
+                  sm:text-[36px]
+
+                  md:text-[42px]
+
+                  lg:text-[48px]
+
+                  xl:text-[52px]
+                "
+                data-aos="fade-up"
+                data-aos-delay="160"
+                data-aos-duration="850"
+              >
+                Build Faster.
+
+                <span className="mt-2 block min-h-[1.08em] sm:mt-2.5">
+                  <span
+                    className="
+                      bg-gradient-to-r
+                      from-[#29B6F0]
+                      via-[#3E7BD6]
+                      via-[#7A4FD1]
+                      to-[#B93FC9]
+                      bg-clip-text
+                      text-transparent
+                    "
+                  >
+                    {text}
+                  </span>
+
+                  {/* Typing Cursor */}
+                  <span
+                    className="
+                      ml-1
+                      inline-block
+                      h-[0.78em]
+                      w-[2px]
+                      translate-y-[2px]
+                      animate-pulse
+                      bg-gradient-to-b
+                      from-[#29B6F0]
+                      to-[#B93FC9]
+
+                      sm:w-[3px]
+                    "
+                  />
+                </span>
+              </h1>
+
+              {/* =================================================
+                  ACCENT LINE
+              ================================================== */}
+
+              <div
+                className="
+                  mt-4
+                  flex
+                  items-center
+                  gap-2
+
+                  sm:mt-5
+                  sm:gap-2.5
+                "
+                data-aos="fade-up"
+                data-aos-delay="280"
+                data-aos-duration="800"
+              >
+                <div
+                  className="
+                    h-[2px]
+                    w-8
+                    bg-gradient-to-r
+                    from-[#29B6F0]
+                    via-[#3E7BD6]
+                    to-[#B93FC9]
+
+                    sm:w-12
+                    md:w-16
+                  "
+                />
+
+                <div className="h-1.5 w-1.5 rounded-full bg-[#29B6F0]" />
+
+                <div
+                  className="
+                    h-[2px]
+                    w-8
+                    bg-gradient-to-r
+                    from-[#29B6F0]
+                    via-[#7A4FD1]
+                    to-[#B93FC9]
+
+                    sm:w-12
+                    md:w-16
+                  "
+                />
+              </div>
             </div>
 
             {/* =================================================
-                TITLE
-            ================================================== */}
-
-            <h1
-              className="w-full text-3xl font-bold leading-[1.05] tracking-tight text-white sm:text-4xl md:text-5xl lg:text-6xl xl:text-[68px]"
-              data-aos="fade-up"
-              data-aos-delay="160"
-              data-aos-duration="850"
-            >
-              Build Faster.
-
-              <span className="mt-1.5 block min-h-[1.08em] sm:mt-2">
-                <span className="bg-gradient-to-r from-[#29B6F0] via-[#3E7BD6] via-[#7A4FD1] to-[#B93FC9] bg-clip-text text-transparent">
-                  {text}
-                </span>
-
-                {/* Typing Cursor */}
-                <span className="ml-1 inline-block h-[0.78em] w-[2px] translate-y-[2px] animate-pulse bg-gradient-to-b from-[#29B6F0] to-[#B93FC9] sm:w-[3px]" />
-              </span>
-            </h1>
-
-            {/* =================================================
-                ACCENT LINE
+                RIGHT IMAGE
+                55% DESKTOP
             ================================================== */}
 
             <div
-              className="mt-3 flex items-center justify-center gap-2 sm:mt-4 sm:gap-2.5 md:mt-5"
-              data-aos="fade-up"
-              data-aos-delay="280"
-              data-aos-duration="800"
+              className="
+                relative
+                flex
+                w-full
+                items-center
+                justify-end
+              "
+              data-aos="fade-left"
+              data-aos-duration="900"
+              data-aos-delay="150"
+              data-aos-offset="40"
             >
-              <div className="h-[2px] w-8 bg-gradient-to-r from-[#29B6F0] via-[#3E7BD6] to-[#B93FC9] sm:w-12 md:w-16" />
+              <div
+                className="
+                  relative
+                  w-full
+                  overflow-hidden
+                  rounded-2xl
 
-              <div className="h-1.5 w-1.5 rounded-full bg-[#29B6F0] shadow-[0_0_12px_rgba(41,182,240,.9)]" />
+                  sm:rounded-3xl
+                "
+              >
+                <img
+                  src="/services/Devops.jpg"
+                  alt="DevOps & DevSecOps"
+                  className="
+                    h-[240px]
+                    w-full
+                    object-cover
+                    object-center
 
-              <div className="h-[2px] w-8 bg-gradient-to-r from-[#29B6F0] via-[#7A4FD1] to-[#B93FC9] sm:w-12 md:w-16" />
+                    sm:h-[280px]
+
+                    md:h-[330px]
+
+                    lg:h-[350px]
+
+                    xl:h-[370px]
+                  "
+                />
+              </div>
             </div>
           </div>
         </div>
 
         {/* =====================================================
-            BOTTOM CENTER GLOW LINE
+            BOTTOM LINE
         ====================================================== */}
 
-        <div className="absolute bottom-0 left-1/2 h-px w-28 -translate-x-1/2 bg-gradient-to-r from-transparent via-[#3E7BD6] to-transparent opacity-70 sm:w-44 md:w-56" />
+        <div
+          className="
+            absolute
+            bottom-0
+            left-1/2
+            h-px
+            w-28
+            -translate-x-1/2
+            bg-gradient-to-r
+            from-transparent
+            via-[#3E7BD6]
+            to-transparent
+            opacity-70
+
+            sm:w-44
+
+            md:w-56
+          "
+        />
       </section>
 
       {/* =====================================================
