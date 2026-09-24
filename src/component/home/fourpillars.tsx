@@ -38,7 +38,7 @@ const pillars = [
     title: "See Your Data",
     href: "/services/seeyourdata/seeyourdatahero",
     description:
-      "Analytics, dashboards, and reporting that drive better decisions.",
+      "Analytics, dashboards, and reporting that drive better decisions with actionable insights.",
     icon: BarChart3,
   },
   {

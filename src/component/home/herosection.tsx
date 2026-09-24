@@ -177,8 +177,42 @@ function Herosection() {
                 <span className="absolute h-1.5 w-1.5 rounded-full bg-[#29B6F0] shadow-[0_0_12px_rgba(41,182,240,0.95)]" />
                 <span className="absolute h-3 w-3 animate-ping rounded-full bg-[#29B6F0]/20" />
               </span>
+{/* 
+ <span
+              data-aos="zoom-in"
+              data-aos-duration="700"
+              data-aos-delay="120"
+              className="
+                inline-flex
+                w-fit
+                items-center
+                rounded-full
+                border
+               
+                px-3.5
+                py-1.5
+                text-[10px]
+                font-semibold
+                uppercase
+                tracking-[0.18em]
+                text-[#D4D4D8]
+                shadow-sm
+                transition-all
+                duration-300
 
-              <span className="text-[8px] font-semibold uppercase tracking-[.18em] text-[#D4D4D8] sm:text-[9px]">
+                hover:border-[#3E7BD6]
+                hover:shadow-[0_6px_20px_rgba(62,123,214,.12)]
+
+                sm:px-4
+                sm:py-2
+                sm:text-[11px]
+
+                md:text-xs
+              "
+            >
+              FOUR PILLARS
+            </span> */}
+              <span className="text-[10px] font-semibold uppercase tracking-[.18em] text-[#D4D4D8] sm:text-[9px]">
                 BeaverTek Digital Products
               </span>
             </div>
@@ -205,21 +239,39 @@ function Herosection() {
             </h1>
 
             {/* DESCRIPTION */}
-            <p
+             <p
               data-aos="fade-up"
-              data-aos-delay="290"
+              data-aos-duration="850"
+              data-aos-delay="260"
               className="
-                mx-auto mt-4 max-w-lg text-[12px] leading-5.5 text-[#D4D4D8]
-                sm:mt-5 sm:text-[13px] sm:leading-6
-                md:text-sm md:leading-7
-                lg:mx-0 lg:text-[15px] lg:leading-7
-                xl:text-base
+              z-10
+                mt-4
+                max-w-xl
+                text-sm
+                leading-6.5
+                text-[#D4D4D8]
+                transition-colors
+                duration-500
+
+          
+
+                sm:mt-5
+                sm:text-[15px]
+                sm:leading-7
+
+                md:text-base
+                md:leading-7
+
+                lg:text-[17px]
+                lg:leading-7.5
               "
             >
-              We create modern digital products that combine exceptional
+               We create modern digital products that combine exceptional
               experiences, powerful technology, and scalable solutions for
               ambitious businesses.
             </p>
+
+           
           </div>
 
           {/* RIGHT */}
@@ -376,7 +428,7 @@ function Herosection() {
           {/* HEADER */}
           <div className="mb-3.5 flex items-end justify-between gap-4">
             <div data-aos="fade-right" data-aos-delay="250">
-              <p className="text-[8px] font-semibold uppercase tracking-[.2em] text-[#29B6F0] sm:text-[9px]">
+              <p className="text-[8px] py-2 font-semibold uppercase tracking-[.2em] text-[#29B6F0] sm:text-[9px]">
                 Selected Work
               </p>
 

@@ -253,7 +253,7 @@ return ( <div>
                   </p>
 
                   <h4 className="text-base sm:text-[17px] font-semibold text-[#FFFFFF] break-words">
-                    admin@beavertek.com
+                   info@beavertek.com
                   </h4>
                 </div>
               </div>
@@ -297,7 +297,7 @@ return ( <div>
 
                 <div className="min-w-0">
                   <p className="text-[#29B6F0] text-xs uppercase">
-                    India Engineering Center
+                    India Office
                   </p>
 
                   <h4 className="text-base sm:text-[17px] font-semibold text-[#FFFFFF]">

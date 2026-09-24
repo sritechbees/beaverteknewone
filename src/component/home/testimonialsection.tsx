@@ -74,10 +74,13 @@ export default function TestimonialsSection() {
         w-full
         overflow-hidden
         bg-[#000000]
-        py-6
-        sm:py-7
-        md:py-8
-        lg:py-7
+        py-10
+
+        sm:py-12
+
+        md:py-14
+
+        lg:py-16
       "
     >
       {/* =====================================================
@@ -95,9 +98,11 @@ export default function TestimonialsSection() {
           rounded-full
           bg-[#29B6F0]/5
           blur-[80px]
+
           sm:-left-28
           sm:h-52
           sm:w-52
+
           lg:h-60
           lg:w-60
         "
@@ -114,9 +119,11 @@ export default function TestimonialsSection() {
           rounded-full
           bg-[#B93FC9]/6
           blur-[90px]
+
           sm:-right-28
           sm:h-52
           sm:w-52
+
           lg:h-60
           lg:w-60
         "
@@ -135,6 +142,7 @@ export default function TestimonialsSection() {
           rounded-full
           bg-[#7A4FD1]/4
           blur-[80px]
+
           sm:h-48
           sm:w-48
         "
@@ -166,10 +174,14 @@ export default function TestimonialsSection() {
           mx-auto
           w-full
           max-w-7xl
-          px-3
-          sm:px-4
-          md:px-5
-          lg:px-6
+          px-4
+
+          sm:px-6
+
+          md:px-8
+
+          lg:px-10
+
           xl:px-8
         "
       >
@@ -202,10 +214,11 @@ export default function TestimonialsSection() {
               border
               border-[#2A2A30]
               bg-[#0A0A0A]
-              px-2.5
-              py-1
-              sm:px-3
-              sm:py-1.5
+              px-3.5
+              py-1.5
+
+              sm:px-4
+              sm:py-2
             "
           >
             <span
@@ -221,14 +234,15 @@ export default function TestimonialsSection() {
             <span
               className="
                 whitespace-nowrap
-                text-[7px]
+                text-[10px]
                 font-bold
                 uppercase
-                tracking-[0.16em]
+                tracking-[0.18em]
                 text-[#A0A0A8]
-                sm:text-[8px]
-                sm:tracking-[0.18em]
-                md:text-[9px]
+
+                sm:text-[11px]
+
+                md:text-xs
               "
             >
               Client Testimonials
@@ -242,18 +256,37 @@ export default function TestimonialsSection() {
             data-aos-delay="140"
             data-aos-duration="800"
             className="
-              mt-2.5
-              text-[22px]
-              font-extrabold
-              leading-[1.08]
+              mt-4
+              text-[2.15rem]
+              font-black
+              leading-[1.05]
               tracking-[-0.04em]
               text-white
-              sm:mt-3
-              sm:text-[27px]
-              md:text-[32px]
-              lg:text-[36px]
-              xl:text-[38px]
-            "
+
+
+              sm:mt-4
+                sm:text-[2.25rem]
+                md:text-[2.6rem]
+                lg:mt-4
+                lg:text-[3rem]
+                xl:text-[3.25rem]
+                
+                
+                
+                
+                
+                
+                
+                
+                "
+        
+             
+
+          
+             
+
+
+            
           >
             Hear From{" "}
             <span
@@ -275,39 +308,31 @@ export default function TestimonialsSection() {
             data-aos-duration="800"
             className="
               mx-auto
-              mt-1.5
-              max-w-[500px]
-              px-2
-              text-[9px]
-              leading-4
+              mt-4
+              max-w-xl
+              text-sm
+              leading-6
               text-[#A0A0A8]
-              sm:mt-2
-              sm:text-[11px]
-              sm:leading-5
-              md:text-xs
+
+
+              
+
+              sm:mt-5
+              sm:text-[15px]
+              sm:leading-7
+
+              md:text-base
+              md:leading-7
+
+              lg:text-[17px]
+              lg:leading-7
             "
           >
             Long-term partnerships built on measurable outcomes,
             technical excellence, and trust.
           </p>
 
-          {/* Gradient Line */}
-
-          <div
-            data-aos="zoom-in"
-            data-aos-delay="280"
-            data-aos-duration="700"
-            className="
-              mx-auto
-              mt-2.5
-              h-[2px]
-              w-9
-              rounded-full
-              bg-[linear-gradient(90deg,#29B6F0,#3E7BD6,#7A4FD1,#B93FC9)]
-              sm:mt-3
-              sm:w-10
-            "
-          />
+          
         </div>
 
         {/* ===================================================
@@ -321,11 +346,13 @@ export default function TestimonialsSection() {
           className="
             relative
             mx-auto
-            mt-5
+            mt-8
             w-full
             max-w-6xl
-            sm:mt-6
-            md:mt-7
+
+            sm:mt-10
+
+            md:mt-12
           "
         >
           <div
@@ -333,10 +360,11 @@ export default function TestimonialsSection() {
               flex
               w-full
               items-center
-              gap-1
-              sm:gap-2
-              md:gap-2.5
-              lg:gap-3
+              gap-2
+
+              sm:gap-3
+
+              md:gap-4
             "
           >
             {/* =================================================
@@ -354,8 +382,8 @@ export default function TestimonialsSection() {
                 relative
                 z-20
                 flex
-                h-7
-                w-7
+                h-8
+                w-8
                 shrink-0
                 items-center
                 justify-center
@@ -369,22 +397,21 @@ export default function TestimonialsSection() {
                 hover:border-[#3E7BD6]
                 hover:bg-[#101015]
                 hover:text-[#29B6F0]
-                sm:h-8
-                sm:w-8
-                md:h-9
-                md:w-9
-                lg:h-10
-                lg:w-10
+
+                sm:h-9
+                sm:w-9
+
+                md:h-10
+                md:w-10
               "
             >
               <ChevronLeft
                 className="
-                  h-3
-                  w-3
-                  sm:h-3.5
-                  sm:w-3.5
-                  md:h-4
-                  md:w-4
+                  h-3.5
+                  w-3.5
+
+                  sm:h-4
+                  sm:w-4
                 "
               />
             </button>
@@ -420,8 +447,11 @@ export default function TestimonialsSection() {
                         relative
                         w-full
                         overflow-hidden
-                        sm:rounded-[16px]
-                        md:rounded-[18px]
+                        rounded-2xl
+
+                        sm:rounded-[18px]
+
+                        md:rounded-[20px]
                       "
                     >
                       {/* =================================================
@@ -439,6 +469,7 @@ export default function TestimonialsSection() {
                           rounded-full
                           bg-[#29B6F0]/5
                           blur-[55px]
+
                           sm:h-36
                           sm:w-36
                         "
@@ -455,6 +486,7 @@ export default function TestimonialsSection() {
                           rounded-full
                           bg-[#B93FC9]/5
                           blur-[55px]
+
                           sm:h-36
                           sm:w-36
                         "
@@ -486,22 +518,30 @@ export default function TestimonialsSection() {
                           relative
                           z-10
                           flex
-                          min-h-[180px]
+                          min-h-[190px]
                           items-center
-                          px-2.5
-                          py-4
-                          sm:min-h-[195px]
-                          sm:px-5
-                          sm:py-5
-                          md:min-h-[205px]
-                          md:px-7
-                          lg:min-h-[215px]
-                          lg:px-9
-                          lg:py-6
+                          px-4
+                          py-5
+
+                          sm:min-h-[205px]
+                          sm:px-6
+                          sm:py-6
+
+                          md:min-h-[215px]
+                          md:px-8
+
+                          lg:min-h-[225px]
+                          lg:px-10
                         "
                       >
-                        <div className="mx-auto w-full max-w-[800px] text-center">
-
+                        <div
+                          className="
+                            mx-auto
+                            w-full
+                            max-w-[800px]
+                            text-center
+                          "
+                        >
                           {/* =================================================
                               QUOTE TEXT
                           ================================================== */}
@@ -515,15 +555,19 @@ export default function TestimonialsSection() {
                               w-full
                               max-w-[700px]
                               px-1
-                              text-[11px]
+                              text-sm
                               font-medium
-                              leading-[1.6]
+                              leading-6
                               text-[#D4D4D8]
-                              sm:text-[13px]
-                              sm:leading-5
-                              md:text-[14px]
-                              md:leading-6
-                              lg:text-[15px]
+
+                              sm:text-[15px]
+                              sm:leading-7
+
+                              md:text-base
+                              md:leading-7
+
+                              lg:text-[17px]
+                              lg:leading-7
                             "
                           >
                             <span
@@ -533,6 +577,7 @@ export default function TestimonialsSection() {
                                 font-black
                                 leading-none
                                 text-[#29B6F0]
+
                                 sm:text-[24px]
                               "
                             >
@@ -548,6 +593,7 @@ export default function TestimonialsSection() {
                                 font-black
                                 leading-none
                                 text-[#B93FC9]
+
                                 sm:text-[24px]
                               "
                             >
@@ -565,7 +611,7 @@ export default function TestimonialsSection() {
                             data-aos-duration="650"
                             className="
                               mx-auto
-                              my-2
+                              my-3
                               h-px
                               w-[65%]
                               max-w-[280px]
@@ -573,7 +619,8 @@ export default function TestimonialsSection() {
                               from-transparent
                               via-[#3E7BD6]/35
                               to-transparent
-                              sm:my-2.5
+
+                              sm:my-3.5
                             "
                           />
 
@@ -589,18 +636,19 @@ export default function TestimonialsSection() {
                               flex
                               items-center
                               justify-center
-                              gap-1.5
-                              sm:gap-2
+                              gap-2
                             "
                           >
                             <div>
                               <h3
                                 className="
-                                  text-[10px]
+                                  text-[11px]
                                   font-semibold
                                   text-white
-                                  sm:text-[11px]
-                                  md:text-xs
+
+                                  sm:text-xs
+
+                                  md:text-[13px]
                                 "
                               >
                                 {item.name}
@@ -609,13 +657,15 @@ export default function TestimonialsSection() {
                               <p
                                 className="
                                   mt-0.5
-                                  text-[7px]
+                                  text-[8px]
                                   font-medium
                                   uppercase
                                   tracking-[0.12em]
                                   text-[#777780]
-                                  sm:text-[8px]
-                                  md:text-[9px]
+
+                                  sm:text-[9px]
+
+                                  md:text-[10px]
                                 "
                               >
                                 {item.role}
@@ -624,11 +674,12 @@ export default function TestimonialsSection() {
 
                             <BadgeCheck
                               className="
-                                h-3
-                                w-3
+                                h-3.5
+                                w-3.5
                                 text-[#29B6F0]
-                                sm:h-3.5
-                                sm:w-3.5
+
+                                sm:h-4
+                                sm:w-4
                               "
                             />
                           </div>
@@ -642,11 +693,12 @@ export default function TestimonialsSection() {
                             data-aos-delay="320"
                             data-aos-duration="650"
                             className="
-                              mt-1
+                              mt-1.5
                               flex
                               justify-center
                               gap-0.5
-                              sm:mt-1.5
+
+                              sm:mt-2
                             "
                           >
                             {[1, 2, 3, 4, 5].map((star) => (
@@ -657,6 +709,7 @@ export default function TestimonialsSection() {
                                   w-2.5
                                   fill-[#29B6F0]
                                   text-[#29B6F0]
+
                                   sm:h-3
                                   sm:w-3
                                 "
@@ -704,8 +757,8 @@ export default function TestimonialsSection() {
                 relative
                 z-20
                 flex
-                h-7
-                w-7
+                h-8
+                w-8
                 shrink-0
                 items-center
                 justify-center
@@ -719,22 +772,21 @@ export default function TestimonialsSection() {
                 hover:border-[#3E7BD6]
                 hover:bg-[#101015]
                 hover:text-[#B93FC9]
-                sm:h-8
-                sm:w-8
-                md:h-9
-                md:w-9
-                lg:h-10
-                lg:w-10
+
+                sm:h-9
+                sm:w-9
+
+                md:h-10
+                md:w-10
               "
             >
               <ChevronRight
                 className="
-                  h-3
-                  w-3
-                  sm:h-3.5
-                  sm:w-3.5
-                  md:h-4
-                  md:w-4
+                  h-3.5
+                  w-3.5
+
+                  sm:h-4
+                  sm:w-4
                 "
               />
             </button>
@@ -749,12 +801,13 @@ export default function TestimonialsSection() {
             data-aos-delay="380"
             data-aos-duration="650"
             className="
-              mt-2.5
+              mt-3
               flex
               items-center
               justify-center
               gap-1.5
-              sm:mt-3
+
+              sm:mt-4
             "
           >
             {testimonials.map((item, index) => (
@@ -774,6 +827,7 @@ export default function TestimonialsSection() {
                   duration-300
                   hover:w-5
                   hover:bg-[#3E7BD6]
+
                   sm:w-3.5
                 "
               />
@@ -791,7 +845,7 @@ export default function TestimonialsSection() {
           data-aos-duration="700"
           className="
             mx-auto
-            mt-5
+            mt-6
             h-px
             w-[65%]
             max-w-4xl
@@ -799,7 +853,8 @@ export default function TestimonialsSection() {
             from-transparent
             via-[#3E7BD6]/20
             to-transparent
-            sm:mt-6
+
+            sm:mt-7
           "
         />
       </div>

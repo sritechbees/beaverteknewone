@@ -1,4 +1,3 @@
-
 "use client";
 
 import { useEffect } from "react";
@@ -30,7 +29,7 @@ const caseStudies = [
     number: "02",
     title: "AI in healthcare",
     description:
-      "Designed and shipped an AI patient triaging platform, plus patient intake and preventive care applications — moving healthcare teams from paper workflows to working software.",
+      "Designed and shipped an AI patient triaging platform, plus patient intake and preventive care applications moving healthcare teams from paper workflows to working software.",
     icon: HeartPulse,
     href: "/customers/AIcasestudytwo",
   },
@@ -269,21 +268,24 @@ export default function ProofSection() {
 
             <p
               data-aos="fade-up"
-              data-aos-delay="220"
               data-aos-duration="850"
+              data-aos-delay="220"
               className="
-                mt-3.5
-                max-w-[390px]
-                text-[13px]
-                leading-6
+                mt-4
+                max-w-xl
+                text-sm
+                leading-6.5
                 text-[#A0A0A8]
                 transition-colors
                 duration-500
                 hover:text-[#D4D4D8]
-                sm:mt-4
-                sm:text-sm
-                md:text-[15px]
-                lg:text-base
+                sm:mt-5
+                sm:text-[15px]
+                sm:leading-7
+                md:text-base
+                md:leading-7
+                lg:text-[17px]
+                lg:leading-7.5
               "
             >
               Real solutions, real results, and technology built to make a
@@ -343,9 +345,10 @@ export default function ProofSection() {
                   text-[9px]
                   font-medium
                   uppercase
-                  tracking-[0.14em]
+                  tracking-[0.16em]
                   text-[#55555D]
-                  sm:text-[10px]
+                  xl:text-[10px]
+                  xl:tracking-[0.18em]
                 "
               >
                 Built for real-world impact
@@ -565,27 +568,6 @@ function CaseStudyCard({
               sm:w-4
             "
           />
-
-          <span
-            className="
-              absolute
-              -right-2
-              -top-2
-              flex
-              h-[18px]
-              min-w-[18px]
-              items-center
-              justify-center
-              rounded-full
-              bg-[linear-gradient(135deg,#29B6F0,#3E7BD6,#7A4FD1,#B93FC9)]
-              px-1
-              text-[7px]
-              font-bold
-              text-white
-            "
-          >
-            {item.number}
-          </span>
         </div>
 
         <span
@@ -618,11 +600,13 @@ function CaseStudyCard({
           sm:mt-4
         "
       >
+        {/* CARD TITLE */}
+
         <h3
           className="
-            text-sm
+            text-[18px]
             font-semibold
-            leading-[1.25]
+            leading-[1.3]
             tracking-[-0.015em]
             text-white
             transition-all
@@ -631,25 +615,39 @@ function CaseStudyCard({
             group-hover:bg-[linear-gradient(135deg,#29B6F0,#3E7BD6,#7A4FD1,#B93FC9)]
             group-hover:bg-clip-text
             group-hover:text-transparent
-            sm:text-[15px]
-            md:text-base
+
+            sm:text-[19px]
+            md:text-[20px]
+            lg:text-[21px]
+            xl:text-[22px]
           "
         >
           {item.title}
         </h3>
 
+        {/* CARD DESCRIPTION */}
+
         <p
           className="
             mt-2
-            text-[11px]
-            leading-[1.6]
-             text-[#A0A0A8]
+            text-[13px]
+            leading-[1.65]
+            text-[#A0A0A8]
             transition-colors
             duration-500
             group-hover:text-[#D4D4D8]
-            sm:text-xs
+
+            sm:mt-3
+            sm:text-[14px]
             sm:leading-6
-            md:text-[13px]
+
+            md:text-[15px]
+            md:leading-6.5
+
+            lg:text-[15px]
+            lg:leading-7
+
+            xl:text-[15px]
           "
         >
           {item.description}
@@ -688,7 +686,7 @@ function CaseStudyCard({
         >
           <span
             className="
-              text-[8px]
+              text-[9px]
               font-semibold
               uppercase
               tracking-[0.15em]
@@ -696,6 +694,7 @@ function CaseStudyCard({
               transition-all
               duration-300
               group-hover:tracking-[0.2em]
+
               sm:text-[9px]
               md:text-[10px]
             "
@@ -761,4 +760,3 @@ function CaseStudyCard({
     </div>
   );
 }
-
