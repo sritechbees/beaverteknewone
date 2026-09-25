@@ -68,7 +68,7 @@ export default function ServicesHub() {
 
   return (
     <section
-      className="relative overflow-hidden bg-[#0A0A0A] text-white"
+      className="relative overflow-hidden bg-[#000000] text-white"
       data-aos="fade-in"
       data-aos-duration="700"
     >

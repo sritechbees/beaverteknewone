@@ -1,9 +1,17 @@
-
 "use client";
 
 import React, { useEffect } from "react";
 import AOS from "aos";
 import "aos/dist/aos.css";
+
+import {
+  GitBranch,
+  Rocket,
+  RefreshCw,
+  Boxes,
+  ShieldCheck,
+  ClipboardCheck,
+} from "lucide-react";
 
 function Keyservices() {
   useEffect(() => {
@@ -18,12 +26,30 @@ function Keyservices() {
   }, []);
 
   const services = [
-    "Secure CI/CD pipeline setup",
-    "Automated deployments",
-    "Release management automation",
-    "Infrastructure as Code (IaC)",
-    "Vulnerability assessment & remediation",
-    "Compliance automation (HIPAA)",
+    {
+      title: "Secure CI/CD pipeline setup",
+      icon: GitBranch,
+    },
+    {
+      title: "Automated deployments",
+      icon: Rocket,
+    },
+    {
+      title: "Release management automation",
+      icon: RefreshCw,
+    },
+    {
+      title: "Infrastructure as Code (IaC)",
+      icon: Boxes,
+    },
+    {
+      title: "Vulnerability assessment & remediation",
+      icon: ShieldCheck,
+    },
+    {
+      title: "Compliance automation (HIPAA)",
+      icon: ClipboardCheck,
+    },
   ];
 
   return (
@@ -56,7 +82,7 @@ function Keyservices() {
       ====================================================== */}
 
       <div className="relative mx-auto max-w-7xl px-3 sm:px-4 lg:px-5">
-        <div className="grid items-start gap-6 md:gap-7 lg:grid-cols-[0.8fr_1.2fr] lg:gap-10">
+        <div className="grid items-start gap-8 md:gap-10 lg:grid-cols-[0.8fr_1.2fr] lg:gap-14">
           {/* =================================================
               LEFT HEADING
           ================================================== */}
@@ -91,7 +117,7 @@ function Keyservices() {
           </div>
 
           {/* =================================================
-              RIGHT SERVICE LIST
+              RIGHT SERVICE CARDS
           ================================================== */}
 
           <div
@@ -99,60 +125,151 @@ function Keyservices() {
             data-aos="fade-left"
             data-aos-duration="900"
           >
-            <div className="space-y-0">
-              {services.map((service, index) => (
-                <div
-                  key={service}
-                  className="group relative"
-                  data-aos="fade-up"
-                  data-aos-delay={index * 80}
-                  data-aos-duration="750"
-                >
-                  {/* =================================================
-                      SERVICE ITEM
-                  ================================================== */}
+            <div className="grid gap-3 sm:grid-cols-2 sm:gap-4">
+              {services.map((service, index) => {
+                const Icon = service.icon;
 
-                  <div className="relative flex min-h-[54px] items-center gap-3 py-2.5 sm:min-h-[60px] sm:gap-4 sm:py-3">
-                    {/* Hover Background */}
+                return (
+                  <div
+                    key={service.title}
+                    className="group relative"
+                    data-aos="fade-up"
+                    data-aos-delay={index * 80}
+                    data-aos-duration="750"
+                  >
+                    {/* =================================================
+                        CARD
+                    ================================================== */}
 
-                    <div className="pointer-events-none absolute inset-y-1 left-0 right-0 -z-0 rounded-lg bg-white/[0.025] opacity-0 transition-all duration-300 group-hover:opacity-100" />
+                    <div
+                      className="
+                        relative
+                        min-h-[92px]
+                        overflow-hidden
+                        rounded-xl
+                        border
+                        border-[#2A2A30]
+                        bg-[#0A0A0A]
+                        px-4
+                        py-4
+                        transition-all
+                        duration-300
+                        sm:min-h-[100px]
+                        sm:px-5
+                        sm:py-5
+                        hover:-translate-y-1
+                        hover:border-[#29B6F0]/35
+                      "
+                    >
+                      {/* Subtle Hover Glow */}
 
-                    {/* Hover Gradient Line Overlay */}
+                      <div
+                        className="
+                          pointer-events-none
+                          absolute
+                          -right-10
+                          -top-10
+                          h-24
+                          w-24
+                          rounded-full
+                          bg-[#29B6F0]/10
+                          blur-2xl
+                          opacity-0
+                          transition-opacity
+                          duration-500
+                          group-hover:opacity-100
+                        "
+                      />
 
-                    <div className="pointer-events-none absolute bottom-0 left-0 h-[1px] w-0 bg-gradient-to-r from-[#29B6F0] via-[#7A4FD1] to-[#B93FC9] transition-all duration-500 ease-out group-hover:w-full" />
+                      {/* Bottom Gradient */}
 
-                    {/* Left Hover Accent */}
+                      <div
+                        className="
+                          pointer-events-none
+                          absolute
+                          bottom-0
+                          left-0
+                          h-[2px]
+                          w-0
+                          bg-gradient-to-r
+                          from-[#29B6F0]
+                          via-[#7A4FD1]
+                          to-[#B93FC9]
+                          transition-all
+                          duration-500
+                          ease-out
+                          group-hover:w-full
+                        "
+                      />
 
-                    <div className="pointer-events-none absolute left-0 top-1/2 h-0 w-[2px] -translate-y-1/2 rounded-full bg-gradient-to-b from-[#29B6F0] to-[#B93FC9] opacity-0 transition-all duration-300 group-hover:h-7 group-hover:opacity-100" />
+                      {/* =================================================
+                          CARD CONTENT
+                      ================================================== */}
 
-                    {/* Service Text */}
+                      <div className="relative z-10 flex items-center gap-3 sm:gap-4">
+                        {/* Service Icon */}
 
-                    <div className="relative z-10 flex min-w-0 flex-1 items-center pl-2 sm:pl-3">
-                      <h3 className="text-sm font-medium leading-5 text-[#FFFFFF] transition-all duration-300 group-hover:translate-x-1 group-hover:text-[#29B6F0] sm:text-base sm:leading-6 lg:text-lg">
-                        {service}
-                      </h3>
-                    </div>
+                        <div
+                          className="
+                            flex
+                            h-10
+                            w-10
+                            shrink-0
+                            items-center
+                            justify-center
+                            rounded-lg
+                            border
+                            border-[#2A2A30]
+                            bg-white/[0.03]
+                            transition-all
+                            duration-300
+                            group-hover:border-[#29B6F0]/40
+                            group-hover:bg-[#29B6F0]/10
+                            sm:h-11
+                            sm:w-11
+                          "
+                        >
+                          <Icon
+                            className="
+                              h-[18px]
+                              w-[18px]
+                              text-[#29B6F0]
+                              transition-all
+                              duration-300
+                              group-hover:scale-110
+                              group-hover:text-[#7A4FD1]
+                              sm:h-5
+                              sm:w-5
+                            "
+                            strokeWidth={1.7}
+                          />
+                        </div>
 
-                    {/* Arrow */}
+                        {/* Service Text */}
 
-                    <div className="relative z-10 flex h-6 w-6 shrink-0 items-center justify-center opacity-35 transition-all duration-300 group-hover:translate-x-1 group-hover:opacity-100 sm:h-7 sm:w-7">
-                      <svg
-                        className="h-3.5 w-3.5 text-[#A0A0A8] transition-colors duration-300 group-hover:text-[#29B6F0] sm:h-4 sm:w-4"
-                        fill="none"
-                        viewBox="0 0 24 24"
-                        stroke="currentColor"
-                        strokeWidth="1.8"
-                      >
-                        <path
-                          strokeLinecap="round"
-                          strokeLinejoin="round"
-                          d="M5 12h14M13 6l6 6-6 6"
-                        />
-                      </svg>
+                        <div className="min-w-0 flex-1">
+                          <h3
+                            className="
+                              text-[13px]
+                              font-medium
+                              leading-5
+                              text-[#FFFFFF]
+                              transition-all
+                              duration-300
+                              group-hover:text-[#29B6F0]
+                              sm:text-[15px]
+                              sm:leading-6
+                              lg:text-base
+                            "
+                          >
+                            {service.title}
+                          </h3>
+                        </div>
+                      </div>
                     </div>
                   </div>
-                </div>
-              ))}
+                );
+              })}
             </div>
           </div>
         </div>
@@ -162,4 +279,3 @@ function Keyservices() {
 }
 
 export default Keyservices;
-

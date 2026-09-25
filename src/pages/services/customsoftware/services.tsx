@@ -1,4 +1,3 @@
-
 "use client";
 
 import React, { useEffect, useState } from "react";
@@ -152,12 +151,12 @@ function Services() {
   };
 
   return (
-    <section className="relative overflow-hidden bg-black py-16 sm:py-20 md:py-24 lg:py-13">
+    <section className="relative overflow-hidden bg-black py-12 sm:py-14 md:py-16 lg:py-16 xl:py-16">
       {/* =====================================================
           BACKGROUND
       ===================================================== */}
 
-      <div className="pointer-events-none absolute inset-0">
+      <div className="pointer-events-none absolute inset-0 overflow-hidden">
         {/* Subtle Grid */}
         <div
           className="absolute inset-0 opacity-[0.025]"
@@ -169,41 +168,41 @@ function Services() {
         />
 
         {/* Cyan Glow */}
-        <div className="absolute -left-40 top-20 h-[400px] w-[400px] rounded-full bg-[#29B6F0]/10 blur-[150px]" />
+        <div className="absolute -left-32 top-16 h-[220px] w-[220px] rounded-full bg-[#29B6F0]/10 blur-[110px] sm:-left-40 sm:top-20 sm:h-[300px] sm:w-[300px] sm:blur-[140px] md:h-[400px] md:w-[400px] md:blur-[150px]" />
 
         {/* Violet Glow */}
-        <div className="absolute -right-40 bottom-0 h-[450px] w-[450px] rounded-full bg-[#7A4FD1]/10 blur-[160px]" />
+        <div className="absolute -right-32 bottom-0 h-[250px] w-[250px] rounded-full bg-[#7A4FD1]/10 blur-[120px] sm:-right-40 sm:h-[350px] sm:w-[350px] sm:blur-[150px] md:h-[450px] md:w-[450px] md:blur-[160px]" />
 
         {/* Center Glow */}
-        <div className="absolute left-1/2 top-1/2 h-[250px] w-[250px] -translate-x-1/2 -translate-y-1/2 rounded-full bg-[#B93FC9]/5 blur-[130px]" />
+        <div className="absolute left-1/2 top-1/2 h-[180px] w-[180px] -translate-x-1/2 -translate-y-1/2 rounded-full bg-[#B93FC9]/5 blur-[100px] sm:h-[220px] sm:w-[220px] sm:blur-[120px] md:h-[250px] md:w-[250px] md:blur-[130px]" />
       </div>
 
       {/* =====================================================
           CONTAINER
       ===================================================== */}
 
-      <div className="relative mx-auto max-w-[1350px] px-5 sm:px-6 lg:px-8">
+      <div className="relative mx-auto w-full max-w-[1350px] px-4 sm:px-5 md:px-6 lg:px-8 xl:px-10">
         {/* =====================================================
             HEADER
         ===================================================== */}
 
         <div
-  data-aos="fade-up"
-  className="mb-10 text-center sm:mb-12 md:mb-14"
->
-  <span className="text-xs font-bold uppercase tracking-[0.3em] text-[#29B6F0] sm:text-sm sm:tracking-[0.35em]">
-    Services
-  </span>
+          data-aos="fade-up"
+          className="mx-auto mb-8 w-full max-w-3xl text-center sm:mb-10 md:mb-12 lg:mb-8"
+        >
+          <span className="text-[10px] font-bold uppercase tracking-[0.25em] text-[#29B6F0] sm:text-xs sm:tracking-[0.3em] md:text-sm md:tracking-[0.35em]">
+            Services
+          </span>
 
-  <h2 className="mt-3 text-3xl font-extrabold leading-tight sm:text-4xl md:text-5xl lg:text-6xl">
-    <span className="text-white">Our </span>
-    <span className="bg-gradient-to-r from-[#29B6F0] via-[#3E7BD6] to-[#B93FC9] bg-clip-text text-transparent">
-      Services
-    </span>
-  </h2>
+          <h2 className="mt-2 text-[28px] font-extrabold leading-[1.12] sm:mt-3 sm:text-[32px] md:text-[40px] lg:text-[48px] xl:text-[54px]">
+            <span className="text-white">Our </span>
+            <span className="bg-gradient-to-r from-[#29B6F0] via-[#3E7BD6] to-[#B93FC9] bg-clip-text text-transparent">
+              Services
+            </span>
+          </h2>
 
-  <div className="mx-auto mt-5 h-[3px] w-20 rounded-full bg-gradient-to-r from-[#29B6F0] via-[#3E7BD6] to-[#7A4FD1]" />
-</div>
+          <div className="mx-auto mt-4 h-[2px] w-16 rounded-full bg-gradient-to-r from-[#29B6F0] via-[#3E7BD6] to-[#7A4FD1] sm:mt-5 sm:w-20 sm:h-[3px]" />
+        </div>
 
         {/* =====================================================
             DESKTOP CAROUSEL
@@ -211,15 +210,15 @@ function Services() {
 
         <div
           data-aos="fade-up"
-          className="relative hidden h-[490px] overflow-hidden md:block"
+          className="relative hidden h-[430px] overflow-hidden md:block lg:h-[460px] xl:h-[490px]"
           onMouseEnter={() => setIsPaused(true)}
           onMouseLeave={() => setIsPaused(false)}
         >
           {/* Left Fade */}
-          <div className="pointer-events-none absolute left-0 top-0 z-30 h-full w-20 bg-gradient-to-r from-black to-transparent lg:w-32" />
+          <div className="pointer-events-none absolute left-0 top-0 z-30 h-full w-10 bg-gradient-to-r from-black to-transparent sm:w-16 lg:w-28 xl:w-32" />
 
           {/* Right Fade */}
-          <div className="pointer-events-none absolute right-0 top-0 z-30 h-full w-20 bg-gradient-to-l from-black to-transparent lg:w-32" />
+          <div className="pointer-events-none absolute right-0 top-0 z-30 h-full w-10 bg-gradient-to-l from-black to-transparent sm:w-16 lg:w-28 xl:w-32" />
 
           {/* =================================================
               CARDS
@@ -240,20 +239,20 @@ function Services() {
                 onClick={() => handleCardClick(index)}
                 className="absolute left-1/2 top-1/2 cursor-pointer"
                 style={{
-                  width: "min(340px, 28vw)",
+                  width: "min(320px, 28vw)",
 
                   height: isImageOpen
-                    ? "460px"
+                    ? "430px"
                     : isActive
-                    ? "410px"
-                    : "380px",
+                    ? "380px"
+                    : "350px",
 
                   transform: `
                     translate(-50%, -50%)
                     translateX(
                       calc(
                         ${position} *
-                        (min(340px, 28vw) + 24px)
+                        (min(320px, 28vw) + 20px)
                       )
                     )
                     scale(${isActive ? 1 : 0.88})
@@ -263,10 +262,10 @@ function Services() {
 
                   opacity:
                     Math.abs(position) === 2
-                      ? 0.45
+                      ? 0.4
                       : isActive
                       ? 1
-                      : 0.7,
+                      : 0.68,
 
                   transition:
                     "transform 750ms cubic-bezier(0.22,1,0.36,1), height 600ms ease, opacity 500ms ease",
@@ -280,9 +279,9 @@ function Services() {
                   className={`
                     group relative h-full overflow-hidden
                     border transition-all duration-700
-                    rounded-[30px]
-                    rounded-tr-[65px]
-                    rounded-bl-[45px]
+                    rounded-[26px]
+                    rounded-tr-[58px]
+                    rounded-bl-[42px]
 
                     ${
                       isActive
@@ -306,11 +305,11 @@ function Services() {
                   <div
                     className={`
                       absolute left-4 right-4 top-4 overflow-hidden
-                      rounded-[22px] transition-all duration-700
+                      rounded-[20px] transition-all duration-700
 
                       ${
                         isImageOpen
-                          ? "h-[165px] opacity-100"
+                          ? "h-[145px] opacity-100 sm:h-[155px] lg:h-[165px]"
                           : "pointer-events-none h-0 opacity-0"
                       }
                     `}
@@ -323,7 +322,7 @@ function Services() {
 
                     <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent" />
 
-                    <div className="absolute inset-0 rounded-[22px] border border-white/10" />
+                    <div className="absolute inset-0 rounded-[20px] border border-white/10" />
                   </div>
 
                   {/* =================================================
@@ -337,15 +336,17 @@ function Services() {
 
                       ${
                         isImageOpen
-                          ? "top-[205px]"
-                          : "top-[95px]"
+                          ? "top-[180px] sm:top-[195px] lg:top-[205px]"
+                          : "top-[82px] sm:top-[88px] lg:top-[95px]"
                       }
                     `}
                   >
                     <div
                       className={`
-                        flex h-[68px] w-[68px] items-center justify-center
+                        flex h-[58px] w-[58px] items-center justify-center
                         rounded-full border transition-all duration-700
+                        sm:h-[64px] sm:w-[64px]
+                        lg:h-[68px] lg:w-[68px]
 
                         ${
                           isActive
@@ -355,12 +356,10 @@ function Services() {
                       `}
                     >
                       <Icon
-                        size={30}
+                        size={26}
                         strokeWidth={1.7}
                         className={
-                          isActive
-                            ? "text-[#29B6F0]"
-                            : "text-white/30"
+                          isActive ? "text-[#29B6F0]" : "text-white/30"
                         }
                       />
                     </div>
@@ -372,49 +371,55 @@ function Services() {
 
                   <div
                     className={`
-                      absolute left-7 right-7 z-10 transition-all duration-700
+                      absolute left-5 right-5 z-10
+                      transition-all duration-700
+                      sm:left-6 sm:right-6
+                      lg:left-7 lg:right-7
 
                       ${
                         isImageOpen
-                          ? "bottom-[82px]"
-                          : "bottom-[78px]"
+                          ? "bottom-[74px]"
+                          : "bottom-[72px]"
                       }
                     `}
                   >
-                   <h3
-  className={`
-    text-[17px] font-bold leading-[1.25]
-    transition-all duration-500
-    sm:text-[19px] md:text-[20px]
-    ${isActive ? "text-white" : "text-[#777]"}
-  `}
->
-  {(() => {
-    const words = service.title.split(" ");
-    const middle = Math.ceil(words.length / 2);
+                    <h3
+                      className={`
+                        text-[16px] font-bold leading-[1.25]
+                        transition-all duration-500
+                        sm:text-[18px]
+                        md:text-[19px]
+                        lg:text-[20px]
 
-    return (
-      <>
-        <span>
-          {words.slice(0, middle).join(" ")}{" "}
-        </span>
+                        ${isActive ? "text-white" : "text-[#777]"}
+                      `}
+                    >
+                      {(() => {
+                        const words = service.title.split(" ");
+                        const middle = Math.ceil(words.length / 2);
 
-        <span
-          className="
-            bg-gradient-to-r
-            from-[#29B6F0]
-            via-[#3E7BD6]
-            to-[#B93FC9]
-            bg-clip-text
-            text-transparent
-          "
-        >
-          {words.slice(middle).join(" ")}
-        </span>
-      </>
-    );
-  })()}
-</h3>
+                        return (
+                          <>
+                            <span>
+                              {words.slice(0, middle).join(" ")}{" "}
+                            </span>
+
+                            <span
+                              className="
+                                bg-gradient-to-r
+                                from-[#29B6F0]
+                                via-[#3E7BD6]
+                                to-[#B93FC9]
+                                bg-clip-text
+                                text-transparent
+                              "
+                            >
+                              {words.slice(middle).join(" ")}
+                            </span>
+                          </>
+                        );
+                      })()}
+                    </h3>
 
                     {/* Description - Only When Open */}
                     <div
@@ -427,7 +432,7 @@ function Services() {
                         }
                       `}
                     >
-                      <p className="text-[12px] leading-5 text-[#A0A0A8] sm:text-[13px]">
+                      <p className="text-[11px] leading-5 text-[#A0A0A8] sm:text-[12px] md:text-[13px]">
                         {service.description}
                       </p>
                     </div>
@@ -446,10 +451,11 @@ function Services() {
                     }
                     onClick={(e) => toggleImage(e, index)}
                     className={`
-                      absolute bottom-5 left-6 right-6 z-20
-                      flex h-12 items-center
+                      absolute bottom-4 left-5 right-5 z-20
+                      flex h-11 items-center
                       rounded-full border
                       transition-all duration-500
+                      sm:bottom-5 sm:left-6 sm:right-6 sm:h-12
 
                       ${
                         isActive
@@ -461,9 +467,10 @@ function Services() {
                     {/* Arrow Circle */}
                     <span
                       className={`
-                        ml-1 flex h-10 w-10 shrink-0
+                        ml-1 flex h-9 w-9 shrink-0
                         items-center justify-center
                         rounded-full transition-all duration-500
+                        sm:h-10 sm:w-10
 
                         ${
                           isActive
@@ -473,16 +480,17 @@ function Services() {
                       `}
                     >
                       {isImageOpen ? (
-                        <ArrowDownLeft size={18} />
+                        <ArrowDownLeft size={17} />
                       ) : (
-                        <ArrowUpRight size={18} />
+                        <ArrowUpRight size={17} />
                       )}
                     </span>
 
                     {/* Line */}
                     <span
                       className={`
-                        mx-3 h-px flex-1
+                        mx-2.5 h-px flex-1
+                        sm:mx-3
 
                         ${
                           isActive
@@ -503,11 +511,7 @@ function Services() {
                       bg-gradient-to-r from-[#29B6F0] via-[#3E7BD6] to-[#B93FC9]
                       transition-opacity duration-500
 
-                      ${
-                        isActive
-                          ? "opacity-100"
-                          : "opacity-0"
-                      }
+                      ${isActive ? "opacity-100" : "opacity-0"}
                     `}
                   />
                 </div>
@@ -522,7 +526,7 @@ function Services() {
 
         <div
           data-aos="fade-up"
-          className="mt-6 hidden items-center justify-center gap-2 md:flex"
+          className="mt-5 hidden items-center justify-center gap-2 md:flex lg:mt-6"
         >
           {services.map((service, index) => (
             <button
@@ -538,7 +542,7 @@ function Services() {
 
                 ${
                   active === index
-                    ? "w-9 bg-gradient-to-r from-[#29B6F0] to-[#7A4FD1]"
+                    ? "w-8 bg-gradient-to-r from-[#29B6F0] to-[#7A4FD1] lg:w-9"
                     : "w-1.5 bg-white/20 hover:bg-white/40"
                 }
               `}
@@ -570,7 +574,7 @@ function Services() {
                 return (
                   <div
                     key={service.title}
-                    className="w-full shrink-0 px-1"
+                    className="w-full shrink-0 px-0.5 sm:px-1"
                   >
                     <div
                       className={`
@@ -579,14 +583,14 @@ function Services() {
                         bg-gradient-to-br from-[#121212] via-[#080808] to-[#111]
                         transition-all duration-700
 
-                        rounded-[28px]
-                        rounded-tr-[60px]
-                        rounded-bl-[40px]
+                        rounded-[24px]
+                        rounded-tr-[52px]
+                        rounded-bl-[36px]
 
                         ${
                           isImageOpen
-                            ? "h-[500px]"
-                            : "h-[410px]"
+                            ? "h-[480px] sm:h-[490px]"
+                            : "h-[380px] sm:h-[400px]"
                         }
                       `}
                     >
@@ -596,13 +600,14 @@ function Services() {
 
                       <div
                         className={`
-                          absolute left-4 right-4 top-4
-                          overflow-hidden rounded-[20px]
+                          absolute left-3.5 right-3.5 top-3.5
+                          overflow-hidden rounded-[18px]
                           transition-all duration-700
+                          sm:left-4 sm:right-4 sm:top-4 sm:rounded-[20px]
 
                           ${
                             isImageOpen
-                              ? "h-[160px] opacity-100"
+                              ? "h-[145px] opacity-100 sm:h-[155px]"
                               : "h-0 opacity-0"
                           }
                         `}
@@ -615,7 +620,7 @@ function Services() {
 
                         <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent" />
 
-                        <div className="absolute inset-0 rounded-[20px] border border-white/10" />
+                        <div className="absolute inset-0 rounded-[18px] border border-white/10 sm:rounded-[20px]" />
                       </div>
 
                       {/* =================================================
@@ -630,16 +635,16 @@ function Services() {
 
                           ${
                             isImageOpen
-                              ? "top-[205px]"
-                              : "top-[90px]"
+                              ? "top-[185px] sm:top-[200px]"
+                              : "top-[75px] sm:top-[82px]"
                           }
                         `}
                       >
-                        <div className="flex h-20 w-20 items-center justify-center rounded-full border border-[#29B6F0]/20 bg-[#29B6F0]/10">
+                        <div className="flex h-[68px] w-[68px] items-center justify-center rounded-full border border-[#29B6F0]/20 bg-[#29B6F0]/10 sm:h-[72px] sm:w-[72px]">
                           <Icon
-                            size={34}
+                            size={30}
                             strokeWidth={1.7}
-                            className="text-[#29B6F0]"
+                            className="text-[#29B6F0] sm:h-[32px] sm:w-[32px]"
                           />
                         </div>
                       </div>
@@ -649,24 +654,18 @@ function Services() {
                       ================================================= */}
 
                       <div
-                        className={`
-                          absolute left-6 right-6
+                        className="
+                          absolute left-5 right-5 bottom-[70px]
                           transition-all duration-700
-
-                          ${
-                            isImageOpen
-                              ? "bottom-[78px]"
-                              : "bottom-[78px]"
-                          }
-                        `}
+                          sm:left-6 sm:right-6 sm:bottom-[74px]
+                        "
                       >
                         <h3
-                          className={`
-                            text-[18px] font-bold leading-[1.25]
-                            text-white
-                            transition-all duration-700
-                            sm:text-[20px]
-                          `}
+                          className="
+                            text-[17px] font-bold leading-[1.28]
+                            text-white transition-all duration-700
+                            sm:text-[19px]
+                          "
                         >
                           {service.title}
                         </h3>
@@ -683,7 +682,7 @@ function Services() {
                             }
                           `}
                         >
-                          <p className="text-[12px] leading-5 text-[#A0A0A8] sm:text-[13px]">
+                          <p className="text-[11px] leading-5 text-[#A0A0A8] sm:text-[12px] sm:leading-5">
                             {service.description}
                           </p>
                         </div>
@@ -701,17 +700,23 @@ function Services() {
                             : `View ${service.title}`
                         }
                         onClick={(e) => toggleImage(e, index)}
-                        className="absolute bottom-5 left-5 right-5 flex h-12 items-center rounded-full border border-white/15 bg-white/[0.04]"
+                        className="
+                          absolute bottom-4 left-4 right-4
+                          flex h-11 items-center
+                          rounded-full border border-white/15
+                          bg-white/[0.04]
+                          sm:bottom-5 sm:left-5 sm:right-5 sm:h-12
+                        "
                       >
-                        <span className="ml-1 flex h-10 w-10 items-center justify-center rounded-full bg-gradient-to-r from-[#29B6F0] to-[#7A4FD1] text-white">
+                        <span className="ml-1 flex h-9 w-9 shrink-0 items-center justify-center rounded-full bg-gradient-to-r from-[#29B6F0] to-[#7A4FD1] text-white sm:h-10 sm:w-10">
                           {isImageOpen ? (
-                            <ArrowDownLeft size={18} />
+                            <ArrowDownLeft size={17} />
                           ) : (
-                            <ArrowUpRight size={18} />
+                            <ArrowUpRight size={17} />
                           )}
                         </span>
 
-                        <span className="mx-3 h-px flex-1 bg-gradient-to-r from-[#29B6F0]/50 to-transparent" />
+                        <span className="mx-2.5 h-px flex-1 bg-gradient-to-r from-[#29B6F0]/50 to-transparent sm:mx-3" />
                       </button>
 
                       {/* Bottom Line */}
@@ -724,7 +729,7 @@ function Services() {
           </div>
 
           {/* Mobile Indicators */}
-          <div className="mt-6 flex justify-center gap-2">
+          <div className="mt-5 flex justify-center gap-2 sm:mt-6">
             {services.map((service, index) => (
               <button
                 key={service.title}
@@ -739,7 +744,7 @@ function Services() {
 
                   ${
                     active === index
-                      ? "w-8 bg-gradient-to-r from-[#29B6F0] to-[#7A4FD1]"
+                      ? "w-7 bg-gradient-to-r from-[#29B6F0] to-[#7A4FD1] sm:w-8"
                       : "w-1.5 bg-white/20"
                   }
                 `}
@@ -749,11 +754,8 @@ function Services() {
         </div>
       </div>
 
-      {/* Bottom Border */}
-      <div className="absolute bottom-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-[#3E7BD6]/40 to-transparent" />
-    </section>
+       </section>
   );
 }
 
 export default Services;
-

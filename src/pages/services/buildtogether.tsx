@@ -271,12 +271,21 @@ function Buildtogether() {
                 mx-auto
                 mt-4
                 max-w-2xl
-                text-[13px]
+                text-[14px]
                 leading-6
                 text-[#A0A0A8]
+
                 sm:mt-5
-                sm:text-sm
+                sm:text-[15px]
                 sm:leading-7
+
+                md:text-[15px]
+                md:leading-7
+
+                lg:text-[16px]
+                lg:leading-7
+
+                xl:text-[16px]
               "
             >
               Whether you're modernizing legacy systems, building custom
@@ -299,6 +308,7 @@ function Buildtogether() {
                 items-center
                 justify-center
                 gap-2.5
+
                 sm:mt-7
                 sm:flex-row
                 sm:gap-3
@@ -313,14 +323,15 @@ function Buildtogether() {
                   relative
                   inline-flex
                   h-10.5
-                  w-full
+                  w-auto
+                  min-w-[190px]
                   items-center
                   justify-center
                   gap-2
                   overflow-hidden
                   rounded-full
                   bg-[linear-gradient(135deg,#29B6F0_0%,#3E7BD6_35%,#7A4FD1_65%,#B93FC9_100%)]
-                  px-6
+                  px-5
                   text-xs
                   font-semibold
                   text-white
@@ -329,7 +340,8 @@ function Buildtogether() {
                   duration-500
                   hover:-translate-y-0.5
                   hover:shadow-[0_12px_32px_rgba(62,123,214,0.28)]
-                  sm:w-auto
+
+                  sm:min-w-0
                   sm:px-6.5
                   sm:text-sm
                 "
@@ -392,14 +404,15 @@ function Buildtogether() {
                   group
                   inline-flex
                   h-10.5
-                  w-full
+                  w-auto
+                  min-w-[190px]
                   items-center
                   justify-center
                   rounded-full
                   border
                   border-[#2A2A30]
                   bg-[#121212]
-                  px-6
+                  px-5
                   text-xs
                   font-semibold
                   text-[#D4D4D8]
@@ -409,7 +422,8 @@ function Buildtogether() {
                   hover:border-[#3E7BD6]/60
                   hover:bg-[#17171B]
                   hover:text-white
-                  sm:w-auto
+
+                  sm:min-w-0
                   sm:px-6.5
                   sm:text-sm
                 "
@@ -452,5 +466,4 @@ function Buildtogether() {
     </div>
   );
 }
-
 export default Buildtogether;
