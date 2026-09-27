@@ -1,4 +1,3 @@
-
 "use client";
 
 import { useEffect, useRef, useState } from "react";
@@ -12,26 +11,48 @@ export default function AboutContent() {
   const containerRef = useRef<HTMLDivElement | null>(null);
   const sectionRefs = useRef<(HTMLDivElement | null)[]>([]);
 
+  /* =========================================================
+     ABOUT SECTIONS
+  ========================================================== */
+
   const sections = [
     {
       title: "Why We Exist",
       image: "/home/whyexist.jpg",
+
       content:
         "Most small and mid-size companies are stuck between two bad options. Hire a full in-house IT and engineering team, which is expensive and slow to build. Or buy off-the-shelf software and consultants who do not really know the business. We started BeaverTek because there is a third option: a senior partner who treats your problems like our own, and who can actually build what you need.",
+
+      supportingText:
+        "We bring senior expertise and thoughtful engineering together to build practical technology solutions that solve real business challenges.",
     },
+
     {
       title: "How We Work",
       image: "/home/theteam.jpg",
+
       content:
-        "We are not a body shop. Every engagement is led by senior people who have done the work before. We listen first, design carefully, and ship working software. We treat your data, your customers, and your operations with the same seriousness we would give a regulated enterprise because at the size you are operating, mistakes cost more, not less.",
+        "We are not a body shop. Every engagement is led by senior people who have done the work before. We listen first, design carefully, and ship working software. We treat your data, your customers, and your operations with the same seriousness we would give a regulated enterprise — because at the size you are operating, mistakes cost more, not less.",
+
+      supportingText:
+        "We combine senior expertise, thoughtful engineering, and business-first thinking to deliver practical technology solutions built for lasting impact.",
     },
+
     {
       title: "The Team",
       image: "/home/studyhero.jpg",
+
       content:
         "Our leadership brings more than 80 years of combined experience working with Fortune 500 companies across financial services, healthcare, retail, and technology. We have built payment platforms processing millions of transactions a month, healthcare AI used in real hospitals, and mobile products taken from concept to launch. We are global by design. Our US team handles strategy, architecture, and client partnership. Our India team handles deep engineering execution. Together, we deliver faster and at a better cost than a single-location firm.",
+
+      supportingText:
+        "Our experienced team combines technical expertise, thoughtful engineering, and a business-first approach to deliver solutions that create lasting value.",
     },
   ];
+
+  /* =========================================================
+     AOS + ACTIVE SECTION
+  ========================================================== */
 
   useEffect(() => {
     AOS.init({
@@ -82,13 +103,76 @@ export default function AboutContent() {
         w-full
         overflow-hidden
         bg-[#000000]
-        py-9
-        sm:py-10
-        md:py-12
-        lg:py-14
+        py-12
+        sm:py-14
+        md:py-16
+        lg:py-20
+        xl:py-24
       "
     >
-      {/* ================= MAIN CONTAINER ================= */}
+      {/* =========================================================
+          BACKGROUND
+      ========================================================== */}
+
+      <div className="pointer-events-none absolute inset-0">
+        {/* Cyan ambient glow */}
+
+        <div
+          className="
+            absolute
+            -left-40
+            top-[10%]
+            h-64
+            w-64
+            rounded-full
+            bg-[#29B6F0]/[0.055]
+            blur-[110px]
+
+            sm:h-80
+            sm:w-80
+
+            lg:h-[420px]
+            lg:w-[420px]
+          "
+        />
+
+        {/* Violet ambient glow */}
+
+        <div
+          className="
+            absolute
+            -right-40
+            top-[42%]
+            h-72
+            w-72
+            rounded-full
+            bg-[#7A4FD1]/[0.06]
+            blur-[120px]
+
+            sm:h-96
+            sm:w-96
+
+            lg:h-[460px]
+            lg:w-[460px]
+          "
+        />
+
+        {/* Subtle grid */}
+
+        <div
+          className="
+            absolute
+            inset-0
+            opacity-[0.018]
+            [background-image:linear-gradient(rgba(255,255,255,0.55)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.55)_1px,transparent_1px)]
+            [background-size:55px_55px]
+          "
+        />
+      </div>
+
+      {/* =========================================================
+          MAIN CONTAINER
+      ========================================================== */}
 
       <div
         className="
@@ -97,19 +181,24 @@ export default function AboutContent() {
           mx-auto
           w-full
           max-w-7xl
-          px-3
-          sm:px-4
-          md:px-5
-          lg:px-6
-          xl:px-8
+          px-4
+          sm:px-6
+          md:px-8
+          lg:px-10
+          xl:px-12
         "
       >
+        {/* =======================================================
+            SECTION LIST
+        ======================================================== */}
+
         <div
           className="
-            space-y-10
-            sm:space-y-12
-            md:space-y-14
-            lg:space-y-16
+            space-y-14
+            sm:space-y-16
+            md:space-y-20
+            lg:space-y-24
+            xl:space-y-28
           "
         >
           {sections.map((section, index) => (
@@ -122,18 +211,28 @@ export default function AboutContent() {
                 relative
                 grid
                 items-center
-                gap-6
-                sm:gap-7
-                md:gap-8
+                gap-8
+
+                sm:gap-10
+
+                md:gap-12
+
                 lg:grid-cols-2
-                lg:gap-10
-                xl:gap-12
+                lg:gap-14
+
+                xl:gap-20
               "
             >
-              {/* ================= LEFT CONTENT ================= */}
+              {/* =================================================
+                  LEFT CONTENT
+              ================================================== */}
 
               <div
-                data-aos={index % 2 === 0 ? "fade-right" : "fade-left"}
+                data-aos={
+                  index % 2 === 0
+                    ? "fade-right"
+                    : "fade-left"
+                }
                 data-aos-delay="80"
                 data-aos-duration="800"
                 data-aos-offset="60"
@@ -143,6 +242,7 @@ export default function AboutContent() {
                   flex
                   flex-col
                   justify-center
+
                   ${
                     index % 2 === 1
                       ? "lg:order-2"
@@ -150,147 +250,219 @@ export default function AboutContent() {
                   }
                 `}
               >
-                {/* Number */}
+                {/* =================================================
+                    SECTION LABEL
+                ================================================== */}
 
-                <span
+                <div
                   data-aos="fade-up"
                   data-aos-delay="120"
                   data-aos-duration="750"
                   className="
-                    pointer-events-none
-                    absolute
-                    -top-4
-                    left-0
-                    select-none
-                    text-[56px]
-                    font-black
-                    leading-none
-                    text-white/[0.04]
-                    sm:-top-5
-                    sm:text-[72px]
-                    md:text-[88px]
-                    lg:-top-6
-                    lg:text-[100px]
-                  "
-                >
-                  0{index + 1}
-                </span>
-
-                {/* Label */}
-
-                <div
-                  data-aos="fade-up"
-                  data-aos-delay="140"
-                  data-aos-duration="750"
-                  className="
-                    relative
-                    mb-3
+                    mb-4
                     flex
                     items-center
                     gap-2.5
-                    sm:mb-3.5
+
+                    sm:mb-5
                     sm:gap-3
                   "
                 >
                   <span
                     className="
                       h-[2px]
-                      w-7
+                      w-8
+                      rounded-full
                       bg-[#29B6F0]
-                      sm:w-8
+
+                      sm:w-10
+
+                      md:w-12
                     "
                   />
 
                   <p
                     className="
-                      text-[8px]
+                      text-[9px]
                       font-semibold
                       uppercase
                       tracking-[0.24em]
                       text-[#29B6F0]
-                      sm:text-[9px]
+
+                      sm:text-[10px]
                       sm:tracking-[0.28em]
-                      md:text-[10px]
+
+                      md:text-[11px]
                     "
                   >
                     About BeaverTek
                   </p>
                 </div>
 
-                {/* Heading */}
+                {/* =================================================
+                    HEADING
+                ================================================== */}
 
                 <h2
                   data-aos="fade-up"
-                  data-aos-delay="200"
+                  data-aos-delay="180"
                   data-aos-duration="800"
                   className="
                     relative
                     max-w-xl
-                    text-[25px]
+                    text-[29px]
                     font-extrabold
-                    leading-[1.1]
-                    tracking-[-0.025em]
+                    leading-[1.08]
+                    tracking-[-0.035em]
                     text-white
-                    sm:text-[28px]
-                    md:text-[32px]
-                    lg:text-[36px]
-                    xl:text-[38px]
+
+                    sm:text-[32px]
+                    sm:leading-[1.08]
+
+                    md:text-[36px]
+
+                    lg:text-[40px]
+                    lg:leading-[1.06]
+
+                    xl:text-[43px]
                   "
                 >
                   {section.title}
                 </h2>
 
-                {/* Gradient Divider */}
+                {/* =================================================
+                    GRADIENT DIVIDER
+                ================================================== */}
 
                 <div
                   data-aos="zoom-in"
-                  data-aos-delay="260"
+                  data-aos-delay="240"
                   data-aos-duration="700"
                   className="
-                    mt-3
+                    mt-4
                     h-[2px]
-                    w-12
+                    w-14
                     rounded-full
                     bg-[linear-gradient(90deg,#29B6F0,#3E7BD6,#7A4FD1,#B93FC9)]
-                    sm:mt-4
+
+                    sm:mt-5
                     sm:w-16
+
+                    md:w-20
                   "
                 />
 
-                {/* Supporting Text */}
+                {/* =================================================
+                    SUPPORTING TEXT
+                ================================================== */}
 
                 <p
                   data-aos="fade-up"
-                  data-aos-delay="320"
+                  data-aos-delay="300"
                   data-aos-duration="800"
                   className="
-                    mt-3.5
+                    mt-4
                     max-w-xl
-                    text-[11px]
-                    leading-5
+                    text-[13px]
+                    leading-6
                     text-[#A0A0A8]
-                    sm:mt-4
-                    sm:text-xs
-                    sm:leading-5
-                    md:text-[13px]
-                    md:leading-6
+
+                    sm:mt-5
+                    sm:text-[14px]
+                    sm:leading-6.5
+
+                    md:text-[15px]
+                    md:leading-7
+
+                    lg:text-[16px]
+                    lg:leading-7
                   "
                 >
-                  Senior expertise, thoughtful engineering, and practical
-                  technology solutions built around real business needs.
+                  {section.supportingText}
                 </p>
+
+                {/* =================================================
+                    ACTIVE PROGRESS
+                ================================================== */}
+
+                <div
+                  data-aos="fade-up"
+                  data-aos-delay="360"
+                  data-aos-duration="700"
+                  className="
+                    mt-5
+                    flex
+                    items-center
+                    gap-1.5
+
+                    sm:mt-6
+                    sm:gap-2
+                  "
+                >
+                  <span
+                    className={`
+                      h-1
+                      rounded-full
+                      transition-all
+                      duration-500
+
+                      ${
+                        activeSection === index
+                          ? "w-10 bg-[#29B6F0]"
+                          : "w-5 bg-[#29B6F0]/40"
+                      }
+                    `}
+                  />
+
+                  <span
+                    className={`
+                      h-1
+                      rounded-full
+                      transition-all
+                      duration-500
+
+                      ${
+                        activeSection === index
+                          ? "w-6 bg-[#3E7BD6]"
+                          : "w-4 bg-[#3E7BD6]/30"
+                      }
+                    `}
+                  />
+
+                  <span
+                    className={`
+                      h-1
+                      rounded-full
+                      transition-all
+                      duration-500
+
+                      ${
+                        activeSection === index
+                          ? "w-3 bg-[#B93FC9]"
+                          : "w-2 bg-[#B93FC9]/25"
+                      }
+                    `}
+                  />
+                </div>
               </div>
 
-              {/* ================= RIGHT IMAGE + CONTENT ================= */}
+              {/* =================================================
+                  RIGHT IMAGE + CONTENT
+              ================================================== */}
 
               <div
-                data-aos={index % 2 === 0 ? "fade-left" : "fade-right"}
-                data-aos-delay="180"
+                data-aos={
+                  index % 2 === 0
+                    ? "fade-left"
+                    : "fade-right"
+                }
+                data-aos-delay="160"
                 data-aos-duration="850"
                 data-aos-offset="60"
                 data-aos-easing="ease-out-cubic"
                 className={`
                   relative
+
                   ${
                     index % 2 === 1
                       ? "lg:order-1"
@@ -298,39 +470,47 @@ export default function AboutContent() {
                   }
                 `}
               >
-                {/* ================= IMAGE CARD ================= */}
+                {/* =================================================
+                    IMAGE / CONTENT WRAPPER
+                ================================================== */}
 
                 <div
-                  data-aos="zoom-in-up"
-                  data-aos-delay="220"
-                  data-aos-duration="850"
                   className="
                     group
                     relative
                     overflow-hidden
-                    rounded-[18px]
+                    rounded-[20px]
                     border
-                    border-[#2A2A30]
-                    bg-[#121212]
-                    shadow-[0_16px_45px_rgba(0,0,0,0.42)]
+                    border-white/[0.07]
+                    bg-[#0A0A0A]
+                    shadow-[0_20px_60px_rgba(0,0,0,0.45)]
                     transition-all
                     duration-500
-                    hover:border-[#3E7BD6]
-                    sm:rounded-[20px]
-                    lg:rounded-[22px]
+
+                    hover:border-[#3E7BD6]/40
+
+                    sm:rounded-[22px]
+
+                    lg:rounded-[24px]
                   "
                 >
-                  {/* Image */}
+                  {/* =================================================
+                      IMAGE
+                  ================================================== */}
 
                   <div
                     className="
                       relative
-                      h-[185px]
+                      h-[205px]
                       overflow-hidden
-                      sm:h-[215px]
-                      md:h-[245px]
-                      lg:h-[260px]
-                      xl:h-[285px]
+
+                      sm:h-[235px]
+
+                      md:h-[270px]
+
+                      lg:h-[285px]
+
+                      xl:h-[310px]
                     "
                   >
                     <Image
@@ -346,135 +526,149 @@ export default function AboutContent() {
                       className="
                         object-cover
                         transition-transform
-                        duration-[1200ms]
+                        duration-[1400ms]
                         ease-out
-                        group-hover:scale-105
+                        group-hover:scale-[1.04]
                       "
                     />
 
-                    {/* Image Overlay */}
+                    {/* Image gradient */}
 
                     <div
                       className="
                         absolute
                         inset-0
                         bg-gradient-to-t
-                        from-black/80
-                        via-black/20
+                        from-black/75
+                        via-black/10
                         to-transparent
                       "
                     />
 
-                    {/* Number */}
+                    {/* Soft image edge */}
 
                     <div
-                      data-aos="zoom-in"
-                      data-aos-delay="300"
-                      data-aos-duration="650"
                       className="
+                        pointer-events-none
                         absolute
-                        left-4
-                        top-4
-                        flex
-                        h-8
-                        w-8
-                        items-center
-                        justify-center
-                        rounded-lg
-                        bg-[linear-gradient(135deg,#29B6F0,#3E7BD6,#7A4FD1,#B93FC9)]
-                        text-[11px]
-                        font-bold
-                        text-white
-                        shadow-lg
-                        transition-transform
-                        duration-500
-                        group-hover:scale-105
-                        sm:left-5
-                        sm:top-5
-                        sm:h-9
-                        sm:w-9
-                        sm:text-xs
+                        inset-x-0
+                        bottom-0
+                        h-20
+                        bg-gradient-to-t
+                        from-[#0A0A0A]
+                        to-transparent
                       "
-                    >
-                      0{index + 1}
-                    </div>
+                    />
 
-                    {/* Active Indicator */}
+                    {/* Small active indicator */}
 
                     <div
-                      data-aos="fade-right"
-                      data-aos-delay="350"
-                      data-aos-duration="700"
-                      className={`
+                      className="
                         absolute
                         bottom-4
                         left-4
                         h-1
+                        w-10
                         rounded-full
                         bg-[#29B6F0]
-                        transition-all
-                        duration-500
+                        shadow-[0_0_14px_rgba(41,182,240,0.35)]
+
                         sm:bottom-5
                         sm:left-5
-                        ${
-                          activeSection === index
-                            ? "w-12 sm:w-14"
-                            : "w-6 sm:w-7"
-                        }
-                      `}
+                        sm:w-12
+                      "
                     />
                   </div>
 
-                  {/* ================= INNER TEXT CARD ================= */}
+                  {/* =================================================
+                      TEXT CONTENT
+                  ================================================== */}
 
                   <div
                     data-aos="fade-up"
-                    data-aos-delay="300"
+                    data-aos-delay="260"
                     data-aos-duration="800"
                     className="
-                      border-t
-                      border-[#2A2A30]
-                      bg-[#121212]
-                      p-4
-                      sm:p-5
-                      md:p-6
+                      relative
+                      bg-[#0A0A0A]
+                      p-5
+
+                      sm:p-6
+
+                      md:p-7
+
+                      lg:p-7
+
+                      xl:p-8
                     "
                   >
                     <p
                       className="
-                        text-[11px]
-                        leading-5
+                        text-[13px]
+                        leading-6
                         text-[#D4D4D8]
-                        sm:text-xs
-                        sm:leading-5
-                        md:text-[13px]
-                        md:leading-6
-                        lg:text-[13px]
-                        xl:text-sm
-                        xl:leading-6
+
+                        sm:text-[14px]
+                        sm:leading-6.5
+
+                        md:text-[15px]
+                        md:leading-7
+
+                        lg:text-[15px]
+                        lg:leading-7
+
+                        xl:text-[16px]
+                        xl:leading-7.5
                       "
                     >
                       {section.content}
                     </p>
 
-                    {/* Bottom Accent */}
+                    {/* Bottom accent */}
 
                     <div
-                      data-aos="fade-right"
-                      data-aos-delay="380"
-                      data-aos-duration="650"
                       className="
-                        mt-3.5
+                        mt-5
                         flex
                         items-center
                         gap-1.5
-                        sm:mt-4
+
+                        sm:mt-6
                         sm:gap-2
                       "
                     >
-                      <span className="h-1 w-6 rounded-full bg-[#29B6F0] sm:w-7" />
-                      <span className="h-1 w-4 rounded-full bg-[#3E7BD6] sm:w-5" />
-                      <span className="h-1 w-2.5 rounded-full bg-[#B93FC9] sm:w-3" />
+                      <span
+                        className="
+                          h-1
+                          w-8
+                          rounded-full
+                          bg-[#29B6F0]
+
+                          sm:w-9
+                        "
+                      />
+
+                      <span
+                        className="
+                          h-1
+                          w-5
+                          rounded-full
+                          bg-[#3E7BD6]
+
+                          sm:w-6
+                        "
+                      />
+
+                      <span
+                        className="
+                          h-1
+                          w-3
+                          rounded-full
+                          bg-[#B93FC9]
+
+                          sm:w-3.5
+                        "
+                      />
                     </div>
                   </div>
                 </div>
@@ -484,7 +678,9 @@ export default function AboutContent() {
         </div>
       </div>
 
-      {/* ================= BOTTOM FADE ================= */}
+      {/* =========================================================
+          BOTTOM FADE
+      ========================================================== */}
 
       <div
         data-aos="fade-up"
@@ -499,11 +695,14 @@ export default function AboutContent() {
           bg-gradient-to-t
           from-[#000000]
           to-transparent
+
           sm:h-28
+
           md:h-32
+
+          lg:h-36
         "
       />
     </section>
   );
 }
-

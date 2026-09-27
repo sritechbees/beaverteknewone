@@ -1,4 +1,3 @@
-
 "use client";
 
 import { useEffect } from "react";
@@ -72,6 +71,8 @@ export default function WhatWeBelieve() {
         "
       />
 
+      {/* ================= MAIN CONTAINER ================= */}
+
       <div
         className="
           relative
@@ -97,15 +98,17 @@ export default function WhatWeBelieve() {
             xl:gap-14
           "
         >
-          {/* ================= LEFT CONTENT ================= */}
+          {/* =====================================================
+              LEFT CONTENT
+          ====================================================== */}
 
           <div
             data-aos="fade-right"
             data-aos-duration="800"
             data-aos-delay="50"
-            className="max-w-xl"
+            className="w-full max-w-xl"
           >
-            {/* Badge */}
+            {/* ================= BADGE ================= */}
 
             <span
               data-aos="fade-up"
@@ -119,38 +122,38 @@ export default function WhatWeBelieve() {
                 bg-[#121212]
                 px-3
                 py-1.5
-                text-[9px]
+                text-[10px]
                 font-semibold
                 uppercase
                 tracking-[0.2em]
                 text-[#29B6F0]
                 sm:px-4
                 sm:py-2
-                sm:text-[10px]
-                md:text-[11px]
+                sm:text-[11px]
+                md:text-xs
               "
             >
               Our Philosophy
             </span>
 
-            {/* Heading */}
+            {/* ================= HEADING ================= */}
 
             <h2
               data-aos="fade-up"
               data-aos-delay="150"
               className="
                 mt-4
-                whitespace-nowrap
-                text-[25px]
+                whitespace-normal
+                text-[27px]
                 font-extrabold
                 leading-[1.08]
                 tracking-tight
                 text-white
                 sm:mt-5
-                sm:text-[28px]
-                md:text-[32px]
-                lg:text-[34px]
-                xl:text-[36px]
+                sm:text-[30px]
+                md:text-[34px]
+                lg:text-[36px]
+                xl:text-[38px]
               "
             >
               What We{" "}
@@ -165,7 +168,7 @@ export default function WhatWeBelieve() {
               </span>
             </h2>
 
-            {/* Divider */}
+            {/* ================= DIVIDER ================= */}
 
             <div
               data-aos="zoom-in"
@@ -182,7 +185,7 @@ export default function WhatWeBelieve() {
               "
             />
 
-            {/* Description */}
+            {/* ================= DESCRIPTION ================= */}
 
             <p
               data-aos="fade-up"
@@ -190,14 +193,16 @@ export default function WhatWeBelieve() {
               className="
                 mt-4
                 max-w-xl
-                text-[11px]
+                text-[12px]
                 leading-6
                 text-[#A0A0A8]
                 sm:mt-5
-                sm:text-xs
+                sm:text-[13px]
                 sm:leading-6
-                md:text-[13px]
-                md:leading-6
+                md:text-[14px]
+                md:leading-6.5
+                lg:text-[15px]
+                lg:leading-7
               "
             >
               We believe technology should be practical, measurable and
@@ -221,7 +226,7 @@ export default function WhatWeBelieve() {
                 md:gap-3.5
               "
             >
-              {/* Stat 1 */}
+              {/* ================= STAT 1 ================= */}
 
               <div
                 className="
@@ -243,12 +248,12 @@ export default function WhatWeBelieve() {
               >
                 <h4
                   className="
-                    text-xl
+                    text-[22px]
                     font-bold
                     leading-none
                     text-white
-                    sm:text-2xl
-                    md:text-[26px]
+                    sm:text-[25px]
+                    md:text-[28px]
                   "
                 >
                   10+
@@ -257,18 +262,18 @@ export default function WhatWeBelieve() {
                 <p
                   className="
                     mt-1
-                    text-[10px]
+                    text-[11px]
                     leading-5
                     text-[#A0A0A8]
-                    sm:text-xs
-                    md:text-[13px]
+                    sm:text-[13px]
+                    md:text-[14px]
                   "
                 >
                   Years Experience
                 </p>
               </div>
 
-              {/* Stat 2 */}
+              {/* ================= STAT 2 ================= */}
 
               <div
                 className="
@@ -290,12 +295,12 @@ export default function WhatWeBelieve() {
               >
                 <h4
                   className="
-                    text-xl
+                    text-[22px]
                     font-bold
                     leading-none
                     text-white
-                    sm:text-2xl
-                    md:text-[26px]
+                    sm:text-[25px]
+                    md:text-[28px]
                   "
                 >
                   100%
@@ -304,11 +309,11 @@ export default function WhatWeBelieve() {
                 <p
                   className="
                     mt-1
-                    text-[10px]
+                    text-[11px]
                     leading-5
                     text-[#A0A0A8]
-                    sm:text-xs
-                    md:text-[13px]
+                    sm:text-[13px]
+                    md:text-[14px]
                   "
                 >
                   Client Focus
@@ -317,7 +322,9 @@ export default function WhatWeBelieve() {
             </div>
           </div>
 
-          {/* ================= RIGHT CONTENT ================= */}
+          {/* =====================================================
+              RIGHT CONTENT
+          ====================================================== */}
 
           <div className="space-y-3 sm:space-y-3.5 md:space-y-4">
             {beliefs.map((item, index) => (
@@ -345,7 +352,7 @@ export default function WhatWeBelieve() {
                 "
               >
                 <div className="relative flex items-start gap-3 sm:gap-4">
-                  {/* Icon */}
+                  {/* ================= ICON ================= */}
 
                   <div
                     data-aos="zoom-in"
@@ -382,26 +389,26 @@ export default function WhatWeBelieve() {
                     />
                   </div>
 
-                  {/* Content */}
+                  {/* ================= CONTENT ================= */}
 
                   <div className="min-w-0 flex-1">
-                    {/* Title + Number */}
+                    {/* ================= TITLE ================= */}
 
                     <div className="flex items-start justify-between gap-2">
                       <h3
                         data-aos="fade-up"
                         data-aos-delay={300 + index * 100}
                         className="
-                          text-[13px]
+                          text-[14px]
                           font-semibold
                           leading-5
                           text-white
                           transition-colors
                           duration-300
                           group-hover:text-[#29B6F0]
-                          sm:text-sm
+                          sm:text-[15px]
                           sm:leading-6
-                          md:text-[15px]
+                          md:text-[16px]
                         "
                       >
                         {item.title}
@@ -422,27 +429,30 @@ export default function WhatWeBelieve() {
                       </span>
                     </div>
 
-                    {/* Description */}
+                    {/* ================= DESCRIPTION ================= */}
 
                     <p
                       data-aos="fade-up"
                       data-aos-delay={350 + index * 100}
                       className="
                         mt-1.5
-                        text-[11px]
-                        leading-5
+                        text-[12px]
+                        leading-5.5
                         text-[#A0A0A8]
                         sm:mt-2
-                        sm:text-xs
-                        sm:leading-5
-                        md:text-[13px]
+                        sm:text-[13px]
+                        sm:leading-5.5
+                        md:text-[14px]
                         md:leading-6
+                        lg:text-[14px]
+                        xl:text-[15px]
+                        xl:leading-6.5
                       "
                     >
                       {item.description}
                     </p>
 
-                    {/* Bottom Accent */}
+                    {/* ================= BOTTOM ACCENT ================= */}
 
                     <div
                       data-aos="fade-right"

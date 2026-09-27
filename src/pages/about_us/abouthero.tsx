@@ -1,8 +1,10 @@
+
 "use client";
 
 import App_layout from "@/component/layout/app_layout";
 import Image from "next/image";
 import Link from "next/link";
+
 import AboutContent from "./aboutcontent";
 import WhatWeBelieve from "./whatwebelieve";
 import WhereWeAre from "./whereweare";
@@ -29,49 +31,231 @@ export default function AboutHero() {
 
   return (
     <App_layout>
-      {/* ================= HERO ================= */}
+      {/* =========================================================
+          HERO
+          LEFT CONTENT + RIGHT IMAGE
+          SEAMLESS SINGLE SECTION
+      ========================================================== */}
 
-      <section className="relative overflow-hidden bg-black py-10 sm:py-11 lg:py-12">
-        {/* Background Glow */}
+      <section className="relative overflow-hidden bg-black">
+        {/* =======================================================
+            BACKGROUND
+        ======================================================== */}
 
-        <div className="pointer-events-none absolute -left-32 top-5 h-56 w-56 rounded-full bg-[#29B6F0]/10 blur-[90px] sm:h-72 sm:w-72 lg:h-96 lg:w-96" />
+        <div className="pointer-events-none absolute inset-0">
+          {/* Cyan glow */}
+          <div
+            className="
+              absolute
+              -left-40
+              top-10
+              h-56
+              w-56
+              rounded-full
+              bg-[#29B6F0]/10
+              blur-[90px]
 
-        <div className="pointer-events-none absolute -right-32 bottom-0 h-56 w-56 rounded-full bg-[#7A4FD1]/10 blur-[90px] sm:h-72 sm:w-72 lg:h-[420px] lg:w-[420px]" />
+              sm:h-72
+              sm:w-72
 
-        {/* Subtle Grid */}
+              lg:h-[380px]
+              lg:w-[380px]
+            "
+          />
 
-        <div className="pointer-events-none absolute inset-0 opacity-[0.025] [background-image:linear-gradient(rgba(255,255,255,0.5)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.5)_1px,transparent_1px)] [background-size:50px_50px]" />
+          {/* Violet glow */}
+          <div
+            className="
+              absolute
+              -right-40
+              bottom-0
+              h-64
+              w-64
+              rounded-full
+              bg-[#7A4FD1]/10
+              blur-[100px]
 
-        {/* Container */}
+              sm:h-80
+              sm:w-80
 
-        <div className="relative z-10 mx-auto w-full max-w-7xl px-4 sm:px-6 lg:px-8 xl:px-10">
-          <div className="grid items-center gap-8 lg:grid-cols-2 lg:gap-12 xl:gap-14">
+              lg:h-[420px]
+              lg:w-[420px]
+            "
+          />
 
-            {/* ================= LEFT ================= */}
+          {/* Subtle grid */}
+          <div
+            className="
+              absolute
+              inset-0
+              opacity-[0.02]
+              [background-image:linear-gradient(rgba(255,255,255,0.5)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.5)_1px,transparent_1px)]
+              [background-size:50px_50px]
+            "
+          />
+        </div>
+
+        {/* =======================================================
+            MAIN HERO WRAPPER
+        ======================================================== */}
+
+        <div
+          className="
+            relative
+            mx-auto
+            flex
+            min-h-[510px]
+            w-full
+            max-w-7xl
+            items-stretch
+
+            sm:min-h-[535px]
+
+            md:min-h-[555px]
+
+            lg:min-h-[580px]
+
+            xl:min-h-[600px]
+          "
+        >
+          {/* =====================================================
+              LEFT CONTENT AREA
+          ====================================================== */}
+
+          <div
+            className="
+              relative
+              z-20
+              flex
+              w-full
+              items-center
+              px-5
+              py-12
+
+              sm:px-6
+              sm:py-14
+
+              md:px-8
+              md:py-16
+
+              lg:w-[58%]
+              lg:px-10
+              lg:py-16
+
+              xl:w-[57%]
+              xl:px-12
+              xl:py-18
+            "
+          >
+            {/* =================================================
+                CONTENT GRADIENT
+            ================================================== */}
 
             <div
-              data-aos="fade-up"
-              data-aos-duration="900"
-              className="order-2 mx-auto w-full max-w-[570px] text-center lg:order-1 lg:mx-0 lg:text-left"
+              className="
+                pointer-events-none
+                absolute
+                inset-y-0
+                right-[-280px]
+                hidden
+                w-[260px]
+                bg-gradient-to-r
+                from-black/10
+                via-black/10
+                to-transparent
+
+                lg:block
+              "
+            />
+
+            {/* =================================================
+                CONTENT
+            ================================================== */}
+
+            <div
+              className="
+                relative
+                z-10
+                w-full
+                max-w-[570px]
+                text-center
+
+                lg:text-left
+              "
             >
-              {/* Badge */}
+              {/* =================================================
+                  BADGE
+              ================================================= */}
 
               <div
                 data-aos="fade-down"
                 data-aos-duration="750"
                 data-aos-delay="80"
-                className="mb-4 inline-flex items-center rounded-full border border-[#2A2A30] bg-[#121212]/90 px-3 py-1.5 text-[9px] font-semibold tracking-[0.1em] text-[#29B6F0] backdrop-blur-xl transition-all duration-500 hover:-translate-y-0.5 hover:border-[#29B6F0]/50 hover:bg-[#17171A] sm:px-3.5 sm:text-[10px] md:text-[11px]"
+                className="
+                  mb-4
+                  inline-flex
+                  items-center
+                  rounded-full
+                  border
+                  border-[#2A2A30]
+                  bg-[#121212]/85
+                  px-3
+                  py-1.5
+                  text-[9px]
+                  font-semibold
+                  tracking-[0.1em]
+                  text-[#29B6F0]
+                  backdrop-blur-xl
+                  transition-all
+                  duration-500
+
+                  hover:-translate-y-0.5
+                  hover:border-[#29B6F0]/50
+                  hover:bg-[#17171A]
+
+                  sm:px-3.5
+                  sm:text-[10px]
+
+                  md:text-[11px]
+                "
               >
                 About BeaverTek
               </div>
 
-              {/* Title */}
+              {/* =================================================
+                  HEADING
+                  RESPONSIVE TEXT SIZING
+              ================================================== */}
 
               <h1
                 data-aos="fade-up"
                 data-aos-duration="900"
                 data-aos-delay="150"
-                className="text-[30px] font-extrabold leading-[1.05] tracking-[-0.04em] text-white sm:text-[36px] md:text-[42px] lg:text-[46px] xl:text-[52px] 2xl:text-[56px]"
+                className="
+                  mx-auto
+                  max-w-[430px]
+                  text-[32px]
+                  font-extrabold
+                  leading-[1.06]
+                  tracking-[-0.04em]
+                  text-white
+                  drop-shadow-[0_6px_25px_rgba(0,0,0,0.35)]
+
+                  sm:max-w-[500px]
+                  sm:text-[38px]
+                  sm:leading-[1.05]
+
+                  md:max-w-[560px]
+                  md:text-[45px]
+
+                  lg:mx-0
+                  lg:max-w-[570px]
+                  lg:text-[47px]
+
+                  xl:text-[55px]
+
+                  2xl:text-[60px]
+                "
               >
                 Building
 
@@ -79,7 +263,11 @@ export default function AboutHero() {
                   data-aos="fade-up"
                   data-aos-duration="1000"
                   data-aos-delay="260"
-                  className="block bg-clip-text text-transparent"
+                  className="
+                    block
+                    bg-clip-text
+                    text-transparent
+                  "
                   style={{
                     backgroundImage:
                       "linear-gradient(135deg,#29B6F0 0%,#3E7BD6 35%,#7A4FD1 65%,#B93FC9 100%)",
@@ -89,119 +277,342 @@ export default function AboutHero() {
                 </span>
               </h1>
 
-              {/* Description */}
+              {/* =================================================
+                  DESCRIPTION
+              ================================================== */}
 
               <p
                 data-aos="fade-up"
                 data-aos-duration="850"
-                data-aos-delay="360"
-                className="mx-auto mt-4 max-w-lg text-[12px] leading-5.5 text-[#D4D4D8] sm:mt-5 sm:text-[13px] sm:leading-6 md:text-sm md:leading-6.5 lg:mx-0 lg:text-[14px] xl:text-[15px] xl:leading-7"
+                data-aos-delay="260"
+                className="
+                  z-10
+                  mx-auto
+                  mt-4
+                  w-full
+                  max-w-[430px]
+                  text-[13px]
+                  leading-6
+                  text-[#D4D4D8]
+                  transition-colors
+                  duration-500
+
+                  sm:mt-5
+                  sm:max-w-[500px]
+                  sm:text-[15px]
+                  sm:leading-7
+
+                  md:max-w-[560px]
+                  md:text-base
+                  md:leading-7
+
+                  lg:mx-0
+                  lg:max-w-[480px]
+                  lg:text-[17px]
+                  lg:leading-7.5
+                "
               >
                 We create innovative software solutions, AI applications,
                 cloud platforms, and enterprise products that help businesses
                 grow with confidence.
               </p>
 
-              {/* Buttons */}
+              {/* =================================================
+                  BUTTONS
+              ================================================== */}
 
               <div
                 data-aos="fade-up"
                 data-aos-duration="850"
                 data-aos-delay="470"
-                className="mt-6 flex flex-col gap-2.5 sm:mt-7 sm:flex-row sm:justify-center lg:justify-start"
+                className="
+                  mt-6
+                  flex
+                  w-full
+                  flex-col
+                  items-center
+                  gap-2.5
+
+                  sm:mt-7
+                  sm:flex-row
+                  sm:justify-center
+
+                  lg:justify-start
+                "
               >
-                {/* Our Services */}
+                {/* =================================================
+                    OUR SERVICES
+                ================================================== */}
 
                 <Link
-                  href="/services/serviceshero"
-                  className="group inline-flex min-h-[42px] items-center justify-center rounded-full bg-[linear-gradient(135deg,#29B6F0_0%,#3E7BD6_35%,#7A4FD1_65%,#B93FC9_100%)] px-5 py-2.5 text-[11px] font-semibold text-white shadow-[0_0_28px_rgba(62,123,214,.22)] transition-all duration-500 hover:-translate-y-1 hover:scale-[1.02] hover:shadow-[0_0_42px_rgba(62,123,214,.35)] active:scale-[0.98] sm:min-h-[44px] sm:px-6 sm:text-xs md:text-sm"
+                  href="/services/servicesherosection"
+                  className="
+                    group
+                    inline-flex
+                    min-h-[42px]
+                    w-[82%]
+                    max-w-[190px]
+                    items-center
+                    justify-center
+                    rounded-full
+                    bg-[linear-gradient(135deg,#29B6F0_0%,#3E7BD6_35%,#7A4FD1_65%,#B93FC9_100%)]
+                    px-5
+                    py-2.5
+                    text-[11px]
+                    font-semibold
+                    text-white
+                    shadow-[0_0_28px_rgba(62,123,214,.22)]
+                    transition-all
+                    duration-500
+
+                    hover:-translate-y-1
+                    hover:scale-[1.02]
+                    hover:shadow-[0_0_42px_rgba(62,123,214,.35)]
+
+                    active:scale-[0.98]
+
+                    sm:w-auto
+                    sm:max-w-none
+                    sm:min-h-[44px]
+                    sm:px-6
+                    sm:text-xs
+
+                    md:text-sm
+                  "
                 >
                   Our Services
-                  <span className="ml-1.5 transition-transform duration-300 group-hover:translate-x-1">
+
+                  <span
+                    className="
+                      ml-1.5
+                      transition-transform
+                      duration-300
+                      group-hover:translate-x-1
+                    "
+                  >
                     →
                   </span>
                 </Link>
 
-                {/* Contact Us */}
+                {/* =================================================
+                    CONTACT US
+                ================================================== */}
 
                 <Link
                   href="/contact/contacthero"
-                  className="group inline-flex min-h-[42px] items-center justify-center rounded-full border border-[#2A2A30] bg-[#121212] px-5 py-2.5 text-[11px] font-semibold text-white shadow-[0_6px_24px_rgba(0,0,0,0.18)] transition-all duration-500 hover:-translate-y-1 hover:border-[#3E7BD6] hover:bg-[#1A1A1E] hover:shadow-[0_8px_30px_rgba(62,123,214,.14)] active:scale-[0.98] sm:min-h-[44px] sm:px-6 sm:text-xs md:text-sm"
+                  className="
+                    group
+                    inline-flex
+                    min-h-[42px]
+                    w-[82%]
+                    max-w-[190px]
+                    items-center
+                    justify-center
+                    rounded-full
+                    border
+                    border-[#2A2A30]
+                    bg-[#121212]/85
+                    px-5
+                    py-2.5
+                    text-[11px]
+                    font-semibold
+                    text-white
+                    backdrop-blur-md
+                    shadow-[0_6px_24px_rgba(0,0,0,0.18)]
+                    transition-all
+                    duration-500
+
+                    hover:-translate-y-1
+                    hover:border-[#3E7BD6]
+                    hover:bg-[#1A1A1E]
+                    hover:shadow-[0_8px_30px_rgba(62,123,214,.14)]
+
+                    active:scale-[0.98]
+
+                    sm:w-auto
+                    sm:max-w-none
+                    sm:min-h-[44px]
+                    sm:px-6
+                    sm:text-xs
+
+                    md:text-sm
+                  "
                 >
                   Contact Us
-                  <span className="ml-1.5 text-[#29B6F0] transition-transform duration-300 group-hover:translate-x-1">
+
+                  <span
+                    className="
+                      ml-1.5
+                      text-[#29B6F0]
+                      transition-transform
+                      duration-300
+                      group-hover:translate-x-1
+                    "
+                  >
                     →
                   </span>
                 </Link>
               </div>
             </div>
+          </div>
 
-            {/* ================= RIGHT IMAGE ================= */}
+          {/* =====================================================
+              RIGHT IMAGE
+              CLEARER IMAGE + SEAMLESS BLEND
+          ====================================================== */}
+
+          <div
+            data-aos="fade-left"
+            data-aos-duration="1000"
+            data-aos-delay="120"
+            className="
+              absolute
+              inset-y-0
+              right-0
+              w-full
+
+              lg:w-[64%]
+              xl:w-[63%]
+            "
+          >
+            <Image
+              src="/about/About.jpg"
+              alt="About BeaverTek"
+              fill
+              priority
+              sizes="(max-width: 1023px) 100vw, 64vw"
+              className="
+                object-cover
+                object-center
+
+                lg:object-[center_center]
+              "
+            />
+
+            {/* =================================================
+                LEFT IMAGE BLEND
+            ================================================== */}
 
             <div
-              data-aos="fade-left"
-              data-aos-duration="1000"
-              data-aos-delay="120"
-              className="order-1 flex justify-center lg:order-2"
-            >
-              <div className="relative flex w-full items-center justify-center">
-                {/* Main Glow */}
+              className="
+                absolute
+                inset-y-0
+                left-0
+                w-full
+                bg-gradient-to-r
+                from-black
+                via-black/55
+                to-transparent
 
-                <div className="pointer-events-none absolute h-52 w-52 animate-pulse rounded-full bg-[#29B6F0]/15 blur-[70px] sm:h-64 sm:w-64 md:h-72 md:w-72 lg:h-96 lg:w-96 xl:h-[420px] xl:w-[420px]" />
+                lg:w-[48%]
+                lg:via-black/45
+                lg:to-transparent
+              "
+            />
 
-                {/* Violet Glow */}
+            {/* Very light overall image darkening */}
 
-                <div className="pointer-events-none absolute -right-3 top-1/2 h-24 w-24 -translate-y-1/2 rounded-full bg-[#7A4FD1]/10 blur-[50px] sm:h-32 sm:w-32 lg:h-44 lg:w-44" />
+            <div
+              className="
+                absolute
+                inset-0
+                bg-black/[0.03]
+              "
+            />
 
-                {/* Image */}
+            {/* =================================================
+                BOTTOM BLEND
+            ================================================== */}
 
-                <div
-                  data-aos="zoom-in"
-                  data-aos-duration="1000"
-                  data-aos-delay="220"
-                  className="group relative w-full max-w-[250px] overflow-hidden border-[3px] border-[#121212] bg-[#111111] shadow-[0_20px_55px_rgba(0,0,0,.42)] transition-all duration-700 hover:-translate-y-1.5 hover:scale-[1.015] hover:border-[#1A1A1E] hover:shadow-[0_28px_70px_rgba(41,182,240,.12)] sm:max-w-[290px] sm:border-4 md:max-w-[340px] lg:max-w-[430px] lg:border-[6px] xl:max-w-[470px]"
-                  style={{
-                    borderRadius: "22% 78% 35% 55% / 38% 4% 38% 4%",
-                  }}
-                >
-                  <Image
-                    src="/about/About.jpg"
-                    alt="About BeaverTek"
-                    width={540}
-                    height={620}
-                    priority
-                    className="h-auto w-full object-cover transition-transform duration-[1600ms] ease-out group-hover:scale-105"
-                  />
+            <div
+              className="
+                absolute
+                inset-x-0
+                bottom-0
+                h-24
+                bg-gradient-to-t
+                from-black
+                via-black/35
+                to-transparent
 
-                  {/* Image Overlay */}
+                sm:h-28
 
-                  <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-black/25 via-transparent to-transparent opacity-80 transition-opacity duration-700 group-hover:opacity-50" />
+                lg:h-32
+              "
+            />
 
-                  {/* Image Highlight */}
+            {/* =================================================
+                RIGHT EDGE SOFT BLEND
+            ================================================== */}
 
-                  <div className="pointer-events-none absolute left-0 top-0 h-[2px] w-0 bg-[linear-gradient(90deg,#29B6F0,#3E7BD6,#7A4FD1,#B93FC9)] shadow-[0_0_16px_rgba(41,182,240,.75)] transition-all duration-1000 group-hover:w-full" />
-                </div>
-              </div>
-            </div>
+            <div
+              className="
+                pointer-events-none
+                absolute
+                inset-y-0
+                right-0
+                w-16
+                bg-gradient-to-l
+                from-black/10
+                to-transparent
+              "
+            />
           </div>
+
+          {/* =====================================================
+              MOBILE CONTENT OVERLAY
+          ====================================================== */}
+
+          <div
+            className="
+              pointer-events-none
+              absolute
+              inset-0
+              z-[5]
+              bg-gradient-to-b
+              from-black/75
+              via-black/50
+              to-black/75
+
+              lg:hidden
+            "
+          />
         </div>
       </section>
 
-      {/* ================= ABOUT CONTENT ================= */}
+      {/* =========================================================
+          ABOUT CONTENT
+      ========================================================== */}
 
-      <div data-aos="fade-up" data-aos-duration="850" data-aos-delay="80">
+      <div
+        data-aos="fade-up"
+        data-aos-duration="850"
+        data-aos-delay="80"
+      >
         <AboutContent />
       </div>
 
-      {/* ================= WHAT WE BELIEVE ================= */}
+      {/* =========================================================
+          WHAT WE BELIEVE
+      ========================================================== */}
 
-      <div data-aos="fade-up" data-aos-duration="850" data-aos-delay="80">
+      <div
+        data-aos="fade-up"
+        data-aos-duration="850"
+        data-aos-delay="80"
+      >
         <WhatWeBelieve />
       </div>
 
-      {/* ================= WHERE WE ARE ================= */}
+      {/* =========================================================
+          WHERE WE ARE
+      ========================================================== */}
 
-      <div data-aos="fade-up" data-aos-duration="850" data-aos-delay="80">
+      <div
+        data-aos="fade-up"
+        data-aos-duration="850"
+        data-aos-delay="80"
+      >
         <WhereWeAre />
       </div>
     </App_layout>

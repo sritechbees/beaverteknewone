@@ -53,89 +53,115 @@ export default function WhereWeAre() {
         relative
         overflow-hidden
         bg-[#000000]
-        py-10
-        sm:py-11
-        md:py-12
-        lg:py-14
+        py-12
+        sm:py-14
+        md:py-16
+        lg:py-20
+        xl:py-22
       "
     >
-      {/* ================= BACKGROUND EFFECTS ================= */}
+      {/* =========================================================
+          BACKGROUND EFFECTS
+      ========================================================== */}
 
       <div className="pointer-events-none absolute inset-0">
+        {/* Top cyan glow */}
         <div
           className="
             absolute
             left-1/2
-            top-0
-            h-[300px]
-            w-[300px]
+            top-[-100px]
+            h-[280px]
+            w-[280px]
             -translate-x-1/2
             rounded-full
-            bg-[#29B6F0]/[0.06]
+            bg-[#29B6F0]/[0.055]
             blur-[100px]
-            sm:h-[400px]
-            sm:w-[400px]
+            sm:h-[380px]
+            sm:w-[380px]
             sm:blur-[120px]
+            lg:h-[460px]
+            lg:w-[460px]
           "
         />
 
+        {/* Bottom violet glow */}
         <div
           className="
             absolute
-            bottom-[-140px]
-            left-[-100px]
+            bottom-[-160px]
+            left-[-120px]
+            h-[280px]
+            w-[280px]
+            rounded-full
+            bg-[#7A4FD1]/[0.045]
+            blur-[100px]
+            sm:h-[340px]
+            sm:w-[340px]
+          "
+        />
+
+        {/* Right magenta glow */}
+        <div
+          className="
+            absolute
+            right-[-130px]
+            top-[40%]
             h-[260px]
             w-[260px]
             rounded-full
-            bg-[#7A4FD1]/[0.05]
-            blur-[90px]
-          "
-        />
-
-        <div
-          className="
-            absolute
-            right-[-100px]
-            top-[35%]
-            h-[240px]
-            w-[240px]
-            rounded-full
-            bg-[#B93FC9]/[0.04]
-            blur-[90px]
+            bg-[#B93FC9]/[0.035]
+            blur-[100px]
+            sm:h-[320px]
+            sm:w-[320px]
           "
         />
       </div>
 
-      {/* ================= GRID PATTERN ================= */}
+      {/* =========================================================
+          SUBTLE GRID
+      ========================================================== */}
 
       <div
         className="
           pointer-events-none
           absolute
           inset-0
-          opacity-[0.028]
+          opacity-[0.022]
           bg-[linear-gradient(to_right,#2A2A30_1px,transparent_1px),linear-gradient(to_bottom,#2A2A30_1px,transparent_1px)]
-          [background-size:42px_42px]
+          [background-size:44px_44px]
         "
       />
+
+      {/* =========================================================
+          MAIN CONTAINER
+      ========================================================== */}
 
       <div
         className="
           relative
           z-10
           mx-auto
+          w-full
           max-w-7xl
-          px-3
-          sm:px-4
-          md:px-5
-          lg:px-6
-          xl:px-8
+          px-4
+          sm:px-6
+          md:px-8
+          lg:px-10
+          xl:px-12
         "
       >
-        {/* ================= HEADING ================= */}
+        {/* =======================================================
+            HEADING AREA
+        ======================================================== */}
 
         <div
-          className="mx-auto max-w-3xl text-center"
+          className="
+            mx-auto
+            w-full
+            max-w-3xl
+            text-center
+          "
           data-aos="fade-up"
           data-aos-duration="800"
           data-aos-delay="50"
@@ -148,33 +174,43 @@ export default function WhereWeAre() {
             className="
               inline-flex
               items-center
-              gap-1.5
+              gap-2
               rounded-full
               border
               border-[#2A2A30]
               bg-[#0A0A0A]/80
-              px-3
+              px-3.5
               py-1.5
               backdrop-blur-md
               transition-all
               duration-300
               hover:border-[#29B6F0]/40
-              sm:gap-2
               sm:px-4
               sm:py-2
             "
           >
-            <span className="h-1.5 w-1.5 rounded-full bg-[#29B6F0] shadow-[0_0_10px_rgba(41,182,240,.8)]" />
+            <span
+              className="
+                h-1.5
+                w-1.5
+                shrink-0
+                rounded-full
+                bg-[#29B6F0]
+                shadow-[0_0_10px_rgba(41,182,240,.8)]
+                sm:h-2
+                sm:w-2
+              "
+            />
 
             <span
               className="
-                text-[9px]
+                text-[10px]
                 font-semibold
                 uppercase
-                tracking-[0.2em]
+                tracking-[0.18em]
                 text-[#29B6F0]
-                sm:text-[10px]
-                md:text-[11px]
+                sm:text-[11px]
+                md:text-xs
               "
             >
               Global Presence
@@ -187,17 +223,17 @@ export default function WhereWeAre() {
             data-aos="fade-up"
             data-aos-delay="150"
             className="
-              mt-4
-              text-[26px]
+              mt-5
+              text-[29px]
               font-extrabold
               leading-[1.08]
-              tracking-[-0.03em]
+              tracking-[-0.035em]
               text-white
-              sm:mt-5
-              sm:text-[30px]
-              md:text-[34px]
-              lg:text-[38px]
-              xl:text-[40px]
+              sm:mt-6
+              sm:text-[33px]
+              md:text-[37px]
+              lg:text-[42px]
+              xl:text-[45px]
             "
           >
             Where We{" "}
@@ -219,13 +255,13 @@ export default function WhereWeAre() {
             data-aos-delay="220"
             className="
               mx-auto
-              mt-4
+              mt-5
               h-[2px]
               w-12
               rounded-full
               bg-[linear-gradient(90deg,#29B6F0,#3E7BD6,#7A4FD1,#B93FC9)]
-              shadow-[0_0_14px_rgba(41,182,240,.25)]
-              sm:mt-5
+              shadow-[0_0_14px_rgba(41,182,240,.2)]
+              sm:mt-6
               sm:w-16
               md:w-20
             "
@@ -238,16 +274,17 @@ export default function WhereWeAre() {
             data-aos-delay="280"
             className="
               mx-auto
-              mt-4
+              mt-5
               max-w-2xl
-              text-[11px]
+              text-[12px]
               leading-6
               text-[#A0A0A8]
-              sm:mt-5
-              sm:text-xs
+              sm:mt-6
+              sm:text-[13px]
               sm:leading-6
-              md:text-[13px]
-              md:leading-6
+              md:text-[14px]
+              md:leading-7
+              lg:text-[15px]
             "
           >
             Strategically positioned to support businesses with experienced
@@ -256,9 +293,19 @@ export default function WhereWeAre() {
           </p>
         </div>
 
-        {/* ================= LOCATION SHOWCASE ================= */}
+        {/* =======================================================
+            LOCATION SHOWCASE
+        ======================================================== */}
 
-        <div className="relative mt-8 sm:mt-10 md:mt-11 lg:mt-12">
+        <div
+          className="
+            relative
+            mt-10
+            sm:mt-12
+            md:mt-14
+            lg:mt-16
+          "
+        >
           {/* Top decorative line */}
 
           <div
@@ -276,6 +323,10 @@ export default function WhereWeAre() {
             data-aos="fade-in"
             data-aos-duration="1000"
           />
+
+          {/* =====================================================
+              LOCATION GRID
+          ====================================================== */}
 
           <div
             className="
@@ -297,54 +348,66 @@ export default function WhereWeAre() {
                   className={`
                     group
                     relative
-                    min-h-[205px]
+                    min-w-0
                     overflow-hidden
                     border-b
                     border-[#2A2A30]
-                    px-1
-                    py-6
+                    px-0
+                    py-7
                     transition-all
                     duration-500
-                    sm:min-h-[220px]
-                    sm:px-4
-                    sm:py-7
-                    md:min-h-[225px]
-                    md:px-5
-                    md:py-7
-                    lg:px-6
-                    lg:py-8
-                    ${
-                      index < 2
-                        ? "xl:border-r"
-                        : ""
-                    }
+
+                    sm:px-1
+                    sm:py-8
+
+                    md:min-h-[230px]
+                    md:px-6
+                    md:py-9
+
+                    lg:min-h-[245px]
+                    lg:px-8
+                    lg:py-10
+
+                    xl:min-h-[250px]
+                    xl:px-9
+
                     ${
                       index === 1
                         ? "md:border-r md:border-[#2A2A30] xl:border-r"
                         : ""
                     }
+
+                    ${
+                      index === 0
+                        ? "xl:border-r xl:border-[#2A2A30]"
+                        : ""
+                    }
                   `}
                 >
-                  {/* Hover Glow */}
+                  {/* =================================================
+                      SUBTLE HOVER GLOW
+                  ================================================== */}
 
                   <div
                     className="
                       pointer-events-none
                       absolute
-                      -right-14
-                      -top-14
-                      h-32
-                      w-32
+                      -right-20
+                      -top-20
+                      h-40
+                      w-40
                       rounded-full
                       bg-[#29B6F0]/0
-                      blur-[60px]
+                      blur-[70px]
                       transition-all
                       duration-700
-                      group-hover:bg-[#29B6F0]/10
+                      group-hover:bg-[#29B6F0]/[0.08]
                     "
                   />
 
-                  {/* Bottom Hover Line */}
+                  {/* =================================================
+                      BOTTOM GRADIENT HOVER LINE
+                  ================================================== */}
 
                   <div
                     className="
@@ -360,89 +423,82 @@ export default function WhereWeAre() {
                     "
                   />
 
-                  {/* ================= TOP ================= */}
+                  {/* =================================================
+                      ICON
+                  ================================================== */}
 
-                  <div className="relative flex items-center justify-between">
-                    {/* Icon */}
+                  <div
+                    data-aos="zoom-in"
+                    data-aos-delay={220 + index * 110}
+                    className="
+                      relative
+                      flex
+                      h-10
+                      w-10
+                      shrink-0
+                      items-center
+                      justify-center
+                      rounded-xl
+                      border
+                      border-[#2A2A30]
+                      bg-[#0A0A0A]
+                      transition-all
+                      duration-500
 
-                    <div
-                      data-aos="zoom-in"
-                      data-aos-delay={220 + index * 110}
+                      group-hover:-translate-y-1
+                      group-hover:border-[#29B6F0]/40
+                      group-hover:shadow-[0_0_24px_rgba(41,182,240,.10)]
+
+                      sm:h-11
+                      sm:w-11
+
+                      md:h-12
+                      md:w-12
+                    "
+                  >
+                    <Icon
                       className="
-                        relative
-                        flex
-                        h-9
-                        w-9
-                        items-center
-                        justify-center
-                        rounded-lg
-                        border
-                        border-[#2A2A30]
-                        bg-[#0A0A0A]
-                        transition-all
+                        h-[18px]
+                        w-[18px]
+                        text-[#29B6F0]
+                        transition-transform
                         duration-500
-                        group-hover:-translate-y-1
-                        group-hover:border-[#29B6F0]/40
-                        group-hover:shadow-[0_0_24px_rgba(41,182,240,.12)]
-                        sm:h-10
-                        sm:w-10
-                        sm:rounded-xl
-                        md:h-11
-                        md:w-11
-                      "
-                    >
-                      <Icon
-                        className="
-                          h-4
-                          w-4
-                          text-[#29B6F0]
-                          transition-transform
-                          duration-500
-                          group-hover:scale-110
-                          sm:h-5
-                          sm:w-5
-                          md:h-[21px]
-                          md:w-[21px]
-                        "
-                      />
-                    </div>
+                        group-hover:scale-110
 
-                    {/* Number */}
+                        sm:h-5
+                        sm:w-5
 
-                    <span
-                      className="
-                        select-none
-                        text-4xl
-                        font-black
-                        leading-none
-                        tracking-[-0.06em]
-                        text-white/[0.045]
-                        transition-all
-                        duration-500
-                        group-hover:text-white/[0.08]
-                        sm:text-5xl
-                        md:text-6xl
+                        md:h-[22px]
+                        md:w-[22px]
                       "
-                    >
-                      0{index + 1}
-                    </span>
+                    />
                   </div>
 
-                  {/* ================= CONTENT ================= */}
+                  {/* =================================================
+                      CONTENT
+                  ================================================== */}
 
-                  <div className="relative mt-6 sm:mt-7">
-                    {/* Small gradient indicator */}
+                  <div
+                    className="
+                      relative
+                      mt-6
+                      sm:mt-7
+                      md:mt-8
+                    "
+                  >
+                    {/* Small Gradient Indicator */}
 
                     <div
                       className="
                         mb-3
                         h-[2px]
-                        w-6
+                        w-7
                         rounded-full
                         bg-[linear-gradient(90deg,#29B6F0,#7A4FD1)]
                         transition-all
                         duration-500
-                        group-hover:w-10
+                        group-hover:w-11
+                        sm:mb-3.5
                       "
                     />
 
@@ -452,13 +508,13 @@ export default function WhereWeAre() {
                       data-aos="fade-up"
                       data-aos-delay={280 + index * 110}
                       className="
-                        text-[10px]
+                        text-[11px]
                         font-semibold
                         uppercase
-                        tracking-[0.18em]
+                        tracking-[0.17em]
                         text-[#29B6F0]
-                        sm:text-[11px]
-                        md:text-xs
+                        sm:text-xs
+                        md:text-[13px]
                       "
                     >
                       {item.title}
@@ -470,63 +526,76 @@ export default function WhereWeAre() {
                       data-aos="fade-up"
                       data-aos-delay={330 + index * 110}
                       className="
-                        mt-2
-                        max-w-[360px]
-                        text-[17px]
+                        mt-2.5
+                        max-w-[380px]
+                        text-[19px]
                         font-semibold
                         leading-[1.3]
-                        tracking-[-0.02em]
+                        tracking-[-0.025em]
                         text-white
                         transition-transform
                         duration-500
                         group-hover:translate-x-1
-                        sm:text-[19px]
-                        md:text-[21px]
-                        lg:text-[22px]
+
+                        sm:mt-3
+                        sm:text-[21px]
+
+                        md:text-[22px]
+
+                        lg:text-[23px]
+
+                        xl:text-[24px]
                       "
                     >
                       {item.value}
                     </p>
                   </div>
 
-                  {/* ================= ARROW ================= */}
+                  {/* =================================================
+                      ARROW
+                  ================================================== */}
 
                   <div
                     className="
                       absolute
-                      bottom-5
-                      right-1
+                      bottom-6
+                      right-0
                       flex
-                      h-7
-                      w-7
+                      h-8
+                      w-8
                       items-center
                       justify-center
                       rounded-full
                       border
                       border-[#2A2A30]
                       bg-[#0A0A0A]
-                      opacity-50
+                      opacity-45
                       transition-all
                       duration-500
+
                       group-hover:translate-x-1
                       group-hover:border-[#3E7BD6]/50
                       group-hover:opacity-100
-                      sm:bottom-6
-                      sm:right-4
-                      md:right-5
-                      lg:right-6
+
+                      sm:right-1
+                      sm:h-9
+                      sm:w-9
+
+                      md:right-6
+
+                      lg:right-8
+
+                      xl:right-9
                     "
                   >
                     <ArrowUpRight
                       className="
-                        h-3.5
-                        w-3.5
+                        h-4
+                        w-4
                         text-[#A0A0A8]
                         transition-colors
                         duration-300
                         group-hover:text-white
-                        sm:h-4
-                        sm:w-4
                       "
                     />
                   </div>
@@ -551,39 +620,62 @@ export default function WhereWeAre() {
           />
         </div>
 
-        {/* ================= BOTTOM GLOBAL LINE ================= */}
+        {/* =======================================================
+            BOTTOM GLOBAL LINE
+        ======================================================== */}
 
         <div
           className="
-            mt-6
+            mt-7
             flex
             items-center
             justify-center
             gap-2.5
             text-center
-            sm:mt-8
+
+            sm:mt-9
             sm:gap-3
+
+            md:mt-10
           "
           data-aos="fade-up"
           data-aos-delay="400"
         >
-          <span className="h-px w-6 bg-[#2A2A30] sm:w-10" />
+          <span
+            className="
+              h-px
+              w-6
+              shrink-0
+              bg-[#2A2A30]
+              sm:w-10
+              md:w-14
+            "
+          />
 
           <span
             className="
-              text-[8px]
+              text-[9px]
               font-medium
               uppercase
-              tracking-[0.22em]
+              tracking-[0.2em]
               text-[#5A5A62]
-              sm:text-[9px]
-              md:text-[10px]
+              sm:text-[10px]
+              md:text-[11px]
             "
           >
             Global Technology Presence
           </span>
 
-          <span className="h-px w-6 bg-[#2A2A30] sm:w-10" />
+          <span
+            className="
+              h-px
+              w-6
+              shrink-0
+              bg-[#2A2A30]
+              sm:w-10
+              md:w-14
+            "
+          />
         </div>
       </div>
     </section>
