@@ -1,11 +1,10 @@
-
 "use client";
 
 import { useEffect } from "react";
 import AOS from "aos";
 import { motion } from "framer-motion";
 import "aos/dist/aos.css";
-
+import Link from "next/link";
 import App_layout from "@/component/layout/app_layout";
 import StaySecureSection from "./staysecuresection";
 import SecurityWhoThisIsFor from "./securitywhothisisfor";
@@ -28,7 +27,9 @@ export default function SecureHeroSection() {
           HERO SECTION
       ========================================================== */}
 
-      <section className="relative overflow-hidden bg-[#000000] py-14 sm:py-16 lg:py-14">
+      <section
+        className="relative overflow-hidden bg-[#000000] py-14 sm:py-16 lg:py-14"
+      >
         {/* ================= Background ================= */}
 
         <div className="absolute inset-0">
@@ -146,8 +147,6 @@ export default function SecureHeroSection() {
                 SUBTITLE
             ====================================================== */}
 
-          
-
             {/* =====================================================
                 DESCRIPTION
             ====================================================== */}
@@ -197,14 +196,18 @@ export default function SecureHeroSection() {
                 sm:gap-4
               "
             >
-              <button
+              {/* Explore Services */}
+
+              <Link
+                href="/services/servicesherosection"
                 className="
                   w-full
                   max-w-[180px]
-                  rounded-full
+                  rounded-lg
                   bg-[linear-gradient(135deg,#29B6F0_0%,#3E7BD6_35%,#7A4FD1_65%,#B93FC9_100%)]
                   px-6
                   py-3
+                  text-center
                   text-sm
                   font-semibold
                   text-white
@@ -219,18 +222,24 @@ export default function SecureHeroSection() {
                 "
               >
                 Explore Services
-              </button>
+              </Link>
 
-              <button
+              
+
+              {/* Talk to Us - Same Page Scroll */}
+
+              <Link
+                href="#staysecuresection"
                 className="
                   w-full
                   max-w-[180px]
-                  rounded-full
+                  rounded-lg
                   border
                   border-[#3E7BD6]/40
                   bg-white/5
                   px-6
                   py-3
+                  text-center
                   text-sm
                   font-semibold
                   text-white
@@ -246,19 +255,27 @@ export default function SecureHeroSection() {
                 "
               >
                 Talk to Us
-              </button>
+              </Link>
             </div>
           </motion.div>
         </div>
+      </section>
 
-        
+      {/* =========================================================
+          STAY SECURE SECTION
+          TALK TO US BUTTON SCROLLS HERE
+      ========================================================== */}
+
+      <section
+        id="staysecuresection"
+        className="scroll-mt-20"
+      >
+        <StaySecureSection />
       </section>
 
       {/* =========================================================
           OTHER SECTIONS
       ========================================================== */}
-
-      <StaySecureSection />
 
       <SecurityWhoThisIsFor />
     </App_layout>

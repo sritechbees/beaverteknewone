@@ -389,9 +389,9 @@ export default function ServicesHerosection() {
                   lg:mx-0
                 "
               >
-                From digital transformation to analytics and secure engineering,
-                our services are designed around real business needs and
-                measurable outcomes.
+                From digital transformation to analytics and secure
+                engineering, our services are designed around real business
+                needs and measurable outcomes.
               </p>
 
               {/* =================================================
@@ -451,7 +451,7 @@ export default function ServicesHerosection() {
                 {/* Secondary */}
 
                 <Link
-                  href="#services"
+                  href="#serviceshub"
                   data-aos="fade-left"
                   data-aos-delay="750"
                   data-aos-duration="650"
@@ -478,7 +478,7 @@ export default function ServicesHerosection() {
                     sm:text-[13px]
                   "
                 >
-                  Explore Services
+                  View More
                 </Link>
               </div>
             </div>
@@ -492,12 +492,13 @@ export default function ServicesHerosection() {
               data-aos="fade-left"
               data-aos-delay="200"
               data-aos-duration="900"
-              className=" relative mx-auto w-full max-w-[540px] min-w-0 "
+              className="relative mx-auto w-full max-w-[540px] min-w-0"
             >
-              {" "}
-              {/* ================================================= SERVICE GRID ================================================== */}{" "}
-              <div className=" grid grid-cols-2 items-start gap-x-3 gap-y-4 sm:gap-x-4 sm:gap-y-5 md:gap-x-5 md:gap-y-6 ">
-                {" "}
+              {/* =================================================
+                  SERVICE GRID
+              ================================================== */}
+
+              <div className="grid grid-cols-2 items-start gap-x-3 gap-y-4 sm:gap-x-4 sm:gap-y-5 md:gap-x-5 md:gap-y-6">
                 {services.map((service, index) => (
                   <div
                     key={service.title}
@@ -511,46 +512,153 @@ export default function ServicesHerosection() {
                     data-aos-delay={350 + index * 100}
                     data-aos-duration="850"
                     data-aos-easing="ease-out-cubic"
-                    className={` relative min-w-0 w-full ${index % 2 === 1 ? "mt-5 sm:mt-7 md:mt-8" : ""} `}
+                    className={`relative min-w-0 w-full ${
+                      index % 2 === 1
+                        ? "mt-5 sm:mt-7 md:mt-8"
+                        : ""
+                    }`}
                   >
-                    {" "}
                     <Link
                       href={service.href}
-                      className=" group relative block w-full overflow-hidden border border-[#2A2A30] bg-[#121212] shadow-[0_14px_35px_rgba(0,0,0,.35)] transition-all duration-500 hover:-translate-y-1 hover:border-[#3E7BD6] hover:shadow-[0_18px_40px_rgba(62,123,214,.16)] "
+                      className="
+                        group
+                        relative
+                        block
+                        w-full
+                        overflow-hidden
+                        border
+                        border-[#2A2A30]
+                        bg-[#121212]
+                        shadow-[0_14px_35px_rgba(0,0,0,.35)]
+                        transition-all
+                        duration-500
+                        hover:-translate-y-1
+                        hover:border-[#3E7BD6]
+                        hover:shadow-[0_18px_40px_rgba(62,123,214,.16)]
+                      "
                       style={{ borderRadius: service.shape }}
                     >
-                      {" "}
-                      {/* ================================================= IMAGE Full organic curve ================================================== */}{" "}
-                      <div className=" relative h-[118px] w-full overflow-hidden sm:h-[138px] md:h-[155px] lg:h-[165px] xl:h-[175px] ">
-                        {" "}
-                        {/* Image */}{" "}
+                      {/* =================================================
+                          IMAGE - OVERLAY REMOVED
+                      ================================================== */}
+
+                      <div
+                        className="
+                          relative
+                          h-[118px]
+                          w-full
+                          overflow-hidden
+                          sm:h-[138px]
+                          md:h-[155px]
+                          lg:h-[165px]
+                          xl:h-[175px]
+                        "
+                      >
+                        {/* Image */}
+
                         <img
                           src={service.image}
                           alt={service.title}
-                          className=" absolute inset-0 h-full w-full object-cover transition-transform duration-700 ease-out group-hover:scale-105 "
-                        />{" "}
-                        {/* ================================================= DARK OVERLAY ================================================== */}{" "}
-                        <div className=" absolute inset-0 bg-gradient-to-t from-black/90 via-black/25 to-black/5 " />{" "}
-                        {/* ================================================= BEAVERTEK GRADIENT TINT ================================================== */}{" "}
-                        <div className=" absolute inset-0 bg-gradient-to-br from-[#29B6F0]/[0.06] via-transparent to-[#B93FC9]/[0.14] opacity-80 transition-opacity duration-500 group-hover:opacity-100 " />{" "}
-                        {/* ================================================= CENTERED SERVICE TITLE ================================================== */}{" "}
-                        <div className=" absolute inset-x-0 bottom-5 z-10 flex flex-col items-center justify-center px-2 text-center sm:bottom-6 sm:px-3 md:bottom-7 ">
-                          {" "}
-                          {/* Gradient Line */}{" "}
-                          <div className=" mb-2 h-[2px] w-7 rounded-full bg-[linear-gradient(90deg,#29B6F0,#3E7BD6,#7A4FD1,#B93FC9)] transition-all duration-500 group-hover:w-11 sm:mb-2.5 sm:w-8 " />{" "}
-                          {/* Title */}{" "}
-                          <h3 className=" max-w-[95%] text-center text-[10px] font-extrabold leading-[1.2] tracking-[-0.01em] text-white drop-shadow-[0_2px_8px_rgba(0,0,0,.7)] transition-colors duration-300 group-hover:text-[#29B6F0] sm:text-[11px] sm:leading-[1.25] md:text-xs lg:text-[13px] xl:text-sm ">
-                            {" "}
-                            {service.title}{" "}
-                          </h3>{" "}
-                        </div>{" "}
-                      </div>{" "}
-                      {/* ================================================= BOTTOM GRADIENT ACCENT ================================================== */}{" "}
-                      <div className=" absolute bottom-0 left-0 z-20 h-[2px] w-0 bg-[linear-gradient(90deg,#29B6F0,#3E7BD6,#7A4FD1,#B93FC9)] transition-all duration-700 group-hover:w-full " />{" "}
-                    </Link>{" "}
+                          className="
+                            absolute
+                            inset-0
+                            h-full
+                            w-full
+                            object-cover
+                            transition-transform
+                            duration-700
+                            ease-out
+                            group-hover:scale-105
+                          "
+                        />
+
+                        {/* =================================================
+                            CENTERED SERVICE TITLE
+                        ================================================== */}
+
+                        <div
+                          className="
+                            absolute
+                            inset-x-0
+                            bottom-5
+                            z-10
+                            flex
+                            flex-col
+                            items-center
+                            justify-center
+                            px-2
+                            text-center
+                            sm:bottom-6
+                            sm:px-3
+                            md:bottom-7
+                          "
+                        >
+                          {/* Gradient Line */}
+
+                          <div
+                            className="
+                              mb-2
+                              h-[2px]
+                              w-7
+                              rounded-full
+                              bg-[linear-gradient(90deg,#29B6F0,#3E7BD6,#7A4FD1,#B93FC9)]
+                              transition-all
+                              duration-500
+                              group-hover:w-11
+                              sm:mb-2.5
+                              sm:w-8
+                            "
+                          />
+
+                          {/* Title */}
+
+                          <h3
+                            className="
+                              max-w-[95%]
+                              text-center
+                              text-[10px]
+                              font-extrabold
+                              leading-[1.2]
+                              tracking-[-0.01em]
+                              text-white
+                              drop-shadow-[0_2px_8px_rgba(0,0,0,.7)]
+                              transition-colors
+                              duration-300
+                              group-hover:text-[#29B6F0]
+                              sm:text-[11px]
+                              sm:leading-[1.25]
+                              md:text-xs
+                              lg:text-[13px]
+                              xl:text-sm
+                            "
+                          >
+                            {service.title}
+                          </h3>
+                        </div>
+                      </div>
+
+                      {/* =================================================
+                          BOTTOM GRADIENT ACCENT
+                      ================================================== */}
+
+                      <div
+                        className="
+                          absolute
+                          bottom-0
+                          left-0
+                          z-20
+                          h-[2px]
+                          w-0
+                          bg-[linear-gradient(90deg,#29B6F0,#3E7BD6,#7A4FD1,#B93FC9)]
+                          transition-all
+                          duration-700
+                          group-hover:w-full
+                        "
+                      />
+                    </Link>
                   </div>
-                ))}{" "}
-              </div>{" "}
+                ))}
+              </div>
             </div>
           </div>
         </div>
@@ -560,7 +668,13 @@ export default function ServicesHerosection() {
           SERVICES HUB
       ====================================================== */}
 
-      <div data-aos="fade-up" data-aos-duration="850" data-aos-offset="50">
+      <div
+        id="serviceshub"
+        data-aos="fade-up"
+        data-aos-duration="850"
+        data-aos-offset="50"
+        className="scroll-mt-20"
+      >
         <ServicesHub />
 
         <Howwework />

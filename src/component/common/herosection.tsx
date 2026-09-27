@@ -121,322 +121,408 @@ export default function CaseStudyHero() {
             ================================================= */}
 
             <div
-              className="
-                relative
-                overflow-hidden
-                border-b
-                border-white/[0.08]
-                bg-[#0D0D0F]
-                px-5
-                py-7
-                sm:px-7
-                sm:py-9
-                lg:border-b-0
-                lg:border-r
-                lg:px-6
-                lg:py-9
-              "
-            >
+  className="
+    relative
+    overflow-hidden
+    border-b
+    border-white/[0.08]
+    bg-[#0D0D0F]
+    px-4
+    py-6
+    sm:px-6
+    sm:py-8
+    md:px-7
+    md:py-9
+    lg:border-b-0
+    lg:border-r
+    lg:px-6
+    lg:py-9
+  "
+>
+  {/* =========================================================
+      LEFT GLASS GRID
+  ========================================================= */}
 
-              {/* Left Glass Grid */}
+  <div
+    className="
+      pointer-events-none
+      absolute
+      inset-0
+      opacity-[0.025]
+      [background-image:linear-gradient(rgba(255,255,255,0.5)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.5)_1px,transparent_1px)]
+      [background-size:35px_35px]
+    "
+  />
 
-              <div
-                className="
-                  pointer-events-none
-                  absolute
-                  inset-0
-                  opacity-[0.025]
-                  [background-image:linear-gradient(rgba(255,255,255,0.5)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.5)_1px,transparent_1px)]
-                  [background-size:35px_35px]
-                "
-              />
+  {/* =========================================================
+      LEFT GLOW
+  ========================================================= */}
 
-              {/* Left Glow */}
+  <div
+    className="
+      pointer-events-none
+      absolute
+      -left-24
+      top-1/2
+      h-56
+      w-56
+      -translate-y-1/2
+      rounded-full
+      bg-[#29B6F0]/10
+      blur-[100px]
+      sm:h-64
+      sm:w-64
+    "
+  />
 
-              <div
-                className="
-                  pointer-events-none
-                  absolute
-                  -left-24
-                  top-1/2
-                  h-64
-                  w-64
-                  -translate-y-1/2
-                  rounded-full
-                  bg-[#29B6F0]/10
-                  blur-[100px]
-                "
-              />
+  {/* =========================================================
+      LEFT CONTENT
+  ========================================================= */}
 
-              {/* Left Content */}
+  <div className="relative space-y-3 sm:space-y-4">
 
-              <div className="relative space-y-4">
+    {/* =================================================
+        ITEM 01
+    ================================================= */}
 
-                {/* =================================================
-                    ITEM 01
-                ================================================= */}
+    <a
+      href="/customers/PaymentPlatformCaseStudy"
+      className="
+        group
+        relative
+        block
+        overflow-hidden
+        rounded-xl
+        border
+        border-white/[0.07]
+        bg-white/[0.025]
+        p-3.5
+        transition-all
+        duration-500
+        hover:-translate-y-0.5
+        hover:border-[#29B6F0]/35
+        hover:bg-white/[0.045]
+        sm:p-4
+      "
+    >
 
-                <div
-                  className="
-                    group
-                    relative
-                    overflow-hidden
-                    rounded-xl
-                    border
-                    border-white/[0.07]
-                    bg-white/[0.025]
-                    p-4
-                    transition-all
-                    duration-500
-                    hover:-translate-y-0.5
-                    hover:border-[#29B6F0]/35
-                    hover:bg-white/[0.045]
-                  "
-                >
+      {/* Bottom Gradient */}
 
-                  {/* Bottom Gradient */}
+      <div
+        className="
+          absolute
+          bottom-0
+          left-0
+          h-[2px]
+          w-0
+          bg-gradient-to-r
+          from-[#29B6F0]
+          to-[#3E7BD6]
+          transition-all
+          duration-500
+          group-hover:w-full
+        "
+      />
 
-                  <div
-                    className="
-                      absolute
-                      bottom-0
-                      left-0
-                      h-[2px]
-                      w-0
-                      bg-gradient-to-r
-                      from-[#29B6F0]
-                      to-[#3E7BD6]
-                      transition-all
-                      duration-500
-                      group-hover:w-full
-                    "
-                  />
+      <div className="flex min-w-0 items-start gap-3">
 
-                  <div className="flex gap-3">
+        {/* Number */}
 
-                    {/* Number */}
+        <div
+          className="
+            flex
+            h-8
+            w-8
+            shrink-0
+            items-center
+            justify-center
+            rounded-lg
+            border
+            border-[#29B6F0]/25
+            bg-[#29B6F0]/5
+            text-[10px]
+            font-bold
+            text-[#29B6F0]
+            sm:h-9
+            sm:w-9
+          "
+        >
+          01
+        </div>
 
-                    <div
-                      className="
-                        flex
-                        h-8
-                        w-8
-                        shrink-0
-                        items-center
-                        justify-center
-                        rounded-lg
-                        border
-                        border-[#29B6F0]/25
-                        bg-[#29B6F0]/5
-                        text-[10px]
-                        font-bold
-                        text-[#29B6F0]
-                      "
-                    >
-                      01
-                    </div>
+        {/* Text */}
 
-                    {/* Text */}
+        <div className="min-w-0 flex-1">
 
-                    <div>
+          <p
+            className="
+              break-words
+              text-[9px]
+              font-bold
+              uppercase
+              tracking-[0.16em]
+              text-[#29B6F0]
+              sm:text-[10px]
+              sm:tracking-[0.2em]
+              md:text-[11px]
+            "
+          >
+            Financial Services
+          </p>
 
-                      <p
-                        className="
-                          text-[10px]
-                          font-bold
-                          uppercase
-                          tracking-[0.2em]
-                          text-[#29B6F0]
-                          sm:text-[11px]
-                        "
-                      >
-                        Financial Services
-                      </p>
+          <p
+            className="
+              mt-1.5
+              text-xs
+              font-medium
+              leading-5
+              text-[#D4D4D8]
+              transition-colors
+              duration-300
+              group-hover:text-white
+              sm:text-sm
+              sm:leading-6
+            "
+          >
+            Payment Platform at Scale
+          </p>
 
-                      <p className="mt-1.5 text-sm font-medium leading-6 text-[#D4D4D8]">
-                        Payment Platform at Scale
-                      </p>
+        </div>
 
-                    </div>
+      </div>
+    </a>
 
-                  </div>
-                </div>
+    {/* =================================================
+        ITEM 02
+    ================================================= */}
 
-                {/* =================================================
-                    ITEM 02
-                ================================================= */}
+    <a
+      href="/customers/AIcasestudytwo"
+      className="
+        group
+        relative
+        block
+        overflow-hidden
+        rounded-xl
+        border
+        border-white/[0.07]
+        bg-white/[0.025]
+        p-3.5
+        transition-all
+        duration-500
+        hover:-translate-y-0.5
+        hover:border-[#3E7BD6]/35
+        hover:bg-white/[0.045]
+        sm:p-4
+      "
+    >
 
-                <div
-                  className="
-                    group
-                    relative
-                    overflow-hidden
-                    rounded-xl
-                    border
-                    border-white/[0.07]
-                    bg-white/[0.025]
-                    p-4
-                    transition-all
-                    duration-500
-                    hover:-translate-y-0.5
-                    hover:border-[#3E7BD6]/35
-                    hover:bg-white/[0.045]
-                  "
-                >
+      <div
+        className="
+          absolute
+          bottom-0
+          left-0
+          h-[2px]
+          w-0
+          bg-gradient-to-r
+          from-[#3E7BD6]
+          to-[#7A4FD1]
+          transition-all
+          duration-500
+          group-hover:w-full
+        "
+      />
 
-                  <div
-                    className="
-                      absolute
-                      bottom-0
-                      left-0
-                      h-[2px]
-                      w-0
-                      bg-gradient-to-r
-                      from-[#3E7BD6]
-                      to-[#7A4FD1]
-                      transition-all
-                      duration-500
-                      group-hover:w-full
-                    "
-                  />
+      <div className="flex min-w-0 items-start gap-3">
 
-                  <div className="flex gap-3">
+        <div
+          className="
+            flex
+            h-8
+            w-8
+            shrink-0
+            items-center
+            justify-center
+            rounded-lg
+            border
+            border-[#3E7BD6]/25
+            bg-[#3E7BD6]/5
+            text-[10px]
+            font-bold
+            text-[#3E7BD6]
+            sm:h-9
+            sm:w-9
+          "
+        >
+          02
+        </div>
 
-                    <div
-                      className="
-                        flex
-                        h-8
-                        w-8
-                        shrink-0
-                        items-center
-                        justify-center
-                        rounded-lg
-                        border
-                        border-[#3E7BD6]/25
-                        bg-[#3E7BD6]/5
-                        text-[10px]
-                        font-bold
-                        text-[#3E7BD6]
-                      "
-                    >
-                      02
-                    </div>
+        <div className="min-w-0 flex-1">
 
-                    <div>
+          <p
+            className="
+              break-words
+              text-[9px]
+              font-bold
+              uppercase
+              tracking-[0.16em]
+              text-[#29B6F0]
+              sm:text-[10px]
+              sm:tracking-[0.2em]
+              md:text-[11px]
+            "
+          >
+            Healthcare:
+          </p>
 
-                      <p
-                        className="
-                          text-[10px]
-                          font-bold
-                          uppercase
-                          tracking-[0.2em]
-                          text-[#29B6F0]
-                          sm:text-[11px]
-                        "
-                      >
-                        Healthcare:
-                      </p>
+          <p
+            className="
+              mt-1.5
+              text-xs
+              font-medium
+              leading-5
+              text-[#D4D4D8]
+              transition-colors
+              duration-300
+              group-hover:text-white
+              sm:text-sm
+              sm:leading-6
+            "
+          >
+            AI in Real Hospitals
+          </p>
 
-                      <p className="mt-1.5 text-sm font-medium leading-6 text-[#D4D4D8]">
-                        AI in Real Hospitals
-                      </p>
+        </div>
 
-                    </div>
+      </div>
+    </a>
 
-                  </div>
-                </div>
+    {/* =================================================
+        ITEM 03
+    ================================================= */}
 
-                {/* =================================================
-                    ITEM 03
-                ================================================= */}
+    <a
+      href="/customers/datathatdecisionchallenge"
+      className="
+        group
+        relative
+        block
+        overflow-hidden
+        rounded-xl
+        border
+        border-white/[0.07]
+        bg-white/[0.025]
+        p-3.5
+        transition-all
+        duration-500
+        hover:-translate-y-0.5
+        hover:border-[#7A4FD1]/35
+        hover:bg-white/[0.045]
+        sm:p-4
+      "
+    >
 
-                <div
-                  className="
-                    group
-                    relative
-                    overflow-hidden
-                    rounded-xl
-                    border
-                    border-white/[0.07]
-                    bg-white/[0.025]
-                    p-4
-                    transition-all
-                    duration-500
-                    hover:-translate-y-0.5
-                    hover:border-[#7A4FD1]/35
-                    hover:bg-white/[0.045]
-                  "
-                >
+      <div
+        className="
+          absolute
+          bottom-0
+          left-0
+          h-[2px]
+          w-0
+          bg-gradient-to-r
+          from-[#7A4FD1]
+          to-[#B93FC9]
+          transition-all
+          duration-500
+          group-hover:w-full
+        "
+      />
 
-                  <div
-                    className="
-                      absolute
-                      bottom-0
-                      left-0
-                      h-[2px]
-                      w-0
-                      bg-gradient-to-r
-                      from-[#7A4FD1]
-                      to-[#B93FC9]
-                      transition-all
-                      duration-500
-                      group-hover:w-full
-                    "
-                  />
+      <div className="flex min-w-0 items-start gap-3">
 
-                  <div className="flex gap-3">
+        <div
+          className="
+            flex
+            h-8
+            w-8
+            shrink-0
+            items-center
+            justify-center
+            rounded-lg
+            border
+            border-[#7A4FD1]/25
+            bg-[#7A4FD1]/5
+            text-[10px]
+            font-bold
+            text-[#7A4FD1]
+            sm:h-9
+            sm:w-9
+          "
+        >
+          03
+        </div>
 
-                    <div
-                      className="
-                        flex
-                        h-8
-                        w-8
-                        shrink-0
-                        items-center
-                        justify-center
-                        rounded-lg
-                        border
-                        border-[#7A4FD1]/25
-                        bg-[#7A4FD1]/5
-                        text-[10px]
-                        font-bold
-                        text-[#7A4FD1]
-                      "
-                    >
-                      03
-                    </div>
+        <div className="min-w-0 flex-1">
 
-                    <div>
+          <p
+            className="
+              break-words
+              text-[9px]
+              font-bold
+              uppercase
+              tracking-[0.16em]
+              text-[#29B6F0]
+              sm:text-[10px]
+              sm:tracking-[0.2em]
+              md:text-[11px]
+            "
+          >
+            Business Intelligence:
+          </p>
 
-                      <p
-                        className="
-                          text-[10px]
-                          font-bold
-                          uppercase
-                          tracking-[0.2em]
-                          text-[#29B6F0]
-                          sm:text-[11px]
-                        "
-                      >
-                        Business Intelligence:
-                      </p>
+          <p
+            className="
+              mt-1.5
+              text-xs
+              font-medium
+              leading-5
+              text-[#D4D4D8]
+              transition-colors
+              duration-300
+              group-hover:text-white
+              sm:text-sm
+              sm:leading-6
+            "
+          >
+            Data that Drives Decisions
+          </p>
 
-                      <p className="mt-1.5 text-sm font-medium leading-6 text-[#D4D4D8]">
-                        Data that Drives Decisions
-                      </p>
+        </div>
 
-                    </div>
+      </div>
+    </a>
 
-                  </div>
-                </div>
+  </div>
 
-              </div>
+  {/* =========================================================
+      LEFT BOTTOM LINE
+  ========================================================= */}
 
-              {/* Left Bottom Line */}
+  <div
+    className="
+      relative
+      mt-5
+      h-px
+      w-full
+      bg-gradient-to-r
+      from-transparent
+      via-[#3E7BD6]/30
+      to-transparent
+      sm:mt-6
+    "
+  />
 
-              <div className="relative mt-6 h-px w-full bg-gradient-to-r from-transparent via-[#3E7BD6]/30 to-transparent" />
-
-            </div>
+</div>
 
             {/* =================================================
                 RIGHT SIDE
@@ -645,7 +731,7 @@ export default function CaseStudyHero() {
 
                       <span className="relative z-10 flex items-center justify-center gap-2">
 
-                        View Case Studies
+                        View All Case Studies
 
                         <svg
                           className="h-4 w-4 transition-transform duration-300 group-hover:translate-x-1"

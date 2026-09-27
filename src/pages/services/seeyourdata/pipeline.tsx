@@ -40,7 +40,7 @@ function Pipeline() {
   }, []);
 
   return (
-    <div className="overflow-hidden bg-white">
+    <div className="overflow-hidden bg-white pb-12">
       <div className="mx-auto max-w-7xl px-4 sm:px-5 md:px-6 lg:px-8">
 
         {/* ========================================================= */}

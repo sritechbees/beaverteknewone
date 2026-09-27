@@ -35,12 +35,40 @@ export default function AIHospitalHeroSection() {
   };
 
   return (
-    <div className="relative mx-auto w-full max-w-7xl bg-[#000000]  px-4 py-12 sm:px-6 sm:py-14 md:px-8 md:py-16 lg:py-20 xl:py-24">
+    <div
+      className="
+        relative
+        mx-auto
+        w-full
+        max-w-7xl
+        overflow-hidden
+        bg-[#000000]
+        px-4
+        py-10
+        sm:px-6
+        sm:py-12
+        md:px-8
+        md:py-14
+        lg:py-16
+        xl:py-20
+      "
+    >
       {/* ================================================= */}
       {/* HERO CONTENT */}
       {/* ================================================= */}
 
-      <div className="grid items-center gap-10 sm:gap-12 md:gap-14 lg:grid-cols-[0.95fr_1.05fr] lg:gap-14 xl:gap-20">
+      <div
+        className="
+          grid
+          items-center
+          gap-8
+          sm:gap-10
+          md:gap-12
+          lg:grid-cols-[0.95fr_1.05fr]
+          lg:gap-12
+          xl:gap-16
+        "
+      >
         {/* ================================================= */}
         {/* LEFT CONTENT */}
         {/* ================================================= */}
@@ -48,14 +76,43 @@ export default function AIHospitalHeroSection() {
         <div
           data-aos="fade-right"
           data-aos-duration="900"
-          className="order-2 flex w-full flex-col justify-center lg:order-1"
+          className="
+            order-2
+            flex
+            w-full
+            min-w-0
+            flex-col
+            justify-center
+            lg:order-1
+          "
         >
           {/* Badge */}
 
           <span
             data-aos="fade-up"
             data-aos-delay="100"
-            className="inline-flex w-fit items-center rounded-full border border-[#3E7BD6]/30 bg-white/[0.025] px-4 py-2 text-[9px] font-semibold uppercase tracking-[0.22em] text-[#29B6F0] backdrop-blur-sm sm:px-5 sm:text-[10px] sm:tracking-[0.26em] md:text-[11px]"
+            className="
+              inline-flex
+              w-fit
+              items-center
+              rounded-full
+              border
+              border-[#3E7BD6]/30
+              bg-white/[0.025]
+              px-3.5
+              py-1.5
+              text-[9px]
+              font-semibold
+              uppercase
+              tracking-[0.22em]
+              text-[#29B6F0]
+              backdrop-blur-sm
+              sm:px-4
+              sm:py-2
+              sm:text-[10px]
+              sm:tracking-[0.26em]
+              md:text-[11px]
+            "
           >
             AI Healthcare Case Study
           </span>
@@ -65,13 +122,33 @@ export default function AIHospitalHeroSection() {
           <h1
             data-aos="fade-up"
             data-aos-delay="150"
-            className="mt-5 max-w-[620px] text-[38px] font-black leading-[1.05] tracking-tight text-white sm:mt-6 sm:text-[46px] md:text-[52px] lg:text-[58px] xl:text-[66px]"
+            className="
+              mt-4
+              max-w-[620px]
+              text-[34px]
+              font-black
+              leading-[1.06]
+              tracking-tight
+              text-white
+              sm:mt-5
+              sm:text-[42px]
+              md:text-[50px]
+              lg:mt-6
+              lg:text-[56px]
+              xl:text-[64px]
+            "
           >
             AI in
 
             <br />
 
-            <span className="bg-[linear-gradient(135deg,#29B6F0_0%,#3E7BD6_35%,#7A4FD1_70%,#B93FC9_100%)] bg-clip-text text-transparent">
+            <span
+              className="
+                bg-[linear-gradient(135deg,#29B6F0_0%,#3E7BD6_35%,#7A4FD1_70%,#B93FC9_100%)]
+                bg-clip-text
+                text-transparent
+              "
+            >
               Real Hospitals
             </span>
           </h1>
@@ -81,7 +158,17 @@ export default function AIHospitalHeroSection() {
           <div
             data-aos="zoom-in"
             data-aos-delay="250"
-            className="mt-5 h-[3px] w-20 rounded-full bg-[linear-gradient(135deg,#29B6F0,#3E7BD6,#7A4FD1,#B93FC9)] sm:mt-6 sm:w-24 sm:h-[4px]"
+            className="
+              mt-4
+              h-[3px]
+              w-16
+              rounded-full
+              bg-[linear-gradient(135deg,#29B6F0,#3E7BD6,#7A4FD1,#B93FC9)]
+              sm:mt-5
+              sm:w-20
+              md:w-24
+              md:h-[4px]
+            "
           />
 
           {/* Description */}
@@ -89,7 +176,21 @@ export default function AIHospitalHeroSection() {
           <p
             data-aos="fade-up"
             data-aos-delay="350"
-            className="mt-6 max-w-[560px] text-[14px] leading-7 text-[#D4D4D8] sm:mt-7 sm:text-[15px] sm:leading-7 md:text-[16px] md:leading-8 lg:text-lg lg:leading-9"
+            className="
+              mt-5
+              max-w-[560px]
+              text-[14px]
+              leading-6
+              text-[#D4D4D8]
+              sm:mt-6
+              sm:text-[15px]
+              sm:leading-7
+              md:text-[16px]
+              md:leading-8
+              lg:mt-7
+              lg:text-lg
+              lg:leading-9
+            "
           >
             BeaverTek partnered with healthcare providers to build an
             enterprise AI platform that transforms patient intake,
@@ -103,12 +204,48 @@ export default function AIHospitalHeroSection() {
           <div
             data-aos="fade-up"
             data-aos-delay="450"
-            className="mt-8 flex w-full flex-col gap-3 sm:mt-9 sm:flex-row sm:gap-4"
+            className="
+              mt-6
+              flex
+              w-full
+              flex-col
+              gap-2.5
+              sm:mt-8
+              sm:flex-row
+              sm:gap-3
+              md:gap-4
+            "
           >
             <Link
               href="#AIcasestudytwo"
               onClick={handleDiscussClick}
-              className="inline-flex w-full items-center justify-center rounded-full bg-[linear-gradient(135deg,#29B6F0,#3E7BD6,#7A4FD1,#B93FC9)] px-6 py-3.5 text-sm font-semibold text-white shadow-[0_16px_35px_rgba(41,182,240,.22)] transition duration-300 hover:scale-[1.02] sm:w-auto sm:px-8 sm:py-4 sm:hover:scale-105"
+              className="
+                inline-flex
+                w-full
+                max-w-[210px]
+                items-center
+                justify-center
+                self-start
+                rounded-full
+                bg-[linear-gradient(135deg,#29B6F0,#3E7BD6,#7A4FD1,#B93FC9)]
+                px-5
+                py-3
+                text-[13px]
+                font-semibold
+                text-white
+                shadow-[0_16px_35px_rgba(41,182,240,.22)]
+                transition
+                duration-300
+                hover:scale-[1.02]
+                sm:w-auto
+                sm:max-w-none
+                sm:px-7
+                sm:py-3.5
+                sm:text-sm
+                sm:hover:scale-105
+                md:px-8
+                md:py-4
+              "
             >
               Discuss Your Project
 
@@ -117,9 +254,36 @@ export default function AIHospitalHeroSection() {
 
             <Link
               href="/customers/casestudyoverall"
-              className="inline-flex w-full items-center justify-center rounded-full border border-[#2A2A30] bg-white/[0.025] px-6 py-3.5 text-sm font-semibold text-white backdrop-blur-sm transition duration-300 hover:border-[#29B6F0] sm:w-auto sm:px-8 sm:py-4"
+              className="
+                inline-flex
+                w-full
+                max-w-[210px]
+                items-center
+                justify-center
+                self-start
+                rounded-full
+                border
+                border-[#2A2A30]
+                bg-white/[0.025]
+                px-5
+                py-3
+                text-[13px]
+                font-semibold
+                text-white
+                backdrop-blur-sm
+                transition
+                duration-300
+                hover:border-[#29B6F0]
+                sm:w-auto
+                sm:max-w-none
+                sm:px-7
+                sm:py-3.5
+                sm:text-sm
+                md:px-8
+                md:py-4
+              "
             >
-              View Case Studies
+              View All Case Studies
             </Link>
           </div>
         </div>
@@ -132,17 +296,50 @@ export default function AIHospitalHeroSection() {
           data-aos="fade-left"
           data-aos-duration="900"
           data-aos-delay="150"
-          className="order-1 flex w-full justify-center lg:order-2 lg:justify-end"
+          className="
+            order-1
+            flex
+            w-full
+            min-w-0
+            justify-center
+            lg:order-2
+            lg:justify-end
+          "
         >
-          <div className="w-full max-w-[650px]">
-            <div className="overflow-hidden rounded-[24px] border border-[#2A2A30] bg-[#121212] shadow-[0_25px_70px_rgba(0,0,0,.38)] sm:rounded-[28px] lg:rounded-[34px]">
+          <div
+            className="
+              w-full
+              max-w-[650px]
+            "
+          >
+            <div
+              className="
+                overflow-hidden
+                rounded-[20px]
+                border
+                border-[#2A2A30]
+                bg-[#121212]
+                shadow-[0_20px_60px_rgba(0,0,0,.38)]
+                sm:rounded-[24px]
+                md:rounded-[28px]
+                lg:rounded-[32px]
+              "
+            >
               <Image
                 src="/home/abouthero1.png"
                 alt="AI in Real Hospitals"
                 width={650}
                 height={500}
                 priority
-                className="block h-auto w-full object-cover transition duration-700 hover:scale-105"
+                className="
+                  block
+                  h-auto
+                  w-full
+                  object-cover
+                  transition
+                  duration-700
+                  hover:scale-105
+                "
               />
             </div>
           </div>

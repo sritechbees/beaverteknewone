@@ -8,7 +8,7 @@ function Datathatwhowewrok() {
                     WHO WE WORK WITH
    ========================================================== */}
 
-      <section className="relative overflow-hidden bg-[#000000] py-16 sm:py-20 lg:py-24">
+      <section className="relative overflow-hidden bg-[#000000] py-16 sm:py-16 lg:py-12">
         {/* Background */}
         <div className="absolute inset-0">
           <div className="absolute -left-40 top-0 h-[30rem] w-[30rem] rounded-full bg-[#29B6F0]/10 blur-[170px]" />

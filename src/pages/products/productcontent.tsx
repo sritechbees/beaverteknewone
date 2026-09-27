@@ -635,9 +635,9 @@ export default function Productcontent() {
     overflow-hidden
     bg-[#000000]
     py-9
-    sm:py-11
-    md:py-12
-    lg:py-14
+    sm:py-13
+    md:py-14
+    lg:py-16
   "
 >
   {/* =================================================
@@ -1099,98 +1099,7 @@ export default function Productcontent() {
       </div>
     </div>
 
-    {/* =================================================
-        BOTTOM STATS
-    ================================================= */}
-
-    <div
-      data-aos="fade-up"
-      data-aos-duration="900"
-      data-aos-delay="300"
-      className="
-        mt-7
-        grid
-        grid-cols-2
-        gap-y-5
-        rounded-[20px]
-        border
-        border-[#2A2A30]
-        bg-[#121212]
-        px-4
-        py-5
-        sm:mt-8
-        sm:gap-y-6
-        sm:px-6
-        sm:py-6
-        lg:mt-9
-        lg:grid-cols-4
-        lg:gap-4
-      "
-    >
-      {/* Stat 1 */}
-
-      <div
-        data-aos="zoom-in"
-        data-aos-delay="400"
-        className="text-center"
-      >
-        <h3 className="text-2xl font-black text-[#29B6F0] sm:text-3xl">
-          10+
-        </h3>
-
-        <p className="mt-1 text-xs text-[#A0A0A8] sm:text-sm">
-          Hospitals
-        </p>
-      </div>
-
-      {/* Stat 2 */}
-
-      <div
-        data-aos="zoom-in"
-        data-aos-delay="470"
-        className="text-center"
-      >
-        <h3 className="text-2xl font-black text-[#3E7BD6] sm:text-3xl">
-          50K+
-        </h3>
-
-        <p className="mt-1 text-xs text-[#A0A0A8] sm:text-sm">
-          Patients
-        </p>
-      </div>
-
-      {/* Stat 3 */}
-
-      <div
-        data-aos="zoom-in"
-        data-aos-delay="540"
-        className="text-center"
-      >
-        <h3 className="text-2xl font-black text-[#7A4FD1] sm:text-3xl">
-          24/7
-        </h3>
-
-        <p className="mt-1 text-xs text-[#A0A0A8] sm:text-sm">
-          Monitoring
-        </p>
-      </div>
-
-      {/* Stat 4 */}
-
-      <div
-        data-aos="zoom-in"
-        data-aos-delay="610"
-        className="text-center"
-      >
-        <h3 className="text-2xl font-black text-[#B93FC9] sm:text-3xl">
-          AI
-        </h3>
-
-        <p className="mt-1 text-xs text-[#A0A0A8] sm:text-sm">
-          Automation
-        </p>
-      </div>
-    </div>
+    
   </div>
 </section>
 

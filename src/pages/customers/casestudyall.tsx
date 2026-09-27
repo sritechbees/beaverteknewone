@@ -307,7 +307,7 @@ export default function Casestudyall() {
             ================================================= */}
 
             <Link
-              href="/services/serviceshero"
+              href="/services/servicesherosection"
               className="
                 group
                 inline-flex

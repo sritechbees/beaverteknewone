@@ -129,8 +129,8 @@ export default function HeroSection() {
               {/* Explore Analytics */}
 
               <Link
-                href="#content"
-                className="inline-flex items-center justify-center gap-2 rounded-lg bg-gradient-to-r from-[#29B6F0] via-[#3E7BD6] via-[#7A4FD1] to-[#B93FC9] px-5 py-2.5 text-xs font-semibold text-white shadow-[0_8px_25px_rgba(62,123,214,.18)] transition-all duration-300 hover:-translate-y-0.5 hover:scale-[1.02] hover:shadow-[0_10px_30px_rgba(62,123,214,.28)] sm:px-5 sm:py-2.5 sm:text-sm"
+                href="#seeyourdatasection"
+                className="inline-flex w-full max-w-[190px] items-center justify-center gap-2 rounded-lg bg-gradient-to-r from-[#29B6F0] via-[#3E7BD6] via-[#7A4FD1] to-[#B93FC9] px-5 py-2.5 text-xs font-semibold text-white shadow-[0_8px_25px_rgba(62,123,214,.18)] transition-all duration-300 hover:-translate-y-0.5 hover:scale-[1.02] hover:shadow-[0_10px_30px_rgba(62,123,214,.28)] sm:w-auto sm:max-w-none sm:px-5 sm:py-2.5 sm:text-sm"
               >
                 Explore Analytics
                 <ArrowRight className="h-3.5 w-3.5 sm:h-4 sm:w-4" />
@@ -140,7 +140,7 @@ export default function HeroSection() {
 
               <Link
                 href="/contact/contacthero"
-                className="inline-flex items-center justify-center rounded-lg border border-white/20 bg-white/10 px-5 py-2.5 text-xs font-semibold text-white backdrop-blur-md transition-all duration-300 hover:border-[#29B6F0]/60 hover:bg-white/15 sm:px-5 sm:py-2.5 sm:text-sm"
+                className="inline-flex w-full max-w-[190px] items-center justify-center rounded-lg border border-white/20 bg-white/10 px-5 py-2.5 text-xs font-semibold text-white backdrop-blur-md transition-all duration-300 hover:border-[#29B6F0]/60 hover:bg-white/15 sm:w-auto sm:max-w-none sm:px-5 sm:py-2.5 sm:text-sm"
               >
                 Contact Us
               </Link>
@@ -164,11 +164,19 @@ export default function HeroSection() {
       </section>
 
       {/* ================= CONTENT ================= */}
-<SeeYourDataSection/>
-<Whatislooklike/>
-<Pipeline/>
-<SeeYourDataContent/>
-     
+
+      <section
+        id="seeyourdatasection"
+        className="scroll-mt-20"
+      >
+        <SeeYourDataSection />
+      </section>
+
+      <Whatislooklike />
+
+      <Pipeline />
+
+      <SeeYourDataContent />
     </App_layout>
   );
 }

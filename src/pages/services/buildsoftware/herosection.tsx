@@ -103,7 +103,7 @@ export default function HeroSection() {
             >
               <Link
                 href="/contact/contacthero"
-                className="inline-flex w-full items-center justify-center gap-2.5 rounded-lg bg-gradient-to-r from-[#29B6F0] via-[#3E7BD6] via-[#7A4FD1] to-[#B93FC9] px-5 py-3 text-sm font-semibold text-white shadow-[0_0_30px_rgba(62,123,214,.28)] transition-all duration-300 hover:scale-[1.03] hover:shadow-[0_0_45px_rgba(185,63,201,.3)] sm:w-auto sm:px-6 sm:py-3"
+                className="inline-flex w-[82%] max-w-[190px] items-center justify-center gap-2.5 rounded-lg bg-gradient-to-r from-[#29B6F0] via-[#3E7BD6] via-[#7A4FD1] to-[#B93FC9] px-5 py-3 text-sm font-semibold text-white shadow-[0_0_30px_rgba(62,123,214,.28)] transition-all duration-300 hover:scale-[1.03] hover:shadow-[0_0_45px_rgba(185,63,201,.3)] sm:w-auto sm:max-w-none sm:px-6 sm:py-3"
               >
                 Start Your Project
 
@@ -111,10 +111,10 @@ export default function HeroSection() {
               </Link>
 
               <Link
-                href="/services/serviceshero"
-                className="inline-flex w-full items-center justify-center rounded-lg border border-[#3E7BD6]/40 bg-white/5 px-5 py-3 text-sm font-semibold text-white backdrop-blur-md transition-all duration-300 hover:border-[#29B6F0] hover:bg-white/10 sm:w-auto sm:px-6 sm:py-3"
+                href="#buildsoftwarecontent"
+                className="inline-flex w-[82%] max-w-[190px] items-center justify-center rounded-lg border border-[#3E7BD6]/40 bg-white/5 px-5 py-3 text-sm font-semibold text-white backdrop-blur-md transition-all duration-300 hover:border-[#29B6F0] hover:bg-white/10 sm:w-auto sm:max-w-none sm:px-6 sm:py-3"
               >
-                Explore Services
+                Explore More
               </Link>
             </div>
 
@@ -132,14 +132,19 @@ export default function HeroSection() {
           </div>
         </div>
       </section>
-      <BuildSoftwareContent/>
-      <WhatIsLookLike/>
 
-      
+      {/* Build Software Content */}
+      <section
+        id="buildsoftwarecontent"
+        className="scroll-mt-16"
+      >
+        <BuildSoftwareContent />
+      </section>
+
+      <WhatIsLookLike />
 
       {/* Who This Is For */}
       <WhoThisIsFor />
     </App_layout>
   );
 }
-

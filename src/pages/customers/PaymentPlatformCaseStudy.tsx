@@ -244,7 +244,7 @@ export default function PaymentPlatformCaseStudy() {
         {/* =========================================================
             WHAT WE BUILT
         ========================================================= */}
-        <section className="relative mt-10 overflow-hidden sm:mt-12 lg:mt-16">
+        <section className="relative mt-12 overflow-hidden sm:mt-16 lg:mt-24">
           <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
             <div className="grid items-start gap-8 lg:grid-cols-12 lg:gap-12">
               {/* LEFT CONTENT */}
@@ -271,7 +271,7 @@ export default function PaymentPlatformCaseStudy() {
                     data-aos-delay="180"
                     className="mt-5 max-w-2xl text-base leading-7 text-[#D4D4D8] sm:text-lg sm:leading-8 lg:text-xl lg:leading-9"
                   >
-                    A purpose-built payment gateway integration platform —
+                    A purpose-built payment gateway integration platform 
                     designed, engineered, and now supported by
                     <span className="bg-[linear-gradient(135deg,#29B6F0,#3E7BD6,#7A4FD1,#B93FC9)] bg-clip-text font-bold text-transparent">
                       {" "}
@@ -333,7 +333,7 @@ export default function PaymentPlatformCaseStudy() {
         {/* =========================================================
             RESULTS
         ========================================================= */}
-        <section className="relative overflow-hidden py-10 sm:py-12 lg:py-14">
+        <section className="relative overflow-hidden py-10 sm:py-12 lg:py-20">
           <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
             {/* Header */}
             <div className="border-b border-white/[0.08] pb-6 sm:pb-7 lg:pb-8">
@@ -417,7 +417,7 @@ export default function PaymentPlatformCaseStudy() {
         {/* =========================================================
             WHY IT MATTERS
         ========================================================= */}
-        <section className="relative overflow-hidden py-10 sm:py-12 lg:py-16">
+        <section className="relative overflow-hidden py-10 sm:py-12 lg:py-8">
           <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
             <div className="grid items-center gap-7 lg:grid-cols-12 lg:gap-10">
               {/* LEFT */}
