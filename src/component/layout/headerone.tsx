@@ -72,33 +72,18 @@ const services = [
 ========================================================= */
 
 const navItems = [
-  {
-    name: "Home",
-    href: "/",
-  },
-  {
-    name: "About",
-    href: "/about_us/abouthero",
-  },
-  {
-    name: "Customers",
-    href: "/customers/casestudyhero",
-  },
-  {
-    name: "Products",
-    href: "/products/producthero",
-  },
-  {
-    name: "Contact",
-    href: "/contact/contacthero",
-  },
+  { name: "Home", href: "/" },
+  { name: "About", href: "/about_us/abouthero" },
+  { name: "Customers", href: "/customers/casestudyhero" },
+  { name: "Products", href: "/products/producthero" },
+  { name: "Contact", href: "/contact/contacthero" },
 ];
 
 /* =========================================================
    HEADER
 ========================================================= */
 
-function Header() {
+function Headerone() {
   const pathname = usePathname();
 
   const [menuOpen, setMenuOpen] = useState(false);
@@ -109,47 +94,14 @@ function Header() {
   ======================================================= */
 
   const isActive = (href: string) => {
-    /* -------------------------------------------------------
-       HOME
-       Only active on exact homepage.
-    ------------------------------------------------------- */
-
     if (href === "/") {
       return pathname === "/";
     }
 
-    /* -------------------------------------------------------
-       ALL OTHER NAV ITEMS
-       Active on exact page + nested pages.
-       
-       Example:
-       /customers/casestudyhero
-       /customers/casestudyhero/example
-       
-       Both will keep Customers active.
-    ------------------------------------------------------- */
-
-    return (
-      pathname === href ||
-      pathname.startsWith(`${href}/`)
-    );
+    return pathname === href || pathname.startsWith(`${href}/`);
   };
 
-  /* =======================================================
-     SERVICES ACTIVE
-     
-     Any page under /services will keep Services active.
-     
-     Example:
-     /services/servicesherosection
-     /services/finops/herosection
-     /services/devops/herosection
-     /services/dataanalytics/herosection
-  ======================================================= */
-
-  const servicesActive =
-    pathname === "/services" ||
-    pathname.startsWith("/services/");
+  const servicesActive = pathname.startsWith("/services");
 
   /* =======================================================
      CLOSE MOBILE MENU
@@ -175,10 +127,7 @@ function Header() {
     document.addEventListener("keydown", handleEscape);
 
     return () => {
-      document.removeEventListener(
-        "keydown",
-        handleEscape
-      );
+      document.removeEventListener("keydown", handleEscape);
     };
   }, []);
 
@@ -235,8 +184,7 @@ function Header() {
               px-4
               sm:h-[76px]
               sm:px-6
-              md:h-[80px]
-              md:px-7
+              md:px-8
               lg:h-[82px]
               lg:px-10
               xl:px-12
@@ -259,7 +207,7 @@ function Header() {
               "
             >
               <Image
-                src="/home/logofooter.png"
+                src="/home/Logo option-2.png"
                 alt="BeaverTek"
                 width={175}
                 height={55}
@@ -272,27 +220,18 @@ function Header() {
                   duration-300
                   group-hover:scale-[1.02]
                   sm:w-[140px]
-                  md:w-[145px]
+                  md:w-[150px]
                   lg:w-[165px]
                 "
               />
             </Link>
 
             {/* =================================================
-                DESKTOP + TABLET NAVIGATION
-                
-                md = tablet and above
+                DESKTOP NAVIGATION
             ================================================== */}
 
-            <nav className="hidden items-center md:flex">
-              <div
-                className="
-                  flex
-                  items-center
-                  gap-0
-                  lg:gap-1
-                "
-              >
+            <nav className="hidden items-center lg:flex">
+              <div className="flex items-center gap-1">
                 {/* =================================================
                     HOME + ABOUT
                 ================================================== */}
@@ -307,14 +246,12 @@ function Header() {
                       className={`
                         relative
                         rounded-lg
-                        px-3
+                        px-4
                         py-2.5
-                        text-[14px]
+                        text-[15px]
                         font-medium
                         transition-all
                         duration-300
-                        lg:px-4
-                        lg:text-[15px]
                         ${
                           active
                             ? "text-white"
@@ -323,8 +260,6 @@ function Header() {
                       `}
                     >
                       {item.name}
-
-                      {/* ACTIVE INDICATOR */}
 
                       {active && (
                         <span
@@ -354,12 +289,8 @@ function Header() {
 
                 <div
                   className="relative"
-                  onMouseEnter={() =>
-                    setServicesOpen(true)
-                  }
-                  onMouseLeave={() =>
-                    setServicesOpen(false)
-                  }
+                  onMouseEnter={() => setServicesOpen(true)}
+                  onMouseLeave={() => setServicesOpen(false)}
                 >
                   <Link
                     href="/services/servicesherosection"
@@ -371,17 +302,14 @@ function Header() {
                       relative
                       flex
                       items-center
-                      gap-1
+                      gap-1.5
                       rounded-lg
-                      px-3
+                      px-4
                       py-2.5
-                      text-[14px]
+                      text-[15px]
                       font-medium
                       transition-all
                       duration-300
-                      lg:gap-1.5
-                      lg:px-4
-                      lg:text-[15px]
                       ${
                         servicesActive
                           ? "text-white"
@@ -398,15 +326,9 @@ function Header() {
                       className={`
                         transition-transform
                         duration-300
-                        ${
-                          servicesOpen
-                            ? "rotate-180"
-                            : ""
-                        }
+                        ${servicesOpen ? "rotate-180" : ""}
                       `}
                     />
-
-                    {/* ACTIVE INDICATOR */}
 
                     {servicesActive && (
                       <span
@@ -427,7 +349,7 @@ function Header() {
                   </Link>
 
                   {/* =================================================
-                      DESKTOP / TABLET SERVICES DROPDOWN
+                      DESKTOP SERVICES DROPDOWN
                   ================================================== */}
 
                   <div
@@ -435,12 +357,11 @@ function Header() {
                       absolute
                       left-1/2
                       top-full
-                      w-[560px]
+                      w-[650px]
                       -translate-x-1/2
                       pt-4
                       transition-all
                       duration-300
-                      lg:w-[650px]
                       ${
                         servicesOpen
                           ? "pointer-events-auto visible translate-y-0 opacity-100"
@@ -475,8 +396,7 @@ function Header() {
                         </p>
 
                         <p className="mt-1 text-sm font-medium text-white/80">
-                          Technology solutions built for your
-                          business
+                          Technology solutions built for your business
                         </p>
                       </div>
 
@@ -485,9 +405,7 @@ function Header() {
                       <div className="grid grid-cols-2 gap-1.5">
                         {services.map((service) => {
                           const Icon = service.icon;
-                          const active = isActive(
-                            service.href
-                          );
+                          const active = isActive(service.href);
 
                           return (
                             <Link
@@ -603,14 +521,12 @@ function Header() {
                       className={`
                         relative
                         rounded-lg
-                        px-3
+                        px-4
                         py-2.5
-                        text-[14px]
+                        text-[15px]
                         font-medium
                         transition-all
                         duration-300
-                        lg:px-4
-                        lg:text-[15px]
                         ${
                           active
                             ? "text-white"
@@ -619,8 +535,6 @@ function Header() {
                       `}
                     >
                       {item.name}
-
-                      {/* ACTIVE INDICATOR */}
 
                       {active && (
                         <span
@@ -649,27 +563,23 @@ function Header() {
             ================================================== */}
 
             <Link
-              href="/contact/herosection"
+              href="/contact/contacthero"
               className="
                 group
                 hidden
                 items-center
-                gap-1.5
+                gap-2
                 rounded-xl
-                px-4
-                py-2.5
-                text-[13px]
+                px-5
+                py-3
+                text-[14px]
                 font-semibold
                 text-white
                 shadow-[0_8px_30px_rgba(41,182,240,0.12)]
                 transition-all
                 duration-300
                 hover:scale-[1.02]
-                md:flex
-                lg:gap-2
-                lg:px-5
-                lg:py-3
-                lg:text-[14px]
+                lg:flex
               "
               style={{
                 background: GRADIENT,
@@ -678,34 +588,25 @@ function Header() {
               <span>Let's Talk</span>
 
               <ArrowUpRight
-                size={15}
+                size={16}
                 strokeWidth={2}
                 className="
                   transition-transform
                   duration-300
                   group-hover:translate-x-0.5
                   group-hover:-translate-y-0.5
-                  lg:h-4
-                  lg:w-4
                 "
               />
             </Link>
 
             {/* =================================================
                 MOBILE MENU BUTTON
-                Only below md
             ================================================== */}
 
             <button
               type="button"
-              onClick={() =>
-                setMenuOpen((prev) => !prev)
-              }
-              aria-label={
-                menuOpen
-                  ? "Close menu"
-                  : "Open menu"
-              }
+              onClick={() => setMenuOpen((prev) => !prev)}
+              aria-label={menuOpen ? "Close menu" : "Open menu"}
               aria-expanded={menuOpen}
               className="
                 flex
@@ -721,7 +622,7 @@ function Header() {
                 transition-all
                 duration-300
                 hover:bg-white/[0.07]
-                md:hidden
+                lg:hidden
               "
             >
               {menuOpen ? (
@@ -734,7 +635,6 @@ function Header() {
 
           {/* ===================================================
               MOBILE MENU
-              Only below md
           ==================================================== */}
 
           <div
@@ -743,7 +643,7 @@ function Header() {
               transition-all
               duration-300
               ease-out
-              md:hidden
+              lg:hidden
               ${
                 menuOpen
                   ? "max-h-[calc(100vh-72px)] opacity-100"
@@ -761,12 +661,11 @@ function Header() {
                 pb-5
                 pt-4
                 sm:px-6
+                md:px-8
               "
             >
               <div className="space-y-1">
-                {/* =================================================
-                    HOME + ABOUT
-                ================================================== */}
+                {/* HOME + ABOUT */}
 
                 {navItems.slice(0, 2).map((item) => {
                   const active = isActive(item.href);
@@ -810,6 +709,7 @@ function Header() {
 
                 {/* =================================================
                     MOBILE SERVICES
+                    CLICK = /services/servicesherosection
                 ================================================== */}
 
                 <div>
@@ -841,18 +741,16 @@ function Header() {
                       <span>Services</span>
                     </Link>
 
-                    {/* DROPDOWN TOGGLE */}
+                    {/* Dropdown toggle */}
 
                     <button
                       type="button"
                       onClick={() =>
-                        setServicesOpen(
-                          (prev) => !prev
-                        )
+                        setServicesOpen((prev) => !prev)
                       }
                       aria-label="Toggle services"
                       aria-expanded={servicesOpen}
-                      className="
+                      className={`
                         -ml-12
                         mr-1
                         flex
@@ -865,7 +763,7 @@ function Header() {
                         transition-all
                         duration-300
                         hover:text-white
-                      "
+                      `}
                     >
                       <ChevronDown
                         size={17}
@@ -882,8 +780,6 @@ function Header() {
                       />
                     </button>
                   </div>
-
-                  {/* MOBILE SERVICE LIST */}
 
                   <div
                     className={`
@@ -980,9 +876,7 @@ function Header() {
                   </div>
                 </div>
 
-                {/* =================================================
-                    CUSTOMERS / PRODUCTS / CONTACT
-                ================================================== */}
+                {/* CUSTOMERS / PRODUCTS / CONTACT */}
 
                 {navItems.slice(2).map((item) => {
                   const active = isActive(item.href);
@@ -1030,13 +924,12 @@ function Header() {
               ================================================== */}
 
               <Link
-                href="/contact/herosection"
+                href="/contact/contacthero"
                 onClick={closeMobileMenu}
                 className="
                   mt-4
                   flex
-                  w-fit
-                
+                  w-full
                   items-center
                   justify-center
                   gap-2
@@ -1071,16 +964,9 @@ function Header() {
           HEADER SPACER
       ======================================================= */}
 
-      <div
-        className="
-          h-[72px]
-          sm:h-[76px]
-          md:h-[80px]
-          lg:h-[82px]
-        "
-      />
+      <div className="h-[72px] sm:h-[76px] lg:h-[82px]" />
     </>
   );
 }
 
-export default Header;
+export default Headerone;

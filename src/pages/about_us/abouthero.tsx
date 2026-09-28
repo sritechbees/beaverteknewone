@@ -12,6 +12,7 @@ import WhereWeAre from "./whereweare";
 import { useEffect } from "react";
 import AOS from "aos";
 import "aos/dist/aos.css";
+import Innovativeservices from "./innovativeservices";
 
 export default function AboutHero() {
   useEffect(() => {
@@ -579,6 +580,7 @@ export default function AboutHero() {
           />
         </div>
       </section>
+      <Innovativeservices/>
 
       {/* =========================================================
           ABOUT CONTENT
