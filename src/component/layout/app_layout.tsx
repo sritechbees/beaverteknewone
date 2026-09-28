@@ -1,6 +1,7 @@
 import React, { ReactNode } from 'react';
 import Header from './header';
 import Footer from './footer';
+import Headerone from './headerone';
 
 interface AppLayoutProps {
   children: ReactNode;
@@ -10,7 +11,7 @@ const App_layout = ({ children }: AppLayoutProps) => {
   return (
     <>
       <Header/>
-      <main className="pt-20 bg-[#000000]">
+      <main className="bg-[#000000]">
  {children}
       </main>
      
