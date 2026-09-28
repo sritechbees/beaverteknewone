@@ -1,6 +1,7 @@
 import React, { ReactNode } from 'react';
 import Header from './header';
 import Footer from './footer';
+import Headerone from './headerone';
 
 
 interface AppLayoutProps {
