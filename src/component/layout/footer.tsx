@@ -170,7 +170,7 @@ export default function Footer() {
                 />
 
                 <Image
-                  src="/home/logofooter.png"
+                  src="/home/logoheader1.png"
                   alt="BeaverTek"
                   width={210}
                   height={110}

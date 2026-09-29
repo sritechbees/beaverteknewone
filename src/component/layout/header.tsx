@@ -259,7 +259,7 @@ function Header() {
               "
             >
               <Image
-                src="/home/logofooter.png"
+                src="/home/logoheader1.png"
                 alt="BeaverTek"
                 width={175}
                 height={55}
