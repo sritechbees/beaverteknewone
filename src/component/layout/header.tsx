@@ -1084,31 +1084,39 @@ function Header() {
                     MOBILE LET'S TALK
                 ================================================== */}
 
-                <Link
-                  href="/contact/herosection"
-                  onClick={closeMobileMenu}
-                  className="
-                    mt-5
-                    flex
-                    w-full
-                    items-center
-                    justify-center
-                    gap-2
-                    rounded-xl
-                    px-5
-                    py-3.5
-                    text-[14px]
-                    font-semibold
-                    text-white
-                    shadow-[0_10px_35px_rgba(41,182,240,0.12)]
-                    transition-all
-                    duration-300
-                    active:scale-[0.98]
-                  "
-                  style={{
-                    background: GRADIENT,
-                  }}
-                >
+                <Link 
+  href="/contact/herosection" 
+  onClick={closeMobileMenu} 
+  className=" 
+    mt-5 
+    inline-flex 
+    w-auto 
+    max-w-fit
+    items-center 
+    justify-center 
+    gap-2 
+    self-start
+    rounded-xl 
+    px-5 
+    py-3.5 
+    text-[14px] 
+    font-semibold 
+    text-white 
+    shadow-[0_10px_35px_rgba(41,182,240,0.12)] 
+    transition-all 
+    duration-300 
+    active:scale-[0.98] 
+    sm:px-6 
+    sm:py-3.5 
+    md:px-6 
+    md:py-3.5 
+    lg:px-6 
+    lg:py-3.5 
+  " 
+  style={{ 
+    background: GRADIENT, 
+  }} 
+>
                   <span>Let's Talk</span>
 
                   <ArrowUpRight

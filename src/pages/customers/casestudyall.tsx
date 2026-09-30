@@ -258,14 +258,14 @@ export default function Casestudyall() {
             {/* =================================================
                 PRIMARY - SMOOTH SCROLL
             ================================================= */}
-
-           <button
+<button
   type="button"
   onClick={scrollToCaseStudy}
   className="
     group
     inline-flex
-    w-full
+    w-auto
+    shrink-0
     items-center
     justify-center
     rounded-full
@@ -283,7 +283,6 @@ export default function Casestudyall() {
     duration-500
     hover:-translate-y-1
     hover:shadow-[0_0_45px_rgba(185,63,201,0.35)]
-    sm:w-auto
     sm:px-7
     sm:py-3.5
   "
@@ -302,54 +301,54 @@ export default function Casestudyall() {
   />
 </button>
 
-            {/* =================================================
-                SECONDARY
-            ================================================= */}
+{/* =================================================
+    SECONDARY
+================================================= */}
 
-            <Link
-              href="/services/servicesherosection"
-              className="
-                group
-                inline-flex
-                w-full
-                items-center
-                justify-center
-                rounded-full
-                border
-                border-white/20
-                bg-black/30
-                px-6
-                py-3
-                text-sm
-                font-semibold
-                text-white
-                shadow-[0_8px_25px_rgba(0,0,0,0.18)]
-                backdrop-blur-xl
-                transition-all
-                duration-500
-                hover:-translate-y-1
-                hover:border-[#29B6F0]/60
-                hover:bg-black/45
-                sm:w-auto
-                sm:px-7
-                sm:py-3.5
-              "
-            >
-              Explore Services
+<Link
+  href="/services/servicesherosection"
+  className="
+    group
+    inline-flex
+    w-auto
+    shrink-0
+    items-center
+    justify-center
+    rounded-full
+    border
+    border-white/20
+    bg-black/30
+    px-6
+    py-3
+    text-sm
+    font-semibold
+    text-white
+    shadow-[0_8px_25px_rgba(0,0,0,0.18)]
+    backdrop-blur-xl
+    transition-all
+    duration-500
+    hover:-translate-y-1
+    hover:border-[#29B6F0]/60
+    hover:bg-black/45
+    sm:px-7
+    sm:py-3.5
+  "
+>
+  Explore Services
 
-              <ArrowRight
-                className="
-                  ml-2.5
-                  h-4
-                  w-4
-                  opacity-0
-                  transition-all
-                  duration-300
-                  group-hover:translate-x-1
-                  group-hover:opacity-100
-                "
-              />
-            </Link>
+  <ArrowRight
+    className="
+      ml-2.5
+      h-4
+      w-4
+      opacity-0
+      transition-all
+      duration-300
+      group-hover:translate-x-1
+      group-hover:opacity-100
+    "
+  />
+</Link>
           </div>
 
           {/* =================================================

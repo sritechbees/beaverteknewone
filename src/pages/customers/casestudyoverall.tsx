@@ -141,14 +141,14 @@ export default function CaseStudyoverall() {
 
                   </div>
 
-                  <Link
-                    href="/customers/PaymentPlatformCaseStudy"
-                    className="w-full lg:w-auto"
-                  >
-                    <button
-                      type="button"
-                      className="group flex w-full items-center justify-center rounded-full bg-gradient-to-r from-[#29B6F0] via-[#3E7BD6] via-[#7A4FD1] to-[#B93FC9] px-7 py-3 text-sm font-semibold text-white shadow-[0_0_30px_rgba(62,123,214,.22)] transition-all duration-300 hover:scale-[1.02] hover:shadow-[0_0_45px_rgba(185,63,201,.25)] sm:px-8 sm:py-3.5 lg:w-auto"
-                    >
+                 <Link 
+  href="/customers/PaymentPlatformCaseStudy" 
+  className="w-auto shrink-0" 
+>
+  <button 
+    type="button" 
+    className="group inline-flex w-auto shrink-0 items-center justify-center rounded-full bg-gradient-to-r from-[#29B6F0] via-[#3E7BD6] via-[#7A4FD1] to-[#B93FC9] px-7 py-3 text-sm font-semibold text-white shadow-[0_0_30px_rgba(62,123,214,.22)] transition-all duration-300 hover:scale-[1.02] hover:shadow-[0_0_45px_rgba(185,63,201,.25)] sm:px-8 sm:py-3.5"
+  >
                       View More
                       <span className="ml-2 inline-block transition-transform duration-300 group-hover:translate-x-2">
                         →
@@ -275,14 +275,14 @@ export default function CaseStudyoverall() {
 
                   </div>
 
-                  <Link
-                    href="/customers/AIcasestudytwo"
-                    className="w-full lg:w-auto"
-                  >
-                    <button
-                      type="button"
-                      className="group flex w-full items-center justify-center rounded-full bg-gradient-to-r from-[#29B6F0] via-[#3E7BD6] via-[#7A4FD1] to-[#B93FC9] px-7 py-3 text-sm font-semibold text-white shadow-[0_0_30px_rgba(62,123,214,.22)] transition-all duration-300 hover:scale-[1.02] hover:shadow-[0_0_45px_rgba(185,63,201,.25)] sm:px-8 sm:py-3.5 lg:w-auto"
-                    >
+                  <Link 
+  href="/customers/AIcasestudytwo" 
+  className="w-auto shrink-0" 
+>
+  <button 
+    type="button" 
+    className="group inline-flex w-auto shrink-0 items-center justify-center rounded-full bg-gradient-to-r from-[#29B6F0] via-[#3E7BD6] via-[#7A4FD1] to-[#B93FC9] px-7 py-3 text-sm font-semibold text-white shadow-[0_0_30px_rgba(62,123,214,.22)] transition-all duration-300 hover:scale-[1.02] hover:shadow-[0_0_45px_rgba(185,63,201,.25)] sm:px-8 sm:py-3.5"
+  >
                       View More
                       <span className="ml-2 inline-block transition-transform duration-300 group-hover:translate-x-2">
                         →
@@ -410,14 +410,14 @@ export default function CaseStudyoverall() {
 
                   </div>
 
-                  <Link
-                    href="/customers/datathatdecisionchallenge"
-                    className="w-full lg:w-auto"
-                  >
-                    <button
-                      type="button"
-                      className="group flex w-full items-center justify-center rounded-full bg-gradient-to-r from-[#29B6F0] via-[#3E7BD6] via-[#7A4FD1] to-[#B93FC9] px-7 py-3.5 text-sm font-semibold text-white shadow-[0_0_30px_rgba(62,123,214,.22)] transition-all duration-300 hover:scale-[1.02] hover:shadow-[0_0_45px_rgba(185,63,201,.25)] sm:px-8 sm:text-base lg:w-auto"
-                    >
+                 <Link 
+  href="/customers/datathatdecisionchallenge" 
+  className="w-auto shrink-0" 
+>
+  <button 
+    type="button" 
+    className="group inline-flex w-auto shrink-0 items-center justify-center rounded-full bg-gradient-to-r from-[#29B6F0] via-[#3E7BD6] via-[#7A4FD1] to-[#B93FC9] px-7 py-3.5 text-sm font-semibold text-white shadow-[0_0_30px_rgba(62,123,214,.22)] transition-all duration-300 hover:scale-[1.02] hover:shadow-[0_0_45px_rgba(185,63,201,.25)] sm:px-8 sm:text-base"
+  >
                       View More
                       <span className="ml-2 inline-block transition-transform duration-300 group-hover:translate-x-2">
                         →
