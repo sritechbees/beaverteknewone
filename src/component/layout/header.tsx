@@ -72,26 +72,11 @@ const services = [
 ========================================================= */
 
 const navItems = [
-  {
-    name: "Home",
-    href: "/",
-  },
-  {
-    name: "About",
-    href: "/about_us/abouthero",
-  },
-  {
-    name: "Customers",
-    href: "/customers/casestudyhero",
-  },
-  {
-    name: "Products",
-    href: "/products/producthero",
-  },
-  {
-    name: "Contact",
-    href: "/contact/contacthero",
-  },
+  { name: "Home", href: "/" },
+  { name: "About", href: "/about_us/abouthero" },
+  { name: "Customers", href: "/customers/casestudyhero" },
+  { name: "Products", href: "/products/producthero" },
+  { name: "Contact", href: "/contact/herosection" },
 ];
 
 /* =========================================================
@@ -109,47 +94,14 @@ function Header() {
   ======================================================= */
 
   const isActive = (href: string) => {
-    /* -------------------------------------------------------
-       HOME
-       Only active on exact homepage.
-    ------------------------------------------------------- */
-
     if (href === "/") {
       return pathname === "/";
     }
 
-    /* -------------------------------------------------------
-       ALL OTHER NAV ITEMS
-       Active on exact page + nested pages.
-       
-       Example:
-       /customers/casestudyhero
-       /customers/casestudyhero/example
-       
-       Both will keep Customers active.
-    ------------------------------------------------------- */
-
-    return (
-      pathname === href ||
-      pathname.startsWith(`${href}/`)
-    );
+    return pathname === href || pathname.startsWith(`${href}/`);
   };
 
-  /* =======================================================
-     SERVICES ACTIVE
-     
-     Any page under /services will keep Services active.
-     
-     Example:
-     /services/servicesherosection
-     /services/finops/herosection
-     /services/devops/herosection
-     /services/dataanalytics/herosection
-  ======================================================= */
-
-  const servicesActive =
-    pathname === "/services" ||
-    pathname.startsWith("/services/");
+  const servicesActive = pathname.startsWith("/services");
 
   /* =======================================================
      CLOSE MOBILE MENU
@@ -167,18 +119,14 @@ function Header() {
   useEffect(() => {
     const handleEscape = (event: KeyboardEvent) => {
       if (event.key === "Escape") {
-        setMenuOpen(false);
-        setServicesOpen(false);
+        closeMobileMenu();
       }
     };
 
     document.addEventListener("keydown", handleEscape);
 
     return () => {
-      document.removeEventListener(
-        "keydown",
-        handleEscape
-      );
+      document.removeEventListener("keydown", handleEscape);
     };
   }, []);
 
@@ -198,10 +146,29 @@ function Header() {
     };
   }, [menuOpen]);
 
+  /* =======================================================
+     CLOSE MENU WHEN SCREEN BECOMES DESKTOP
+  ======================================================= */
+
+  useEffect(() => {
+    const handleResize = () => {
+      if (window.innerWidth >= 768) {
+        setMenuOpen(false);
+        setServicesOpen(false);
+      }
+    };
+
+    window.addEventListener("resize", handleResize);
+
+    return () => {
+      window.removeEventListener("resize", handleResize);
+    };
+  }, []);
+
   return (
     <>
       {/* =====================================================
-          FULL WIDTH HEADER
+          MAIN HEADER
       ===================================================== */}
 
       <header
@@ -215,7 +182,7 @@ function Header() {
         "
       >
         {/* ===================================================
-            HEADER INNER CONTENT
+            HEADER INNER
         ==================================================== */}
 
         <div
@@ -227,7 +194,6 @@ function Header() {
         >
           <div
             className="
-              relative
               flex
               h-[72px]
               items-center
@@ -236,7 +202,7 @@ function Header() {
               sm:h-[76px]
               sm:px-6
               md:h-[80px]
-              md:px-7
+              md:px-8
               lg:h-[82px]
               lg:px-10
               xl:px-12
@@ -272,27 +238,18 @@ function Header() {
                   duration-300
                   group-hover:scale-[1.02]
                   sm:w-[140px]
-                  md:w-[145px]
+                  md:w-[150px]
                   lg:w-[165px]
                 "
               />
             </Link>
 
             {/* =================================================
-                DESKTOP + TABLET NAVIGATION
-                
-                md = tablet and above
+                DESKTOP / TABLET NAVIGATION
             ================================================== */}
 
             <nav className="hidden items-center md:flex">
-              <div
-                className="
-                  flex
-                  items-center
-                  gap-0
-                  lg:gap-1
-                "
-              >
+              <div className="flex items-center gap-1">
                 {/* =================================================
                     HOME + ABOUT
                 ================================================== */}
@@ -324,8 +281,6 @@ function Header() {
                     >
                       {item.name}
 
-                      {/* ACTIVE INDICATOR */}
-
                       {active && (
                         <span
                           className="
@@ -348,18 +303,12 @@ function Header() {
 
                 {/* =================================================
                     SERVICES
-                    CLICK = /services/servicesherosection
-                    HOVER = DROPDOWN
                 ================================================== */}
 
                 <div
                   className="relative"
-                  onMouseEnter={() =>
-                    setServicesOpen(true)
-                  }
-                  onMouseLeave={() =>
-                    setServicesOpen(false)
-                  }
+                  onMouseEnter={() => setServicesOpen(true)}
+                  onMouseLeave={() => setServicesOpen(false)}
                 >
                   <Link
                     href="/services/servicesherosection"
@@ -371,7 +320,7 @@ function Header() {
                       relative
                       flex
                       items-center
-                      gap-1
+                      gap-1.5
                       rounded-lg
                       px-3
                       py-2.5
@@ -379,7 +328,6 @@ function Header() {
                       font-medium
                       transition-all
                       duration-300
-                      lg:gap-1.5
                       lg:px-4
                       lg:text-[15px]
                       ${
@@ -388,7 +336,6 @@ function Header() {
                           : "text-white/65 hover:text-white"
                       }
                     `}
-                    aria-label="Services"
                   >
                     <span>Services</span>
 
@@ -405,8 +352,6 @@ function Header() {
                         }
                       `}
                     />
-
-                    {/* ACTIVE INDICATOR */}
 
                     {servicesActive && (
                       <span
@@ -427,7 +372,7 @@ function Header() {
                   </Link>
 
                   {/* =================================================
-                      DESKTOP / TABLET SERVICES DROPDOWN
+                      DESKTOP SERVICES DROPDOWN
                   ================================================== */}
 
                   <div
@@ -435,12 +380,11 @@ function Header() {
                       absolute
                       left-1/2
                       top-full
-                      w-[560px]
+                      w-[620px]
                       -translate-x-1/2
                       pt-4
                       transition-all
                       duration-300
-                      lg:w-[650px]
                       ${
                         servicesOpen
                           ? "pointer-events-auto visible translate-y-0 opacity-100"
@@ -459,7 +403,7 @@ function Header() {
                         shadow-[0_25px_80px_rgba(0,0,0,0.7)]
                       "
                     >
-                      {/* DROPDOWN TITLE */}
+                      {/* DROPDOWN HEADER */}
 
                       <div
                         className="
@@ -470,17 +414,31 @@ function Header() {
                           pb-3
                         "
                       >
-                        <p className="text-[11px] font-semibold uppercase tracking-[0.2em] text-white/35">
+                        <p
+                          className="
+                            text-[11px]
+                            font-semibold
+                            uppercase
+                            tracking-[0.2em]
+                            text-white/35
+                          "
+                        >
                           What we do
                         </p>
 
-                        <p className="mt-1 text-sm font-medium text-white/80">
-                          Technology solutions built for your
-                          business
+                        <p
+                          className="
+                            mt-1
+                            text-sm
+                            font-medium
+                            text-white/80
+                          "
+                        >
+                          Technology solutions built for your business
                         </p>
                       </div>
 
-                      {/* SERVICES */}
+                      {/* SERVICES GRID */}
 
                       <div className="grid grid-cols-2 gap-1.5">
                         {services.map((service) => {
@@ -541,7 +499,14 @@ function Header() {
                               {/* TEXT */}
 
                               <div className="min-w-0 flex-1">
-                                <div className="flex items-start justify-between gap-2">
+                                <div
+                                  className="
+                                    flex
+                                    items-start
+                                    justify-between
+                                    gap-2
+                                  "
+                                >
                                   <h3
                                     className={`
                                       text-[13px]
@@ -577,7 +542,14 @@ function Header() {
                                   />
                                 </div>
 
-                                <p className="mt-1 text-[11px] leading-[1.5] text-white/38">
+                                <p
+                                  className="
+                                    mt-1
+                                    text-[11px]
+                                    leading-[1.5]
+                                    text-white/38
+                                  "
+                                >
                                   {service.desc}
                                 </p>
                               </div>
@@ -590,7 +562,7 @@ function Header() {
                 </div>
 
                 {/* =================================================
-                    CUSTOMERS / PRODUCTS / CONTACT
+                    CUSTOMERS + PRODUCTS + CONTACT
                 ================================================== */}
 
                 {navItems.slice(2).map((item) => {
@@ -619,8 +591,6 @@ function Header() {
                       `}
                     >
                       {item.name}
-
-                      {/* ACTIVE INDICATOR */}
 
                       {active && (
                         <span
@@ -654,7 +624,7 @@ function Header() {
                 group
                 hidden
                 items-center
-                gap-1.5
+                gap-2
                 rounded-xl
                 px-4
                 py-2.5
@@ -666,7 +636,6 @@ function Header() {
                 duration-300
                 hover:scale-[1.02]
                 md:flex
-                lg:gap-2
                 lg:px-5
                 lg:py-3
                 lg:text-[14px]
@@ -678,33 +647,34 @@ function Header() {
               <span>Let's Talk</span>
 
               <ArrowUpRight
-                size={15}
+                size={16}
                 strokeWidth={2}
                 className="
                   transition-transform
                   duration-300
                   group-hover:translate-x-0.5
                   group-hover:-translate-y-0.5
-                  lg:h-4
-                  lg:w-4
                 "
               />
             </Link>
 
             {/* =================================================
-                MOBILE MENU BUTTON
-                Only below md
+                MOBILE HAMBURGER
             ================================================== */}
 
             <button
               type="button"
-              onClick={() =>
-                setMenuOpen((prev) => !prev)
-              }
+              onClick={() => {
+                if (menuOpen) {
+                  closeMobileMenu();
+                } else {
+                  setMenuOpen(true);
+                }
+              }}
               aria-label={
                 menuOpen
-                  ? "Close menu"
-                  : "Open menu"
+                  ? "Close navigation menu"
+                  : "Open navigation menu"
               }
               aria-expanded={menuOpen}
               className="
@@ -725,343 +695,434 @@ function Header() {
               "
             >
               {menuOpen ? (
-                <X size={22} strokeWidth={1.8} />
+                <X
+                  size={22}
+                  strokeWidth={1.8}
+                />
               ) : (
-                <Menu size={22} strokeWidth={1.8} />
+                <Menu
+                  size={22}
+                  strokeWidth={1.8}
+                />
               )}
             </button>
           </div>
+        </div>
 
-          {/* ===================================================
-              MOBILE MENU
-              Only below md
-          ==================================================== */}
+        {/* =====================================================
+            MOBILE FULL-SCREEN MENU
+            IMPORTANT:
+            This is fixed below the header.
+            The page underneath cannot show through.
+        ====================================================== */}
+
+        <div
+          className={`
+            fixed
+            left-0
+            right-0
+            top-[72px]
+            z-[90]
+            bg-black
+            md:hidden
+            sm:top-[76px]
+            ${
+              menuOpen
+                ? "visible opacity-100"
+                : "pointer-events-none invisible opacity-0"
+            }
+            transition-opacity
+            duration-300
+          `}
+        >
+          {/* =================================================
+              SCROLLABLE MENU AREA
+          ================================================== */}
 
           <div
-            className={`
-              overflow-hidden
-              transition-all
-              duration-300
-              ease-out
-              md:hidden
-              ${
-                menuOpen
-                  ? "max-h-[calc(100vh-72px)] opacity-100"
-                  : "max-h-0 opacity-0"
-              }
-            `}
+            className="
+              h-[calc(100vh-72px)]
+              w-full
+              overflow-y-auto
+              overscroll-contain
+              bg-black
+              sm:h-[calc(100vh-76px)]
+            "
           >
             <div
               className="
-                max-h-[calc(100vh-72px)]
-                overflow-y-auto
+                min-h-full
+                w-full
                 border-t
                 border-white/[0.07]
+                bg-black
                 px-4
-                pb-5
+                pb-8
                 pt-4
                 sm:px-6
               "
             >
-              <div className="space-y-1">
+              <div className="mx-auto w-full max-w-[1440px]">
+
                 {/* =================================================
                     HOME + ABOUT
                 ================================================== */}
 
-                {navItems.slice(0, 2).map((item) => {
-                  const active = isActive(item.href);
+                <div className="space-y-1">
+                  {navItems.slice(0, 2).map((item) => {
+                    const active = isActive(item.href);
 
-                  return (
-                    <Link
-                      key={item.name}
-                      href={item.href}
-                      onClick={closeMobileMenu}
-                      className={`
-                        flex
-                        items-center
-                        justify-between
-                        rounded-xl
-                        px-4
-                        py-3.5
-                        text-[15px]
-                        font-medium
-                        transition-all
-                        duration-300
-                        ${
-                          active
-                            ? "bg-white/[0.06] text-white"
-                            : "text-white/65 hover:bg-white/[0.035] hover:text-white"
-                        }
-                      `}
-                    >
-                      <span>{item.name}</span>
-
-                      {active && (
-                        <span
-                          className="h-1.5 w-1.5 rounded-full"
-                          style={{
-                            background: GRADIENT,
-                          }}
-                        />
-                      )}
-                    </Link>
-                  );
-                })}
-
-                {/* =================================================
-                    MOBILE SERVICES
-                ================================================== */}
-
-                <div>
-                  <div className="flex items-center">
-                    <Link
-                      href="/services/servicesherosection"
-                      onClick={() => {
-                        setServicesOpen(false);
-                        setMenuOpen(false);
-                      }}
-                      className={`
-                        flex
-                        flex-1
-                        items-center
-                        rounded-xl
-                        px-4
-                        py-3.5
-                        text-[15px]
-                        font-medium
-                        transition-all
-                        duration-300
-                        ${
-                          servicesActive
-                            ? "bg-white/[0.06] text-white"
-                            : "text-white/65 hover:bg-white/[0.035] hover:text-white"
-                        }
-                      `}
-                    >
-                      <span>Services</span>
-                    </Link>
-
-                    {/* DROPDOWN TOGGLE */}
-
-                    <button
-                      type="button"
-                      onClick={() =>
-                        setServicesOpen(
-                          (prev) => !prev
-                        )
-                      }
-                      aria-label="Toggle services"
-                      aria-expanded={servicesOpen}
-                      className="
-                        -ml-12
-                        mr-1
-                        flex
-                        h-10
-                        w-10
-                        items-center
-                        justify-center
-                        rounded-lg
-                        text-white/60
-                        transition-all
-                        duration-300
-                        hover:text-white
-                      "
-                    >
-                      <ChevronDown
-                        size={17}
-                        strokeWidth={1.8}
+                    return (
+                      <Link
+                        key={item.name}
+                        href={item.href}
+                        onClick={closeMobileMenu}
                         className={`
-                          transition-transform
+                          flex
+                          min-h-[52px]
+                          w-full
+                          items-center
+                          justify-between
+                          rounded-xl
+                          px-4
+                          py-3.5
+                          text-[15px]
+                          font-medium
+                          transition-all
                           duration-300
                           ${
-                            servicesOpen
-                              ? "rotate-180"
-                              : ""
+                            active
+                              ? "bg-white/[0.06] text-white"
+                              : "text-white/65 hover:bg-white/[0.035] hover:text-white"
                           }
                         `}
-                      />
-                    </button>
-                  </div>
+                      >
+                        <span>{item.name}</span>
 
-                  {/* MOBILE SERVICE LIST */}
+                        {active && (
+                          <span
+                            className="
+                              h-1.5
+                              w-1.5
+                              shrink-0
+                              rounded-full
+                            "
+                            style={{
+                              background: GRADIENT,
+                            }}
+                          />
+                        )}
+                      </Link>
+                    );
+                  })}
 
-                  <div
-                    className={`
-                      grid
-                      transition-all
-                      duration-300
-                      ${
-                        servicesOpen
-                          ? "grid-rows-[1fr] opacity-100"
-                          : "grid-rows-[0fr] opacity-0"
-                      }
-                    `}
-                  >
-                    <div className="min-h-0 overflow-hidden">
-                      <div className="ml-3 mt-1 space-y-1 border-l border-white/[0.07] pl-2">
-                        {services.map((service) => {
-                          const Icon = service.icon;
-                          const active = isActive(
-                            service.href
-                          );
+                  {/* =================================================
+                      SERVICES
+                  ================================================== */}
 
-                          return (
-                            <Link
-                              key={service.title}
-                              href={service.href}
-                              onClick={closeMobileMenu}
-                              className={`
-                                group
-                                flex
-                                items-center
-                                gap-3
-                                rounded-xl
-                                px-3
-                                py-3
-                                transition-all
-                                duration-300
-                                ${
-                                  active
-                                    ? "bg-white/[0.05]"
-                                    : "hover:bg-white/[0.035]"
-                                }
-                              `}
-                            >
-                              <div
-                                className="
+                  <div className="w-full">
+                    <div className="flex w-full items-center">
+
+                      {/* SERVICES LINK */}
+
+                      <Link
+                        href="/services/servicesherosection"
+                        onClick={closeMobileMenu}
+                        className={`
+                          flex
+                          min-h-[52px]
+                          flex-1
+                          items-center
+                          rounded-xl
+                          px-4
+                          py-3.5
+                          text-[15px]
+                          font-medium
+                          transition-all
+                          duration-300
+                          ${
+                            servicesActive
+                              ? "bg-white/[0.06] text-white"
+                              : "text-white/65 hover:bg-white/[0.035] hover:text-white"
+                          }
+                        `}
+                      >
+                        <span>Services</span>
+                      </Link>
+
+                      {/* SERVICES TOGGLE */}
+
+                      <button
+                        type="button"
+                        onClick={() =>
+                          setServicesOpen(
+                            (prev) => !prev
+                          )
+                        }
+                        aria-label="Toggle services menu"
+                        aria-expanded={servicesOpen}
+                        className="
+                          ml-1
+                          flex
+                          h-11
+                          w-11
+                          shrink-0
+                          items-center
+                          justify-center
+                          rounded-xl
+                          text-white/60
+                          transition-all
+                          duration-300
+                          hover:bg-white/[0.05]
+                          hover:text-white
+                        "
+                      >
+                        <ChevronDown
+                          size={18}
+                          strokeWidth={1.8}
+                          className={`
+                            transition-transform
+                            duration-300
+                            ${
+                              servicesOpen
+                                ? "rotate-180"
+                                : ""
+                            }
+                          `}
+                        />
+                      </button>
+                    </div>
+
+                    {/* =================================================
+                        SERVICES SUBMENU
+                    ================================================== */}
+
+                    <div
+                      className={`
+                        grid
+                        transition-all
+                        duration-300
+                        ${
+                          servicesOpen
+                            ? "grid-rows-[1fr] opacity-100"
+                            : "grid-rows-[0fr] opacity-0"
+                        }
+                      `}
+                    >
+                      <div className="min-h-0 overflow-hidden">
+                        <div
+                          className="
+                            ml-3
+                            mt-1
+                            space-y-1
+                            border-l
+                            border-white/[0.07]
+                            pl-2
+                          "
+                        >
+                          {services.map((service) => {
+                            const Icon = service.icon;
+                            const active = isActive(
+                              service.href
+                            );
+
+                            return (
+                              <Link
+                                key={service.title}
+                                href={service.href}
+                                onClick={closeMobileMenu}
+                                className={`
+                                  group
                                   flex
-                                  h-8
-                                  w-8
-                                  shrink-0
+                                  w-full
                                   items-center
-                                  justify-center
-                                  rounded-lg
-                                  border
-                                  border-white/[0.07]
-                                  bg-white/[0.03]
-                                "
+                                  gap-3
+                                  rounded-xl
+                                  px-3
+                                  py-3
+                                  transition-all
+                                  duration-300
+                                  ${
+                                    active
+                                      ? "bg-white/[0.05]"
+                                      : "hover:bg-white/[0.035]"
+                                  }
+                                `}
                               >
-                                <Icon
-                                  size={15}
+                                {/* SERVICE ICON */}
+
+                                <div
+                                  className="
+                                    flex
+                                    h-8
+                                    w-8
+                                    shrink-0
+                                    items-center
+                                    justify-center
+                                    rounded-lg
+                                    border
+                                    border-white/[0.07]
+                                    bg-white/[0.03]
+                                  "
+                                >
+                                  <Icon
+                                    size={15}
+                                    strokeWidth={1.7}
+                                    className="
+                                      text-white/50
+                                      transition-colors
+                                      duration-300
+                                      group-hover:text-[#29B6F0]
+                                    "
+                                  />
+                                </div>
+
+                                {/* SERVICE CONTENT */}
+
+                                <div className="min-w-0 flex-1">
+                                  <p
+                                    className={`
+                                      text-[13px]
+                                      font-medium
+                                      leading-5
+                                      ${
+                                        active
+                                          ? "text-white"
+                                          : "text-white/70 group-hover:text-white"
+                                      }
+                                    `}
+                                  >
+                                    {service.title}
+                                  </p>
+
+                                  <p
+                                    className="
+                                      mt-0.5
+                                      text-[11px]
+                                      leading-4
+                                      text-white/35
+                                    "
+                                  >
+                                    {service.desc}
+                                  </p>
+                                </div>
+
+                                <ArrowUpRight
+                                  size={14}
                                   strokeWidth={1.7}
                                   className="
-                                    text-white/50
-                                    transition-colors
-                                    group-hover:text-[#29B6F0]
+                                    shrink-0
+                                    text-white/20
+                                    opacity-0
+                                    transition-all
+                                    duration-300
+                                    group-hover:text-white/60
+                                    group-hover:opacity-100
                                   "
                                 />
-                              </div>
-
-                              <div className="min-w-0">
-                                <p
-                                  className={`
-                                    text-[13px]
-                                    font-medium
-                                    leading-5
-                                    ${
-                                      active
-                                        ? "text-white"
-                                        : "text-white/70 group-hover:text-white"
-                                    }
-                                  `}
-                                >
-                                  {service.title}
-                                </p>
-
-                                <p className="mt-0.5 text-[11px] leading-4 text-white/35">
-                                  {service.desc}
-                                </p>
-                              </div>
-                            </Link>
-                          );
-                        })}
+                              </Link>
+                            );
+                          })}
+                        </div>
                       </div>
                     </div>
                   </div>
+
+                  {/* =================================================
+                      CUSTOMERS + PRODUCTS + CONTACT
+                  ================================================== */}
+
+                  {navItems.slice(2).map((item) => {
+                    const active = isActive(item.href);
+
+                    return (
+                      <Link
+                        key={item.name}
+                        href={item.href}
+                        onClick={closeMobileMenu}
+                        className={`
+                          flex
+                          min-h-[52px]
+                          w-full
+                          items-center
+                          justify-between
+                          rounded-xl
+                          px-4
+                          py-3.5
+                          text-[15px]
+                          font-medium
+                          transition-all
+                          duration-300
+                          ${
+                            active
+                              ? "bg-white/[0.06] text-white"
+                              : "text-white/65 hover:bg-white/[0.035] hover:text-white"
+                          }
+                        `}
+                      >
+                        <span>{item.name}</span>
+
+                        {active && (
+                          <span
+                            className="
+                              h-1.5
+                              w-1.5
+                              shrink-0
+                              rounded-full
+                            "
+                            style={{
+                              background: GRADIENT,
+                            }}
+                          />
+                        )}
+                      </Link>
+                    );
+                  })}
                 </div>
 
                 {/* =================================================
-                    CUSTOMERS / PRODUCTS / CONTACT
+                    MOBILE LET'S TALK
                 ================================================== */}
 
-                {navItems.slice(2).map((item) => {
-                  const active = isActive(item.href);
+                <Link
+                  href="/contact/herosection"
+                  onClick={closeMobileMenu}
+                  className="
+                    mt-5
+                    flex
+                    w-full
+                    items-center
+                    justify-center
+                    gap-2
+                    rounded-xl
+                    px-5
+                    py-3.5
+                    text-[14px]
+                    font-semibold
+                    text-white
+                    shadow-[0_10px_35px_rgba(41,182,240,0.12)]
+                    transition-all
+                    duration-300
+                    active:scale-[0.98]
+                  "
+                  style={{
+                    background: GRADIENT,
+                  }}
+                >
+                  <span>Let's Talk</span>
 
-                  return (
-                    <Link
-                      key={item.name}
-                      href={item.href}
-                      onClick={closeMobileMenu}
-                      className={`
-                        flex
-                        items-center
-                        justify-between
-                        rounded-xl
-                        px-4
-                        py-3.5
-                        text-[15px]
-                        font-medium
-                        transition-all
-                        duration-300
-                        ${
-                          active
-                            ? "bg-white/[0.06] text-white"
-                            : "text-white/65 hover:bg-white/[0.035] hover:text-white"
-                        }
-                      `}
-                    >
-                      <span>{item.name}</span>
+                  <ArrowUpRight
+                    size={16}
+                    strokeWidth={2}
+                  />
+                </Link>
 
-                      {active && (
-                        <span
-                          className="h-1.5 w-1.5 rounded-full"
-                          style={{
-                            background: GRADIENT,
-                          }}
-                        />
-                      )}
-                    </Link>
-                  );
-                })}
+                {/* =================================================
+                    BOTTOM SAFE SPACE
+                ================================================== */}
+
+                <div className="h-5" />
               </div>
-
-              {/* =================================================
-                  MOBILE LET'S TALK
-              ================================================== */}
-
-              <Link
-                href="/contact/herosection"
-                onClick={closeMobileMenu}
-                className="
-                  mt-4
-                  flex
-                  w-fit
-                
-                  items-center
-                  justify-center
-                  gap-2
-                  rounded-xl
-                  px-5
-                  py-3.5
-                  text-[14px]
-                  font-semibold
-                  text-white
-                  shadow-[0_10px_35px_rgba(41,182,240,0.12)]
-                  transition-all
-                  duration-300
-                  active:scale-[0.98]
-                "
-                style={{
-                  background: GRADIENT,
-                }}
-              >
-                <span>Let's Talk</span>
-
-                <ArrowUpRight
-                  size={16}
-                  strokeWidth={2}
-                />
-              </Link>
             </div>
           </div>
         </div>
