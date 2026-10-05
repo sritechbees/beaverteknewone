@@ -13,16 +13,7 @@ export default function ModernizeContent() {
  
     <section className="relative overflow-hidden bg-[#000000] py-20 lg:py-28">
 
-  {/* Background */}
-  <div className="absolute inset-0 overflow-hidden">
-
-    <div className="absolute -top-40 -left-40 h-[420px] w-[420px] rounded-full bg-[#29B6F0]/10 blur-[130px]" />
-
-    <div className="absolute right-0 bottom-0 h-[420px] w-[420px] rounded-full bg-[#B93FC9]/10 blur-[140px]" />
-
-    <div className="absolute inset-0 bg-[linear-gradient(rgba(255,255,255,.03)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,.03)_1px,transparent_1px)] bg-[size:70px_70px]" />
-
-  </div>
+  
 
   <div className="relative mx-auto max-w-7xl px-6 lg:px-8">
 

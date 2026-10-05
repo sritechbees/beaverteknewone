@@ -22,9 +22,11 @@ function Herosection() {
     AOS.init({
       duration: 850,
       once: true,
-      offset: 50,
+      offset: 60,
       easing: "ease-out-cubic",
       disable: false,
+      mirror: false,
+      anchorPlacement: "top-bottom",
     });
 
     AOS.refresh();
@@ -37,6 +39,7 @@ function Herosection() {
 
     return () => {
       window.removeEventListener("resize", handleResize);
+      AOS.refreshHard();
     };
   }, []);
 
@@ -75,53 +78,51 @@ function Herosection() {
       ====================================================== */}
 
       <section className="relative overflow-hidden bg-black">
-        {/* =====================================================
-            HERO CONTENT
-        ====================================================== */}
-
         <div
           className="
             mx-auto
             max-w-7xl
             px-4
-            py-10
+            py-8
 
             sm:px-5
-            sm:py-12
+            sm:py-10
 
             md:px-6
-            md:py-14
+            md:py-12
 
             lg:px-8
-            lg:py-8
+            lg:py-10
 
-            xl:py-8
+            xl:px-10
+            xl:py-10
           "
         >
           <div
             className="
               grid
-              min-h-[380px]
+              min-h-[350px]
               w-full
               grid-cols-1
               items-center
-              gap-8
+              gap-7
 
-              sm:min-h-[400px]
+              sm:min-h-[380px]
+              sm:gap-8
 
+              md:min-h-[420px]
               md:grid-cols-[0.9fr_1.1fr]
               md:gap-10
 
-              lg:min-h-[420px]
+              lg:min-h-[440px]
               lg:grid-cols-[0.9fr_1.1fr]
               lg:gap-12
 
-              xl:min-h-[430px]
+              xl:min-h-[450px]
             "
           >
             {/* =================================================
                 LEFT CONTENT
-                45% DESKTOP
             ================================================== */}
 
             <div
@@ -136,11 +137,10 @@ function Herosection() {
               "
               data-aos="fade-right"
               data-aos-duration="850"
+              data-aos-delay="100"
               data-aos-offset="40"
             >
-              {/* =================================================
-                  BREADCRUMB
-              ================================================== */}
+              {/* ================= BREADCRUMB ================= */}
 
               <div
                 className="
@@ -153,43 +153,148 @@ function Herosection() {
                   border-white/15
                   bg-white/[0.06]
                   px-3
-                  py-1
+                  py-1.5
                   backdrop-blur-md
 
                   sm:mb-5
                   sm:px-3.5
                   sm:py-1.5
+
+                  md:px-4
                 "
                 data-aos="fade-down"
-                data-aos-delay="80"
+                data-aos-delay="100"
                 data-aos-duration="750"
               >
-                <span className="h-1.5 w-1.5 rounded-full bg-[#29B6F0]" />
+                <span
+                  className="
+                    h-1.5
+                    w-1.5
+                    rounded-full
+                    bg-[#29B6F0]
 
-                <span className="ml-2 text-[10px] font-medium text-[#D4D4D8] sm:text-[11px]">
+                    sm:h-2
+                    sm:w-2
+                  "
+                />
+
+                <span
+                  className="
+                    ml-2
+                    text-[10px]
+                    font-medium
+                    text-[#D4D4D8]
+
+                    sm:ml-2.5
+                    sm:text-[11px]
+
+                    md:text-xs
+                  "
+                >
                   Services
                 </span>
 
-                <span className="mx-1.5 text-[#7A7A7A] sm:mx-2">
+                <span
+                  className="
+                    mx-1.5
+                    text-[#7A7A7A]
+
+                    sm:mx-2
+                  "
+                >
                   /
                 </span>
 
-                <span className="text-[10px] font-medium text-[#29B6F0] sm:text-[11px]">
+                <span
+                  className="
+                    text-[10px]
+                    font-medium
+                    text-[#29B6F0]
+
+                    sm:text-[11px]
+
+                    md:text-xs
+                  "
+                >
                   DevOps & DevSecOps
                 </span>
               </div>
 
-              {/* =================================================
-                  TITLE
-              ================================================== */}
+              {/* ================= SUPPORTING LABEL ================= */}
+
+              <div
+                className="
+                  mb-3
+                  flex
+                  items-center
+                  gap-2
+
+                  sm:mb-4
+                  sm:gap-3
+
+                  md:mb-4
+                "
+                data-aos="fade-up"
+                data-aos-delay="180"
+                data-aos-duration="800"
+              >
+                <span
+                  className="
+                    h-[2px]
+                    w-7
+                    bg-gradient-to-r
+                    from-transparent
+                    to-[#29B6F0]
+
+                    sm:w-10
+
+                    md:w-12
+                  "
+                />
+
+                <span
+                  className="
+                    whitespace-nowrap
+                    text-[8px]
+                    font-semibold
+                    uppercase
+                    tracking-[0.13em]
+                    text-[#A0A0A8]
+
+                    sm:text-[10px]
+                    sm:tracking-[0.18em]
+
+                    md:text-[11px]
+                    md:tracking-[0.2em]
+                  "
+                >
+                  Automation, Security & Continuous Delivery
+                </span>
+
+                <span
+                  className="
+                    h-[2px]
+                    w-7
+                    bg-gradient-to-r
+                    from-[#7A4FD1]
+                    to-transparent
+
+                    sm:w-10
+
+                    md:w-12
+                  "
+                />
+              </div>
+
+              {/* ================= TITLE ================= */}
 
               <h1
                 className="
                   max-w-[500px]
-                  text-[32px]
+                  text-[30px]
                   font-extrabold
                   leading-[1.08]
-                  tracking-tight
+                  tracking-[-0.02em]
                   text-white
 
                   sm:text-[36px]
@@ -201,12 +306,21 @@ function Herosection() {
                   xl:text-[52px]
                 "
                 data-aos="fade-up"
-                data-aos-delay="160"
-                data-aos-duration="850"
+                data-aos-delay="280"
+                data-aos-duration="900"
+                data-aos-offset="40"
               >
                 Build Faster.
 
-                <span className="mt-2 block min-h-[1.08em] sm:mt-2.5">
+                <span
+                  className="
+                    mt-2
+                    block
+                    min-h-[1.08em]
+
+                    sm:mt-2.5
+                  "
+                >
                   <span
                     className="
                       bg-gradient-to-r
@@ -240,9 +354,7 @@ function Herosection() {
                 </span>
               </h1>
 
-              {/* =================================================
-                  ACCENT LINE
-              ================================================== */}
+              {/* ================= ACCENT LINE ================= */}
 
               <div
                 className="
@@ -253,9 +365,11 @@ function Herosection() {
 
                   sm:mt-5
                   sm:gap-2.5
+
+                  md:mt-6
                 "
                 data-aos="fade-up"
-                data-aos-delay="280"
+                data-aos-delay="420"
                 data-aos-duration="800"
               >
                 <div
@@ -268,11 +382,22 @@ function Herosection() {
                     to-[#B93FC9]
 
                     sm:w-12
+
                     md:w-16
                   "
                 />
 
-                <div className="h-1.5 w-1.5 rounded-full bg-[#29B6F0]" />
+                <div
+                  className="
+                    h-1.5
+                    w-1.5
+                    rounded-full
+                    bg-[#29B6F0]
+
+                    sm:h-2
+                    sm:w-2
+                  "
+                />
 
                 <div
                   className="
@@ -284,6 +409,7 @@ function Herosection() {
                     to-[#B93FC9]
 
                     sm:w-12
+
                     md:w-16
                   "
                 />
@@ -292,7 +418,6 @@ function Herosection() {
 
             {/* =================================================
                 RIGHT IMAGE
-                55% DESKTOP
             ================================================== */}
 
             <div
@@ -305,7 +430,7 @@ function Herosection() {
               "
               data-aos="fade-left"
               data-aos-duration="900"
-              data-aos-delay="150"
+              data-aos-delay="200"
               data-aos-offset="40"
             >
               <div
@@ -322,18 +447,31 @@ function Herosection() {
                   src="/services/Devops.jpg"
                   alt="DevOps & DevSecOps"
                   className="
-                    h-[240px]
+                    h-[220px]
                     w-full
                     object-cover
                     object-center
 
-                    sm:h-[280px]
+                    sm:h-[270px]
 
-                    md:h-[330px]
+                    md:h-[320px]
 
                     lg:h-[350px]
 
                     xl:h-[370px]
+                  "
+                />
+
+                {/* Soft image overlay */}
+                <div
+                  className="
+                    pointer-events-none
+                    absolute
+                    inset-0
+                    bg-gradient-to-r
+                    from-black/20
+                    via-transparent
+                    to-transparent
                   "
                 />
               </div>
@@ -373,6 +511,7 @@ function Herosection() {
       <div
         data-aos="fade-up"
         data-aos-duration="850"
+        data-aos-delay="100"
         data-aos-offset="50"
       >
         <DevOpsSections />
@@ -385,7 +524,7 @@ function Herosection() {
       <div
         data-aos="fade-up"
         data-aos-duration="850"
-        data-aos-delay="100"
+        data-aos-delay="150"
         data-aos-offset="50"
       >
         <Keyservices />

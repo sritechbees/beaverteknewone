@@ -677,7 +677,7 @@ export default function Footer() {
 
           <div className="flex flex-wrap justify-center gap-5 text-xs text-[#A0A0A8]">
             <Link
-              href="#"
+              href="/contact/herosection"
               className="
                 relative
                 transition-colors
@@ -698,7 +698,7 @@ export default function Footer() {
             </Link>
 
             <Link
-              href="#"
+              href="/contact/herosection"
               className="
                 relative
                 transition-colors

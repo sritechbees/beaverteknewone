@@ -8,7 +8,7 @@ import "aos/dist/aos.css";
 
 import App_layout from "@/component/layout/app_layout";
 import ServicesHub from "./serviceshub";
-import Servicescard from "./servicescard";
+
 import Buildtogether from "./buildtogether";
 import Howwework from "./howwework";
 
@@ -100,86 +100,7 @@ export default function ServicesHerosection() {
           xl:py-18
         "
       >
-        {/* =====================================================
-            BACKGROUND
-        ====================================================== */}
-
-        <div className="pointer-events-none absolute inset-0 overflow-hidden">
-          {/* Cyan */}
-
-          <div
-            data-aos="zoom-in"
-            data-aos-delay="100"
-            data-aos-duration="1200"
-            className="
-              absolute
-              -left-32
-              top-10
-              h-52
-              w-52
-              rounded-full
-              bg-[#29B6F0]/[0.07]
-              blur-[110px]
-              sm:h-60
-              sm:w-60
-              md:h-64
-              md:w-64
-            "
-          />
-
-          {/* Blue */}
-
-          <div
-            data-aos="zoom-in"
-            data-aos-delay="180"
-            data-aos-duration="1300"
-            className="
-              absolute
-              -right-10
-              top-1/3
-              h-56
-              w-56
-              rounded-full
-              bg-[#3E7BD6]/[0.06]
-              blur-[120px]
-              sm:h-72
-              sm:w-72
-            "
-          />
-
-          {/* Magenta */}
-
-          <div
-            data-aos="zoom-in"
-            data-aos-delay="250"
-            data-aos-duration="1300"
-            className="
-              absolute
-              -bottom-20
-              right-1/4
-              h-52
-              w-52
-              rounded-full
-              bg-[#B93FC9]/[0.06]
-              blur-[110px]
-              sm:h-60
-              sm:w-60
-            "
-          />
-
-          {/* Grid */}
-
-          <div
-            data-aos="fade-in"
-            data-aos-duration="1500"
-            className="absolute inset-0 opacity-20"
-            style={{
-              backgroundImage:
-                "linear-gradient(rgba(255,255,255,.03) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,.03) 1px, transparent 1px)",
-              backgroundSize: "55px 55px",
-            }}
-          />
-        </div>
+        
 
         {/* =====================================================
             MAIN CONTAINER

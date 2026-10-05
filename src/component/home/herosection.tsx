@@ -123,33 +123,8 @@ function Herosection() {
       "
       style={{ backgroundImage: "url('/home/homebg.jpeg')" }}
     >
-      {/* BACKGROUND */}
-      <div className="pointer-events-none absolute inset-0 bg-black/10" />
-
-      <div
-        className="
-          pointer-events-none absolute inset-0
-          bg-[linear-gradient(135deg,rgba(0,0,0,0.65),rgba(0,0,0,0.35),rgba(20,10,45,0.45))]
-        "
-      />
-
-      {/* BACKGROUND GLOW */}
-      <div className="pointer-events-none absolute inset-0 overflow-hidden">
-        <div className="absolute -left-40 top-10 h-[320px] w-[320px] rounded-full bg-[#29B6F0]/15 blur-[120px] sm:h-[420px] sm:w-[420px]" />
-
-        <div className="absolute -right-40 top-0 h-[400px] w-[400px] rounded-full bg-[#7A4FD1]/18 blur-[130px] sm:h-[520px] sm:w-[520px]" />
-
-        <div className="absolute bottom-[-180px] left-1/2 h-[400px] w-[400px] -translate-x-1/2 rounded-full bg-[#B93FC9]/12 blur-[130px]" />
-
-        <div
-          className="
-            absolute inset-0 opacity-[0.035]
-            [background-image:linear-gradient(rgba(255,255,255,0.5)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.5)_1px,transparent_1px)]
-            [background-size:55px_55px]
-          "
-        />
-      </div>
-
+      
+    
       {/* MAIN */}
       <div className="relative z-10 mx-auto w-full max-w-[1400px]">
 

@@ -1,4 +1,3 @@
-
 "use client";
 
 import { useEffect } from "react";
@@ -50,6 +49,17 @@ export default function WhyModernizationMatters() {
     });
 
     AOS.refresh();
+
+    const handleResize = () => {
+      AOS.refresh();
+    };
+
+    window.addEventListener("resize", handleResize);
+
+    return () => {
+      window.removeEventListener("resize", handleResize);
+      AOS.refreshHard();
+    };
   }, []);
 
   return (
@@ -67,12 +77,23 @@ export default function WhyModernizationMatters() {
           className="mx-auto max-w-3xl text-center"
           data-aos="fade-up"
           data-aos-duration="900"
+          data-aos-offset="60"
         >
-          <span className="inline-flex items-center rounded-full border border-[#29B6F0]/40 bg-[rgba(255,255,255,0.04)] px-3 py-1.5 text-[9px] font-semibold tracking-[0.22em] text-[#29B6F0] backdrop-blur-md sm:text-[10px]">
+          <span
+            className="inline-flex items-center rounded-full border border-[#29B6F0]/40 bg-[rgba(255,255,255,0.04)] px-3 py-1.5 text-[9px] font-semibold tracking-[0.22em] text-[#29B6F0] backdrop-blur-md sm:text-[10px]"
+            data-aos="fade-down"
+            data-aos-delay="100"
+            data-aos-duration="700"
+          >
             WHY MODERNIZATION MATTERS
           </span>
 
-          <h2 className="mt-4 text-3xl font-extrabold leading-tight tracking-tight text-[#FFFFFF] sm:mt-5 sm:text-4xl lg:text-5xl">
+          <h2
+            className="mt-4 text-3xl font-extrabold leading-tight tracking-tight text-[#FFFFFF] sm:mt-5 sm:text-4xl lg:text-5xl"
+            data-aos="fade-up"
+            data-aos-delay="180"
+            data-aos-duration="900"
+          >
             Better Technology.
             <br />
             <span className="bg-[linear-gradient(135deg,#29B6F0_0%,#3E7BD6_35%,#7A4FD1_65%,#B93FC9_100%)] bg-clip-text text-transparent">
@@ -80,7 +101,34 @@ export default function WhyModernizationMatters() {
             </span>
           </h2>
 
-          <p className="mx-auto mt-4 max-w-2xl text-sm leading-6    text-[#D4D4D8] sm:text-base sm:leading-7">
+          {/* Section Description */}
+          <p
+            className="
+              mx-auto
+              mt-4
+              w-full
+              max-w-[340px]
+              px-1
+              text-[13px]
+              leading-6
+              text-[#D4D4D8]
+
+              sm:mt-4
+              sm:max-w-2xl
+              sm:px-0
+              sm:text-base
+              sm:leading-7
+
+              md:max-w-2xl
+              md:text-base
+
+              lg:mt-4
+            "
+            data-aos="fade-up"
+            data-aos-delay="280"
+            data-aos-duration="900"
+            data-aos-offset="50"
+          >
             Modernization helps organizations improve efficiency, strengthen
             security, reduce costs, and create a solid foundation for future
             growth.
@@ -88,14 +136,42 @@ export default function WhyModernizationMatters() {
         </div>
 
         {/* Cards */}
-        <div className="mt-10 grid grid-cols-1 gap-4 sm:mt-12 md:grid-cols-2 lg:gap-5">
+        <div
+          className="mt-10 grid grid-cols-1 gap-4 sm:mt-12 md:grid-cols-2 lg:gap-5"
+          data-aos="fade-up"
+          data-aos-delay="150"
+          data-aos-duration="900"
+        >
           {modernizationPoints.map((item, index) => (
             <div
               key={item.number}
               data-aos={index % 2 === 0 ? "fade-right" : "fade-left"}
               data-aos-delay={item.delay}
               data-aos-duration="900"
-              className="group relative min-h-[190px] overflow-hidden rounded-2xl border border-[#2A2A30] bg-[#0A0A0A] p-5 transition-all duration-500 hover:-translate-y-1 hover:border-[#3E7BD6]/70 hover:bg-[#0D0D0F] hover:shadow-[0_18px_50px_rgba(0,0,0,0.35)] sm:min-h-[205px] sm:p-6"
+              data-aos-offset="50"
+              className="
+                group
+                relative
+                min-h-[230px]
+                overflow-hidden
+                rounded-2xl
+                border
+                border-[#2A2A30]
+                bg-[#0A0A0A]
+                p-5
+                transition-all
+                duration-500
+
+                hover:-translate-y-1
+                hover:border-[#3E7BD6]/70
+                hover:bg-[#0D0D0F]
+                hover:shadow-[0_18px_50px_rgba(0,0,0,0.35)]
+
+                sm:min-h-[225px]
+                sm:p-6
+
+                md:min-h-[190px]
+              "
             >
               {/* Hover Glow */}
               <div
@@ -116,21 +192,71 @@ export default function WhyModernizationMatters() {
               </div>
 
               {/* Title */}
-              <div className="relative z-10 mt-4">
+              <div
+                className="relative z-10 mt-4"
+                data-aos="fade-up"
+                data-aos-delay={item.delay + 100}
+                data-aos-duration="800"
+              >
                 <h3 className="text-xl font-bold tracking-tight text-[#FFFFFF] transition-all duration-500 group-hover:text-[22px] sm:text-2xl">
                   {item.title}
                 </h3>
               </div>
 
               {/* Description + Business Value */}
-              <div className="relative z-10 mt-0 max-h-0 overflow-hidden opacity-0 transition-all duration-500 ease-out group-hover:mt-4 group-hover:max-h-40 group-hover:opacity-100">
-                <p className="max-w-xl text-[16px] leading-6    text-[#D4D4D8]">
+              <div
+                className="
+                  relative
+                  z-10
+                  mt-4
+                  max-h-none
+                  overflow-visible
+                  opacity-100
+                  transition-all
+                  duration-500
+                  ease-out
+
+                  md:mt-0
+                  md:max-h-0
+                  md:overflow-hidden
+                  md:opacity-0
+
+                  md:group-hover:mt-4
+                  md:group-hover:max-h-40
+                  md:group-hover:opacity-100
+                "
+                data-aos="fade-up"
+                data-aos-delay={item.delay + 180}
+                data-aos-duration="850"
+                data-aos-offset="30"
+              >
+                <p
+                  className="
+                    w-full
+                    max-w-xl
+                    text-[13px]
+                    leading-6
+                    text-[#D4D4D8]
+
+                    sm:text-[15px]
+                    sm:leading-6
+
+                    md:text-[15px]
+
+                    lg:text-[16px]
+                  "
+                >
                   {item.description}
                 </p>
 
-                <div className="mt-4 flex items-center gap-2">
+                <div
+                  className="mt-4 flex items-center gap-2"
+                  data-aos="fade-right"
+                  data-aos-delay={item.delay + 280}
+                  data-aos-duration="700"
+                >
                   <span
-                    className="h-1.5 w-1.5 rounded-full"
+                    className="h-1.5 w-1.5 shrink-0 rounded-full"
                     style={{ backgroundColor: item.accent }}
                   />
 
@@ -159,92 +285,109 @@ export default function WhyModernizationMatters() {
         </div>
       </div>
 
+      {/* ============================= */}
+      {/* Premium Future Ready Banner */}
+      {/* ============================= */}
 
-       {/* ============================= */}
-{/* Premium Future Ready Banner */}
-{/* ============================= */}
+      <div
+        className="relative mt-24 overflow-hidden rounded-[32px] border border-[#2A2A30] bg-[#0A0A0A] px-6 py-12 shadow-[0_25px_60px_rgba(0,0,0,.45)] sm:px-10 sm:py-16 lg:px-14"
+        data-aos="fade-up"
+        data-aos-duration="1000"
+        data-aos-offset="60"
+      >
+        <div className="relative z-10 grid items-center gap-12 lg:grid-cols-[1.2fr_.8fr]">
+          {/* Left */}
+          <div
+            data-aos="fade-right"
+            data-aos-delay="100"
+            data-aos-duration="900"
+          >
+            <span
+              className="inline-flex items-center rounded-full border border-[#3E7BD6]/40 bg-white/5 px-5 py-2 text-xs font-semibold uppercase tracking-[0.3em] text-[#29B6F0] backdrop-blur-md"
+              data-aos="fade-down"
+              data-aos-delay="180"
+              data-aos-duration="700"
+            >
+              Future Ready
+            </span>
 
-<div
-  className="relative mt-24 overflow-hidden rounded-[32px] border border-[#2A2A30] bg-[#0A0A0A] px-6 py-12 shadow-[0_25px_60px_rgba(0,0,0,.45)] sm:px-10 sm:py-16 lg:px-14"
-  data-aos="fade-up"
-  data-aos-duration="1000"
->
-  {/* Background Effects */}
-  <div className="absolute inset-0 overflow-hidden">
+            <h3
+              className="mt-7 text-3xl font-black leading-tight text-white sm:text-4xl lg:text-5xl"
+              data-aos="fade-up"
+              data-aos-delay="250"
+              data-aos-duration="900"
+            >
+              Technology that
+              <br />
 
-    <div className="absolute -left-24 top-0 h-80 w-80 rounded-full bg-[#29B6F0]/15 blur-[120px]" />
+              <span className="bg-gradient-to-r from-[#29B6F0] via-[#3E7BD6] via-[#7A4FD1] to-[#B93FC9] bg-clip-text text-transparent">
+                accelerates
+              </span>
 
-    <div className="absolute -right-20 bottom-0 h-80 w-80 rounded-full bg-[#B93FC9]/15 blur-[130px]" />
+              <br />
 
-    <div className="absolute left-1/2 top-1/2 h-72 w-72 -translate-x-1/2 -translate-y-1/2 rounded-full bg-[#7A4FD1]/10 blur-[130px]" />
+              your business.
+            </h3>
 
-    <div className="absolute inset-0 bg-[linear-gradient(rgba(255,255,255,.03)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,.03)_1px,transparent_1px)] bg-[size:55px_55px]" />
+            {/* Future Ready Description */}
+            <p
+              className="
+                mt-6
+                w-full
+                max-w-[340px]
+                text-[13px]
+                leading-6
+                text-[#D4D4D8]
 
-  </div>
+                sm:mt-7
+                sm:max-w-xl
+                sm:text-base
+                sm:leading-8
 
-  <div className="relative z-10 grid items-center gap-12 lg:grid-cols-[1.2fr_.8fr]">
+                md:text-[17px]
 
-    {/* Left */}
-    <div
-      data-aos="fade-right"
-      data-aos-delay="100"
-    >
-      <span className="inline-flex items-center rounded-full border border-[#3E7BD6]/40 bg-white/5 px-5 py-2 text-xs font-semibold uppercase tracking-[0.3em] text-[#29B6F0] backdrop-blur-md">
-        Future Ready
-      </span>
-
-      <h3 className="mt-7 text-3xl font-black leading-tight text-white sm:text-4xl lg:text-5xl">
-        Technology that
-        <br />
-
-        <span className="bg-gradient-to-r from-[#29B6F0] via-[#3E7BD6] via-[#7A4FD1] to-[#B93FC9] bg-clip-text text-transparent">
-          accelerates
-        </span>
-
-        <br />
-
-        your business.
-      </h3>
-
-      <p className="mt-7 max-w-xl text-base leading-8 text-[#D4D4D8] sm:text-lg">
-        Modern infrastructure, secure platforms, and scalable solutions
-        designed to help your organization move faster with confidence.
-      </p>
-    </div>
-
-    {/* Right */}
-    <div
-      className="grid gap-4"
-      data-aos="fade-left"
-      data-aos-delay="250"
-    >
-      {[
-        "Modern Cloud Infrastructure",
-        "Better Security & Compliance",
-        "Reliable System Integrations",
-        "Lower Maintenance Costs",
-      ].map((item, index) => (
-        <div
-          key={item}
-          data-aos="zoom-in"
-          data-aos-delay={300 + index * 120}
-          className="group flex items-center gap-4 rounded-2xl border border-[#2A2A30] bg-white/5 px-5 py-4 backdrop-blur-md transition-all duration-500 hover:border-[#3E7BD6]/60 hover:bg-white/10 hover:translate-x-2"
-        >
-          <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-gradient-to-br from-[#29B6F0] via-[#3E7BD6] to-[#B93FC9] text-sm font-bold text-white shadow-[0_0_25px_rgba(62,123,214,.35)]">
-            0{index + 1}
+                lg:text-lg
+              "
+              data-aos="fade-up"
+              data-aos-delay="350"
+              data-aos-duration="900"
+              data-aos-offset="40"
+            >
+              Modern infrastructure, secure platforms, and scalable solutions
+              designed to help your organization move faster with confidence.
+            </p>
           </div>
 
-          <span className="font-medium text-[#FFFFFF]">
-            {item}
-          </span>
+          {/* Right */}
+          <div
+            className="grid gap-4"
+            data-aos="fade-left"
+            data-aos-delay="250"
+            data-aos-duration="900"
+          >
+            {[
+              "Modern Cloud Infrastructure",
+              "Better Security & Compliance",
+              "Reliable System Integrations",
+              "Lower Maintenance Costs",
+            ].map((item, index) => (
+              <div
+                key={item}
+                data-aos="zoom-in"
+                data-aos-delay={300 + index * 120}
+                data-aos-duration="800"
+                className="group flex items-center gap-4 rounded-2xl border border-[#2A2A30] bg-white/5 px-5 py-4 backdrop-blur-md transition-all duration-500 hover:translate-x-2 hover:border-[#3E7BD6]/60 hover:bg-white/10"
+              >
+                <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-gradient-to-br from-[#29B6F0] via-[#3E7BD6] to-[#B93FC9] text-sm font-bold text-white shadow-[0_0_25px_rgba(62,123,214,.35)]">
+                  0{index + 1}
+                </div>
+
+                <span className="font-medium text-[#FFFFFF]">{item}</span>
+              </div>
+            ))}
+          </div>
         </div>
-      ))}
-    </div>
-
-  </div>
-</div>
-
+      </div>
     </section>
   );
 }
-

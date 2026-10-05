@@ -6,6 +6,7 @@ import AOS from "aos";
 import "aos/dist/aos.css";
 import { AnimatePresence, motion } from "framer-motion";
 import { ChevronDown, ShieldCheck } from "lucide-react";
+import Link from "next/link";
 
 const faqs = [
 {
@@ -299,13 +300,7 @@ return ( <section className="relative overflow-hidden bg-[linear-gradient(135deg
             services, pricing, or project process.
           </p>
 
-          <button
-            data-aos="zoom-in"
-            data-aos-delay="650"
-            className="mt-4 sm:mt-5 rounded-full bg-[#121212] border border-[#2A2A30] px-5 sm:px-6 py-2.5 sm:py-3 text-xs sm:text-[13px] font-semibold text-white shadow-lg transition-all duration-300 hover:scale-105 hover:border-[#3E7BD6] hover:shadow-[0_0_35px_rgba(62,123,214,.35)]"
-          >
-            Contact Our Team
-          </button>
+         <Link href="/contact/herosection"> <button data-aos="zoom-in" data-aos-delay="650" className="mt-4 sm:mt-5 rounded-full border border-[#2A2A30] bg-[#121212] px-5 py-2.5 text-xs font-semibold text-white shadow-lg transition-all duration-300 hover:scale-105 hover:border-[#3E7BD6] hover:shadow-[0_0_35px_rgba(62,123,214,.35)] sm:px-6 sm:py-3 sm:text-[13px]" > Contact Our Team </button> </Link>
         </motion.div>
       </div>
     </div>

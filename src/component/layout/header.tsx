@@ -76,7 +76,7 @@ const navItems = [
   { name: "About", href: "/about_us/abouthero" },
   { name: "Customers", href: "/customers/casestudyhero" },
   { name: "Products", href: "/products/producthero" },
-  { name: "Contact", href: "/contact/herosection" },
+  { name: "Contact", href: "/contact/contacthero" },
 ];
 
 /* =========================================================

@@ -39,7 +39,7 @@ const caseStudies = [
     description:
       "Took a mobile advertising app from concept to production, including architecture, build, and launch.",
     icon: Smartphone,
-    href: "/customers/Datathatdrivesdecisionscasestudy",
+    href: "/customers/datathatdecisionchallenge",
   },
 ];
 

@@ -75,11 +75,8 @@ export default function TestimonialsSection() {
         overflow-hidden
         bg-[#000000]
         py-10
-
         sm:py-12
-
         md:py-14
-
         lg:py-16
       "
     >
@@ -175,13 +172,9 @@ export default function TestimonialsSection() {
           w-full
           max-w-7xl
           px-4
-
           sm:px-6
-
           md:px-8
-
           lg:px-10
-
           xl:px-8
         "
       >
@@ -216,7 +209,6 @@ export default function TestimonialsSection() {
               bg-[#0A0A0A]
               px-3.5
               py-1.5
-
               sm:px-4
               sm:py-2
             "
@@ -239,9 +231,7 @@ export default function TestimonialsSection() {
                 uppercase
                 tracking-[0.18em]
                 text-[#A0A0A8]
-
                 sm:text-[11px]
-
                 md:text-xs
               "
             >
@@ -263,30 +253,16 @@ export default function TestimonialsSection() {
               tracking-[-0.04em]
               text-white
 
-
               sm:mt-4
-                sm:text-[2.25rem]
-                md:text-[2.6rem]
-                lg:mt-4
-                lg:text-[3rem]
-                xl:text-[3.25rem]
-                
-                
-                
-                
-                
-                
-                
-                
-                "
-        
-             
+              sm:text-[2.25rem]
 
-          
-             
+              md:text-[2.6rem]
 
+              lg:mt-4
+              lg:text-[3rem]
 
-            
+              xl:text-[3.25rem]
+            "
           >
             Hear From{" "}
             <span
@@ -314,9 +290,6 @@ export default function TestimonialsSection() {
               leading-6
               text-[#A0A0A8]
 
-
-              
-
               sm:mt-5
               sm:text-[15px]
               sm:leading-7
@@ -331,8 +304,6 @@ export default function TestimonialsSection() {
             Long-term partnerships built on measurable outcomes,
             technical excellence, and trust.
           </p>
-
-          
         </div>
 
         {/* ===================================================
@@ -351,7 +322,6 @@ export default function TestimonialsSection() {
             max-w-6xl
 
             sm:mt-10
-
             md:mt-12
           "
         >
@@ -363,7 +333,6 @@ export default function TestimonialsSection() {
               gap-2
 
               sm:gap-3
-
               md:gap-4
             "
           >
@@ -406,9 +375,11 @@ export default function TestimonialsSection() {
               "
             >
               <ChevronLeft
+                size={16}
+                strokeWidth={2}
+                aria-hidden="true"
                 className="
-                  h-3.5
-                  w-3.5
+                  shrink-0
 
                   sm:h-4
                   sm:w-4
@@ -672,10 +643,13 @@ export default function TestimonialsSection() {
                               </p>
                             </div>
 
+                            {/* FIXED BADGE CHECK ICON */}
                             <BadgeCheck
+                              size={16}
+                              strokeWidth={2}
+                              aria-label="Verified"
                               className="
-                                h-3.5
-                                w-3.5
+                                shrink-0
                                 text-[#29B6F0]
 
                                 sm:h-4
@@ -695,6 +669,7 @@ export default function TestimonialsSection() {
                             className="
                               mt-1.5
                               flex
+                              items-center
                               justify-center
                               gap-0.5
 
@@ -704,9 +679,11 @@ export default function TestimonialsSection() {
                             {[1, 2, 3, 4, 5].map((star) => (
                               <Star
                                 key={star}
+                                size={12}
+                                strokeWidth={1.8}
+                                aria-hidden="true"
                                 className="
-                                  h-2.5
-                                  w-2.5
+                                  shrink-0
                                   fill-[#29B6F0]
                                   text-[#29B6F0]
 
@@ -781,9 +758,11 @@ export default function TestimonialsSection() {
               "
             >
               <ChevronRight
+                size={16}
+                strokeWidth={2}
+                aria-hidden="true"
                 className="
-                  h-3.5
-                  w-3.5
+                  shrink-0
 
                   sm:h-4
                   sm:w-4
