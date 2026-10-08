@@ -84,7 +84,7 @@ function Overviewdataanalytics() {
           >
             <div className="group relative overflow-hidden rounded-[26px] rounded-tr-[65px] rounded-bl-[52px] sm:rounded-[30px] sm:rounded-tr-[80px] sm:rounded-bl-[65px] md:rounded-[34px] md:rounded-tr-[90px] md:rounded-bl-[72px] lg:rounded-[38px] lg:rounded-tr-[100px] lg:rounded-bl-[80px]">
               <img
-                src="/services/Data Analytics1.jpg"
+                src="/services/Turn Data Into Meaningful Insights.jpg"
                 alt="Data Analytics and Reporting"
                 className="
                   h-[240px]

@@ -11,7 +11,7 @@ const services = [
     number: "01",
     title: "Android Apps",
     shortTitle: "Android",
-    image: "/services/Mobile App.png",
+    image: "/services/Android Apps.jpg",
     description:
       "Develop fast, scalable Android applications with intuitive UI, modern architecture, and excellent performance.",
     points: [
@@ -25,7 +25,7 @@ const services = [
     number: "02",
     title: "iOS Apps",
     shortTitle: "iOS",
-    image: "/home/mobile-app.jpg",
+    image: "/services/iOS Apps.jpg",
     description:
       "Premium iPhone and iPad applications built with smooth performance and Apple's latest design guidelines.",
     points: [
@@ -39,7 +39,7 @@ const services = [
     number: "03",
     title: "Enterprise Mobile Applications",
     shortTitle: "Enterprise",
-    image: "/home/ctaimage.jpg",
+    image: "/services/Enterprise Mobile Applications.jpg",
     description:
       "Enterprise-grade mobile solutions that automate business workflows and improve productivity.",
     points: [
@@ -53,7 +53,7 @@ const services = [
     number: "04",
     title: "Mobile UI/UX Design",
     shortTitle: "UI/UX",
-    image: "/home/mobile-app.jpg",
+    image: "/services/UI UX Design.jpg",
     description:
       "Beautiful, user-friendly interfaces designed to improve engagement and customer satisfaction.",
     points: [
@@ -67,7 +67,7 @@ const services = [
     number: "05",
     title: "App Store Deployment & Support",
     shortTitle: "Support",
-    image: "/home/ctaimage.jpg",
+    image: "/services/App Store Deployment & Support.jpg",
     description:
       "Publishing, optimization, updates, monitoring, and ongoing support for your mobile applications.",
     points: [
@@ -262,7 +262,7 @@ export default function Services() {
                   key={active.image}
                   src={active.image}
                   alt={active.title}
-                  className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-[1.035]"
+                  className="h-full w-full object-fill transition-transform duration-700 group-hover:scale-[1.035]"
                 />
 
                 {/* Image overlay */}

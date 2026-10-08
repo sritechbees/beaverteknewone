@@ -23,21 +23,21 @@ const services = [
     title: "Interactive Reports",
     description:
       "Create dynamic and interactive reports that help teams explore data and make informed decisions.",
-    image: "/services/software maintance.png",
+    image: "/services/Interactive Reports.jpg",
     icon: FileBarChart,
   },
   {
     title: "Power BI Development",
     description:
       "Develop intelligent Power BI solutions with interactive visualizations, analytics, and reporting.",
-    image: "/services/Cloud Cost Analysis.jpg",
+    image: "/services/Power BI Development.jpg",
     icon: MonitorCheck,
   },
   {
     title: "Executive Reporting",
     description:
       "Deliver executive-level reports that provide a clear view of business performance and key metrics.",
-    image: "/services/Cloud Cost Optimization.jpg",
+    image: "/services/Executive Reporting.jpg",
     icon: Presentation,
   },
   {

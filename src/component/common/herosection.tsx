@@ -61,8 +61,7 @@ export default function CaseStudyHero() {
 
             {/* Image Overlay */}
 
-            <div className="absolute inset-0 bg-black/20 transition-all duration-700 group-hover:bg-black/45" />
-
+          
             {/* =================================================
                 CASE STUDY TEXT
             ================================================= */}

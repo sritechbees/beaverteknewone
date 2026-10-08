@@ -1333,7 +1333,7 @@ export default function Productcontent() {
               }}
             >
               <Image
-                src="/home/Smart Healthcare Platform-bottom.jpg"
+                src="/home/abouthero1.png"
                 alt="BeaverHealthAI"
                 width={520}
                 height={430}

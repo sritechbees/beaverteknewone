@@ -1,10 +1,8 @@
-
 "use client";
 
 import React, { useEffect } from "react";
 import AOS from "aos";
 import "aos/dist/aos.css";
-import { ArrowUpRight } from "lucide-react";
 
 function Overviewsection() {
   useEffect(() => {
@@ -80,8 +78,118 @@ function Overviewsection() {
             xl:gap-14
           "
         >
+
           {/* =================================================
-              LEFT CONTENT
+              LEFT IMAGE
+          ================================================== */}
+
+          <div
+            className="
+              relative
+              mx-auto
+              w-full
+              max-w-xl
+              lg:max-w-none
+              order-1
+            "
+            data-aos="fade-right"
+            data-aos-duration="1000"
+            data-aos-delay="150"
+          >
+            {/* Image Glow */}
+
+            <div
+              className="
+                absolute
+                -inset-3
+                rounded-[30px]
+                bg-gradient-to-r
+                from-[#29B6F0]/15
+                via-[#3E7BD6]/15
+                to-[#B93FC9]/15
+                blur-2xl
+                sm:-inset-4
+                sm:rounded-[35px]
+              "
+            />
+
+            {/* Image Glass Frame */}
+
+            <div
+              className="
+                relative
+                overflow-hidden
+                rounded-[22px]
+                border
+                border-white/[0.10]
+                bg-white/[0.035]
+                p-1.5
+                shadow-[0_20px_50px_rgba(0,0,0,.45)]
+                backdrop-blur-xl
+                sm:rounded-[28px]
+                sm:p-2
+              "
+            >
+              <div
+                className="
+                  group
+                  relative
+                  overflow-hidden
+                  rounded-[17px]
+                  sm:rounded-[22px]
+                "
+              >
+                {/* Image */}
+
+                <img
+                  src="/services/Cloud Cost Optimization.jpg"
+                  alt="Cloud Cost Optimization"
+                  className="
+                    h-[220px]
+                    w-full
+                    object-cover
+                    transition
+                    duration-700
+                    group-hover:scale-105
+                    sm:h-[280px]
+                    md:h-[320px]
+                    lg:h-[390px]
+                    xl:h-[430px]
+                  "
+                />
+
+                {/* Image Overlay */}
+
+                <div
+                  className="
+                    absolute
+                    inset-0
+                    bg-gradient-to-t
+                    from-black/65
+                    via-black/10
+                    to-transparent
+                  "
+                />
+
+                {/* BeaverTek Soft Color Overlay */}
+
+                <div
+                  className="
+                    absolute
+                    inset-0
+                    bg-gradient-to-br
+                    from-[#29B6F0]/10
+                    via-transparent
+                    to-[#B93FC9]/10
+                    opacity-70
+                  "
+                />
+              </div>
+            </div>
+          </div>
+
+          {/* =================================================
+              RIGHT CONTENT
           ================================================== */}
 
           <div
@@ -99,8 +207,9 @@ function Overviewsection() {
               sm:p-6
               md:p-7
               lg:p-8
+              order-2
             "
-            data-aos="fade-right"
+            data-aos="fade-left"
             data-aos-duration="900"
           >
             {/* Light Glass Shine */}
@@ -148,6 +257,7 @@ function Overviewsection() {
             />
 
             <div className="relative z-10">
+
               {/* Section Label */}
 
               <div
@@ -303,215 +413,6 @@ function Overviewsection() {
                 strategies. The result: significant savings with consistent,
                 reliable performance.
               </p>
-            </div>
-          </div>
-
-          {/* =================================================
-              RIGHT IMAGE
-          ================================================== */}
-
-          <div
-            className="relative mx-auto w-full max-w-xl lg:max-w-none"
-            data-aos="fade-left"
-            data-aos-duration="1000"
-            data-aos-delay="150"
-          >
-            {/* Image Glow */}
-
-            <div
-              className="
-                absolute
-                -inset-3
-                rounded-[30px]
-                bg-gradient-to-r
-                from-[#29B6F0]/15
-                via-[#3E7BD6]/15
-                to-[#B93FC9]/15
-                blur-2xl
-                sm:-inset-4
-                sm:rounded-[35px]
-              "
-            />
-
-            {/* Image Glass Frame */}
-
-            <div
-              className="
-                relative
-                overflow-hidden
-                rounded-[22px]
-                border
-                border-white/[0.10]
-                bg-white/[0.035]
-                p-1.5
-                shadow-[0_20px_50px_rgba(0,0,0,.45)]
-                backdrop-blur-xl
-                sm:rounded-[28px]
-                sm:p-2
-              "
-            >
-              <div
-                className="
-                  group
-                  relative
-                  overflow-hidden
-                  rounded-[17px]
-                  sm:rounded-[22px]
-                "
-              >
-                {/* Image */}
-
-                <img
-                  src="/services/Cloud Cost Optimization.jpg"
-                  alt="Cloud Cost Optimization"
-                  className="
-                    h-[220px]
-                    w-full
-                    object-cover
-                    transition
-                    duration-700
-                    group-hover:scale-105
-                    sm:h-[280px]
-                    md:h-[320px]
-                    lg:h-[390px]
-                    xl:h-[430px]
-                  "
-                />
-
-                {/* Image Overlay */}
-
-                <div
-                  className="
-                    absolute
-                    inset-0
-                    bg-gradient-to-t
-                    from-black/65
-                    via-black/10
-                    to-transparent
-                  "
-                />
-
-                {/* BeaverTek Soft Color Overlay */}
-
-                <div
-                  className="
-                    absolute
-                    inset-0
-                    bg-gradient-to-br
-                    from-[#29B6F0]/10
-                    via-transparent
-                    to-[#B93FC9]/10
-                    opacity-70
-                  "
-                />
-
-                {/* =================================================
-                    HIGHLIGHTED ARROW
-                ================================================== */}
-
-                <div
-                  className="
-                    absolute
-                    right-4
-                    top-4
-                    sm:right-5
-                    sm:top-5
-                  "
-                  data-aos="zoom-in"
-                  data-aos-delay="500"
-                >
-                  <div
-                    className="
-                      absolute
-                      -inset-2
-                      rounded-full
-                      bg-gradient-to-r
-                      from-[#29B6F0]
-                      via-[#3E7BD6]
-                      to-[#B93FC9]
-                      opacity-40
-                      blur-md
-                      transition-all
-                      duration-500
-                      group-hover:opacity-80
-                      group-hover:blur-lg
-                    "
-                  />
-
-                  <button
-                    type="button"
-                    aria-label="Cloud Cost Optimization"
-                    className="
-                      relative
-                      flex
-                      h-11
-                      w-11
-                      items-center
-                      justify-center
-                      rounded-full
-                      border
-                      border-white/25
-                      bg-black/45
-                      shadow-[0_0_25px_rgba(41,182,240,.25)]
-                      backdrop-blur-xl
-                      transition-all
-                      duration-500
-                      hover:scale-110
-                      hover:border-[#29B6F0]
-                      hover:bg-black/65
-                      hover:shadow-[0_0_30px_rgba(41,182,240,.5)]
-                      sm:h-12
-                      sm:w-12
-                    "
-                  >
-                    <ArrowUpRight
-                      className="
-                        h-5
-                        w-5
-                        bg-gradient-to-r
-                        from-[#29B6F0]
-                        via-[#3E7BD6]
-                        to-[#B93FC9]
-                        bg-clip-text
-                        text-[#29B6F0]
-                        transition-transform
-                        duration-500
-                        group-hover:-translate-y-0.5
-                        group-hover:translate-x-0.5
-                      "
-                      strokeWidth={2.2}
-                    />
-                  </button>
-                </div>
-
-                {/* Bottom Glass Highlight */}
-
-                <div
-                  className="
-                    absolute
-                    bottom-4
-                    left-4
-                    right-4
-                    rounded-2xl
-                    border
-                    border-white/[0.12]
-                    bg-white/[0.045]
-                    px-4
-                    py-3
-                    opacity-0
-                    backdrop-blur-xl
-                    transition-all
-                    duration-500
-                    group-hover:translate-y-0
-                    group-hover:opacity-100
-                    sm:bottom-5
-                    sm:left-5
-                    sm:right-5
-                  "
-                >
-                  <div className="h-[2px] w-10 rounded-full bg-gradient-to-r from-[#29B6F0] via-[#3E7BD6] to-[#B93FC9]" />
-                </div>
-              </div>
             </div>
           </div>
         </div>

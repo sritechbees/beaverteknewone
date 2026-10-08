@@ -436,7 +436,7 @@ export default function PaymentHeroSection() {
                 className="
                   h-[260px]
                   w-full
-                  object-cover
+                  object-fill
                   transition-transform
                   duration-700
                   hover:scale-[1.03]

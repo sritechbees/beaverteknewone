@@ -1,4 +1,3 @@
-
 "use client";
 
 import React, { useEffect } from "react";
@@ -81,8 +80,42 @@ function Overviewsection() {
               lg:gap-12
             "
           >
-            {/* Left Content */}
-            <div className="order-1">
+            {/* Left Image */}
+            <div
+              data-aos="fade-right"
+              data-aos-delay="150"
+              className="relative order-1 min-w-0"
+            >
+              <div
+                className="
+                  overflow-hidden
+                  rounded-[20px]
+                  bg-[#0B0B0B]
+                  sm:rounded-[24px]
+                  lg:rounded-[28px]
+                "
+              >
+                <img
+                  src="/services/Data Analytics1.jpg"
+                  alt="Digital Transformation"
+                  className="
+                    h-[240px]
+                    w-full
+                    object-fill
+                    transition
+                    duration-700
+                    hover:scale-105
+                    sm:h-[300px]
+                    md:h-[340px]
+                    lg:h-[400px]
+                    xl:h-[440px]
+                  "
+                />
+              </div>
+            </div>
+
+            {/* Right Content */}
+            <div className="order-2 min-w-0">
               {/* Small Title */}
               <span
                 data-aos="fade-down"
@@ -178,47 +211,13 @@ function Overviewsection() {
                   lg:leading-7.5
                 "
               >
-                Empower your business with a unified digital transformation  
-                ecosystem. Our comprehensive offering brings together cloud  
-                migration, application modernization, AI integration, and managed  
-                services into one seamless, scalable solution. We help organizations  
-                accelerate innovation, optimize operations, and unlock new business  
+                Empower your business with a unified digital transformation
+                ecosystem. Our comprehensive offering brings together cloud
+                migration, application modernization, AI integration, and managed
+                services into one seamless, scalable solution. We help organizations
+                accelerate innovation, optimize operations, and unlock new business
                 value through intelligent, cloud-first technologies.
               </p>
-            </div>
-
-            {/* Right Image */}
-            <div
-              data-aos="fade-left"
-              data-aos-delay="150"
-              className="relative order-2"
-            >
-              <div
-                className="
-                  overflow-hidden
-                  rounded-[20px]
-                  bg-[#0B0B0B]
-                  sm:rounded-[24px]
-                  lg:rounded-[28px]
-                "
-              >
-                <img
-                  src="/services/Data Analytics1.jpg"
-                  alt="Digital Transformation"
-                  className="
-                    h-[240px]
-                    w-full
-                    object-fill
-                    transition
-                    duration-700
-                    hover:scale-105
-                    sm:h-[300px]
-                    md:h-[340px]
-                    lg:h-[400px]
-                    xl:h-[440px]
-                  "
-                />
-              </div>
             </div>
           </div>
         </div>
@@ -228,4 +227,3 @@ function Overviewsection() {
 }
 
 export default Overviewsection;
-

@@ -27,10 +27,30 @@ function Overviewsotware() {
 
       <div className="relative mx-auto w-full max-w-7xl px-4 sm:px-5 md:px-6 lg:px-8 xl:px-10">
         <div className="grid items-center gap-8 sm:gap-10 md:gap-12 lg:grid-cols-2 lg:gap-12 xl:gap-16 2xl:gap-20">
-          {/* LEFT CONTENT */}
+
+          {/* =====================================================
+              LEFT IMAGE
+          ====================================================== */}
           <div
             data-aos="fade-right"
-            className="flex min-w-0 flex-col justify-center"
+            data-aos-delay="200"
+            className="relative mx-auto order-1 w-full max-w-[600px] lg:max-w-none"
+          >
+            <div className="relative overflow-hidden rounded-xl border border-white/10 sm:rounded-2xl md:rounded-3xl">
+              <img
+                src="https://images.unsplash.com/photo-1551434678-e076c223a692?auto=format&fit=crop&w=1200&q=85"
+                alt="Custom software development"
+                className="h-[230px] w-full object-cover transition duration-700 hover:scale-105 sm:h-[280px] md:h-[340px] lg:h-[390px] xl:h-[440px] 2xl:h-[480px]"
+              />
+            </div>
+          </div>
+
+          {/* =====================================================
+              RIGHT CONTENT
+          ====================================================== */}
+          <div
+            data-aos="fade-left"
+            className="order-2 flex min-w-0 flex-col justify-center"
           >
             {/* Decorative Label */}
             <div className="mb-4 flex items-center gap-2.5 sm:mb-5 sm:gap-3 md:mb-6 lg:mb-7">
@@ -71,24 +91,9 @@ function Overviewsotware() {
               className="mt-6 h-[3px] w-16 rounded-full bg-gradient-to-r from-[#29B6F0] via-[#3E7BD6] to-[#B93FC9] sm:mt-7 sm:w-20 md:mt-8 md:w-24 lg:mt-9 lg:w-32"
             />
           </div>
-
-          {/* RIGHT IMAGE ONLY */}
-          <div
-            data-aos="fade-left"
-            data-aos-delay="200"
-            className="relative mx-auto w-full max-w-[600px] lg:max-w-none"
-          >
-            <div className="relative overflow-hidden rounded-xl border border-white/10 sm:rounded-2xl md:rounded-3xl">
-              <img
-                src="https://images.unsplash.com/photo-1551434678-e076c223a692?auto=format&fit=crop&w=1200&q=85"
-                alt="Custom software development"
-                className="h-[230px] w-full object-cover transition duration-700 hover:scale-105 sm:h-[280px] md:h-[340px] lg:h-[390px] xl:h-[440px] 2xl:h-[480px]"
-              />
-            </div>
-          </div>
         </div>
       </div>
- </section>
+    </section>
   );
 }
 

@@ -11,11 +11,11 @@ import { Box, ChevronRight } from "lucide-react";
 ================================================================ */
 
 const projects = [
-  { id: 1, image: "/home/dataanalytics.jpg" },
+  { id: 1, image: "/home/BI Dashboard Development.png" },
   { id: 2, image: "/home/homehero.jpg" },
   { id: 3, image: "/home/abouthero1.png" },
   { id: 4, image: "/home/Banner1.jpg" },
-  { id: 5, image: "/home/producthero.png" },
+  { id: 5, image: "/home/dataanalytics.jpg" },
 ];
 
 /* ================================================================
