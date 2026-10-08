@@ -45,7 +45,7 @@ export default function CaseStudyHero() {
           <div className="group relative h-[260px] w-full overflow-hidden sm:h-[340px] lg:h-[390px]">
 
             <Image
-              src="/home/whyexist.jpg"
+              src="/home/Case Study main image.jpg"
               alt="Case Study"
               fill
               priority

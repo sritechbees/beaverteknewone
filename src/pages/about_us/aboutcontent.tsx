@@ -18,7 +18,7 @@ export default function AboutContent() {
   const sections = [
     {
       title: "Why We Exist",
-      image: "/home/whyexist.jpg",
+      image: "/home/Why We Exist.jpg",
 
       content:
         "Most small and mid-size companies are stuck between two bad options. Hire a full in-house IT and engineering team, which is expensive and slow to build. Or buy off-the-shelf software and consultants who do not really know the business. We started BeaverTek because there is a third option: a senior partner who treats your problems like our own, and who can actually build what you need.",
@@ -29,7 +29,7 @@ export default function AboutContent() {
 
     {
       title: "How We Work",
-      image: "/home/theteam.jpg",
+      image: "/home/How We Work.jpg",
 
       content:
         "We are not a body shop. Every engagement is led by senior people who have done the work before. We listen first, design carefully, and ship working software. We treat your data, your customers, and your operations with the same seriousness we would give a regulated enterprise — because at the size you are operating, mistakes cost more, not less.",
@@ -40,7 +40,7 @@ export default function AboutContent() {
 
     {
       title: "The Team",
-      image: "/home/studyhero.jpg",
+      image: "/home/Our Team.jpg",
 
       content:
         "Our leadership brings more than 80 years of combined experience working with Fortune 500 companies across financial services, healthcare, retail, and technology. We have built payment platforms processing millions of transactions a month, healthcare AI used in real hospitals, and mobile products taken from concept to launch. We are global by design. Our US team handles strategy, architecture, and client partnership. Our India team handles deep engineering execution. Together, we deliver faster and at a better cost than a single-location firm.",

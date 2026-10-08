@@ -428,7 +428,7 @@ export default function PaymentHeroSection() {
               "
             >
               <Image
-                src="/home/dataanalytics.jpg"
+                src="/home/Payment Platform Built for Scale.jpg"
                 alt="Payment Platform at Scale"
                 width={900}
                 height={700}

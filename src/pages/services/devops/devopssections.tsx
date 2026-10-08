@@ -23,7 +23,7 @@ function DevOpsSections() {
       title: "DevOps",
       description:
         "Accelerate innovation. Automate delivery. Scale with confidence. We streamline your software lifecycle with automated build, test, and deployment pipelines enabling faster releases and stronger collaboration across teams.",
-      image: "/services/Data Analytics1.jpg",
+      image: "/services/DevOpsone.jpg",
       gradient: "from-[#29B6F0] via-[#3E7BD6] to-[#7A4FD1]",
     },
     {
@@ -31,7 +31,7 @@ function DevOpsSections() {
       title: "DevSecOps",
       description:
         "Secure every line of code. Deliver with confidence. Security is built into every stage of development. We integrate automated security checks, compliance controls, and vulnerability remediation to ensure rapid, safe, and reliable releases.",
-      image: "/services/Data Analytics1.jpg",
+      image: "/services/DevSecOps.jpg",
       gradient: "from-[#7A4FD1] via-[#B93FC9] to-[#29B6F0]",
     },
   ];

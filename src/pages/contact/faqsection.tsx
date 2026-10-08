@@ -140,7 +140,7 @@ return ( <section className="relative overflow-hidden bg-[linear-gradient(135deg
           className="relative overflow-hidden rounded-[16px] sm:rounded-[18px] border border-[#2A2A30] shadow-[0_20px_50px_rgba(0,0,0,.45)]"
         >
           <Image
-            src="/home/faq.jpg"
+            src="/contact/Have Questions_.jpg"
             alt="FAQ"
             width={700}
             height={800}

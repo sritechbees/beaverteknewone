@@ -49,14 +49,7 @@ export default function Productcontent() {
       SUBTLE BACKGROUND GRID
   ================================================= */}
 
-  <div
-    className="pointer-events-none absolute inset-0 opacity-[0.035]"
-    style={{
-      backgroundImage:
-        "linear-gradient(#3E7BD6 1px,transparent 1px),linear-gradient(90deg,#3E7BD6 1px,transparent 1px)",
-      backgroundSize: "45px 45px",
-    }}
-  />
+ 
 
   <div className="relative z-10 mx-auto max-w-7xl px-4 sm:px-5 md:px-6 lg:px-8">
     <div
@@ -1340,7 +1333,7 @@ export default function Productcontent() {
               }}
             >
               <Image
-                src="/home/abouthero1.png"
+                src="/home/Smart Healthcare Platform-bottom.jpg"
                 alt="BeaverHealthAI"
                 width={520}
                 height={430}
@@ -1350,7 +1343,7 @@ export default function Productcontent() {
                   h-auto
                   w-full
                   max-w-[270px]
-                  object-cover
+                  object-fill
                   transition-transform
                   duration-700
                   hover:scale-105

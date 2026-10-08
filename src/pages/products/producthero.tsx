@@ -468,7 +468,7 @@ export default function ProductsHeroSection() {
                   }}
                 >
                   <Image
-                    src="/home/producthero.png"
+                    src="/home/Smart Healthcare Platform.jpg"
                     alt="BeaverHealthAI"
                     width={900}
                     height={700}

@@ -326,7 +326,7 @@ export default function AIHospitalHeroSection() {
               "
             >
               <Image
-                src="/home/abouthero1.png"
+                src="/home/AI in Real Hospitals.jpg"
                 alt="AI in Real Hospitals"
                 width={650}
                 height={500}
