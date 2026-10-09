@@ -61,7 +61,7 @@ export default function ModernizeHero() {
 
         <div className="absolute inset-0">
           <Image
-            src="/home/whyexist.jpg"
+            src="/home/Modernize.png"
             alt="Modernize Hero"
             fill
             priority

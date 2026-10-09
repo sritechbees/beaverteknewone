@@ -69,7 +69,7 @@ export default function ServicesHerosection() {
       title: "Custom Software Development",
       image: "/services/Custom Software Development and Maintance.jpg",
       href: "/services/customsoftware/herosection",
-      shape: "58% 42% 50% 50% / 40% 60% 40% 60%",
+      shape: "68% 42% 50% 50% / 40% 60% 40% 60%",
     },
     {
       title: "Data Analytics & Reporting",

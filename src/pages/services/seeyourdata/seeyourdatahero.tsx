@@ -33,18 +33,16 @@ export default function HeroSection() {
 
         <div className="absolute inset-0">
           <img
-            src="/home/producthero.png"
+            src="/home/See Your Data.jpg"
             alt="Data & Analytics"
             className="h-full w-full object-cover"
           />
 
-          {/* Dark Overlay */}
-
-          <div className="absolute inset-0 bg-black/10" />
+         
 
           {/* BeaverTek Gradient Overlay */}
 
-          <div className="absolute inset-0 bg-gradient-to-r from-black/80 via-black/55 to-black/40" />
+          <div className="absolute inset-0 bg-gradient-to-r from-black/20 via-black/25 to-black/10" />
 
           {/* Center Darkening */}
 
