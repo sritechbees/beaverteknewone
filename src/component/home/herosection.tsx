@@ -11,11 +11,51 @@ import { Box, ChevronRight } from "lucide-react";
 ================================================================ */
 
 const projects = [
-  { id: 1, image: "/home/BI Dashboard Development.png" },
-  { id: 2, image: "/home/homehero.jpg" },
-  { id: 3, image: "/home/abouthero1.png" },
-  { id: 4, image: "/home/Banner1.jpg" },
-  { id: 5, image: "/home/dataanalytics.jpg" },
+  {
+    id: 1,
+    image: "/home/BI Dashboard Development.png",
+    title: "BI Dashboard Development",
+  },
+  {
+    id: 2,
+    image: "/home/homehero.jpg",
+    title: "Digital Experiences",
+  },
+  {
+    id: 3,
+    image: "/home/abouthero1.png",
+    title: "Business Solutions",
+  },
+  {
+    id: 4,
+    image: "/home/Banner1.jpg",
+    title: "Modern Web Development",
+  },
+  {
+    id: 5,
+    image: "/home/dataanalytics.jpg",
+    title: "Data Analytics",
+  },
+  {
+    id: 6,
+    image: "/home/BI Dashboard Development.png",
+    title: "Intelligent Dashboards",
+  },
+  {
+    id: 7,
+    image: "/home/homehero.jpg",
+    title: "Scalable Digital Platforms",
+  },
+  {
+    id: 8,
+    image: "/home/abouthero1.png",
+    title: "Innovative Technology",
+  },
+  {
+    id: 9,
+    image: "/home/Banner1.jpg",
+    title: "Digital Transformation",
+  },
 ];
 
 /* ================================================================
@@ -30,7 +70,7 @@ const stats = [
     icon: "screen" as const,
   },
   {
-    number: "80+",
+    number: "180+",
     title: "TOTAL INNER",
     subtitle: "PAGES",
     icon: "file" as const,
@@ -435,12 +475,13 @@ function Herosection() {
               ref={trackRef}
               className="flex w-max gap-3 py-2 pl-4 will-change-transform sm:gap-4 sm:pl-6 lg:gap-5 lg:pl-10 xl:pl-16"
             >
-              {[...projects, ...projects].map((project, index) => (
-                <ProductCard
-                  key={`${project.id}-${index}`}
-                  image={project.image}
-                />
-              ))}
+              {projects.map((project) => (
+  <ProductCard
+    key={project.id}
+    image={project.image}
+    title={project.title}
+  />
+))}
             </div>
           </div>
 
@@ -521,15 +562,21 @@ function StatIcon({
 /* ================================================================
    PRODUCT CARD
 ================================================================ */
-
-function ProductCard({ image }: { image: string }) {
+function ProductCard({
+  image,
+  title,
+}: {
+  image: string;
+  title: string;
+}) {
   return (
     <div
       className="
-        group/product relative h-[150px] w-[245px] shrink-0 overflow-hidden
-        rounded-[18px] border border-white/10 bg-[#121212]
+        group/product relative h-[150px] w-[245px] shrink-0
+        overflow-hidden rounded-[18px]
+        border border-white/10 bg-[#121212]
         shadow-[0_15px_45px_rgba(0,0,0,0.35)]
-        transition-all duration-700
+        transition-all duration-500
         hover:-translate-y-2 hover:scale-[1.02]
         hover:border-[#3E7BD6]/60
         hover:shadow-[0_20px_55px_rgba(62,123,214,0.20),0_0_35px_rgba(185,63,201,0.12)]
@@ -539,28 +586,74 @@ function ProductCard({ image }: { image: string }) {
     >
       <img
         src={image}
-        alt="Digital product showcase"
-        className="h-full w-full object-cover transition-all duration-700 group-hover/product:scale-110"
+        alt={title}
+        className="
+          h-full w-full object-cover
+          transition-transform duration-700
+          group-hover/product:scale-110
+        "
       />
 
-      <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent" />
-
-      <div className="absolute left-0 top-0 h-[2px] w-0 bg-[linear-gradient(90deg,#29B6F0,#3E7BD6,#7A4FD1,#B93FC9)] shadow-[0_0_15px_rgba(41,182,240,0.8)] transition-all duration-700 group-hover/product:w-full" />
-
+      {/* Dark gradient overlay */}
       <div
         className="
-          absolute left-1/2 top-1/2 flex h-10 w-10
-          -translate-x-1/2 -translate-y-1/2 scale-75
-          items-center justify-center rounded-full
-          border border-white/20 bg-black/40 opacity-0
-          backdrop-blur-md transition-all duration-500
-          group-hover/product:scale-100 group-hover/product:opacity-100
+          pointer-events-none absolute inset-0
+          bg-gradient-to-t
+          from-black/90 via-black/25 to-transparent
+          transition-all duration-500
+          group-hover/product:from-black/95
+        "
+      />
+
+      {/* Gradient top accent */}
+      <div
+        className="
+          absolute left-0 top-0 h-[2px] w-0
+          bg-[linear-gradient(90deg,#29B6F0,#3E7BD6,#7A4FD1,#B93FC9)]
+          shadow-[0_0_15px_rgba(41,182,240,0.8)]
+          transition-all duration-700
+          group-hover/product:w-full
+        "
+      />
+
+      {/* Individual card title */}
+      <div
+        className="
+          absolute inset-x-0 bottom-0
+          translate-y-2 p-4
+          opacity-0
+          transition-all duration-500
+          group-hover/product:translate-y-0
+          group-hover/product:opacity-100
         "
       >
-        <ChevronRight className="h-4 w-4 text-white" />
+        <h3
+          className="
+            text-sm font-semibold leading-5 text-white
+            sm:text-base
+          "
+        >
+          {title}
+        </h3>
+
+        <div
+          className="
+            mt-2 h-[2px] w-8 rounded-full
+            bg-[linear-gradient(90deg,#29B6F0,#3E7BD6,#7A4FD1,#B93FC9)]
+            transition-all duration-500
+            group-hover/product:w-14
+          "
+        />
       </div>
 
-      <span className="absolute right-3 top-3 h-1.5 w-1.5 rounded-full bg-[#29B6F0] shadow-[0_0_12px_#29B6F0]" />
+      {/* Small accent dot */}
+      <span
+        className="
+          absolute right-3 top-3 h-1.5 w-1.5
+          rounded-full bg-[#29B6F0]
+          shadow-[0_0_12px_#29B6F0]
+        "
+      />
     </div>
   );
 }

@@ -27,7 +27,7 @@ const caseStudies = [
   },
   {
     number: "02",
-    title: "AI in healthcare",
+    title: "AI-Powered Healthcare Solutions",
     description:
       "Designed and shipped an AI patient triaging platform, plus patient intake and preventive care applications moving healthcare teams from paper workflows to working software.",
     icon: HeartPulse,

@@ -584,13 +584,7 @@ export default function TestimonialsSection() {
                               mx-auto
                               my-3
                               h-px
-                              w-[65%]
-                              max-w-[280px]
-                              bg-gradient-to-r
-                              from-transparent
-                              via-[#3E7BD6]/35
-                              to-transparent
-
+                            
                               sm:my-3.5
                             "
                           />
@@ -696,23 +690,8 @@ export default function TestimonialsSection() {
                         </div>
                       </div>
 
-                      {/* =================================================
-                          BOTTOM GRADIENT
-                      ================================================== */}
-
-                      <div
-                        className="
-                          absolute
-                          bottom-0
-                          left-[20%]
-                          right-[20%]
-                          h-px
-                          bg-gradient-to-r
-                          from-transparent
-                          via-[#3E7BD6]/30
-                          to-transparent
-                        "
-                      />
+                    
+                    
                     </div>
                   </SwiperSlide>
                 ))}
