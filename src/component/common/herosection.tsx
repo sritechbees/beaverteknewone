@@ -1,6 +1,6 @@
 "use client";
 
-import Testimonial from "@/pages/customers/testimonial";
+
 import Image from "next/image";
 import Link from "next/link";
 
@@ -802,7 +802,7 @@ export default function CaseStudyHero() {
         </div>
       </div>
     </section>
-    <Testimonial/>
+    
     </div>
   );
 }

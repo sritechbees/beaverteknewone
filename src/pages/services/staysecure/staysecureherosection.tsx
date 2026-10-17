@@ -32,36 +32,20 @@ export default function SecureHeroSection() {
       >
         {/* ================= Background ================= */}
 
-        <div className="absolute inset-0">
+       
           {/* Background Image */}
 
-          <div
-            className="absolute inset-0 bg-cover bg-center bg-no-repeat opacity-55 sm:opacity-60"
-            style={{
-              backgroundImage: "url('/home/homehero.jpg')",
-            }}
+           <div className="absolute inset-0">
+          <img
+            src="/home/homehero.jpg"
+            alt="Application Development"
+            className="h-full w-full object-cover object-top"
           />
 
           {/* Dark Overlay */}
+          <div className="absolute inset-0 bg-black/55" />
 
-          <div className="absolute inset-0 bg-black/30" />
-
-          {/* Cyan Glow */}
-
-          <div className="absolute -left-32 -top-32 h-72 w-72 rounded-full bg-[#29B6F0]/10 blur-[110px] sm:h-96 sm:w-96 lg:-left-40 lg:-top-40 lg:h-[32rem] lg:w-[32rem] lg:blur-[140px]" />
-
-          {/* Blue Glow */}
-
-          <div className="absolute -right-20 top-16 h-64 w-64 rounded-full bg-[#3E7BD6]/10 blur-[110px] sm:h-80 sm:w-80 lg:right-0 lg:top-20 lg:h-[28rem] lg:w-[28rem] lg:blur-[150px]" />
-
-          {/* Magenta Glow */}
-
-          <div className="absolute bottom-0 left-1/2 h-56 w-56 -translate-x-1/2 rounded-full bg-[#B93FC9]/8 blur-[110px] sm:h-72 sm:w-72 lg:h-[22rem] lg:w-[22rem] lg:blur-[140px]" />
-
-          {/* Grid Pattern */}
-
-          <div className="absolute inset-0 bg-[linear-gradient(rgba(41,182,240,.025)_1px,transparent_1px),linear-gradient(90deg,rgba(41,182,240,.025)_1px,transparent_1px)] bg-[size:50px_50px] sm:bg-[size:60px_60px]" />
-        </div>
+          </div>
 
         {/* =========================================================
             HERO CONTENT
@@ -116,32 +100,32 @@ export default function SecureHeroSection() {
                 HEADING
             ====================================================== */}
 
-            <h1
-              data-aos="fade-up"
-              data-aos-delay="200"
-              data-aos-duration="900"
-              className="
-                mt-5
-                text-4xl
-                font-black
-                leading-[1.08]
-                tracking-[-0.04em]
-                sm:mt-6
-                sm:text-5xl
-                md:text-6xl
-                lg:mt-7
-                lg:text-[4.2rem]
-                xl:text-[4.5rem]
-              "
-            >
-              <span className="text-white">Services —</span>
+           <h1
+  data-aos="fade-up"
+  data-aos-delay="200"
+  data-aos-duration="900"
+  className="
+    mt-5
+    text-4xl
+    font-black
+    leading-[1.08]
+    tracking-[-0.04em]
+    sm:mt-6
+    sm:text-5xl
+    md:text-6xl
+    lg:mt-7
+    lg:text-[4.2rem]
+    xl:text-[4.5rem]
+  "
+>
+  <span className="text-white">Your Safety</span>
 
-              <br />
+  <br />
 
-              <span className="bg-[linear-gradient(135deg,#29B6F0_0%,#3E7BD6_35%,#7A4FD1_65%,#B93FC9_100%)] bg-clip-text text-transparent">
-                Stay Secure
-              </span>
-            </h1>
+  <span className="bg-[linear-gradient(135deg,#29B6F0_0%,#3E7BD6_35%,#7A4FD1_65%,#B93FC9_100%)] bg-clip-text text-transparent">
+    Stay Secure
+  </span>
+</h1>
 
             {/* =====================================================
                 SUBTITLE

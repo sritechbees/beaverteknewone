@@ -7,6 +7,7 @@ import AOS from "aos";
 import "aos/dist/aos.css";
 import App_layout from "@/component/layout/app_layout";
 import CaseStudyHero from "@/component/common/herosection";
+import CustomerHero from "@/component/common/customerhero";
 
 const images = [
   "/home/studyhero.jpg",
@@ -34,6 +35,7 @@ export default function HeroSection() {
 
   return (
     <App_layout>
+      <CustomerHero/>
       <CaseStudyHero/>
    
     </App_layout>

@@ -35,7 +35,7 @@ export default function HeroSection() {
           <img
             src="/home/See Your Data.jpg"
             alt="Data & Analytics"
-            className="h-full w-full object-cover"
+            className="h-full w-full object-cover object-top"
           />
 
          

@@ -3,6 +3,10 @@
 import React, { useEffect } from "react";
 import AOS from "aos";
 import "aos/dist/aos.css";
+import Beavertekspecial from "./beavertekspecial";
+import Our_vissionmission from "./our_vissionmission";
+import Whybeavertek from "./whybeavertek";
+import Howwework from "./howwework";
 
 const GRADIENT =
   "linear-gradient(135deg,#29B6F0 0%,#3E7BD6 35%,#7A4FD1 65%,#B93FC9 100%)";
@@ -26,6 +30,7 @@ function Innovativeservices() {
   }, []);
 
   return (
+    <div>
     <section
       className="
         relative
@@ -351,6 +356,11 @@ function Innovativeservices() {
         </div>
       </div>
     </section>
+    <Beavertekspecial/>
+    <Our_vissionmission/>
+    <Whybeavertek/>
+    <Howwework/>
+    </div>
   );
 }
 

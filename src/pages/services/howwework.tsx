@@ -4,6 +4,70 @@ import { useEffect } from "react";
 import AOS from "aos";
 import "aos/dist/aos.css";
 
+const processCards = [
+  {
+    title: "Discover",
+    text: "Understand your business, systems, goals, and challenges before recommending technology.",
+  },
+  {
+    title: "Design",
+    text: "Create scalable architectures and implementation plans tailored to your organization.",
+  },
+  {
+    title: "Deliver",
+    text: "Build, deploy, migrate, and integrate with minimal disruption to business operations.",
+  },
+  {
+    title: "Improve",
+    text: "Monitor, optimize, and continuously improve performance, security, and reliability.",
+  },
+];
+
+const benefits = [
+  {
+    title: "Senior expertise",
+    text: "Experienced consultants stay engaged throughout the project—not just during sales.",
+    accent: "#29B6F0",
+  },
+  {
+    title: "Business-first thinking",
+    text: "Every recommendation is aligned with measurable business outcomes.",
+    accent: "#7A4FD1",
+  },
+  {
+    title: "Long-term partnership",
+    text: "We continue supporting clients long after projects launch through optimization and ongoing guidance.",
+    accent: "#B93FC9",
+  },
+];
+
+const workSteps = [
+  {
+    number: "01",
+    title: "Learn",
+    text: "We immerse in your business, map the systems and align on the outcomes that matter most.",
+    accent: "#29B6F0",
+  },
+  {
+    number: "02",
+    title: "Adapt",
+    text: "We design and build the right solution — iterating quickly with you, not in a black box.",
+    accent: "#7A4FD1",
+  },
+  {
+    number: "03",
+    title: "Optimize",
+    text: "We measure, refine and manage what we deliver so it keeps compounding value over time.",
+    accent: "#B93FC9",
+  },
+];
+
+const gradient =
+  "bg-[linear-gradient(135deg,#29B6F0_0%,#3E7BD6_35%,#7A4FD1_65%,#B93FC9_100%)]";
+
+const gradientLine =
+  "bg-[linear-gradient(90deg,#29B6F0,#3E7BD6,#7A4FD1,#B93FC9)]";
+
 function Howwework() {
   useEffect(() => {
     AOS.init({
@@ -18,766 +82,250 @@ function Howwework() {
       AOS.refresh();
     }, 300);
 
-    return () => clearTimeout(timer);
+    return () => {
+      clearTimeout(timer);
+      AOS.refreshHard();
+    };
   }, []);
 
   return (
-    <div>
-      <div
-        className=""
-        data-aos="fade-up"
-        data-aos-duration="850"
-      >
-        <div className="overflow-hidden rounded-2xl border border-[#E5E7EB] bg-white shadow-[0_15px_45px_rgba(0,0,0,0.06)]">
+    <section className="relative w-full overflow-hidden bg-white px-5 py-14 sm:px-8 sm:py-16 lg:px-10 lg:py-20">
+      {/* Subtle page accents */}
+      <div className="pointer-events-none absolute -right-40 top-10 h-80 w-80 rounded-full bg-[#29B6F0]/[0.045] blur-[100px]" />
+      <div className="pointer-events-none absolute -left-40 top-[48%] h-80 w-80 rounded-full bg-[#B93FC9]/[0.04] blur-[100px]" />
 
-          {/* =========================================================
-              MAIN GRID
-              items-stretch makes both columns use the same height
-          ========================================================= */}
+      <div className="relative z-10 mx-auto max-w-7xl">
+
+        {/* =========================================
+            SECTION 1: LEARN. ADAPT. OPTIMIZE.
+        ========================================= */}
+        <div className="pb-14 sm:pb-20 lg:pb-24">
+
+          {/* Heading */}
           <div
-            className="
-              grid
-              items-stretch
-              gap-0
-              lg:grid-cols-[1.08fr_0.92fr]
-            "
+            className="mx-auto max-w-3xl text-center"
+            data-aos="fade-up"
           >
+            <span className="inline-flex items-center gap-2 text-[10px] font-bold tracking-[0.24em] text-[#3E7BD6] sm:text-xs">
+              <span className={`h-[2px] w-6 rounded-full ${gradientLine}`} />
+              HOW WE WORK
+              <span className={`h-[2px] w-6 rounded-full ${gradientLine}`} />
+            </span>
 
-            {/* =========================================================
-                LEFT SECTION
-                Vertically centered against right section on desktop
-            ========================================================= */}
+            <h2 className="mt-5 text-[32px] font-black leading-[1.12] tracking-tight text-[#111827] sm:text-4xl md:text-5xl lg:text-[54px]">
+              Learn. Adapt.{" "}
+              <span className={`${gradient} bg-clip-text text-transparent`}>
+                Optimize.
+              </span>
+            </h2>
+
+            <p className="mx-auto mt-5 max-w-2xl text-sm leading-7 text-[#4B5563] sm:text-base sm:leading-8">
+              Our engagement model mirrors our promise — and it scales from a
+              single sprint to a full transformation.
+            </p>
 
             <div
-              className="
-                flex
-                flex-col
-                justify-center
-                p-5
-                sm:p-6
-                md:p-7
-                lg:h-full
-                lg:p-8
-                xl:p-9
-              "
-            >
+              className={`mx-auto mt-6 h-[3px] w-14 rounded-full ${gradientLine}`}
+            />
+          </div>
 
-              {/* Badge */}
-
-              <span
-                data-aos="fade-right"
-                data-aos-duration="700"
-                data-aos-delay="80"
-                className="
-                  inline-flex
-                  w-fit
-                  items-center
-                  rounded-full
-                  border
-                  border-[#3E7BD6]/20
-                  bg-[#F5F8FF]
-                  px-3
-                  py-1.5
-                  text-[10px]
-                  font-bold
-                  tracking-[0.16em]
-                  text-[#3E7BD6]
-                  sm:text-[11px]
-                  md:text-xs
-                "
+          {/* Open workflow layout — no cards or boxes */}
+          <div className="mt-12 grid grid-cols-1 gap-9 sm:mt-14 sm:grid-cols-3 sm:gap-7 lg:mt-16 lg:gap-12">
+            {workSteps.map((step, index) => (
+              <div
+                key={step.title}
+                data-aos="fade-up"
+                data-aos-delay={index * 120}
+                className="group relative"
               >
-                HOW WE WORK
-              </span>
+                {/* Minimal gradient divider */}
+                <div
+                  className="mb-6 h-[2px] w-full origin-left transition-transform duration-500 group-hover:scale-x-100"
+                  style={{
+                    background: `linear-gradient(90deg, ${step.accent} 0%, ${step.accent}30 55%, transparent 100%)`,
+                  }}
+                />
 
-              {/* =====================================================
-                  TITLE
-              ====================================================== */}
+                <div className="flex items-center gap-4">
+                  <span
+                    className="text-[38px] font-black leading-none tracking-tight transition-colors duration-300 sm:text-[42px] lg:text-5xl"
+                    style={{ color: step.accent }}
+                  >
+                    {step.number}
+                  </span>
 
-              <h2
-                data-aos="fade-right"
-                data-aos-duration="800"
-                data-aos-delay="130"
-                className="
-                  mt-4
-                  max-w-xl
-                  text-[30px]
-                  font-black
-                  leading-[1.06]
-                  tracking-tight
-                  sm:text-[34px]
-                  md:text-[38px]
-                  lg:text-[40px]
-                  xl:text-[44px]
-                "
-              >
-                <span className="text-[#111827]">
-                  Senior people.
+                  <span
+                    className="h-8 w-px"
+                    style={{ backgroundColor: `${step.accent}45` }}
+                  />
+
+                  <h3 className="text-xl font-extrabold tracking-tight text-[#111827] transition-colors duration-300 group-hover:text-[#3E7BD6] sm:text-2xl lg:text-[27px]">
+                    {step.title}
+                  </h3>
+                </div>
+
+                <p className="mt-5 max-w-sm text-sm leading-7 text-[#6B7280] sm:text-[15px] sm:leading-8">
+                  {step.text}
+                </p>
+              </div>
+            ))}
+          </div>
+        </div>
+
+        {/* Subtle section separator */}
+        <div
+          className={`h-px w-full ${gradientLine} opacity-25`}
+          aria-hidden="true"
+        />
+
+        {/* =========================================
+            SECTION 2: SENIOR PEOPLE. PRACTICAL DELIVERY.
+        ========================================= */}
+        <div className="pt-14 sm:pt-20 lg:pt-24">
+
+          <div className="grid grid-cols-1 gap-12 lg:grid-cols-[1.12fr_0.88fr] lg:gap-16 xl:gap-24">
+
+            {/* LEFT: APPROACH + PROCESS */}
+            <div>
+              <div data-aos="fade-right">
+                <span className="inline-flex items-center gap-2 text-[10px] font-bold tracking-[0.24em] text-[#3E7BD6] sm:text-xs">
+                  <span className={`h-[2px] w-6 rounded-full ${gradientLine}`} />
+                  OUR APPROACH
                 </span>
 
-                <br />
+                <h2 className="mt-5 text-[32px] font-black leading-[1.08] tracking-tight sm:text-4xl md:text-[42px] lg:text-[44px] xl:text-[48px]">
+                  <span className="text-[#111827]">
+                    Senior people.
+                  </span>
+                  <br />
+                  <span className={`${gradient} bg-clip-text text-transparent`}>
+                    Practical delivery.
+                  </span>
+                </h2>
 
-                <span
-                  className="
-                    bg-[linear-gradient(135deg,#29B6F0_0%,#3E7BD6_35%,#7A4FD1_65%,#B93FC9_100%)]
-                    bg-clip-text
-                    text-transparent
-                  "
-                >
-                  Practical delivery.
-                </span>
-              </h2>
+                <div
+                  className={`mt-5 h-[3px] w-14 rounded-full ${gradientLine}`}
+                />
 
-              {/* Gradient line */}
+                <p className="mt-6 max-w-2xl text-sm leading-7 text-[#4B5563] sm:text-[15px] sm:leading-8">
+                  Technology projects succeed when experienced people stay
+                  involved from planning through delivery. That's why every
+                  BeaverTek engagement is led by senior consultants who focus
+                  on outcomes not unnecessary complexity.
+                </p>
 
-              <div
-                data-aos="fade-right"
-                data-aos-duration="700"
-                data-aos-delay="180"
-                className="
-                  mt-4
-                  h-[3px]
-                  w-14
-                  rounded-full
-                  bg-[linear-gradient(90deg,#29B6F0,#3E7BD6,#7A4FD1,#B93FC9)]
-                "
-              />
+                <p className="mt-4 max-w-2xl text-sm leading-7 text-[#4B5563] sm:text-[15px] sm:leading-8">
+                  Whether we're modernizing infrastructure, building software,
+                  improving data visibility, or strengthening cybersecurity,
+                  our process stays collaborative, transparent, and measurable.
+                </p>
+              </div>
 
-              {/* Description 1 */}
-
-              <p
-                data-aos="fade-up"
-                data-aos-duration="750"
-                data-aos-delay="220"
-                className="
-                  mt-4
-                  text-[14px]
-                  leading-6
-                  text-[#4B5563]
-
-                  sm:mt-5
-                  sm:text-[15px]
-                  sm:leading-7
-
-                  md:text-base
-                  md:leading-7
-
-                  lg:text-[14px]
-                  lg:leading-7
-
-                  xl:text-[16px]
-                "
-              >
-                Technology projects succeed when experienced people stay
-                involved from planning through delivery. That's why every
-                BeaverTek engagement is led by senior consultants who focus
-                on outcomes not unnecessary complexity.
-              </p>
-
-              {/* Description 2 */}
-
-              <p
-                data-aos="fade-up"
-                data-aos-duration="750"
-                data-aos-delay="270"
-                className="
-                  mt-3
-                  text-[14px]
-                  leading-6
-                  text-[#4B5563]
-
-                  sm:mt-3.5
-                  sm:text-[15px]
-                  sm:leading-7
-
-                  md:text-base
-                  md:leading-7
-
-                  lg:text-[14px]
-                  lg:leading-7
-
-                  xl:text-[16px]
-                "
-              >
-                Whether we're modernizing infrastructure, building software,
-                improving data visibility, or strengthening cybersecurity,
-                our process stays collaborative, transparent, and measurable.
-              </p>
-
-              {/* =========================================================
-                  PROCESS CARDS
-              ========================================================= */}
-
-              <div
-                className="
-                  mt-6
-                  grid
-                  grid-cols-1
-                  gap-2.5
-
-                  sm:grid-cols-2
-                  sm:gap-3
-
-                  md:mt-7
-
-                  lg:mt-6
-                "
-              >
-
-                {[
-                  {
-                    title: "Discover",
-                    text: "Understand your business, systems, goals, and challenges before recommending technology.",
-                  },
-                  {
-                    title: "Design",
-                    text: "Create scalable architectures and implementation plans tailored to your organization.",
-                  },
-                  {
-                    title: "Deliver",
-                    text: "Build, deploy, migrate, and integrate with minimal disruption to business operations.",
-                  },
-                  {
-                    title: "Improve",
-                    text: "Monitor, optimize, and continuously improve performance, security, and reliability.",
-                  },
-                ].map((item, index) => (
+              {/* Four process items — open editorial layout */}
+              <div className="mt-9 grid grid-cols-1 gap-x-8 sm:grid-cols-2 sm:gap-x-10">
+                {processCards.map((item, index) => (
                   <div
                     key={item.title}
                     data-aos="fade-up"
-                    data-aos-duration="700"
-                    data-aos-delay={320 + index * 80}
-                    className="
-                      group
-                      rounded-xl
-                      border
-                      border-[#E5E7EB]
-                      bg-[#F9FAFB]
-                      p-3.5
-                      transition-all
-                      duration-300
-                      hover:-translate-y-1
-                      hover:border-[#3E7BD6]/40
-                      hover:bg-white
-                      hover:shadow-[0_10px_30px_rgba(62,123,214,0.09)]
-
-                      sm:p-4
-                    "
+                    data-aos-delay={index * 80}
+                    className={`group py-5 ${
+                      index < 2 ? "border-b border-[#E5E7EB]" : ""
+                    } ${index >= 2 ? "sm:border-b-0" : ""} ${
+                      index === 2 || index === 3
+                        ? "sm:border-t sm:border-[#E5E7EB]"
+                        : ""
+                    }`}
                   >
+                    <div className="flex items-center gap-3">
+                      <span
+                        className={`h-[7px] w-[7px] shrink-0 rounded-full ${gradientLine}`}
+                      />
 
-                    {/* Process Title */}
+                      <h3 className="text-base font-bold text-[#111827] transition-colors duration-300 group-hover:text-[#3E7BD6] sm:text-[17px]">
+                        {item.title}
+                      </h3>
+                    </div>
 
-                    <h4
-                      data-aos="fade-up"
-                      data-aos-duration="600"
-                      data-aos-delay={360 + index * 80}
-                      className="
-                        text-[14px]
-                        font-bold
-                        leading-5
-                        text-[#111827]
-                        transition-all
-                        duration-300
-                        group-hover:bg-[linear-gradient(135deg,#29B6F0,#3E7BD6,#7A4FD1,#B93FC9)]
-                        group-hover:bg-clip-text
-                        group-hover:text-transparent
-
-                        sm:text-[15px]
-
-                        md:text-[15px]
-
-                        lg:text-[16px]
-                      "
-                    >
-                      {item.title}
-                    </h4>
-
-                    {/* Process Description */}
-
-                    <p
-                      data-aos="fade-up"
-                      data-aos-duration="650"
-                      data-aos-delay={390 + index * 80}
-                      className="
-                        mt-2
-                        text-[12px]
-                        leading-5
-                        text-[#6B7280]
-
-                        sm:text-[13px]
-                        sm:leading-5.5
-
-                        md:text-[13px]
-                        md:leading-5.5
-
-                        lg:text-[14px]
-                        lg:leading-6
-                      "
-                    >
+                    <p className="mt-3 pl-4 text-[13px] leading-6 text-[#6B7280] sm:text-sm sm:leading-7">
                       {item.text}
                     </p>
                   </div>
                 ))}
-
               </div>
             </div>
 
-            {/* =========================================================
-                RIGHT SECTION
-                This section determines the desktop row height
-            ========================================================= */}
-
-            <div
-              className="
-                relative
-                h-full
-                overflow-hidden
-                border-t
-                border-[#E5E7EB]
-                bg-[#F8FAFC]
-                p-5
-
-                sm:p-6
-
-                md:p-7
-
-                lg:border-l
-                lg:border-t-0
-                lg:p-8
-
-                xl:p-9
-              "
-            >
-
-              {/* Soft background gradients */}
-
+            {/* RIGHT: BENEFITS — NO BOXED CARDS */}
+            <div className="relative lg:pl-8">
+              {/* Vertical gradient accent on larger screens */}
               <div
-                className="
-                  pointer-events-none
-                  absolute
-                  -right-24
-                  -top-24
-                  h-56
-                  w-56
-                  rounded-full
-                  bg-[#29B6F0]/[0.07]
-                  blur-[70px]
-                "
+                className={`absolute bottom-0 left-0 top-0 hidden w-px lg:block ${gradientLine} opacity-30`}
               />
 
-              <div
-                className="
-                  pointer-events-none
-                  absolute
-                  -bottom-24
-                  -left-20
-                  h-56
-                  w-56
-                  rounded-full
-                  bg-[#B93FC9]/[0.06]
-                  blur-[70px]
-                "
-              />
+              <div data-aos="fade-left">
+                <span className="text-[10px] font-bold tracking-[0.24em] text-[#6B7280] sm:text-xs">
+                  THE BEAVERTEK DIFFERENCE
+                </span>
 
-              {/* Decorative vertical line */}
-
-              <div
-                className="
-                  pointer-events-none
-                  absolute
-                  bottom-8
-                  right-8
-                  top-8
-                  hidden
-                  w-px
-                  bg-gradient-to-b
-                  from-transparent
-                  via-[#3E7BD6]/10
-                  to-transparent
-                  sm:block
-                "
-              />
-
-              <div className="relative z-10">
-
-                {/* =====================================================
-                    RIGHT TITLE
-                ====================================================== */}
-
-                <h3
-                  data-aos="fade-left"
-                  data-aos-duration="800"
-                  className="
-                    max-w-md
-                    text-[24px]
-                    font-black
-                    leading-[1.15]
-
-                    sm:text-[28px]
-
-                    md:text-[30px]
-
-                    lg:text-[32px]
-
-                    xl:text-[34px]
-                  "
-                >
-                  <span className="text-[#111827]">
-                    Why clients choose{" "}
-                  </span>
-
-                  <span
-                    className="
-                      bg-[linear-gradient(135deg,#29B6F0_0%,#3E7BD6_35%,#7A4FD1_65%,#B93FC9_100%)]
-                      bg-clip-text
-                      text-transparent
-                    "
-                  >
+                <h3 className="mt-4 max-w-lg text-[27px] font-black leading-tight tracking-tight text-[#111827] sm:text-3xl md:text-4xl">
+                  Why clients choose{" "}
+                  <span className={`${gradient} bg-clip-text text-transparent`}>
                     BeaverTek
                   </span>
                 </h3>
 
-                {/* Small line */}
-
                 <div
-                  data-aos="fade-left"
-                  data-aos-delay="80"
-                  data-aos-duration="700"
-                  className="
-                    mt-3
-                    h-[3px]
-                    w-12
-                    rounded-full
-                    bg-[linear-gradient(90deg,#29B6F0,#3E7BD6,#7A4FD1,#B93FC9)]
-                  "
+                  className={`mt-5 h-[3px] w-12 rounded-full ${gradientLine}`}
                 />
-
-                {/* =======================================================
-                    FEATURES
-                ======================================================= */}
-
-                <div
-                  className="
-                    mt-6
-                    space-y-3.5
-
-                    sm:mt-7
-                    sm:space-y-4
-                  "
-                >
-
-                  {/* Senior expertise */}
-
-                  <div
-                    data-aos="fade-left"
-                    data-aos-duration="700"
-                    data-aos-delay="150"
-                    className="
-                      group
-                      relative
-                      overflow-hidden
-                      rounded-xl
-                      border
-                      border-[#E5E7EB]
-                      bg-white
-                      p-4
-                      shadow-[0_5px_18px_rgba(0,0,0,0.035)]
-                      transition-all
-                      duration-300
-                      hover:-translate-y-1
-                      hover:border-[#29B6F0]/30
-                      hover:shadow-[0_12px_30px_rgba(41,182,240,0.10)]
-
-                      sm:p-4.5
-                    "
-                  >
-
-                    {/* Gradient hover bar */}
-
-                    <div
-                      className="
-                        absolute
-                        bottom-0
-                        left-0
-                        top-0
-                        w-[3px]
-                        origin-bottom
-                        scale-y-0
-                        bg-[linear-gradient(180deg,#29B6F0,#3E7BD6)]
-                        transition-transform
-                        duration-400
-                        group-hover:scale-y-100
-                      "
-                    />
-
-                    <div className="min-w-0">
-
-                      <h4
-                        data-aos="fade-up"
-                        data-aos-duration="600"
-                        data-aos-delay="220"
-                        className="
-                          text-[14px]
-                          font-bold
-                          leading-5
-                          text-[#111827]
-                          transition-colors
-                          duration-300
-                          group-hover:text-[#29B6F0]
-
-                          sm:text-[15px]
-
-                          md:text-[15px]
-
-                          lg:text-[16px]
-                        "
-                      >
-                        Senior expertise
-                      </h4>
-
-                      <p
-                        data-aos="fade-up"
-                        data-aos-duration="650"
-                        data-aos-delay="260"
-                        className="
-                          mt-1
-                          text-[12px]
-                          leading-5
-                          text-[#6B7280]
-
-                          sm:text-[13px]
-                          sm:leading-5.5
-
-                          md:text-[13px]
-                          md:leading-5.5
-
-                          lg:text-[14px]
-                          lg:leading-6
-                        "
-                      >
-                        Experienced consultants stay engaged throughout the
-                        project—not just during sales.
-                      </p>
-
-                    </div>
-                  </div>
-
-                  {/* Business-first thinking */}
-
-                  <div
-                    data-aos="fade-left"
-                    data-aos-duration="700"
-                    data-aos-delay="230"
-                    className="
-                      group
-                      relative
-                      overflow-hidden
-                      rounded-xl
-                      border
-                      border-[#E5E7EB]
-                      bg-white
-                      p-4
-                      shadow-[0_5px_18px_rgba(0,0,0,0.035)]
-                      transition-all
-                      duration-300
-                      hover:-translate-y-1
-                      hover:border-[#7A4FD1]/30
-                      hover:shadow-[0_12px_30px_rgba(122,79,209,0.10)]
-
-                      sm:p-4.5
-                    "
-                  >
-
-                    {/* Gradient hover bar */}
-
-                    <div
-                      className="
-                        absolute
-                        bottom-0
-                        left-0
-                        top-0
-                        w-[3px]
-                        origin-bottom
-                        scale-y-0
-                        bg-[linear-gradient(180deg,#3E7BD6,#7A4FD1)]
-                        transition-transform
-                        duration-400
-                        group-hover:scale-y-100
-                      "
-                    />
-
-                    <div className="min-w-0">
-
-                      <h4
-                        data-aos="fade-up"
-                        data-aos-duration="600"
-                        data-aos-delay="300"
-                        className="
-                          text-[14px]
-                          font-bold
-                          leading-5
-                          text-[#111827]
-                          transition-colors
-                          duration-300
-                          group-hover:text-[#7A4FD1]
-
-                          sm:text-[15px]
-
-                          md:text-[15px]
-
-                          lg:text-[16px]
-                        "
-                      >
-                        Business-first thinking
-                      </h4>
-
-                      <p
-                        data-aos="fade-up"
-                        data-aos-duration="650"
-                        data-aos-delay="340"
-                        className="
-                          mt-1
-                          text-[12px]
-                          leading-5
-                          text-[#6B7280]
-
-                          sm:text-[13px]
-                          sm:leading-5.5
-
-                          md:text-[13px]
-                          md:leading-5.5
-
-                          lg:text-[14px]
-                          lg:leading-6
-                        "
-                      >
-                        Every recommendation is aligned with measurable
-                        business outcomes.
-                      </p>
-
-                    </div>
-                  </div>
-
-                  {/* Long-term partnership */}
-
-                  <div
-                    data-aos="fade-left"
-                    data-aos-duration="700"
-                    data-aos-delay="310"
-                    className="
-                      group
-                      relative
-                      overflow-hidden
-                      rounded-xl
-                      border
-                      border-[#E5E7EB]
-                      bg-white
-                      p-4
-                      shadow-[0_5px_18px_rgba(0,0,0,0.035)]
-                      transition-all
-                      duration-300
-                      hover:-translate-y-1
-                      hover:border-[#B93FC9]/30
-                      hover:shadow-[0_12px_30px_rgba(185,63,201,0.10)]
-
-                      sm:p-4.5
-                    "
-                  >
-
-                    {/* Gradient hover bar */}
-
-                    <div
-                      className="
-                        absolute
-                        bottom-0
-                        left-0
-                        top-0
-                        w-[3px]
-                        origin-bottom
-                        scale-y-0
-                        bg-[linear-gradient(180deg,#7A4FD1,#B93FC9)]
-                        transition-transform
-                        duration-400
-                        group-hover:scale-y-100
-                      "
-                    />
-
-                    <div className="min-w-0">
-
-                      <h4
-                        data-aos="fade-up"
-                        data-aos-duration="600"
-                        data-aos-delay="380"
-                        className="
-                          text-[14px]
-                          font-bold
-                          leading-5
-                          text-[#111827]
-                          transition-colors
-                          duration-300
-                          group-hover:text-[#B93FC9]
-
-                          sm:text-[15px]
-
-                          md:text-[15px]
-
-                          lg:text-[16px]
-                        "
-                      >
-                        Long-term partnership
-                      </h4>
-
-                      <p
-                        data-aos="fade-up"
-                        data-aos-duration="650"
-                        data-aos-delay="420"
-                        className="
-                          mt-1
-                          text-[12px]
-                          leading-5
-                          text-[#6B7280]
-
-                          sm:text-[13px]
-                          sm:leading-5.5
-
-                          md:text-[13px]
-                          md:leading-5.5
-
-                          lg:text-[14px]
-                          lg:leading-6
-                        "
-                      >
-                        We continue supporting clients long after projects
-                        launch through optimization and ongoing guidance.
-                      </p>
-
-                    </div>
-                  </div>
-
-                </div>
-
-                {/* Bottom gradient accent */}
-
-                <div
-                  data-aos="fade-left"
-                  data-aos-delay="480"
-                  data-aos-duration="700"
-                  className="
-                    mt-6
-                    h-[2px]
-                    w-full
-                    rounded-full
-                    bg-[linear-gradient(90deg,#29B6F0,#3E7BD6,#7A4FD1,#B93FC9)]
-                    opacity-30
-                  "
-                />
-
               </div>
-            </div>
 
+              {/* Benefits as a clean list */}
+              <div className="mt-8 sm:mt-10">
+                {benefits.map((item, index) => (
+                  <div
+                    key={item.title}
+                    data-aos="fade-left"
+                    data-aos-delay={index * 100}
+                    className={`group py-6 ${
+                      index !== benefits.length - 1
+                        ? "border-b border-[#E5E7EB]"
+                        : ""
+                    }`}
+                  >
+                    <div className="flex items-start gap-4 sm:gap-5">
+                      <div className="relative mt-1 flex h-9 w-9 shrink-0 items-center justify-center">
+                        <span
+                          className="absolute inset-0 rounded-full opacity-[0.10] transition-opacity duration-300 group-hover:opacity-20"
+                          style={{ backgroundColor: item.accent }}
+                        />
+                        <span
+                          className="relative h-2 w-2 rounded-full"
+                          style={{ backgroundColor: item.accent }}
+                        />
+                      </div>
+
+                      <div className="min-w-0 flex-1">
+                        <h4 className="text-base font-bold leading-6 text-[#111827] transition-colors duration-300 group-hover:text-[#3E7BD6] sm:text-lg">
+                          {item.title}
+                        </h4>
+
+                        <p className="mt-2 text-sm leading-7 text-[#6B7280] sm:text-[15px] sm:leading-8">
+                          {item.text}
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                ))}
+              </div>
+
+              {/* Minimal closing accent */}
+              <div
+                className={`mt-6 h-[2px] w-20 rounded-full ${gradientLine} opacity-60`}
+              />
+            </div>
           </div>
         </div>
       </div>
-    </div>
+    </section>
   );
 }
 

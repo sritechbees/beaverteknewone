@@ -27,87 +27,153 @@ export default function WhoThisIsForSection() {
       {/* ================= WHO THIS IS FOR ====================== */}
       {/* ========================================================= */}
 
-      <div className="relative overflow-hidden bg-white py-12 sm:py-14 md:py-16">
-        {/* White Background */}
-        <div className="pointer-events-none absolute inset-0 overflow-hidden">
-          <div className="absolute -left-40 -top-40 h-[24rem] w-[24rem] rounded-full bg-[#29B6F0]/[0.06] blur-[120px]" />
+      
+<div className="relative isolate overflow-hidden bg-white py-12 sm:py-16 md:py-20 lg:py-24">
 
-          <div className="absolute right-0 top-20 h-[26rem] w-[26rem] rounded-full bg-[#3E7BD6]/[0.06] blur-[130px]" />
+  {/* ================= BACKGROUND ================= */}
 
-          <div className="absolute bottom-0 left-1/2 h-[20rem] w-[20rem] -translate-x-1/2 rounded-full bg-[#B93FC9]/[0.05] blur-[120px]" />
+  <div className="pointer-events-none absolute inset-0 -z-10 overflow-hidden">
+    <div className="absolute -left-24 -top-20 h-64 w-64 rounded-full bg-[#29B6F0]/[0.07] blur-[100px] sm:-left-32 sm:h-80 sm:w-80 sm:blur-[120px]" />
 
-          <div className="absolute inset-0 bg-[linear-gradient(rgba(62,123,214,.035)_1px,transparent_1px),linear-gradient(90deg,rgba(62,123,214,.035)_1px,transparent_1px)] bg-[size:48px_48px]" />
+    <div className="absolute -right-24 top-1/4 h-64 w-64 rounded-full bg-[#3E7BD6]/[0.06] blur-[100px] sm:-right-32 sm:h-96 sm:w-96 sm:blur-[130px]" />
+
+    <div className="absolute -bottom-20 left-1/2 h-64 w-64 -translate-x-1/2 rounded-full bg-[#B93FC9]/[0.05] blur-[100px] sm:h-80 sm:w-80 sm:blur-[120px]" />
+
+    <div className="absolute inset-0 bg-[linear-gradient(rgba(62,123,214,.025)_1px,transparent_1px),linear-gradient(90deg,rgba(62,123,214,.025)_1px,transparent_1px)] bg-[size:36px_36px] sm:bg-[size:48px_48px] lg:bg-[size:56px_56px]" />
+  </div>
+
+  {/* ================= CONTAINER ================= */}
+
+  <div className="relative mx-auto w-full max-w-7xl px-5 sm:px-7 md:px-8 lg:px-10 xl:px-12">
+
+    <motion.div
+      initial={{ opacity: 0, y: 24 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.75, ease: "easeOut" }}
+      viewport={{ once: true, amount: 0.2 }}
+      className="grid grid-cols-1 items-center gap-8 sm:gap-10 md:gap-12 lg:grid-cols-12 lg:gap-8 xl:gap-14"
+    >
+
+      {/* ================= LEFT CONTENT ================= */}
+
+      <div
+        className="relative min-w-0 text-center lg:col-span-7 lg:text-left"
+        data-aos="fade-up"
+        data-aos-duration="850"
+      >
+
+        {/* Eyebrow */}
+
+        <div className="flex items-center justify-center gap-3 lg:justify-start">
+
+          <span className="h-px w-7 shrink-0 bg-gradient-to-r from-[#29B6F0] to-[#3E7BD6] sm:w-9" />
+
+          <span className="text-[10px] font-bold uppercase tracking-[0.2em] text-[#3E7BD6] sm:text-[11px] sm:tracking-[0.24em] md:text-xs">
+            WHO THIS IS FOR
+          </span>
+
+          <span className="h-px w-7 shrink-0 bg-gradient-to-r from-[#7A4FD1] to-[#B93FC9] sm:w-9 lg:hidden" />
+
         </div>
 
-        <div className="relative mx-auto max-w-7xl px-3 sm:px-4 md:px-5 lg:px-6">
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.7 }}
-            viewport={{ once: true }}
-            data-aos="fade-up"
-            data-aos-duration="850"
-            className="grid gap-7 lg:grid-cols-[0.9fr_1.1fr] lg:items-center lg:gap-9"
+        {/* Heading */}
+
+        <h2
+          data-aos="fade-up"
+          data-aos-delay="100"
+          data-aos-duration="850"
+          className="mx-auto mt-5 max-w-3xl text-[1.65rem] font-black leading-[1.16] tracking-[-0.04em] sm:mt-6 sm:text-3xl md:text-4xl lg:mx-0 lg:mt-7 lg:text-[2.6rem] xl:text-[3rem] xl:leading-[1.13]"
+        >
+          <span
+            className="bg-clip-text text-transparent"
+            style={{ backgroundImage: beaverTekGradient }}
           >
-            {/* LEFT */}
-            <div className="text-center lg:text-left">
-              <span
-                data-aos="fade-down"
-                data-aos-duration="700"
-                className="inline-flex rounded-full border border-[#3E7BD6]/30 bg-[#3E7BD6]/[0.05] px-4 py-1.5 text-[10px] font-bold uppercase tracking-[0.22em] text-[#3E7BD6] sm:px-5 sm:text-[11px]"
-              >
-                WHO THIS IS FOR
-              </span>
+            Built for teams
+          </span>
 
-           
-<h2
-  data-aos="fade-up"
-  data-aos-delay="100"
-  data-aos-duration="800"
-  className="mt-5 text-3xl font-black leading-[1.08] tracking-tight sm:text-4xl md:text-5xl"
->
-  {/* First half - BeaverTek Gradient */}
-  <span
-    className="bg-clip-text text-transparent"
-    style={{ backgroundImage: beaverTekGradient }}
-  >
-    Built for teams
-  </span>
+          <br className="hidden sm:block" />
 
-  <br />
+          <span className="text-[#18181B]">
+            {" "}who need more than off-the-shelf software
+          </span>
+        </h2>
 
-  {/* Second half - Dark for white background */}
-  <span className="text-[#18181B]">
-    who need more than off-the-shelf software
-  </span>
-  
-</h2>
+        {/* Gradient Rule */}
 
+        <motion.div
+          initial={{ scaleX: 0 }}
+          whileInView={{ scaleX: 1 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.8, delay: 0.25 }}
+          className="mx-auto mt-6 h-[3px] w-16 origin-center rounded-full sm:mt-7 sm:w-20 lg:mx-0 lg:origin-left"
+          style={{ backgroundImage: beaverTekGradient }}
+        />
 
-            </div>
-
-            {/* RIGHT */}
-            <motion.div
-              whileHover={{ y: -5 }}
-              data-aos="fade-left"
-              data-aos-delay="180"
-              data-aos-duration="850"
-              className="relative overflow-hidden rounded-[24px] border border-[#E4E4E7] bg-white p-5 shadow-[0_12px_35px_rgba(0,0,0,.07)] transition-all duration-500 hover:border-[#3E7BD6]/40 hover:shadow-[0_18px_45px_rgba(62,123,214,.12)] sm:p-6 md:p-7"
-            >
-              <div className="pointer-events-none absolute -right-16 -top-16 h-36 w-36 rounded-full bg-[#29B6F0]/10 blur-[70px]" />
-
-              <div className="pointer-events-none absolute -bottom-12 -left-10 h-32 w-32 rounded-full bg-[#B93FC9]/10 blur-[70px]" />
-
-              <p className="relative text-sm leading-7 text-[#52525B] sm:text-base sm:leading-8">
-                Companies with a specific workflow, customer experience, or
-                product idea that off-the-shelf software cannot deliver.
-                Founders going from idea to MVP. Teams replacing a tangle of
-                manual tools with one purpose-built application.
-              </p>
-            </motion.div>
-          </motion.div>
-        </div>
       </div>
+
+      {/* ================= RIGHT CONTENT ================= */}
+
+      <motion.div
+        initial={{ opacity: 0, x: 22 }}
+        whileInView={{ opacity: 1, x: 0 }}
+        transition={{ duration: 0.7, delay: 0.15, ease: "easeOut" }}
+        viewport={{ once: true, amount: 0.2 }}
+        data-aos="fade-left"
+        data-aos-delay="150"
+        data-aos-duration="850"
+        className="relative min-w-0 lg:col-span-5"
+      >
+
+        {/* Editorial Description */}
+
+        <div className="relative border-l-2 border-[#E5E7EB] py-1 pl-4 sm:pl-6 md:pl-7 lg:pl-6 xl:pl-8">
+
+          {/* Animated Gradient Border */}
+
+          <motion.div
+            initial={{ scaleY: 0 }}
+            whileInView={{ scaleY: 1 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.9, delay: 0.3 }}
+            className="absolute -left-[2px] top-0 h-full w-[2px] origin-top"
+            style={{ backgroundImage: beaverTekGradient }}
+          />
+
+          <p className="relative text-[13px] leading-7 text-[#52525B] sm:text-sm sm:leading-7 md:text-base md:leading-8 lg:text-[15px] xl:text-base">
+            Companies with a specific workflow, customer experience, or
+            product idea that off-the-shelf software cannot deliver.
+            Founders going from idea to MVP. Teams replacing a tangle of
+            manual tools with one purpose-built application.
+          </p>
+
+          {/* Bottom Detail */}
+
+          <div className="mt-5 flex flex-wrap items-center gap-3 sm:mt-7">
+
+            <motion.span
+              animate={{ opacity: [0.5, 1, 0.5] }}
+              transition={{ duration: 2.5, repeat: Infinity }}
+              className="h-2 w-2 shrink-0 rounded-full"
+              style={{ backgroundImage: beaverTekGradient }}
+            />
+
+            <span className="h-px w-8 shrink-0 bg-[#D4D4D8] sm:w-10" />
+
+            <span className="text-[9px] font-semibold uppercase tracking-[0.15em] text-[#85858D] sm:text-[10px] sm:tracking-[0.2em]">
+              Built around your needs
+            </span>
+
+          </div>
+
+        </div>
+
+      </motion.div>
+
+    </motion.div>
+
+  </div>
+</div>
+
 
       {/* ========================================================= */}
       {/* =========================== PROOF ======================= */}

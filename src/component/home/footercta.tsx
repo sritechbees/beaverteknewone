@@ -452,30 +452,7 @@ export default function FooterCTA() {
           })}
         </div>
 
-        {/* =================================================
-            BOTTOM LINE
-        ================================================== */}
-        <div
-          data-aos="zoom-in"
-          data-aos-delay="650"
-          className="
-            pointer-events-none
-            mt-6
-            h-[1px]
-            w-[55%]
-            bg-gradient-to-r
-            from-transparent
-            via-[#3E7BD6]/20
-            to-transparent
-
-            sm:mt-7
-            sm:w-[50%]
-
-            md:w-[45%]
-
-            lg:w-[40%]
-          "
-        />
+        
       </div>
     </section>
   );

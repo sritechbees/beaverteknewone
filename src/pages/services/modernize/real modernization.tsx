@@ -280,7 +280,7 @@ function RealModernization() {
               Simple Process
             </span>
 
-            <h3 className="mt-3 text-2xl font-bold tracking-tight text-[#111827] sm:text-3xl">
+            <h3 className="mt-3 text-2xl font-extrabold tracking-tight text-[#111827] sm:text-3xl">
               From planning to progress
             </h3>
 

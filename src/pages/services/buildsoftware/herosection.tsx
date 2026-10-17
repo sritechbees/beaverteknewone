@@ -32,23 +32,15 @@ export default function HeroSection() {
         {/* Background Image */}
         <div className="absolute inset-0">
           <img
-            src="/home/theteam.jpg"
+            src="/home/coding image.png"
             alt="Application Development"
-            className="h-full w-full object-cover"
+            className="h-full w-full object-cover object-top"
           />
 
           {/* Dark Overlay */}
-          <div className="absolute inset-0 bg-black/75" />
+          <div className="absolute inset-0 bg-black/55" />
 
-          {/* BeaverTek Gradient Overlay */}
-          <div className="absolute inset-0 bg-gradient-to-br from-[#29B6F0]/15 via-[#3E7BD6]/10 to-[#B93FC9]/20" />
-
-          {/* Gradient Light */}
-          <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_left,rgba(41,182,240,.18),transparent_35%)]" />
-
-          {/* Grid */}
-          <div className="absolute inset-0 bg-[linear-gradient(rgba(255,255,255,.03)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,.03)_1px,transparent_1px)] bg-[size:70px_70px]" />
-        </div>
+          </div>
 
         {/* Content */}
         <div className="relative z-10 mx-auto flex min-h-[62vh] max-w-7xl items-center justify-center px-4 py-12 text-center sm:min-h-[66vh] sm:px-5 sm:py-14 md:min-h-[68vh] md:px-6 md:py-16 lg:min-h-[72vh] lg:px-8 lg:py-16">

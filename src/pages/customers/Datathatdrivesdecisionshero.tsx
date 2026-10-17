@@ -367,7 +367,7 @@ function Datathatdrivesdecisionshero() {
                   "
                 >
                   <img
-                    src="/home/Data that Drives Decisions.jpg"
+                    src="/product/Data that Drives Decisions.jpg"
                     alt="Enterprise Reporting Dashboard"
                     className="
                       block

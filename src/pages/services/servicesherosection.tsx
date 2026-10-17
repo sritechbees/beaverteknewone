@@ -596,9 +596,10 @@ export default function ServicesHerosection() {
         data-aos-offset="50"
         className="scroll-mt-20"
       >
-        <ServicesHub />
 
-        <Howwework />
+         <Howwework />
+
+        <ServicesHub />
 
         <Buildtogether />
 
