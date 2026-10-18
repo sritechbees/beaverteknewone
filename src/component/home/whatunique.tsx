@@ -271,13 +271,14 @@ function Whatunique() {
           >
             {/* Background Image */}
             <Image
-              src="/home/What makes us Unique_.jpg"
+              src="/product/uniqueimage.jpg"
               alt="BeaverTek technology"
               fill
               priority
               className="
-                object-cover
+                object-cover 
                 object-center
+                 object-top
               "
             />
 
