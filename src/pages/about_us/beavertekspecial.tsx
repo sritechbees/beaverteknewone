@@ -10,7 +10,7 @@ const beaverTekGradient =
 
 const features = [
   {
-    image: "/home/homehero.jpg",
+    image: "/about/Advanced Analytics.jpg",
     title: "Advanced Analytics",
     description:
       "Unlock powerful insights with predictive models and data-driven decision-making tools.",
@@ -22,7 +22,7 @@ const features = [
       "Automate tasks and enhance productivity with next-gen artificial intelligence solutions.",
   },
   {
-    image: "/home/How We Work.jpg",
+    image: "/about/Business Intelligence & Reporting1.jpg",
     title: "Business Intelligence & Reporting",
     description:
       "Transform raw data into clear, actionable dashboards and reports for smarter decisions.",
@@ -255,7 +255,7 @@ export default function Beavertekspecial() {
                           ease: [0.22, 0.61, 0.36, 1],
                         },
                       }}
-                      className="absolute inset-0 h-full w-full object-cover"
+                      className="absolute inset-0 h-full w-full object-cover object-top"
                     />
 
                     {/* Image overlay */}
