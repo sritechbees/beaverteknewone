@@ -6,6 +6,12 @@ import AOS from "aos";
 import "aos/dist/aos.css";
 import FooterCTA from "../home/footercta";
 import Image from "next/image";
+import {
+  FaFacebookF,
+  FaTwitter,
+  FaInstagram,
+  FaLinkedinIn,
+} from "react-icons/fa";
 
 const gradient =
   "linear-gradient(135deg,#29B6F0_0%,#3E7BD6_40%,#7A4FD1_75%,#B93FC9_100%)";
@@ -250,6 +256,57 @@ export default function Footer() {
                 "
               />
             </div>
+
+{/* SOCIAL MEDIA LINKS */}
+<div className="mt-6">
+  <p className="mb-3 text-sm font-medium text-[#A0A0A8]">
+    Follow Us
+  </p>
+
+  <div className="flex items-center gap-3">
+    <Link
+      href="https://www.facebook.com/beavertekinc"
+      target="_blank"
+      rel="noopener noreferrer"
+      aria-label="Facebook"
+      className="flex h-10 w-10 items-center justify-center rounded-xl border border-[#2A2A30] bg-[#121212] text-[#A0A0A8] transition-all duration-300 hover:-translate-y-1 hover:border-[#3E7BD6] hover:bg-[#3E7BD6]/10 hover:text-[#29B6F0]"
+    >
+      <FaFacebookF size={16} />
+    </Link>
+
+    <Link
+      href="https://twitter.com/beavertekinc"
+      target="_blank"
+      rel="noopener noreferrer"
+      aria-label="Twitter"
+      className="flex h-10 w-10 items-center justify-center rounded-xl border border-[#2A2A30] bg-[#121212] text-[#A0A0A8] transition-all duration-300 hover:-translate-y-1 hover:border-[#3E7BD6] hover:bg-[#3E7BD6]/10 hover:text-[#29B6F0]"
+    >
+      <FaTwitter size={16} />
+    </Link>
+
+    <Link
+      href="https://www.instagram.com/beavertekinc"
+      target="_blank"
+      rel="noopener noreferrer"
+      aria-label="Instagram"
+      className="flex h-10 w-10 items-center justify-center rounded-xl border border-[#2A2A30] bg-[#121212] text-[#A0A0A8] transition-all duration-300 hover:-translate-y-1 hover:border-[#7A4FD1] hover:bg-[#7A4FD1]/10 hover:text-[#B93FC9]"
+    >
+      <FaInstagram size={17} />
+    </Link>
+
+    <Link
+      href="https://www.linkedin.com/company/beavertek"
+      target="_blank"
+      rel="noopener noreferrer"
+      aria-label="LinkedIn"
+      className="flex h-10 w-10 items-center justify-center rounded-xl border border-[#2A2A30] bg-[#121212] text-[#A0A0A8] transition-all duration-300 hover:-translate-y-1 hover:border-[#3E7BD6] hover:bg-[#3E7BD6]/10 hover:text-[#29B6F0]"
+    >
+      <FaLinkedinIn size={16} />
+    </Link>
+  </div>
+</div>
+
+
           </div>
 
           {/* =================================================
@@ -484,57 +541,90 @@ export default function Footer() {
             </h3>
 
             <div className="space-y-3">
-              {[
-                ["Email", "info@beavertek.com"],
-                ["USA", "+1 (949) 885-6193"],
-                ["India", "+91 99620 92583"],
-                ["Headquarters", "Irvine, California"],
-                ["Engineering Hub", "India"],
-              ].map(([label, value]) => (
-                <div
-                  key={label}
-                  className="
-                    group/contact
-                    rounded-lg
-                    border
-                    border-transparent
-                    px-3
-                    py-2
-                    transition-all
-                    duration-300
-                    hover:border-[#2A2A30]
-                    hover:bg-white/[0.025]
-                    hover:translate-x-1
-                  "
-                >
-                  <p
-                    className="
-                      text-xs
-                      font-medium
-                      text-[#3E7BD6]
-                      transition-colors
-                      duration-300
-                      group-hover/contact:text-[#29B6F0]
-                    "
-                  >
-                    {label}
-                  </p>
+  {[
+    ["Email", "info@beavertek.com"],
+    ["USA", "Irvine, California", "+1 (949) 885-6193"],
+    ["India", "Tamil Nadu", "+91 99620 92583"],
+  ].map(([label, location, phone]) => (
+    <div
+      key={label}
+      className="
+        group/contact
+        rounded-lg
+        border
+        border-transparent
+        px-3
+        py-2
+        transition-all
+        duration-300
+        hover:border-[#2A2A30]
+        hover:bg-white/[0.025]
+        hover:translate-x-1
+      "
+    >
+      <p
+        className="
+          text-xs
+          font-medium
+          text-[#3E7BD6]
+          transition-colors
+          duration-300
+          group-hover/contact:text-[#29B6F0]
+        "
+      >
+        {label}
+      </p>
 
-                  <p
-                    className="
-                      mt-0.5
-                      text-sm
-                      text-[#A0A0A8]
-                      transition-colors
-                      duration-300
-                      group-hover/contact:text-white
-                    "
-                  >
-                    {value}
-                  </p>
-                </div>
-              ))}
-            </div>
+      {label === "Email" ? (
+        <a
+          href="mailto:info@beavertek.com"
+          className="
+            mt-0.5
+            block
+            text-sm
+            text-[#A0A0A8]
+            transition-colors
+            duration-300
+            hover:text-white
+          "
+        >
+          {location}
+        </a>
+      ) : (
+        <>
+          <p
+            className="
+              mt-0.5
+              text-sm
+              text-[#A0A0A8]
+              transition-colors
+              duration-300
+              group-hover/contact:text-white
+            "
+          >
+            {location}
+          </p>
+
+          <a
+            href={`tel:${phone.replace(/[^+\d]/g, "")}`}
+            className="
+              mt-1
+              block
+              text-sm
+              text-[#A0A0A8]
+              transition-colors
+              duration-300
+              hover:text-[#29B6F0]
+            "
+          >
+            {phone}
+          </a>
+        </>
+      )}
+    </div>
+  ))}
+</div>
+
           </div>
         </div>
 

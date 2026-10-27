@@ -10,7 +10,7 @@ import AOS from "aos";
 import "aos/dist/aos.css";
 import Productcontent from "./productcontent";
 
-export default function ProductsHeroSection() {
+export default function Producthero() {
   useEffect(() => {
     AOS.init({
       duration: 850,

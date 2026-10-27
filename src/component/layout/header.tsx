@@ -74,7 +74,7 @@ const services = [
 const navItems = [
   { name: "Home", href: "/" },
   { name: "About", href: "/about_us/abouthero" },
-  { name: "Products", href: "/products/producthero" },
+  { name: "Products", href: "/products/productherosection" },
   { name: "Customers", href: "/customers/casestudyhero" },
   { name: "Contact", href: "/contact/contacthero" },
 ];
