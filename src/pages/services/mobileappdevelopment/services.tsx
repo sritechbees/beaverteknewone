@@ -262,7 +262,7 @@ export default function Services() {
                   key={active.image}
                   src={active.image}
                   alt={active.title}
-                  className="h-full w-full object-fill transition-transform duration-700 group-hover:scale-[1.035]"
+                  className="h-full w-full object-cover object-top transition-transform duration-700 group-hover:scale-[1.035]"
                 />
 
                 {/* Image overlay */}

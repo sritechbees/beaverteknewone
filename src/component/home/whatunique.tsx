@@ -404,7 +404,7 @@ function Whatunique() {
             font-semibold
             leading-[1.18]
             tracking-[-0.02em]
-            text-gray-950
+          text-white
             sm:text-[24px]
             md:text-[27px]
             lg:text-[29px]
@@ -419,7 +419,7 @@ function Whatunique() {
             mt-3
             text-[14px]
             leading-6
-            text-white
+            text-[#d9d7dfd6]
             sm:text-[15px]
             sm:leading-7
             md:text-[16px]

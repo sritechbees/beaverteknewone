@@ -8,14 +8,13 @@ import AOS from "aos";
 import "aos/dist/aos.css";
 import App_layout from "@/component/layout/app_layout";
 import Producthero from "./producthero";
-
 import Sampleproduct from "./sampleproduct";
 
 const gradient =
   "linear-gradient(135deg,#29B6F0 0%,#3E7BD6 35%,#7A4FD1 65%,#B93FC9 100%)";
 
 export default function ProductHero() {
-  const productsRef = useRef<HTMLElement>(null);
+  const productsRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
     AOS.init({
@@ -49,8 +48,6 @@ export default function ProductHero() {
           />
 
           <div className="absolute inset-0 -z-10 bg-[#05070D]/60" />
-
-         
 
           <div
             className="absolute inset-0 -z-10 opacity-15"
@@ -107,7 +104,15 @@ export default function ProductHero() {
           </div>
         </section>
       </main>
-      <Sampleproduct/>
+
+      {/* SAMPLE PRODUCT SECTION */}
+      <div
+        id="sampleproduct"
+        ref={productsRef}
+        className="scroll-mt-20"
+      >
+        <Sampleproduct />
+      </div>
 
       <Producthero />
     </App_layout>
