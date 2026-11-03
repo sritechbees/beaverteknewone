@@ -238,25 +238,21 @@ export default function Beavertekspecial() {
                     transition={{ duration: 0.2 }}
                     className="absolute inset-0"
                   >
-                    {/* 360-degree clockwise image rotation */}
-                    <motion.img
-                      key={`image-${activeFeature.title}`}
-                      src={activeFeature.image}
-                      alt={activeFeature.title}
-                      initial={{ rotate: 0, scale: 1.45 }}
-                      animate={{ rotate: 360, scale: 1 }}
-                      transition={{
-                        rotate: {
-                          duration: 0.85,
-                          ease: [0.22, 0.61, 0.36, 1],
-                        },
-                        scale: {
-                          duration: 0.85,
-                          ease: [0.22, 0.61, 0.36, 1],
-                        },
-                      }}
-                      className="absolute inset-0 h-full w-full object-cover object-top"
-                    />
+                   
+{/* Image - Simple Fade, No Rotation */}
+<motion.img
+  key={`image-${activeFeature.title}`}
+  src={activeFeature.image}
+  alt={activeFeature.title}
+  initial={{ opacity: 0 }}
+  animate={{ opacity: 1 }}
+  transition={{
+    duration: 0.35,
+    ease: "easeOut",
+  }}
+  className="absolute inset-0 h-full w-full object-cover object-top"
+/>
+
 
                     {/* Image overlay */}
                     <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-black/25 via-transparent to-black/10" />

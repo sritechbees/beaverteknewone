@@ -291,7 +291,7 @@ const products = [
     name: "MedFlow AI",
     category: "End-to-End Care",
     short: "Connected care management across healthcare specialties.",
-    image: "/product/End-to-End Digital Transformation.JPG",
+    image: "/product/End-to-End Digital Transformation.jpg",
     description:
       "Support care management workflows across gynecology, cardiology, diabetic care, and general care.",
     icon: BrainCircuit,
@@ -438,7 +438,7 @@ export default function Sampleproduct() {
         </div>
       </section>
 
-      {/* ================= PRODUCT SHOWCASE: 35% / 65% ================= */}
+      {/* ================= PRODUCT SHOWCASE ================= */}
 
       <section
         className="relative isolate scroll-mt-20 overflow-hidden border-t border-white/[0.08] bg-[#05070D]"
@@ -452,84 +452,82 @@ export default function Sampleproduct() {
           }}
         />
 
-        <div className="mx-auto grid max-w-[1800px] grid-cols-1 items-start lg:grid-cols-[minmax(0,35fr)_minmax(0,65fr)]">
-          {/* ================= LEFT: PRODUCT LIST - 35% ================= */}
+        <div className="mx-auto grid max-w-[1800px] grid-cols-1 items-start lg:grid-cols-[minmax(0,20fr)_minmax(0,80fr)]">
+          {/* ================= LEFT: PRODUCT LIST ================= */}
 
-        
-            <div className="px-4 py-5 sm:px-6 sm:py-6 lg:px-5 lg:py-6 xl:px-7 xl:py-8">
-              <p className="text-xs font-semibold uppercase tracking-[0.2em] text-[#29B6F0]">
-                Our Products
-              </p>
+          <div className="min-w-0 px-4 py-5 sm:px-6 sm:py-6 lg:px-5 lg:py-6 xl:px-7 xl:py-8">
+            <p className="text-xs font-semibold uppercase tracking-[0.2em] text-[#29B6F0]">
+              Our Products
+            </p>
 
-              <h2 className="mt-2 text-xl font-bold tracking-tight sm:text-2xl lg:text-xl xl:text-2xl">
-                Explore Solutions
-              </h2>
+            <h2 className="mt-2 text-xl font-bold tracking-tight sm:text-2xl lg:text-xl xl:text-xl">
+              Explore Solutions
+            </h2>
 
-              <p className="mt-2 hidden text-sm leading-6 text-gray-400 lg:block">
-                Choose a product to explore its features and workflow.
-              </p>
+            <p className="mt-2 hidden text-sm leading-6 text-gray-400 lg:block">
+              Choose a product to explore its features and workflow.
+            </p>
 
-              <nav
-                aria-label="Healthcare products"
-                className="mt-4 flex gap-2 overflow-x-auto pb-2 [scrollbar-width:thin] lg:mt-6 lg:flex-col lg:gap-1.5 lg:overflow-x-visible lg:overflow-y-visible lg:pb-0"
-              >
-                {products.map((product) => {
-                  const ProductIcon = product.icon;
-                  const isSelected = selectedId === product.id;
+            <nav
+              aria-label="Healthcare products"
+              className="mt-4 flex gap-2 overflow-x-auto pb-2 [scrollbar-width:thin] lg:mt-6 lg:flex-col lg:gap-1.5 lg:overflow-x-visible lg:overflow-y-visible lg:pb-0"
+            >
+              {products.map((product) => {
+                const ProductIcon = product.icon;
+                const isSelected = selectedId === product.id;
 
-                  return (
-                    <button
-                      key={product.id}
-                      type="button"
-                      onClick={() => selectProduct(product.id)}
-                      aria-pressed={isSelected}
-                      className={`group flex min-h-[58px] min-w-[175px] shrink-0 items-center gap-3 rounded-xl border px-3 py-2.5 text-left transition-all duration-300 sm:min-w-[200px] lg:min-w-0 lg:w-full lg:gap-2.5 lg:px-3 lg:py-3 ${
+                return (
+                  <button
+                    key={product.id}
+                    type="button"
+                    onClick={() => selectProduct(product.id)}
+                    aria-pressed={isSelected}
+                    className={`group flex min-h-[58px] min-w-[175px] shrink-0 items-center gap-3 rounded-xl border px-3 py-2.5 text-left transition-all duration-300 sm:min-w-[200px] lg:min-w-0 lg:w-full lg:gap-2.5 lg:px-3 lg:py-3 ${
+                      isSelected
+                        ? "border-[#29B6F0]/30 bg-white/[0.075] text-white"
+                        : "border-white/[0.07] bg-white/[0.02] text-gray-400 hover:border-white/15 hover:bg-white/[0.05] hover:text-white lg:border-transparent lg:bg-transparent"
+                    }`}
+                  >
+                    <span
+                      className={`flex h-9 w-9 shrink-0 items-center justify-center rounded-lg transition-colors duration-300 sm:h-10 sm:w-10 ${
                         isSelected
-                          ? "border-[#29B6F0]/30 bg-white/[0.075] text-white"
-                          : "border-white/[0.07] bg-white/[0.02] text-gray-400 hover:border-white/15 hover:bg-white/[0.05] hover:text-white lg:border-transparent lg:bg-transparent"
+                          ? "text-white"
+                          : "bg-white/[0.06] text-gray-400 group-hover:text-white"
                       }`}
+                      style={
+                        isSelected
+                          ? { background: gradient }
+                          : undefined
+                      }
                     >
-                      <span
-                        className={`flex h-9 w-9 shrink-0 items-center justify-center rounded-lg transition-colors duration-300 sm:h-10 sm:w-10 ${
-                          isSelected
-                            ? "text-white"
-                            : "bg-white/[0.06] text-gray-400 group-hover:text-white"
-                        }`}
-                        style={
-                          isSelected
-                            ? { background: gradient }
-                            : undefined
-                        }
-                      >
-                        <ProductIcon size={18} strokeWidth={1.8} />
+                      <ProductIcon size={18} strokeWidth={1.8} />
+                    </span>
+
+                    <span className="min-w-0 flex-1">
+                      <span className="block break-words text-sm font-semibold leading-5">
+                        {product.name}
                       </span>
 
-                      <span className="min-w-0 flex-1">
-                        <span className="block break-words text-sm font-semibold leading-5">
-                          {product.name}
-                        </span>
-
-                        <span className="mt-0.5 block break-words text-xs leading-4 text-gray-500">
-                          {product.category}
-                        </span>
+                      <span className="mt-0.5 block break-words text-xs leading-4 text-gray-500">
+                        {product.category}
                       </span>
+                    </span>
 
-                      <ArrowRight
-                        size={15}
-                        className={`hidden shrink-0 transition-all duration-300 lg:block ${
-                          isSelected
-                            ? "text-[#63D5FF] opacity-100"
-                            : "-translate-x-1 opacity-0 group-hover:translate-x-0 group-hover:opacity-100"
-                        }`}
-                      />
-                    </button>
-                  );
-                })}
-              </nav>
-            </div>
-          
+                    <ArrowRight
+                      size={15}
+                      className={`hidden shrink-0 transition-all duration-300 lg:block ${
+                        isSelected
+                          ? "text-[#63D5FF] opacity-100"
+                          : "-translate-x-1 opacity-0 group-hover:translate-x-0 group-hover:opacity-100"
+                      }`}
+                    />
+                  </button>
+                );
+              })}
+            </nav>
+          </div>
 
-          {/* ================= RIGHT: PRODUCT DETAILS - 65% ================= */}
+          {/* ================= RIGHT: PRODUCT DETAILS ================= */}
 
           <div className="min-w-0">
             <section
@@ -538,27 +536,7 @@ export default function Sampleproduct() {
               key={selectedProduct.id}
               className="min-w-0 scroll-mt-5"
             >
-              {/* ================= WIDE PRODUCT IMAGE ================= */}
-
-              <div
-                className="group relative w-full min-w-0 overflow-hidden bg-[#05070D]"
-                data-aos="fade-up"
-              >
-                <div className="relative h-[clamp(210px,48vw,340px)] w-full overflow-hidden bg-[#05070D] sm:h-[clamp(250px,35vw,370px)] lg:h-[clamp(250px,28vw,400px)] xl:h-[420px]">
-                  <img
-                    src={selectedProduct.image}
-                    alt={`${selectedProduct.name} healthcare product`}
-                    loading="lazy"
-                    className="absolute inset-0 h-full w-full object-contain object-center transition-transform duration-700 group-hover:scale-[1.01]"
-                  />
-
-                  <div className="absolute inset-0 bg-gradient-to-r from-[#05070D]/70 via-[#05070D]/20 to-transparent" />
-
-                  <div className="absolute inset-0 bg-gradient-to-t from-[#05070D]/50 via-transparent to-[#05070D]/5" />
-                </div>
-              </div>
-
-              {/* ================= DESCRIPTION ================= */}
+              {/* ================= TITLE AND DESCRIPTION ================= */}
 
               <div
                 className="border-b border-white/[0.08] px-4 py-6 sm:px-6 sm:py-7 lg:px-7 lg:py-7 xl:px-9"
@@ -590,6 +568,22 @@ export default function Sampleproduct() {
                   >
                     <SelectedIcon size={22} />
                   </div>
+                </div>
+              </div>
+
+              {/* ================= FULL WIDTH PRODUCT IMAGE ================= */}
+
+              <div
+                className="group relative w-full min-w-0 overflow-hidden bg-transparent"
+                data-aos="fade-up"
+              >
+                <div className="relative h-[230px] w-full overflow-hidden bg-transparent sm:h-[320px] md:h-[380px] lg:h-[420px] xl:h-[480px]">
+                  <img
+                    src={selectedProduct.image}
+                    alt={`${selectedProduct.name} healthcare product`}
+                    loading="lazy"
+                    className="absolute inset-0 h-full w-full object-center brightness-110 contrast-105 transition-transform duration-700 group-hover:scale-[1.01]"
+                  />
                 </div>
               </div>
 
@@ -708,8 +702,6 @@ export default function Sampleproduct() {
               </div>
             </section>
           </div>
-          
-          
         </div>
       </section>
     </main>

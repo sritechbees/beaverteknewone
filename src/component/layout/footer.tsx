@@ -52,7 +52,7 @@ export default function Footer() {
   const quickLinks = [
     ["Home", "/"],
     ["About", "/about_us/abouthero"],
-    ["Services", "/services/serviceshero"],
+    ["Services", "/services/servicesherosection"],
     ["Customers", "/customers/casestudyhero"],
     ["Products", "/products/producthero"],
     ["Contact", "/contact/contacthero"],
