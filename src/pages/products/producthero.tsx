@@ -4,7 +4,7 @@
 import { useEffect } from "react";
 import Image from "next/image";
 import Link from "next/link";
-import App_layout from "@/component/layout/app_layout";
+
 import { ArrowRight } from "lucide-react";
 import AOS from "aos";
 import "aos/dist/aos.css";
@@ -28,7 +28,8 @@ export default function Producthero() {
   }, []);
 
   return (
-    <App_layout>
+    
+    <div>
       {/* ================================================= */}
       {/* HERO SECTION */}
       {/* ================================================= */}
@@ -518,6 +519,7 @@ export default function Producthero() {
       {/* ================================================= */}
 
       <Productcontent />
-    </App_layout>
+      </div>
+    
   );
 }
