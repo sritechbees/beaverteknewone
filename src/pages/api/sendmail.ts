@@ -116,18 +116,16 @@ export default async function handler(
     }
 
     // EMAIL ENVIRONMENT VARIABLES
-    const emailUser = process.env.EMAIL_USER;
-    const emailPassword = process.env.EMAIL_APP_PASSWORD;
-    const ownerEmail = process.env.OWNER_EMAIL;
+   const emailUser = process.env.EMAIL_USER;
+const emailPassword = process.env.EMAIL_APP_PASSWORD;
+const ownerEmail = process.env.OWNER_EMAIL;
 
-    if (!emailUser || !emailPassword || !ownerEmail) {
-      console.error("Email environment variables are missing.");
-
-      return res.status(500).json({
-        success: false,
-        message: "Email configuration is missing.",
-      });
-    }
+if (!emailUser || !emailPassword || !ownerEmail) {
+  return res.status(500).json({
+    success: false,
+    message: "Email configuration is missing.",
+  });
+}
 
     // CREATE GMAIL TRANSPORTER
     const transporter = nodemailer.createTransport({
