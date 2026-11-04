@@ -13,6 +13,7 @@ function Contactform() {
 
   const [formData, setFormData] = useState({
     name: "",
+    phone: "",
     email: "",
     company: "",
     help: "",
@@ -20,7 +21,6 @@ function Contactform() {
   });
 
   const [error, setError] = useState("");
-
   const [showPopup, setShowPopup] = useState(false);
 
   /* =========================================================
@@ -46,15 +46,6 @@ function Contactform() {
 
   /* =========================================================
      NAME VALIDATION
-     
-     Allowed:
-     - A-Z
-     - a-z
-     - spaces
-     - .
-     - '
-
-     Numbers are NOT allowed.
   ========================================================= */
 
   const isValidName = (value: string) => {
@@ -70,25 +61,29 @@ function Contactform() {
   };
 
   /* =========================================================
+     PHONE VALIDATION
+  ========================================================= */
+
+  const isValidPhone = (value: string) => {
+    const digits = value.replace(/\D/g, "");
+    return digits.length >= 7 && digits.length <= 15;
+  };
+
+  /* =========================================================
      HANDLE INPUT CHANGE
   ========================================================= */
 
   const handleChange = (
     e: React.ChangeEvent<
-      HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement
+      HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement
     >
   ) => {
     const { name, value } = e.target;
 
-    setFormData((previous) => ({
-      ...previous,
+    setFormData((prev) => ({
+      ...prev,
       [name]: value,
     }));
-
-    /* Clear error when user starts correcting the form */
-    if (error) {
-      setError("");
-    }
   };
 
   /* =========================================================
@@ -99,6 +94,7 @@ function Contactform() {
     e.preventDefault();
 
     const name = formData.name.trim();
+    const phone = formData.phone.trim();
     const email = formData.email.trim();
     const help = formData.help;
 
@@ -106,7 +102,7 @@ function Contactform() {
        REQUIRED FIELD CHECK
     ======================================================= */
 
-    if (!name || !email || !help) {
+    if (!name || !phone || !email || !help) {
       setError("Please fill in all required fields.");
       return;
     }
@@ -117,6 +113,15 @@ function Contactform() {
 
     if (!isValidName(name)) {
       setError("Please enter a valid name using letters only.");
+      return;
+    }
+
+    /* =======================================================
+       PHONE CHECK
+    ======================================================= */
+
+    if (!isValidPhone(phone)) {
+      setError("Please enter a valid phone number.");
       return;
     }
 
@@ -138,8 +143,10 @@ function Contactform() {
     setShowPopup(true);
 
     /* Clear form */
+
     setFormData({
       name: "",
+      phone: "",
       email: "",
       company: "",
       help: "",
@@ -166,7 +173,6 @@ function Contactform() {
           relative
           overflow-hidden
           bg-[linear-gradient(135deg,#000000_0%,#0A0A0A_30%,#121212_70%,#1A1A1E_100%)]
-          
           py-10
           sm:py-11
           md:py-12
@@ -178,9 +184,7 @@ function Contactform() {
           xl:px-8
         "
       >
-        {/* ===================================================
-            BACKGROUND GLOW
-        ==================================================== */}
+        {/* BACKGROUND GLOW */}
 
         <div
           data-aos="fade-down"
@@ -236,9 +240,7 @@ function Contactform() {
           "
         />
 
-        {/* ===================================================
-            MAIN CONTAINER
-        ==================================================== */}
+        {/* MAIN CONTAINER */}
 
         <div className="relative z-10 max-w-7xl mx-auto">
           <div
@@ -272,9 +274,7 @@ function Contactform() {
                 lg:p-7
               "
             >
-              {/* =================================================
-                  FORM TITLE
-              ================================================== */}
+              {/* FORM TITLE */}
 
               <h2
                 data-aos="fade-up"
@@ -293,18 +293,14 @@ function Contactform() {
                 Start the Conversation
               </h2>
 
-              {/* =================================================
-                  FORM
-              ================================================== */}
+              {/* FORM */}
 
               <form
                 onSubmit={handleSubmit}
                 noValidate
                 className="space-y-4 sm:space-y-[18px]"
               >
-                {/* =================================================
-                    NAME
-                ================================================== */}
+                {/* NAME */}
 
                 <div data-aos="fade-up" data-aos-delay="100">
                   <label
@@ -330,6 +326,7 @@ function Contactform() {
                     onChange={handleChange}
                     placeholder="Your name"
                     autoComplete="name"
+                    required
                     className="
                       w-full
                       rounded-[14px]
@@ -353,9 +350,59 @@ function Contactform() {
                   />
                 </div>
 
-                {/* =================================================
-                    EMAIL
-                ================================================== */}
+                {/* PHONE NUMBER */}
+
+                <div data-aos="fade-up" data-aos-delay="125">
+                  <label
+                    htmlFor="phone"
+                    className="
+                      block
+                      text-sm
+                      sm:text-[14px]
+                      font-semibold
+                      text-[#0B0F14]
+                      mb-1.5
+                      sm:mb-2
+                    "
+                  >
+                    Phone Number <span className="text-red-500">*</span>
+                  </label>
+
+                  <input
+                    id="phone"
+                    name="phone"
+                    type="tel"
+                    value={formData.phone}
+                    onChange={handleChange}
+                    placeholder="Enter your phone number"
+                    autoComplete="tel"
+                    inputMode="tel"
+                    maxLength={20}
+                    required
+                    className="
+                      w-full
+                      rounded-[14px]
+                      sm:rounded-[16px]
+                      bg-white
+                      border
+                      border-[#D1D5DB]
+                      text-[#0B0F14]
+                      placeholder:text-[#7A7A7A]
+                      px-4
+                      py-2.5
+                      sm:py-3
+                      text-sm
+                      outline-none
+                      transition-all
+                      duration-300
+                      focus:border-[#3E7BD6]
+                      focus:ring-4
+                      focus:ring-[#3E7BD6]/20
+                    "
+                  />
+                </div>
+
+                {/* EMAIL */}
 
                 <div data-aos="fade-up" data-aos-delay="150">
                   <label
@@ -381,6 +428,7 @@ function Contactform() {
                     onChange={handleChange}
                     placeholder="you@example.com"
                     autoComplete="email"
+                    required
                     className="
                       w-full
                       rounded-[14px]
@@ -404,10 +452,7 @@ function Contactform() {
                   />
                 </div>
 
-                {/* =================================================
-                    COMPANY
-                    OPTIONAL
-                ================================================== */}
+                {/* COMPANY - OPTIONAL */}
 
                 <div data-aos="fade-up" data-aos-delay="200">
                   <label
@@ -456,9 +501,7 @@ function Contactform() {
                   />
                 </div>
 
-                {/* =================================================
-                    WHAT CAN WE HELP WITH
-                ================================================== */}
+                {/* WHAT CAN WE HELP WITH */}
 
                 <div data-aos="fade-up" data-aos-delay="250">
                   <label
@@ -508,6 +551,29 @@ function Contactform() {
                     >
                       Select an option
                     </option>
+                    <option value="End-to-End Digital Transformation">
+                      End-to-End Digital Transformation
+                    </option>
+
+                    <option value="Cloud Cost Optimization (FinOps)">
+                      Cloud Cost Optimization (FinOps)
+                    </option>
+
+                    <option value="DevOps & DevSecOps">
+                      DevOps &amp; DevSecOps
+                    </option>
+
+                    <option value="Mobile App Development">
+                      Mobile App Development
+                    </option>
+
+                    <option value="Custom Software Development & Maintenance">
+                      Custom Software Development &amp; Maintenance
+                    </option>
+
+                    <option value="Data Analytics and Reporting">
+                      Data Analytics and Reporting
+                    </option>
 
                     <option
                       value="Modernize my systems"
@@ -546,10 +612,7 @@ function Contactform() {
                   </select>
                 </div>
 
-                {/* =================================================
-                    MESSAGE
-                    OPTIONAL
-                ================================================== */}
+                {/* MESSAGE - OPTIONAL */}
 
                 <div data-aos="fade-up" data-aos-delay="300">
                   <label
@@ -598,9 +661,7 @@ function Contactform() {
                   />
                 </div>
 
-                {/* =================================================
-                    ERROR MESSAGE
-                ================================================== */}
+                {/* ERROR MESSAGE */}
 
                 {error && (
                   <p
@@ -623,9 +684,7 @@ function Contactform() {
                   </p>
                 )}
 
-                {/* =================================================
-                    SUBMIT BUTTON
-                ================================================== */}
+                {/* SUBMIT BUTTON */}
 
                 <button
                   data-aos="zoom-in"
@@ -653,9 +712,7 @@ function Contactform() {
                   Start the Conversation
                 </button>
 
-                {/* =================================================
-                    FOOTER TEXT
-                ================================================== */}
+                {/* FOOTER TEXT */}
 
                 <p
                   data-aos="fade-up"
@@ -701,9 +758,7 @@ function Contactform() {
                 h-full
               "
             >
-              {/* =================================================
-                  BACKGROUND GLOWS
-              ================================================== */}
+              {/* BACKGROUND GLOWS */}
 
               <div
                 className="
@@ -756,9 +811,7 @@ function Contactform() {
               />
 
               <div className="relative z-10">
-                {/* =================================================
-                    BADGE
-                ================================================== */}
+                {/* BADGE */}
 
                 <span
                   data-aos="fade-down"
@@ -785,9 +838,7 @@ function Contactform() {
                   Contact BeaverTek
                 </span>
 
-                {/* =================================================
-                    CONTACT DETAILS
-                ================================================== */}
+                {/* CONTACT DETAILS */}
 
                 <div
                   className="
@@ -798,9 +849,7 @@ function Contactform() {
                     sm:space-y-4
                   "
                 >
-                  {/* =================================================
-                      EMAIL
-                  ================================================== */}
+                  {/* EMAIL */}
 
                   <div
                     data-aos="fade-up"
@@ -865,9 +914,7 @@ function Contactform() {
                     </div>
                   </div>
 
-                  {/* =================================================
-                      USA
-                  ================================================== */}
+                  {/* USA */}
 
                   <div
                     data-aos="fade-up"
@@ -928,9 +975,7 @@ function Contactform() {
                     </div>
                   </div>
 
-                  {/* =================================================
-                      INDIA
-                  ================================================== */}
+                  {/* INDIA */}
 
                   <div
                     data-aos="fade-up"
@@ -991,9 +1036,7 @@ function Contactform() {
                     </div>
                   </div>
 
-                  {/* =================================================
-                      HOURS
-                  ================================================== */}
+                  {/* HOURS */}
 
                   <div
                     data-aos="fade-up"
@@ -1055,9 +1098,7 @@ function Contactform() {
                   </div>
                 </div>
 
-                {/* =================================================
-                    WHY WORK WITH BEAVERTEK
-                ================================================== */}
+                {/* WHY WORK WITH BEAVERTEK */}
 
                 <div
                   data-aos="zoom-in"
@@ -1175,213 +1216,198 @@ function Contactform() {
           SUCCESS POPUP
       ====================================================== */}
 
-     
-{showPopup && (
-  <div
-    className="
-      fixed
-      inset-0
-      z-[9999]
-      flex
-      items-start
-      justify-end
-      bg-black/70
-      backdrop-blur-md
-      px-3
-      pt-6
-      sm:pt-8
-      md:pt-10
-      pr-3
-      sm:pr-6
-      md:pr-8
-    "
-  >
-    <div
-      data-aos="zoom-in"
-      className="
-        relative
-        overflow-hidden
-        bg-[#121212]
-        border
-        border-[#2A2A30]
-        rounded-2xl
-        sm:rounded-3xl
-        shadow-[0_25px_60px_rgba(0,0,0,.45)]
-        max-w-md
-        w-[92%]
-        sm:w-[420px]
-        p-5
-        sm:p-6
-        md:p-7
-        text-center
-      "
-    >
-      {/* =================================================
-          POPUP BACKGROUND GLOWS
-      ================================================== */}
-
-      <div
-        className="
-          absolute
-          -top-16
-          -right-16
-          w-44
-          h-44
-          sm:w-52
-          sm:h-52
-          rounded-full
-          bg-[#29B6F0]/15
-          blur-[70px]
-        "
-      />
-
-      <div
-        className="
-          absolute
-          -top-72
-          left-1/2
-          -translate-x-1/2
-          w-44
-          h-44
-          sm:w-52
-          sm:h-52
-          rounded-full
-          bg-[#B93FC9]/15
-          blur-[70px]
-        "
-      />
-
-      <div className="relative z-10">
-        {/* =================================================
-            SUCCESS ICON
-        ================================================== */}
-
+      {showPopup && (
         <div
-          data-aos="zoom-in"
-          data-aos-delay="100"
           className="
-            mx-auto
-            w-16
-            h-16
-            sm:w-[72px]
-            sm:h-[72px]
-            rounded-full
-            bg-[#22C55E]/15
-            border
-            border-[#22C55E]/30
+            fixed
+            inset-0
+            z-[9999]
             flex
-            items-center
-            justify-center
+            items-start
+            justify-end
+            bg-black/70
+            backdrop-blur-md
+            px-3
+            pt-6
+            sm:pt-8
+            md:pt-10
+            pr-3
+            sm:pr-6
+            md:pr-8
           "
         >
-          <svg
+          <div
+            data-aos="zoom-in"
             className="
-              w-8
-              h-8
-              sm:w-9
-              sm:h-9
-              text-[#22C55E]
+              relative
+              overflow-hidden
+              bg-[#121212]
+              border
+              border-[#2A2A30]
+              rounded-2xl
+              sm:rounded-3xl
+              shadow-[0_25px_60px_rgba(0,0,0,.45)]
+              max-w-md
+              w-[92%]
+              sm:w-[420px]
+              p-5
+              sm:p-6
+              md:p-7
+              text-center
             "
-            fill="none"
-            stroke="currentColor"
-            strokeWidth="3"
-            viewBox="0 0 24 24"
           >
-            <path
-              d="M5 13l4 4L19 7"
-              strokeLinecap="round"
-              strokeLinejoin="round"
+            {/* POPUP BACKGROUND GLOWS */}
+
+            <div
+              className="
+                absolute
+                -top-16
+                -right-16
+                w-44
+                h-44
+                sm:w-52
+                sm:h-52
+                rounded-full
+                bg-[#29B6F0]/15
+                blur-[70px]
+              "
             />
-          </svg>
+
+            <div
+              className="
+                absolute
+                -top-72
+                left-1/2
+                -translate-x-1/2
+                w-44
+                h-44
+                sm:w-52
+                sm:h-52
+                rounded-full
+                bg-[#B93FC9]/15
+                blur-[70px]
+              "
+            />
+
+            <div className="relative z-10">
+              {/* SUCCESS ICON */}
+
+              <div
+                data-aos="zoom-in"
+                data-aos-delay="100"
+                className="
+                  mx-auto
+                  w-16
+                  h-16
+                  sm:w-[72px]
+                  sm:h-[72px]
+                  rounded-full
+                  bg-[#22C55E]/15
+                  border
+                  border-[#22C55E]/30
+                  flex
+                  items-center
+                  justify-center
+                "
+              >
+                <svg
+                  className="
+                    w-8
+                    h-8
+                    sm:w-9
+                    sm:h-9
+                    text-[#22C55E]
+                  "
+                  fill="none"
+                  stroke="currentColor"
+                  strokeWidth="3"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    d="M5 13l4 4L19 7"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                  />
+                </svg>
+              </div>
+
+              {/* POPUP TITLE */}
+
+              <h2
+                data-aos="fade-up"
+                data-aos-delay="150"
+                className="
+                  text-2xl
+                  sm:text-3xl
+                  font-bold
+                  text-[#FFFFFF]
+                  mt-4
+                  sm:mt-5
+                "
+              >
+                Thanks — message sent !
+              </h2>
+
+              {/* POPUP MESSAGE */}
+
+              <p
+                data-aos="fade-up"
+                data-aos-delay="200"
+                className="
+                  text-[#A0A0A8]
+                  text-sm
+                  sm:text-[15px]
+                  mt-3
+                  sm:mt-4
+                  leading-6
+                  sm:leading-7
+                "
+              >
+                Thank you for contacting BeaverTek.
+                <br />
+                We have received your message.
+                <br />
+                <span className="font-semibold text-[#29B6F0]">
+                  We will get back to you shortly.
+                </span>
+              </p>
+
+              {/* CLOSE BUTTON */}
+
+              <button
+                data-aos="zoom-in"
+                data-aos-delay="250"
+                type="button"
+                onClick={closePopup}
+                className="
+                  mt-6
+                  sm:mt-7
+                  w-full
+                  py-2.5
+                  sm:py-3
+                  rounded-full
+                  text-sm
+                  sm:text-[14px]
+                  text-white
+                  font-semibold
+                  hover:scale-105
+                  hover:shadow-[0_0_35px_rgba(62,123,214,.35)]
+                  transition-all
+                  duration-300
+                "
+                style={{
+                  background:
+                    "linear-gradient(135deg,#29B6F0 0%,#3E7BD6 35%,#7A4FD1 65%,#B93FC9 100%)",
+                }}
+              >
+                Close
+              </button>
+            </div>
+          </div>
         </div>
-
-        {/* =================================================
-            POPUP TITLE
-        ================================================== */}
-
-        <h2
-          data-aos="fade-up"
-          data-aos-delay="150"
-          className="
-            text-2xl
-            sm:text-3xl
-            font-bold
-            text-[#FFFFFF]
-            mt-4
-            sm:mt-5
-          "
-        >
-          Thanks — message sent !
-        </h2>
-
-        {/* =================================================
-            POPUP MESSAGE
-        ================================================== */}
-
-        <p
-          data-aos="fade-up"
-          data-aos-delay="200"
-          className="
-            text-[#A0A0A8]
-            text-sm
-            sm:text-[15px]
-            mt-3
-            sm:mt-4
-            leading-6
-            sm:leading-7
-          "
-        >
-          Thank you for contacting BeaverTek.
-          <br />
-          We have received your message.
-          <br />
-          <span className="font-semibold text-[#29B6F0]">
-            We will get back to you shortly.
-          </span>
-        </p>
-
-        {/* =================================================
-            CLOSE BUTTON
-        ================================================== */}
-
-        <button
-          data-aos="zoom-in"
-          data-aos-delay="250"
-          type="button"
-          onClick={closePopup}
-          className="
-            mt-6
-            sm:mt-7
-            w-full
-            py-2.5
-            sm:py-3
-            rounded-full
-            text-sm
-            sm:text-[14px]
-            text-white
-            font-semibold
-            hover:scale-105
-            hover:shadow-[0_0_35px_rgba(62,123,214,.35)]
-            transition-all
-            duration-300
-          "
-          style={{
-            background:
-              "linear-gradient(135deg,#29B6F0 0%,#3E7BD6 35%,#7A4FD1 65%,#B93FC9 100%)",
-          }}
-        >
-          Close
-        </button>
-      </div>
-    </div>
-  </div>
-)}
-
-
-     
+      )}
     </div>
   );
 }
 
 export default Contactform;
-
