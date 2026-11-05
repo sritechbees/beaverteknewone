@@ -1223,8 +1223,9 @@ function Contactform() {
             inset-0
             z-[9999]
             flex
-            items-start
-            justify-end
+            items-center
+            justify-center
+            
             bg-black/70
             backdrop-blur-md
             px-3
